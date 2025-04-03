@@ -1,0 +1,427 @@
+---
+import ContactForm from "../../components/home/ContactForm.astro";
+import PricingDetails from "../../components/home/PricingDetails.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const services = [
+  {
+    name: "Atostogų prašymų ir kitų nebuvimų darbe valdymas",
+    href: "/sprendimai/atostogu-valdymas",
+    icon: "🌴",
+  },
+  {
+    name: "Atrankų valdymas",
+    href: "/sprendimai/atranku-valdymas",
+    icon: "👥",
+  },
+  {
+    name: "Personalo valdymas",
+    href: "/sprendimai/personalo-valdymas",
+    icon: "👔",
+  },
+];
+---
+
+<MainLayout>
+  <div>
+    <img
+      src="/media/pricing-home.png"
+      alt="Planai"
+      class="w-full max-w-6xl mx-auto sm:mt-4 h-auto"
+    />
+  </div>
+  <div class="py-8 sm:py-16 md:py-20">
+    <h1
+      class="mx-auto mt-2 text-center text-3xl font-semibold tracking-normal text-balance text-gray-950 sm:text-5xl capitalize"
+    >
+      personalo valdymo sprendimų planai
+    </h1>
+    <div
+      class="flex flex-col gap-3 justify-start items-start px-2 md:px-4 lg:px-4 xl:px-12 text-balance max-w-7xl mx-auto mt-4 sm:mt-8"
+    >
+      <p class="text-base sm:text-xltext-gray-800">
+        Apačioje pateiktos personalo valdymo planų kainos.
+      </p>
+      <p class="text-base sm:text-base sm:text-xltext-gray-700">
+        Pasirinkdami BASIC planą papildomai gaunate 1 mėn. galimybę naudotis
+        VECTICUM sistema visiškai nemokamai, o su ADVANCED planu net 3 mėn
+        nemokamai. Suteikti nemokami mėnesiai papildomai pridedami prie 12 mėn.
+        sutarties.
+      </p>
+      <p class="text-base sm:text-base sm:text-xltext-gray-800">
+        Paspaudus „Išbandyti“ mygtuką ir užpildžius atsidarusią formą, paštu
+        gausite visą reikalingą sistemos implementacijos dokumentaciją bei su
+        jumis susisieks mūsų konsultantai.
+      </p>
+    </div>
+  </div>
+  <div class="pb-24 bg-[#EBEFF3]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <!--Grid-->
+      <div
+        class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-8 lg:space-y-0 lg:items-center"
+      >
+        <!--Pricing Card-->
+        <div
+          class="flex flex-col mx-auto max-w-sm text-gray-900 rounded-2xl bg-gray-50 p-6 xl:py-9 xl:px-12 transition-all duration-500 hover:bg-gray-100"
+        >
+          <h3 class="font-manrope text-base sm:text-2xl font-bold mb-3">
+            BASIC
+          </h3>
+          <div class="flex items-center mb-6">
+            <span
+              class="font-manrope mr-2 text-2xl sm:text-4xl md:text-6xl font-semibold"
+              >€15</span
+            >
+            <span class="text-base sm:text-xltext-gray-500">/ mėn.</span>
+          </div>
+
+          <p class="text-base sm:text-lg font-medium text-gray-600 mb-6">
+            Bazinės funkcijos. Sprendimas nereikalauja papildomų konfigūravimų
+            ir iš karto paruoštas naudojimui. Rekomenduojama <span
+              class="font-semibold">mažoms įmonėms.</span
+            >
+          </p>
+          <!--List-->
+          <ul
+            class="mb-12 space-y-6 text-left text-base sm:text-lg text-gray-500"
+          >
+            <li class="flex items-center space-x-4">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-6 h-6 text-accent"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span>Į planą įtraukta 10 naudotojų</span>
+            </li>
+            <li class="flex items-center space-x-4">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-6 h-6 text-accent"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span>Papildomi naudotojai: 3 naudotojai/ 3 EUR</span>
+            </li>
+            <li class="flex items-center space-x-4">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-6 h-6 text-accent"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span>Nurodyta plano kaina galioja mokant už metus</span>
+            </li>
+            <li class="flex items-center space-x-4">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-6 h-6 text-accent"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span> 2 val. konsultacijos</span>
+            </li>
+          </ul>
+          <a
+            href="javascript:;"
+            class="py-2.5 px-5 bg-accent shadow-sm rounded-full transition-all duration-500 text-base text-white text-center w-fit mx-auto hover:bg-indigo-700"
+            >Išbandyti</a
+          >
+          <!--List End-->
+        </div>
+        <!--Pricing Card-->
+        <div
+          class="flex flex-col mx-auto max-w-sm text-gray-900 rounded-2xl bg-indigo-50 transition-all duration-500 hover:bg-indigo-100"
+        >
+          <div
+            class="uppercase bg-gradient-to-r from-accent to-violet-600 rounded-t-2xl p-3 text-center text-white"
+          >
+            MOST POPULAR
+          </div>
+          <div class="p-6 xl:py-9 xl:px-12">
+            <h3 class="font-manrope text-base sm:text-2xl font-bold mb-3">
+              ADVANCED
+            </h3>
+            <div class="flex items-center mb-6">
+              <span
+                class="font-manrope mr-2 text-2xl sm:text-4xl md:text-6xl font-semibold text-accent"
+                >€69</span
+              >
+              <span class="text-base sm:text-xltext-gray-500">/ mėn.</span>
+            </div>
+            <p class="text-base sm:text-lg font-medium text-gray-600 mb-6">
+              BASIC pasiūlymo funkcijos kartu su ADVANCED funkcijomis.
+              Sprendimas turi konfigūracinių galimybių. Rekomenduojama
+              <span class="font-semibold">vidutinėms įmonėms.</span>
+            </p>
+            <!--List-->
+            <ul class="mb-12 space-y-6 text-left text-base sm:text-lg">
+              <li class="flex items-center space-x-4">
+                <!-- Icon -->
+                <svg
+                  class="flex-shrink-0 w-6 h-6 text-accent"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <span>Į planą įtraukti 35 naudotojai</span>
+              </li>
+              <li class="flex items-center space-x-4">
+                <!-- Icon -->
+                <svg
+                  class="flex-shrink-0 w-6 h-6 text-accent"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <span>Papildomi naudotojai: 10 naudotojų/ 20 EUR</span>
+              </li>
+              <li class="flex items-center space-x-4">
+                <!-- Icon -->
+                <svg
+                  class="flex-shrink-0 w-6 h-6 text-accent"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <span>Nurodyta plano kaina galioja mokant už metus</span>
+              </li>
+              <li class="flex items-center space-x-4">
+                <!-- Icon -->
+                <svg
+                  class="flex-shrink-0 w-6 h-6 text-accent"
+                  viewBox="0 0 30 30"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+                <span>2 val. konsultacijos</span>
+              </li>
+            </ul>
+            <a
+              href="javascript:;"
+              class="py-2.5 px-5 bg-accent shadow-sm rounded-full transition-all duration-500 text-base text-white text-center w-fit block mx-auto hover:bg-indigo-700"
+              >Išbandyti</a
+            >
+            <!--List End-->
+          </div>
+        </div>
+        <!--Pricing Card-->
+        <div
+          class="flex flex-col mx-auto max-w-sm text-gray-900 rounded-2xl bg-gray-50 p-6 xl:py-9 xl:px-12 transition-all duration-500 hover:bg-gray-100"
+        >
+          <h3 class="font-manrope text-base sm: text-2xl font-bold mb-3">
+            ENTERPRISE
+          </h3>
+          <div class="flex items-center mb-6">
+            <span
+              class="font-manrope mr-2 text-2xl sm:text-4xl md:text-6xl font-semibold"
+              >€190</span
+            >
+            <span class="text-base sm:text-xltext-gray-500">/ mėn.</span>
+          </div>
+          <p class="text-base sm:text-lg font-medium text-gray-600 mb-6">
+            BASIC, ADVANCED ir ENTERPRISE pasiūlymų funkcijos adaptuotos pagal
+            Jūsų įmonės esančias tvarkas ir procesus. Plačiausias sprendimų
+            pasirinkimas. Rekomenduojama <span class="font-semibold"
+              >didelėms įmonėms.</span
+            >
+          </p>
+          <!--List-->
+          <ul
+            class="mb-12 space-y-6 text-left text-base sm:text-lgtext-gray-500"
+          >
+            <li class="flex items-center space-x-4">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-6 h-6 text-accent"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span>Į planą įtraukta 50 naudotojų</span>
+            </li>
+            <li class="flex items-center space-x-4">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-6 h-6 text-accent"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span>Papildomi naudotojai: 10 naudotojų/ 30 EUR</span>
+            </li>
+            <li class="flex items-center space-x-4">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-6 h-6 text-accent"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span>Nurodyta plano kaina galioja mokant už metus</span>
+            </li>
+            <li class="flex items-center space-x-4">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-6 h-6 text-accent"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span>2 val. konsultacijos</span>
+            </li>
+            <li class="flex items-center space-x-4">
+              <!-- Icon -->
+              <svg
+                class="flex-shrink-0 w-6 h-6 text-accent"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 14.7875L13.0959 17.8834C13.3399 18.1274 13.7353 18.1275 13.9794 17.8838L20.625 11.25M15 27.5C8.09644 27.5 2.5 21.9036 2.5 15C2.5 8.09644 8.09644 2.5 15 2.5C21.9036 2.5 27.5 8.09644 27.5 15C27.5 21.9036 21.9036 27.5 15 27.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              <span>Planui taikomas papildomas diegimo mokestis</span>
+            </li>
+          </ul>
+          <a
+            href="javascript:;"
+            class="py-2.5 px-5 bg-accent shadow-sm rounded-full transition-all duration-500 text-base text-white text-center w-fit mx-auto hover:bg-indigo-700"
+            >Išbandyti</a
+          >
+          <!--List End-->
+        </div>
+      </div>
+      <!--Grid End-->
+    </div>
+  </div>
+  <PricingDetails />
+  <div class="bg-[#EBEFF3] py-2 sm:py-3 mb-8">
+    <div
+      class="space-y-8 flex flex-col pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:mb-16 md:mb-20 mb-8"
+    >
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {
+          services.map((service) => (
+            <a
+              class="relative group overflow-hidden transform transition-transform duration-300 hover:scale-105"
+              href={service.href}
+              data-astro-reload
+            >
+              <div class="absolute inset-px rounded-lg bg-white shadow-sm " />
+              <div class="relative flex flex-col h-full overflow-hidden rounded-[calc(var(--radius-lg)+1px)] p-6">
+                <div class="text-3xl mb-4">{service.icon}</div>
+                <h3 class="text-base sm:text-lgfont-semibold tracking-tight text-gray-950">
+                  {service.name}
+                </h3>
+                {/* <p class="mt-2 text-sm/6 text-gray-600">{service.description}</p> */}
+              </div>
+              <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5" />
+            </a>
+          ))
+        }
+      </div>
+      <a
+        class="rounded-full w-fit mx-auto mt-4 bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white shadow"
+        href="/sprendimai"
+        target="_blank"
+      >
+        sprendimai
+      </a>
+    </div>
+  </div>
+  <ContactForm />
+</MainLayout>

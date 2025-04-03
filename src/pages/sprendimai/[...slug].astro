@@ -1,0 +1,53 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import { render } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const services = await getCollection("services");
+  return services.map((service) => ({
+    params: { slug: service.id },
+    props: service,
+  }));
+}
+type Props = CollectionEntry<"services">;
+
+const service = Astro.props;
+const { Content } = await render(service);
+---
+
+<MainLayout>
+  <main class="py-8 md:py-12">
+    <div
+      class="container grid grid-cols-1 max-w-7xl sm:grid-cols-2 mx-auto px-4 sm:px-6 lg:px-8"
+      id="service"
+      class="grid grid-cols-1 gap-4 sm:gap-8 lg:grid-cols-2 lg:gap-12"
+    >
+      <div class="w-96 h-full min-h-full">
+        <video width="384" height="240" autoplay muted>
+          <source src={service.data.hero_video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="space-y-4 py-8 h-full">
+        <h1
+          class="text-3xl font-semibold text-gray-900 sm:text-4xl md:text-5xl"
+        >
+          {service.data.title}
+        </h1>
+        <p class="text-lg text-gray-700 pb-4 sm:pb-8 md:pb-12">
+          {service.data.description}
+        </p>
+        <a
+          class="rounded-full bg-accent px-5 py-2.5 text-base font-medium text-white"
+          href="#contact"
+        >
+          Išbandyti
+        </a>
+      </div>
+    </div>
+    <div class="py-8 sm:py-12 prose w-full min-w-full">
+      <Content />
+    </div>
+  </main>
+</MainLayout>

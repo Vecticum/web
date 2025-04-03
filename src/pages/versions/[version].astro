@@ -1,0 +1,55 @@
+---
+import { getCollection, render } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const versions = await getCollection("versions");
+  return versions.map((version) => ({
+    params: { version: version.id },
+    props: version,
+  }));
+}
+
+const version = Astro.props;
+
+const { Content } = await render(version);
+---
+
+<MainLayout>
+  <div class="py-8 sm:py-16 md:py-20">
+    <h1
+      class="mt-2 mx-auto text-center text-4xl font-semibold tracking-normal text-balance text-gray-950 sm:text-5xl"
+    >
+      Version {version.data.version}
+    </h1>
+    <p class="mt-4 text-center text-lg text-gray-600">
+      Released on: {version.data.releaseDate.toDateString()}
+    </p>
+  </div>
+  <div
+    class="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-16 md:mb-20 prose"
+  >
+    <div
+      class="border px-4 group flex flex-col border-gray-200 rounded-lg bg-white-100 justify-start items-start shadow-md"
+    >
+      <h2 class="text-xl font-semibold text-gray-950">Features</h2>
+      <ul class="list-disc text-sm text-gray-600">
+        {version.data.features.map((feature) => <li>{feature}</li>)}
+      </ul>
+    </div>
+    {
+      version.data.improvements && (
+        <div class="border group flex flex-col sm:gap-4 border-gray-200 rounded-lg px-4 bg-white-100 justify-start items-start shadow-md">
+          <h2 class="text-xl font-semibold text-gray-950">Improvements</h2>
+          <ul class="list-disc text-sm text-gray-600">
+            {version.data.improvements.map((improvement) => (
+              <li>{improvement}</li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
+    <!-- <Content /> -->
+  </div>
+</MainLayout>

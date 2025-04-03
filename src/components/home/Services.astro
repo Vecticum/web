@@ -1,0 +1,96 @@
+---
+const services = [
+  {
+    icon: "🚀",
+    title: "Fast Deployment",
+    href: "/",
+    description:
+      "Quick and efficient deployment solutions for your applications",
+  },
+  {
+    icon: "🛡️",
+    title: "Enhanced Security",
+    href: "/",
+    description: "Advanced security measures to protect your digital assets",
+  },
+  {
+    icon: "⚡",
+    title: "Performance Optimization",
+    href: "/",
+    description: "Boost your application's speed and efficiency",
+  },
+  {
+    icon: "🔄",
+    title: "Automated Updates",
+    href: "/",
+    description: "Seamless system updates and maintenance",
+  },
+  {
+    icon: "📱",
+    title: "Mobile Integration",
+    href: "/",
+    description: "Cross-platform solutions for mobile devices",
+  },
+  {
+    icon: "🔍",
+    title: "Analytics Dashboard",
+    href: "/",
+    description: "Comprehensive data analysis and reporting tools",
+  },
+  {
+    icon: "🌐",
+    title: "Cloud Solutions",
+    href: "/",
+    description: "Scalable cloud infrastructure and services",
+  },
+  {
+    icon: "🤖",
+    title: "AI Integration",
+    href: "/",
+    description: "Smart automation and machine learning capabilities",
+  },
+  {
+    icon: "🔧",
+    title: "Technical Support",
+    href: "/",
+    description: "24/7 expert assistance and maintenance services",
+  },
+];
+---
+
+<div class="bg-[#EBEFF3] pt-8 pb-24">
+  <div
+    class="mx-auto max-w-2xl lg:max-w-7xl px-2 md:px-4 lg:px-4 xl:px-0 flex flex-col justify-center items-center"
+  >
+    <h2
+      class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-normal text-balance text-gray-950 sm:text-5xl"
+    >
+      Visi sprendimai
+    </h2>
+    <div class="my-10 grid gap-6 sm:mt-16 md:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((service) => (
+          <a class="relative group overflow-hidden" href={service.href}>
+            <div class="absolute inset-px rounded-lg bg-white shadow-sm " />
+            <div class="relative flex flex-col h-full overflow-hidden rounded-[calc(var(--radius-lg)+1px)] p-6">
+              <div class="text-3xl mb-4">{service.icon}</div>
+              <h3 class="text-lg font-semibold tracking-tight text-gray-950">
+                {service.title}
+              </h3>
+              <p class="mt-2 text-sm/6 text-gray-600">{service.description}</p>
+            </div>
+            <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5" />
+          </a>
+        ))
+      }
+    </div>
+
+    <a
+      class="rounded-full bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white shadow"
+      href="/sprendimai"
+      target="_blank"
+    >
+      Visi sprendimai
+    </a>
+  </div>
+</div>

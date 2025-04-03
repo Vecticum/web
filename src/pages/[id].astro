@@ -1,0 +1,32 @@
+---
+export const prerender = true;
+
+import { getCollection, render } from "astro:content";
+import MainLayout from "../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("pages");
+  return pages.map((page) => ({
+    params: { id: page.id },
+    props: page,
+  }));
+}
+
+const page = Astro.props;
+const { Content } = await render(page);
+---
+
+<MainLayout>
+  <div class="container py-8 sm:py-16 md:py-20">
+    <h1
+      class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-normal text-balance text-gray-950 sm:text-5xl"
+    >
+      {page.data.title}
+    </h1>
+    <div class="mt-4 text-center text-lg text-gray-600">
+      <article class="prose mx-auto">
+        <Content />
+      </article>
+    </div>
+  </div>
+</MainLayout>

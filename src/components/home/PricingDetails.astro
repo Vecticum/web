@@ -1,0 +1,569 @@
+<section class="py-14 lg:py-24 relative hidden lg:block">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="main relative z-10 py-2 table-responsive">
+      <div x-data="{ tab: 'tab1' }" class="flex flex-col lg:flex-row">
+        <!-- Tabs -->
+        <div class="flex lg:flex-col mb-4 lg:mb-0 lg:w-1/5 mt-8 sm:mt-12">
+          <button
+            class="py-2 bg-gray-100 text-black text-start px-3"
+            :class="{ 'active': tab === 'basic' }"
+            @click="tab = 'tab1'">Text 1 Lorem</button
+          >
+          <button
+            class="py-2 border border-l border-r text-black text-start px-3"
+            :class="{ 'active': tab === 'advanced' }"
+            @click="tab = 'tab2'">Text 2 Lorem Epsum</button
+          >
+          <button
+            class="py-2 bg-gray-100 text-black text-start px-3"
+            :class="{ 'active': tab === 'enterprise' }"
+            @click="tab = 'tab3'">Text 3 Lorem</button
+          >
+        </div>
+        <!-- Tab Content -->
+        <div class="tab-content lg:w-4/5">
+          <table
+            class="table-auto w-full mr-8 mb-14 relative whitespace-nowrap"
+          >
+            <thead>
+              <tr>
+                <th class="py-2 px-4 bg-gray-100 text-left">Funkcijos</th>
+                <th class="py-2 px-4 bg-accent text-white">Basic</th>
+                <th class="py-2 px-4 bg-gray-100 text-black">Advanced</th>
+                <th class="py-2 px-4 bg-accent text-white">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <template x-if="tab === 'tab1'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo kortelės sukūrimas</td
+                  >
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab1'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo kortelės sukūrimas</td
+                  >
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab1'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo kortelės sukūrimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab1'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo kortelės sukūrimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab1'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo kortelės sukūrimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab1'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo kortelės sukūrimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab2'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo darbinės/asmeninės informacijos talpinimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab2'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo darbinės/asmeninės informacijos talpinimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab2'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo darbinės/asmeninės informacijos talpinimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab2'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo darbinės/asmeninės informacijos talpinimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab2'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo darbinės/asmeninės informacijos talpinimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab2'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo darbinės/asmeninės informacijos talpinimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab2'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo darbinės/asmeninės informacijos talpinimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab2'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo darbinės/asmeninės informacijos talpinimas</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                  <td class="py-2 text-center"></td>
+                </tr>
+              </template>
+              <template x-if="tab === 'tab3'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo pareigų istorijos peržiūra</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                </tr>
+              </template>
+              <template x-if="tab === 'tab3'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo pareigų istorijos peržiūra</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                </tr>
+              </template>
+              <template x-if="tab === 'tab3'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo pareigų istorijos peržiūra</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                </tr>
+              </template>
+              <template x-if="tab === 'tab3'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo pareigų istorijos peržiūra</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                </tr>
+              </template>
+              <template x-if="tab === 'tab3'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo pareigų istorijos peržiūra</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                </tr>
+              </template>
+              <template x-if="tab === 'tab3'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo pareigų istorijos peržiūra</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                </tr>
+              </template>
+              <template x-if="tab === 'tab3'">
+                <tr>
+                  <td class="py-2 font-normal text-sm leading-6 text-gray-500"
+                    >Darbuotojo pareigų istorijos peržiūra</td
+                  >
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"></td>
+                  <td class="py-2 text-center"
+                    ><svg
+                      class="stroke-green-600"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      ><path
+                        d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                        stroke=""
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg
+                    ></td
+                  >
+                </tr>
+              </template>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

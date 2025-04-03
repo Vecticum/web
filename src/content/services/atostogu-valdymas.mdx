@@ -1,0 +1,504 @@
+---
+title: Atostogų valdymas
+description: savitarnos įrankis padės darbuotojams patogiai valdyti visus atostogų prašymus, o tai leis reikšmingai sumažinti nereikalingų administracinių užduočių naštą. Jokių klaidų, jokių pasimetusių prašymų, jokių popierių – skirkite laiką tiesioginiam darbui, o ne popierių administravimui. Šiuo sprendimu naudojasi daugelis Lietuvos įmonių.
+hero_video: "/services/Atostogu-prasymas-Final.mp4"
+---
+
+import ContactForm from "../../components/home/ContactForm.astro";
+
+export const services_left = [
+  "Atostogų prašymų registravimas",
+  "Neribotas atostogų prašymų pildymas pagal tipus",
+  "Atostogų prašymo tiesioginio vadovo tvirtinimas",
+  "Tuo pačiu metu atostogaujančių darbuotojų matymas atostogų prašyme",
+  "Darbuotojo informavimas el. paštu apie atostogų prašymo patvirtinimą",
+  "Atostogų tvirtinimų istorija",
+  "Atostogų prašymo komentavimo funkcija",
+  "Atostogų prašymo pildymas per mobilųjį telefoną arba kompiuterį",
+  "Atostogų prašymų sąrašo eksportavimas į Excel",
+  "Darbuotojų patvirtintų atostogų peržiūra sistemos kalendoriuje",
+  "Atostogų atšaukimo funkcija",
+  "Atostogų prašymų atvaizdavimas pagal pjūvius",
+  "Atostogų atšaukimo tiesioginio vadovo tvirtinimas",
+  "Atostogų likučio atvaizdavimas sistemoje",
+  "Atostogų likučių patikrinimas pildant atostogų prašymą",
+  "Atostogų kaupimų atvaizdavimas",
+  "Atostogų likučių perkėlimas",
+];
+
+export const services_right = [
+  "Atostogų likučių ataskaita",
+  "Tėvystės atostogų kontrolė pagal DK",
+  "Nemokamų atostogų tipo pasirinkimas",
+  "Atostogų likučio skaičiavimas",
+  "Atostogų prašymo komentavimas",
+  "Atostogų dienų pridėjimas pagal stažą",
+  "Draudimas pildyti atostogų neturint sukaupto atostogų likučio",
+  "Masinis atostogų prašymų tvirtinimas",
+  "Patvirtintų ir nepatvirtintų atostogų prašymų atvaizdavimas kalendoriuje",
+  "Papildomi atostogų tipai pagal įmonės tvarkas",
+  "Galimybė išplėsti atostogų prašymą papildomais laukais",
+  "Atostogų prašymo tvirtinimo atidėjimas",
+  "Atostogų dienų pridėjimas",
+  "Atostogų prašymo tvirtinimo proceso plėtimas",
+  "Papildomi pjūviai atostogų prašymų atvaizdavimui",
+  "Galimybė atsakyti į atostogų prašymo komentarą el. paštu",
+];
+
+export const services = [
+  {
+    name: "Atrankų valdymas",
+    href: "/sprendimai/atranku-valdymas",
+    icon: `👥`,
+  },
+  {
+    name: "Darbuotojo duomenų valdymas",
+    href: "/sprendimai/darbuotojo-duomenu-valdymas",
+    icon: `📊`,
+  },
+  {
+    name: "Darbo grafikų ir darbo laiko apskaitos žiniaraščių valdymas",
+    href: "/sprendimai/darbo-grafiku-valdymas",
+    icon: `📅`,
+  },
+];
+
+{/* first section */}
+
+<div class="bg-[#EBEFF3] p-2 rounded-md overflow-hidden">
+
+<div class="max-w-7xl p-4 mx-auto">
+  <div class="grid sm:grid-cols-2 items-center gap-12">
+    <div class="flex gap-2 sm:gap-4" >
+      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
+        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+      </div>
+    </div>
+    <div class="flex gap-2 sm:gap-4" >
+      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
+        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+      </div>
+    </div><div class="flex gap-2 sm:gap-4" >
+      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
+        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+      </div>
+    </div><div class="flex gap-2 sm:gap-4" >
+      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
+        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+      </div>
+    </div><div class="flex gap-2 sm:gap-4" >
+      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
+        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+      </div>
+    </div><div class="flex gap-2 sm:gap-4" >
+      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
+        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+      </div>
+    </div><div class="flex gap-2 sm:gap-4" >
+      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
+        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+      </div>
+    </div><div class="flex gap-2 sm:gap-4" >
+      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
+        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{/* second section - image */}
+
+<div class="flex flex-col gap-4 mt-8 sm:mt-16 ">
+  <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl capitalize text-center mb-8 sm:mb-12">
+    Kaip tai veikia?
+  </h2>
+  <img
+    src="/media/kitas-atostogu-valdymas-FINAL.png"
+    alt="Atostogų valdymas"
+    class="h-40 sm:h-80 lg:h-96  w-fit mx-auto"
+  />
+</div>
+
+{/* third section - screenshot */}
+
+<div class="max-w-7xl px-4 py-10 sm:px-6 lg:px-12 lg:py-14 mx-auto ">
+<h3 class="font-semibold text-center text-xl md:text-2xl lg:text-4xl capitalize mb-8 sm:mb-12">
+        Darbuotojų savitarna
+      </h3>
+  <div class="grid sm:grid-cols-2 items-start gap-12">
+    <div class="flex flex-col gap-4">
+      <details open>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+      <details>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+      <details>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+    </div>
+    <img
+      src="/media/Screenshot-2024-09-13-151354.png.webp"
+      alt="Atostogų valdymas"
+      class="h-40 sm:h-80 lg:h-96  w-fit mx-auto border border-gray-300 shadow-md"
+    />
+  </div>
+</div>
+
+{/* fourth section - screenshot */}
+
+<div class="max-w-7xl px-4 py-10 sm:px-6 lg:px-12 lg:py-14 mx-auto ">
+<h3 class="font-semibold text-xl md:text-2xl lg:text-4xl capitalize text-center mb-8 sm:mb-12">
+        Atostogų procesas
+      </h3>
+  <div class="grid sm:grid-cols-2 items-start gap-12">
+    <img
+      src="/media/Screenshot-2024-09-13-151259-2048x499.png.webp"
+      alt="Atostogų valdymas"
+      class="h-fit  w-full mx-auto border border-gray-300 shadow-md"
+    />
+    <div class="flex flex-col gap-4">
+      <details open>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+      <details>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+      <details>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+    </div>
+  </div>
+</div>
+
+{/* fifth section - screenshot */}
+
+<div class="max-w-7xl px-4 py-10 sm:px-6 lg:px-12 lg:py-14 mx-auto">
+      <h3 class="font-semibold text-xl md:text-2xl lg:text-4xl capitalize text-center mb-8 sm:mb-12">
+        Atostogų tvirtinimas
+      </h3>
+  <div class="grid sm:grid-cols-2 items-start gap-12">
+    <div class="flex flex-col gap-4">
+      <details open>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+      <details>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+      <details>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+    </div>
+    <img
+      src="/media/mail.png.webp"
+      alt="Atostogų valdymas"
+      class="h-40 sm:h-80 lg:h-96  w-fit mx-auto border border-gray-300 shadow-md"
+    />
+  </div>
+</div>
+
+{/* fifth section - screenshot */}
+
+<div class="max-w-7xl px-4 py-10 sm:px-6 lg:px-12  lg:py-14 mx-auto">
+      <h3 class="font-semibold text-xl md:text-2xl lg:text-4xl capitalize text-center mb-8 sm:mb-12">
+        Atostogų tvirtinimas
+      </h3>
+  <div class="grid sm:grid-cols-2 items-start gap-12">
+    <img
+      src="/media/atostogos-kalendorius-2048x682.png.webp"
+      alt="Atostogų valdymas"
+      class="h-fit  w-full mx-auto border border-gray-300 shadow-md"
+    />
+    <div class="flex flex-col gap-4">
+      <details open>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+      <details>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+      <details>
+        <summary class="text-lg font-semibold">summary text 1</summary>
+        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
+        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
+        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
+        slaptažodžio, užtenka jei turite mobilų telefoną.
+      </details>
+    </div>
+  </div>
+</div>
+
+{/* 6th section - screenshot */}
+
+<div class="bg-white p-4 mb-8 max-w-7xl px-4 mx-auto sm:px-6 lg:px-12">
+  <h3 class="text-2xl font-bold mb-4">TITLE</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2">
+  <ul class="list-disc pl-5 space-y-2 text-gray-700">
+    <li>Dokumentacijos plano rengimas</li>
+    <li>Dokumentacijos plano atvaizdavimas medžio pavidalu</li>
+    <li>Funkcijos sukūrimas dokumentacijos plane</li>
+    <li>Subfunkcijos sukūrimas dokumentacijos plane</li>
+    <li>Bylos sukūrimas dokumentacijos plane</li>
+    <li>Galimybė nustatyti bylos saugojimo periodą</li>
+    <li>Galimybė uždaryti bylą</li>
+    <li>Galimybė sukurti registrą</li>
+    <li>Galimybė nustatyti registro galiojimą</li>
+    <li>Galimybė uždaryti registrą</li>
+  </ul>
+  <div class="border border-gray-700"><img src="" alt="img" /></div>
+  </div>
+  <div class="mt-8">
+  <a
+    class="rounded-full bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white"
+    href="#"
+  >Išbandyti</a>
+  </div>
+</div>
+
+<div class="py-10 lg:py-14 max-w-7xl px-2 mx-auto">
+  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+    <h2 class="text-2xl font-bold md:text-3xl md:leading-tight text-gray-800">
+      DUK
+    </h2>
+  </div>
+
+  <div class="mx-auto">
+    <div class="grid sm:grid-cols-2 gap-6 md:gap-4">
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+          Can I cancel at anytime?
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </h3>
+        <p class=" text-gray-600">
+          Yes, you can cancel anytime no questions are asked while you cancel but we would highly appreciate if you will give us some feedback.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+          My team has credits. How do we use them?
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </h3>
+        <p class=" text-gray-600">
+          Once your team signs up for a subscription plan. This is where we sit down, grab a cup of coffee and dial in the details.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+          How does Preline's pricing work?
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </h3>
+        <p class=" text-gray-600">
+          Our subscriptions are tiered. Understanding the task at hand and ironing out the wrinkles is key.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+          How secure is Preline?
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </h3>
+        <p class=" text-gray-600">
+          Protecting the data you trust to Preline is our first priority. This part is really crucial in keeping the project in line to completion.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+          Do you offer discounts?
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </h3>
+        <p class=" text-gray-600">
+          We've built in discounts at each tier for teams. The time has come to bring those ideas and plans to life.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold text-gray-800 flex items-center">
+          What is your refund policy?
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </h3>
+        <p class=" text-gray-600">
+          We offer refunds. We aim high at being focused on building relationships with our clients and community.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="border-accent" />
+
+<div class="space-y-8 max-w-7xl mx-auto my-8 sm:my-12 px-3">
+  <h4 class="text-lg sm:text-xl md:text-2xl lg:text-3xl capitalize font-semibold text-accent">Moderni atostogų valdymo sistema: kodėl ji svarbi verslui?</h4>
+  <p>
+    Darbuotojo pateiktas atostogų prašymas ne visada sukelia geras emocijas
+    vadovui ir komandai. Jeigu atostogauti susiruošia daugiau komandos narių,
+    baugina išaugęs darbų krūvis, sunkumai užbaigiant darbus laiku, sumažėjęs
+    personalo valdymo efektyvumas. Gera žinia ta, kad „Vecticum“ siūlo modernų
+    atostogų valdymo sprendimą: jis supaprastina atostogų prašymo ir
+    patvirtinimo procesą. Darbuotojai gali lengvai pateikti savo atostogų
+    prašymus, naudojantis savitarnos sistema, o vadovai gali juos peržiūrėti ir
+    nedelsiant patvirtinti. Tai supaprastina visą procesą, pakeičia rankinį
+    dokumentų tvarkymą ir sumažina administracinį darbo krūvį.
+  </p>
+<h5 class="text-lg md:text-xl lg:text-2xl capitalize text-secondary">Kokius iššūkius kelia darbuotojų atostogos?</h5>
+<p>
+  Neturint išmanių, visas įmonės veiklos sritis apimančių personalo valdymo
+  sprendimų, net ir vieno darbuotojo atostogos gali tapti iššūkiu verslui. Dėl
+  darbų gausos laiku nepatvirtinti atostogų prašymai, pasimetę popieriniai
+  dokumentai, netiksliai apskaičiuoti atostoginiai ir, kolegai išvykus, tinkamai
+  nepaskirstyti darbai – tai tik kelios su personalo atostogomis susijusios
+  problemos, kurios savinasi Jūsų įmonės laiką ir pinigus.
+</p>
+
+<h5 class="text-lg md:text-xl lg:text-2xl capitalize text-secondary">
+  Išmaniai valdomos atostogos: pagrindiniai privalumai
+</h5>
+<p>
+  Kolegos atostogos be streso verslui ir komandai – misija įmanoma. Įdiegę
+  išmanią atostogų prašymo valdymo sistemą, tikrai išlošite.
+</p>
+<p>
+  Aptarkime pagrindines priežastis, kodėl verta rinktis atostogų valdymo
+  sistemą:
+</p>
+
+<ul class="list-disc space-y-2 sm:space-y-3">
+  <li class="text-gray-700 text-base text-pretty">
+    <span class="font-semibold">Protingas resursų paskirstymas:</span> valdymo
+    sistema padeda įmonei sekti ir valdyti darbuotojų grafikus, matyti jų
+    užimtumą ir planuojamas atostogas. Tai padeda vadovams efektyviai
+    paskirstyti užduotis, užtikrinant, kad darbai būtų atlikti laiku. Taip pat
+    ši sistema užtikrina, kad darbų krūvis bus paskirstytas tinkamai, išvengiant
+    konfliktų ir maksimaliai padidinant komandos narių produktyvumą, apsaugant
+    nuo streso.
+  </li>
+  <li class="text-gray-700 text-base text-pretty">
+    <span class="font-semibold">Supaprastintas personalo valdymas:</span>
+    darbuotojų atostogų valdymas gali būti sudėtingas, ypač didesnėse organizacijose.
+    Atostogų stebėjimo sistema suteikia patogią platformą darbuotojams prašyti laisvo
+    laiko, o vadovams tuos prašymus patvirtinti arba atmesti. Tai supaprastina atostogų
+    valdymo procesą ir sumažina administracinę naštą. Taip pat būsite ramūs, kad
+    nepasimes nei vienas atostogų prašymas!
+  </li>
+  <li class="text-gray-700 text-base text-pretty">
+    <span class="font-semibold">Darbo įstatymų laikymasis:</span> Lietuvoje,
+    kaip ir visur kitur, galioja įstatymai, kurie apibrėžia darbuotojų darbo
+    valandas, pertraukas, viršvalandžius ir atostogas. Išmanus atostogų valdymo
+    sprendimas padeda įmonėms užtikrinti šių reikalavimų laikymąsi, sumažina
+    teisinių problemų ir nuobaudų riziką.
+  </li>
+  <li class="text-gray-700 text-base text-pretty">
+    <span class="font-semibold">
+      Tikslus darbo užmokesčio ir atostoginių apskaičiavimas:
+    </span>
+    sistema leidžia tiksliai sekti darbuotojų užimtumą, sunaudotas atostogų dienas
+    ir likučius. Tai reiškia, kad pavyks sugeneruoti tikslesnes darbo užmokesčio,
+    atostoginių ataskaitas. Tai padeda įmonėms užtikrinti, kad darbuotojams priklausantis
+    atlygis būtų išmokamas operatyviai ir tiksliai, išvengiant net mažiausių klaidų.
+  </li>
+  <li class="text-gray-700 text-base text-pretty">
+    <span class="font-semibold">
+      {" "}
+      Efektyvesnė komunikacija tarp komandos narių:
+    </span>
+    atostogų prašymo valdymo sistema yra centralizuota platforma, kuri palengvina
+    su atostogomis susijusią komunikaciją, leidžia darbuotojams ir vadovams efektyviau
+    keistis informacija, sumažina konfliktų ir nesusipratimų riziką.
+  </li>
+  <li class="text-gray-700 text-base text-pretty">
+    <span class="font-semibold">Daugiau aiškumo komandai:</span> siūlome
+    sprendimą, kuris suteiks aiškumo vertinant komandos tvarkaraščius, matant
+    planuojamas atostogas. Taip matysite tikslų darbuotojų užimtumą, išvengsite
+    klaidų, bus paprasčiau koordinuoti darbą.
+  </li>
+</ul>
+
+<h5 class="text-lg md:text-xl lg:text-2xl capitalize text-secondary">
+  Išmanus atostogų planavimas ir sklandus įmonės darbas
+</h5>
+<p>
+  Nemažai Lietuvos verslų jau įsitikino, kad išmani darbuotojų valdymo, atostogų prašymų registravimo ir sekimo sistema padidina įmonės darbo efektyvumą, palengvina komunikaciją, užtikrina darbo taisyklių laikymąsi, o darbuotojams lengviau planuoti savo poilsį.
+</p>
+<p>
+Pasirūpinkite, kad darbuotojo atostogos nesulėtintų Jūsų įmonės veiklos. Su „Vecticum“ atostogų prašymai ir kiti su tuo susiję rūpesčiai gerokai palengvės!
+</p>
+<p>
+Taip pat „Vecticum“ svetainėje galite rasti patogią atostogų likučio skaičiuoklę, skirtą lengvai apskaičiuoti, kiek atostogų dienų dar turite. Šis įrankis leidžia greitai ir tiksliai sužinoti likusias poilsio dienas, todėl darbuotojai galės efektyviau planuoti atostogas bei valdyti savo darbo laiką.
+</p>
+<p>
+Čia rasite išmanius personalų atostogų valdymo sprendimus: integruotas atostogų kalendorius, prašymų registras ir istorija, visos atostogų planavimo sprendimo funkcijos ir dar daugiau. Naudodamiesi šiuo išmaniu sprendimu, lengvai apskaičiuojami atostoginiai, komandos nariai gali pateikti išankstinius planus, mato savo atostogų likučius. Taip pat visa komanda gauna automatinius priminimus dėl kolegos atostogų. Greita, paprasta ir efektyvu!
+</p>
+</div>
