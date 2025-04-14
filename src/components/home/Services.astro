@@ -1,96 +1,256 @@
----
-const services = [
-  {
-    icon: "🚀",
-    title: "Fast Deployment",
-    href: "/",
-    description:
-      "Quick and efficient deployment solutions for your applications",
-  },
-  {
-    icon: "🛡️",
-    title: "Enhanced Security",
-    href: "/",
-    description: "Advanced security measures to protect your digital assets",
-  },
-  {
-    icon: "⚡",
-    title: "Performance Optimization",
-    href: "/",
-    description: "Boost your application's speed and efficiency",
-  },
-  {
-    icon: "🔄",
-    title: "Automated Updates",
-    href: "/",
-    description: "Seamless system updates and maintenance",
-  },
-  {
-    icon: "📱",
-    title: "Mobile Integration",
-    href: "/",
-    description: "Cross-platform solutions for mobile devices",
-  },
-  {
-    icon: "🔍",
-    title: "Analytics Dashboard",
-    href: "/",
-    description: "Comprehensive data analysis and reporting tools",
-  },
-  {
-    icon: "🌐",
-    title: "Cloud Solutions",
-    href: "/",
-    description: "Scalable cloud infrastructure and services",
-  },
-  {
-    icon: "🤖",
-    title: "AI Integration",
-    href: "/",
-    description: "Smart automation and machine learning capabilities",
-  },
-  {
-    icon: "🔧",
-    title: "Technical Support",
-    href: "/",
-    description: "24/7 expert assistance and maintenance services",
-  },
-];
----
-
-<div class="bg-[#EBEFF3] pt-8 pb-24">
-  <div
-    class="mx-auto max-w-2xl lg:max-w-7xl px-2 md:px-4 lg:px-4 xl:px-0 flex flex-col justify-center items-center"
-  >
+<section class="accordion-section pt-10 pb-10 ">
+  <div class="mb-14 text-center">
     <h2
-      class="mx-auto mt-2 max-w-lg text-center text-4xl font-semibold tracking-normal text-balance text-gray-950 sm:text-5xl"
+      class="mx-auto mt-14 max-w-lg text-center text-3xl font-semibold tracking-normal text-balance text-gray-950 sm:text-4xl"
     >
-      Visi sprendimai
+      Sistemos sprendimai
     </h2>
-    <div class="my-10 grid gap-6 sm:mt-16 md:grid-cols-2 lg:grid-cols-3">
-      {
-        services.map((service) => (
-          <a class="relative group overflow-hidden" href={service.href}>
-            <div class="absolute inset-px rounded-lg bg-white shadow-sm " />
-            <div class="relative flex flex-col h-full overflow-hidden rounded-[calc(var(--radius-lg)+1px)] p-6">
-              <div class="text-3xl mb-4">{service.icon}</div>
-              <h3 class="text-lg font-semibold tracking-tight text-gray-950">
-                {service.title}
-              </h3>
-              <p class="mt-2 text-sm/6 text-gray-600">{service.description}</p>
+  </div>
+  <div class="accordion-wrapper">
+    <div class="accordion" id="accordion">
+      <!-- Item 1 -->
+      <div class="accordion-item active" data-img="/public/media/idarbinimas_srvc.png">
+        <div class="accordion-header">
+          <span>01</span>
+          <strong>Darbuotojų įdarbinimas/išdarbinimas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Visi procesai – nuo atrankos iki paskutinės darbo dienos – vienoje vietoje. Lengvai valdykite sutartis, paruoškite darbo vietą, stebėkite bandomąjį laikotarpį ir pasirūpinkite sklandžiu darbuotojo integravimu ar atsisveikinimu.</p>
+          <div class="accordion-links">
+            <a href="https://vecticum.lt/atrankos-valdymas/" target="_blank">Atrankų valdymas</a>
+            <a href="https://vecticum.lt/darbuotoju-idarbinimo-savitarna/" target="_blank">Darbuotojo įdarbinimo savitarna</a>
+            <a href="https://vecticum.lt/darbo-sutarciu-valdymas/" target="_blank">Darbo sutarčių valdymas</a>
+            <a href="https://vecticum.lt/darbuotojo-idarbinimo-i-imone-valdymas/" target="_blank">Darbo vietos paruošimas</a>
+            <a href="https://vecticum.lt/bandomojo-laikotarpio-vertinimas-valdymas/" target="_blank">Bandomojo laikotarpio valdymas</a>
+            <a href="https://vecticum.lt/darbuotojo-isdarbinimo-is-imones-valdymas/" target="_blank">Darbuotojo išdarbinimo valdymas</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="accordion-item" data-img="https://www.sloneek.com/wp-content/uploads/2024/11/time-management.webp">
+        <div class="accordion-header">
+          <span>02</span>
+          <strong>Darbuotojo informacijos valdymas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Modern HR software for digital reporting of work, leave and attendance records. Tailor-made for Czech and international (hybrid) teams.</p>
+          <div class="accordion-links">
+            <a href="https://vecticum.lt/darbuotoju-duomenu-bazes-valdymas/" target="_blank">Darbuotojo duomenų valdymas</a>
+            <a href="https://vecticum.lt/isduodamo-inventoriaus-darbuotojui-valdymas/" target="_blank">Išduodamo inventoriaus valdymas</a>
+            <a href="https://vecticum.lt/intraneto-valdymas/" target="_blank">Intranetas (Įmonės naujienos)</a>
+            <a href="https://vecticum.lt/darbuotoju-prasymu-valdymas/" target="_blank">Darbuotojų prašymų valdymas</a>
+          </div>
+        </div>
+      </div>
+
+            <!-- Item 3 -->
+            <div class="accordion-item" data-img="https://www.sloneek.com/wp-content/uploads/2024/11/time-management.webp">
+              <div class="accordion-header">
+                <span>03</span>
+                <strong>Darbo laiko apskaita</strong>
+              </div>
+              <div class="accordion-content">
+                <p>Modern HR software for digital reporting of work, leave and attendance records. Tailor-made for Czech and international (hybrid) teams.</p>
+                <div class="accordion-links">
+                  <a href="https://vecticum.lt/atostogu-valdymas/" target="_blank">Atostogų prašymų ir kitų nebuvimų valdymas</a>
+                  <a href="https://vecticum.lt/komandiruociu-valdymas/" target="_blank">Komandiruočių valdymas</a>
+                  <a href="https://vecticum.lt/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/" target="_blank">Darbo laiko apskaitos žiniaraščiai</a>
+                </div>
+              </div>
             </div>
-            <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5" />
-          </a>
-        ))
-      }
+
+                  <!-- Item 4 -->
+      <div class="accordion-item" data-img="https://www.sloneek.com/wp-content/uploads/2024/11/time-management.webp">
+        <div class="accordion-header">
+          <span>04</span>
+          <strong>Atitikimo valdymas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Modern HR software for digital reporting of work, leave and attendance records. Tailor-made for Czech and international (hybrid) teams.</p>
+          <div class="accordion-links">
+            <a href="https://vecticum.lt/privalomo-supazindinimo-su-dokumentais-valdymas/" target="_blank">Privalomo supažindinimo su dokumentais valdymas</a>
+            <a href="https://vecticum.lt/testavimo-is-norminiu-dokumentu-valdymas/" target="_blank">Darbuotojų testavimas</a>
+            <a href="https://vecticum.lt/mokymu-valdymas/" target="_blank">Mokymų valdymas</a>
+            <a href="https://vecticum.lt/veiklos-vertinimas/" target="_blank">Veiklos vertinimas</a>
+          </div>
+        </div>
+      </div>
+
+
+                  <!-- Item 6 -->
+      <div class="accordion-item" data-img="https://www.sloneek.com/wp-content/uploads/2024/11/time-management.webp">
+        <div class="accordion-header">
+          <span>05</span>
+          <strong>Dokumentų valdymas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Modern HR software for digital reporting of work, leave and attendance records. Tailor-made for Czech and international (hybrid) teams.</p>
+          <div class="accordion-links">
+            <a href="https://vecticum.lt/dokumumentu-valdymas/" target="_blank">Dokumentų valdymas</a>
+            <a href="https://vecticum.lt/dokumentacijos-plano-valdymas/" target="_blank">Dokumentacijos plano valdymas</a>
+            <a href="https://vecticum.lt/gaunamu-uzklausu-valdymas/" target="_blank">Gaunamos/siunčiamos korespondencijos valdymas</a>
+          </div>
+        </div>
+      </div>
+
+            <!-- Item 7 -->
+            <div class="accordion-item" data-img="https://www.sloneek.com/wp-content/uploads/2024/11/time-management.webp">
+              <div class="accordion-header">
+                <span>06</span>
+                <strong>Sutarčių valdymas</strong>
+              </div>
+              <div class="accordion-content">
+                <p>Modern HR software for digital reporting of work, leave and attendance records. Tailor-made for Czech and international (hybrid) teams.</p>
+                <div class="accordion-links">
+                  <a href="https://vecticum.lt/sutarciu-valdymas/" target="_blank">Sutarčių valdymas</a>
+                </div>
+              </div>
+            </div>
+
+                  <!-- Item 8 -->
+      <div class="accordion-item" data-img="https://www.sloneek.com/wp-content/uploads/2024/11/time-management.webp">
+        <div class="accordion-header">
+          <span>07</span>
+          <strong>Apskaitomų dokumentų valdymas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Modern HR software for digital reporting of work, leave and attendance records. Tailor-made for Czech and international (hybrid) teams.</p>
+          <div class="accordion-links">
+            <a href="https://vecticum.lt/gaunamu-saskaitu-valdymas/" target="_blank">Gaunamų sąskaitų valdymas</a>
+            <a href="https://vecticum.lt/avansines-apyskaitos-valdymas/" target="_blank">Avansinės apyskaitos valdymas</a>
+            <a href="https://vecticum.lt/keliones-lapu-valdymas" target="_blank">Kelionės lapų valdymas</a>
+            <a href="https://vecticum.lt/komandiruociu-valdymas/" target="_blank">Komandiruočių valdymas</a>
+          </div>
+        </div>
+      </div>
+
+            <!-- Item 9 -->
+            <div class="accordion-item" data-img="https://www.sloneek.com/wp-content/uploads/2024/11/time-management.webp">
+              <div class="accordion-header">
+                <span>08</span>
+                <strong>Pirkimų valdymas</strong>
+              </div>
+              <div class="accordion-content">
+                <p>Modern HR software for digital reporting of work, leave and attendance records. Tailor-made for Czech and international (hybrid) teams.</p>
+                <div class="accordion-links">
+                  <a href="https://vecticum.lt/pirkimu-valdymas/" target="_blank">Pirkimų valdymas</a>
+                </div>
+              </div>
+            </div>
+
     </div>
 
-    <a
-      class="rounded-full bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white shadow"
-      href="/sprendimai"
-      target="_blank"
-    >
-      Visi sprendimai
-    </a>
+    <div class="accordion-image">
+      <img id="accordion-img" src="/public/media/idarbinimas_srvc.png" alt="Section image" />
+    </div>
   </div>
-</div>
+</section>
+
+<style>
+.accordion-section {
+  padding: 2rem;
+  background-color: #EBEFF3;
+}
+.accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .accordion-wrapper {
+    flex-direction: row;
+  }
+}
+.accordion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.accordion-item {
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  padding-bottom: 1rem;
+}
+.accordion-item.active {
+  background-color: rgba(200, 31, 106, 0.05); /* subtilus fono atspalvis */
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(200, 31, 106, 0.08); /* minkštas šešėlis */
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.accordion-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+}
+.accordion-content {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.accordion-item.active .accordion-content {
+  display: block;
+}
+.accordion-content p {
+  margin-bottom: 0.5rem;
+}
+.accordion-links a {
+  display: inline-block;
+  margin: 0.1rem 0.25rem 0.25rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #C81F6A;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.accordion-links a:hover {
+  background-color: #a31755;
+  transform: translateY(-1px);
+}
+.accordion-links a {
+  box-shadow: 0 2px 6px rgba(200, 31, 106, 0.2);
+}
+
+.accordion-image {
+  flex: 1;
+}
+.accordion-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".accordion-item");
+    const image = document.getElementById("accordion-img") as HTMLImageElement | null;
+
+    if (!image) return; // Išvengiam klaidų, jei elementas nerastas
+
+    items.forEach(item => {
+      item.addEventListener("click", () => {
+        items.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+
+        const imgUrl = item.getAttribute("data-img");
+        if (imgUrl) {
+          image.src = imgUrl;
+        }
+      });
+    });
+  });
+</script>
