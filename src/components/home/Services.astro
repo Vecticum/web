@@ -9,7 +9,7 @@
   <div class="accordion-wrapper">
     <div class="accordion" id="accordion">
       <!-- Item 1 -->
-      <div class="accordion-item active" data-img="/public/media/idarbinimas_srvc.png">
+      <div class="accordion-item active" data-img="src/assets/media/idarbinimas_srvc.png">
         <div class="accordion-header">
           <span>01</span>
           <strong>Darbuotojų įdarbinimas/išdarbinimas</strong>
@@ -142,61 +142,95 @@
     </div>
 
     <div class="accordion-image">
-      <img id="accordion-img" src="/public/media/idarbinimas_srvc.png" alt="Section image" />
+      <img id="accordion-img" src="src/assets/media/idarbinimas_srvc.png" alt="Section image" />
     </div>
   </div>
 </section>
+
 
 <style>
 .accordion-section {
   padding: 2rem;
   background-color: #EBEFF3;
 }
+
 .accordion-wrapper {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 @media (min-width: 768px) {
   .accordion-wrapper {
     flex-direction: row;
   }
 }
+
 .accordion {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .accordion-item {
   border-bottom: 1px solid #e5e7eb;
-  cursor: pointer;
-  padding-bottom: 1rem;
-}
-.accordion-item.active {
-  background-color: rgba(200, 31, 106, 0.05); /* subtilus fono atspalvis */
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(200, 31, 106, 0.08); /* minkštas šešėlis */
-  padding: 24px;
-  transition: all 0.3s ease;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+.accordion-item.active {
+  background-color: rgba(200, 31, 106, 0.05);
+  box-shadow: 0 6px 24px rgba(200, 31, 106, 0.12);
 }
 
 .accordion-header {
   display: flex;
   gap: 1rem;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1.5rem;
+  transition: background-color 0.3s ease;
 }
+
+
+
+.accordion-header span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #C81F6A;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header span {
+  transform: rotate(90deg);
+}
+
 .accordion-content {
-  display: none;
-  animation: fadeIn 0.3s ease-in-out;
+  padding: 0 1.5rem 0 1.5rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.5s ease, opacity 0.4s ease, transform 0.4s ease;
+  will-change: max-height, opacity, transform;
 }
+
 .accordion-item.active .accordion-content {
-  display: block;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  opacity: 1;
+  transform: translateY(0);
 }
+
 .accordion-content p {
   margin-bottom: 0.5rem;
 }
+
 .accordion-links a {
   display: inline-block;
   margin: 0.1rem 0.25rem 0.25rem 0;
@@ -207,50 +241,98 @@
   border-radius: 8px;
   font-weight: 500;
   transition: background-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(200, 31, 106, 0.2);
 }
 
 .accordion-links a:hover {
   background-color: #a31755;
   transform: translateY(-1px);
 }
-.accordion-links a {
-  box-shadow: 0 2px 6px rgba(200, 31, 106, 0.2);
-}
 
 .accordion-image {
   flex: 1;
 }
+
 .accordion-image img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+.accordion-image img.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+.accordion-image img.fade-in {
+  opacity: 1;
+  transform: scale(1);
 }
 </style>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
     const items = document.querySelectorAll(".accordion-item");
-    const image = document.getElementById("accordion-img") as HTMLImageElement | null;
-
-    if (!image) return; // Išvengiam klaidų, jei elementas nerastas
-
+    const image = document.getElementById("accordion-img");
+  
+    let currentTimeout;
+  
     items.forEach(item => {
-      item.addEventListener("click", () => {
-        items.forEach(i => i.classList.remove("active"));
-        item.classList.add("active");
-
+      const header = item.querySelector(".accordion-header");
+      if (!header) return;
+  
+      header.addEventListener("click", () => {
+        // Uždaryti kitus
+        items.forEach(i => {
+          const content = i.querySelector(".accordion-content");
+          if (i !== item) {
+            i.classList.remove("active");
+            if (content) content.style.maxHeight = "0";
+          }
+        });
+  
+        const content = item.querySelector(".accordion-content");
+        const isActive = item.classList.contains("active");
+        item.classList.toggle("active");
+  
+        if (content) {
+          if (isActive) {
+            content.style.maxHeight = "0";
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
+        }
+  
+        // Nuotraukos keitimas
         const imgUrl = item.getAttribute("data-img");
-        if (imgUrl) {
-          image.src = imgUrl;
+        if (imgUrl && image && image instanceof HTMLImageElement && image.src !== imgUrl) {
+          image.classList.add("fade-out");
+          image.classList.remove("fade-in");
+  
+          clearTimeout(currentTimeout);
+          currentTimeout = setTimeout(() => {
+            image.src = imgUrl;
+            image.onload = () => {
+              image.classList.remove("fade-out");
+              image.classList.add("fade-in");
+            };
+          }, 200);
         }
       });
     });
+  
+    // Atidaryti aktyvų pirmą elementą, jei yra
+    const firstActive = document.querySelector(".accordion-item.active .accordion-content");
+    if (firstActive) {
+      firstActive.style.maxHeight = firstActive.scrollHeight + "px";
+    }
   });
-</script>
+  </script>
+  
+  
+  

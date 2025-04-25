@@ -8,40 +8,49 @@ import FormattedDate from "../components/FormattedDate.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
----
 
-<html lang="en">
+// Dinaminis paveikslėlio importas iš src/assets
+let heroImageSrc = "";
+if (heroImage) {
+  try {
+    heroImageSrc = (await import(`src/assets${heroImage}`)).default;
+  } catch {
+    heroImageSrc = ""; // fallback arba nieko
+  }
+}
+---
+<html lang="lt">
   <head>
     <BaseHead title={title} description={description} />
   </head>
 
-  <body>
+  <body class="bg-gray-50 text-gray-900">
     <Header />
-    <main
-      class="max-w-7xl px-2 sm:px-4 md:px-6 lg:px-8 mx-auto pt-8 sm:pt-12 flex justify-center items-center pb-8 sm:pb-24 lg:pb-40"
-    >
-      <article>
-        <div class="py-8 sm:py-12">
-          {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
-        </div>
-        <div class="prose">
-          <div class="title">
-            <div class="date">
+    <main class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
+      <article class="space-y-8">
+        {heroImageSrc && (
+          <div class="flex justify-center">
+            <img
+              width={1020}
+              height={510}
+              src={heroImageSrc}
+              alt={title}
+              class="rounded-xl shadow-lg max-w-full h-auto"
+            />
+          </div>
+        )}
+        <div class="prose lg:prose-xl prose-gray w-full mx-auto">
+          <div class="mb-6">
+            <div class="text-sm text-gray-500 flex flex-col gap-1">
               <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
+              {updatedDate && (
+                <span class="italic">
+                  Atnaujinta <FormattedDate date={updatedDate} />
+                </span>
+              )}
             </div>
-            <h1>{title}</h1>
-            <hr />
+            <h1 class="mt-2 mb-2">{title}</h1>
+            <hr class="my-4"/>
           </div>
           <slot />
         </div>

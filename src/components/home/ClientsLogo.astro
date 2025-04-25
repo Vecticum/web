@@ -1,35 +1,40 @@
 ---
+import dussmann from '/src/assets/media/dussmann.jpg';
+import iki from '/src/assets/media/iki.png';
+import civinity from '/src/assets/media/civinity.png';
+import autojuta from '/src/assets/media/Autojuta.png';
+import perlas from '/src/assets/media/Perlas.png';
+import vilkyskiu from '/src/assets/media/VilkyskiuPienine.png';
+import linasAgro from '/src/assets/media/Linas_agro.png';
+import omberg from '/src/assets/media/Omberg.png';
+import modus from '/src/assets/media/ModusGroup.png';
+import nokia from '/src/assets/media/nokia.png';
+import cgates from '/src/assets/media/Cgates.png';
+import citybee from '/src/assets/media/CityBee.png';
+import cargoGo from '/src/assets/media/Cargo_Go.jpg';
+import airGuru from '/src/assets/media/air_guru.jpg';
+import narbutas from '/src/assets/media/NARBUTAS.png';
+import aradas from '/src/assets/media/Aradas.png';
+import garantGroup from '/src/assets/media/GarantGroup.png';
+import altaMedica from '/src/assets/media/AltaMedica.png';
+import homanit from '/src/assets/media/Homanit.png';
+import retal from '/src/assets/media/retal.jpg';
+import manaRanga from '/src/assets/media/ManaRanga.png';
+import projektana from '/src/assets/media/Projektana.png';
+import bpo from '/src/assets/media/bpo.png';
+import neogroup from '/src/assets/media/Neogroup.jpg';
+import vilniausApsvietimas from '/src/assets/media/VilniausApsvietimas.png';
+import trinitiJurex from '/src/assets/media/TrinitiJurex.png';
+import yukon from '/src/assets/media/Yukon.png';
+
 const logos = [
-  'public/media/dussmann.jpg',
-  'public/media/iki.png',
-  'public/media/civinity.png',
-  'public/media/Autojuta.png',
-  'public/media/Perlas.png',
-  'public/media/VilkyskiuPienine.png',
-  'public/media/Linas_agro.png',
-  'public/media/Omberg.png',
-  'public/media/ModusGroup.png',
-  'public/media/nokia.png',
-  'public/media/Cgates.png',
-  'public/media/CityBee.png',
-  'public/media/Cargo_Go.jpg',
-  'public/media/air_guru.jpg',
-  'public/media/NARBUTAS.png',
-  'public/media/Aradas.png',
-  'public/media/GarantGroup.png',
-  'public/media/AltaMedica.png',
-  'public/media/Homanit.png',
-  'public/media/retal.jpg',
-  'public/media/ManaRanga.png',
-  'public/media/Projektana.png',
-  'public/media/bpo.png',
-  'public/media/Neogroup.jpg',
-  'public/media/VilniausApsvietimas.png',
-  'public/media/TrinitiJurex.png',
-  'public/media/Yukon.png',
+  dussmann, iki, civinity, autojuta, perlas, vilkyskiu, linasAgro, omberg,
+  modus, nokia, cgates, citybee, cargoGo, airGuru, narbutas, aradas,
+  garantGroup, altaMedica, homanit, retal, manaRanga, projektana, bpo,
+  neogroup, vilniausApsvietimas, trinitiJurex, yukon
 ];
 
-const doubledLogos = logos.concat(logos); // Kad užtikrintume begalinį slinkimą
+const doubledLogos = logos.concat(logos); // begalinis slinkimas
 ---
 
 <style>
@@ -41,12 +46,12 @@ const doubledLogos = logos.concat(logos); // Kad užtikrintume begalinį slinkim
   .carousel-track {
     display: flex;
     flex-wrap: nowrap;
-    width: max-content; /* Užtikrina, kad karuselės takelis prisitaikytų prie turinio pločio */
-    animation: scroll 90s linear infinite; /* Ilgesnė animacija, kad visi logotipai spėtų praeiti */
+    width: max-content;
+    animation: scroll 90s linear infinite;
   }
 
   .carousel-track:hover {
-    animation-play-state: paused; /* Sustabdo animaciją, kai užvedama pele */
+    animation-play-state: paused;
   }
 
   @keyframes scroll {
@@ -54,7 +59,7 @@ const doubledLogos = logos.concat(logos); // Kad užtikrintume begalinį slinkim
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%); /* Slenka per pusę viso takelio pločio, nes logotipai padvigubinti */
+      transform: translateX(-50%);
     }
   }
 </style>
@@ -66,8 +71,8 @@ const doubledLogos = logos.concat(logos); // Kad užtikrintume begalinį slinkim
         {doubledLogos.map((logo, i) => (
           <div class="flex-shrink-0 px-8">
             <img
-              src={logo}
-              alt={`Client logo ${i + 1}`}
+              src={logo.src}
+              alt={`Kliento logotipas ${i + 1}`}
               class="h-12 w-auto object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
               loading="lazy"
             />
