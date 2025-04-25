@@ -1,3 +1,9 @@
+---
+import Image from "../common/Image.astro";
+
+const heroDashboardImage = '~/assets/images/hero-dashboard.png';
+---
+
 <div
   class="flex w-full flex-col sm:flex-row items-center justify-center py-20 sm:py-24 px-8"
 >
@@ -44,11 +50,12 @@
 
     <!-- Vaizdo blokas -->
     <div class="flex-[1.1] flex justify-center sm:justify-end mt-12 sm:mt-0">
-      <img
+      <Image src={heroDashboardImage} alt="App Store Image" class="w-[80%] sm:w-full max-w-[500px] object-cover" />
+      <!-- <img
         src="/src/assets/media/hero-dashboard.png"
         alt="Procesų valdymo sistema"
         class="w-[80%] sm:w-full max-w-[500px] object-cover"
-      />
+      /> -->
     </div>
   </div>
 </div>
