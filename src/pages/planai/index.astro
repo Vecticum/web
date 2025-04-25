@@ -2,6 +2,9 @@
 import ContactForm from "../../components/home/ContactForm.astro";
 import PricingDetails from "../../components/home/PricingDetails.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import Image from '../../components/common/Image.astro';
+
+const appStoreImg = '~/assets/images/app-store.png';
 
 const services = [
   {
@@ -24,6 +27,7 @@ const services = [
 
 <MainLayout>
   <div>
+    <Image src={appStoreImg} alt="App Store Image" width={200} />
     <img
       src="/media/pricing-home.png"
       alt="Planai"
