@@ -1,7 +1,12 @@
 ---
-import { Image } from "astro:assets";
+
+import Image from "../common/Image.astro";
 
 import headerImg from "./image.png";
+
+const logoImg = '~/assets/images/logo.webp';
+
+
 ---
 
 <header
@@ -14,271 +19,149 @@ import headerImg from "./image.png";
       <div class="md:flex md:items-center md:gap-12">
         <a class="block text-teal-600 py-2" href="/">
           <span class="sr-only">Home</span>
-          <img
-            src="~/assets/images/logo.webp"
-            alt="Vecticum"
-            class="h-8 sm:h-12 w-fit"
-          />
+          <Image src={logoImg} alt="Vecticum logo" class="h-8 sm:h-12 w-fit" />
         </a>
       </div>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden md:block">
-        <nav aria-label="Global">
-          <ul class="flex items-center gap-6 text-base">
-            <li
-              class="relative"
-              @mouseenter="flyoutOpen = true"
-              @mouseleave="flyoutOpen = false"
+  <!-- Desktop Navigation -->
+  <div class="hidden md:block">
+    <nav aria-label="Global">
+      <ul class="flex items-center gap-8 text-base">
+        <li
+          class="relative"
+          @mouseenter="flyoutVisible = true"
+          @mouseleave="flyoutVisible = false"
+          x-data="{ flyoutVisible: false, activeCategory: 'Darbuotojų įdarbinimas/išdarbinimas' }"
+        >
+          <a
+            class="text-gray-800 transition hover:text-[#C81F6A] flex items-center gap-1"
+            href="#"
+          >
+            Sprendimai
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="transition-transform duration-300 group-hover:rotate-180"
             >
-              <a
-                class="text-gray-800 transition hover:text-gray-800/75 flex items-center gap-1"
-                href="/sprendimai"
-              >
-                Sprendimai
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg
-                >
-              </a>
+              <path d="m6 9 6 6 6-6"></path>
+            </svg>
+          </a>
 
-              <!-- Sprendimai Flyout Menu -->
-              <div
-                x-show="flyoutOpen"
-                x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 -translate-y-1"
-                x-transition:enter-end="opacity-100 translate-y-0"
-                x-transition:leave="transition ease-in duration-150"
-                x-transition:leave-start="opacity-100 translate-y-0"
-                x-transition:leave-end="opacity-0 -translate-y-1"
-                class="absolute left-0 z-10 mt-2 w-screen max-w-5xl -translate-x-1/4 transform px-2 sm:px-0"
-              >
-                <div
-                  class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
-                >
-                  <div
-                    class="relative grid grid-cols-4 gap-2 bg-white p-6 w-full"
-                  >
-                    <!-- Service Categories -->
-                    <div class="grid grid-rows-3 gap-y-8">
-                      <!-- Service Category 1 -->
-                      <div class="space-y-4 whitespace-nowrap">
-                        <h3 class="text-sm text-gray-900 uppercase">
-                          Service category 1
-                        </h3>
-                        <div class="space-y-2">
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            HR Knowledge Hub
-                          </a>
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            Blog
-                          </a>
-                        </div>
-                      </div>
-                      <div class="space-y-4 whitespace-nowrap">
-                        <h3 class="text-sm text-gray-900 uppercase">
-                          Service category name
-                        </h3>
-                        <div class="space-y-2">
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            HR Knowledge Hub
-                          </a>
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            Blog
-                          </a>
-                        </div>
-                      </div>
-                      <div class="space-y-4 whitespace-nowrap">
-                        <h3 class="text-sm text-gray-900 uppercase">
-                          Service category name
-                        </h3>
-                        <div class="space-y-2">
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            HR Knowledge Hub
-                          </a>
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            Blog
-                          </a>
-                        </div>
-                      </div>
-                      <!-- Repeat for other categories -->
-                    </div>
+          <!-- Flyout Menu -->
+          <div
+            x-show="flyoutVisible"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-95"
+            class="absolute left-0 z-20 mt-2 w-screen max-w-6xl -translate-x-1/4 transform px-4 sm:px-6 lg:px-8"
+          >
+            <div class="overflow-hidden rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 bg-white flex">
+              <!-- Categories -->
+              <div class="w-1/4 border-r border-gray-200 p-6 space-y-4">
+                <template x-for="(category, index) in [
+                  'Darbuotojų įdarbinimas/išdarbinimas',
+                  'Atitikimo valdymas',
+                  'Sutarčių valdymas',
+                  'Darbuotojo informacijos valdymas',
+                  'Dokumentų valdymas',
+                  'Pirkimų valdymas',
+                  'Darbo laiko apskaita',
+                  'Apskaitomų dokumentų valdymas']" :key="index">
+                  <button
+                    @mouseenter="activeCategory = category"
+                    class="w-full text-left text-gray-700 hover:text-[#C81F6A] text-sm font-semibold transition-colors duration-200"
+                    x-text="category"
+                  ></button>
+                </template>
+              </div>
 
-                    <!-- Service Categories -->
-                    <div class="grid grid-rows-3 gap-y-8">
-                      <!-- Service Category 1 -->
-                      <div class="space-y-4 whitespace-nowrap">
-                        <h3 class="text-sm text-gray-900 uppercase">
-                          Service category 1
-                        </h3>
-                        <div class="space-y-2">
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            HR Knowledge Hub
-                          </a>
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            Blog
-                          </a>
-                        </div>
-                      </div>
-                      <div class="space-y-4 whitespace-nowrap">
-                        <h3 class="text-sm text-gray-900 uppercase">
-                          Service category name
-                        </h3>
-                        <div class="space-y-2">
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            HR Knowledge Hub
-                          </a>
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            Blog
-                          </a>
-                        </div>
-                      </div>
-                      <div class="space-y-4 whitespace-nowrap">
-                        <h3 class="text-sm text-gray-900 uppercase">
-                          Service category name
-                        </h3>
-                        <div class="space-y-2">
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            HR Knowledge Hub
-                          </a>
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            Blog
-                          </a>
-                        </div>
-                      </div>
-                      <!-- Repeat for other categories -->
-                    </div>
+              <!-- Solutions -->
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-                    <!-- Service Categories -->
-                    <div class="grid grid-rows-3 gap-y-8">
-                      <!-- Service Category 1 -->
-                      <div class="space-y-4 whitespace-nowrap">
-                        <h3 class="text-sm text-gray-900 uppercase">
-                          Service category 1
-                        </h3>
-                        <div class="space-y-2">
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            HR Knowledge Hub
-                          </a>
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            Blog
-                          </a>
-                        </div>
+              <div class="w-2/4 p-6">
+                <div class="flex flex-col gap-4" 
+                     x-data="{
+                       icons: {
+                         'Atrankų valdymas': 'fa-users-line',
+                         'Darbuotojo įdarbinimo savitarna': 'fa-fingerprint',
+                         'Darbo sutarčių valdymas': 'fa-file-signature',
+                         'Darbo vietos paruošimas': 'fa-briefcase',
+                         'Bandomojo laikotarpio valdymas': 'fa-hourglass',
+                         'Darbuotojo išdarbinimo valdymas': 'fa-user-slash',
+                         'Privalomo supažindinimo su dokumentais valdymas': 'fa-file-shield',
+                         'Darbuotojų testavimas': 'fa-clipboard-question',
+                         'Mokymų valdymas': 'fa-graduation-cap',
+                         'Veiklos vertinimas': 'fa-chart-line',
+                         'Sutarčių valdymas': 'fa-folder-open',
+                         'Darbuotojo duomenų valdymas': 'fa-id-badge',
+                         'Išduodamo inventoriaus valdymas': 'fa-box-open',
+                         'Intranetas (Įmonės naujienos)': 'fa-newspaper',
+                         'Darbuotojų prašymų valdymas': 'fa-envelope-open-text',
+                         'Dokumentų valdymas': 'fa-file-lines',
+                         'Dokumentacijos plano valdymas': 'fa-clipboard-list',
+                         'Gaunamos/siunčiamos korespondencijos valdymas': 'fa-paper-plane',
+                         'Pirkimų valdymas': 'fa-cart-shopping',
+                         'Atostogų prašymų ir kitų nebuvimų valdymas': 'fa-umbrella-beach',
+                         'Komandiruočių valdymas': 'fa-plane-departure',
+                         'Darbo laiko apskaitos žiniaraščiai': 'fa-calendar-days',
+                         'Gaunamų sąskaitų valdymas': 'fa-file-invoice-dollar',
+                         'Avansinės apyskaitos valdymas': 'fa-receipt',
+                         'Kelionės lapų valdymas': 'fa-map-location-dot'
+                       }
+                     }">
+                  <template x-if="activeCategory">
+                    <template x-for="(item, idx) in (
+                      activeCategory === 'Darbuotojų įdarbinimas/išdarbinimas' ? ['Atrankų valdymas', 'Darbuotojo įdarbinimo savitarna', 'Darbo sutarčių valdymas', 'Darbo vietos paruošimas', 'Bandomojo laikotarpio valdymas', 'Darbuotojo išdarbinimo valdymas'] :
+                      activeCategory === 'Atitikimo valdymas' ? ['Privalomo supažindinimo su dokumentais valdymas', 'Darbuotojų testavimas', 'Mokymų valdymas', 'Veiklos vertinimas'] :
+                      activeCategory === 'Sutarčių valdymas' ? ['Sutarčių valdymas'] :
+                      activeCategory === 'Darbuotojo informacijos valdymas' ? ['Darbuotojo duomenų valdymas', 'Išduodamo inventoriaus valdymas', 'Intranetas (Įmonės naujienos)', 'Darbuotojų prašymų valdymas'] :
+                      activeCategory === 'Dokumentų valdymas' ? ['Dokumentų valdymas', 'Dokumentacijos plano valdymas', 'Gaunamos/siunčiamos korespondencijos valdymas'] :
+                      activeCategory === 'Pirkimų valdymas' ? ['Pirkimų valdymas'] :
+                      activeCategory === 'Darbo laiko apskaita' ? ['Atostogų prašymų ir kitų nebuvimų valdymas', 'Komandiruočių valdymas', 'Darbo laiko apskaitos žiniaraščiai'] :
+                      activeCategory === 'Apskaitomų dokumentų valdymas' ? ['Gaunamų sąskaitų valdymas', 'Avansinės apyskaitos valdymas', 'Kelionės lapų valdymas', 'Komandiruočių valdymas'] : []
+                    )" :key="item">
+                      <div class="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-md transition-all duration-200 group">
+                        <i :class="`fa-solid ${icons[item]}`" class="text-[#C81F6A] text-sm"></i>
+                        <span class="text-sm text-gray-700 group-hover:text-[#C81F6A]" x-text="item"></span>
                       </div>
-                      <div class="space-y-4 whitespace-nowrap">
-                        <h3 class="text-sm text-gray-900 uppercase">
-                          Service category name
-                        </h3>
-                        <div class="space-y-2">
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            HR Knowledge Hub
-                          </a>
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            Blog
-                          </a>
-                        </div>
-                      </div>
-                      <div class="space-y-4 whitespace-nowrap">
-                        <h3 class="text-sm text-gray-900 uppercase">
-                          Service category name
-                        </h3>
-                        <div class="space-y-2">
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            HR Knowledge Hub
-                          </a>
-                          <a
-                            href="/sprendimai"
-                            class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-                          >
-                            Blog
-                          </a>
-                        </div>
-                      </div>
-                      <!-- Repeat for other categories -->
-                    </div>
-
-                    <!-- Helpful Resource -->
-                    <div class="bg-blue-50 p-4 rounded-lg h-fit">
-                      <h3 class="text-sm text-gray-900">Helpful resource</h3>
-                      <p class="text-sm text-gray-600 pb-2">
-                        Workforce Pulse 2024: Solving talent and engagement
-                        challenges
-                      </p>
-                      <Image
-                        src={headerImg}
-                        alt="Workforce Pulse"
-                        class="w-full rounded-lg"
-                      />
-                      <a
-                        href="/sprendimai"
-                        class="text-blue-600 hover:underline">Read report</a
-                      >
-                    </div>
-                  </div>
+                    </template>
+                  </template>
                 </div>
               </div>
-            </li>
+
+              <!-- Helpful Resource -->
+              <div class="w-1/4 bg-blue-50 p-6 rounded-r-xl flex flex-col justify-between">
+                <div>
+                  <h3 class="text-sm font-semibold text-gray-900">Helpful Resource</h3>
+                  <p class="text-sm text-gray-600 mt-2">
+                    Workforce Pulse 2024: Solving talent and engagement challenges
+                  </p>
+                </div>
+                <div class="mt-4">
+                  <Image src={headerImg} alt="Workforce Pulse" class="w-full rounded-lg mb-2" />
+                  <a href="/sprendimai" class="hover:text-[#C81F6A] text-sm hover:underline">Read report</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+
+
+
             <li>
               <a
-                class="text-gray-800 transition hover:text-gray-800/75"
+                class="text-gray-800 transition hover:text-[#C81F6A]"
                 href="/planai"
               >
                 Planai
@@ -290,7 +173,7 @@ import headerImg from "./image.png";
               @mouseleave="apieFlyoutOpen = false"
             >
               <a
-                class="text-gray-800 transition hover:text-gray-800/75 flex items-center gap-1"
+                class="text-gray-800 transition hover:text-[#C81F6A] flex items-center gap-1"
                 href="/apie"
               >
                 Apie Vecticum
@@ -326,25 +209,25 @@ import headerImg from "./image.png";
                       <div class="space-y-2">
                         <a
                           href="/recomendations"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
                         >
                           Rekomendacijos
                         </a>
                         <a
                           href="/news"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
                         >
                           Naujienos
                         </a>
                         <a
                           href="/versions"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
                         >
                           Versijos
                         </a>
                         <a
                           href="/careers"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
                         >
                           Karjera
                         </a>
@@ -356,7 +239,7 @@ import headerImg from "./image.png";
             </li>
             <li>
               <a
-                class="text-gray-800 transition hover:text-gray-800/75"
+                class="text-gray-800 transition hover:text-[#C81F6A]"
                 href="/kontaktai"
               >
                 Kontaktai

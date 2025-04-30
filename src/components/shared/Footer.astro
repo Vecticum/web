@@ -1,5 +1,9 @@
 ---
+import Image from "../common/Image.astro";
+
 const today = new Date();
+
+const logoImg = '~/assets/images/logo.webp';
 ---
 
 <section class="mx-auto max-w-7xl pt-16 pb-7 px-2 md:px-4 lg:px-4 xl:px-8">
@@ -69,11 +73,7 @@ const today = new Date();
           href="https://vecticum.it/"
           class="mb-9 max-md:mx-auto max-md:flex max-md:w-full items-center justify-center"
         >
-          <img
-            src="/src/assets/logo.webp"
-            alt="Vecticum"
-            class="h-8 sm:h-12 md:h-16 w-fit"
-          />
+        <Image src={logoImg} alt="Vecticum logo" class="h-8 sm:h-12 w-fit" />
         </a>
         <h2
           class="font-manrope font-semibold text-2xl max-md:text-center leading-9 text-gray-900 mt-9"
