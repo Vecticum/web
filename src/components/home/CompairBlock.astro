@@ -1,174 +1,82 @@
-<section class="pt-10 pb-10 bg-[#EBEFF3]">
-  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <div class="mb-8 text-center">
-      <h2
-        class="mx-auto mt-14 max-w-lg text-center text-3xl font-semibold tracking-normal text-balance text-gray-950 sm:text-4xl"
-      >
+<section class="relative w-full min-h-screen overflow-hidden text-white bg-gradient-to-br from-[#121629] via-[#3C7099] to-[#1c2237]">
+  <!-- Glow Effect Background -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-[-20%] left-1/2 w-[1200px] h-[1200px] bg-[#3C7099] opacity-30 blur-[200px] transform -translate-x-1/2"></div>
+    <div class="absolute bottom-[-30%] right-[10%] w-[600px] h-[600px] bg-[#C81F6A] opacity-20 blur-[180px]"></div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+    <div class="mb-16 text-center">
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
         Kodėl Vecticum?
       </h2>
+      <p class="mt-4 text-lg text-white/80 max-w-2xl mx-auto">
+        Palyginkite darbo su Vecticum ir be jo skirtumus – ir pamatykite, kodėl šimtai organizacijų renkasi mus kasdieniam efektyvumui.
+      </p>
     </div>
-    <div
-      class="py-8 pb-16 container max-w-4xl mx-auto space-y-12 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8"
-    >
-      <div
-        class="relative p-8 border border-gray-200 rounded-2xl shadow-sm flex flex-col bg-[#F8F7F7]"
-      >
-        <div class="flex-1">
-          <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Without Vecticum -->
+      <div class="p-8 bg-[#2a2e38]/60 border border-[#7A7F87] rounded-3xl shadow-inner backdrop-blur-sm transition hover:scale-[1.01] duration-300">
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-8 h-8 text-[#A1A5AC]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-[#C2C5CB]">
             Nenaudojant Vecticum
           </h3>
-          <ul role="list" class="mt-6 space-y-6">
-            <li class="flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6 text-red-500"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18 18 6M6 6l12 12"></path>
-              </svg>
-              <span class="ml-3">10 Credits</span>
-            </li>
-            <li class="flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6 text-red-500"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18 18 6M6 6l12 12"></path>
-              </svg>
-              <span class="ml-3">Generate video (2 credits)</span>
-            </li>
-            <li class="flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="size-6 text-red-500"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18 18 6M6 6l12 12"></path>
-              </svg>
-              <span class="ml-3">Quizz (1 credits) </span>
-            </li>
-          </ul>
         </div>
+        <ul class="space-y-5 text-white/60">
+          <li class="flex items-start gap-3">
+            <span class="text-white/40">✖</span>
+            <span>10 Credits</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-white/40">✖</span>
+            <span>Generate video (2 credits)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-white/40">✖</span>
+            <span>Quizz (1 credit)</span>
+          </li>
+        </ul>
       </div>
-      <div
-        class="relative p-8 border border-gray-200 rounded-2xl shadow-sm flex flex-col bg-gradient-to-tl from-[#C1DBFF] to-[#DED3FF]"
-      >
-        <div class="flex-1">
-          <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold">
+
+      <!-- With Vecticum -->
+      <div class="relative p-8 bg-gradient-to-br from-[#3C7099]/70 to-[#C81F6A]/40 border border-[#C81F6A] rounded-3xl shadow-2xl backdrop-blur-md transition hover:scale-[1.01] duration-300">
+        <p class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#C81F6A] text-white text-xs font-semibold tracking-wide px-4 py-1.5 rounded-full shadow-md uppercase">
+          Naujas būdas
+        </p>
+        <div class="flex items-center gap-3 mb-4">
+          <svg class="w-8 h-8 text-[#C81F6A] animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-white">
             Naudojant Vecticum
           </h3>
-          <p
-            class="absolute top-0 py-1.5 px-4 bg-accent text-white rounded-full text-xs font-semibold uppercase tracking-wide transform -translate-y-1/2"
-          >
-            naujas būdas
-          </p>
-          <ul role="list" class="mt-6 space-y-6">
-            <li class="flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="flex-shrink-0 w-6 h-6 text-emerald-500"
-                aria-hidden="true"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg><span class="ml-3">30 credits</span>
-            </li>
-            <li class="flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="flex-shrink-0 w-6 h-6 text-emerald-500"
-                aria-hidden="true"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg><span class="ml-3">Powered by GPT-4 (more accurate)</span>
-            </li>
-            <li class="flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="flex-shrink-0 w-6 h-6 text-emerald-500"
-                aria-hidden="true"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg><span class="ml-3">Generate video (2 credits)</span>
-            </li>
-            <li class="flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="flex-shrink-0 w-6 h-6 text-emerald-500"
-                aria-hidden="true"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg><span class="ml-3">Quizz (1 credits) </span>
-            </li>
-            <li class="flex">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="flex-shrink-0 w-6 h-6 text-emerald-500"
-                aria-hidden="true"
-              >
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg><span class="ml-3">Analytics on the quizz</span>
-            </li>
-          </ul>
         </div>
+        <ul class="space-y-5 text-white/90">
+          <li class="flex items-start gap-3">
+            <span class="text-[#90EE90]">✔</span>
+            <span>30 Credits</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#90EE90]">✔</span>
+            <span>Powered by GPT-4 (more accurate)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#90EE90]">✔</span>
+            <span>Generate video (2 credits)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#90EE90]">✔</span>
+            <span>Quizz (1 credit)</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-[#90EE90]">✔</span>
+            <span>Analytics on the quizz</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
