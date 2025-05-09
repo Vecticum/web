@@ -18,36 +18,38 @@ const { Content } = await render(service);
 
 <MainLayout>
   <main class="py-8 md:py-12">
-    <div
-      class="container grid grid-cols-1 max-w-7xl sm:grid-cols-2 mx-auto px-4 sm:px-6 lg:px-8"
-      id="service"
-      class="grid grid-cols-1 gap-4 sm:gap-8 lg:grid-cols-2 lg:gap-12"
-    >
-      <div class="w-96 h-full min-h-full">
-        <video width="384" height="240" autoplay muted>
-          <source src={service.data.hero_video} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+    <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center">
+      
+      <!-- Image Section -->
+      <div class="w-full">
+        <div class="rounded-xl overflow-hidden">
+          <img src={service.data.hero_image} alt={service.data.title} class="w-full h-auto object-cover" />
+        </div>
       </div>
-      <div class="space-y-4 py-8 h-full">
-        <h1
-          class="text-3xl font-semibold text-gray-900 sm:text-4xl md:text-5xl"
-        >
+
+      <!-- Text Content Section -->
+      <div class="space-y-6">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
           {service.data.title}
         </h1>
-        <p class="text-lg text-gray-700 pb-4 sm:pb-8 md:pb-12">
+        <p class="text-lg text-gray-700 leading-relaxed">
           {service.data.description}
         </p>
         <a
-          class="rounded-full bg-accent px-5 py-2.5 text-base font-medium text-white"
           href="#contact"
+          class="inline-block rounded-full bg-accent px-6 py-3 text-white font-medium text-base hover:bg-accent/90 transition"
         >
           Išbandyti
         </a>
       </div>
-    </div>
-    <div class="py-8 sm:py-12 prose w-full min-w-full">
-      <Content />
-    </div>
+
+    </section>
+
+    <!-- Markdown Content Section -->
+    <section class="mt-12">
+      <div class="mx-auto text-gray-800">
+        <Content />
+      </div>
+    </section>
   </main>
 </MainLayout>

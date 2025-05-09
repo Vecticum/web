@@ -1,49 +1,10 @@
 ---
 title: Atostogų prašymų ir kitų nebuvimų darbe valdymas
 description: VECTICUM savitarnos įrankis padės darbuotojams patogiai valdyti visus atostogų prašymus, o tai leis reikšmingai sumažinti nereikalingų administracinių užduočių naštą. Jokių klaidų, jokių pasimetusių prašymų, jokių popierių – skirkite laiką tiesioginiam darbui, o ne popierių administravimui. Šiuo sprendimu naudojasi daugelis Lietuvos įmonių.
-hero_video: "/services/Atostogu-prasymas-Final.mp4"
+hero_image: "/src/assets/images/atostogu-hero.png"
 ---
 
 import ContactForm from "../../components/home/ContactForm.astro";
-
-export const services_left = [
-  "Atostogų prašymų registravimas",
-  "Neribotas atostogų prašymų pildymas pagal tipus",
-  "Atostogų prašymo tiesioginio vadovo tvirtinimas",
-  "Tuo pačiu metu atostogaujančių darbuotojų matymas atostogų prašyme",
-  "Darbuotojo informavimas el. paštu apie atostogų prašymo patvirtinimą",
-  "Atostogų tvirtinimų istorija",
-  "Atostogų prašymo komentavimo funkcija",
-  "Atostogų prašymo pildymas per mobilųjį telefoną arba kompiuterį",
-  "Atostogų prašymų sąrašo eksportavimas į Excel",
-  "Darbuotojų patvirtintų atostogų peržiūra sistemos kalendoriuje",
-  "Atostogų atšaukimo funkcija",
-  "Atostogų prašymų atvaizdavimas pagal pjūvius",
-  "Atostogų atšaukimo tiesioginio vadovo tvirtinimas",
-  "Atostogų likučio atvaizdavimas sistemoje",
-  "Atostogų likučių patikrinimas pildant atostogų prašymą",
-  "Atostogų kaupimų atvaizdavimas",
-  "Atostogų likučių perkėlimas",
-];
-
-export const services_right = [
-  "Atostogų likučių ataskaita",
-  "Tėvystės atostogų kontrolė pagal DK",
-  "Nemokamų atostogų tipo pasirinkimas",
-  "Atostogų likučio skaičiavimas",
-  "Atostogų prašymo komentavimas",
-  "Atostogų dienų pridėjimas pagal stažą",
-  "Draudimas pildyti atostogų neturint sukaupto atostogų likučio",
-  "Masinis atostogų prašymų tvirtinimas",
-  "Patvirtintų ir nepatvirtintų atostogų prašymų atvaizdavimas kalendoriuje",
-  "Papildomi atostogų tipai pagal įmonės tvarkas",
-  "Galimybė išplėsti atostogų prašymą papildomais laukais",
-  "Atostogų prašymo tvirtinimo atidėjimas",
-  "Atostogų dienų pridėjimas",
-  "Atostogų prašymo tvirtinimo proceso plėtimas",
-  "Papildomi pjūviai atostogų prašymų atvaizdavimui",
-  "Galimybė atsakyti į atostogų prašymo komentarą el. paštu",
-];
 
 export const services = [
   {
@@ -65,227 +26,266 @@ export const services = [
 
 {/* first section */}
 
-<div class="bg-[#EBEFF3] p-2 rounded-md overflow-hidden">
 
-<div class="max-w-7xl p-4 mx-auto">
-  <div class="grid sm:grid-cols-2 items-center gap-12">
-    <div class="flex gap-2 sm:gap-4" >
-      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
-        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+<section class="w-full bg-[#EBEFF3] py-16">
+  <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl text-center mb-8 sm:mb-12">
+    Kodėl verta naudotis?
+  </h2>
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/src/assets/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Universali prieiga</h3>
+          <p class="mt-1 text-sm text-gray-600">Patogi prieiga prie sistemos per išmanųjį telefoną ar kompiuterį, kurią galima naudoti bet kuriuo laiku ir iš bet kurios pasaulio vietos.</p>
+        </div>
       </div>
-    </div>
-    <div class="flex gap-2 sm:gap-4" >
-      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
-        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/src/assets/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Greitas prašymo pateikimas</h3>
+          <p class="mt-1 text-sm text-gray-600">Paprasta atostogų prašymo eiga leis greitai ir be klaidų užpildyti prašymą.</p>
+        </div>
       </div>
-    </div><div class="flex gap-2 sm:gap-4" >
-      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
-        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/src/assets/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Aiškūs atostogų likučiai</h3>
+          <p class="mt-1 text-sm text-gray-600">Darbuotojų atostogų likučių matymas.</p>
+        </div>
       </div>
-    </div><div class="flex gap-2 sm:gap-4" >
-      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
-        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/src/assets/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Laiko taupymas vadovams ir darbuotojams</h3>
+          <p class="mt-1 text-sm text-gray-600">Automatizuotas atostogų prašymo procesas sumažins darbuotojo ir tiesioginio vadovo laiko sąnaudas.</p>
+        </div>
       </div>
-    </div><div class="flex gap-2 sm:gap-4" >
-      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
-        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/src/assets/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Sklandus pavaduojančių darbuotojų informavimas</h3>
+          <p class="mt-1 text-sm text-gray-600">Automatinis pavaduojančio darbuotojo informavimas padės išvengti nesusipratimų ir tinkamai pasiruošti darbui.</p>
+        </div>
       </div>
-    </div><div class="flex gap-2 sm:gap-4" >
-      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
-        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
+
+            <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/src/assets/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Kolegų atostogų kalendorius</h3>
+          <p class="mt-1 text-sm text-gray-600">Visų įmonės darbuotojų kalendoriaus dėka galite stebėti pavaldinių ar kolegų nebuvimus ir tinkamai suplanuoti darbus.</p>
+        </div>
       </div>
-    </div><div class="flex gap-2 sm:gap-4" >
-      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
-        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
-      </div>
-    </div><div class="flex gap-2 sm:gap-4" >
-      <img class="rounded-full overflow-hidden size-12" src="/icons/ok.png" />
-      <div>
-        <h3 class="text-lg font-semibold text-gray-800 ">Integracija su DU</h3>
-        <p class="mt-1 text-gray-600 ">Galima integracija su darbo užmokesčio sistema.</p>
-      </div>
+
     </div>
   </div>
-</div>
-</div>
+</section>
+
+
+
 {/* second section - image */}
 
-<div class="flex flex-col gap-4 mt-8 sm:mt-16 ">
-  <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl capitalize text-center mb-8 sm:mb-12">
-    Kaip tai veikia?
-  </h2>
-  <img
-    src="/media/kitas-atostogu-valdymas-FINAL.png"
-    alt="Atostogų valdymas"
-    class="h-40 sm:h-80 lg:h-96  w-fit mx-auto"
-  />
-</div>
+<section class="w-full px-4 sm:px-6 lg:px-8 py-20">
+  <div class="max-w-6xl mx-auto text-center">
+
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-8 sm:mb-12">
+      Kaip tai veikia?
+    </h2>
+
+    <div class="mx-auto max-w-2xl">
+      <img
+        src="/src/assets/images/kitas-atostogu-valdymas-FINAL.png"
+        alt="Atostogų valdymas"
+        class="w-full h-auto rounded-xl shadow-md transition duration-300 object-cover"
+      />
+    </div>
+  </div>
+</section>
+
 
 {/* third section - screenshot */}
 
-<div class="max-w-7xl px-4 py-10 sm:px-6 lg:px-12 lg:py-14 mx-auto ">
-<h3 class="font-semibold text-center text-xl md:text-2xl lg:text-4xl capitalize mb-8 sm:mb-12">
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
         Darbuotojų savitarna
-      </h3>
-  <div class="grid sm:grid-cols-2 items-start gap-12">
-    <div class="flex flex-col gap-4">
-      <details open>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
-      <details>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
-      <details>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+        Prisijunkite prie portalo, pasirinkite atostogų datas ir išsiųskite prašymą tvirtinimui. Sistema automatiškai informuos jus el. paštu arba „push“ žinute vos tik prašymas bus patvirtintas.
+      </p>
+      <p class="text-gray-700 text-base leading-relaxed">
+        Matysite visą atostogų istoriją ir likučius vienoje vietoje. Prisijungimas itin paprastas – su SMS autentifikacija jums nereikės prisiminti slaptažodžių, užtenka mobiliojo telefono.
+      </p>
     </div>
-    <img
-      src="/media/Screenshot-2024-09-13-151354.png.webp"
-      alt="Atostogų valdymas"
-      class="h-40 sm:h-80 lg:h-96  w-fit mx-auto border border-gray-300 shadow-md"
-    />
+
+
+    <div class="flex justify-center">
+      <img 
+        src="/src/assets/images/Screenshot-2024-09-13-151354.png.webp" 
+        alt="Darbuotojų savitarna"
+        class="w-full max-w-md h-auto object-cover shadow-md"
+      />
+    </div>
+
   </div>
-</div>
+
+  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+</section>
+
+
+
+
+
+
 
 {/* fourth section - screenshot */}
 
-<div class="max-w-7xl px-4 py-10 sm:px-6 lg:px-12 lg:py-14 mx-auto ">
-<h3 class="font-semibold text-xl md:text-2xl lg:text-4xl capitalize text-center mb-8 sm:mb-12">
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+        <div class="flex justify-center">
+      <img 
+        src="/src/assets/images/Screenshot-2024-09-13-151259-2048x499.png.webp" 
+        alt="Darbuotojų savitarna"
+        class="w-full max-w-md h-auto object-cover shadow-md"
+      />
+    </div>
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
         Atostogų procesas
-      </h3>
-  <div class="grid sm:grid-cols-2 items-start gap-12">
-    <img
-      src="/media/Screenshot-2024-09-13-151259-2048x499.png.webp"
-      alt="Atostogų valdymas"
-      class="h-fit  w-full mx-auto border border-gray-300 shadow-md"
-    />
-    <div class="flex flex-col gap-4">
-      <details open>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
-      <details>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
-      <details>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+Nustačius tvirtinimo tvarką, Vecticum pasirūpins kad visi atsakingi asmenys gautų pranešimus ir primins jiems jei vėluoja. Patvirtinus prašymą sistema suteiks jam registracijos numerį ir persiųs apskaitai vykdymui. Vecticum procesų valdymo sprendimas leidžia sukonfigūruoti bet kokią tvirtinimo eigą.
+      </p>
     </div>
+
+
   </div>
-</div>
+
+  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+</section>
 
 {/* fifth section - screenshot */}
 
-<div class="max-w-7xl px-4 py-10 sm:px-6 lg:px-12 lg:py-14 mx-auto">
-      <h3 class="font-semibold text-xl md:text-2xl lg:text-4xl capitalize text-center mb-8 sm:mb-12">
-        Atostogų tvirtinimas
-      </h3>
-  <div class="grid sm:grid-cols-2 items-start gap-12">
-    <div class="flex flex-col gap-4">
-      <details open>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
-      <details>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
-      <details>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
-    </div>
-    <img
-      src="/media/mail.png.webp"
-      alt="Atostogų valdymas"
-      class="h-40 sm:h-80 lg:h-96  w-fit mx-auto border border-gray-300 shadow-md"
-    />
-  </div>
-</div>
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
 
-{/* fifth section - screenshot */}
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
 
-<div class="max-w-7xl px-4 py-10 sm:px-6 lg:px-12  lg:py-14 mx-auto">
-      <h3 class="font-semibold text-xl md:text-2xl lg:text-4xl capitalize text-center mb-8 sm:mb-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
         Atostogų tvirtinimas
-      </h3>
-  <div class="grid sm:grid-cols-2 items-start gap-12">
-    <img
-      src="/media/atostogos-kalendorius-2048x682.png.webp"
-      alt="Atostogų valdymas"
-      class="h-fit  w-full mx-auto border border-gray-300 shadow-md"
-    />
-    <div class="flex flex-col gap-4">
-      <details open>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
-      <details>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
-      <details>
-        <summary class="text-lg font-semibold">summary text 1</summary>
-        Peržiūrėti prašymų ir atostogų suteikimo istoriją bei
-        atostogų likučius galite prisijungę prie savitarnos. Naudojantis
-        prisijungimo SMS žinute funkcija, jums nebereikės prisiminti savo
-        slaptažodžio, užtenka jei turite mobilų telefoną.
-      </details>
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+        Tvirtinti atostogas yra paprasta! Tiesiog paspauskite mygtuką elektroniniame laiške arba peržiūrėkite visus prašymus kartu pirmame lange.
+      </p>
+      <p class="text-gray-700 text-base leading-relaxed">
+Vadovai gali peržiūrėti savo komandos atostogų prašymus jų tvirtinimo būsenas. Patikrinti sistemos paskaičiuotą darbuotojo atostogų likutį. Atostogų prašymus yra lengva filtruoti, analizuoti ir eksportuoti į Excel.
+      </p>
     </div>
+
+
+    <div class="flex justify-center">
+      <img 
+        src="/src/assets/images/mail.png.webp" 
+        alt="Darbuotojų savitarna"
+        class="w-full max-w-md h-auto object-cover shadow-md"
+      />
+    </div>
+
   </div>
-</div>
+
+  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+</section>
+
+
+{/* 6th section - screenshot */}
+
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+        <div class="flex justify-center">
+      <img 
+        src="/src/assets/media/atostogos-kalendorius-2048x682.png.webp" 
+        alt="Darbuotojų savitarna"
+        class="w-full max-w-md h-auto object-cover shadow-md"
+      />
+    </div>
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Kalendorius
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+Visos suplanuotos atostogos matomos kalendoriuje. Galite matyti tiek savo skyriaus tiek visos įmonės darbuotojų atostogas. Kalendoriuje matysite kas atostogauja šiandien ir ko nebus darbe ateinančias 7 dienas.
+      </p>
+      <p class="text-gray-700 text-base leading-relaxed">
+Vecticum Kalendoriai yra integruoti su kitais sprendimais, todėl vienam lange matysite net tik atostogas bet ir komandiruotės, mokymus bei kitus įvykius.
+      </p>
+      
+    </div>
+
+
+  </div>
+
+  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+</section>
+
+{/* 7th section - screenshot */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+        <div class="flex justify-center">
+      <img 
+        src="/src/assets/media/atostogos-kalendorius-2048x682.png.webp" 
+        alt="Darbuotojų savitarna"
+        class="w-full max-w-md h-auto object-cover shadow-md"
+      />
+    </div>
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Kalendorius
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+Visos suplanuotos atostogos matomos kalendoriuje. Galite matyti tiek savo skyriaus tiek visos įmonės darbuotojų atostogas. Kalendoriuje matysite kas atostogauja šiandien ir ko nebus darbe ateinančias 7 dienas.
+      </p>
+      <p class="text-gray-700 text-base leading-relaxed">
+Vecticum Kalendoriai yra integruoti su kitais sprendimais, todėl vienam lange matysite net tik atostogas bet ir komandiruotės, mokymus bei kitus įvykius.
+      </p>
+      
+    </div>
+
+
+  </div>
+
+  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+</section>
 
 {/* 6th section - screenshot */}
 
