@@ -2,7 +2,8 @@
 title: "Kaip išsirinkti tinkamą personalo valdymo sistemą?"
 description: "Apžvelgiame svarbiausias personalo valdymo tendencijas 2024 metais ir kaip jos paveiks įmones."
 pubDate: "2024-01-10"
-heroImage: "~/assets/media/Kaip_issirinkti_hr_sistema.png" 
+heroImage: "/src/assets/media/Kaip_issirinkti_hr_sistema.png" 
+
 ---
 
 <strong>Šis straipsnis papasakos į ką svarbu atkreipti dėmesį renkantis <span style="text-decoration: underline;"><a href="https://vecticum.lt/personalo-valdymo-sprendimu-planai/">personalo valdymo (HR)</a></span> sistemą bei padės Jums pasirinkti geriausią HR programinę įrangą. Sužinosite, kokios funkcijas sistemoje yra svarbiausios, kokius žingsnius būtina atlikti ir dar daugiau.</strong>

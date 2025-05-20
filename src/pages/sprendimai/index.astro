@@ -1,238 +1,96 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 
-const services1 = [
+const categories = [
   {
-    name: "Atostogų prašymų ir kitų nebuvimų darbe valdymas",
-    href: "/sprendimai/atostogu-valdymas",
-    icon: "🌴",
+    name: "Darbuotojų įdarbinimas/išdarbinimas",
+    services: [
+      { name: "Atrankų valdymas", href: "/sprendimai/atrankos-valdymas/", icon: "👥" },
+      { name: "Darbuotojo įdarbinimo savitarna", href: "https://vecticum.lt/darbuotoju-idarbinimo-savitarna/", icon: "🆕" },
+      { name: "Darbo sutarčių valdymas", href: "https://vecticum.lt/darbo-sutarciu-valdymas/", icon: "📄" },
+      { name: "Darbo vietos paruošimas", href: "https://vecticum.lt/darbuotojo-idarbinimo-i-imone-valdymas/", icon: "💼" },
+      { name: "Bandomojo laikotarpio valdymas", href: "https://vecticum.lt/bandomojo-laikotarpio-vertinimas-valdymas/", icon: "📋" },
+      { name: "Darbuotojo išdarbinimo valdymas", href: "https://vecticum.lt/darbuotojo-isdarbinimo-is-imones-valdymas/", icon: "🚪" },
+    ],
   },
   {
-    name: "Atrankų valdymas",
-    href: "/sprendimai/atranku-valdymas",
-    icon: "👥",
+    name: "Darbuotojo informacijos valdymas",
+    services: [
+      { name: "Darbuotojo duomenų valdymas", href: "https://vecticum.lt/darbuotoju-duomenu-bazes-valdymas/", icon: "📊" },
+      { name: "Išduodamo inventoriaus valdymas", href: "https://vecticum.lt/isduodamo-inventoriaus-darbuotojui-valdymas/", icon: "🔧" },
+      { name: "Intranetas (Įmonės naujienos)", href: "https://vecticum.lt/intraneto-valdymas/", icon: "📰" },
+      { name: "Darbuotojų prašymų valdymas", href: "https://vecticum.lt/darbuotoju-prasymu-valdymas/", icon: "📝" },
+    ],
   },
   {
-    name: "Personalo valdymas",
-    href: "/sprendimai/personalo-valdymas",
-    icon: "👔",
+    name: "Darbo laiko apskaita",
+    services: [
+      { name: "Atostogų prašymų ir kitų nebuvimų valdymas", href: "/sprendimai/atostogu-valdymas/", icon: "🌴" },
+      { name: "Komandiruočių valdymas", href: "https://vecticum.lt/komandiruociu-valdymas/", icon: "✈️" },
+      { name: "Darbo laiko apskaitos žiniaraščiai", href: "https://vecticum.lt/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/", icon: "📅" },
+    ],
   },
   {
-    name: "Bandomojo laikotarpio vertinimas",
-    href: "/sprendimai/bandomojo-laikotarpio-vertinimas",
-    icon: "📋",
+    name: "Atitikimo valdymas",
+    services: [
+      { name: "Privalomo supažindinimo su dokumentais valdymas", href: "https://vecticum.lt/privalomo-supazindinimo-su-dokumentais-valdymas/", icon: "📚" },
+      { name: "Darbuotojų testavimas", href: "https://vecticum.lt/testavimo-is-norminiu-dokumentu-valdymas/", icon: "✍️" },
+      { name: "Mokymų valdymas", href: "https://vecticum.lt/mokymu-valdymas/", icon: "🎓" },
+      { name: "Veiklos vertinimas", href: "https://vecticum.lt/veiklos-vertinimas/", icon: "📈" },
+    ],
   },
-  {
-    name: "Darbuotojo duomenų valdymas",
-    href: "/sprendimai/darbuotojo-duomenu-valdymas",
-    icon: "📊",
-  },
-  {
-    name: "Darbo grafikų ir darbo laiko apskaitos žiniaraščių valdymas",
-    href: "/sprendimai/darbo-grafiku-valdymas",
-    icon: "📅",
-  },
-  {
-    name: "Išduodamo inventoriaus darbuotojui valdymas",
-    href: "/sprendimai/isduodamo-inventoriaus-valdymas",
-    icon: "🔧",
-  },
-  {
-    name: "Darbo vietos paruošimas",
-    href: "/sprendimai/darbo-vietos-paruosimas",
-    icon: "💼",
-  },
-  {
-    name: "Darbuotojo įdarbinimo savitarna",
-    href: "/sprendimai/darbuotojo-idarbinimo-savitarna",
-    icon: "🆕",
-  },
-  {
-    name: "Darbuotojų prašymų valdymas",
-    href: "/sprendimai/darbuotoju-prasymu-valdymas",
-    icon: "📝",
-  },
-  {
-    name: "Privalomo supažindinimo su dokumentais valdymas",
-    href: "/sprendimai/privalomo-supazindinimo-valdymas",
-    icon: "📚",
-  },
-  {
-    name: "Veiklos vertinimas",
-    href: "/sprendimai/veiklos-vertinimas",
-    icon: "📈",
-  },
-  {
-    name: "Darbuotojo išdarbinimo valdymas",
-    href: "/sprendimai/darbuotojo-isdarbinimo-valdymas",
-    icon: "🚪",
-  },
-  {
-    name: "Testavimas iš norminių dokumentų",
-    href: "/sprendimai/testavimas-is-norminiu-dokumentu",
-    icon: "✍️",
-  },
-  {
-    name: "Darbo sutarčių ir su tuo susijusių pasikeitimų valdymas",
-    href: "/sprendimai/darbo-sutartciu-valdymas",
-    icon: "📄",
-  },
-  {
-    name: "Mokymų valdymas",
-    href: "/sprendimai/mokymu-valdymas",
-    icon: "🎓",
-  },
-  {
-    name: "Intranetas - įmonės naujienos",
-    href: "/sprendimai/intranetas",
-    icon: "📰",
-  },
-  {
-    name: "Komandiruočių valdymas",
-    href: "/sprendimai/komandiruociu-valdymas",
-    icon: "✈️",
-  },
-];
-
-const services2 = [
   {
     name: "Dokumentų valdymas",
-    href: "/sprendimai/dokumentu-valdymas",
-    icon: "📑",
+    services: [
+      { name: "Dokumentų valdymas", href: "https://vecticum.lt/dokumumentu-valdymas/", icon: "📑" },
+      { name: "Dokumentacijos plano valdymas", href: "https://vecticum.lt/dokumentacijos-plano-valdymas/", icon: "🗂️" },
+      { name: "Gaunamos/siunčiamos korespondencijos valdymas", href: "https://vecticum.lt/gaunamu-uzklausu-valdymas/", icon: "📨" },
+    ],
   },
   {
     name: "Sutarčių valdymas",
-    href: "/",
-    icon: "📎",
+    services: [
+      { name: "Sutarčių valdymas", href: "https://vecticum.lt/sutarciu-valdymas/", icon: "📎" },
+    ],
   },
   {
-    name: "Gaunamos / siunčiamos korespondencijos valdymas",
-    href: "/",
-    icon: "📨",
+    name: "Apskaitomų dokumentų valdymas",
+    services: [
+      { name: "Gaunamų sąskaitų valdymas", href: "https://vecticum.lt/gaunamu-saskaitu-valdymas/", icon: "💳" },
+      { name: "Avansinės apyskaitos valdymas", href: "https://vecticum.lt/avansines-apyskaitos-valdymas/", icon: "💰" },
+      { name: "Kelionės lapų valdymas", href: "https://vecticum.lt/keliones-lapu-valdymas", icon: "🛣️" },
+      { name: "Komandiruočių valdymas", href: "https://vecticum.lt/komandiruociu-valdymas/", icon: "✈️" },
+    ],
   },
-  {
-    name: "Dokumentacijos plano valdymas (Dokumentų medis)",
-    href: "/",
-    icon: "🗂️",
-  },
-];
-
-const services3 = [
   {
     name: "Pirkimų valdymas",
-    href: "/",
-    icon: "🛍️",
-  },
-  {
-    name: "Gaunamų sąskaitų valdymas",
-    href: "/",
-    icon: "💳",
-  },
-  {
-    name: "Avansinės apyskaitos valdymas",
-    href: "/",
-    icon: "💰",
-  },
-  {
-    name: "Komandiruočių valdymas",
-    href: "/",
-    icon: "✈️",
+    services: [
+      { name: "Pirkimų valdymas", href: "https://vecticum.lt/pirkimu-valdymas/", icon: "🛍️" },
+    ],
   },
 ];
 ---
 
 <MainLayout>
-  <div class="container py-8 sm:py-16 md:py-20 mx-auto mb-8">
-    <h1
-      class="mx-auto mt-2 text-center text-4xl font-semibold tracking-normal text-balance text-gray-950 sm:text-5xl"
-    >
-      Sprendimai
-    </h1>
-  </div>
-  <div
-    class="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-16 md:mb-20"
-  >
-    <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl capitalize">
-      Personalo valdymas
-    </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-      {
-        services1.map((service) => (
-          <a
-            class="relative group overflow-hidden transform transition-transform duration-300 hover:scale-105"
-            href={service.href}
-            data-astro-reload
-          >
-            <div class="absolute inset-px rounded-lg bg-white shadow-sm transition-shadow duration-300 group-hover:shadow-lg" />
-            <div class="relative flex flex-col h-full overflow-hidden rounded-[calc(var(--radius-lg)+1px)] p-6">
-              <div class="text-3xl mb-4">{service.icon}</div>
-              <h3 class="text-lg font-semibold tracking-tight text-gray-950">
-                {service.name}
-              </h3>
-              {/* <p class="mt-2 text-sm/6 text-gray-600">{service.description}</p> */}
-            </div>
-            <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5" />
-          </a>
-        ))
-      }
-    </div>
-  </div>
-  <div class="bg-[#EBEFF3] py-2 sm:py-3 mb-8">
-    <div
-      class="space-y-8 pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:mb-16 md:mb-20 mb-8"
-    >
-      <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl capitalize">
-        Dokumentų valdymas
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        {
-          services2.map((service) => (
-            <a
-              class="relative group overflow-hidden transform transition-transform duration-300 hover:scale-105"
-              href={service.href}
-              data-astro-reload
-            >
-              <div class="absolute inset-px rounded-lg bg-white shadow-sm " />
-              <div class="relative flex flex-col h-full overflow-hidden rounded-[calc(var(--radius-lg)+1px)] p-6">
-                <div class="text-3xl mb-4">{service.icon}</div>
-                <h3 class="text-lg font-semibold tracking-tight text-gray-950">
-                  {service.name}
-                </h3>
-                {/* <p class="mt-2 text-sm/6 text-gray-600">{service.description}</p> */}
-              </div>
-              <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5" />
-            </a>
-          ))
-        }
+  <section class="bg-[#F8FAFC] py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-bold text-center text-gray-900 mb-16">Sistemos sprendimai</h1>
+
+      <div class="space-y-24">
+        {categories.map((category, idx) => (
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold mb-6 text-center text-[#3C7099]">{category.name}</h2>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {category.services.map(service => (
+                <li class="bg-white rounded-xl p-6 shadow hover:shadow-md transition group text-center flex flex-col items-center">
+                  <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+                  <a href={service.href} class="text-base font-medium text-gray-800 group-hover:text-[#3C7099] transition-colors">{service.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
-  </div>
-  <div
-    class="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:mb-16 md:mb-20 mb-8"
-  >
-    <h2 class="text-xl md:text-2xl lg:text-4xl capitalize font-semibold">
-      Sąskaitų ir pirkimų valdymas
-    </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-      {
-        services3.map((service) => (
-          <a
-            class="relative group overflow-hidden transform transition-transform duration-300 hover:scale-105"
-            href={service.href}
-            data-astro-reload
-          >
-            <div class="absolute inset-px rounded-lg bg-white shadow-sm " />
-            <div class="relative flex flex-col h-full overflow-hidden rounded-[calc(var(--radius-lg)+1px)] p-6">
-              <div class="text-3xl mb-4">{service.icon}</div>
-              <h3 class="text-lg font-semibold tracking-tight text-gray-950">
-                {service.name}
-              </h3>
-              {/* <p class="mt-2 text-sm/6 text-gray-600">{service.description}</p> */}
-            </div>
-            <div class="pointer-events-none absolute inset-px rounded-lg ring-1 shadow-sm ring-black/5" />
-          </a>
-        ))
-      }
-    </div>
-  </div>
+  </section>
 </MainLayout>

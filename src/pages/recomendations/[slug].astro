@@ -15,36 +15,40 @@ const { Content } = await render(recommendation);
 ---
 
 <MainLayout>
-  <div class="py-8 sm:py-16 md:py-20">
-    <h1
-      class="mt-2 mx-auto text-center text-4xl font-semibold tracking-normal text-balance text-gray-950 sm:text-5xl"
-    >
-      {recommendation.data.title}
-    </h1>
-  </div>
-  <div
-    class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-16 md:mb-20"
-  >
-    <div class="mb-8">
+  <!-- Hero -->
+  <section class="text-center py-20 px-6 bg-gradient-to-b from-white to-[#f4f7fa]">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        {recommendation.data.title}
+      </h1>
+    </div>
+  </section>
+
+  <!-- Turinys -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 mb-20">
+    <!-- Nuotrauka -->
+    <div class="mb-12 rounded-lg overflow-hidden shadow-lg">
       <img
         src={recommendation.data.image}
         alt={recommendation.data.title}
-        class="w-full h-64 object-cover rounded-lg shadow-md"
+        class="w-full h-[300px] sm:h-[400px] object-cover"
       />
     </div>
-    
-    <div class="prose prose-lg mx-auto">
+
+    <!-- Straipsnio turinys -->
+    <div class="prose prose-lg prose-gray max-w-none">
       <Content />
     </div>
-    
-    <div class="mt-8 text-center">
+
+    <!-- Grįžti -->
+    <div class="mt-12 text-center">
       <a
         href="/recomendations"
-        class="inline-flex items-center text-accent hover:text-accent-dark"
+        class="inline-flex items-center justify-center px-5 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg shadow-sm hover:bg-gray-100 transition"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 mr-1"
+          class="h-5 w-5 mr-2"
           viewBox="0 0 20 20"
           fill="currentColor"
         >

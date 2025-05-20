@@ -2,18 +2,24 @@
 // PricingComparison.astro
 ---
 
-<section class="w-full py-20 px-6 sm:px-10 bg-gradient-to-b from-white to-[#f9f9f9] text-gray-800 font-sans">
+<section class="w-full py-20 px-6 sm:px-10 bg-gradient-to-b from-white to-[#EBEFF3] text-gray-800 font-sans">
   <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-8">
     
     <!-- 1 lygis: sprendimų pasirinkimas -->
     <aside class="w-full md:w-1/4 bg-white border border-gray-200 rounded-2xl shadow-sm p-4">
       <ul class="solution-categories space-y-2 text-sm font-medium">
-        <li class="active" data-category="employee-db">💼 Darbuotojų duomenų bazės</li>
-        <li data-category="contracts">📄 Darbo sutartys</li>
-        <li data-category="requests">📝 Darbuotojų prašymai</li>
-        <li data-category="leaves">🏖️ Atostogų prašymai</li>
-        <li data-category="absences">🚫 Neatvykimai</li>
-        <li data-category="sick">🤒 Ligos prašymai</li>
+    <li class="active" data-category="employee-db">💼 Darbuotojų duomenų bazės</li>
+    <li data-category="contracts">📄 Darbo sutartys</li>
+    <li data-category="requests">📝 Darbuotojų prašymai</li>
+    <li data-category="leaves">🏖️ Atostogų prašymai</li>
+    <li data-category="absences">🚫 Darbuotojų neatvykimų prašymai</li>
+    <li data-category="sick">🤒 Nebuvimo dėl ligos prašymai</li>
+    <li data-category="special">🎗️ Kitų lengvatų prašymai</li>
+    <li data-category="travel">✈️ Komandiruočių prašymai ir jų išlaidos</li>
+    <li data-category="calendar">🗓️ Nebuvimo darbe kalendorius</li>
+    <li data-category="rules">📌 Tvarkos ir įsakymai</li>
+    <li data-category="acknowledgements">✅ Supažindinimas su tvarkomis ir įsakymais</li>
+    <li data-category="extra">🛠️ Papildomos funkcijos</li>
       </ul>
     </aside>
 
@@ -98,34 +104,37 @@ table tbody tr:last-child {
 
 }
 
-
-  .icon-yes {
-    color: #10b981; /* emerald */
-    font-size: 1.25rem;
-  }
-
-  .icon-no {
-    color: #6366f1; /* indigo-500 */
-    font-size: 1.25rem;
-  }
 </style>
 
   
 
   <script type="module">
     const data = {
-      "employee-db": [
-        { name: "Darbuotojo kortelės sukūrimas", plans: [true, true, true] },
-        { name: "Darbinės/asmeninės informacijos talpinimas", plans: [true, true, true] },
-        { name: "Darbo sutarties sąlygų talpinimas", plans: [false, true, true] },
-        { name: "Pareigų istorijos peržiūra", plans: [false, false, true] },
-        { name: "Struktūros sukūrimas", plans: [true, true, true] },
-        { name: "Struktūros medžio peržiūra", plans: [true, true, true] },
-        { name: "Struktūros filtravimas", plans: [false, true, true] },
-        { name: "Eksportas į Excel", plans: [false, false, true] },
-        { name: "Sąrašo filtravimas", plans: [true, true, true] },
-        { name: "Filtravimas pagal dirbančius", plans: [false, true, true] }
-      ],
+"employee-db": [
+  { name: "Darbuotojo kortelės sukūrimas", plans: [true, true, true] },
+  { name: "Darbuotojo darbinės/asmeninės informacijos talpinimas", plans: [true, true, true] },
+  { name: "Darbuotojo darbo sutarties sąlygų talpinimas", plans: [true, true, true] },
+  { name: "Darbuotojo pareigų istorijos peržiūra", plans: [true, true, true] },
+  { name: "Organizacinės struktūros sukūrimas", plans: [true, true, true] },
+  { name: "Organizacinės struktūros atvaizdavimas medžio pavidalu", plans: [true, true, true] },
+  { name: "Organizacinės struktūros filtravimas", plans: [true, true, true] },
+  { name: "Darbuotojų sąrašo eksportavimas į Excel", plans: [true, true, true] },
+  { name: "Darbuotojų sąrašo filtravimas", plans: [true, true, true] },
+  { name: "Darbuotojų sąrašo filtravimas pagal dirbančius ir nedirbančius", plans: [true, true, true] },
+  { name: "Greitas darbuotojo darbinės informacijos įvedimas/atnaujinimas", plans: [true, true, true] },
+  { name: "Greita darbuotojų darbinės informacijos peržiūra", plans: [true, true, true] },
+  { name: "Papildomų dokumentų talpinimas prie darbuotojo kortelės", plans: [true, true, true] },
+  { name: "Darbuotojo naudų žymėjimas darbuotojo kortelėje", plans: [true, true, true] },
+  { name: "Papildomų asmenų kortelės sukūrimas", plans: [true, true, true] },
+  { name: "Papildomų asmenų kontaktinės informacijos talpinimas", plans: [true, true, true] },
+  { name: "Papildomų asmenų sąrašo filtravimas", plans: [true, true, true] },
+  { name: "Galimybė išplėsti asmeninę informaciją papildomais laukais", plans: [false, true, true] },
+  { name: "Galimybė papildyti darbuotojų sąrašo filtravimą", plans: [false, true, true] },
+  { name: "Papildomi pjūviai darbuotojų sąrašo atvaizdavimui", plans: [false, true, true] },
+  { name: "Darbuotojų gimtadienio atvaizdavimo valdymas", plans: [false, true, true] },
+  { name: "Darbuotojų perkėlimas iš vienos dukterinės įmonės į kitą", plans: [false, false, true] }
+],
+
       "contracts": [
         { name: "Sutarties peržiūra", plans: [true, true, true] },
         { name: "PDF atsisiuntimas", plans: [false, true, true] }
@@ -143,7 +152,7 @@ table tbody tr:last-child {
         const tr = document.createElement('tr');
         tr.innerHTML = `
   <td class="feature-cell text-gray-700 font-medium p-2">${row.name}</td>
-  ${row.plans.map(v => `<td class="feature-cell text-center">${v ? '<span class="icon-yes">✔</span>' : '<span class="icon-no">✖</span>'}</td>`).join('')}
+  ${row.plans.map(v => `<td class="feature-cell text-center">${v ? '<span><i class="fas fa-check icon-yes" style="color: #22c55e;"></i></span>' : '<span><i class="fas fa-times icon-no" style="color: #ef4444;"></i></span>'}</td>`).join('')}
 `;
         tbody.appendChild(tr);
       });
