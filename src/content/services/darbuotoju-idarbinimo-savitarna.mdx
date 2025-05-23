@@ -2,6 +2,7 @@
 title: Darbuotojų įdarbinimo savitarna
 description: Automatizuotas įdarbinimo procesas leidžia darbuotojui savarankiškai pateikti visą reikalingą informaciją, pasirašyti dokumentus ir sklandžiai pradėti darbus, o personalo specialistams sutaupo laiko ir užtikrina duomenų tikslumą.
 hero_image: "/src/assets/images/idarbinimo-savitarna-hero.png"
+hero_image_alt: "Darbuotojo savitarna | VECTICUM"
 ---
 
 import ContactForm from "../../components/home/ContactForm.astro";
@@ -83,8 +84,8 @@ import ContactForm from "../../components/home/ContactForm.astro";
 
     <div class="mx-auto max-w-2xl">
       <img
-        src="/src/assets/images/Darbuotojo-idarbinimas-schema.png"  
-        alt="Atostogų valdymas"
+        src="/src/assets/images/darbuotojo-idarbinimmo-savitarna.png"  
+        alt="idarbinimo-savitarna"
         class="w-full h-auto rounded-xl p-6 border-2 transition duration-300 object-cover"
       />
     </div>
@@ -103,17 +104,19 @@ import ContactForm from "../../components/home/ContactForm.astro";
 
     <div>
       <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
-        Atrankos proceso pradžia
+        Įdarbinimo anketa
       </h2>
       <p class="text-gray-700 text-base leading-relaxed mb-4">
-        Vecticum sprendimas leidžia centralizuotai valdyti visą atrankos procesą – nuo naujų pozicijų kūrimo iki kandidatų paraiškų peržiūros. Kiekvienai laisvai darbo vietai galima priskirti konkrečius reikalavimus, aprašymus ir atsakomybes, taip užtikrinant struktūrizuotą ir efektyvų atrankos pradžios etapą.
+        Siunčiama dedikuota nuoroda kandidatui suvesti duomenys bei dokumentus reikalingus darbuotojo įdarbinimui. Būsimas darbuotojas el. paštu gauna laišką su nuoroda į anketa ir prašymu užpildyti informaciją. Darbuotojas el. paštu gaus visus komentarus apie dokumentų tinkamumą.
+
+Standartinime modulyje numatyti tokie anketos laukai: vardas, pavardė, asmens kodas, išsilavinimas, adresas, telefono numeris, asmeninis el. paštas, kitos darbovietės, informacija apie artimuosius, asmeniniai dokumentai (pasas, vairuotojo pažymėjimas kt.).
       </p>
     </div>
 
 
     <div class="flex justify-center">
       <img 
-        src="/src/assets/images/atranka-1.png" 
+        src="/src/assets/images/idarbinimo-savitarna1.png" 
         alt="Darbuotojų savitarna"
         class="w-full max-w-md h-auto object-cover shadow-md"
       />
@@ -138,18 +141,18 @@ import ContactForm from "../../components/home/ContactForm.astro";
     
         <div class="flex justify-center">
       <img 
-        src="/src/assets/images/atranka-2.png" 
+        src="/src/assets/images/idarbinimo-savitarna2.png" 
         alt="Darbuotojų savitarna"
-        class="w-full max-w-md h-auto object-cover shadow-md"
+        class="w-full max-w-md h-auto object-cover"
       />
     </div>
 
     <div>
       <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
-        Kandidatų srauto valdymas
+        Darbuotojo duomenų tvirtinimas
       </h2>
       <p class="text-gray-700 text-base leading-relaxed mb-4">
-Gauti kandidatų CV, motyvacinius laiškus ir kitus dokumentus galima vienoje vietoje, automatiškai iš įvairių šaltinių (el. pašto, svetainės formų, portalų). Kandidatai automatiškai susiejami su jiems tinkamomis pozicijomis, o atsakingi personalo specialistai gali realiuoju laiku sekti kiekvieno kandidato būseną.
+Užpildyti darbuotojo duomenys siunčiami personalo specialisto patvirtinimui. Personalo specialistas turi galimybę patvirtinti ir importuoti duomenis į VECTICUM sistemą, arba atmesti duomenų portale užpildytus duomenis. Atmetimo atveju darbuotojas gauna el. laišką su komentarais apie reikalingų duomenų pakeitimą.
       </p>
     </div>
 
@@ -168,17 +171,17 @@ Gauti kandidatų CV, motyvacinius laiškus ir kitus dokumentus galima vienoje vi
 
     <div>
       <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
-        Atrankos etapų automatizavimas
+        Darbuotojo kortelė
       </h2>
       <p class="text-gray-700 text-base leading-relaxed mb-4">
-Vecticum leidžia sukurti individualius atrankos etapus – pokalbius, testavimus, vidines peržiūras ir tvirtinimus. Visi veiksmai fiksuojami, o atsakingiems asmenims automatiškai siunčiami pranešimai. Taip išvengiama žmogiškųjų klaidų, užtikrinamas proceso tęstinumas ir spartinamas sprendimų priėmimas.
+Importuotų duomenų pagrindu kuriama darbuotojo kortelė ir susiję dokumentai (informacija apie artimuosius, darbuotojo dokumentai). Nereikia kartoti duomenų įvedimo.
       </p>
     </div>
 
 
     <div class="flex justify-center">
       <img 
-        src="/src/assets/images/atranka-3.png" 
+        src="/src/assets/images/idarbinimo-savitarna3.png" 
         alt="Darbuotojų savitarna"
         class="w-full max-w-md h-auto object-cover shadow-md"
       />
@@ -187,120 +190,39 @@ Vecticum leidžia sukurti individualius atrankos etapus – pokalbius, testavimu
 </section>
 
 
-{/* 6th section - screenshot */}
-
-
-<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
-
-  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
-
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    
-        <div class="flex justify-center">
-      <img 
-        src="/src/assets/images/atranka-4.png" 
-        alt="Darbuotojų savitarna"
-        class="w-full max-w-md h-auto object-cover shadow-md"
-      />
-    </div>
-
-    <div>
-      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
-        Kandidatų vertinimas
-      </h2>
-      <p class="text-gray-700 text-base leading-relaxed mb-4">
-Sistema leidžia standartizuotai vertinti kandidatus pagal iš anksto nustatytus kriterijus – kompetencijas, patirtį, motyvaciją ir kt. Vertinimo rezultatai išsaugomi profilyje, kad būtų lengva palyginti kandidatus ir priimti pagrįstus sprendimus.
-      </p>
-
-      
-    </div>
-
-
-  </div>
-
-</section>
-
-{/* 7th section - screenshot */}
-
-<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
-
-  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
-
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    
-
-    <div>
-      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
-        Sprendimų priėmimas ir įdarbinimas
-      </h2>
-      <p class="text-gray-700 text-base leading-relaxed mb-4">
-        Atrinkti kandidatai automatiškai perkelti į įdarbinimo etapą. Vecticum integracija su personalo valdymo sistema leidžia greitai sugeneruoti sutarties šablonus, išsiųsti supažindinimo dokumentus ir pradėti darbuotojo adaptacijos procesą – viskas vienoje sistemoje.
-      </p>
-    </div>
-
-
-    <div class="flex justify-center">
-      <img 
-        src="/src/assets/images/atranka-5.png" 
-        alt="Darbuotojų savitarna"
-        class="w-full max-w-md h-auto object-cover"
-      />
-    </div>
-
-  </div>
-
-  <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
-</section>
 
 {/* 8 section - screenshot */}
 
 <section class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-12">
   <div class="max-w-7xl mx-auto text-center mb-12">
     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900">
-      Kandidatų atrankų sprendimo funkcijos
+      Darbuotojo įdarbinimo savitarnos funkcijos
     </h2>
   </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
       <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
-        <li>Dedikuota el. pašto dėžutė CV gavimui</li>
-        <li>Galimybė persiųsti CV į sistemą</li>
-        <li>CV įkėlimas iš pašto į kandidatų DB</li>
-        <li>CV duomenų bazė su standartiniais laukais</li>
-        <li>Kandidato asmens informacija: vardas, pavardė, tel., el. paštas, kanalas, CV</li>
-        <li>Kvalifikacijos duomenys, papildomi dokumentai</li>
-        <li>Galimybė pridėti iki 5 papildomų laukų</li>
-        <li>Duomenų ryšys tarp CV ir Darbuotojo kortelių</li>
+        <li>El. Laiško gavimas su nuoroda į savitarnos įdarbinimo puslapį</li>
+        <li>Galimybė įdarbinamajam darbuotojui supildyti informaciją: Vardas; Pavardė; Asmens kodas; Išsilavinimas; Adresas; Telefono numeris; Asmeninis el. Paštas; Kitos darbovietės; Informacija apie artimuosius</li>
+        <li>Galimybė savitarnos puslapyje įkelti visus reikiamus įdarbinimui dokumentus (pasas, vairuotojo pažymėjimas ir kt.)</li>
+        <li>Darbuotojo kortelės sukūrimas sistemoje pagal supildytą įdarbinamojo darbuotojo informaciją</li>
+                <li>Galimybė apjungti savitarnos įdarbinimo sprendimą apjungti su atranku sprendimu</li>
       </ul>
     </div>
 
     <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
       <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
-        <li>Pozicijų DB su detalėmis: pavadinimas, skyrius, skaičius, laikotarpiai, statusas</li>
-        <li>CV priskyrimas prie pozicijos → sukuriama atrankos kortelė</li>
-        <li>Atrankų duomenų bazė: kandidatai, pozicijos, vykdytojai, dalyviai</li>
-        <li>Užduočių lentelė ir kitų pozicijų informacija</li>
-        <li>Atrankos statusai: CV gauta, Eigoje, Įdarbintas, Atmestas, Atsisakė</li>
-        <li>Atrankų valdymas per užduotis</li>
-        <li>Standartiniai užduočių tipai: Skambutis, Pokalbis, Pasiūlymas, Preliminari sutartis</li>
-      </ul>
-    </div>
-
-    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
-      <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
-        <li>Užduočių metaduomenys: terminas, laikas, atsakingas, aprašymas</li>
-        <li>Matomumas: į kokias pozicijas kandidatuoja tas pats asmuo</li>
-        <li>Atrankų pjūviai: Aš vykdau, Aš dalyvauju, Vykdoma, Visos</li>
-        <li>Registrai: pozicijos, atrankos, užduotys, dokumentai</li>
-        <li>Meta duomenų eksportas į Excel</li>
-        <li>Prieigos teisių valdymas</li>
-        <li>Outlook integracija (neįskaičiuota)</li>
-        <li>Papildomi užduočių tipai (papildomas mokestis)</li>
+        <li>Darbuotojo kortelėje savitarnoje pateiktų įdarbinamojo darbuotojo dokumentų išsaugojimas</li>
+        <li>Galimybė pakartoti el. Laišką, kai reikia įdarbinamojo darbuotojo papildomos informacijos arba atlikti korekcijas</li>
+        <li>Galimybė personalui patvirtinti supildytą įdarbinamojo informaciją prieš keliant į sistemą</li>
+                <li>Galimybė išplėsti savitarnos langą papildomais laukais</li>
+        <li>Galimybė pakeisti savitarnos lange laukų išdėstymą</li>
       </ul>
     </div>
   </div>
 </section>
+
 
 
 {/* duk section */}
@@ -397,17 +319,17 @@ Sistema leidžia standartizuotai vertinti kandidatus pagal iš anksto nustatytus
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
       
-      <a href="https://vecticum.lt/darbuotoju-idarbinimo-savitarna/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
-        <div class="text-2xl mb-2">🆕</div>
+      <a href="/atrankos-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+        <div class="text-2xl mb-2">👥</div>
         <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
-          Darbuotojo įdarbinimo savitarna
+          Atrankų valdymas
         </h3>
         <p class="mt-1 text-sm text-gray-600 leading-snug">
-          Darbuotojas savarankiškai pateikia įdarbinimo informaciją – patogu, greita, saugu.
+          Atraskite paprastesnį būdą valdyti darbuotojų atrankas – nuo pirmo kontakto iki įdarbinimo.
         </p>
       </a>
 
-      <a href="https://vecticum.lt/darbo-sutarciu-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+      <a href="/darbo-sutarciu-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
         <div class="text-2xl mb-2">📄</div>
         <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
           Darbo sutarčių valdymas
@@ -417,7 +339,7 @@ Sistema leidžia standartizuotai vertinti kandidatus pagal iš anksto nustatytus
         </p>
       </a>
 
-      <a href="https://vecticum.lt/darbuotojo-idarbinimo-i-imone-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+      <a href="/darbuotojo-idarbinimo-i-imone-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
         <div class="text-2xl mb-2">💼</div>
         <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
           Darbo vietos paruošimas
@@ -427,7 +349,7 @@ Sistema leidžia standartizuotai vertinti kandidatus pagal iš anksto nustatytus
         </p>
       </a>
 
-      <a href="https://vecticum.lt/bandomojo-laikotarpio-vertinimas-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+      <a href="/bandomojo-laikotarpio-vertinimas-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
         <div class="text-2xl mb-2">📋</div>
         <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
           Bandomojo laikotarpio valdymas
@@ -437,7 +359,7 @@ Sistema leidžia standartizuotai vertinti kandidatus pagal iš anksto nustatytus
         </p>
       </a>
 
-      <a href="https://vecticum.lt/darbuotojo-isdarbinimo-is-imones-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+      <a href="/darbuotojo-isdarbinimo-is-imones-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
         <div class="text-2xl mb-2">🚪</div>
         <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
           Darbuotojo išdarbinimo valdymas
@@ -464,56 +386,48 @@ Sistema leidžia standartizuotai vertinti kandidatus pagal iš anksto nustatytus
     <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
 
     <h2 class="text-2xl sm:text-3xl font-bold">
-      Modernus atrankos valdymas su „Vecticum“: kokie privalumai Jūsų laukia?
+      Vecticum darbuotojų įdarbinimo savitarna: efektyvus ir saugus sprendimas Jūsų verslui
     </h2>
 
     <p>
-      Darbuotojų atranka svarbi kiekvienai įmonei. Norint pritraukti talentus, reikia investuoti nemažai laiko ir pastangų. Personalo paieška ne visada yra paprastas uždavinys: tenka peržiūrėti daugybę CV, paruošti skirtingus bandomųjų užduočių šablonus, o galiausiai – tinkamai paruošti darbo vietą naujam komandos nariui.
+      Šiuolaikinėse įmonėse darbuotojų įdarbinimo procesas tampa vis sudėtingesnis – reikalaujama greičio, tikslumo ir atitikimo teisės aktams. „Vecticum“ darbuotojų įdarbinimo savitarna siūlo inovatyvų sprendimą, leidžiantį automatizuoti ir supaprastinti šį procesą, užtikrinant efektyvumą ir duomenų saugumą.
     </p>
 
-    <h3 class="text-xl font-semibold">Tradicinės atrankos iššūkiai</h3>
+    <h3 class="text-xl font-semibold">Automatizuotas įdarbinimo procesas</h3>
 
     <p>
-      Kalbant apie sėkmingą potencialių kandidatų atranką, viena didžiausių kliūčių yra dokumentų tvarkymas. Įsivaizduokite, kad turite perskaityti krūvas gyvenimo aprašymų ir motyvacinių laiškų – tai tarsi adatos paieška šieno kupetoje: šis procesas atima daug laiko ir pastangų.
+      „Vecticum“ savitarna leidžia naujam darbuotojui savarankiškai pateikti visą reikalingą informaciją: vardą, pavardę, asmens kodą, išsilavinimą, adresą, telefono numerį, asmeninį el. paštą, ankstesnes darbovietes bei informaciją apie artimuosius. Taip pat galima įkelti visus reikiamus dokumentus, tokius kaip pasas ar vairuotojo pažymėjimas. Ši sistema automatizuotai sukuria darbuotojo kortelę, kurioje saugomi visi pateikti duomenys ir dokumentai.
     </p>
+
+    <h3 class="text-xl font-semibold">Lankstumas ir kontrolė</h3>
 
     <p>
-      Tada ateina interviu laikas: pokalbio metu įmonės vadybininkai ir kiti atsakingi asmenys bando išsiaiškinti, ar kandidatas turi reikiamų įgūdžių, o taip pat vertina jo asmenybę, bando nuspręsti, ar jis puikiai tiks komandoje. Tai galima palyginti su bandymu nuspėti, ar du žmonės bus puikūs draugai, tiesiog trumpai pabendraujant.
+      Jei reikia papildomos informacijos ar korekcijų, sistema leidžia pakartotinai siųsti el. laišką darbuotojui. Personalo skyrius turi galimybę peržiūrėti ir patvirtinti pateiktą informaciją prieš ją įkeliant į sistemą. Be to, savitarnos langą galima išplėsti papildomais laukais arba pakeisti jų išdėstymą, pritaikant sistemą pagal įmonės poreikius.
     </p>
+
+    <h3 class="text-xl font-semibold">Integracija su kitais sprendimais</h3>
 
     <p>
-      Net ir atrankai judant į pabaigą techninė dalykų pusė taip pat gali būti tikras galvosūkis. Daug laiko reikalauja bandomųjų užduočių šablonų paruošimas ir vykdymas. Pasibaigus šiam etapui laukia naujų darbuotojų el. pašto paskyrų sukūrimas, prieigos suteikimas prie įmonės programinės įrangos ir visų reikalingų įrankių...
+      „Vecticum“ savitarna gali būti integruota su atrankų sprendimu, leidžiančiu sklandžiai pereiti nuo kandidatų atrankos prie įdarbinimo proceso. Tai užtikrina vientisą duomenų srautą ir sumažina administracinį krūvį.
     </p>
 
-    <p>
-      Vis tai – sunkios, ilgai trunkančios, tačiau labai svarbios užduotys. Nesklandus, nekokybiškas jų įgyvendinimas gali apsunkinti atrankos procesą.
-    </p>
-
-    <p>
-      Deja, tradicinė darbuotojų atrankos sistema ne visada pateisina lūkesčius. Jeigu jaučiate, kad sunku pasirūpinti kokybiška atranka, užduočių paruošimu ir <a href="https://vecticum.lt/darbuotojo-idarbinimo-i-imone-valdymas/"class="text-blue-600 underline hover:text-blue-800 transition">naujo komandos nario įvedimu į kolektyvą</a>, verta rinktis sprendimus. Tai palengvins įmonės kasdienybę.
-    </p>
-
-    <h3 class="text-xl font-semibold">Moderni darbuotojų atrankos sistema</h3>
-
-    <p>
-      Ko imtis, kad personalo atranka būtų paprastesnė? Jums padės „Vecticum“ inovatyvus sprendimas. Įrankis, kuris padeda valdyti atrankas, paruošti ir patvirtinti užduotis ir dar daugiau.
-    </p>
-
-    <p>Susipažinkite su privalumais, kuriuos pamatysite pasirinkę mūsų sukurtą atrankos valdymo įrankį:</p>
+    <h3 class="text-xl font-semibold">Privalumai verslui</h3>
 
     <ul class="list-disc pl-5 space-y-2">
-      <li>Efektyvesnis atrankos procesas: mūsų įrankis automatizuoja daugelį darbuotojų atrankos aspektų. Nuo laisvų darbo vietų paskelbimo iki paraiškų tvarkymo. Tai ženkliai palengvina užduotis, taupo tiek Jūsų, tiek kandidatų laiką.</li>
-      <li>Prieinamumas nuotoliniu būdu: <a href="https://vecticum.lt/klientai/"class="text-blue-600 underline hover:text-blue-800 transition">daugybė įmonių įsitikino</a>, kad šiandien darbuotojų atrankos įrankis yra būtinas kiekvienam verslui. Jis suteikia galimybę lanksčiai valdyti naujų darbuotojų paieškos procesą iš bet kurios vietos. Tai reiškia, kad Jūsų komandos nariai gali pasiekti jiems reikalingus įrankius, dalyvauti atrankose, vesti pokalbius ir bendradarbiauti su kolegomis, kad ir kur jie būtų. Svarbiausia – interneto prieiga.</li>
-      <li>Greitesnis kandidato identifikavimas: sistemoje integruotos išplėstinės paieškos ir filtravimo funkcijos padės greitai nustatyti norimus įgūdžius ir kvalifikaciją turinčius kandidatus. Tai pagreitina atrankos procesą ir palengvina darbuotojų paieškos iššūkius.</li>
-      <li>Taupo laiką ir pinigus: atrankos sprendimas gali būti ekonomiškesnis nei tradiciniai metodai. Mažiau dokumentų tvarkymo ir darbo krūvio Jūsų komandai: susitelkite į tas sritis, kurios svarbiausios įmonei.</li>
-      <li>Tiksliais duomenimis pagrįstas sprendimų priėmimas: atrankos įrankiai dažnai būna su analizės ir ataskaitų teikimo funkcijomis. Šie duomenys leidžia įmonėms įvertinti savo įdarbinimo strategijų efektyvumą, nustatyti tobulinimo sritis ir priimti pagrįstus sprendimus.</li>
-      <li>Integracija su <a href="https://vecticum.lt/personalo-valdymas/"class="text-blue-600 underline hover:text-blue-800 transition">HR sistemomis</a>: daugelis darbuotojų atrankos įrankių yra sklandžiai integruojami su kitomis žmogiškųjų išteklių sistemomis. Visa tai sukuria darnią sprendimų sistemą. Tai užtikrina, kad personalo paieška bus sėkminga, o darbuotojų įvedimas į įmonę – greitas ir sklandus.</li>
-      <li>Personalo atranka, kuri atitinka reglamentus: skaitmeninis atrankos įrankis apima funkcijas, kurios padeda laikytis griežtų įdarbinimo taisyklių. Teisinė atitiktis yra svarbi kiekvienam verslui. Su „Vecticum“ tai padaryti bus paprasčiau.</li>
+      <li>Efektyvumas: automatizuotas procesas taupo laiką ir sumažina klaidų tikimybę.</li>
+      <li>Saugumas: duomenys saugomi pagal BDAR reikalavimus, užtikrinant jų konfidencialumą.</li>
+      <li>Lankstumas: sistema pritaikoma pagal įmonės poreikius ir procesus.</li>
+      <li>Integracija: galimybė sujungti su kitais „Vecticum“ sprendimais, užtikrinant vientisą darbo eigą.</li>
     </ul>
+
+    <p>
+      Pasirinkę „Vecticum“ darbuotojų įdarbinimo savitarną, investuojate į modernų, efektyvų ir saugų sprendimą, kuris padės optimizuoti personalo valdymo procesus ir sutaupyti vertingo laiko.
+    </p>
 
     <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
   </div>
 </section>
+
 
 
 
