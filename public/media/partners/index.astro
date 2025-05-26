@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import MainLayout from "../../layouts/MainLayout.astro";
+import MainLayout from "../../layouts/MainLayout.astro"; 
 import { Image } from "astro:assets";
 
 import dussmann from '/src/assets/media/dussmann.jpg';
@@ -45,14 +45,14 @@ const recommendations = await getCollection("recomendations");
 export const prerender = true;
 
 const partner = [
-  { src: "/media/partners/Google_cloud.png", href: "https://www.google.com" },
-  { src: "/media/partners/dokobit.png", href: "https://www.google.com" },
-  { src: "/media/partners/finvalda.png", href: "https://www.google.com" },
-  { src: "/media/partners/fortevento.png", href: "https://www.google.com" },
-  { src: "/media/partners/infotek.png", href: "https://www.google.com" },
-  { src: "/media/partners/marksign.png", href: "https://www.google.com" },
-  { src: "/media/partners/rivil.png", href: "https://www.google.com" },
-  { src: "/media/partners/softera.png", href: "https://www.google.com" },
+  { src: "/src/assets/media/Google_cloud.png", href: "https://www.google.com" },
+  { src: "/src/assets/media/dokobit.png", href: "https://www.google.com" },
+  { src: "/src/assets/media/finvalda.png", href: "https://www.google.com" },
+  { src: "/src/assets/media/fortevento.png", href: "https://www.google.com" },
+  { src: "/src/assets/media/infotek.png", href: "https://www.google.com" },
+  { src: "/src/assets/media/marksign.png", href: "https://www.google.com" },
+  { src: "/src/assets/media/rivil.png", href: "https://www.google.com" },
+  { src: "/src/assets/media/softera.png", href: "https://www.google.com" },
 ];
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "ARADAS sėkmės istorija: efektyvumas per inovacijas ir skaitmenizaciją"
 description: "Vecticum sistema leido mums automatizuoti daugelį HR procesų ir sumažinti administracinę naštą. Puikus sprendimas skirtingo dydžio įmonėms."
-image: "/src/assets/images/rec-aradas.png"
+image: "/media/recomendations/rec-aradas.png"
 link: "/recomendations/aradas"
 ---
 
