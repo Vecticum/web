@@ -8,17 +8,8 @@ import FormattedDate from "../components/FormattedDate.astro";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
-
-// Dinaminis paveikslėlio importas iš src/assets
-let heroImageSrc = "";
-if (heroImage) {
-  try {
-    heroImageSrc = (await import(`${heroImage}`)).default;
-  } catch {
-    heroImageSrc = ""; // fallback arba nieko
-  }
-}
 ---
+
 <html lang="lt">
   <head>
     <BaseHead title={title} description={description} />
@@ -28,17 +19,18 @@ if (heroImage) {
     <Header />
     <main class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-12">
       <article class="space-y-8">
-        {heroImageSrc && (
+        {heroImage && (
           <div class="flex justify-center">
             <img
               width={1020}
               height={510}
-              src={heroImageSrc}
+              src={heroImage}
               alt={title}
               class="rounded-xl shadow-lg max-w-full h-auto"
             />
           </div>
         )}
+
         <div class="prose lg:prose-xl prose-gray w-full mx-auto">
           <div class="mb-6">
             <div class="text-sm text-gray-500 flex flex-col gap-1">
@@ -50,7 +42,7 @@ if (heroImage) {
               )}
             </div>
             <h1 class="mt-2 mb-2">{title}</h1>
-            <hr class="my-4"/>
+            <hr class="my-4" />
           </div>
           <slot />
         </div>
