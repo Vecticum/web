@@ -1,50 +1,50 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import ContactForm from "../components/home/ContactForm.astro";
+
 const seoTitle = "Kontaktai | VECTICUM";
 const seoDescription = "Susisiekite su VECTICUM komanda. Konsultacija, demonstracija ar bendradarbiavimas. Mes pasiruošę padėti.";
 const seoImage = "/path/to/seo-image.jpg"; // Optional
-
 ---
 
 <BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
 
 <MainLayout>
-<!-- Hero -->
-<section class="text-center py-20 px-6 bg-gradient-to-b from-white to-[#f4f7fa]">
-  <div class="max-w-3xl mx-auto">
-    <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Kontaktai</h1>
-    <p class="text-lg text-gray-600">
-      Susisiekite su VECTICUM komanda dėl demonstracijos, konsultacijos ar bendradarbiavimo
-    </p>
-  </div>
-</section>
 
-<section class="py-16 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto">
+  <!-- Hero -->
+  <section class="text-center py-20 px-6 bg-gradient-to-b from-white to-[#f4f7fa]">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Kontaktai</h1>
+      <p class="text-lg text-gray-600">
+        Susisiekite su VECTICUM komanda dėl demonstracijos, konsultacijos ar bendradarbiavimo
+      </p>
+    </div>
+  </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+  <!-- Kontaktų turinys -->
+  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+
       <!-- Kontaktinė informacija -->
-      <div class="space-y-6">
-        <div>
-          <h2 class="text-xl font-semibold text-gray-800 mb-2">Pagrindinė informacija</h2>
-          <p class="text-gray-600">UAB "Vecticum"</p>
-          <p class="text-gray-600">Įmonės kodas: 304107818</p>
-          <p class="text-gray-600">Adresas: Konstitucijos pr. 21C, Vilnius</p>
-        </div>
-
-        <div>
-          <h2 class="text-xl font-semibold text-gray-800 mb-2">El. paštas</h2>
-          <a href="mailto:info@vecticum.lt" class="text-[#C81F6A] hover:underline">info@vecticum.lt</a>
-        </div>
-
-        <div>
-          <h2 class="text-xl font-semibold text-gray-800 mb-2">Telefonas</h2>
-          <a href="tel:+37061187705" class="text-[#C81F6A] hover:underline">+370 611 87705</a>
+      <div class="bg-gray-50 p-8 rounded-2xl shadow-md space-y-6">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">Kontaktinė informacija</h2>
+        <div class="space-y-3 text-gray-700 text-base">
+          <p><strong>Įmonė:</strong> UAB "Vecticum"</p>
+          <p><strong>Įmonės kodas:</strong> 304867945</p>
+          <p><strong>Adresas:</strong> T. Kosciuškos g. 24, Vilnius, Lietuva 01100</p>
+          <p>
+            <strong>El. paštas:</strong>
+            <a href="mailto:info@vecticum.com" class="text-[#C81F6A] hover:underline ml-1">info@vecticum.lt</a>
+          </p>
+          <p>
+            <strong>Telefonas:</strong>
+            <a href="tel:+37061187705" class="text-[#C81F6A] hover:underline ml-1">+370 696 05332</a>
+          </p>
         </div>
       </div>
 
-      <!-- Kontaktinė forma -->
+ <!-- Kontaktinė forma -->
       <div>
         <form action="#" method="POST" class="space-y-6 bg-white p-6 rounded-xl shadow-md">
           <div>
@@ -66,15 +66,23 @@ const seoImage = "/path/to/seo-image.jpg"; // Optional
         </form>
       </div>
     </div>
+  </section>
 
-    <!-- Video blokas -->
-    <div class="mt-20 text-center">
-      <h2 class="text-2xl font-bold text-gray-800 mb-6">Susipažinkite su VECTICUM sprendimais</h2>
+  <!-- Video blokas
+  <section class="py-20 bg-[#F8FAFC] px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">Susipažinkite su VECTICUM sprendimais</h2>
       <div class="aspect-w-16 aspect-h-9 max-w-4xl mx-auto">
-        <iframe class="w-full h-full rounded-xl shadow-lg" src="https://www.youtube.com/embed/KwBRBI3InWw" title="VECTICUM prezentacija" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe
+          class="w-full h-full rounded-xl shadow-xl"
+          src="https://www.youtube.com/watch?v=W9j4NVM9SF4"
+          title="VECTICUM prezentacija"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
     </div>
-  </div>
-</section>
-</MainLayout>
+  </section> -->
 
+</MainLayout>
