@@ -2,7 +2,7 @@
 
 import Image from "../common/Image.astro";
 
-import headerImg from "./image.png";
+import headerImg from "~/assets/images/docs-img.png";
 
 const logoImg = '~/assets/images/logo.webp';
 
@@ -141,16 +141,18 @@ const logoImg = '~/assets/images/logo.webp';
               </div>
 
               <!-- Helpful Resource -->
-              <div class="w-1/4 bg-blue-50 p-6 rounded-r-xl flex flex-col justify-between">
+              <div class="w-1/4 bg-blue-50 p-6 rounded-r-xl flex flex-col">
                 <div>
-                  <h3 class="text-sm font-semibold text-gray-900">Helpful Resource</h3>
+                  <h3 class="text-sm font-semibold text-gray-900">Reikalinga pagalba?</h3>
                   <p class="text-sm text-gray-600 mt-2">
-                    Workforce Pulse 2024: Solving talent and engagement challenges
+                    VECTICUM sistemos dokumentacija sklandžiam darbui
                   </p>
                 </div>
                 <div class="mt-4">
-                  <Image src={headerImg} alt="Workforce Pulse" class="w-full rounded-lg mb-2" />
-                  <a href="/sprendimai" class="hover:text-[#C81F6A] text-sm hover:underline">Read report</a>
+                  <Image src={headerImg} alt="Dokumentacija | VECTICUM" class="w-full rounded-lg mb-2" />
+<a href="https://docs.vecticum.com/" class="hover:text-[#C81F6A] text-sm hover:underline">
+  Skaityti &gt;
+</a>
                 </div>
               </div>
             </div>
@@ -215,7 +217,7 @@ const logoImg = '~/assets/images/logo.webp';
                           Rekomendacijos
                         </a>
                         <a
-                          href="/news"
+                          href="/blog"
                           class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
                         >
                           Naujienos
@@ -255,7 +257,7 @@ const logoImg = '~/assets/images/logo.webp';
         <div class="sm:flex sm:gap-4 hidden">
           <a
             class="rounded-full bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white shadow"
-            href="https://app.vecticum.com/"
+            href="#contact"
             target="_blank"
           >
             Išbandyti
