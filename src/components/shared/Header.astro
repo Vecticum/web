@@ -90,53 +90,83 @@ const logoImg = '~/assets/images/logo.webp';
               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
               <div class="w-2/4 p-6">
-                <div class="flex flex-col gap-4" 
-                     x-data="{
-                       icons: {
-                         'Atrankų valdymas': 'fa-users-line',
-                         'Darbuotojo įdarbinimo savitarna': 'fa-fingerprint',
-                         'Darbo sutarčių valdymas': 'fa-file-signature',
-                         'Darbo vietos paruošimas': 'fa-briefcase',
-                         'Bandomojo laikotarpio valdymas': 'fa-hourglass',
-                         'Darbuotojo išdarbinimo valdymas': 'fa-user-slash',
-                         'Privalomo supažindinimo su dokumentais valdymas': 'fa-file-shield',
-                         'Darbuotojų testavimas': 'fa-clipboard-question',
-                         'Mokymų valdymas': 'fa-graduation-cap',
-                         'Veiklos vertinimas': 'fa-chart-line',
-                         'Sutarčių valdymas': 'fa-folder-open',
-                         'Darbuotojo duomenų valdymas': 'fa-id-badge',
-                         'Išduodamo inventoriaus valdymas': 'fa-box-open',
-                         'Intranetas (Įmonės naujienos)': 'fa-newspaper',
-                         'Darbuotojų prašymų valdymas': 'fa-envelope-open-text',
-                         'Dokumentų valdymas': 'fa-file-lines',
-                         'Dokumentacijos plano valdymas': 'fa-clipboard-list',
-                         'Gaunamos/siunčiamos korespondencijos valdymas': 'fa-paper-plane',
-                         'Pirkimų valdymas': 'fa-cart-shopping',
-                         'Atostogų prašymų ir kitų nebuvimų valdymas': 'fa-umbrella-beach',
-                         'Komandiruočių valdymas': 'fa-plane-departure',
-                         'Darbo laiko apskaitos žiniaraščiai': 'fa-calendar-days',
-                         'Gaunamų sąskaitų valdymas': 'fa-file-invoice-dollar',
-                         'Avansinės apyskaitos valdymas': 'fa-receipt',
-                         'Kelionės lapų valdymas': 'fa-map-location-dot'
-                       }
-                     }">
-                  <template x-if="activeCategory">
-                    <template x-for="(item, idx) in (
-                      activeCategory === 'Darbuotojų įdarbinimas/išdarbinimas' ? ['Atrankų valdymas', 'Darbuotojo įdarbinimo savitarna', 'Darbo sutarčių valdymas', 'Darbo vietos paruošimas', 'Bandomojo laikotarpio valdymas', 'Darbuotojo išdarbinimo valdymas'] :
-                      activeCategory === 'Atitikimo valdymas' ? ['Privalomo supažindinimo su dokumentais valdymas', 'Darbuotojų testavimas', 'Mokymų valdymas', 'Veiklos vertinimas'] :
-                      activeCategory === 'Sutarčių valdymas' ? ['Sutarčių valdymas'] :
-                      activeCategory === 'Darbuotojo informacijos valdymas' ? ['Darbuotojo duomenų valdymas', 'Išduodamo inventoriaus valdymas', 'Intranetas (Įmonės naujienos)', 'Darbuotojų prašymų valdymas'] :
-                      activeCategory === 'Dokumentų valdymas' ? ['Dokumentų valdymas', 'Dokumentacijos plano valdymas', 'Gaunamos/siunčiamos korespondencijos valdymas'] :
-                      activeCategory === 'Pirkimų valdymas' ? ['Pirkimų valdymas'] :
-                      activeCategory === 'Darbo laiko apskaita' ? ['Atostogų prašymų ir kitų nebuvimų valdymas', 'Komandiruočių valdymas', 'Darbo laiko apskaitos žiniaraščiai'] :
-                      activeCategory === 'Apskaitomų dokumentų valdymas' ? ['Gaunamų sąskaitų valdymas', 'Avansinės apyskaitos valdymas', 'Kelionės lapų valdymas', 'Komandiruočių valdymas'] : []
-                    )" :key="item">
-                      <div class="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-md transition-all duration-200 group">
-                        <i :class="`fa-solid ${icons[item]}`" class="text-[#C81F6A] text-sm"></i>
-                        <span class="text-sm text-gray-700 group-hover:text-[#C81F6A]" x-text="item"></span>
-                      </div>
-                    </template>
-                  </template>
+  <div class="flex flex-col gap-4" 
+       x-data="{
+         icons: {
+           'Atrankų valdymas': 'fa-users-line',
+           'Darbuotojo įdarbinimo savitarna': 'fa-fingerprint',
+           'Darbo sutarčių valdymas': 'fa-file-signature',
+           'Darbo vietos paruošimas': 'fa-briefcase',
+           'Bandomojo laikotarpio valdymas': 'fa-hourglass',
+           'Darbuotojo išdarbinimo valdymas': 'fa-user-slash',
+           'Privalomo supažindinimo su dokumentais valdymas': 'fa-file-shield',
+           'Darbuotojų testavimas': 'fa-clipboard-question',
+           'Mokymų valdymas': 'fa-graduation-cap',
+           'Veiklos vertinimas': 'fa-chart-line',
+           'Sutarčių valdymas': 'fa-folder-open',
+           'Darbuotojo duomenų valdymas': 'fa-id-badge',
+           'Išduodamo inventoriaus valdymas': 'fa-box-open',
+           'Intranetas (Įmonės naujienos)': 'fa-newspaper',
+           'Darbuotojų prašymų valdymas': 'fa-envelope-open-text',
+           'Dokumentų valdymas': 'fa-file-lines',
+           'Dokumentacijos plano valdymas': 'fa-clipboard-list',
+           'Gaunamos/siunčiamos korespondencijos valdymas': 'fa-paper-plane',
+           'Pirkimų valdymas': 'fa-cart-shopping',
+           'Atostogų prašymų ir kitų nebuvimų valdymas': 'fa-umbrella-beach',
+           'Komandiruočių valdymas': 'fa-plane-departure',
+           'Darbo laiko apskaitos žiniaraščiai': 'fa-calendar-days',
+           'Gaunamų sąskaitų valdymas': 'fa-file-invoice-dollar',
+           'Avansinės apyskaitos valdymas': 'fa-receipt',
+           'Kelionės lapų valdymas': 'fa-map-location-dot'
+         },
+         routes: {
+           'Atrankų valdymas': '/atrankos-valdymas',
+           'Darbuotojo įdarbinimo savitarna': '/idarbinimo-savitarna',
+           'Darbo sutarčių valdymas': '/sutarciu-valdymas',
+           'Darbo vietos paruošimas': '/darbo-vietos-paruosimas',
+           'Bandomojo laikotarpio valdymas': '/bandomasis-laikotarpis',
+           'Darbuotojo išdarbinimo valdymas': '/isdarbinimo-valdymas',
+           'Privalomo supažindinimo su dokumentais valdymas': '/supazindinimo-valdymas',
+           'Darbuotojų testavimas': '/testavimas',
+           'Mokymų valdymas': '/mokymu-valdymas',
+           'Veiklos vertinimas': '/veiklos-vertinimas',
+           'Sutarčių valdymas': '/sutarciu-valdymas',
+           'Darbuotojo duomenų valdymas': '/darbuotojo-duomenu-valdymas',
+           'Išduodamo inventoriaus valdymas': '/inventoriaus-valdymas',
+           'Intranetas (Įmonės naujienos)': '/intranetas',
+           'Darbuotojų prašymų valdymas': '/prasymu-valdymas',
+           'Dokumentų valdymas': '/dokumentu-valdymas',
+           'Dokumentacijos plano valdymas': '/dokumentacijos-planas',
+           'Gaunamos/siunčiamos korespondencijos valdymas': '/korespondencijos-valdymas',
+           'Pirkimų valdymas': '/pirkimu-valdymas',
+           'Atostogų prašymų ir kitų nebuvimų valdymas': '/atostogu-prasymai',
+           'Komandiruočių valdymas': '/komandiruotes',
+           'Darbo laiko apskaitos žiniaraščiai': '/darbo-laiko-ziniarasciai',
+           'Gaunamų sąskaitų valdymas': '/saskaitu-valdymas',
+           'Avansinės apyskaitos valdymas': '/avansines-apyskaitos',
+           'Kelionės lapų valdymas': '/keliones-lapai'
+         }
+       }">
+    <template x-if="activeCategory">
+      <template x-for="(item, idx) in (
+        activeCategory === 'Darbuotojų įdarbinimas/išdarbinimas' ? ['Atrankų valdymas', 'Darbuotojo įdarbinimo savitarna', 'Darbo sutarčių valdymas', 'Darbo vietos paruošimas', 'Bandomojo laikotarpio valdymas', 'Darbuotojo išdarbinimo valdymas'] :
+        activeCategory === 'Atitikimo valdymas' ? ['Privalomo supažindinimo su dokumentais valdymas', 'Darbuotojų testavimas', 'Mokymų valdymas', 'Veiklos vertinimas'] :
+        activeCategory === 'Sutarčių valdymas' ? ['Sutarčių valdymas'] :
+        activeCategory === 'Darbuotojo informacijos valdymas' ? ['Darbuotojo duomenų valdymas', 'Išduodamo inventoriaus valdymas', 'Intranetas (Įmonės naujienos)', 'Darbuotojų prašymų valdymas'] :
+        activeCategory === 'Dokumentų valdymas' ? ['Dokumentų valdymas', 'Dokumentacijos plano valdymas', 'Gaunamos/siunčiamos korespondencijos valdymas'] :
+        activeCategory === 'Pirkimų valdymas' ? ['Pirkimų valdymas'] :
+        activeCategory === 'Darbo laiko apskaita' ? ['Atostogų prašymų ir kitų nebuvimų valdymas', 'Komandiruočių valdymas', 'Darbo laiko apskaitos žiniaraščiai'] :
+        activeCategory === 'Apskaitomų dokumentų valdymas' ? ['Gaunamų sąskaitų valdymas', 'Avansinės apyskaitos valdymas', 'Kelionės lapų valdymas', 'Komandiruočių valdymas'] : []
+      )" :key="item">
+        <a 
+          :href="routes[item]" 
+          class="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-md transition-all duration-200 group"
+        >
+          <i :class="`fa-solid ${icons[item]}`" class="text-[#C81F6A] text-sm"></i>
+          <span class="text-sm text-gray-700 group-hover:text-[#C81F6A]" x-text="item"></span>
+        </a>
+      </template>
+    </template>
                 </div>
               </div>
 

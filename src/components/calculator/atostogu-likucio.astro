@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .vacation-calculator-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .vacation-calculator-container label {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+      color: #333333;
+    }
+
+    .vacation-calculator-container input, .vacation-calculator-container select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .vacation-calculator-container button {
+      width: 60%;
+      padding: 12px;
+      background-color: #3C7099;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .vacation-calculator-container button:hover {
+      background-color: #C81F6A;
+    }
+
+    .vacation-calculator-container p {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 20px;
+      color: #0069b4;
+    }
+  </style>
+</head>
+<body>
+
+<div class="vacation-calculator-container">
+      <h2 style="text-align:center; font-weight:600; margin-bottom:3%; margin-top:4%">Atostogų dienų skaičiuoklė</h2>
+    
+  <label for="work-week">Pasirinkite darbo savaitės trukmę:</label>
+  <select id="work-week" name="work-week" onchange="updateVacationDaysPerYear()">
+    <option value="5">Dirbu penkias dienas per savaitę</option>
+    <option value="6">Dirbu šešias dienas per savaitę</option>
+  </select><br>
+
+  <label for="previous-year-balance">Atostogų likutis iš praeitų metų:</label>
+  <input type="number" id="previous-year-balance" name="previous-year-balance" required><br>
+
+  <label for="seniority">Stažas (metai):</label>
+  <input type="number" id="seniority" name="seniority" onchange="updateVacationDaysPerYear()"><br>
+
+  <label for="disability">Esate su negalia arba vienas/a auginate vaiką su negalia:</label>
+  <input type="checkbox" id="disability" name="disability" onchange="updateVacationDaysPerYear()"><br>
+
+  <label for="vacation-days-per-year">Atostogų dienos per metus:</label>
+  <input type="number" id="vacation-days-per-year" name="vacation-days-per-year" readonly><br>
+
+  <label for="used-vacation-days">Kiek dienų panaudota iki atostogų pradžios:</label>
+  <input type="number" id="used-vacation-days" name="used-vacation-days" required><br>
+
+  <label for="start-date">Atostogų pradžia:</label>
+  <input type="date" id="start-date" name="start-date" required><br>
+
+  <label for="end-date">Atostogų pabaiga:</label>
+  <input type="date" id="end-date" name="end-date" required><br>
+
+  <button onclick="calculateVacationDays()">Skaičiuoti nepanaudotas atostogų dienas</button><br>
+
+  <p id="result"></p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    updateVacationDaysPerYear();
+});
+
+function updateVacationDaysPerYear() {
+  const workWeek = parseInt(document.getElementById('work-week').value);
+  let vacationDays = workWeek === 5 ? 20 : 24;
+
+  const seniorityYears = parseInt(document.getElementById('seniority').value) || 0;
+  const disability = document.getElementById('disability').checked;
+
+  if (seniorityYears >= 10) {
+    vacationDays += 3;
+    if (seniorityYears >= 15) vacationDays += 1;
+    if (seniorityYears >= 20) vacationDays += 1 + Math.floor((seniorityYears - 20) / 5);
+  }
+
+  if (disability) {
+    vacationDays += workWeek === 5 ? 5 : 10;
+  }
+
+  document.getElementById('vacation-days-per-year').value = vacationDays;
+}
+
+function isHoliday(date) {
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+  
+  const holidays = [
+    { month: 1, day: 1 },    // New Year's Day
+    { month: 2, day: 16 },   // Independence Day
+    { month: 3, day: 11 },   // Restoration of Independence
+    { month: 4, day: 13, year: 2024 }, { month: 3, day: 31, year: 2025 }, { month: 4, day: 5, year: 2026 },  // Easter (for next 3 years)
+    { month: 5, day: 1 },    // Labour Day
+    { month: 6, day: 24 },   // St. John's Day
+    { month: 7, day: 6 },    // Statehood Day
+    { month: 8, day: 15 },   // Assumption Day
+    { month: 11, day: 1 },   // All Saints' Day
+    { month: 12, day: 24 }, { month: 12, day: 25 }, { month: 12, day: 26 } // Christmas
+  ];
+
+  return holidays.some(holiday => holiday.month === month && holiday.day === day && (!holiday.year || holiday.year === year));
+}
+
+function calculateWorkingDays(start, end, workWeek) {
+  let count = 0;
+  let currentDate = new Date(start);
+
+  while (currentDate <= end) {
+    const dayOfWeek = currentDate.getDay();
+
+    if (workWeek === 5) {
+      if (dayOfWeek !== 0 && dayOfWeek !== 6 && !isHoliday(currentDate)) {
+        count++;
+      }
+    } else if (workWeek === 6) {
+      if (dayOfWeek !== 0 && !isHoliday(currentDate)) {
+        count++;
+      }
+    }
+
+    currentDate.setDate(currentDate.getDate() + 1);
+  }
+
+  return count;
+}
+
+function calculateVacationDays() {
+  const vacationDaysPerYear = parseFloat(document.getElementById('vacation-days-per-year').value);
+  const previousYearBalance = parseFloat(document.getElementById('previous-year-balance').value);
+  const usedVacationDays = parseFloat(document.getElementById('used-vacation-days').value);
+  const workWeek = parseInt(document.getElementById('work-week').value);
+
+  const startDate = new Date(document.getElementById('start-date').value);
+  const endDate = new Date(document.getElementById('end-date').value);
+
+  const workingDaysOnVacation = calculateWorkingDays(startDate, endDate, workWeek);
+
+  const monthsPassed = startDate.getMonth() + startDate.getDate() / 30;
+  const accruedVacationDays = (vacationDaysPerYear / 12) * monthsPassed;
+
+  const remainingVacationDaysBeforeVacation = accruedVacationDays + previousYearBalance - usedVacationDays;
+  const remainingVacationDaysAfterVacation = remainingVacationDaysBeforeVacation - workingDaysOnVacation;
+  const remainingVacationDaysEndOfYear = vacationDaysPerYear + previousYearBalance - usedVacationDays - workingDaysOnVacation;
+
+  document.getElementById('result').innerHTML = 
+    `<p>Atostogauta darbo dienų per pasirinktą laikotarpį: <strong>${workingDaysOnVacation.toFixed(2)}</strong></p>
+    <p>Atostogų likutis prieš atostogas: <strong>${remainingVacationDaysBeforeVacation.toFixed(2)}</strong></p>
+    <p>Atostogų likutis po atostogų: <strong>${remainingVacationDaysAfterVacation.toFixed(2)}</strong></p>
+    <p>Atostogų likutis metų pabaigoje: <strong>${remainingVacationDaysEndOfYear.toFixed(2)}</strong></p>`;
+}
+
+updateVacationDaysPerYear();
+</script>
+
+</body>
+</html>

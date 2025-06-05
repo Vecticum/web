@@ -13,3 +13,4 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
   adapter: vercel(),
 });
+

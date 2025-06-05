@@ -22,11 +22,12 @@
     "svelte": "^5.19.3",
     "swiper": "^11.2.6",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3",
     "unpic": "^4.1.2"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16"
+    "@astrojs/ts-plugin": "^1.10.4",
+    "@tailwindcss/typography": "^0.5.16",
+    "typescript": "^5.8.3"
   },
   "packageManager": "pnpm@9.13.0"
 }

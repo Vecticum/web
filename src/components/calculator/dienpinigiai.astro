@@ -1,0 +1,455 @@
+
+    <style>
+        .calculator-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        
+        
+        .add-country-btn, 
+        .calculate-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .add-country-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .add-country-btn:hover {
+            background-color: #45a049;
+        }
+        .remove-btn {
+            background-color: #f44336;
+            color: white;
+            padding: 5px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+        .remove-btn:hover {
+            background-color: #da190b;
+        }
+        .calculate-btn {
+            background-color: #3C7099;
+            color: white;
+        }
+        .calculate-btn:hover {
+            background-color: #C81F6A;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+
+
+<div class="calculator-container">
+    <h2>Dienpinigių skaičiuoklė</h2>
+    <div id="countryFields">
+        <div class="field-group">
+            <label for="country1">Šalis:</label>
+            <select id="country1" name="country">
+        <option value="69">Airija – 69 €</option>
+               <option value="33">Afganistano Islamo Respublika – 33 €</option>
+        <option value="33">Albanijos Respublika – 33 €</option>
+        <option value="57">Alžyro Liaudies Demokratinė Respublika – 57 €</option>
+        <option value="46">Andoros Kunigaikštystė – 46 €</option>
+        <option value="70">Angolos Respublika – 70 €</option>
+        <option value="50">Argentinos Respublika – 50 €</option>
+        <option value="47">Armėnijos Respublika – 47 €</option>
+        <option value="50">Australija – 50 €</option>
+        <option value="69">Austrijos Respublika – 69 €</option>
+        <option value="47">Azerbaidžano Respublika – 47 €</option>
+        <option value="50">Bahamų Sandrauga – 50 €</option>
+        <option value="60">Bahreino Karalystė – 60 €</option>
+        <option value="60">Baltarusijos Respublika – 60 €</option>
+        <option value="33">Bangladešo Liaudies Respublika – 33 €</option>
+        <option value="61">Belgijos Karalystė – 61 €</option>
+        <option value="43">Bosnija ir Hercegovina – 43 €</option>
+        <option value="33">Botsvanos Respublika – 33 €</option>
+        <option value="43">Brazilijos Federacinė Respublika – 43 €</option>
+        <option value="40">Brunėjaus Darusalamas – 40 €</option>
+        <option value="39">Bulgarijos Respublika – 39 €</option>
+        <option value="37">Burkina Fasas – 37 €</option>
+        <option value="33">Butano Karalystė – 33 €</option>
+        <option value="50">Čekijos Respublika – 50 €</option>
+        <option value="47">Čilės Respublika – 47 €</option>
+        <option value="80">Danijos Karalystė – 80 €</option>
+        <option value="40">Dramblio Kaulo Kranto Respublika – 40 €</option>
+        <option value="50">Egipto Arabų Respublika – 50 €</option>
+        <option value="33">Ekvadoro Respublika – 33 €</option>
+        <option value="47">Estijos Respublika – 47 €</option>
+        <option value="33">Etiopijos Federacinė Demokratinė Respublika – 33 €</option>
+        <option value="45">Filipinų Respublika – 45 €</option>
+        <option value="47">Ganos Respublika – 47 €</option>
+        <option value="55">Graikijos Respublika – 55 €</option>
+        <option value="33">Gvatemalos Respublika – 33 €</option>
+        <option value="33">Indijos Respublika – 33 €</option>
+        <option value="33">Indonezijos Respublika – 33 €</option>
+        <option value="40">Irako Respublika – 40 €</option>
+        <option value="37">Irano Islamo Respublika – 37 €</option>
+        <option value="70">Islandijos Respublika – 70 €</option>
+        <option value="58">Ispanijos Karalystė – 58 €</option>
+        <option value="63">Italijos Respublika – 63 €</option>
+        <option value="70">Izraelio Valstybė – 70 €</option>
+        <option value="40">Kinijos Honkongas – 40 €</option>
+        <option value="37">Kinijos Makao – 37 €</option>
+        <option value="87">Japonija – 87 €</option>
+        <option value="40">Jemeno Respublika – 40 €</option>
+        <option value="40">Jordanijos Hašimitų Karalystė – 40 €</option>
+        <option value="67">Jungtinė Didžiosios Britanijos ir Šiaurės Airijos Karalystė – 67 €</option>
+        <option value="61">Jungtinės Amerikos Valstijos – 61 € (Niujorkas – 82 €)</option>
+        <option value="60">Jungtiniai Arabų Emyratai – 60 €</option>
+        <option value="53">Juodkalnija – 53 €</option>
+        <option value="33">Kambodžos Karalystė – 33 €</option>
+        <option value="55">Kanada – 55 €</option>
+        <option value="52">Kataro Valstybė – 52 €</option>
+        <option value="60">Kazachstano Respublika – 60 €</option>
+        <option value="40">Kenijos Respublika – 40 €</option>
+        <option value="37">Kinijos Liaudies Respublika – 37 €</option>
+        <option value="62">Kipro Respublika – 62 €</option>
+        <option value="60">Kirgizijos Respublika – 60 €</option>
+        <option value="33">Kolumbijos Respublika – 33 €</option>
+        <option value="70">Kongo Demokratinė Respublika – 70 €</option>
+        <option value="67">Korėjos Respublika – 67 €</option>
+        <option value="33">Korėjos Liaudies Demokratinė Respublika – 33 €</option>
+        <option value="40">Kosovo Respublika – 40 €</option>
+        <option value="33">Kosta Rikos Respublika – 33 €</option>
+        <option value="45">Kroatijos Respublika – 45 €</option>
+        <option value="50">Kubos Respublika – 50 €</option>
+        <option value="60">Kuveito Valstybė – 60 €</option>
+        <option value="33">Laoso Liaudies Demokratinė Respublika – 33 €</option>
+        <option value="44">Latvijos Respublika – 44 €</option>
+        <option value="48">Lenkijos Respublika – 48 €</option>
+        <option value="33">Lesoto Karalystė – 33 €</option>
+        <option value="47">Libano Respublika – 47 €</option>
+        <option value="57">Liberijos Respublika – 57 €</option>
+        <option value="33">Libijos Valstybė – 33 €</option>
+        <option value="80">Lichtenšteino Kunigaikštystė – 80 €</option>
+        <option value="28">Lietuvos Respublika – 28 €</option>
+        <option value="61">Liuksemburgo Didžioji Hercogystė – 61 €</option>
+        <option value="33">Madagaskaro Respublika – 33 €</option>
+        <option value="33">Malaizija – 33 €</option>
+        <option value="33">Malavio Respublika – 33 €</option>
+        <option value="60">Maldyvų Respublika – 60 €</option>
+        <option value="40">Malio Respublika – 40 €</option>
+        <option value="63">Maltos Respublika – 63 €</option>
+        <option value="50">Maroko Karalystė – 50 €</option>
+        <option value="40">Mauricijaus Respublika – 40 €</option>
+        <option value="33">Mauritanijos Islamo Respublika – 33 €</option>
+        <option value="47">Meksikos Jungtinės Valstijos – 47 €</option>
+        <option value="33">Mianmaro Sąjungos Respublika – 33 €</option>
+        <option value="53">Moldovos Respublika – 53 €</option>
+        <option value="49">Monako Kunigaikštystė – 49 €</option>
+        <option value="50">Mongolija – 50 €</option>
+        <option value="40">Mozambiko Respublika – 40 €</option>
+        <option value="33">Namibijos Respublika – 33 €</option>
+        <option value="40">Naujoji Zelandija – 40 €</option>
+        <option value="33">Nigerijos Federacinė Respublika – 33 €</option>
+                <option value="33">Nepalo Federacinė Demokratinė Respublika – 33 €</option>
+        <option value="70">Norvegijos Karalystė – 70 €</option>
+        <option value="64">Nyderlandų Karalystė – 64 €</option>
+        <option value="47">Omano Sultonatas – 47 €</option>        <option value="33">Pakistano Islamo Respublika – 33 €</option>
+<option value="33">Panamos Respublika – 33 €</option>
+<option value="37">Papua Naujosios Gvinėjos Nepriklausomoji Valstybė – 37 €</option>
+<option value="50">Peru Respublika – 50 €</option>
+<option value="33">Pietų Afrikos Respublika – 33 €</option>
+<option value="37">Pietų Sudano Respublika – 37 €</option>
+<option value="56">Portugalijos Respublika – 56 €</option>
+<option value="69">Prancūzijos Respublika – 69 €</option>
+<option value="43">Puerto Rikas – 43 €</option>
+<option value="43">Ruandos Respublika – 43 €</option>
+<option value="35">Rumunija – 35 €</option>
+<option value="60">Rusijos Federacija – 60 €</option>
+<option value="53">Sakartvelas – 53 €</option>
+<option value="63">San Marino Respublika – 63 €</option>
+<option value="60">Saudo Arabijos Karalystė – 60 €</option>
+<option value="57">Seišelių Respublika – 57 €</option>
+<option value="43">Senegalo Respublika – 43 €</option>
+<option value="57">Sent Kitsas ir Nevis – 57 €</option>
+<option value="53">Serbijos Respublika – 53 €</option>
+<option value="60">Singapūro Respublika – 60 €</option>
+<option value="53">Sirijos Arabų Respublika – 53 €</option>
+<option value="53">Slovakijos Respublika – 53 €</option>
+<option value="52">Slovėnijos Respublika – 52 €</option>
+<option value="37">Sudano Respublika – 37 €</option>
+<option value="69">Suomijos Respublika – 69 €</option>
+<option value="40">Šiaurės Makedonijos Respublika – 40 €</option>
+<option value="33">Šri Lankos Demokratinė Socialistinė Respublika – 33 €</option>
+<option value="70">Švedijos Karalystė – 70 €</option>
+<option value="80">Šveicarijos Konfederacija – 80 €</option>
+<option value="60">Tadžikistano Respublika – 60 €</option>
+<option value="40">Tailando Karalystė – 40 €</option>
+<option value="37">Taivanas – 37 €</option>
+<option value="33">Tanzanijos Jungtinė Respublika – 33 €</option>
+<option value="40">Tuniso Respublika – 40 €</option>
+<option value="37">Turkijos Respublika – 37 €</option>
+<option value="53">Turkmėnistanas – 53 €</option>
+<option value="37">Ugandos Respublika – 37 €</option>
+<option value="53">Ukraina – 53 €</option>
+<option value="37">Urugvajaus Rytų Respublika – 37 €</option>
+<option value="60">Uzbekistano Respublika – 60 €</option>
+<option value="63">Vatikano Miesto Valstybė – 63 €</option>
+<option value="57">Venesuelos Bolivaro Respublika – 57 €</option>
+<option value="48">Vengrija – 48 €</option>
+<option value="33">Vietnamo Socialistinė Respublika – 33 €</option>
+<option value="62">Vokietijos Federacinė Respublika – 62 €</option>
+<option value="33">Zambijos Respublika – 33 €</option>
+<option value="33">Zimbabvės Respublika – 33 €</option>
+<option value="33">Kitos valstybės – 33 €</option>
+            </select>
+            <label for="days1">Dienų skaičius:</label>
+            <input type="number" id="days1" min="1" value="1">
+            <label for="reduction1">Dienpinigių sumažinimas (%):</label>
+            <input type="number" id="reduction1" min="0" max="100" value="0">
+        </div>
+    </div>
+    
+    <button class="add-country-btn" onclick="addCountry()">Pridėti dar vieną šalį</button>
+    <button class="calculate-btn" onclick="calculate()">Skaičiuoti dienpinigius</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    let countriesCounting = 1;
+
+    function addCountry() {
+        countriesCounting++;
+        const countryFields = document.getElementById('countryFields');
+        const fieldGroup = document.createElement('div');
+        fieldGroup.classList.add('field-group');
+        fieldGroup.setAttribute('id', 'countryGroup' + countriesCounting);
+
+        fieldGroup.innerHTML = `
+            <label for="country${countriesCounting}">Šalis:</label>
+            <select id="country${countriesCounting}" name="country">
+        <option value="69">Airija – 69 €</option>
+                 <option value="33">Afganistano Islamo Respublika – 33 €</option>
+        <option value="33">Albanijos Respublika – 33 €</option>
+        <option value="57">Alžyro Liaudies Demokratinė Respublika – 57 €</option>
+        <option value="46">Andoros Kunigaikštystė – 46 €</option>
+        <option value="70">Angolos Respublika – 70 €</option>
+        <option value="50">Argentinos Respublika – 50 €</option>
+        <option value="47">Armėnijos Respublika – 47 €</option>
+        <option value="50">Australija – 50 €</option>
+        <option value="69">Austrijos Respublika – 69 €</option>
+        <option value="47">Azerbaidžano Respublika – 47 €</option>
+        <option value="50">Bahamų Sandrauga – 50 €</option>
+        <option value="60">Bahreino Karalystė – 60 €</option>
+        <option value="60">Baltarusijos Respublika – 60 €</option>
+        <option value="33">Bangladešo Liaudies Respublika – 33 €</option>
+        <option value="61">Belgijos Karalystė – 61 €</option>
+        <option value="43">Bosnija ir Hercegovina – 43 €</option>
+        <option value="33">Botsvanos Respublika – 33 €</option>
+        <option value="43">Brazilijos Federacinė Respublika – 43 €</option>
+        <option value="40">Brunėjaus Darusalamas – 40 €</option>
+        <option value="39">Bulgarijos Respublika – 39 €</option>
+        <option value="37">Burkina Fasas – 37 €</option>
+        <option value="33">Butano Karalystė – 33 €</option>
+        <option value="50">Čekijos Respublika – 50 €</option>
+        <option value="47">Čilės Respublika – 47 €</option>
+        <option value="80">Danijos Karalystė – 80 €</option>
+        <option value="40">Dramblio Kaulo Kranto Respublika – 40 €</option>
+        <option value="50">Egipto Arabų Respublika – 50 €</option>
+        <option value="33">Ekvadoro Respublika – 33 €</option>
+        <option value="47">Estijos Respublika – 47 €</option>
+        <option value="33">Etiopijos Federacinė Demokratinė Respublika – 33 €</option>
+        <option value="45">Filipinų Respublika – 45 €</option>
+        <option value="47">Ganos Respublika – 47 €</option>
+        <option value="55">Graikijos Respublika – 55 €</option>
+        <option value="33">Gvatemalos Respublika – 33 €</option>
+        <option value="33">Indijos Respublika – 33 €</option>
+        <option value="33">Indonezijos Respublika – 33 €</option>
+        <option value="40">Irako Respublika – 40 €</option>
+        <option value="37">Irano Islamo Respublika – 37 €</option>
+        <option value="70">Islandijos Respublika – 70 €</option>
+        <option value="58">Ispanijos Karalystė – 58 €</option>
+        <option value="63">Italijos Respublika – 63 €</option>
+        <option value="70">Izraelio Valstybė – 70 €</option>
+        <option value="40">Kinijos Honkongas – 40 €</option>
+        <option value="37">Kinijos Makao – 37 €</option>
+        <option value="87">Japonija – 87 €</option>
+        <option value="40">Jemeno Respublika – 40 €</option>
+        <option value="40">Jordanijos Hašimitų Karalystė – 40 €</option>
+        <option value="67">Jungtinė Didžiosios Britanijos ir Šiaurės Airijos Karalystė – 67 €</option>
+        <option value="61">Jungtinės Amerikos Valstijos – 61 € (Niujorkas – 82 €)</option>
+        <option value="60">Jungtiniai Arabų Emyratai – 60 €</option>
+        <option value="53">Juodkalnija – 53 €</option>
+        <option value="33">Kambodžos Karalystė – 33 €</option>
+        <option value="55">Kanada – 55 €</option>
+        <option value="52">Kataro Valstybė – 52 €</option>
+        <option value="60">Kazachstano Respublika – 60 €</option>
+        <option value="40">Kenijos Respublika – 40 €</option>
+        <option value="37">Kinijos Liaudies Respublika – 37 €</option>
+        <option value="62">Kipro Respublika – 62 €</option>
+        <option value="60">Kirgizijos Respublika – 60 €</option>
+        <option value="33">Kolumbijos Respublika – 33 €</option>
+        <option value="70">Kongo Demokratinė Respublika – 70 €</option>
+        <option value="67">Korėjos Respublika – 67 €</option>
+        <option value="33">Korėjos Liaudies Demokratinė Respublika – 33 €</option>
+        <option value="40">Kosovo Respublika – 40 €</option>
+        <option value="33">Kosta Rikos Respublika – 33 €</option>
+        <option value="45">Kroatijos Respublika – 45 €</option>
+        <option value="50">Kubos Respublika – 50 €</option>
+        <option value="60">Kuveito Valstybė – 60 €</option>
+        <option value="33">Laoso Liaudies Demokratinė Respublika – 33 €</option>
+        <option value="44">Latvijos Respublika – 44 €</option>
+        <option value="48">Lenkijos Respublika – 48 €</option>
+        <option value="33">Lesoto Karalystė – 33 €</option>
+        <option value="47">Libano Respublika – 47 €</option>
+        <option value="57">Liberijos Respublika – 57 €</option>
+        <option value="33">Libijos Valstybė – 33 €</option>
+        <option value="80">Lichtenšteino Kunigaikštystė – 80 €</option>
+        <option value="28">Lietuvos Respublika – 28 €</option>
+        <option value="61">Liuksemburgo Didžioji Hercogystė – 61 €</option>
+        <option value="33">Madagaskaro Respublika – 33 €</option>
+        <option value="33">Malaizija – 33 €</option>
+        <option value="33">Malavio Respublika – 33 €</option>
+        <option value="60">Maldyvų Respublika – 60 €</option>
+        <option value="40">Malio Respublika – 40 €</option>
+        <option value="63">Maltos Respublika – 63 €</option>
+        <option value="50">Maroko Karalystė – 50 €</option>
+        <option value="40">Mauricijaus Respublika – 40 €</option>
+        <option value="33">Mauritanijos Islamo Respublika – 33 €</option>
+        <option value="47">Meksikos Jungtinės Valstijos – 47 €</option>
+        <option value="33">Mianmaro Sąjungos Respublika – 33 €</option>
+        <option value="53">Moldovos Respublika – 53 €</option>
+        <option value="49">Monako Kunigaikštystė – 49 €</option>
+        <option value="50">Mongolija – 50 €</option>
+        <option value="40">Mozambiko Respublika – 40 €</option>
+        <option value="33">Namibijos Respublika – 33 €</option>
+        <option value="40">Naujoji Zelandija – 40 €</option>
+        <option value="33">Nigerijos Federacinė Respublika – 33 €</option>
+                <option value="33">Nepalo Federacinė Demokratinė Respublika – 33 €</option>
+        <option value="70">Norvegijos Karalystė – 70 €</option>
+        <option value="64">Nyderlandų Karalystė – 64 €</option>
+        <option value="47">Omano Sultonatas – 47 €</option>        <option value="33">Pakistano Islamo Respublika – 33 €</option>
+<option value="33">Panamos Respublika – 33 €</option>
+<option value="37">Papua Naujosios Gvinėjos Nepriklausomoji Valstybė – 37 €</option>
+<option value="50">Peru Respublika – 50 €</option>
+<option value="33">Pietų Afrikos Respublika – 33 €</option>
+<option value="37">Pietų Sudano Respublika – 37 €</option>
+<option value="56">Portugalijos Respublika – 56 €</option>
+<option value="69">Prancūzijos Respublika – 69 €</option>
+<option value="43">Puerto Rikas – 43 €</option>
+<option value="43">Ruandos Respublika – 43 €</option>
+<option value="35">Rumunija – 35 €</option>
+<option value="60">Rusijos Federacija – 60 €</option>
+<option value="53">Sakartvelas – 53 €</option>
+<option value="63">San Marino Respublika – 63 €</option>
+<option value="60">Saudo Arabijos Karalystė – 60 €</option>
+<option value="57">Seišelių Respublika – 57 €</option>
+<option value="43">Senegalo Respublika – 43 €</option>
+<option value="57">Sent Kitsas ir Nevis – 57 €</option>
+<option value="53">Serbijos Respublika – 53 €</option>
+<option value="60">Singapūro Respublika – 60 €</option>
+<option value="53">Sirijos Arabų Respublika – 53 €</option>
+<option value="53">Slovakijos Respublika – 53 €</option>
+<option value="52">Slovėnijos Respublika – 52 €</option>
+<option value="37">Sudano Respublika – 37 €</option>
+<option value="69">Suomijos Respublika – 69 €</option>
+<option value="40">Šiaurės Makedonijos Respublika – 40 €</option>
+<option value="33">Šri Lankos Demokratinė Socialistinė Respublika – 33 €</option>
+<option value="70">Švedijos Karalystė – 70 €</option>
+<option value="80">Šveicarijos Konfederacija – 80 €</option>
+<option value="60">Tadžikistano Respublika – 60 €</option>
+<option value="40">Tailando Karalystė – 40 €</option>
+<option value="37">Taivanas – 37 €</option>
+<option value="33">Tanzanijos Jungtinė Respublika – 33 €</option>
+<option value="40">Tuniso Respublika – 40 €</option>
+<option value="37">Turkijos Respublika – 37 €</option>
+<option value="53">Turkmėnistanas – 53 €</option>
+<option value="37">Ugandos Respublika – 37 €</option>
+<option value="53">Ukraina – 53 €</option>
+<option value="37">Urugvajaus Rytų Respublika – 37 €</option>
+<option value="60">Uzbekistano Respublika – 60 €</option>
+<option value="63">Vatikano Miesto Valstybė – 63 €</option>
+<option value="57">Venesuelos Bolivaro Respublika – 57 €</option>
+<option value="48">Vengrija – 48 €</option>
+<option value="33">Vietnamo Socialistinė Respublika – 33 €</option>
+<option value="62">Vokietijos Federacinė Respublika – 62 €</option>
+<option value="33">Zambijos Respublika – 33 €</option>
+<option value="33">Zimbabvės Respublika – 33 €</option>
+<option value="33">Kitos valstybės – 33 €</option>
+            </select>
+            <label for="days${countriesCounting}">Dienų skaičius:</label>
+            <input type="number" id="days${countriesCounting}" min="1" value="1">
+            <label for="reduction${countriesCounting}">Dienpinigių sumažinimas (%):</label>
+            <input type="number" id="reduction${countriesCounting}" min="0" max="100" value="0">
+            <button class="remove-btn" onclick="removeCountry(${countriesCounting})">Pašalinti</button>
+        `;
+
+        countryFields.appendChild(fieldGroup);
+    }
+
+    function removeCountry(id) {
+        const fieldGroup = document.getElementById('countryGroup' + id);
+        fieldGroup.remove();
+    }
+
+    function calculate() {
+        let total = 0;
+
+        for (let i = 1; i <= countriesCounting; i++) {
+            const country = document.getElementById('country' + i);
+            const days = document.getElementById('days' + i);
+            const reduction = document.getElementById('reduction' + i);
+
+            if (country && days && reduction) {
+                const dailyRate = parseFloat(country.value);
+                const numDays = parseFloat(days.value);
+                const reductionPercentage = parseFloat(reduction.value) || 0;
+
+                const reducedAmount = dailyRate * numDays * (1 - reductionPercentage / 100);
+                total += reducedAmount;
+            }
+        }
+
+        document.getElementById('result').textContent = `Bendra suma: ${total.toFixed(2)} €`;
+    }
+</script>
+
+
+</body>
+</html>
