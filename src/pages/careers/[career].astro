@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// Eksportuojame getStaticPaths funkciją, kuri generuoja dinaminius puslapius
+export async function getStaticPaths() {
+  const careers = await getCollection('careers');
+  return careers.map((career) => ({
+    params: { career: career.id }, // Naudojame career.id vietoj career.slug
+    props: { career },
+  }));
+}
+
+// Gauname career parametrą iš Astro.params ir props
+const { career } = Astro.params;
+const { career: careerData } = Astro.props;
+
+// Patikriname, ar careerData egzistuoja
+if (!careerData) {
+  throw new Error(`Karjera su ID ${career} nerasta.`);
+}
+---
+
+<MainLayout>
+  <div class="max-w-3xl mx-auto px-4">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">{careerData.data.title}</h1>
+    <p class="text-base text-gray-600 mb-6">{careerData.data.description}</p>
+    <p class="text-sm text-gray-600 mb-4">Vieta: {careerData.data.location}</p>
+    <a
+      href=/kontaktai
+      class="inline-block rounded-md bg-accent px-6 py-3 text-white font-medium shadow hover:bg-accent-dark transition"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Kandidatuoti
+    </a>
+  </div>
+</MainLayout>

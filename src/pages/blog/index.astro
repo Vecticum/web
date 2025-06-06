@@ -9,18 +9,17 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <MainLayout>
-  <div class="w-full py-8 sm:py-16 md:py-20">
-    <h1
-      class="mt-2 w-full text-center text-4xl font-semibold tracking-normal text-balance text-gray-950 sm:text-5xl"
-    >
-      Blog
-    </h1>
-    <p class="mt-4 text-center text-lg text-gray-600">
-      Naujausi straipsniai apie personalo valdymą ir HR tendencijas
-    </p>
-  </div>
+    <!-- Hero -->
+  <section class="text-center py-20 px-6 bg-gradient-to-b from-white to-[#f4f7fa]">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Naujienos</h1>
+      <p class="text-lg text-gray-600">
+        Naujausi straipsniai apie personalo valdymą ir HR tendencijas
+      </p>
+    </div>
+  </section>
 
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 mt-12">
     {
       posts.length > 0 ? (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

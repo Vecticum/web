@@ -10,8 +10,22 @@ const logoImg = '~/assets/images/logo.webp';
 ---
 
 <header
-  class="bg-white py-2 font-semibold"
-  x-data="{ isOpen: false, flyoutOpen: false, apieFlyoutOpen: false, sprendimaiOpen: false, apieOpen: false }"
+  class="sticky top-0 z-50 bg-white py-2 font-semibold shadow transition-transform duration-300"
+  :class="{ '-translate-y-full': hideHeader, 'translate-y-0': !hideHeader }"
+  x-data="{ 
+    isOpen: false, 
+    flyoutOpen: false, 
+    apieFlyoutOpen: false, 
+    sprendimaiOpen: false, 
+    apieOpen: false, 
+    lastScroll: 0, 
+    hideHeader: false 
+  }"
+  x-init="window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    hideHeader = currentScroll > lastScroll && currentScroll > 80;
+    lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+  })"
 >
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
     <div class="flex h-16 items-center justify-between">
@@ -94,7 +108,7 @@ const logoImg = '~/assets/images/logo.webp';
        x-data="{
          icons: {
            'Atrankų valdymas': 'fa-users-line',
-           'Darbuotojo įdarbinimo savitarna': 'fa-fingerprint',
+           'Darbuotojų įdarbinimo savitarna': 'fa-fingerprint',
            'Darbo sutarčių valdymas': 'fa-file-signature',
            'Darbo vietos paruošimas': 'fa-briefcase',
            'Bandomojo laikotarpio valdymas': 'fa-hourglass',
@@ -121,9 +135,9 @@ const logoImg = '~/assets/images/logo.webp';
          },
          routes: {
            'Atrankų valdymas': '/atrankos-valdymas',
-           'Darbuotojo įdarbinimo savitarna': '/idarbinimo-savitarna',
-           'Darbo sutarčių valdymas': '/sutarciu-valdymas',
-           'Darbo vietos paruošimas': '/darbo-vietos-paruosimas',
+           'Darbuotojų įdarbinimo savitarna': '/darbuotoju-idarbinimo-savitarna',
+           'Darbo sutarčių valdymas': '/darbo-sutarciu-valdymas',
+           'Darbo vietos paruošimas': '/darbuotojo-idarbinimo-i-imone-valdymas/',
            'Bandomojo laikotarpio valdymas': '/bandomasis-laikotarpis',
            'Darbuotojo išdarbinimo valdymas': '/isdarbinimo-valdymas',
            'Privalomo supažindinimo su dokumentais valdymas': '/supazindinimo-valdymas',
@@ -139,7 +153,7 @@ const logoImg = '~/assets/images/logo.webp';
            'Dokumentacijos plano valdymas': '/dokumentacijos-planas',
            'Gaunamos/siunčiamos korespondencijos valdymas': '/korespondencijos-valdymas',
            'Pirkimų valdymas': '/pirkimu-valdymas',
-           'Atostogų prašymų ir kitų nebuvimų valdymas': '/atostogu-prasymai',
+           'Atostogų prašymų ir kitų nebuvimų valdymas': '/atostogu-valdymas',
            'Komandiruočių valdymas': '/komandiruotes',
            'Darbo laiko apskaitos žiniaraščiai': '/darbo-laiko-ziniarasciai',
            'Gaunamų sąskaitų valdymas': '/saskaitu-valdymas',
@@ -149,7 +163,7 @@ const logoImg = '~/assets/images/logo.webp';
        }">
     <template x-if="activeCategory">
       <template x-for="(item, idx) in (
-        activeCategory === 'Darbuotojų įdarbinimas/išdarbinimas' ? ['Atrankų valdymas', 'Darbuotojo įdarbinimo savitarna', 'Darbo sutarčių valdymas', 'Darbo vietos paruošimas', 'Bandomojo laikotarpio valdymas', 'Darbuotojo išdarbinimo valdymas'] :
+        activeCategory === 'Darbuotojų įdarbinimas/išdarbinimas' ? ['Atrankų valdymas', 'Darbuotojų įdarbinimo savitarna', 'Darbo sutarčių valdymas', 'Darbo vietos paruošimas', 'Bandomojo laikotarpio valdymas', 'Darbuotojo išdarbinimo valdymas'] :
         activeCategory === 'Atitikimo valdymas' ? ['Privalomo supažindinimo su dokumentais valdymas', 'Darbuotojų testavimas', 'Mokymų valdymas', 'Veiklos vertinimas'] :
         activeCategory === 'Sutarčių valdymas' ? ['Sutarčių valdymas'] :
         activeCategory === 'Darbuotojo informacijos valdymas' ? ['Darbuotojo duomenų valdymas', 'Išduodamo inventoriaus valdymas', 'Intranetas (Įmonės naujienos)', 'Darbuotojų prašymų valdymas'] :
@@ -241,7 +255,7 @@ const logoImg = '~/assets/images/logo.webp';
                     <div class="space-y-4">
                       <div class="space-y-2">
                         <a
-                          href="/recomendations"
+                          href="/rekomendacijos"
                           class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
                         >
                           Rekomendacijos
