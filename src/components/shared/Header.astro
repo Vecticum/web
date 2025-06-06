@@ -33,7 +33,7 @@ const logoImg = '~/assets/images/logo.webp';
       <div class="md:flex md:items-center md:gap-12">
         <a class="block text-teal-600 py-2" href="/">
           <span class="sr-only">Home</span>
-          <Image src={logoImg} alt="Vecticum logo" class="h-8 sm:h-12 w-fit" />
+          <Image src={logoImg} alt="Vecticum logo" class="h-8 sm:h-12 w-auto max-w-[160px]" />
         </a>
       </div>
 
@@ -376,7 +376,7 @@ const logoImg = '~/assets/images/logo.webp';
 <!-- Sprendimai Section -->
 <div class="space-y-4" x-data="{ activeMobileCategory: null }">
   <div class="flex items-center justify-between">
-    <span class="text-lg font-medium text-gray-900">Sprendimai</span>
+    <span class="block text-sm text-gray-600">Sprendimai</span>
   </div>
 
   <!-- Categories List -->
@@ -394,7 +394,7 @@ const logoImg = '~/assets/images/logo.webp';
       <div class="space-y-1">
         <button 
           @click="activeMobileCategory === category ? activeMobileCategory = null : activeMobileCategory = category"
-          class="flex justify-between items-center w-full text-left text-gray-800 font-medium text-base py-2"
+          class="flex justify-between items-center w-full text-left text-sm text-gray-600 py-2"
         >
           <span x-text="category"></span>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform duration-200" 
@@ -438,14 +438,14 @@ const logoImg = '~/assets/images/logo.webp';
 
 
         <!-- Planai Section -->
-        <a href="/planai" class="block text-lg font-medium text-gray-900">
+        <a href="/planai" class="block text-sm text-gray-600">
           Planai
         </a>
 
         <!-- Apie Vecticum Section -->
         <div class="space-y-4">
           <div class="flex items-center justify-between">
-            <a href="/apie" class="text-lg font-medium text-gray-900"
+            <a href="/apie" class="block text-sm text-gray-600"
               >Apie Vecticum</a
             >
             <button @click="apieOpen = !apieOpen" class="p-1 text-gray-600">
@@ -486,7 +486,7 @@ const logoImg = '~/assets/images/logo.webp';
         </div>
 
         <!-- Kontaktai Section -->
-        <a href="/kontaktai" class="block text-lg font-medium text-gray-900">
+        <a href="/kontaktai" class="block text-sm text-gray-600">
           Kontaktai
         </a>
       </nav>
