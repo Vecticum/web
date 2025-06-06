@@ -373,90 +373,69 @@ const logoImg = '~/assets/images/logo.webp';
       </button>
 
       <nav class="space-y-6">
-        <!-- Sprendimai Section -->
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <a href="/sprendimai" class="text-lg font-medium text-gray-900"
-              >Sprendimai</a
-            >
-            <button
-              @click="sprendimaiOpen = !sprendimaiOpen"
-              class="p-1 text-gray-600"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 transition-transform duration-200"
-                :class="{ 'rotate-180': sprendimaiOpen }"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-          </div>
+<!-- Sprendimai Section -->
+<div class="space-y-4" x-data="{ activeMobileCategory: null }">
+  <div class="flex items-center justify-between">
+    <span class="text-lg font-medium text-gray-900">Sprendimai</span>
+  </div>
 
-          <div
-            x-show="sprendimaiOpen"
-            x-transition:enter="transition ease-out duration-200"
-            x-transition:enter-start="opacity-0 transform -translate-y-2"
-            x-transition:enter-end="opacity-100 transform translate-y-0"
-            x-transition:leave="transition ease-in duration-150"
-            x-transition:leave-start="opacity-100 transform translate-y-0"
-            x-transition:leave-end="opacity-0 transform -translate-y-2"
-            class="pl-4 space-y-6"
-          >
-            <!-- Service Categories -->
-            <div class="space-y-4">
-              <h3 class="text-sm font-medium text-gray-900 uppercase">
-                Service Category 1
-              </h3>
-              <div class="space-y-2">
-                <a href="/sprendimai" class="block text-sm text-gray-600"
-                  >HR Knowledge Hub</a
-                >
-                <a href="/sprendimai" class="block text-sm text-gray-600"
-                  >Blog</a
-                >
-              </div>
-            </div>
+  <!-- Categories List -->
+  <div class="space-y-2 pl-2">
+    <template x-for="category in [
+      'Darbuotojų įdarbinimas/išdarbinimas',
+      'Atitikimo valdymas',
+      'Sutarčių valdymas',
+      'Darbuotojo informacijos valdymas',
+      'Dokumentų valdymas',
+      'Pirkimų valdymas',
+      'Darbo laiko apskaita',
+      'Apskaitomų dokumentų valdymas'
+    ]" :key="category">
+      <div class="space-y-1">
+        <button 
+          @click="activeMobileCategory === category ? activeMobileCategory = null : activeMobileCategory = category"
+          class="flex justify-between items-center w-full text-left text-gray-800 font-medium text-base py-2"
+        >
+          <span x-text="category"></span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform duration-200" 
+            :class="{ 'rotate-180': activeMobileCategory === category }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
 
-            <div class="space-y-4">
-              <h3 class="text-sm font-medium text-gray-900 uppercase">
-                Service Category 2
-              </h3>
-              <div class="space-y-2">
-                <a href="/sprendimai" class="block text-sm text-gray-600"
-                  >HR Knowledge Hub</a
-                >
-                <a href="/sprendimai" class="block text-sm text-gray-600"
-                  >Blog</a
-                >
-              </div>
-            </div>
-
-            <!-- Helpful Resource -->
-            <div class="bg-blue-50 p-4 rounded-lg">
-              <h3 class="text-sm font-medium text-gray-900">
-                Helpful resource
-              </h3>
-              <p class="text-sm text-gray-600 mt-1">
-                Workforce Pulse 2024: Solving talent and engagement challenges
-              </p>
-              <Image
-                src={headerImg}
-                alt="Workforce Pulse"
-                class="w-full rounded-lg my-2"
-              />
-              <a href="/sprendimai" class="text-sm text-blue-600">Read report</a
-              >
-            </div>
-          </div>
+        <!-- Solutions List -->
+        <div 
+          x-show="activeMobileCategory === category"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform -translate-y-2"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 transform translate-y-0"
+          x-transition:leave-end="opacity-0 transform -translate-y-2"
+          class="pl-4 space-y-1 text-sm text-gray-600"
+        >
+          <template x-for="item in (
+            category === 'Darbuotojų įdarbinimas/išdarbinimas' ? ['Atrankų valdymas', 'Darbuotojų įdarbinimo savitarna', 'Darbo sutarčių valdymas', 'Darbo vietos paruošimas', 'Bandomojo laikotarpio valdymas', 'Darbuotojo išdarbinimo valdymas'] :
+            category === 'Atitikimo valdymas' ? ['Privalomo supažindinimo su dokumentais valdymas', 'Darbuotojų testavimas', 'Mokymų valdymas', 'Veiklos vertinimas'] :
+            category === 'Sutarčių valdymas' ? ['Sutarčių valdymas'] :
+            category === 'Darbuotojo informacijos valdymas' ? ['Darbuotojo duomenų valdymas', 'Išduodamo inventoriaus valdymas', 'Intranetas (Įmonės naujienos)', 'Darbuotojų prašymų valdymas'] :
+            category === 'Dokumentų valdymas' ? ['Dokumentų valdymas', 'Dokumentacijos plano valdymas', 'Gaunamos/siunčiamos korespondencijos valdymas'] :
+            category === 'Pirkimų valdymas' ? ['Pirkimų valdymas'] :
+            category === 'Darbo laiko apskaita' ? ['Atostogų prašymų ir kitų nebuvimų valdymas', 'Komandiruočių valdymas', 'Darbo laiko apskaitos žiniaraščiai'] :
+            category === 'Apskaitomų dokumentų valdymas' ? ['Gaunamų sąskaitų valdymas', 'Avansinės apyskaitos valdymas', 'Kelionės lapų valdymas', 'Komandiruočių valdymas'] : []
+          )" :key="item">
+            <a 
+              :href="routes[item]"
+              class="block py-1 hover:text-[#C81F6A] transition-colors duration-200"
+              x-text="item"
+            ></a>
+          </template>
         </div>
+      </div>
+    </template>
+  </div>
+</div>
+
 
         <!-- Planai Section -->
         <a href="/planai" class="block text-lg font-medium text-gray-900">
