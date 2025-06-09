@@ -374,7 +374,35 @@ const logoImg = '~/assets/images/logo.webp';
 
       <nav class="space-y-6">
 <!-- Sprendimai Section -->
-<div class="space-y-4" x-data="{ activeMobileCategory: null }">
+<div class="space-y-4" x-data="{ activeMobileCategory: null,
+ routes: {
+    'Atrankų valdymas': '/atrankos-valdymas',
+    'Darbuotojų įdarbinimo savitarna': '/darbuotoju-idarbinimo-savitarna',
+    'Darbo sutarčių valdymas': '/darbo-sutarciu-valdymas',
+    'Darbo vietos paruošimas': '/darbuotojo-idarbinimo-i-imone-valdymas/',
+    'Bandomojo laikotarpio valdymas': '/bandomasis-laikotarpis',
+    'Darbuotojo išdarbinimo valdymas': '/isdarbinimo-valdymas',
+    'Privalomo supažindinimo su dokumentais valdymas': '/supazindinimo-valdymas',
+    'Darbuotojų testavimas': '/testavimas',
+    'Mokymų valdymas': '/mokymu-valdymas',
+    'Veiklos vertinimas': '/veiklos-vertinimas',
+    'Sutarčių valdymas': '/sutarciu-valdymas',
+    'Darbuotojo duomenų valdymas': '/darbuotojo-duomenu-valdymas',
+    'Išduodamo inventoriaus valdymas': '/inventoriaus-valdymas',
+    'Intranetas (Įmonės naujienos)': '/intranetas',
+    'Darbuotojų prašymų valdymas': '/prasymu-valdymas',
+    'Dokumentų valdymas': '/dokumentu-valdymas',
+    'Dokumentacijos plano valdymas': '/dokumentacijos-planas',
+    'Gaunamos/siunčiamos korespondencijos valdymas': '/korespondencijos-valdymas',
+    'Pirkimų valdymas': '/pirkimu-valdymas',
+    'Atostogų prašymų ir kitų nebuvimų valdymas': '/atostogu-valdymas',
+    'Komandiruočių valdymas': '/komandiruotes',
+    'Darbo laiko apskaitos žiniaraščiai': '/darbo-laiko-ziniarasciai',
+    'Gaunamų sąskaitų valdymas': '/saskaitu-valdymas',
+    'Avansinės apyskaitos valdymas': '/avansines-apyskaitos',
+    'Kelionės lapų valdymas': '/keliones-lapai'
+  }
+}">
   <div class="flex items-center justify-between">
     <span class="block text-sm text-gray-600">Sprendimai</span>
   </div>
