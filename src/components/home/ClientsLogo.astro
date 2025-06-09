@@ -71,22 +71,10 @@ const doubledLogos = logos.concat(logos); // begalinis slinkimas
     transform: translateX(-50%);
   }
 }
-
-.carousel-track {
-  display: flex;
-  flex-wrap: nowrap;
-  width: max-content;
-  animation: scroll 90s linear infinite;
-}
-
-.carousel-track:hover {
-  animation-play-state: paused;
-}
-
 /* Mobile greitesnis slinkimas */
 @media (max-width: 768px) {
   .carousel-track {
-    animation-duration: 45s;
+    animation-duration: 25s;
   }
 }
 </style>
