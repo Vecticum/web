@@ -62,6 +62,33 @@ const doubledLogos = logos.concat(logos); // begalinis slinkimas
       transform: translateX(-50%);
     }
   }
+
+  @keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: scroll 90s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* Mobile greitesnis slinkimas */
+@media (max-width: 768px) {
+  .carousel-track {
+    animation-duration: 45s;
+  }
+}
 </style>
 
 <section class="pt-10 pb-10">
