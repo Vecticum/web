@@ -38,40 +38,28 @@ const doubledLogos = logos.concat(logos); // begalinis slinkimas
 ---
 
 <style>
-  .carousel-wrapper {
-    overflow: hidden;
-    width: 100%;
-  }
+.carousel-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
 
 .carousel-track {
   display: flex;
   flex-wrap: nowrap;
-  width: max-content;
-  animation: scroll 90s linear infinite;
+  width: fit-content;
+  animation: scroll 60s linear infinite;
   will-change: transform;
   transform: translateZ(0); /* force GPU */
 }
 
 @media (max-width: 768px) {
   .carousel-track {
-    animation-duration: 45s;
+    animation-duration: 25s; /* mobile greitesnis loopas */
   }
 }
 
-  .carousel-track:hover {
-    animation-play-state: paused;
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  @keyframes scroll {
+@keyframes scroll {
   0% {
     transform: translateX(0);
   }
@@ -86,17 +74,20 @@ const doubledLogos = logos.concat(logos); // begalinis slinkimas
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
     <div class="carousel-wrapper w-full bg-white py-6">
       <div class="carousel-track">
-        {doubledLogos.map((logo, i) => (
-          <div class="flex-shrink-0 px-8">
-            <img
-              src={logo.src}
-              alt={`Kliento logotipas ${i + 1}`}
-              class="h-12 w-auto object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
-              loading="lazy"
-            />
-          </div>
-        ))}
+        {
+          doubledLogos.map((logo, i) => (
+            <div class="flex-shrink-0 px-8">
+              <img
+                src={logo.src}
+                alt={`Kliento logotipas ${i + 1}`}
+                class="h-12 w-auto object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
+                loading="lazy"
+              />
+            </div>
+          ))
+        }
       </div>
     </div>
   </div>
 </section>
+
