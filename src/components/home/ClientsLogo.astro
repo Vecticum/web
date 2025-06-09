@@ -43,12 +43,20 @@ const doubledLogos = logos.concat(logos); // begalinis slinkimas
     width: 100%;
   }
 
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: scroll 90s linear infinite;
+  will-change: transform;
+  transform: translateZ(0); /* force GPU */
+}
+
+@media (max-width: 768px) {
   .carousel-track {
-    display: flex;
-    flex-wrap: nowrap;
-    width: max-content;
-    animation: scroll 90s linear infinite;
+    animation-duration: 45s;
   }
+}
 
   .carousel-track:hover {
     animation-play-state: paused;
@@ -71,12 +79,7 @@ const doubledLogos = logos.concat(logos); // begalinis slinkimas
     transform: translateX(-50%);
   }
 }
-/* Mobile greitesnis slinkimas */
-@media (max-width: 768px) {
-  .carousel-track {
-    animation: scroll 2s linear infinite;
-  }
-}
+
 </style>
 
 <section class="pt-10 pb-10">
