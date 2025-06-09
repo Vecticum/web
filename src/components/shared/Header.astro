@@ -470,29 +470,33 @@ const logoImg = '~/assets/images/logo.webp';
           Planai
         </a>
 
-        <!-- Apie Vecticum Section -->
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <a class="block text-sm text-gray-600"
-              >Apie Vecticum</a
-            >
-            <button @click="apieOpen = !apieOpen" class="p-1 text-gray-600">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 transition-transform duration-200"
-                :class="{ 'rotate-180': apieOpen }"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-          </div>
+<!-- Apie Vecticum Section -->
+<div class="space-y-4">
+  <!-- Pridedam @click ant viso flex containerio -->
+  <div
+    class="flex items-center justify-between cursor-pointer"
+    @click="apieOpen = !apieOpen"
+  >
+    <a class="block text-sm text-gray-600">Apie Vecticum</a>
+    <button class="p-1 text-gray-600 pointer-events-none">
+      <!-- pointer-events-none tam, kad paspaudimas veiktų per visą bloką -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 transition-transform duration-200"
+        :class="{ 'rotate-180': apieOpen }"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        ></path>
+      </svg>
+    </button>
+  </div>
 
           <div
             x-show="apieOpen"
