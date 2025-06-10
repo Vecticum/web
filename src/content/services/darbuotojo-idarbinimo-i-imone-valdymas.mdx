@@ -85,7 +85,7 @@ import ContactForm from "../../components/home/ContactForm.astro";
     <div class="mx-auto max-w-2xl">
       <img
         src="/media/services/darbuotojo-idarbinimmo-valdymas-schema.png"  
-        alt="idarbinimo-savitarna"
+        alt="Idarbinimo procesas | VECTICUM"
         class="w-full h-auto rounded-xl p-6 border-2 transition duration-300 object-cover"
       />
     </div>
@@ -99,42 +99,38 @@ import ContactForm from "../../components/home/ContactForm.astro";
 <section class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-12">
   <div class="max-w-7xl mx-auto text-center mb-12">
     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900">
-      Darbo sutarčių valdymo funkcijos
+      Darbo vietos paruošimo valdymo funkcijos
     </h2>
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
       <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
-<li>Darbo sutarties registravimas</li>
-<li>Darbo sutarties pakeitimo registravimas</li>
-<li>Darbo sutarties nutraukimo registravimas</li>
-<li>Darbo sutarties tiesioginio vadovo tvirtinimas</li>
-<li>Darbo sutarties pakeitimo tiesioginio vadovo tvirtinimas</li>
-<li>Darbo sutarties nutraukimo tiesioginio vadovo tvirtinimas</li>
-<li>Darbo sutarties pasirašymas elektroniniu parašu</li>
-<li>Darbo sutarties pakeitimo pasirašymas elektroniniu parašu</li>
-<li>Darbo sutarties nutraukimo pasirašymas elektroniniu parašu</li>
-<li>Darbo sutarties tvirtinimo/pasirašymo užduočių istorija</li>
-<li>Darbo sutarties pakeitimo tvirtinimo/pasirašymo užduočių istorija</li>
-<li>Darbo sutarties nutraukimo tvirtinimo/pasirašymo užduočių istorija</li>
+      <li>Galimybė susikurti skirtingus darbo vietos paruošimo užduočių šablonų rinkinius, kurie bus pritaikomi skirtingoms darbuotojų grupėms (pvz. vienokios užduotys, jei įdarbinamas Administravimo skyriaus darbuotojas, kitokios užduotys, jei įdarbinamas Gamybos skyriaus darbuotojas). Šablonų rinkinių kiekis neribojamas; </li>
+      <li>Diegimo metu įdiegiama viena tvirtinimo seka, vienoda visiems užduočių rinkiniams, be papildomo asmenų išskaičiavimo pagal papildomas taisykles. Standartinė tvirtinimo seka: personalo vadybininkas inicijuoja šabloną – Tiesioginis vadovas gauna užduotį personalizuoti planą – Atsakingi vykdytojai gauna užduotis dėl priskirtų užduočių – Personalas gauna užduotį užbaigti darbo vietos paruošimą;</li>
+      <li>Tvirtinimo sekos (workflow) dalyvių informavimas apie laukiančią užduotį;</li>
+      <li>Užduočių vykdymo ir tvirtinimo istorija;</li>
+      <li>Užduočių komentavimo funkcija;</li>
+      <li>Galimybė paleisti papildomą darbo vietos paruošimo užduočių rinkinį kiekvienam darbuotojui. Tai yra naudotina tais atvejais, kai darbuotojas keičia darbo vietą įmonėje ar pan.; </li>
       </ul>
     </div>
 
     <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
       <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
+            <li>Automatinis užduočių rinkinio paleidimas atsakingiems asmenims, kai sistemoje yra sukuriama naujo darbuotojo kortelė. Užduočių rinkinio tvirtinimo / atmetimo procesas:</li>
+        <ol class="list-disc pl-5 mt-2 space-y-1">
+          <li>Už užduočių rinkinio parengimo proceso startavimą yra atsakingas Personalo žmogus;</li>
+          <li>Už personalizuoto užduočių plano sudarymą yra atsakingas būsimo darbuotojo tiesioginis vadovas;</li>
+          <li>Už darbo vietos paruošimo proceso kontrolę ir pabaigos patvirtinimą yra atsakingas Personalo žmogus;</li>
+        </ol>
+      <li>Likus xx dienoms iki naujo darbuotojo darbo pradžios automatinės užduoties HR darbuotojui sugeneravimas patikrinti ar kiti atsakingi asmenys jau atliko jiems pavestas užduotis;</li>
+      <li>Galimybė darbo vietos paruošimo eigą stebėti dviem pjūviais:</li>
+        <ol class="list-disc pl-5 mt-2 space-y-1">
+          <li>Pagal įdarbinamus žmones (matomas įdarbinamų asmenų sąrašas);</li>
+          <li>Pagal užduotis (matomas visų užduočių sąrašas);</li>
+        </ol>
 
-<li>Darbo sutarties ruošinio sukūrimas</li>
-<li>Darbo sutarties pakeitimo ruošinio sukūrimas</li>
-<li>Darbo sutarties nutraukimo ruošinio sukūrimas</li>
-<li>Darbo sutarčių, pakeitimų ir nutraukimų filtravimas</li>
-<li>Galimybė išplėsti darbo sutartį papildomais laukais</li>
-<li>Galimybė išplėsti darbo sutarties pakeitimą papildomais laukais</li>
-<li>Galimybė išplėsti darbo sutarties nuraukimą papildomais laukais</li>
-<li>Galimybė papildyti darbo sutarties/pakeitimo/nutraukimo tvirtinimo seką papildomais tvirtintojais</li>
-<li>Papildomi darbo sutarčių atvaizdavimo pjūviai</li>
-<li>Papildomi darbo sutarčių pakeitimų atvaizdavimo pjūviai</li>
-<li>Papildomi darbo sutarčių nutraukimų atvaizdavimo pjūviai</li>
+      <li>Meta duomenų eksportavimas į Excel.</li>
       </ul>
     </div>
   </div>
@@ -230,9 +226,9 @@ import ContactForm from "../../components/home/ContactForm.astro";
 
 <section class="bg-[#F8FAFC] py-16 px-4 sm:px-6 lg:px-8 mt-20">
   <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#3C7099] mb-10">
+    <h3 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10">
       Kiti darbuotojų įdarbinimo/išdarbinimo sprendimai
-    </h2>
+    </h3>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
       
@@ -246,7 +242,7 @@ import ContactForm from "../../components/home/ContactForm.astro";
         </p>
       </a>
 
-      <a href="https://vecticum.lt/darbuotoju-idarbinimo-savitarna/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+      <a href="/darbuotoju-idarbinimo-savitarna/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
         <div class="text-2xl mb-2">🆕</div>
         <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
           Darbuotojo įdarbinimo savitarna
@@ -256,13 +252,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
         </p>
       </a>
 
-      <a href="/darbuotojo-idarbinimo-i-imone-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
-        <div class="text-2xl mb-2">💼</div>
+      <a href="/darbo-sutarciu-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+        <div class="text-2xl mb-2">📄</div>
         <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
-          Darbo vietos paruošimas
+          Darbo sutarčių valdymas
         </h3>
         <p class="mt-1 text-sm text-gray-600 leading-snug">
-          Automatizuotas darbo vietos paruošimo procesas su atsakomybių paskirstymu.
+          Skaitmeninis sutarčių rengimas, archyvavimas ir automatizuotas patvirtinimas.
         </p>
       </a>
 
@@ -302,33 +298,34 @@ import ContactForm from "../../components/home/ContactForm.astro";
   <div class="max-w-4xl mx-auto space-y-6">
     <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
 
-    <h2 class="text-2xl sm:text-3xl font-bold">Darbo sutartys ir jų valdymas be streso: „Vecticum“ turi atsakymą</h2>
-<p>Teisingas darbo sutarčių tvarkymas yra itin svarbus tiek darbdaviams, tiek darbuotojams. Tiek senos, tiek ir <a href="https://vecticum.lt/atrankos-valdymas/">naujos darbo sutartys</a> yra teisiškai įpareigojantys susitarimai, kuriuose apibrėžiamos darbo santykių sąlygos.</p>
-<h3 class="text-xl font-semibold">Kodėl valdyti sutartis būtina atsakingai?</h3>
-<p>Štai keletas priežasčių, kodėl kiekviena darbuotojo sutartis ir atsakingas jos valdymas yra svarbus bet kuriai įmonei:</p>
-    <ul class="list-disc pl-5 space-y-2">
- 	<li>Aiškiai nurodomos darbovietės sąlygos: darbo sutartys suteikia aiškumo ir užtikrina, kad abi šalys aiškiai suprastų savo teises ir pareigas. Aiškiai nurodant įdarbinimo sąlygas, tokias kaip darbo pareigos, darbo laikas, kompensacijos, <a href="https://vecticum.lt/komandiruociu-prasymu-ir-ju-islaidu-valdymas/">išvykos ir komandiruotės</a>, darbo sutarties nutraukimo tvarka, sutartys padeda išvengti nesusipratimų ir ginčų.</li>
- 	<li>Laikomasi teisės aktų: darbo sutartys padeda organizacijoms laikytis darbo įstatymų ir taisyklių. Jie užtikrina, kad darbo santykiai atitiktų teisinius reikalavimus, tokius kaip minimalaus atlyginimo įstatymai, darbo valandų limitai ir teisės į atostogas. Tinkamas darbo sutarčių tvarkymas padeda darbdaviams išvengti teisinių problemų ir galimų nuobaudų.</li>
- 	<li>Darbuotojo teisių apsauga: darbo sutartys gina ir darbdavių, ir darbuotojų teises. Darbuotojams sutartys užtikrina jų teisę į teisingą atlygį, išmokas ir darbo sąlygas. Kita vertus, darbdaviai yra apsaugoti sutartimis, kuriose išdėstyti lūkesčiai, konfidencialumo susitarimai ir intelektinės nuosavybės teisės.</li>
- 	<li>Ginčų sprendimas: kilus nesutarimams ar ginčams darbo sutartys yra atskaitos taškas sprendžiant konfliktus. Jie suteikia pagrindą sprendžiant klausimus, susijusius su veiklos rezultatais, drausminėmis nuobaudomis ir nutraukimu. Tinkamai valdomos sutartys gali palengvinti sąžiningus ir veiksmingus ginčų sprendimo procesus.</li>
- 	<li>Nuoseklumas ir sąžiningumas: atsakingai tvarkomos senos ir naujos darbo sutartys skatina nuoseklumą ir sąžiningumą darbo vietoje. Jie užtikrina, kad su visais darbuotojais būtų elgiamasi vienodai, o politika ir procedūros būtų taikomos nuosekliai. Aiškiai išdėstydami lūkesčius ir standartus, sutartys padeda sukurti sąžiningą ir darnią darbo aplinką.</li>
- 	<li>Lankstumas ir prisitaikymas: tinkamas darbo sutarčių valdymas leidžia užtikrinti lankstumą ir prisitaikymą darbo santykiuose. Sutartys gali būti atnaujinamos arba keičiamos, kad atitiktų darbo pareigų pasikeitimus, paaukštinimus ar darbo sąlygų pasikeitimus. Šis lankstumas padeda organizacijoms ir darbuotojams prisitaikyti prie kintančių poreikių ir aplinkybių.</li>
+    <h2 class="text-2xl sm:text-3xl font-bold">Naujo komandos nario įdarbinimas: ką būtina žinoti?</h2>
+<p>Užbaigus darbuotojų <a href="https://vecticum.lt/atrankos-valdymas/">atrankos procesą</a>, laukia naujo komandos nario prisijungimas įmonėje. Tai visada džiugi žinia, tačiau ji turi iššūkių. Darbuotojo įdarbinimo procedūra neapsieina be dokumentų tvarkymo, naujų užduočių ir įsipareigojimų paskirstymo. Kaip įdarbinti darbuotoją be papildomo streso? Atsakome!</p>
+<h3 class="text-xl font-semibold">Darbuotojo įdarbinimo procedūra: pagrindiniai iššūkiai</h3>
+<p>Naujo nario priėmimas į komandą yra jaudinantis nuotykis, tačiau jis turi savo iššūkių, ypač kai kalbama apie techninę dalykų pusę.</p>
+<ul class="list-disc pl-5 space-y-2">
+ 	<li><strong>Darbo vietos paruošimas: </strong>skirtingų darbuotojų grupių įdarbinimui reikalingi skirtingi darbo vietos paruošimo užduočių šablonai. Juos kurti savarankiškai išties vargina ir užima laiką, kurį Jūsų komanda galėtų nukreipti kitur.</li>
+ 	<li><strong>IT sąranka:</strong> didelis techninis iššūkis įdarbinant naują narį – užtikrinti, kad naujas darbuotojas turėtų reikiamą techninę, programinę įrangą ir prieigą prie tinklo ir galėtų veiksmingai atlikti savo pareigas.</li>
+ 	<li><strong>Paskyros kūrimas:</strong> technologijos neatsiejamos nuo bet kurios profesijos. Tai reiškia, kad įdarbinimas apima naujo komandos nario prijungimą prie įmonės paskyrų, programinės įrangos platformų ir kitų internetinių sistemų.</li>
+ 	<li><strong>Duomenų perdavimas:</strong> bet kokių svarbių duomenų ar dokumentų perkėlimas iš ankstesnio darbuotojo į naujo darbuotojo sistemą gali pareikalauti nemažai Jūsų laiko ir jėgų. Ypač jei duomenys yra saugūs arba reikalingi specialūs leidimai.</li>
+ 	<li><strong>Saugos protokolai: </strong>darbuotojo įdarbinimo procedūra neatsiejama nuo saugumo. Turite užtikrinti, kad naujasis darbuotojas suprastų ir laikytųsi įmonės saugumo protokolų, pvz., tvirtų slaptažodžių ar duomenų apsaugos priemonių, gali būti techninis iššūkis, jei darbuotojas dar nėra susipažinęs su tokia praktika.</li>
+ 	<li><strong>Daug popierizmo: </strong>Samdant naują darbuotoją, tradicinis dokumentų tvarkymo būdas kartais tampa tikru galvosūkiu. Daugybės dokumentų spausdinimas, pasirašymas ir pildymas gali būti didžiulis krūvis tiek darbuotojui, tiek personalo komandai. Dokumentuose dažnai įsivelia klaidų, todėl jų parengimas gerokai užtrunka. Susidūrus su šiuo iššūkiu, gelbsti paprastas patarimas: apsvarstykite galimybę pereiti prie skaitmeninių formų ir el. parašų. Taip ne tik saugoma gamta, bet ir įdarbinimo procesas tampa sklandesnis ir labiau organizuotas.</li>
 </ul>
-<p>Apibendrinant galima teigti, kad teisingas darbo sutarčių tvarkymas yra gyvybiškai svarbus siekiant sukurti aiškius lūkesčius, užtikrinti įstatymų laikymąsi, apsaugoti teises, spręsti ginčus, skatinti sąžiningumą ir sudaryti sąlygas darbo santykiams lanksčiai. Efektyviai valdydami sutartis, tiek darbdaviai, tiek darbuotojai gali gauti naudos iš skaidrios ir darnios darbo aplinkos.</p>
+<p>Jei kilo klausimas, kaip įdarbinti darbuotoją be papildomų iššūkių, Jums gali patikti „Vecticum“ sprendimas. Padėsime ne tik įdarbinant naujus komandos narius, bet ir <a href="https://vecticum.lt/atrankos-valdymas/">valdant atrankas</a>, pildant komandiruočių dokumentus ir dar daugiau!</p>
+<h3 class="text-xl font-semibold">Kodėl pasirinkus mūsų įrankį, darbuotojo įdarbinimo procedūra tampa paprastesnė?</h3>
+<p>Čia integruotos visos svarbiausios funkcijos, tokios, kaip:</p>
+<ul class="list-disc pl-5 space-y-2">
+ 	<li>Galimybė kurti standartizuotus ir skirtingus darbo vietos paruošimo užduočių šablonų rinkinius. Juos galėsite pritaikyti skirtingų sričių specialistams: nuo administracijos iki projektų vadovų ir dar daugiau!</li>
+ 	<li>Galimybė kurti papildomas darbo vietos užduotis darbuotojams, kurie keičia specialybę įmonės viduje.</li>
+ 	<li>Automatinis užduočių rinkinio paleidimas, skirtas naujam darbuotojui. Prieigą prie jo turės Jūsų įgalioti darbuotojai, kai sistemoje bus sukurta naujo darbuotojo kortelė.</li>
+ 	<li>Užduočių rinkinio tvirtinimo / atmetimo, progreso sekimo, komentavimo funkcija.</li>
+ 	<li>Prieiga prie sistemos ir patogus duomenų eksportavimas, kad ir kur bebūtumėte.</li>
+</ul>
+<h3 class="text-xl font-semibold">„Vecticum“: kad komandos narių integracija taptų lengvesnė</h3>
+<p>Nuo naujo darbuotojo įvedimo neatskiriami ir kultūriniai-integraciniai aspektai. Sklandaus naujo darbuotojo perėjimo į organizaciją užtikrinimas tik supažindinant su įmonės kultūra, politika ir procedūromis.</p>
 
-<p>Jeigu norite, kad kiekvieno darbuotojo sutartis būtų kruopščiai saugoma ir tvarkoma, verta pasinaudoti internetiniu „Vecticum“ įrankiu.</p>
-<h3 class="text-xl font-semibold">Kodėl su „Vecticum“ valdyti sutartis paprasčiau?</h3>
-    <ul class="list-disc pl-5 space-y-2">
- 	<li>Efektyvumas: supaprastinkite sutarčių valdymo procesą, sutaupydami laiko ir pastangų.</li>
- 	<li>Prieinamumas: pasiekite darbuotojų sutartis bet kada ir bet kur, jei tik turite interneto ryšį.</li>
- 	<li>Organizavimas: visas darbuotojų sutartis laikykite vienoje centralizuotoje vietoje, kad jas būtų lengva rasti ir valdyti.</li>
- 	<li>Galite koreguoti sutartis ir matyti pakeitimus: su „Vecticum“ saugokite sutarčių peržiūrų ir atnaujinimų įrašus, užtikrindami tikslumą ir atitiktį.</li>
- 	<li>Sklandus bendradarbiavimas: leiskite daugeliui suinteresuotųjų šalių bendradarbiauti kuriant ir peržiūrint sutartis, didinant efektyvumą ir tikslumą.</li>
- 	<li>Automatinių priminimų ir pranešimų funkcija: nustatykite priminimus apie sutarties pratęsimą, galiojimo pabaigą arba svarbius etapus, kad sumažintumėte terminų praleidimo riziką.</li>
- 	<li>Saugumas: apsaugokite slaptą darbuotojų sutarčių informaciją naudodami saugią internetinę saugyklą ir prieigos kontrolę.</li>
- 	<li>Ataskaitų teikimas ir analizė: kurkite ataskaitas ir gaukite įžvalgų apie sutarčių duomenis, padėkite priimti sprendimus ir nustatykite tendencijas.</li>
-</ul>
-<a href="/kontaktai">Kreipkitės jau šiandien</a>!
+<p>Mokymas ir tobulėjimas: tinkamų mokymų ir tobulėjimo galimybių teikimas, siekiant padėti naujam darbuotojui įgyti savo vaidmeniui reikalingų įgūdžių ir žinių.</p>
+
+<p>„Vecticum“ dėka, visa komanda gali sutelkti pastangas ten, kur reikia: padėkite naujam darbuotojui prisitaikyti prie naujos darbo aplinkos, įskaitant darbo valandas, užduotis, normas ir lūkesčius. Kartu su <a href="https://vecticum.lt/bandomojo-laikotarpio-vertinimas-valdymas/">kitais mūsų siūlomais įrankiais</a>, naujo kolegos įdarbinimas ir įvedimas į komandą bus gerokai paprastesnis!</p>
 
     <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
   </div>
