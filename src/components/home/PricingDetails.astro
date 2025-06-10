@@ -135,11 +135,79 @@ table tbody tr:last-child {
   { name: "Darbuotojų perkėlimas iš vienos dukterinės įmonės į kitą", plans: [false, false, true] }
 ],
 
-      "contracts": [
+"contracts": [
+  { name: "Darbo sutarties registravimas", plans: [true, true, true] },
+  { name: "Darbo sutarties pakeitimo registravimas", plans: [true, true, true] },
+  { name: "Darbo sutarties nutraukimo registravimas", plans: [true, true, true] },
+  { name: "Darbo sutarties tiesioginio vadovo tvirtinimas", plans: [true, true, true] },
+  { name: "Darbo sutarties pakeitimo tiesioginio vadovo tvirtinimas", plans: [true, true, true] },
+  { name: "Darbo sutarties nutraukimo tiesioginio vadovo tvirtinimas", plans: [true, true, true] },
+  { name: "Darbo sutarties pasirašymas elektroniniu parašu", plans: [false, true, true] },
+  { name: "Darbo sutarties pakeitimo pasirašymas elektroniniu parašu", plans: [false, true, true] },
+  { name: "Darbo sutarties nutraukimo pasirašymas elektroniniu parašu", plans: [false, true, true] },
+  { name: "Darbo sutarties tvirtinimo/pasirašymo užduočių istorija", plans: [true, true, true] },
+  { name: "Darbo sutarties pakeitimo tvirtinimo/pasirašymo užduočių istorija", plans: [true, true, true] },
+  { name: "Darbo sutarties nutraukimo tvirtinimo/pasirašymo užduočių istorija", plans: [true, true, true] },
+  { name: "Darbo sutarties ruošinio sukūrimas", plans: [true, true, true] },
+  { name: "Darbo sutarties pakeitimo ruošinio sukūrimas", plans: [true, true, true] },
+  { name: "Darbo sutarties nutraukimo ruošinio sukūrimas", plans: [true, true, true] },
+  { name: "Darbo sutarčių, pakeitimų ir nutraukimų filtravimas", plans: [true, true, true] },
+  { name: "Papildomi darbo sutarčių atvaizdavimo pjūviai", plans: [false, true, true] },
+  { name: "Papildomi darbo sutarčių pakeitimų atvaizdavimo pjūviai", plans: [false, true, true] },
+  { name: "Papildomi darbo sutarčių nutraukimų atvaizdavimo pjūviai", plans: [false, true, true] },
+  { name: "Galimybė išplėsti darbo sutartį papildomais laukais", plans: [false, false, true] },
+  { name: "Galimybė išplėsti darbo sutarties pakeitimą papildomais laukais", plans: [false, false, true] },
+  { name: "Galimybė išplėsti darbo sutarties nutraukimą papildomais laukais", plans: [false, false, true] },
+  { name: "Galimybė papildyti darbo sutarties/pakeitimo/nutraukimo tvirtinimo seką papildomais tvirtintojais", plans: [false, false, true] }
+],
+      
+      "requests": [
         { name: "Sutarties peržiūra", plans: [true, true, true] },
         { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ]
-      // Papildyk jei reikia
+      ],
+
+            "leaves": [
+        { name: "Sutarties peržiūra", plans: [true, true, true] },
+        { name: "PDF atsisiuntimas", plans: [false, true, true] }
+      ],
+
+            "absences": [
+        { name: "Sutarties peržiūra", plans: [true, true, true] },
+        { name: "PDF atsisiuntimas", plans: [false, true, true] }
+      ],
+
+            "sick": [
+        { name: "Sutarties peržiūra", plans: [true, true, true] },
+        { name: "PDF atsisiuntimas", plans: [false, true, true] }
+      ],
+
+            "special": [
+        { name: "Sutarties peržiūra", plans: [true, true, true] },
+        { name: "PDF atsisiuntimas", plans: [false, true, true] }
+      ],
+
+            "travel": [
+        { name: "Sutarties peržiūra", plans: [true, true, true] },
+        { name: "PDF atsisiuntimas", plans: [false, true, true] }
+      ],
+
+        "calendar": [
+        { name: "Sutarties peržiūra", plans: [true, true, true] },
+        { name: "PDF atsisiuntimas", plans: [false, true, true] }
+      ],
+      
+         "rules": [
+        { name: "Sutarties peržiūra", plans: [true, true, true] },
+        { name: "PDF atsisiuntimas", plans: [false, true, true] }
+      ],
+         "acknowledgements": [
+        { name: "Sutarties peržiūra", plans: [true, true, true] },
+        { name: "PDF atsisiuntimas", plans: [false, true, true] }
+      ],
+      "extra": [
+        { name: "Sutarties peržiūra", plans: [true, true, true] },
+        { name: "PDF atsisiuntimas", plans: [false, true, true] }
+      ],
     };
 
     const tbody = document.getElementById('feature-table');
