@@ -45,14 +45,6 @@
 
   <style>
 
-table {
-  display: block;
-  width: max-content;
-  max-width: 100%;
-  overflow: auto;
-  
-  resize: horizontal;
-}
 
   .solution-categories li {
     padding: 14px 20px;
@@ -112,6 +104,17 @@ table tbody tr:hover {
 table tbody tr:last-child {
   border-bottom: none;
 
+}
+
+@media (max-width: 768px) {
+table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+  
+  resize: horizontal;
+}
 }
 
 </style>
