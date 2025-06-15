@@ -26,7 +26,7 @@
     <!-- 2 + 3 lygis: funkcionalumų palyginimo lentelė -->
     <div class="w-full md:w-3/4 overflow-x-auto">
       <div class="rounded-2xl shadow-xl overflow-hidden bg-white border border-gray-200">
-        <table class="w-full text-sm text-left">
+        <table class="w-full text-sm text-left min-w-[600px]">
           <thead class="bg-[#3C7099] text-white">
             <tr style="margin-left:2rem !important;">
               <th class="p-4 text-base font-semibold">Funkcijos</th>
@@ -82,7 +82,7 @@ table td {
   color: #374151;
   text-align: center;
   line-height: 1.6;
-  
+  white-space: nowrap;
 }
 
 table td:first-child {
@@ -104,9 +104,15 @@ table tbody tr:last-child {
 
 }
 
+@media (max-width: 768px) {
+  table {
+    min-width: 600px; /* Užtikrina, kad lentelė turi minimalų plotį slinkimui */
+  }
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch; /* Sklandesnis slinkimas mobiliuosiuose */
+  }
+}
 </style>
-
-  
 
   <script type="module">
     const data = {

@@ -1,0 +1,401 @@
+---
+title: Mokymų valdymas
+description: Modernus mokymų valdymo sprendimas, padedantis identifikuoti darbuotojų kompetencijų poreikius, lengvai organizuoti mokymus ir užtikrinti jų kokybišką įgyvendinimą.
+hero_image: "/media/services/mokymai-hero.png"
+hero_image_alt: "Darbuotoju mokymai | VECTICUM"
+---
+
+import ContactForm from "../../components/home/ContactForm.astro";
+
+
+
+{/* first section */}
+
+
+<section class="w-full bg-[#EBEFF3] py-16">
+  <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl text-center mb-8 sm:mb-12">
+    Kodėl verta naudotis?
+  </h2>
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Centralizuotas mokymų planavimas</h3>
+          <p class="mt-1 text-sm text-gray-600">Įmonė gali centralizuotai planuoti mokymus — tiek priskiriant juos darbuotojams ar grupėms, tiek leidžiant darbuotojui pačiam teikti prašymus dalyvauti mokymuose.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Patogus mokymų prašymų ir tvirtinimo procesas</h3>
+          <p class="mt-1 text-sm text-gray-600">Visa mokymų registravimo, prašymų ir tvirtinimo eiga vyksta automatiškai — darbuotojai, vadovai ir administratoriai gauna pranešimus bei gali patvirtinti mokymus iš bet kurio įrenginio.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Sklandi komunikacija ir matomumas</h3>
+          <p class="mt-1 text-sm text-gray-600">Darbuotojai savo paskyrose aiškiai mato jiems priskirtus mokymus, jų datas bei progresą, o tvirtinimo sekos ir komentarų funkcija užtikrina skaidrią komunikaciją tarp visų proceso dalyvių.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Integruotas įmonės kalendorius</h3>
+          <p class="mt-1 text-sm text-gray-600">Visi suplanuoti ir patvirtinti mokymai automatiškai atvaizduojami bendrame įmonės kalendoriuje kartu su kitais įvykiais (atostogomis, komandiruotėmis ir kt.), palengvinant planavimą ir resursų valdymą.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Lengvas duomenų valdymas ir ataskaitos</h3>
+          <p class="mt-1 text-sm text-gray-600">Sistema pateikia išsamias mokymų ataskaitas — darbuotojų dalyvavimas, mokymų statusai, istorija, su galimybe duomenis eksportuoti į Excel tolesnei analizei.</p>
+        </div>
+      </div>
+
+            <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Duomenų saugumas ir prieigos kontrolė</h3>
+          <p class="mt-1 text-sm text-gray-600">Darbuotojų duomenys ir mokymų informacija apsaugoti aukščiausio lygio saugumo priemonėmis, visi veiksmai sistemoje atliekami pagal griežtą prieigos teisių valdymą, laikantis BDAR (GDPR) reikalavimų.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+{/* third section - screenshot */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Mokymų planavimas ir registravimas
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+        Mokymų administratorius planuoja mokymus, o darbuotojai gali patys teikti prašymus dalyvauti mokymuose per savo paskyrą (telefonu, planšete ar kompiuteriu). Prašymo pildymo metu darbuotojas mato, kurių kolegų tuo metu nebus darbe. Mokymai gali būti priskiriami konkrečioms darbuotojų grupėms ar individualiai, pasirenkant tinkančią datą iš kelių galimų.
+      </p>
+    </div>
+
+
+    <div class="flex justify-center">
+      <img 
+        src="/media/services/mokymai-srvc1.png" 
+        alt="Atrankos procesas"
+        class="w-full max-w-md h-auto object-cover shadow-md"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+{/* fourth section - screenshot */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+        <div class="flex justify-center">
+      <img 
+        src="/media/services/mokymai-srvc2.png" 
+        alt="Atrankos procesas"
+        class="w-full max-w-md h-auto object-cover shadow-md"
+      />
+    </div>
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Tvirtinimo procesas ir dalyvavimas
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+Tiek darbuotojo prašymas, tiek mokymų administratoriaus nurodymas pereina standartizuotą tvirtinimo seką — nuo darbuotojo ir vadovo iki personalo komandos. Po mokymų darbuotojas žymi, kad dalyvavo, o vadovas galutinai patvirtina mokymų įvykdymą. Visi suinteresuoti asmenys informuojami apie laukiančias tvirtinimo užduotis el. paštu, sistemoje arba telefonu.
+      </p>
+    </div>
+
+
+  </div>
+</section>
+
+{/* fifth section - screenshot */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Stebėjimas, analizė ir saugumas
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+Visa mokymų informacija kaupiama duomenų bazėje ir bendrame įmonės kalendoriuje, kurį galima filtruoti pagal skyrius ar darbuotojus. Sistema užtikrina tvirtinimo istoriją, komentarus, patogų mokymų paiešką ir analizę, o duomenų eksportavimas į Excel leidžia ruošti reikalingas ataskaitas. Duomenų saugumas garantuojamas taikant pažangų šifravimą ir prieigos valdymą pagal GDPR reikalavimus.
+      </p>
+    </div>
+
+
+    <div class="flex justify-center">
+      <img 
+        src="/media/services/mokymai-srvc3.png" 
+        alt="Atrankos procesas"
+        class="w-full max-w-md h-auto object-cover shadow-md"
+      />
+    </div>
+  </div>
+</section> 
+
+
+
+{/* 8 section - screenshot */}
+
+<section class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-12">
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900">
+      Darbuotojų mokymų valdymo funkcijos
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
+      <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
+     <li>Šis sprendimas suteikia galimybę mokymus darbuotojams suplanuoti mokymų administratoriui ir galimybę darbuotojui pildyti prašymą į nesuplanuotus mokymus;</li>
+      <li>Darbuotojui paskirtų ir darbuotojo prašomų mokymų duomenų bazė;</li>
+      <li>Galimybė darbuotojui savo paskyroje matyti visus jam priskirtus mokymus;</li>
+      <li>Galimybė darbuotojui pateikti prašymą dalyvauti mokymuose per mobilųjį telefoną arba PC, arba planšetę;</li>
+      <li>Pildant mokymų prašymą parodomi žmonės, kurių darbuotojo mokymų dienomis taip pat nebus darbe. Galima matyti du pjūvius – mano komanda, visi;</li>
+      <li>Mokymų priskyrimas pavieniams darbuotojams arba darbuotojų grupėms (pavyzdžiui naujiems darbuotojams);</li>
+      <li>Galimybė darbuotojus priskirti konkrečiai mokymų datai;</li>
+      <li>Galimybė mokymui priskirti kelias galimas datas, iš kurių darbuotojas turės pasirinkti jam tinkamą;</li>
+      <li>Diegimo metu įdiegiamos dvi tvirtinimo sekos, vienodos visiems mokymų tipams bei darbuotojams, be papildomo asmenų išskaičiavimo pagal papildomas taisykles:</li>
+        <ul class="list-disc list-inside pl-5">
+          <li>Darbuotojo mokymų prašymo tvirtinimo;</li>
+          <li>Mokymų administratoriaus mokymų nurodymo tvirtinimo;</li>
+        </ul>
+      <li>Suplanuotų/patvirtintų mokymų prašymų atvaizdavimas bendrame įmonės kalendoriuje (pilna darbo diena). Kalendoriuje atvaizduojamus duomenis galima filtruoti pagal skyrius arba atskirus darbuotojus ir jų pavaldinius.</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
+      <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
+      <li>Suformavus elektroninį mokymų nurodymą/ prašymą, jis siunčiamas derinimui ir tvirtinimui pagal numatytą tvirtinimo seką: darbuotojui pateikus elektroninį mokymų prašymą, jis siunčiamas derinimui ir tvirtinimui pagal numatytą tvirtinimo seką: tvirtina darbuotojas-tvirtina tiesioginis vadovas – informuojamas Personalas. Diegimo metu į projekto kainą įskaičiuota iki 2 papildomų tvirtintojų įtraukimas į standartinę tvirtinimo seką;</li>
+      <li>Mokymų administratoriui suformavus mokymų nurodymą, jis siunčiamas derinimui ir tvirtinimui pagal numatytą tvirtinimo seką: tvirtina darbuotojas mokymų datą -tvirtina datą tiesioginis vadovas – darbuotojas pažymi, kad jis praėjo mokymus – tvirtina darbuotojo tiesioginis vadovas, kad darbuotojas tikrai praėjo mokymus. Diegimo metu į projekto kainą įskaičiuota iki 2 papildomų tvirtintojų įtraukimas į standartinę tvirtinimo seką.</li>
+      <li>Tvirtinimo sekos dalyvių informavimas apie laukiančią tvirtinimo užduotį bei užduoties vykdymas sistemoje PC, el. paštu arba telefonu;</li>
+      <li>Tvirtinimo istorija;</li>
+      <li>Komentavimo funkcija;</li>
+      <li>Prašymų registravimas, saugojimas;</li>
+      <li>Darbuotojų dalyvavimo mokymuose ataskaita, mokymų statusų stebėsena;</li>
+      <li>Mokymų paieška, filtravimas, peržiūra;</li>
+      <li>Meta duomenų eksportavimas į Excel;</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+{/* duk section */}
+
+<section class="w-full px-4 py-16 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">DUK</h2>
+
+    <div class="grid gap-6 sm:grid-cols-2">
+      
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar galiu bet kada nutraukti paslaugą?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip, galite bet kada nutraukti paslaugą be papildomų įsipareigojimų. Būtų malonu sulaukti jūsų grįžtamojo ryšio.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Kaip mano komanda gali naudoti kreditus?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Komanda gali naudoti kreditus aktyvuodama funkcijas sistemoje. Kiekvienas narys mato savo kreditų balansą ir panaudojimo istoriją.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Kaip veikia kainodara?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Mūsų kainodara yra lanksti – siūlome kelis planus pagal poreikį: nuo bazinių iki išplėstinių su papildomomis funkcijomis.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar sistema saugi?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip, mes naudojame naujausius duomenų šifravimo ir saugumo protokolus – jūsų informacija visada apsaugota.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar teikiate nuolaidas komandoms?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip! Siūlome nuolaidas komandoms ir ilgalaikiams planams. Susisiekite dėl individualaus pasiūlymo.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar galima susigrąžinti pinigus?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip – siūlome pinigų grąžinimo garantiją per 14 dienų, jei nesate patenkinti paslauga.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+  <ContactForm />
+
+<section class="bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-8 mt-20">
+  <div class="max-w-7xl mx-auto">
+    <h3 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10">
+      Kiti atitikimų valdymo sprendimai
+    </h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
+
+       
+        <a href="/privalomo-supazindinimo-su-dokumentais-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+        <div class="text-2xl mb-2">📚</div>
+        <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
+          Privalomo supažindinimo su dokumentais valdymas
+        </h3>
+        <p class="mt-1 text-sm text-gray-600 leading-snug">
+          Automatizuokite privalomų dokumentų pateikimą ir sekite, ar darbuotojai tikrai susipažino su naujausia informacija.
+        </p>
+      </a>
+      
+      
+      <a href="/testavimo-is-norminiu-dokumentu-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+        <div class="text-2xl mb-2">✍️</div>
+        <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
+          Darbuotojų testavimas
+        </h3>
+                <p class="mt-1 text-sm text-gray-600 leading-snug">
+          Lengvai kurkite ir valdykite darbuotojų žinių patikrinimo testus bei užtikrinkite norminių reikalavimų atitiktį.
+        </p>
+      </a>
+{/*
+      <a href="/mokymu-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+        <div class="text-2xl mb-2">🎓</div>
+        <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
+          Mokymų valdymas
+        </h3>
+                <p class="mt-1 text-sm text-gray-600 leading-snug">
+          Planuokite, sekite ir analizuokite vidinius bei išorinius darbuotojų mokymus vienoje sistemoje.
+        </p>
+      </a>
+*/}
+      <a href="/veiklos-vertinimas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
+        <div class="text-2xl mb-2">📈</div>
+        <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
+          Veiklos vertinimas
+        </h3>
+                <p class="mt-1 text-sm text-gray-600 leading-snug">
+          Standartizuokite ir skaidriai valdykite darbuotojų veiklos vertinimo procesą — nuo tikslų iki rezultatų analizės.
+        </p>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+{/*seo text */}
+
+<section class="w-full px-4 py-16 sm:px-6 lg:px-8 text-gray-800">
+
+  <div class="max-w-4xl mx-auto space-y-6">
+    <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
+    <h2 class="text-2xl sm:text-3xl font-bold">Modernus personalo mokymų valdymas: koks jis?</h2>
+
+Nuolatiniai, kokybiški personalo mokymai yra labai svarbūs sėkmingam verslui. Tai padeda darbuotojams įgyti naujų įgūdžių ir tobulinti esamus.
+
+Reguliariai tobulinant komandos žinias kursuose, mokymuose, seminaruose, darbuotojai yra informuojami apie Jūsų įmonei aktualias tendencijas, technologijų pažangą, tobulina įgūdžius, perima geriausią darbinę praktiką.
+
+Mokymai didina darbuotojų produktyvumą, pakelia nuotaiką ir didina pasitenkinimą darbu. Tai taip pat leidžia darbuotojams prisitaikyti prie pokyčių ir efektyviai spręsti naujus iššūkius. Galiausiai, kokybiška darbuotojo mokymo sistema padeda įmonėms išlikti konkurencingoms, tiekti aukštos kokybės produktus ar paslaugas ir pasiekti ilgalaikės sėkmės.
+
+<h3 class="text-xl font-semibold">Kodėl nukenčia personalo mokymo sistema?</h3>
+
+Praktika rodo, kad įmonei augant, neretai tampa sunku suvaldyti įmonės darbuotojų mokymų poreikius ir pasirūpinti reguliariai vykstančiais, įtraukiančiais personalo mokymais.
+<ul class="list-disc pl-5 space-y-2">
+ 	<li>Viena to priežasčių – komunikacijos trūkumas dėl laiko stokos. Pavyzdžiui, dažnai darbuotojai nežino apie turimas mokymo galimybes ar įmonės lūkesčius jų tobulėjimui. Taigi, dėl nesusikalbėjimo, didelio užimtumo, resursų trūkumo gali būti sudėtinga valdyti ir patenkinti jų mokymo poreikius.</li>
+ 	<li>Taip pat koją pakiša skirtingi įgūdžių lygiai ir vaidmenys: augančiose įmonėse dirba įvairių įgūdžių lygių ir vaidmenų turintys darbuotojai. Konkrečių kiekvieno darbuotojo mokymo poreikių nustatymas ir atitinkamų programų teikimas gali būti sudėtingas ir daug laiko reikalaujantis darbas. Tai ypač pastebima didelėse organizacijose.</li>
+ 	<li>Riboti pajėgumai ir ištekliai: įmonės gali turėti ribotus išteklius, pvz., biudžetą ar mokymo medžiagą, kad galėtų patenkinti visus savo darbuotojų mokymo poreikius. Veiksmingas šių išteklių prioritetų nustatymas ir paskirstymas gali būti sudėtinga užduotis. Gera žinia ta, kad šiandien yra įrankių, kurių pagalba savo <a href="https://vecticum.lt/tvarkos-ir-isakymai/">darbus suplanuoti</a> ir prioritetus nustatyti bus paprasčiau.</li>
+ 	<li>Laiko apribojimai: darbuotojai turi įvairių darbo pareigų ir įsipareigojimų, todėl sunku rasti tinkamą laiką mokymams. Konfliktai dėl <a href="https://vecticum.lt/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/">darbo grafikų</a>, užduočių paskirstymas ir darbo krūvis gali trukdyti patenkinti mokymo poreikius, todėl nukenčia personalo mokymai.</li>
+</ul>
+
+Akivaizdu: norint valdyti ir patenkinti darbuotojų mokymo poreikius, reikia veiksmingos komunikacijos, išteklių paskirstymo, derinimo su verslo tikslais ir strategijų, kaip užtikrinti žinių atnaujinimo procesą įmonei augant. „Vecticum“ sukurtas sprendimas gali padėti įmonėms sėkmingai kontroliuoti ir patenkinti savo darbuotojų mokymo poreikius.
+
+<h3 class="text-xl font-semibold">Mokymų valdymo įrankis: Kuo jis ypatingas?</h3>
+<ul class="list-disc pl-5 space-y-2">
+ 	<li><strong>Viskas vienoje vietoje: </strong>palengvina darbuotojų mokymo valdymą. Automatizuojamos įvairios užduotys ir suteikiama centralizuota platforma visoms su mokymais susijusioms veikloms.</li>
+ 	<li><strong>Mokymų planavimas</strong>: „Vecticum“ įrankis leidžia lengvai sudaryti ir tvarkyti mokymo grafikus, užtikrinant, kad darbuotojai žinotų apie artėjančius mokymus, seminarus. Artėjant mokymų dienai, Jūsų komanda gaus automatinius priminimus, todėl bus 100 proc. informuoti.</li>
+ 	<li><strong>Užklausų patvirtinimas</strong>: įrankiai leidžia darbuotojams skaitmeniniu būdu pateikti mokymo užklausas, kurias vėliau gali peržiūrėti ir patvirtinti vadovai ar vadovai.</li>
+ 	<li><strong>Mokymų stebėjimas:</strong> gausite išsamią darbuotojų mokymo eigos apžvalgą. Tai leidžia vadovams lengvai sekti baigtus mokymus, nustatyti įgūdžių trūkumus ir atitinkamai planuoti būsimas sesijas.</li>
+ 	<li><strong>Efektyvesnis komandos bendradarbiavimas</strong>: mūsų sukurtas įrankis apima tokias funkcijas kaip pranešimų siuntimas, komentavimas. Tai užtikrina sklandesnį komandos komunikavimą mokymų klausimais, leidžia dalintis įžvalgomis ir užduoti klausimus centralizuotoje platformoje.</li>
+ 	<li><strong>Mokymų paieška</strong>: naudojantis šiuo įrankiu galėsite greičiau rasti Jums aktualius mokymus, kurie suteiks visapusę naudą komandai.</li>
+ 	<li><strong>Ataskaitų teikimas ir analizė: </strong>šie įrankiai teikia išsamias ataskaitų teikimo ir analizės funkcijas, padedančias vadovams įvertinti mokymo programų efektyvumą, nustatyti tendencijas ir priimti duomenimis pagrįstus sprendimus.</li>
+</ul>
+
+Inovatyvi darbuotojo mokymo sistema suteiks naudą visai Jūsų organizacijai. Tuo įsitikino <a href="https://vecticum.lt/klientai/">nemažai verslų</a> visoje Lietuvoje: neabejojame, kad patiks ir Jums!
+    <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
+  </div>
+</section>
+
