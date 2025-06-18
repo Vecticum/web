@@ -2,7 +2,7 @@
 title: "Product Manager"
 location: "New York, NY"
 description: "Lead product development and strategy."
-applyLink: "/careers/product-manager"
+applyLink: "/karjera/product-manager"
 ---
 
 # Product Manager

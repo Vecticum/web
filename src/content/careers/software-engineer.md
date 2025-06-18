@@ -2,7 +2,7 @@
 title: "Software Engineer"
 location: "Remote"
 description: "Join our team to develop cutting-edge web applications."
-applyLink: "/"
+applyLink: "/karjera/software-engineer"
 ---
 
 > Software Engineer

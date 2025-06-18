@@ -2,7 +2,7 @@
 title: "UX Designer"
 location: "San Francisco, CA"
 description: "Design intuitive user experiences for our products."
-applyLink: "/careers/ux-designer"
+applyLink: "/karjera/ux-designer"
 ---
 
 # UX Designer

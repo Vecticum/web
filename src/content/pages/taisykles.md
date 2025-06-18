@@ -1,6 +1,7 @@
 ---
 title: "Terms and Conditions"
 description: "Terms and Conditions"
+link: "/taisykles"
 ---
 
 > Terms and Conditions

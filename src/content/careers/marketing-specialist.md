@@ -2,7 +2,7 @@
 title: "Marketing Specialist"
 location: "Chicago, IL"
 description: "Develop and execute marketing strategies."
-applyLink: "/careers/marketing-specialist"
+applyLink: "/karjera/marketing-specialist"
 ---
 
 # Marketing Specialist
