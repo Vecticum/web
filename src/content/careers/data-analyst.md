@@ -2,7 +2,7 @@
 title: "Data Analyst"
 location: "Remote"
 description: "Analyze data to help drive business decisions."
-applyLink: "/careers/data-analyst"
+applyLink: "/karjera/data-analyst"
 ---
 
 # Data Analyst
