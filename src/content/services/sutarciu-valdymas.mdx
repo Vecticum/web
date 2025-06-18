@@ -131,49 +131,48 @@ import ContactForm from "../../components/home/ContactForm.astro";
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
       <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
-     <li>Veiklos vertinimo kortelės, sudarytos iš tikslų, kompetencijų vertinimo;</li>
-      <li>Tikslų ir kompetencijų sąrašas;</li>
-      <li>Galimybė sukurti šablonus, kuriuos sudaro tikslų ir kompetencijų rinkinys;</li>
-      <li>Tikslų ir kompetencijų šablono priskyrimas darbuotojui ir galimybė darbuotojui sukurti papildomus tikslus, kurių nėra šablone;</li>
-      <li>Galimybė kiekvienam tikslui priskirti skirtingą kiekį potikslių (galimybė kaskaduoti tikslą);</li>
-      <li>Galimybė kiekvienam tikslui ar kompetencijai priskirti atskirą dokumentą, kuriame bus aprašyta papildoma informacija;</li>
-      <li>Veiklos vertinimo standartinis procesas(workflow):</li>
-        <ul class="list-disc list-inside pl-5">
-          <li>Personalas sukuria veiklos vertinimo šablonus;</li>
-          <li>Tiesioginis vadovas parenka tinkamą šabloną darbuotojui;</li>
-          <li>Tiesioginis vadovas gauna sistemos užduotį užpildyti tikslų kortelę darbuotojui;</li>
-          <li>Darbuotojas gauna užduotį patvirtinti sukurtą tikslų kortelę;</li>
-          <li>Atėjus vertinimo laikui Tiesioginis vadovas pradeda vertinimą ir užpildęs įvertinimo reikšmes išsiunčia užduotį darbuotojui;</li>
-          <li>Darbuotojas gauna užduotį patvirtinti veiklos vertinimą;</li>
-          <li>Punktai c,d,e,f gali būti sukeisti vietomis.</li>
-        </ul>
-              <li>Gautų veiklos vertinimo tikslų komentavimo funkcija;</li>
-      <li>Tikslų pažangos fiksavimas ir darbuotojo visų tikslų ir kompetencijų apibendrintas vertinimas;</li>
+ 	<li>Įmonės sutarčių duomenų bazė vienoje vietoje. Diegimo metu sukuriame du sutarčių registrus (su vienodu meta duomenų rinkiniu) su Užsakovo pageidaujamais sutarčių kategorijomis ir tipais;</li>
+ 	<li>Skirtingi registrai turi vienodą metaduomenų rinkinį, kurį sudaro šie standartiniai laukai: autorius, sutarties šalis, sutarties kategorija, sutarties tipas, sutarties nr., padalinys, padalinio vadovas, pavadinimas, sutarties data, sutarties pabaiga, sutarties suma, vizuotojai, papildomi vizuotojai, pasirašyta ranka, išorinis parašas, darbuotojo parašas, sutarties dokumentas. Pagal Užsakovo poreikį gali būti sukuriama papildomai iki 5 paprastų neišskaičiuojamų meta duomenų laukų.;</li>
+ 	<li>Vienas įmonių (tiekėjų) duomenų registras;</li>
+ 	<li>Galimybė sutartis rengti panaudojant sutarčių šablonus. Diegimo metu bus įdiegta iki 2 sutarčių šablonų apmokome Užsakovą kaip keisti turimus šablonus ar susikurti naujus. Šablone gali būti panaudojami tik sutarčių registro meta duomenys. Papildomų meta duomenų laukų kūrimas neįskaičiuotas į projekto apimtį. </li>
+ 	<li>Sutartis bus nusiųsta vizavimui ir pasirašymui pagal numatytą tvirtinimo seką (workflow). Užsakovas skirtingoms sutarčių kategorijoms nusistato standartinius tos sutarties kategorijos tvirtinimo sekos (workflow) dalyvius.</li>
+ 	<li>Tvirtinimo sekos (workflow) seka: </li>
+<ul class="list-disc list-inside pl-5">
+ 	<li>Vizuoja prie kategorijos nurodyti vizuotojai;</li>
+ 	<li>Pasirašo prie kategorijos nurodytas įmonės atstovas. Pasirašantis asmuo iš išorės nurodomas sutarties kortelėje rankiniu būdu;</li>
+ 	<li>Galimybė rankiniu būdu nurodyti papildomus vizuotojus, kurie gali būti reikalingi ne pagal standartiškai priskirtus vizuotojus.</li>
+</ul>
+
+ 	<li>Sutarčių priedų tvirtinimas ir/ ar pasirašymas; </li>
 
       </ul>
     </div>
 
     <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
       <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
-            <li>Veiklos vertinimų duomenų bazė;</li>
-            <li>Veiklos vertinimų paieška, filtravimas, peržiūra.</li>
-      <li>Galima tikslų ir kompetencijų skaičiavimo logika:</li>
-        <ul class="list-disc list-inside pl-5">
-          <li>Pagal procentus (renkantis šitą variantą sprendimo diegimo kaina gali keistis priklausomai nuo norimos skaičiavimo logikos ar pageidaujamų validatorių);</li>
-          <li>Pagal reikšmes (pasiekta, nepasiekta, viršyta);</li>
-          <li>Pagal penkiabalę skalę;</li>
-          <li>Pagal taškus;</li>
-          <li>Numatoma, kad Tikslų ir Kompetencijų vertinimo skaičiavimo logika yra vienoda.</li>
-        </ul>
-      <li>Metaduomenų eksportavimas į Excel.</li>
-      <li>Standartinės ataskaitos Personalo skyriui apie darbuotojų veiklos vertinimą:</li>
-        <ul class="list-disc list-inside pl-5">
-          <li>Veiklos vertinimai: Darbuotojas, veiklos vertinimo pavadinimas, sukūrimo data, Tiesioginis vadovas, departamentas, Bendras veiklos vertinimo rezultatas %, tikslų maksimaliai galimas balų skaičius, tikslų surinktas balų skaičius, tikslų įvykdymo %, kompetencijų maksimaliai galimas balų skaičius, kompetencijų surinktas balų skaičius, kompetencijų įvykdymo %, veiklos vertinimo statusas;</li>
-          <li>Tikslai & kompetencijos: Darbuotojas, veiklos vertinimo pavadinimas, sukūrimo data, Tikslo ar Kompetencijos kategorija, Darbuotojas, Tiesioginis vadovas, Tikslas ar Kompetencija, maksimaliai galimas balų skaičius, surinktas balų skaičius; ID;</li>
-          <li>Subtikslai: Darbuotojas, Subtikslas, Paaiškinimas, maksimaliai galimas balų skaičius, surinktas balų skaičius; ID, Parent ID;</li>
+  <li>Dokumentų pasirašymas kvalifikuotu elektroniniu parašu, atitinkančiu ,,eiDAS“ reikalavimus: </li>
+      <ul class="list-disc list-inside pl-5">
+ 	<li>naujų .pdf dokumentų pasirašymas el. parašu; gautų .pdf dokumento parašų nuskaitymas bei papildymas el. parašais; </li>
+ 	<li>gautų adoc formato dokumento parašo duomenų nuskaitymas ir galimybė papildyti el. parašais;</li>
+ 	<li>per Vecticum pasirašytų sutarčių automatinis kvalifikuoto el. parašo galiojimo tikrinimas ir išsiuntimas naujam pasirašymui, kai pasibaigia galiojimo terminas;</li>
+</ul>
+ 	<li>Ilgalaikis sutarčių saugojimas;</li>
+ 	<li>Galimybė sukurti registrui automatinį priminimą apie artėjančią sutarties pabaigą (subscription); </li>
+ 	<li>Galimybė rašyti komentarus;</li>
+ 	<li>Galimybė sutartį susieti su kitais turimais moduliais – pirkimų užsakymais ar sąskaitomis (jeigu tokius modulius Užsakovas turi);</li>
+ 	<li>Galimybė sutartis patvirtinti / pasirašyti iš el. pašto, per telefoną arba prisijungus sistemoje;</li>
+ 	<li>Sutarčių paieška, filtravimas, peržiūra;</li>
+ 	<li>Meta duomenų eksportavimas į Excel.</li>
+ 	<li>Papildomai galimos funkcijos už papildomą mokestį:</li>
+<ul class="list-disc list-inside pl-5">
+ 	<li>papildomi sutarties meta duomenų laukai;</li>
+ 	<li>išskaičiuojamieji arba dinaminiai meta duomenų laukai;</li>
+ 	<li>skirtingiems sutarčių registrams ar kategorijoms skirtingi meta duomenų rinkiniai;</li>
+ 	<li>skirtingoms sutarčių kategorijoms skirtingos tvirtinimo sekos;</li>
+ 	<li>įmonių registrų atskyrimas į kelis atskirus (pvz. pirkėjų/ pardavėjų); </li>
+</ul>
         </ul>
       
-      </ul>
     </div>
   </div>
 </section>
@@ -266,94 +265,50 @@ import ContactForm from "../../components/home/ContactForm.astro";
 
   <ContactForm />
 
-<section class="bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-8 mt-20">
-  <div class="max-w-7xl mx-auto">
-    <h3 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10">
-      Kiti atitikimų valdymo sprendimai
-    </h3>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
-
-       
-        <a href="/privalomo-supazindinimo-su-dokumentais-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
-        <div class="text-2xl mb-2">📚</div>
-        <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
-          Privalomo supažindinimo su dokumentais valdymas
-        </h3>
-        <p class="mt-1 text-sm text-gray-600 leading-snug">
-          Automatizuokite privalomų dokumentų pateikimą ir sekite, ar darbuotojai tikrai susipažino su naujausia informacija.
-        </p>
-      </a>
-      
-      
-      <a href="/testavimo-is-norminiu-dokumentu-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
-        <div class="text-2xl mb-2">✍️</div>
-        <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
-          Darbuotojų testavimas
-        </h3>
-                <p class="mt-1 text-sm text-gray-600 leading-snug">
-          Lengvai kurkite ir valdykite darbuotojų žinių patikrinimo testus bei užtikrinkite norminių reikalavimų atitiktį.
-        </p>
-      </a>
-
-      <a href="/mokymu-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
-        <div class="text-2xl mb-2">🎓</div>
-        <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
-          Mokymų valdymas
-        </h3>
-                <p class="mt-1 text-sm text-gray-600 leading-snug">
-          Planuokite, sekite ir analizuokite vidinius bei išorinius darbuotojų mokymus vienoje sistemoje.
-        </p>
-      </a>
-
-     {/* <a href="/veiklos-vertinimas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-xl p-4 shadow-sm hover:shadow-md transition duration-300">
-        <div class="text-2xl mb-2">📈</div>
-        <h3 class="text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
-          Veiklos vertinimas
-        </h3>
-                <p class="mt-1 text-sm text-gray-600 leading-snug">
-          Standartizuokite ir skaidriai valdykite darbuotojų veiklos vertinimo procesą — nuo tikslų iki rezultatų analizės.
-        </p>
-      </a>*/}
-    </div>
-  </div>
-</section>
 
 
 
 {/*seo text */}
 
+
+
+
 <section class="w-full px-4 py-16 sm:px-6 lg:px-8 text-gray-800">
 
   <div class="max-w-4xl mx-auto space-y-6">
     <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
-    <h2 class="text-2xl sm:text-3xl font-bold">Darbuotojo veiklos vertinimas: su „Vecticum“ dar tikslesnis ir paprastesnis</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold">Sėkmingas verslo sutarčių valdymas vos keliais paspaudimais</h2>
 
-Darbuotojų vertinimas – svarbus aspektas įmonės gyvenime. Tik tiksliai vertindamas savo darbuotojų veiklą pagal iš anksto nustatytus kriterijus ir tikslus, darbdavys gali įgyti įžvalgų apie darbuotojo stipriąsias puses, tobulintinas sritis ir bendrą indėlį į organizaciją. Ši informacija yra labai svarbi norint priimti pagrįstus sprendimus dėl paaukštinimo, atlyginimo kėlimo ir mokymo bei tobulėjimo galimybių.
+Sutarčių sudarymas svarbus tiek fiziniams, tiek juridiniams asmenims. Turbūt sutiksite, kad <a style="color:#C81E6A" href="https://vecticum.lt/dokumumentu-valdymas/">verslo dokumentai</a>, tokie kaip sutartys, atlieka išties svarbų vaidmenį organizacijos sėkmei.
 
-Tiesa, neturint griežtų kriterijų, laiko ir kitų resursų, komandos narių darbo vertinimas gali būti nesėkmingas. Ilgainiui tai kenkia komandos darbui, gali sukelti nepasitenkinimą tarp darbuotojų. Kviečiame susipažinti su šiuolaikiniais sprendimais: darbuotojo vertinimas su išmaniais „Vecticum“ įrankiais tikrai naudingas ir reikalingas Jūsų įmonei.
+Pirmiausia, sutartys yra teisinės bazės dalis. Jos apibrėžia visų verslo sandoryje dalyvaujančių šalių teises, pareigas ir atsakomybes. Pasirašant sutartis, nurodoma, kad abi pusės aiškiai supranta sutartas sąlygas. Taigi, sutarčių sudarymas padeda išvengti teisinių konfliktų. Tiesa, norint užtikrinti gerą įmonės reputaciją ir sumažinti ginčų tikimybę, labai svarbu, kad sudarytos sutartys būtų prieinamos tada, kada reikia Jums.
 
-Siūlome ir kitus sprendimus, be kurių šiandieninis verslas sunkiai apsieina: tai personalo valdymas, tvarkos ir įsakymai, <a href="https://vecticum.lt/intraneto-valdymas/">vidinė komunikacija</a> ir dar daugiau.
+Taip pat, įmonės sudarytose sutartyse aiškiai išdėstomi lūkesčiai ir sąlygos. Sudarant susitarimus raštu, visos dalyvaujančios šalys aiškiai informuojamos apie tikslus, rezultatus, terminus ir bet kokią kitą svarbią informaciją. Toks aiškumas sumažina nesusipratimų ir klaidingų interpretacijų skaičių.
 
-<h3 class="text-xl font-semibold">5 dalykai, kuriuos būtina žinoti apie „Vecticum“ veiklos vertinimo sprendimą</h3>
+Taip pat su sutartimis siejamas ir sėkmingas rizikos valdymas. Tinkamai sudarytos sutartys padeda valdyti ir sumažinti su verslo veikla susijusią riziką. Dėl šios priežasties į sutartis dažnai įtraukiamos nuostatos dėl nenumatytų įvykių, nuobaudos už reikalavimų nesilaikymą ir ginčų sprendimo mechanizmai. Gerai parengtos sutartys gali apsaugoti verslą nuo galimos finansinės ir teisinės rizikos.
 
-Dalinamės keliais svarbiais faktais: atraskite paprastesnį veiklos vertinimą!
+Praktika rodo, kad verslo sutarčių valdymas gali būti sudėtingas procesas. Tačiau šiandien yra inovatyvių sprendimų ir įrankių, kurie padeda efektyviau valdyti Jūsų įmonės sutartis. Būtent tokį sprendimą gali pasiūlyti „<a style="color:#C81E6A" href="https://vecticum.lt/prezentacijos/">Vecticum“ ekspertai</a>. Išbandyti apsimoka!
+
+<h3 class="text-xl font-semibold">Kodėl verta rinktis mus?</h3>
+
+Kviečiame susipažinti su išmanaus sutarčių valdymo nauda:
 <ul class="list-disc pl-5 space-y-2">
- 	<li>Gausite itin tikslią informaciją. Naudojantis mūsų įrankiu, darbo vertinimas vyksta pagal tam tikras darbuotojų veiklos korteles ir šablonus, pasiekimai vertinami naudojant logišką ir tikslią, Jūsų pasirinktą sistemą (taškų vertinimas, procentų skaičiavimas ir kt.). Šios priemonės suteikia itin objektyvų vertinimą, leidžia pamatyti komandos narių darbo rezultatus.</li>
- 	<li>Efektyvumas ir laiko taupymas: darbuotojo vertinimas naudojant „Vecticum“ sprendimą, supaprastina procesą, pavyzdžiui, planavimas, priminimai ir duomenų rinkimas. Taip sutaupoma laiko ir vadovams, ir darbuotojams, todėl jie gali sutelkti dėmesį į kitas svarbias veiklas.</li>
- 	<li>Standartizavimas ir nuoseklumas: internetinis darbuotojų veiklos vertinimas suteikia struktūrizuotą komandos analizės sistemą. Užtikrina, kad rezultatai bus objektyvūs ir nuoseklūs visoje organizacijoje. Padeda pašalinti šališkumą ir subjektyvius sprendimus, todėl galima gauti tikslesnius ir patikimesnius vertinimus.</li>
- 	<li>Šis sprendimas sukuria geresnį ryšį su komanda. <a href="https://vecticum.lt/klientai/">Daugybė verslų</a> jau įsitikino mūsų įrankio nauda. Pagal platformoje matomus rezultatus galėsite aptarti darbuotojo pastangas, našumą, spręsti problemas ir teikti konstruktyvius atsiliepimus. Šis atviras dialogas padeda kurti pasitikėjimą, gerina bendravimą ir skatina teigiamą darbo aplinką.</li>
- 	<li>Laiku sprendžiamos rimtos problemos. Nepamirškite: profesionalus darbuotojų vertinimas padės nustatyti ir spręsti problemas, susijusias su įmonės veikla. Pavyzdžiui, jei darbuotojas nuolat neišpildo numatytų darbo rezultatų arba neatitinka lūkesčių, vertinimo procesas leidžia anksti įsikišti ir parengti veiklos gerinimo planus. Šis sprendimas padeda darbuotojams įveikti iššūkius, įgyti naujų įgūdžių ir galiausiai veiksmingiau prisidėti prie organizacijos.</li>
+ 	<li>Dokumentų centralizavimas: siūlome patogią, pilnai centralizuotą sutarčių valdymo sistemą, kad visos sutartys būtų saugomos vienoje prieinamoje vietoje.</li>
+ 	<li>Prieigos kontrolė: skirtingiems darbuotojams norite suteikti prieigą prie įvairių sutarčių? Tai ne bėda. Galite kontroliuoti prieigą pagal savo nuožiūrą, vos keliais mygtuko paspaudimais.</li>
+ 	<li>Procesų automatizavimas: dokumentų, sutarčių pasirašymas el. parašu bus gerokai paprastesnis visiems susitarimo dalyviams. Siūlome automatizuotą sutarčių saugojimą, duomenų eksportavimą į Excel ir daugybę kitų automatizuotų funkcijų sklandžiam Jūsų darbui.</li>
+ 	<li>Duomenų standartizavimas: mūsų sistemoje paprasta įdiegti standartizuotus sutarčių šablonus. Tai leidžia užtikrinti visų sutarčių nuoseklumą ir palengvina Jūsų komandos darbą.</li>
+ 	<li>Paprasta peržiūra: galite reguliariai atlikite sutarčių duomenų bazės peržiūrą, kad laiku nustatytumėte neatitikimus ar sritis, į kurias reikia atkreipti dėmesį.</li>
+ 	<li>Komandos bendradarbiavimas: siūlome patogius komunikacijos sprendimus Jūsų įmonei, kad galėtumėte dar efektyviau dalyvauti sutarčių valdymo procese. <a style="color:#C81E6A" href="https://vecticum.lt/intraneto-valdymas/">Vidinė komunikacija</a>, galimybė komentuoti ir dar daugiau!</li>
+ 	<li>Galimybė atnaujinti dokumentus: pasirinkus „Vecticum“, galite reguliariai vertinti ir atnaujinti sutarčių valdymo procesus, kad prisitaikytumėte prie besikeičiančių verslo poreikių ir naujų reikalavimų.</li>
+ 	<li>Duomenų saugumas: mūsų sistema taip pat siūlo saugią pagrįstą prieigą, kurią kontroliuosite tik Jūs. Tai apsaugos konfidencialius įmonės duomenis.</li>
+ 	<li>Verslo sutarčių valdymo internetinė programa padeda optimizuoti sudėtingus, daug laiko reikalaujančius procesus, sumažina klaidų riziką ir pagerina sutarčių valdymo efektyvumą. Tai itin svarbu konkurencinėje, dinamiškoje verslo aplinkoje.</li>
 </ul>
 
-<h3 class="text-xl font-semibold">Bendri tikslai įmonės ir komandos sėkmei</h3>
+<h3 class="text-xl font-semibold">Apibendrinimas</h3>
 
-Efektyvus, išsamus komandos veiklos vertinimas padeda suderinti komandos narių siekius su organizacijos tikslais. Nustatydami aiškius veiklos lūkesčius ir reguliariai peržiūrėdami pažangą, darbuotojai gali suprasti, kaip jų darbas prisideda prie didesnių įmonės tikslų. Tai skatina motyvaciją, todėl padidėja produktyvumas ir įsitraukimas. Be to, veiklos vertinimai palengvina darbuotojų ir vadovų bendravimą ir grįžtamąjį ryšį.
+Jeigu norite supaprastinti darbus, padidinti efektyvumą ir sumažinti įvairias rizikas Jūsų verslui, tikrai apsimoka investuoti į verslo sutarčių valdymo sistemą. Net menkutė klaida gali lemti, kad sutartys bus netikslios, reikalaus ilgų ir brangių korekcijų.
 
-Galiausiai, veiklos vertinimai prisideda net ieškant naujų talentų valdymo Jūsų įmonei. Vertindamos darbuotojų veiklą ir potencialą, organizacijos gali identifikuoti gerai dirbančius asmenis būsimoms vadovaujančioms ar pagrindinėms pareigoms. Sudaryti strateginį darbo jėgos planavimą ir užtikrinti talentų srautą organizacijoje, o <a href="https://vecticum.lt/veiklos-vertinimas/">naujų narių atranka</a> taip pat būna sklandesnė.
-
-Apibendrinant galima pasakyti, kad šis sprendimas yra būtinas norint objektyviai įvertinti veiklą, suderinti tikslus, palengvinti bendravimą, spręsti procesų problemas ir palaikyti talentų valdymą. Ši platforma vertinga tiek darbuotojams, tiek darbdaviams, skatinant komandos narių ir visos organizacijos sėkmę.
-
+Siūlome sprendimą, kuris centralizuos Jūsų verslo sutarčių saugojimą, užtikrins lengvą prieigą ir skirtingų dokumentų valdymą. Pasirūpinome patogiomis, automatizuotomis funkcijomis, kurios palengvins pasikartojančias, monotoniškas, tačiau didelio atidumo reikalaujančias užduotis, tokias kaip sutarčių ir kitų dokumentų sekimas. Visa tai taupo laiką ir sumažina klaidų skaičių.
 
     <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
   </div>
