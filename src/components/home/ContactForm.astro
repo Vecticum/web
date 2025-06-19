@@ -20,7 +20,7 @@
   </div>
 
   <div class="max-w-2xl mx-auto relative z-10">
-    <form
+    <form id="contact-form-lead"
       class="space-y-6 bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-[#C81E6A]"
     >
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -31,6 +31,7 @@
           <input
             type="text"
             id="name"
+            name="name"
             required
             class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C81E6A] focus:border-transparent transition duration-200 hover:border-[#C81E6A]/50"
             placeholder="Įveskite vardą ir pavardę"
@@ -56,6 +57,7 @@
           <input
             type="text"
             id="position"
+            name="position"
             class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C81E6A] focus:border-transparent transition duration-200 hover:border-[#C81E6A]/50"
             placeholder="Jūsų pareigos"
           />
@@ -82,6 +84,7 @@
         <input
           type="text"
           id="company"
+          name="company"
           required
           class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C81E6A] focus:border-transparent transition duration-200 hover:border-[#C81E6A]/50"
           placeholder="Įmonės pavadinimas"
@@ -110,6 +113,7 @@
           <input
             type="tel"
             id="phone"
+            name="phone"
             required
             class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C81E6A] focus:border-transparent transition duration-200 hover:border-[#C81E6A]/50"
             placeholder="+370..."
@@ -136,6 +140,7 @@
           <input
             type="email"
             id="email"
+            name="email"
             required
             class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C81E6A] focus:border-transparent transition duration-200 hover:border-[#C81E6A]/50"
             placeholder="jusu@imone.lt"
@@ -163,6 +168,7 @@
         >
         <textarea
           id="message"
+          name="message"
           class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C81E6A] focus:border-transparent transition duration-200 hover:border-[#C81E6A]/50 resize-y"
           rows="4"
           placeholder="Jūsų komentaras ar klausimas"></textarea>
@@ -186,6 +192,7 @@
         >
         <select
           id="source"
+          name="source"
           class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C81E6A] focus:border-transparent transition duration-200 hover:border-[#C81E6A]/50 appearance-none bg-white"
         >
           <option value="" disabled selected>Pasirinkite vieną</option>
@@ -206,6 +213,9 @@
         >Pateikti užklausą</button
       >
     </form>
+
+
+    <div id="responseMessage" class="mt-4 text-center text-sm"></div>
 
     <div class="mt-8 text-center text-gray-600 animate-fade-in">
       <p>Arba susisiekite tiesiogiai:</p>
@@ -276,3 +286,53 @@
     }
   </style>
 </section>
+
+<script is:inline>
+  // Get the form and response message element
+  const form = document.getElementById('contact-form-lead');
+  const responseMessage = document.getElementById('responseMessage');
+
+  // Add an event listener for form submission
+  form.addEventListener('submit', async (event) => {
+    // Prevent the default form submission behavior (page reload)
+    event.preventDefault();
+
+    // Collect form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    
+
+    // Display a loading message
+    responseMessage.textContent = 'Submitting...';
+    responseMessage.className = 'mt-4 text-center text-sm text-gray-600'; // Reset class
+
+    try {
+      // Send the data to the Astro API route using fetch
+      const response = await fetch('/api/crm', { // This path should match your API route
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data), // Convert the JavaScript object to a JSON string
+      });
+
+      // Parse the JSON response from the API route
+      const result = await response.json();
+
+      // Update the response message based on the API's response
+      if (response.ok) { // Check if the HTTP status is 200-299
+        responseMessage.textContent = `Ačiū: ${result.message}`;
+        responseMessage.className = 'mt-4 text-center text-sm text-green-600';
+        form.reset(); // Clear the form fields on success
+      } else {
+        responseMessage.textContent = `Klaida: ${result.message || 'Something went wrong!'}`;
+        responseMessage.className = 'mt-4 text-center text-sm text-red-600';
+      }
+    } catch (error) {
+      // Handle any network errors or issues during the fetch request
+      console.error('Fetch error:', error);
+      responseMessage.textContent = 'Network error. Please try again.';
+      responseMessage.className = 'mt-4 text-center text-sm text-red-600';
+    }
+  });
+</script>

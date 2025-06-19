@@ -1,7 +1,8 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import ContactForm from "../components/home/ContactForm.astro";
+import SimpleContactForm from "../components/home/SimpleContactForm.astro";
+
 
 const seoTitle = "Kontaktai | VECTICUM";
 const seoDescription = "Susisiekite su VECTICUM komanda. Konsultacija, demonstracija ar bendradarbiavimas. Mes pasiruošę padėti.";
@@ -45,27 +46,8 @@ const seoImage = "/path/to/seo-image.jpg"; // Optional
       </div>
 
  <!-- Kontaktinė forma -->
-      <div>
-        <form action="#" method="POST" class="space-y-6 bg-white p-6 rounded-xl shadow-md">
-          <div>
-            <label for="name" class="block text-sm font-medium text-gray-700">Vardas</label>
-            <input type="text" name="name" id="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#C81F6A] focus:border-[#C81F6A]">
-          </div>
+    <SimpleContactForm/>
 
-          <div>
-            <label for="email" class="block text-sm font-medium text-gray-700">El. paštas</label>
-            <input type="email" name="email" id="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#C81F6A] focus:border-[#C81F6A]">
-          </div>
-
-          <div>
-            <label for="message" class="block text-sm font-medium text-gray-700">Žinutė</label>
-            <textarea name="message" id="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#C81F6A] focus:border-[#C81F6A]"></textarea>
-          </div>
-
-          <button type="submit" class="w-full bg-[#C81F6A] text-white py-2 px-4 rounded-md hover:bg-pink-700 transition">Siųsti užklausą</button>
-        </form>
-      </div>
-    </div>
   </section>
 
   <!-- Video blokas
