@@ -303,7 +303,7 @@
     
 
     // Display a loading message
-    responseMessage.textContent = 'Submitting...';
+    responseMessage.textContent = 'Apdorojama...';
     responseMessage.className = 'mt-4 text-center text-sm text-gray-600'; // Reset class
 
     try {
@@ -331,7 +331,7 @@
     } catch (error) {
       // Handle any network errors or issues during the fetch request
       console.error('Fetch error:', error);
-      responseMessage.textContent = 'Network error. Please try again.';
+      responseMessage.textContent = 'Ryšio klaida. Pateikite duomenis dar kartą.';
       responseMessage.className = 'mt-4 text-center text-sm text-red-600';
     }
   });
