@@ -1,250 +1,846 @@
----
-// Nėra Astro kodo – visa UI logika žemiau
----
-<section class="accordion-section bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-10">
+
+<section class="accordion-section">
+  <div class="mb-14 text-center">
+    <h2
+      class="mx-auto mt-14 max-w-lg text-center text-4xl sm:text-5xl font-bold tracking-normal text-balance text-gray-900"   
+    >
       Sistemos sprendimai
     </h2>
-    <div class="tabs-container">
-      <div id="tabs" class="tabs flex flex-wrap gap-2 mb-6 justify-center">
-        <button class="tab active" type="button" data-tab="1" aria-selected="true" tabindex="0">
-          <span class="text-lg font-semibold text-pink-600">01</span>
-          <span class="ml-2 text-gray-700">Darbuotojų įdarbinimas/išdarbinimas</span>
-        </button>
-        <button class="tab" type="button" data-tab="2" aria-selected="false" tabindex="-1">
-          <span class="text-lg font-semibold text-pink-600">02</span>
-          <span class="ml-2 text-gray-700">Darbuotojo informacijos valdymas</span>
-        </button>
-        <button class="tab" type="button" data-tab="3" aria-selected="false" tabindex="-1">
-          <span class="text-lg font-semibold text-pink-600">03</span>
-          <span class="ml-2 text-gray-700">Darbo laiko apskaita</span>
-        </button>
-        <button class="tab" type="button" data-tab="4" aria-selected="false" tabindex="-1">
-          <span class="text-lg font-semibold text-pink-600">04</span>
-          <span class="ml-2 text-gray-700">Atitikimo valdymas</span>
-        </button>
-        <button class="tab" type="button" data-tab="5" aria-selected="false" tabindex="-1">
-          <span class="text-lg font-semibold text-pink-600">05</span>
-          <span class="ml-2 text-gray-700">Dokumentų valdymas</span>
-        </button>
-        <button class="tab" type="button" data-tab="6" aria-selected="false" tabindex="-1">
-          <span class="text-lg font-semibold text-pink-600">06</span>
-          <span class="ml-2 text-gray-700">Sutarčių valdymas</span>
-        </button>
-        <button class="tab" type="button" data-tab="7" aria-selected="false" tabindex="-1">
-          <span class="text-lg font-semibold text-pink-600">07</span>
-          <span class="ml-2 text-gray-700">Apskaitomų dokumentų valdymas</span>
-        </button>
-        <button class="tab" type="button" data-tab="8" aria-selected="false" tabindex="-1">
-          <span class="text-lg font-semibold text-pink-600">08</span>
-          <span class="ml-2 text-gray-700">Pirkimų valdymas</span>
-        </button>
+  </div>
+  <div class="accordion-wrapper">
+    <div class="accordion" id="accordion">
+      <!-- Item 1 -->
+      <div class="accordion-item active" data-img="/media/services/idarbinimas-srvc.png">
+        <div class="accordion-header">
+          <span>01</span>
+          <strong>Darbuotojų įdarbinimas/išdarbinimas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Visi procesai – nuo atrankos iki paskutinės darbo dienos – vienoje vietoje. Lengvai valdykite sutartis, paruoškite darbo vietą, stebėkite bandomąjį laikotarpį ir pasirūpinkite sklandžiu darbuotojo integravimu ar atsisveikinimu.</p>
+          <div class="accordion-image">
+            <img id="accordion-img-1" src="/media/services/idarbinimas-srvc.png" alt="Darbuotoju idarbinimas vaizdas | VECTICUM" />
+          </div>
+          <div class="accordion-links-mobile" id="accordion-links-mobile-1">
+            <h3 class="links-title">Darbuotojų įdarbinimo/išdarbinimo sprendimai</h3>
+            <a href="https://vecticum.lt/atrankos-valdymas/" target="_blank">
+              <span>Atrankų valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/darbuotoju-idarbinimo-savitarna/" target="_blank">
+              <span>Darbuotojo įdarbinimo savitarna</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/darbo-sutarciu-valdymas/" target="_blank">
+              <span>Darbo sutarčių valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/darbuotojo-idarbinimo-i-imone-valdymas/" target="_blank">
+              <span>Darbo vietos paruošimas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/bandomojo-laikotarpio-vertinimas-valdymas/" target="_blank">
+              <span>Bandomojo laikotarpio valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/darbuotojo-isdarbinimo-is-imones-valdymas/" target="_blank">
+              <span>Darbuotojo išdarbinimo valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
-<div class="tab-content">
 
-  <!-- Tab 1: Darbuotojų įdarbinimas/išdarbinimas -->
-  <div class="tab-panel active" data-tab="1">
-    <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
-      <img src="/media/services/idarbinimas-srvc.png" alt="Darbuotojų įdarbinimas vaizdas | VECTICUM" class="w-full h-48 object-cover" loading="lazy" />
-      <div class="p-6">
-        <p class="text-gray-600 mb-4">Visi procesai – nuo atrankos iki paskutinės darbo dienos – vienoje vietoje. Lengvai valdykite sutartis, paruoškite darbo vietą, stebėkite bandomąjį laikotarpį ir pasirūpinkite sklandžiu darbuotojo integravimu ar atsisveikinimu.</p>
-        <div class="links-grid">
-          <a href="https://vecticum.lt/atrankos-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700 focus:outline focus:ring"><i class="fa-solid fa-users-line"></i> Atrankų valdymas</a>
-          <a href="https://vecticum.lt/darbuotoju-idarbinimo-savitarna/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700 focus:outline focus:ring"><i class="fa-solid fa-fingerprint"></i> Darbuotojo įdarbinimo savitarna</a>
-          <a href="https://vecticum.lt/darbo-sutarciu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700 focus:outline focus:ring"><i class="fa-solid fa-file-signature"></i> Darbo sutarčių valdymas</a>
-          <a href="https://vecticum.lt/darbuotojo-idarbinimo-i-imone-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700 focus:outline focus:ring"><i class="fa-solid fa-briefcase"></i> Darbo vietos paruošimas</a>
-          <a href="https://vecticum.lt/bandomojo-laikotarpio-vertinimas-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700 focus:outline focus:ring"><i class="fa-solid fa-hourglass"></i> Bandomojo laikotarpio valdymas</a>
-          <a href="https://vecticum.lt/darbuotojo-isdarbinimo-is-imones-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700 focus:outline focus:ring"><i class="fa-solid fa-user-slash"></i> Darbuotojo išdarbinimo valdymas</a>
+      <!-- Item 2 -->
+      <div class="accordion-item" data-img="/media/services/duomenu-valdymas-srvc.png">
+        <div class="accordion-header">
+          <span>02</span>
+          <strong>Darbuotojo informacijos valdymas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Centralizuokite visą informaciją apie darbuotojus – nuo kontaktų iki vidinių prašymų ir inventoriaus valdymo – vienoje sistemoje.</p>
+          <div class="accordion-image">
+            <img id="accordion-img-2" src="/media/services/duomenu-valdymas-srvc.png" alt="Darbuotojo informacijos valdymas vaizdas | VECTICUM" />
+          </div>
+          <div class="accordion-links-mobile" id="accordion-links-mobile-2">
+            <h3 class="links-title">Darbuotojo informacijos valdymo sprendimai</h3>
+            <a href="https://vecticum.lt/darbuotoju-duomenu-bazes-valdymas/" target="_blank">
+              <span>Darbuotojo duomenų valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/isduodamo-inventoriaus-darbuotojui-valdymas/" target="_blank">
+              <span>Išduodamo inventoriaus valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/intraneto-valdymas/" target="_blank">
+              <span>Intranetas (Įmonės naujienos)</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/darbuotoju-prasymu-valdymas/" target="_blank">
+              <span>Darbuotojų prašymų valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="accordion-item" data-img="/media/services/darbo-laiko-apskaita-srvc.png">
+        <div class="accordion-header">
+          <span>03</span>
+          <strong>Darbo laiko apskaita</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Lengvai valdykite darbo grafikų sudarymą, nebuvimų fiksavimą ir darbo laiko žiniaraščius – automatizuotai ir be klaidų.</p>
+          <div class="accordion-image">
+            <img id="accordion-img-3" src="/media/services/darbo-laiko-apskaita-srvc.png" alt="Darbo laiko apskaita vaizdas | VECTICUM" />
+          </div>
+          <div class="accordion-links-mobile" id="accordion-links-mobile-3">
+            <h3 class="links-title">Darbo laiko apskaitos sprendimai</h3>
+            <a href="https://vecticum.lt/atostogu-valdymas/" target="_blank">
+              <span>Atostogų prašymų ir kitų nebuvimų valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/komandiruociu-valdymas/" target="_blank">
+              <span>Komandiruočių valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/" target="_blank">
+              <span>Darbo laiko apskaitos žiniaraščiai</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="accordion-item" data-img="/media/services/atitikimo-valdymas-srvc.png">
+        <div class="accordion-header">
+          <span>04</span>
+          <strong>Atitikimo valdymas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Užtikrinkite, kad visi darbuotojai būtų laiku supažindinti su vidaus tvarkomis, išlaikytų testus ir įvykdytų mokymus.</p>
+          <div class="accordion-image">
+            <img id="accordion-img-4" src="/media/services/atitikimo-valdymas-srvc.png" alt="Atitikimo valdymas vaizdas | VECTICUM" />
+          </div>
+          <div class="accordion-links-mobile" id="accordion-links-mobile-4">
+            <h3 class="links-title">Atitikimo valdymo sprendimai</h3>
+            <a href="https://vecticum.lt/privalomo-supazindinimo-su-dokumentais-valdymas/" target="_blank">
+              <span>Privalomo supažindinimo su dokumentais valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/testavimo-is-norminiu-dokumentu-valdymas/" target="_blank">
+              <span>Darbuotojų testavimas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/mokymu-valdymas/" target="_blank">
+              <span>Mokymų valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/veiklos-vertinimas/" target="_blank">
+              <span>Veiklos vertinimas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="accordion-item" data-img="/media/services/dokumentu-valdymas-srvc.png">
+        <div class="accordion-header">
+          <span>05</span>
+          <strong>Dokumentų valdymas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Visa reikalinga dokumentacija pasiekiama aiškiai struktūruota ir vienoje vietoje – lengvam valdymui ir priežiūrai.</p>
+          <div class="accordion-image">
+            <img id="accordion-img-5" src="/media/services/dokumentu-valdymas-srvc.png" alt="Dokumentų valdymas vaizdas | VECTICUM" />
+          </div>
+          <div class="accordion-links-mobile" id="accordion-links-mobile-5">
+            <h3 class="links-title">Dokumentų valdymo sprendimai</h3>
+            <a href="https://vecticum.lt/dokumumentu-valdymas/" target="_blank">
+              <span>Dokumentų valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/dokumentacijos-plano-valdymas/" target="_blank">
+              <span>Dokumentacijos plano valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/gaunamu-uzklausu-valdymas/" target="_blank">
+              <span>Gaunamos/siunčiamos korespondencijos valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="accordion-item" data-img="/media/services/sutarciu-valdymas-srvc.png">
+        <div class="accordion-header">
+          <span>06</span>
+          <strong>Sutarčių valdymas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Sutartys formuojamos, derinamos ir pasirašomos sklandžiai – be bereikalingų žingsnių.</p>
+          <div class="accordion-image">
+            <img id="accordion-img-6" src="/media/services/sutarciu-valdymas-srvc.png" alt="Sutarčių valdymas vaizdas | VECTICUM" />
+          </div>
+          <div class="accordion-links-mobile" id="accordion-links-mobile-6">
+            <h3 class="links-title">Sutarčių valdymo sprendimai</h3>
+            <a href="https://vecticum.lt/sutarciu-valdymas/" target="_blank">
+              <span>Sutarčių valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 7 -->
+      <div class="accordion-item" data-img="/media/services/apskaitomi-srvc.png">
+        <div class="accordion-header">
+          <span>07</span>
+          <strong>Apskaitomų dokumentų valdymas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Sąskaitos, kelionės lapai, avansiniai – viskas registruojama, tvirtinama ir valdoma vienoje vietoje, kad apskaita vyktų greitai ir tiksliai.</p>
+          <div class="accordion-image">
+            <img id="accordion-img-7" src="/media/services/apskaitomi-srvc.png" alt="Apskaitomų dokumentų valdymas vaizdas | VECTICUM" />
+          </div>
+          <div class="accordion-links-mobile" id="accordion-links-mobile-7">
+            <h3 class="links-title">Apskaitomų dokumentų valdymo sprendimai</h3>
+            <a href="https://vecticum.lt/gaunamu-saskaitu-valdymas/" target="_blank">
+              <span>Gaunamų sąskaitų valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/avansines-apyskaitos-valdymas/" target="_blank">
+              <span>Avansinės apyskaitos valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/keliones-lapu-valdymas" target="_blank">
+              <span>Kelionės lapų valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+            <a href="https://vecticum.lt/komandiruociu-valdymas/" target="_blank">
+              <span>Komandiruočių valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 8 -->
+      <div class="accordion-item" data-img="/media/services/pirkimai-srvc.png">
+        <div class="accordion-header">
+          <span>08</span>
+          <strong>Pirkimų valdymas</strong>
+        </div>
+        <div class="accordion-content">
+          <p>Greitai suderinkite įsigijimus – nuo poreikio pateikimo iki galutinio patvirtinimo. Visa eiga aiškiai matoma.</p>
+          <div class="accordion-image">
+            <img id="accordion-img-8" src="/media/services/pirkimai-srvc.png" alt="Pirkimų valdymas vaizdas | VECTICUM" />
+          </div>
+          <div class="accordion-links-mobile" id="accordion-links-mobile-8">
+            <h3 class="links-title">Pirkimų valdymo sprendimai</h3>
+            <a href="https://vecticum.lt/pirkimu-valdymas/" target="_blank">
+              <span>Pirkimų valdymas</span>
+              <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Tab 2: Darbuotojo informacijos valdymas -->
-  <div class="tab-panel" data-tab="2">
-    <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
-      <img src="/media/services/duomenu-valdymas-srvc.png" alt="Darbuotojo informacijos valdymas vaizdas | VECTICUM" class="w-full h-48 object-cover" loading="lazy" />
-      <div class="p-6">
-        <p class="text-gray-600 mb-4">Centralizuokite visą informaciją apie darbuotojus – nuo kontaktų iki vidinių prašymų ir inventoriaus valdymo – vienoje sistemoje.</p>
-        <div class="links-grid">
-          <a href="https://vecticum.lt/darbuotoju-duomenu-bazes-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-id-badge"></i> Darbuotojo duomenų valdymas</a>
-          <a href="https://vecticum.lt/isduodamo-inventoriaus-darbuotojui-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-box-open"></i> Išduodamo inventoriaus valdymas</a>
-          <a href="https://vecticum.lt/intraneto-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-newspaper"></i> Intranetas (Įmonės naujienos)</a>
-          <a href="https://vecticum.lt/darbuotoju-prasymu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-envelope-open-text"></i> Darbuotojų prašymų valdymas</a>
-        </div>
+    <div class="accordion-links-container">
+      <div class="accordion-links active" id="accordion-links-1">
+        <h3 class="links-title">Darbuotojų įdarbinimo/išdarbinimo sprendimai</h3>
+        <a href="https://vecticum.lt/atrankos-valdymas/" target="_blank">
+          <span>Atrankų valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/darbuotoju-idarbinimo-savitarna/" target="_blank">
+          <span>Darbuotojo įdarbinimo savitarna</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/darbo-sutarciu-valdymas/" target="_blank">
+          <span>Darbo sutarčių valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/darbuotojo-idarbinimo-i-imone-valdymas/" target="_blank">
+          <span>Darbo vietos paruošimas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/bandomojo-laikotarpio-vertinimas-valdymas/" target="_blank">
+          <span>Bandomojo laikotarpio valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/darbuotojo-isdarbinimo-is-imones-valdymas/" target="_blank">
+          <span>Darbuotojo išdarbinimo valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
       </div>
-    </div>
-  </div>
-
-  <!-- Tab 3: Darbo laiko apskaita -->
-  <div class="tab-panel" data-tab="3">
-    <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
-      <img src="/media/services/darbo-laiko-apskaita-srvc.png" alt="Darbo laiko apskaita vaizdas | VECTICUM" class="w-full h-48 object-cover" loading="lazy" />
-      <div class="p-6">
-        <p class="text-gray-600 mb-4">Lengvai valdykite darbo grafikų sudarymą, nebuvimų fiksavimą ir darbo laiko žiniaraščius – automatizuotai ir be klaidų.</p>
-        <div class="links-grid">
-          <a href="https://vecticum.lt/atostogu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-umbrella-beach"></i> Atostogų prašymų ir kitų nebuvimų valdymas</a>
-          <a href="https://vecticum.lt/komandiruociu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-plane-departure"></i> Komandiruočių valdymas</a>
-          <a href="https://vecticum.lt/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-calendar-days"></i> Darbo laiko apskaitos žiniaraščiai</a>
-        </div>
+      <div class="accordion-links" id="accordion-links-2">
+        <h3 class="links-title">Darbuotojo informacijos valdymo sprendimai</h3>
+        <a href="https://vecticum.lt/darbuotoju-duomenu-bazes-valdymas/" target="_blank">
+          <span>Darbuotojo duomenų valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/isduodamo-inventoriaus-darbuotojui-valdymas/" target="_blank">
+          <span>Išduodamo inventoriaus valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/intraneto-valdymas/" target="_blank">
+          <span>Intranetas (Įmonės naujienos)</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/darbuotoju-prasymu-valdymas/" target="_blank">
+          <span>Darbuotojų prašymų valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
       </div>
-    </div>
-  </div>
-
-  <!-- Tab 4: Atitikimo valdymas -->
-  <div class="tab-panel" data-tab="4">
-    <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
-      <img src="/media/services/atitikmo-valdymas-srvc.png" alt="Atitikimo valdymas vaizdas | VECTICUM" class="w-full h-48 object-cover" loading="lazy" />
-      <div class="p-6">
-        <p class="text-gray-600 mb-4">Užtikrinkite, kad visi darbuotojai būtų laiku supažindinti su vidaus tvarkomis, išlaikytų testus ir įvykdytų mokymus.</p>
-        <div class="links-grid">
-          <a href="https://vecticum.lt/privalomo-supazindinimo-su-dokumentais-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-file-shield"></i> Privalomo supažindinimo su dokumentais valdymas</a>
-          <a href="https://vecticum.lt/testavimo-is-norminiu-dokumentu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-clipboard-question"></i> Darbuotojų testavimas</a>
-          <a href="https://vecticum.lt/mokymu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-graduation-cap"></i> Mokymų valdymas</a>
-          <a href="https://vecticum.lt/veiklos-vertinimas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-chart-line"></i> Veiklos vertinimas</a>
-        </div>
+      <div class="accordion-links" id="accordion-links-3">
+        <h3 class="links-title">Darbo laiko apskaitos sprendimai</h3>
+        <a href="https://vecticum.lt/atostogu-valdymas/" target="_blank">
+          <span>Atostogų prašymų ir kitų nebuvimų valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/komandiruociu-valdymas/" target="_blank">
+          <span>Komandiruočių valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/" target="_blank">
+          <span>Darbo laiko apskaitos žiniaraščiai</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
       </div>
-    </div>
-  </div>
-
-  <!-- Tab 5: Dokumentų valdymas -->
-  <div class="tab-panel" data-tab="5">
-    <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
-      <img src="/media/services/dokumentu-valdymas-srvc.png" alt="Dokumentų valdymas vaizdas | VECTICUM" class="w-full h-48 object-cover" loading="lazy" />
-      <div class="p-6">
-        <p class="text-gray-600 mb-4">Visa reikalinga dokumentacija pasiekiama aiškiai struktūruota ir vienoje vietoje – lengvam valdymui ir priežiūrai.</p>
-        <div class="links-grid">
-          <a href="https://vecticum.lt/dokumumentu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-file-lines"></i> Dokumentų valdymas</a>
-          <a href="https://vecticum.lt/dokumentacijos-plano-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-clipboard-list"></i> Dokumentacijos plano valdymas</a>
-          <a href="https://vecticum.lt/gaunamu-uzklausu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-paper-plane"></i> Gaunamos/siunčiamos korespondencijos valdymas</a>
-        </div>
+      <div class="accordion-links" id="accordion-links-4">
+        <h3 class="links-title">Atitikimo valdymo sprendimai</h3>
+        <a href="https://vecticum.lt/privalomo-supazindinimo-su-dokumentais-valdymas/" target="_blank">
+          <span>Privalomo supažindinimo su dokumentais valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/testavimo-is-norminiu-dokumentu-valdymas/" target="_blank">
+          <span>Darbuotojų testavimas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/mokymu-valdymas/" target="_blank">
+          <span>Mokymų valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/veiklos-vertinimas/" target="_blank">
+          <span>Veiklos vertinimas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
       </div>
-    </div>
-  </div>
-
-  <!-- Tab 6: Sutarčių valdymas -->
-  <div class="tab-panel" data-tab="6">
-    <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
-      <img src="/media/services/sutarciu-valdymas-srvc.png" alt="Sutarčių valdymas vaizdas | VECTICUM" class="w-full h-48 object-cover" loading="lazy" />
-      <div class="p-6">
-        <p class="text-gray-600 mb-4">Sutartys formuojamos, derinamos ir pasirašomos sklandžiai – be bereikalingų žingsnių.</p>
-        <div class="links-grid">
-          <a href="https://vecticum.lt/sutarciu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-folder-open"></i> Sutarčių valdymas</a>
-        </div>
+      <div class="accordion-links" id="accordion-links-5">
+        <h3 class="links-title">Dokumentų valdymo sprendimai</h3>
+        <a href="https://vecticum.lt/dokumumentu-valdymas/" target="_blank">
+          <span>Dokumentų valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/dokumentacijos-plano-valdymas/" target="_blank">
+          <span>Dokumentacijos plano valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/gaunamu-uzklausu-valdymas/" target="_blank">
+          <span>Gaunamos/siunčiamos korespondencijos valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
       </div>
-    </div>
-  </div>
-
-  <!-- Tab 7: Apskaitomų dokumentų valdymas -->
-  <div class="tab-panel" data-tab="7">
-    <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
-      <img src="/media/services/apskaitomi-srvc.png" alt="Apskaitomų dokumentų valdymas vaizdas | VECTICUM" class="w-full h-48 object-cover" loading="lazy" />
-      <div class="p-6">
-        <p class="text-gray-600 mb-4">Sąskaitos, kelionės lapai, avansiniai – viskas registruojama, tvirtinama ir valdoma vienoje vietoje, kad apskaita vyktų greitai ir tiksliai.</p>
-        <div class="links-grid">
-          <a href="https://vecticum.lt/gaunamu-saskaitu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-file-invoice-dollar"></i> Gaunamų sąskaitų valdymas</a>
-          <a href="https://vecticum.lt/avansines-apyskaitos-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-receipt"></i> Avansinės apyskaitos valdymas</a>
-          <a href="https://vecticum.lt/keliones-lapu-valdymas" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-map-location-dot"></i> Kelionės lapų valdymas</a>
-          <a href="https://vecticum.lt/komandiruociu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-plane-departure"></i> Komandiruočių valdymas</a>
-        </div>
+      <div class="accordion-links" id="accordion-links-6">
+        <h3 class="links-title">Sutarčių valdymo sprendimai</h3>
+        <a href="https://vecticum.lt/sutarciu-valdymas/" target="_blank">
+          <span>Sutarčių valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
       </div>
-    </div>
-  </div>
-
-  <!-- Tab 8: Pirkimų valdymas -->
-  <div class="tab-panel" data-tab="8">
-    <div class="card bg-white rounded-xl shadow-lg overflow-hidden">
-      <img src="/media/services/pirkimai-srvc.png" alt="Pirkimų valdymas vaizdas | VECTICUM" class="w-full h-48 object-cover" loading="lazy" />
-      <div class="p-6">
-        <p class="text-gray-600 mb-4">Greitai suderinkite įsigijimus – nuo poreikio pateikimo iki galutinio patvirtinimo. Visa eiga aiškiai matoma.</p>
-        <div class="links-grid">
-          <a href="https://vecticum.lt/pirkimu-valdymas/" target="_blank" class="link-item flex items-center gap-2 bg-pink-600 text-white p-2 rounded hover:bg-pink-700"><i class="fa-solid fa-cart-shopping"></i> Pirkimų valdymas</a>
-        </div>
+      <div class="accordion-links" id="accordion-links-7">
+        <h3 class="links-title">Apskaitomų dokumentų valdymo sprendimai</h3>
+        <a href="https://vecticum.lt/gaunamu-saskaitu-valdymas/" target="_blank">
+          <span>Gaunamų sąskaitų valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/avansines-apyskaitos-valdymas/" target="_blank">
+          <span>Avansinės apyskaitos valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/keliones-lapu-valdymas" target="_blank">
+          <span>Kelionės lapų valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+        <a href="https://vecticum.lt/komandiruociu-valdymas/" target="_blank">
+          <span>Komandiruočių valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
       </div>
-    </div>
-  </div>
-
-</div>
-
+      <div class="accordion-links" id="accordion-links-8">
+        <h3 class="links-title">Pirkimų valdymo sprendimai</h3>
+        <a href="https://vecticum.lt/pirkimu-valdymas/" target="_blank">
+          <span>Pirkimų valdymas</span>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
 .accordion-section {
-  background-color: #f9fafb;
-  padding: 3rem 1rem;
+  padding: 2rem;
+  background-color: #EBEFF3;
+  box-sizing: border-box;
 }
-.tabs-container { max-width: 7xl; margin-left: auto; margin-right: auto; }
-.tabs {
-  display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-bottom: 1.5rem;
+
+.accordion-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.tab {
-  display: flex; align-items: center; padding: 0.75rem 1.5rem;
-  background-color: #fff; border: 1px solid #e5e7eb; border-radius: 9999px;
-  cursor: pointer; transition: all 0.3s ease; font-size: 0.875rem; font-weight: 500;
-  outline: none;
+
+@media (min-width: 768px) {
+  .accordion-wrapper {
+    flex-direction: row;
+  }
 }
-.tab.active, .tab:focus-visible {
-  background-color: #c81f6a; color: #fff; border-color: #c81f6a; transform: translateY(-2px);
-  box-shadow: 0 2px 8px #c81f6a33;
+
+.accordion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.tab:hover:not(.active) { background-color: #f3f4f6; }
-.tab-content {}
-.tab-panel { display: none; }
-.tab-panel.active { display: block; animation: fadeIn .3s; }
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-.card {
-  border-radius: 0.75rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-  overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
+
+.accordion-item {
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  box-sizing: border-box;
 }
-.card:hover { transform: translateY(-4px); box-shadow: 0 6px 16px rgba(200,31,106,0.11);}
-.card img { width: 100%; height: 12rem; object-fit: cover; }
-.links-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.5rem; margin-top: 1rem;
+
+.accordion-item.active {
+  box-shadow: 0 6px 24px rgba(200, 31, 106, 0.12);
 }
-.link-item { transition: background-color 0.18s, transform 0.18s; }
-.link-item:focus-visible { outline: 2px solid #c81f6a; }
-.link-item:hover { transform: translateY(-2px) scale(1.02); background: #c81f6a; }
-@media (max-width: 640px) {
-  .tabs { flex-direction: column; align-items: stretch; }
-  .tab { width: 100%; text-align: left; border-radius: 0.375rem; }
-  .card img { height: 10rem; }
-  .links-grid { grid-template-columns: 1fr; }
+
+.accordion-header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem;
+  transition: background-color 0.3s ease;
 }
-@media (min-width: 1024px) {
-  .links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.accordion-header span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #C81F6A;
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header span {
+  transform: rotate(90deg);
+}
+
+.accordion-content {
+  padding: 0 1.5rem;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.5s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+.accordion-item.active .accordion-content {
+  padding: 0 1.5rem 1.5rem;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accordion-content p {
+  margin-bottom: 1rem;
+  color: #4B5563;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.accordion-image {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.accordion-image img {
+  width: 100%;
+  max-width: 400px;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.accordion-image img.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.accordion-image img.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.accordion-links-container {
+  flex: 1;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #FDF7F9, #FFF2F6);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  height: auto;
+  min-height: 150px;
+  box-sizing: border-box;
+  transition: height 0.3s ease;
+}
+
+.accordion-links {
+  display: none;
+  box-sizing: border-box;
+}
+
+.accordion-links.active {
+  display: block;
+}
+
+.accordion-links .links-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1A202C;
+  margin-bottom: 1.25rem;
+}
+
+.accordion-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  background-color: #FFF5F8;
+  color: #C81F6A;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.accordion-links a:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-links a:hover {
+  background: linear-gradient(to right, #C81F6A, #D41E6B);
+  color: white;
+  transform: translateX(4px);
+}
+
+.accordion-links a .link-icon {
+  width: 16px;
+  height: 16px;
+  stroke: #C81F6A;
+  transition: stroke 0.2s ease;
+}
+
+.accordion-links a:hover .link-icon {
+  stroke: white;
+}
+
+.accordion-links-mobile {
+  display: none;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #FFF5F8;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.accordion-links-mobile.active {
+  display: block;
+}
+
+.accordion-links-mobile .links-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1A202C;
+  margin-bottom: 0.75rem;
+}
+
+.accordion-links-mobile a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+  background-color: white;
+  color: #C81F6A;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.accordion-links-mobile a:last-child {
+  margin-bottom: 0;
+}
+
+.accordion-links-mobile a:hover {
+  background: linear-gradient(to right, #C81F6A, #D41E6B);
+  color: white;
+  transform: translateX(4px);
+}
+
+.accordion-links-mobile a .link-icon {
+  width: 16px;
+  height: 16px;
+  stroke: #C81F6A;
+  transition: stroke 0.2s ease;
+}
+
+.accordion-links-mobile a:hover .link-icon {
+  stroke: white;
+}
+
+@media (max-width: 767px) {
+  .accordion-links-container {
+    display: none;
+  }
+
+  .accordion-links-mobile {
+    display: none;
+  }
+
+  .accordion-item.active .accordion-links-mobile {
+    display: block;
+  }
+
+  .accordion-image img {
+    max-width: 100%;
+    max-height: 180px;
+  }
+
+  .accordion-content p {
+    font-size: 0.95rem;
+  }
+
+  .accordion-links-mobile a {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .accordion-links-mobile {
+    display: none !important;
+  }
 }
 </style>
-<script>
-if (typeof window !== 'undefined') {
-  document.addEventListener("DOMContentLoaded", function () {
-    const tabs = Array.from(document.querySelectorAll(".tab")) as HTMLButtonElement[];
-    const tabPanels = Array.from(document.querySelectorAll(".tab-panel")) as HTMLDivElement[];
-    tabs.forEach((tab, idx) => {
-      tab.addEventListener("click", () => {
-        tabs.forEach((t, i) => {
-          t.classList.toggle("active", t === tab);
-          t.setAttribute("aria-selected", t === tab ? "true" : "false");
-          t.tabIndex = t === tab ? 0 : -1;
-          tabPanels[i]?.classList.toggle("active", t === tab);
+
+<script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const items = document.querySelectorAll(".accordion-item");
+    const linksContainer = document.querySelector(".accordion-links-container");
+
+    function updateLinksContainerHeight() {
+      const activeLinks = document.querySelector(".accordion-links.active");
+      if (activeLinks && linksContainer) {
+        // Reset height to auto to get accurate scrollHeight
+        linksContainer.style.height = "auto";
+        // Add 30px padding to ensure all content is visible
+        setTimeout(() => {
+          linksContainer.style.height = (activeLinks.scrollHeight + 30) + "px";
+        }, 0);
+      } else {
+        linksContainer.style.height = "150px"; // Minimal height when no active links
+      }
+    }
+
+    items.forEach((item, index) => {
+      const header = item.querySelector(".accordion-header");
+      const content = item.querySelector(".accordion-content");
+      const image = item.querySelector(".accordion-image img");
+      const linksDesktop = document.getElementById(`accordion-links-${index + 1}`);
+      const linksMobile = document.getElementById(`accordion-links-mobile-${index + 1}`);
+
+      if (!header || !content || !image || !linksDesktop || !linksMobile) return;
+
+      header.addEventListener("click", () => {
+        // Close others
+        items.forEach((i, idx) => {
+          const otherContent = i.querySelector(".accordion-content");
+          const otherImage = i.querySelector(".accordion-image img");
+          const otherLinksDesktop = document.getElementById(`accordion-links-${idx + 1}`);
+          const otherLinksMobile = document.getElementById(`accordion-links-mobile-${idx + 1}`);
+
+          if (i !== item) {
+            i.classList.remove("active");
+            otherContent.style.maxHeight = "0";
+            otherImage.classList.remove("fade-in");
+            otherImage.classList.add("fade-out");
+            otherLinksDesktop.classList.remove("active");
+            otherLinksMobile.classList.remove("active");
+          }
         });
-      });
-      // Accessibility: Enable keyboard navigation (left/right arrows)
-      tab.addEventListener("keydown", (e) => {
-        const event = e as KeyboardEvent;
-        if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
-          let nextIdx = (idx + (event.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length;
-          tabs[nextIdx].focus();
+
+        const isActive = item.classList.contains("active");
+        item.classList.toggle("active");
+
+        if (isActive) {
+          content.style.maxHeight = "0";
+          image.classList.remove("fade-in");
+          image.classList.add("fade-out");
+          linksDesktop.classList.remove("active");
+          linksMobile.classList.remove("active");
+          linksContainer.style.height = "150px"; // Reset to minimal height
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          image.classList.remove("fade-out");
+          image.classList.add("fade-in");
+          linksDesktop.classList.add("active");
+          linksMobile.classList.add("active");
+          updateLinksContainerHeight();
         }
       });
     });
+
+    // Open first active item and set initial links container height
+    const firstActive = document.querySelector(".accordion-item.active .accordion-content");
+    if (firstActive) {
+      firstActive.style.maxHeight = firstActive.scrollHeight + "px";
+      const firstImage = document.querySelector(".accordion-item.active .accordion-image img");
+      const firstLinksDesktop = document.getElementById("accordion-links-1");
+      const firstLinksMobile = document.getElementById("accordion-links-mobile-1");
+      if (firstImage) firstImage.classList.add("fade-in");
+      if (firstLinksDesktop) firstLinksDesktop.classList.add("active");
+      if (firstLinksMobile) firstLinksMobile.classList.add("active");
+      updateLinksContainerHeight();
+    }
+
+    // Update height on window resize to handle dynamic content
+    window.addEventListener("resize", () => {
+      setTimeout(updateLinksContainerHeight, 0);
+    });
   });
-}
 </script>
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
