@@ -20,17 +20,17 @@ export const POST: APIRoute = async ({ request }) => {
         const data = await request.json();
 
         // Extract the fields from the parsed data
-        const { name, email, message } = data;
+        // const { name, email, message } = data;
 
         // Basic validation: Check if required fields are present
-        if (!name || !email || !message) {
-            return new Response(JSON.stringify({ message: 'Missing required fields (name, email, message)' }), {
-                status: 400, // Bad Request
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-        }
+        // if (!name || !email || !message) {
+        //     return new Response(JSON.stringify({ message: 'Missing required fields (name, email, message)' }), {
+        //         status: 400, // Bad Request
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //     });
+        // }
 
         // --- In a real application, you would process this data here ---
 
@@ -61,13 +61,14 @@ export const POST: APIRoute = async ({ request }) => {
         // - Perform some business logic
         // For this example, we'll just log it to the console.
         console.log('Received form submission:');
-        console.log(`Name: ${name}`);
-        console.log(`Email: ${email}`);
-        console.log(`Message: ${message}`);
+        console.log(data);
+        // console.log(`Name: ${name}`);
+        // console.log(`Email: ${email}`);
+        // console.log(`Message: ${message}`);
         // ---------------------------------------------------------------
 
         // Send a success response
-        return new Response(JSON.stringify({ message: 'Form submitted successfully!' }), {
+        return new Response(JSON.stringify({ message: 'Užklausa sėkmingai pateikta!' }), {
             status: 200, // OK
             headers: {
                 'Content-Type': 'application/json',
@@ -77,7 +78,7 @@ export const POST: APIRoute = async ({ request }) => {
     } catch (error) {
         // Handle errors during parsing or processing
         console.error('Error processing form submission:', error);
-        return new Response(JSON.stringify({ message: 'Failed to process form submission.' }), {
+        return new Response(JSON.stringify({ message: 'Klaida apdorojant užklausą.' }), {
             status: 500, // Internal Server Error
             headers: {
                 'Content-Type': 'application/json',
