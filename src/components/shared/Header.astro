@@ -47,7 +47,7 @@ const logoImg = '~/assets/images/logo.webp';
           x-data="{ flyoutVisible: false, activeCategory: 'Darbuotojų įdarbinimas/išdarbinimas' }"
         >
           <a
-            class="text-gray-800 transition hover:text-[#C81F6A] flex items-center gap-1"
+            class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
             href="/sprendimai"
             @click.stop
           >
@@ -93,7 +93,7 @@ const logoImg = '~/assets/images/logo.webp';
                   'Apskaitomų dokumentų valdymas']" :key="index">
                   <button
                     @mouseenter="activeCategory = category"
-                    class="w-full text-left text-gray-700 hover:text-[#C81F6A] text-sm font-semibold transition-colors duration-200"
+                    class="w-full text-left text-gray-700 hover:text-[#3C7099] text-sm font-semibold transition-colors duration-200"
                     x-text="category"
                   ></button>
                 </template>
@@ -145,7 +145,7 @@ const logoImg = '~/assets/images/logo.webp';
            'Veiklos vertinimas': '/veiklos-vertinimas',
            'Sutarčių valdymas': '/sutarciu-valdymas',
            'Darbuotojo duomenų valdymas': '/darbuotoju-duomenu-bazes-valdymas',
-           'Išduodamo inventoriaus valdymas': '/inventoriaus-valdymas',
+           'Išduodamo inventoriaus valdymas': '/isduodamo-inventoriaus-darbuotojui-valdymas',
            'Intranetas (Įmonės naujienos)': '/intranetas',
            'Darbuotojų prašymų valdymas': '/prasymu-valdymas',
            'Dokumentų valdymas': '/dokumentu-valdymas',
@@ -175,8 +175,8 @@ const logoImg = '~/assets/images/logo.webp';
           :href="routes[item]" 
           class="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-md transition-all duration-200 group"
         >
-          <i :class="`fa-solid ${icons[item]}`" class="text-[#C81F6A] text-sm"></i>
-          <span class="text-sm text-gray-700 group-hover:text-[#C81F6A]" x-text="item"></span>
+          <i :class="`fa-solid ${icons[item]}`" class="text-[#3C7099] text-sm"></i>
+          <span class="text-sm text-gray-700 group-hover:text-[#3C7099]" x-text="item"></span>
         </a>
       </template>
     </template>
@@ -193,7 +193,7 @@ const logoImg = '~/assets/images/logo.webp';
                 </div>
                 <div class="mt-4">
                   <Image src={headerImg} alt="Dokumentacija | VECTICUM" class="w-full rounded-lg mb-2" />
-<a href="https://vecticum.freshdesk.com/support/home" class="hover:text-[#C81F6A] text-sm hover:underline">
+<a href="https://vecticum.freshdesk.com/support/home" class="hover:text-[#3C7099] text-sm hover:underline">
   Pagalba &gt;
 </a>
                 </div>
@@ -207,7 +207,7 @@ const logoImg = '~/assets/images/logo.webp';
               @mouseleave="planaiFlyoutOpen = false"
             >
               <a
-                class="text-gray-800 transition hover:text-[#C81F6A] flex items-center gap-1"
+                class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
               
               >
                 Kaina
@@ -243,13 +243,13 @@ const logoImg = '~/assets/images/logo.webp';
                       <div class="space-y-2">
                         <a
                           href="/personalo-valdymo-sprendimu-planai"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
                         >
                           Personalo valdymo planai
                         </a>
                         <a
                           href="/kiti-planai"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
                         >
                           Kiti sprendimai
                         </a>
@@ -265,7 +265,7 @@ const logoImg = '~/assets/images/logo.webp';
               @mouseleave="apieFlyoutOpen = false"
             >
               <a
-                class="text-gray-800 transition hover:text-[#C81F6A] flex items-center gap-1"
+                class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
               
               >
                 Apie Vecticum
@@ -301,25 +301,25 @@ const logoImg = '~/assets/images/logo.webp';
                       <div class="space-y-2">
                         <a
                           href="/rekomendacijos"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
                         >
                           Rekomendacijos
                         </a>
                         <a
                           href="/naujienos"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
                         >
                           Naujienos
                         </a>
                         <a
                           href="/versijos"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
                         >
                           Versijos
                         </a>
                         <a
                           href="/karjera"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#C81F6A]"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
                         >
                           Karjera
                         </a>
@@ -331,7 +331,7 @@ const logoImg = '~/assets/images/logo.webp';
             </li>
             <li>
               <a
-                class="text-gray-800 transition hover:text-[#C81F6A]"
+                class="text-gray-800 transition hover:text-[#3C7099]"
                 href="/kontaktai"
               >
                 Kontaktai
@@ -433,7 +433,7 @@ const logoImg = '~/assets/images/logo.webp';
     'Veiklos vertinimas': '/veiklos-vertinimas',
     'Sutarčių valdymas': '/sutarciu-valdymas',
     'Darbuotojo duomenų valdymas': '/darbuotoju-duomenu-bazes-valdymas',
-    'Išduodamo inventoriaus valdymas': '/inventoriaus-valdymas',
+    'Išduodamo inventoriaus valdymas': '/isduodamo-inventoriaus-darbuotojui-valdymas',
     'Intranetas (Įmonės naujienos)': '/intranetas',
     'Darbuotojų prašymų valdymas': '/prasymu-valdymas',
     'Dokumentų valdymas': '/dokumentu-valdymas',
@@ -499,7 +499,7 @@ const logoImg = '~/assets/images/logo.webp';
           )" :key="item">
             <a 
               :href="routes[item]"
-              class="block py-1 hover:text-[#C81F6A] transition-colors duration-200"
+              class="block py-1 hover:text-[#3C7099] transition-colors duration-200"
               x-text="item"
             ></a>
           </template>
@@ -621,7 +621,7 @@ const logoImg = '~/assets/images/logo.webp';
   />
   <a 
     href="https://vecticum.freshdesk.com/support/home" 
-    class="block text-sm text-[#C81F6A] hover:underline"
+    class="block text-sm text-[#3C7099] hover:underline"
   >
     Pagalba &gt;
   </a>
