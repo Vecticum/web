@@ -1,9 +1,9 @@
+---
+---
 
 <section class="accordion-section">
   <div class="mb-14 text-center">
-    <h2
-      class="mx-auto mt-14 max-w-lg text-center text-4xl sm:text-5xl font-bold tracking-normal text-balance text-gray-900"   
-    >
+    <h2 class="mx-auto mt-14 max-w-lg text-center text-4xl sm:text-5xl font-bold tracking-normal text-balance text-gray-900">
       Sistemos sprendimai
     </h2>
   </div>
@@ -139,7 +139,7 @@
       </div>
 
       <!-- Item 4 -->
-      <div class="accordion-item" data-img="/media/services/atitikimo-valdymas-srvc.png">
+      <div class="accordion-item" data-img="/media/services/atitikmo-valdymas-srvc.png">
         <div class="accordion-header">
           <span>04</span>
           <strong>Atitikimo valdymas</strong>
@@ -147,7 +147,7 @@
         <div class="accordion-content">
           <p>Užtikrinkite, kad visi darbuotojai būtų laiku supažindinti su vidaus tvarkomis, išlaikytų testus ir įvykdytų mokymus.</p>
           <div class="accordion-image">
-            <img id="accordion-img-4" src="/media/services/atitikimo-valdymas-srvc.png" alt="Atitikimo valdymas vaizdas | VECTICUM" />
+            <img id="accordion-img-4" src="/media/services/atitikmo-valdymas-srvc.png" alt="Atitikimo valdymas vaizdas | VECTICUM" />
           </div>
           <div class="accordion-links-mobile" id="accordion-links-mobile-4">
             <h3 class="links-title">Atitikimo valdymo sprendimai</h3>
@@ -262,7 +262,7 @@
                 <path d="M9 18l6-6-6-6"/>
               </svg>
             </a>
-            <a href="https://vecticum.lt/keliones-lapu-valdymas" target="_blank">
+            <a href="https://vecticum.lt/keliones-lapu-valdymas/" target="_blank">
               <span>Kelionės lapų valdymas</span>
               <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 18l6-6-6-6"/>
@@ -301,7 +301,6 @@
         </div>
       </div>
     </div>
-
     <div class="accordion-links-container">
       <div class="accordion-links active" id="accordion-links-1">
         <h3 class="links-title">Darbuotojų įdarbinimo/išdarbinimo sprendimai</h3>
@@ -461,7 +460,7 @@
             <path d="M9 18l6-6-6-6"/>
           </svg>
         </a>
-        <a href="https://vecticum.lt/keliones-lapu-valdymas" target="_blank">
+        <a href="https://vecticum.lt/keliones-lapu-valdymas/" target="_blank">
           <span>Kelionės lapų valdymas</span>
           <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M9 18l6-6-6-6"/>
@@ -518,15 +517,16 @@
 .accordion-item {
   border-bottom: 1px solid #e5e7eb;
   border-radius: 16px;
-  background-color: white;
+  background-color: white; /* Pakeista į balta spalvą kaip accordion-links-container */
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   box-sizing: border-box;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1); /* Pridėtas tas pats šešėlis kaip accordion-links-container */
 }
 
 .accordion-item.active {
-  box-shadow: 0 6px 24px rgba(200, 31, 106, 0.12);
+  box-shadow: 0 6px 24px rgba(200, 31, 106, 0.12); /* Išlaikomas aktyvus šešėlis */
 }
 
 .accordion-header {
@@ -601,8 +601,8 @@
 
 .accordion-links-container {
   flex: 1;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, #FDF7F9, #FFF2F6);
+  padding: 1.5rem 1.5rem 2rem; /* Padidintas apatinis tarpas */
+  background-color: white;
   border-radius: 16px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.1);
   height: auto;
@@ -614,6 +614,7 @@
 .accordion-links {
   display: none;
   box-sizing: border-box;
+  padding-bottom: 1.5rem; /* Padidintas apatinis tarpas visiems accordion-links blokams */
 }
 
 .accordion-links.active {
@@ -624,7 +625,7 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: #1A202C;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .accordion-links a {
@@ -633,35 +634,29 @@
   justify-content: space-between;
   padding: 0.75rem 1rem;
   margin-bottom: 0.75rem;
-  background-color: #FFF5F8;
-  color: #C81F6A;
+  background: linear-gradient(to right, #C81F6A, #D41E6B);
+  color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
   min-height: 44px;
   box-sizing: border-box;
 }
 
 .accordion-links a:last-child {
-  margin-bottom: 0;
+  margin-bottom: 0; /* Išlaikomas paskutinio elemento apatinis tarpas per padding-bottom */
 }
 
 .accordion-links a:hover {
-  background: linear-gradient(to right, #C81F6A, #D41E6B);
-  color: white;
+  background: linear-gradient(to right, #B01C5E, #C01A63);
   transform: translateX(4px);
 }
 
 .accordion-links a .link-icon {
   width: 16px;
   height: 16px;
-  stroke: #C81F6A;
-  transition: stroke 0.2s ease;
-}
-
-.accordion-links a:hover .link-icon {
   stroke: white;
 }
 
@@ -669,7 +664,7 @@
   display: none;
   margin-top: 1rem;
   padding: 1rem;
-  background-color: #FFF5F8;
+  background-color: white;
   border-radius: 8px;
   box-sizing: border-box;
 }
@@ -691,13 +686,13 @@
   justify-content: space-between;
   padding: 0.5rem 0.75rem;
   margin-bottom: 0.75rem;
-  background-color: white;
-  color: #C81F6A;
+  background: linear-gradient(to right, #C81F6A, #D41E6B);
+  color: white;
   text-decoration: none;
-  border-radius: 6px;
+  border-radius: 12px;
   font-weight: 500;
   font-size: 0.95rem;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
   min-height: 44px;
   box-sizing: border-box;
 }
@@ -707,19 +702,13 @@
 }
 
 .accordion-links-mobile a:hover {
-  background: linear-gradient(to right, #C81F6A, #D41E6B);
-  color: white;
+  background: linear-gradient(to right, #B01C5E, #C01A63);
   transform: translateX(4px);
 }
 
 .accordion-links-mobile a .link-icon {
   width: 16px;
   height: 16px;
-  stroke: #C81F6A;
-  transition: stroke 0.2s ease;
-}
-
-.accordion-links-mobile a:hover .link-icon {
   stroke: white;
 }
 
@@ -766,14 +755,12 @@
     function updateLinksContainerHeight() {
       const activeLinks = document.querySelector(".accordion-links.active");
       if (activeLinks && linksContainer) {
-        // Reset height to auto to get accurate scrollHeight
         linksContainer.style.height = "auto";
-        // Add 30px padding to ensure all content is visible
         setTimeout(() => {
           linksContainer.style.height = (activeLinks.scrollHeight + 30) + "px";
         }, 0);
       } else {
-        linksContainer.style.height = "150px"; // Minimal height when no active links
+        linksContainer.style.height = "150px";
       }
     }
 
@@ -787,7 +774,6 @@
       if (!header || !content || !image || !linksDesktop || !linksMobile) return;
 
       header.addEventListener("click", () => {
-        // Close others
         items.forEach((i, idx) => {
           const otherContent = i.querySelector(".accordion-content");
           const otherImage = i.querySelector(".accordion-image img");
@@ -813,7 +799,7 @@
           image.classList.add("fade-out");
           linksDesktop.classList.remove("active");
           linksMobile.classList.remove("active");
-          linksContainer.style.height = "150px"; // Reset to minimal height
+          linksContainer.style.height = "150px";
         } else {
           content.style.maxHeight = content.scrollHeight + "px";
           image.classList.remove("fade-out");
@@ -825,7 +811,6 @@
       });
     });
 
-    // Open first active item and set initial links container height
     const firstActive = document.querySelector(".accordion-item.active .accordion-content");
     if (firstActive) {
       firstActive.style.maxHeight = firstActive.scrollHeight + "px";
@@ -838,7 +823,6 @@
       updateLinksContainerHeight();
     }
 
-    // Update height on window resize to handle dynamic content
     window.addEventListener("resize", () => {
       setTimeout(updateLinksContainerHeight, 0);
     });
