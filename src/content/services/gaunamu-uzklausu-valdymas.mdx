@@ -1,0 +1,300 @@
+---
+title: Gaunamų užklausų valdymas
+description: Sutaupykite laiką ir išteklius – VECTICUM automatizuoja užklausų registravimą, paskirstymą ir atsakymų teikimą, didinant komandos produktyvumą.
+hero_image: "/media/services/gaunamu-uzklausu-hero.png"
+hero_image_alt: "Gaunamu uzklausu valdymas| VECTICUM"
+---
+
+import ContactForm from "../../components/home/ContactForm.astro";
+
+
+
+{/* first section */}
+
+
+<section class="w-full bg-[#EBEFF3] py-16">
+  <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl text-center mb-8 sm:mb-12">
+    Kodėl verta naudotis?
+  </h2>
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Efektyvus dokumentų valdymas</h3>
+          <p class="mt-1 text-sm text-gray-600">Automatizuota gaunamos ir siunčiamos korespondencijos registracija užtikrina greitą ir tikslų dokumentų valdymą be papildomo rankinio darbo.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Greitesnis užduočių paskirstymas ir kontrolė</h3>
+          <p class="mt-1 text-sm text-gray-600">Galimybė skirti vykdymo užduotis (rezoliucijas) bei stebėti jų įvykdymą leidžia sklandžiai organizuoti darbą ir užtikrina atsakomybę.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Lankstus dokumentų paskirstymas</h3>
+          <p class="mt-1 text-sm text-gray-600">Gautus dokumentus galima automatiškai nukreipti į konkrečius vidinius modulius (sąskaitos, sutartys, raštai ir kt.), taip sutrumpinant apdorojimo laiką.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Patogus atsakymų rengimas ir pasirašymas</h3>
+          <p class="mt-1 text-sm text-gray-600">Galimybė sistemoje parengti atsakymus, juos vizuoti ir pasirašyti el. parašu užtikrina greitą ir saugų korespondencijos tvarkymą.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Patogus komunikacijos procesas</h3>
+          <p class="mt-1 text-sm text-gray-600">Atsakymai gali būti siunčiami tiesiai iš sistemos, todėl sumažėja poreikis naudoti atskiras pašto platformas ir sutrumpėja reagavimo laikas.</p>
+        </div>
+      </div>
+
+            <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Greita informacijos paieška ir analizė</h3>
+          <p class="mt-1 text-sm text-gray-600">Paieškos, filtravimo ir eksportavimo į Excel galimybės padeda lengviau analizuoti srautus ir rengti ataskaitas.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{/* second section - image */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+        <div class="flex justify-center">
+      <img 
+        src="/media/services/gaunamos-uzklausos-schema.png" 
+        alt="Sutarciu valdymo procesas | VECTICUM"
+        class="w-full max-w-md h-auto object-cover"
+      />
+    </div>
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+      Kaip tai veikia?
+      </h2>
+<ol class="list-decimal pl-5 space-y-2">
+      <li>
+        <strong>Dokumentų gavimas ir registravimas:</strong>
+        Korespondencija įkeliama į sistemą, prireikus jai automatiškai suteikiamas registracijos numeris.
+      </li>
+      <li>
+        <strong>Paskirstymas ir užduočių delegavimas:</strong>
+         Dokumentai paskirstomi į atitinkamus modulius (pvz., sutartys, sąskaitos), o atsakingiems asmenims skiriamos vykdymo užduotys (rezoliucijos).
+      </li>
+      <li>
+        <strong>Atsakymas ir pasirašymas:</strong>
+         Sistemoje parengiamas atsakymas, jis vizuojamas ir pasirašomas kvalifikuotu el. parašu.
+      </li>
+      <li>
+        <strong>Saugojimas ir analizė:</strong>
+         Visa informacija saugoma, gali būti filtruojama, komentuojama ir eksportuojama į Excel ataskaitoms.
+      </li>
+    </ol>
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+
+
+{/* 8 section - screenshot */}
+
+<section class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-12">
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900">
+      Gaunamos/ siunčiamos įmonės korespondencijos valdymo sprendimo funkcijos
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
+      <ul class="space-y-3 list-disc list-inside text-gray-700 text-md leading-relaxed text-left">
+ 	<li>Gaunamos korespondencijos duomenų bazė;</li>
+ 	<li>Siunčiamos korespondencijos duomenų bazė;</li>
+ 	<li>Gaunamos korespondencijos rūšiavimo darbastalis;</li>
+ 	<li>Gavus kelis dokumentus viename Adobe Acrobat faile (.pdf), galimybė tokį failą padalinti į atskirus PDF failus arba sujungti kelis pdf ir vaizdo failus į vieną pdf;</li>
+ 	<li>Galimybė gautą korespondenciją paskirstyti į skirtingus modulius (pvz. nukreipti į raštinės, sutarčių, sąskaitų, atrankų modulius);</li>
+ 	<li>Galimybė gautą korespondenciją el. paštu registruoti į sistemą arba ne (suteikti registracijos numerį);</li>
+  <li>Ilgalaikis dokumentų saugojimas;</li>
+  <li>Galimybė rašyti komentarus;</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
+      <ul class="space-y-3 list-disc list-inside text-gray-700 text-md leading-relaxed text-left">
+  <li>Galimybė gautai korespondencijai paskirti vykdymo užduotį (rezoliuciją). Tipinis užduoties paskyrimo procesas:</li>
+      <ul class="list-disc list-inside pl-5">
+ 	<li>Žmogus, kuris užregistravo gautą dokumentą, suformuoja užduotį (rezoliucija): paskiria atsakingą asmenį, nurodyti įvykdymo datą.</li>
+ 	<li>Priskirtas žmogus gauna užduotį vykdymui. Esant poreikiui jis gali priskirtą užduotį perduoti kito asmens vykdymui.</li>
+</ul>
+ 	<li>Galimybė įkelti gautai korespondencijai suformuotą atsakymą , jį patvirtinti (vizuoti) ir pasirašyti kvalifikuotu el. parašu;</li>
+ 	<li>Gautos ir siunčiamos korespondencijos paieška, filtravimas, peržiūra;</li>
+ 	<li>Meta duomenų eksportavimas į Excel.</li>
+   	<li>Galimybė rašyti atsakymus tiesiai iš sistemos (per korespondencijos el. pašto dėžutę) – papildomai apmokestinama funkcija.</li>
+</ul>
+      
+    </div>
+  </div>
+</section>
+
+
+
+{/* duk section */}
+
+<section class="w-full px-4 py-16 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">DUK</h2>
+
+    <div class="grid gap-6 sm:grid-cols-2">
+      
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar galiu bet kada nutraukti paslaugą?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip, galite bet kada nutraukti paslaugą be papildomų įsipareigojimų. Būtų malonu sulaukti jūsų grįžtamojo ryšio.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Kaip mano komanda gali naudoti kreditus?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Komanda gali naudoti kreditus aktyvuodama funkcijas sistemoje. Kiekvienas narys mato savo kreditų balansą ir panaudojimo istoriją.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Kaip veikia kainodara?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Mūsų kainodara yra lanksti – siūlome kelis planus pagal poreikį: nuo bazinių iki išplėstinių su papildomomis funkcijomis.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar sistema saugi?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip, mes naudojame naujausius duomenų šifravimo ir saugumo protokolus – jūsų informacija visada apsaugota.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar teikiate nuolaidas komandoms?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip! Siūlome nuolaidas komandoms ir ilgalaikiams planams. Susisiekite dėl individualaus pasiūlymo.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar galima susigrąžinti pinigus?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip – siūlome pinigų grąžinimo garantiją per 14 dienų, jei nesate patenkinti paslauga.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+  <ContactForm />
+
+
+
+
+{/*seo text */}
+
+
+<section class="w-full px-4 py-16 sm:px-6 lg:px-8 text-gray-800">
+
+  <div class="max-w-4xl mx-auto space-y-6">
+    <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
+    <h2 class="text-2xl sm:text-3xl font-bold">Kai užklausų valdymas sukelia iššūkių: efektyviausias sprendimas verslui</h2>
+
+Verslo sąskaitų korespondencija, kontaktiniai duomenys ir užklausų valdymas yra neatsiejama kasdienių operacijų dalis. Tai užtikrina tvarkos palaikymą ir tikslius verslo informacijos duomenis.
+
+Organizuotas šių duomenų valdymas leidžia greičiau pasiekti informaciją. Kai įvairūs susirašinėjimai, <a style="color:#C81E6A" href="https://vecticum.lt/sutarciu-valdymas">sutartys</a>, su sąskaitomis susijusi korespondencija, klientų užklausos ir kiti duomenys yra tvarkingi, darbuotojai gali rasti tai, ko jiems reikia, išvengiant netikslumų ir laiko gaišaties. Taigi, užklausų, korespondencijos ir kitų duomenų pasiekiamumas yra labai svarbus kasdienei veiklai, sprendimų priėmimui ir operatyviam atsakymui į klientų teikiamas užklausas.
+
+Netinkamai atliekamas užklausų valdymas gali sukelti klaidų, apsirikimų tikimybę. Taip pat svarbu akcentuoti, kad verslo gaunamos sąskaitos ir su jomis susijusi korespondencija svarbi užtikrinant skaidrumą. Verta pasirūpinti, kad sąskaitų korespondencijos, visos gautos užklausos ir panašūs duomenys būtų vienoje vietoje, saugūs ir greitai prieinami. Turbūt sutiksite: jeigu valdymui neskiriama pakankamai dėmesio ir resursų, yra rizika, kad jautri informacija pateks į netinkamas rankas. Viena, kokybiškai veikianti valdymo sistema padės užbėgti klaidoms už akių ir suteiks didesnį saugumą Jūsų įmonės duomenims.
+
+Galiausiai, neverta pamiršti, kokį įvaizdį verslas sudaro savo klientams. Organizuotai tvarkomi duomenys, greiti atsakymai į užklausas atspindi profesionalumą. Kai klientai, partneriai ar kitos suinteresuotos šalys prašo informacijos, greitai paruošiami atsakymai gali pagerinti įmonės  įvaizdį. Tai įkvepia pasitikėjimą Jūsų komandos gebėjimu kompetentingai tvarkyti einamuosius reikalus.
+
+Deja, neturint profesionalios užklausų valdymo sistemos, visi šie svarbūs duomenys gali nesunkiai pasimesti. Ką daryti, kad užklausų valdymas vyktų paprasčiau? „Vecticum“ turi atsakymą.
+
+Tai – įrankis, kurio pagalba lengvai peržiūrėsite ir valdysite gaunamą bei siunčiamą įmonės korespondenciją: nuo sąskaitų informacijos iki specifinių užklausų.
+
+Vis dar svarstote, ar tikrai verta naudotis užklausų valdymo sistema? Aptarkime jos privalumus.
+
+<h3 class="text-xl font-semibold">Mažiau iššvaistyto laiko.</h3>
+
+Įvairi korespondencija, užklausų tvarkymas užima nemažai laiko ir jėgų. Mūsų sukurtas išmanus sprendimas leidžia automatizuoti įprastas užduotis, tokias kaip sąskaitų apmokėjimas ir sąskaitų suderinimas. Tai taupo laiką ir sumažina neatitikimų, klaidų riziką. <a style="color:#C81E6A" href="https://vecticum.lt/klientai/">Nemažai verslų jau įsitikino</a> „Vecticum“ nauda: tikime, kad ją atrasite ir Jūs.
+
+Tai suteikia prieigą, kad ir kur būtumėte: naudodami užklausų valdymą, Jūsų komandos nariai gali akimirksniu pasiekti paskyros informaciją, matyti sąskaitų korespondencijas ir užklausas, o tai leidžia greičiau priimti sprendimus ir atsakyti klientams.
+
+<h3 class="text-xl font-semibold">Prieinama visą parą.</h3>
+
+Prieigą turėsite 24 valandas per parą, 7 dienas per savaitę: užklausų valdymas suteikia įmonėms nuolatinę prieigą prie savo sąskaitų, sąskaitų ir užklausų, leidžiančios joms bet kuriuo metu gauti informaciją ir priimti sprendimus.
+
+<h3 class="text-xl font-semibold">Galimybė taupyti verslo išlaidas.</h3>
+
+Sumažėjęs popierizmas: valdymas sumažina didelio popierizmo poreikį, todėl sutaupoma spausdinimo, saugojimo ir rankinio tvarkymo išlaidų.
+
+Verta atsižvelgti ir į gerokai mažesnes atliekamų operacijų išlaidas. Mūsų sukurtas valdymo sprendimas turi daug naudingų funkcijų ir automatinių operacijų, todėl tai sutaupys Jums laiką ir pinigus. Pripažinkime: tradiciniai užklausų valdymo metodai šiandien kainuoja daug, o savo kokybe nusileidžia pilnai automatizuotoms operacijoms.
+
+<h3 class="text-xl font-semibold">Daugiau saugumo.</h3>
+
+Mūsų užklausų valdymo platforma yra 100 proc. saugi Jūsų verslui. Taikome pažangias priemones, kurios saugo Jūsų dokumentų privatumą, su sąskaitomis susijusią korespondenciją, klientų užklausas, sutartis, <a style="color:#C81E6A" href="https://vecticum.lt/pirkimu-valdymas/">pirkimus</a> ir kitas finansines operacijas. Tai sumažina duomenų nutekinimo bei sukčiavimo riziką.
+
+Taip pat pasirinkę „Vecticum“, galite įdiegti prieigos kontrolę, užtikrinant, kad tik įgalioti darbuotojai turėtų prieigą prie konkrečios finansinės informacijos, sąskaitų ir užklausų.
+
+    <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
+  </div>
+</section>

@@ -1,0 +1,572 @@
+---
+title: Dokumentų valdymas
+description: VECTICUM dokumentų valdymas leidžia greitai pasiruošti, suderinti ir pasirašyti svarbius dokumentus – visa eiga automatizuota nuo pradžios iki archyvavimo. Pamirškite pasimetusius failus ir ilgas derinimo grandines.
+hero_image: "/media/services/dokumentu-valdymas-hero.png"
+hero_image_alt: "Dokumentu valdymas | VECTICUM"
+---
+
+import ContactForm from "../../components/home/ContactForm.astro";
+
+
+
+{/* first section */}
+
+
+<section class="w-full bg-[#EBEFF3] py-16">
+  <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl text-center mb-8 sm:mb-12">
+    Kodėl verta naudotis?
+  </h2>
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Versijavimas ir dokumentų šablonai</h3>
+          <p class="mt-1 text-sm text-gray-600">Versijavimo funkcija užtikrina dokumentų tvarkymo tikslumą ir galimybę naudoti standartinius dokumentų šablonus, taip sumažinant klaidų riziką.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Patvirtinimo proceso automatizavimas</h3>
+          <p class="mt-1 text-sm text-gray-600">Automatizuotas ir nestandartinio patvirtinimo proceso palaikymas padeda efektyviai valdyti tvarkų srautus, sumažinant laiko ir darbo sąnaudas.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Komunikacija ir bendradarbiavimas</h3>
+          <p class="mt-1 text-sm text-gray-600">Galimybė rašyti komentarus ir automatizuotas supažindinimas su dokumentais skatina bendradarbiavimą ir efektyvią komunikaciją tarp darbuotojų.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Teisinis atitikimas</h3>
+          <p class="mt-1 text-sm text-gray-600">Kvalifikuotas elektroninis pasirašymas ir automatinis atitikimas BDAR reikalavimams padeda įmonėms išlaikyti teisinį atitikimą ir saugumą.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Sistemos našumas</h3>
+          <p class="mt-1 text-sm text-gray-600">Nepaisant didelio duomenų kiekio, sistemos greitaveika užtikrina, kad darbuotojai gali dirbti efektyviai ir be trikdžių.</p>
+        </div>
+      </div>
+
+            <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Paieška ir duomenų valdymas</h3>
+          <p class="mt-1 text-sm text-gray-600">Galimybė lengvai ieškoti, filtruoti, peržiūrėti dokumentus ir eksportuoti duomenis į Excel padeda optimizuoti informacijos valdymą ir analizę.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+{/* second section - image */}
+
+<section class="w-full px-4 sm:px-6 lg:px-8 py-20">
+  <div class="max-w-6xl mx-auto text-center">
+
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-8 sm:mb-12">
+      Kaip tai veikia?
+    </h2>
+
+    <div class="mx-auto max-w-2xl">
+      <img
+        src="/media/services/dokumentu-valdymas-schema.png"
+        alt="Dokumentu valdymas | VECTICUM"
+        class="w-full h-auto rounded-xl transition duration-300 object-cover"
+      />
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-12">
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900">
+      Dokumentų valdymo funkcijos
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
+      <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
+        <li>Aiškus įmonės tvarkų ir įsakymų ir kitų dokumentų registras vienoje vietoje;</li>
+        <li>Galiojančio dokumento pasiekiamumas iš bet kur ir bet kada;</li>
+        <li>Tvarkų versijavimas;</li>
+        <li>Galimybė dokumentams savarankiškai sukurti dokumento šablonus (pvz. įsakymams);</li>
+        <li>Automatizuotas tvarkų patvirtinimo procesas (vidinis vizavimas) net ir pagal sudėtingiausias vizavimo sekas;</li>
+        <li>Galimybė turėti ir neautomatizuotą patvirtinimo procesą bei nestandartiniams dokumentams individualiai parinkti žmones, kurie turi patvirtinti dokumentą;</li>
+        <li>Galimybė rašyti komentarus;</li>
+        <li>Tvarkų pasirašymas kvalifikuotu elektroniniu parašu, atitinkančiu ,,eiDAS“ reikalavimus;</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
+      <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
+        <li>Automatizuotas darbuotojų supažindinimo su dokumentu procesas;</li>
+        <li>Galimybė sukurti automatinį priminimą;</li>
+        <li>Lengvas prieigos teisių valdymas;</li>
+        <li>Galimybė darbuotojus sistemoje suskirstyti į ne organizacinės struktūros grupes;</li>
+        <li>Automatinis tvarkų ir įsakymų priskyrimas pagal sudarytas darbuotojų grupes;</li>
+        <li>Automatizuotai užtikrintas atitikimas BDAR keliamiems reikalavimams;</li>
+        <li>Jokių greitaveikos problemų, nepriklausomai nuo duomenų kiekio sistemoje;</li>
+        <li>Prieinamumas prie sistemos iš mobilaus telefono;</li>
+        <li>Dokumentų paieška, filtravimas, peržiūra;</li>
+        <li>Lengvas duomenų eksportavimas į Excel.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+
+{/* tvarku valdymas section */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+        <div class="flex justify-center">
+      <img 
+        src="/media/services/tvarkos-valdymas-hero.png" 
+        alt="Tvarku ir isakymu valdymas | VECTICUM"
+        class="w-full h-auto object-cover"
+      />
+    </div>
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+      Kodėl verta naudotis įsakymų ir tvarkų dokumentų valdymo sistema?
+      </h2>
+<ul class="list-disc pl-5 space-y-2">
+  <li>Aiškus įmonės tvarkų registras vienoje vietoje</li>
+  <li>Galiojančio dokumento pasiekiamumas iš bet kur ir bet kada</li>
+  <li>Tvarkų versijavimas, atsekamumas ir išliekamumas</li>
+  <li>Laiko ir popieriaus taupymas</li>
+  <li>Automatizuotas tvarkų patvirtinimo ir darbuotojų supažindinimo su dokumentu procesas</li>
+  <li>Tvarkų pasirašymas kvalifikuotu elektroniniu parašu, atitinkančiu ,,eiDAS“ reikalavimus</li>
+  <li>Galimybė sukurti automatinį priminimą</li>
+  <li>Galimybė darbuotojus sistemoje suskirstyti į ne organizacinės struktūros grupes</li>
+  <li>Automatinis tvarkų ir įsakymų priskyrimas pagal sudarytas darbuotojų grupes</li>
+  <li>Automatizuotai užtikrintas atitikimas BDAR keliamiems reikalavimams</li>
+  <li>Jokių greitaveikos problemų, nepriklausomai nuo duomenų kiekio sistemoje</li>
+  <li>Prieinamumas prie sistemos iš mobilaus telefono</li>
+</ul>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="w-full bg-[#EBEFF3] py-12 sm:py-16 px-6 sm:px-8 lg:px-12">
+  <div class="grid grid-cols-1 gap-8 max-w-6xl mx-auto">
+    <div class="bg-white rounded-lg shadow-sm flex flex-col sm:flex-row overflow-hidden">
+      <div class="sm:w-1/3 bg-gray-50 p-4 sm:p-6 flex items-start justify-start">
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">Norminių dokumentų valdymo sprendimo funkcijos</h3>
+      </div>
+      <div class="sm:w-2/3 p-4 sm:p-6">
+        <ul class="space-y-3 list-disc list-inside text-gray-700 text-base leading-relaxed">
+          <li>Diegimo metu sukuriami atskiri registrai / katalogai: „Įsakymai“ – 1 registras, „Įmonės tvarkos“ – 1 registras;</li>
+          <li>Tvarkų versijavimas;</li>
+          <li>Galimybė įsakymams savarankiškai sukurti šablonus pagal įsakymo kategoriją;</li>
+          <li>Galimybė dokumentus į sistemą įkelti iš kompiuterio arba mobilaus telefono;</li>
+          <li>Automatizuotas tvarkų patvirtinimo procesas (vidinis vizavimas) pagal įmonės vidinę tvarką;</li>
+          <li>Galimybė individualiai parinkti žmones, kurie turi patvirtinti (vizuoti) dokumentą;</li>
+          <li>Dokumentų pasirašymas kvalifikuotu elektroniniu parašu, atitinkančiu „eiDAS“ reikalavimus;</li>
+          <li>Naujų .pdf dokumentų pasirašymas el. parašu, gautų .pdf dokumentų parašų nuskaitymas ir papildymas el. parašais;</li>
+          <li>Gautų adoc formato dokumentų parašo duomenų nuskaitymas ir papildymas el. parašais;</li>
+          <li>Per Vecticum pasirašytų sutarčių automatinis kvalifikuoto el. parašo galiojimo tikrinimas ir išsiuntimas naujam pasirašymui, kai pasibaigia galiojimo terminas;</li>
+          <li>Ilgalaikis dokumentų saugojimas;</li>
+          <li>Galimybė rašyti komentarus;</li>
+          <li>Galimybė dokumentui nustatyti galiojimo datą ir sukurti automatinį priminimą apie artėjančią pabaigą;</li>
+          <li>Prieigos teisių prie dokumento valdymas;</li>
+          <li>Dokumentų paieška, filtravimas, peržiūra;</li>
+          <li>Meta duomenų eksportavimas į Excel;</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm flex flex-col sm:flex-row overflow-hidden">
+      <div class="sm:w-1/3 bg-gray-50 p-4 sm:p-6 flex items-start justify-start">
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">Privalomo supažindinimo su norminiais dokumentais sprendimo funkcijos</h3>
+      </div>
+      <div class="sm:w-2/3 p-4 sm:p-6">
+        <ul class="space-y-3 list-disc list-inside text-gray-700 text-base leading-relaxed">
+          <li>Sistema užtikrina, kad darbuotojas prieš susipažindamas su tvarka ar įsakymu privalo jį atidaryti ir patvirtinti susipažinimą;</li>
+          <li>Galimybė darbuotojus sistemoje suskirstyti į grupes, vienas žmogus gali būti keliose grupėse;</li>
+          <li>Galimybė kiekvieną tvarką/įsakymą priskirti atskirai pareigybei ar pareigybių grupei;</li>
+          <li>Automatizuotas darbuotojų supažindinimo procesas – automatiškai suformuojamos užduotys susipažinti su tvarkomis ir įsakymais;</li>
+          <li>Galima sekti susipažinimo eigą, matyti, kurie darbuotojai dar nesusipažino;</li>
+          <li>Susipažinimo patvirtinimas el. paštu, telefonu arba prisijungus sistemoje;</li>
+          <li>Užduoties iš naujo susipažinti išsiuntimas, kai tvarkos atnaujinamos;</li>
+          <li>Automatinis supažindinimo užtikrinimas darbuotojui pakeitus pareigas;</li>
+          <li>Susipažinimų su dokumentais Excel ataskaita, statusų stebėsena;</li>
+          <li>Meta duomenų eksportavimas į Excel;</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-sm flex flex-col sm:flex-row overflow-hidden">
+      <div class="sm:w-1/3 bg-gray-50 p-4 sm:p-6 flex items-start justify-start">
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">Papildomos funkcijos</h3>
+      </div>
+      <div class="sm:w-2/3 p-4 sm:p-6">
+        <ul class="space-y-3 list-disc list-inside text-gray-700 text-base leading-relaxed">
+          <li>Esant poreikiui turėti daugiau dokumentų registrų ar katalogų, 1 papildomo registro/katalogo (iki 10 paprastų, ne dinaminių metaduomenų laukų) kaina nuo 250 Eur + PVM;</li>
+          <li>Papildomo registro metaduomenų rinkinys: data, galiojimo data, pavadinimas, autorius, kategorija, atsakingas asmuo, kiti atsakingi, pasirašantis, pastabos, priedai, aprašymas;</li>
+          <li>Dokumentai registruose/kataloguose gali būti skirstomi į kategorijas, kurias Užsakovas kuria ir valdo pats;</li>
+          <li>Standartiškai visi registrai/katalogai turi vienodą tvirtinimo seką: dokumento autorius tvirtina, vizuotojai vizuoja, pasirašantys pasirašo (kvalifikuotu arba nekvalifikuotu el. parašu);</li>
+          <li>Kategorijos gali turėti skirtingus vizuotojus, atsakingus ir pasirašančius asmenis bei teksto ruošinį, kurį Užsakovas kuria ir valdo pats;</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+{/* Kaip tai veikia */}
+
+{/* sixth section - history and updates */}
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Įsakymų ir tvarkų istorija bei atnaujinimai
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+        Šis VECTICUM sprendimas užtikrina informacijos išliekamumą, vienoje vietoje saugo visas tvarkų versijas, leidžia lengvai surasti norimą informaciją, o esant poreikiui analizuoti duomenis.
+      </p>
+    </div>
+    <div class="flex justify-center">
+      <img 
+        src="/media/services/tvarku-valdymas-srvc1.png"
+        alt="Tvarku ir isakymu valdymas | VECTICUM"
+        class="w-[<50%>] max-w-[<50%>] shadow-md"
+      />
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+{/* fourth section - screenshot */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+        <div class="flex justify-center">
+      <img 
+        src="/media/services/tvarku-valdymas-srvc2.png" 
+        alt="Tvarku ir isakymu valdymas | VECTICUM"
+        class="w-full max-w-md h-auto object-cover shadow-md"
+      />
+    </div>
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Skaitmeninis patvirtinimas
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+        Jeigu Jums atsibodo dokumentus vizuoti ranka, galite tradicinį pasirašymo būdą be vargo pakeisi elektroniniu. Pagal Europos Sąjungos elektroninių parašų direktyvą elektroninis parašas yra suprantamas plačiąja prasme ir elektroniniu parašu laikoma, pavyzdžiui, elektroniniame dokumente užrašytas vardas ar pavardė. VECTICUM sistemos funkcionalumas suteikia Jums galimybę įdiegti elektroninio patvirtinimo funkciją. Ši funkcija įmonės viduje pakeičia popierinį parašą.
+      </p>
+    </div>
+
+
+  </div>
+</section>
+
+{/* fifth section - screenshot */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Darbuotojų supažindinimas su įmonės tvarkomis
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+        VECTICUM funkcionalumas leidžia įmonei turėti skaitmenizuotą procesą, efektyviai užtikrinantį privalomą darbuotojų supažindinimą su įmonės tvarkomis ir kitais norminiais dokumentais. Tai Jums ne tik sutaupys laiko supažindinimo proceso administravimui ir leis analizuoti esamą situaciją, bet ir užtikrins veiksmų skaidrumą bei atsekamumą. Sistema automatiškai praneš apie dokumentų pakeitimus konkrečioms darbuotojų grupėms, kurios turi privalomai su naujais pakeitimais susipažinti ir savo susipažinimą patvirtinti el. būdu. Tai užkerta kelią konfliktams, jei vėliau darbuotojas pareiškia, kad niekada nežinojo apie tam tikrą tvarką arba nurodymą.
+      </p>
+    </div>
+
+
+    <div class="flex justify-center">
+      <img 
+        src="/media/services/tvarku-valdymas-srvc3.png" 
+        alt="Tvarku ir isakymu valdymas | VECTICUM"
+        class="w-[<50%>] max-w-[<50%>] shadow-md"
+      />
+    </div>
+
+  </div>
+</section>
+
+
+{/* 6th section - screenshot */}
+
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+        <div class="flex justify-center">
+      <img 
+        src="/media/services/tvarku-valdymas-srvc4.png" 
+        alt="Tvarku ir isakymu valdymas | VECTICUM"
+        class="w-full max-w-md h-auto object-cover"
+      />
+    </div>
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Kvalifikuotas elektroninis parašas
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+        VECTICUM sistema bendradarbiaudama su ,,Dokobit“, suteikia galimybę Tvarką ar Įsakymą pasirašyti saugiu kvalifikuotu elektroniniu parašu, kuris atitinka ,,eiDAS“ keliamus reikalavimus. Elektroninis parašas nėra nupiešta parašo imitacija ant dokumento. Kvalifikuoto elektroninio parašo teisinė galia yra tokia pat, kaip ir ranka pasirašyto parašo, visi el. parašai sukuriami, naudojant saugias el. tapatybės priemones, ir atitinka griežčiausius reikalavimus pagal ES „eIDAS“ reglamentą. Reikalavimai kvalifikuotam elektroniniam parašui yra vienodi visose ES šalyse. Reikalavimų kvalifikuotam elektroniniam parašui tenkinimą prižiūri ir garantuoja valstybė.
+      </p>
+    </div>
+
+
+  </div>
+</section>
+
+
+{/* 6th section - screenshot */}
+
+
+{/* fifth section - screenshot */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-6xl h-px bg-gray-200"></div>
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Darbuotojų grupės
+      </h2>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+Kiekvienai tvarkai ar įsakymui, kurių turi laikytis atskiri darbuotojai, galite priskirti skirtingas darbuotojų pareigybes, o sistemoje visas įmonės pareigybes galite sugrupuoti į jums reikalingas grupes, nepriklausomai nuo pareigybės užimamos vietos organizacinėje struktūroje. Tokiu būdu darbuotojas visada  automatiškai gaus ir matys visas tvarkas, įsakymus ar kitus norminius dokumentus, kurie yra priskirti pagal jo atliekamą darbą įmonėje. VECTICUM informuoja darbuotojus apie tvarkų ir įsakymų pakeitimus ne tik pačioje sistemoje, bet ir gali automatiškai išsiuntinėti pranešimus į darbuotojų el. paštą ar jų telefoną.
+      </p>
+    </div>
+
+
+    <div class="flex justify-center">
+      <img 
+        src="/media/services/tvarku-valdymas-srvc5.png" 
+        alt="Tvarku ir isakymu valdymas | VECTICUM"
+        class="w-[<50%>] max-w-[<50%>] shadow-md"
+      />
+    </div>
+
+  </div>
+</section>
+
+  <ContactForm />
+
+{/* duk section */}
+
+<section class="w-full px-4 py-16 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">DUK</h2>
+
+    <div class="grid gap-6 sm:grid-cols-2">
+      
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar galiu bet kada nutraukti paslaugą?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip, galite bet kada nutraukti paslaugą be papildomų įsipareigojimų. Būtų malonu sulaukti jūsų grįžtamojo ryšio.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Kaip mano komanda gali naudoti kreditus?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Komanda gali naudoti kreditus aktyvuodama funkcijas sistemoje. Kiekvienas narys mato savo kreditų balansą ir panaudojimo istoriją.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Kaip veikia kainodara?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Mūsų kainodara yra lanksti – siūlome kelis planus pagal poreikį: nuo bazinių iki išplėstinių su papildomomis funkcijomis.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar sistema saugi?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip, mes naudojame naujausius duomenų šifravimo ir saugumo protokolus – jūsų informacija visada apsaugota.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar teikiate nuolaidas komandoms?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip! Siūlome nuolaidas komandoms ir ilgalaikiams planams. Susisiekite dėl individualaus pasiūlymo.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar galima susigrąžinti pinigus?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip – siūlome pinigų grąžinimo garantiją per 14 dienų, jei nesate patenkinti paslauga.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+{/*<section class="bg-[#F8FAFC] py-16 px-4 sm:px-6 lg:px-8 mt-20">
+  <div class="max-w-7xl mx-auto">
+    <h3 class="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-10">
+      Kiti darbuotojų įdarbinimo/išdarbinimo sprendimai
+    </h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 justify-center">
+      
+      <a href="/komandiruociu-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-300">
+        <div class="text-3xl mb-4">✈️</div>
+        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
+          Komandiruočių valdymas
+        </h3>
+        <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+          Paprastai pateikite, patvirtinkite ir valdykite visus komandiruočių prašymus vienoje vietoje.
+        </p>
+      </a>
+
+      <a href="/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/" class="group flex flex-col bg-white border border-gray-200 hover:border-[#3C7099] rounded-2xl p-6 shadow-sm hover:shadow-md transition duration-300">
+        <div class="text-3xl mb-4">📅</div>
+        <h3 class="text-lg font-semibold text-gray-900 group-hover:text-[#3C7099] transition">
+          Darbo laiko apskaitos žiniaraščiai
+        </h3>
+        <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+          Kurkite darbo grafikus, sekite darbo valandas ir eksportuokite duomenis į DU sistemas.
+        </p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+{/*seo text */}
+
+
+
+
+<section class="w-full px-4 py-16 sm:px-6 lg:px-8 text-gray-800">
+  <div class="max-w-4xl mx-auto space-y-6">
+    <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
+
+    <h2 class="text-2xl sm:text-3xl font-bold">„Vecticum“ dokumentų valdymas: viskas vienoje vietoje</h2>
+
+<h3 class="text-xl font-semibold">Dokumentų valdymas: kas tai?</h3>
+
+Dokumentų valdymas – tai sistemingas įmonės ar įstaigos dokumentų kūrimo, tvarkymo, saugojimo ir archyvavimo procesas. Efektyvus dokumentų valdymas įmonėje užtikrina sklandų darbų organizavimą, didesnį duomenų saugumą ir atitiktį teisiniams reikalavimams.
+
+Šiuolaikinės organizacijos vis dažniau renkasi elektroninį dokumentų valdymą, kuris leidžia automatizuoti dokumentų srautus, palengvina paiešką ir mažina popierinių dokumentų naudojimą. Elektroninė dokumentacija padeda optimizuoti darbo procesus ir didina verslo efektyvumą.
+
+<h3 class="text-xl font-semibold">Dokumentų valdymo svarba ir teisiniai aspektai</h3>
+
+Tinkamas įstaigos dokumentų valdymas yra būtinas siekiant atitikti teisės aktų reikalavimus. Dokumentų valdymas – sąvoka, apimanti ne tik dokumentų administravimą, bet ir jų kontrolę pagal galiojančius teisės aktus. Pavyzdžiui, personalo skyriuose ypatingą svarbą įgauna personalo dokumentų valdymas, kuris padeda užtikrinti tinkamą darbo sutarčių, įsakymų ir kitų svarbių dokumentų apskaitą.
+
+Tikriausiai nenustebinsime pasakę, kad dokumentų valdymas yra labai svarbi kiekvienos įmonės kasdienybės dalis.
+
+Efektyviai kuriami ir archyvuojami dokumentai užtikrina taisyklių laikymąsi, sumažina klaidų skaičių, padidina duomenų saugumą, padeda reguliuoti <a style="color:#C81E6A" href="https://vecticum.lt/pirkimu-valdymas/">pirkimo procesus</a>, palengvina bendradarbiavimą ir padeda fiksuoti svarbiausius įmonės veiklos aspektus. Tinkamas dokumentų valdymas padeda užtikrinti klientų pasitenkinimą ir gali padidinti įmonės pelną.
+
+Norint savo dokumentaciją valdyti efektyviau, verta išbandyti „Vecticum“ dokumentų valdymo įrankį.
+
+<h3 class="text-xl font-semibold">Ar naudotis dokumentų valdymo sistema apsimoka?</h3>
+
+Internetinės dokumentų valdymo sistemos diegimas įmonėms gali suteikti daug pranašumų Jūsų komandai. Pateikiame išties pagrįstų priežasčių, kodėl verta tai išbandyti:
+<ul class="list-disc pl-5 space-y-2">
+ 	<li>Centralizuota dokumentų saugykla: šis dokumentų įrankis suteikia centralizuotą vietą visiems dokumentams saugoti ir tvarkyti. Tai užtikrina, kad darbuotojai gali lengvai pasiekti naujausias dokumentų versijas, sumažinant pasenusios informacijos naudojimo riziką.</li>
+ 	<li>Patobulintas dokumentų organizavimas: internetinis dokumentų valdymas leidžia efektyviai suskirstyti dokumentus į skirtingas kategorijas (įsakus, nutarimus, buhalterinius dokumentus ir t.t.) ir žymėti juos taip, kaip pageidaujate. Tai leidžia lengviau tvarkyti, ieškoti ir greitai gauti dokumentus, o tai padidina bendrą dokumentų valdymo efektyvumą.</li>
+ 	<li>Geresnė komunikacija: dokumentų įrankis ženkliai palengvins Jūsų komandos bendradarbiavimą, nes keliems vartotojams suteiks galimybę realiu laiku pasiekti, redaguoti ir komentuoti dokumentus. Tai skatina komandinį darbą ir užtikrina, kad visi dirbtų su naujausia informacija.</li>
+ 	<li>Galimybė keisti dokumentus: pasirinkę mūsų sprendimą, turėsite prieigą prie greito dokumentų koregavimo. Tai leis tiksliai fiksuoti laikui bėgant padarytus dokumentų pakeitimus. Taip užtikrinama, kad Jūsų komandos nariai visada galės dirbti su naujausia dokumentų versija, bus paprasta atlikti auditą ir pan.</li>
+ 	<li>Maksimali duomenų apsauga: mūsų dokumentų valdymo įrankis užtikrina jautrių duomenų saugumą. Čia rasite patikimas saugos funkcijas, įskaitant prieigos valdymą, šifravimą ir vartotojo autentifikavimą. Tai padeda apsaugoti konfidencialią verslo ar klientų informaciją ir užtikrina, kad tik įgalioti darbuotojai galėtų pasiekti konkrečius dokumentus.</li>
+ 	<li>Dokumentų gavimo efektyvumas: siūlome patogią dokumentų paieškos ir gavimo funkciją. Tai leidžia vartotojams lengvai ir greitai rasti visus reikalingus dokumentus. Tai aktualu visiems verslams: nuo smulkaus iki itin didelio. <a style="color:#C81E6A" href="https://vecticum.lt/klientai/">Mūsų klientai</a> jau spėjo tuo įsitikinti.</li>
+ 	<li>Darbo eigos automatizavimas: dokumentų valdymas nėra paprasta užduotis. Tai gali atimti daug laiko ir jėgų iš Jūsų komandos. Nukreipkite produktyvumą teisinga linkme. Su „Vecticum“ gausite darbo eigos automatizavimo funkcijas. Jų dėka įmonė galės supaprastinti su dokumentais susijusius procesus. Tai gali apimti patvirtinimo darbo eigas, dokumentų peržiūros darbus ir kitas užduotis.</li>
+ 	<li>Nuotolinis prisijungimas: modernus verslas vis dažniau iš biuro persikelia į kitas erdves. Darbuotojai dirba iš namų Lietuvoje ir užsienyje. Pasitelkę internetinį dokumentų valdymą, vartotojai gali pasiekti dokumentus iš bet kurios vietos, kur yra interneto ryšys. Tai ypač naudinga įmonėms, turinčioms nuotolines arba paskirstytas komandas, todėl galima lanksčiai susitarti dėl darbo.</li>
+ 	<li>Išlaidų ir resursų taupymas: perėjus prie dokumentų valdymo internetu, galima sutaupyti išlaidų, nes sumažės fizinės saugyklos vietos poreikis, sumažinsite popieriaus naudojimą ir pagerinsite bendrą veiklos efektyvumą. Tai taip pat sumažina dokumentų praradimo ar sugadinimo riziką. Visi Jūsų dokumentai bus saugomi vienoje vietoje, prieinami internetu.</li>
+</ul>
+
+<h3 class="text-xl font-semibold">Automatizuota dokumentų valdymo sistema: išvada</h3>
+
+Sėkmingo dokumentų valdymo sprendimų galima rasti įvairiose srityse. Dokumentų valdymo pavyzdžiai rodo, kad optimizuoti procesai leidžia sumažinti darbo laiką, didina organizacijos skaidrumą ir palengvina duomenų apsaugą. Tuo tarpu dokumentų valdymo išvados aiškiai parodo, kad gerai organizuota dokumentų sistema yra būtina bet kurios organizacijos sėkmei.
+Apibendrinant galima pasakyti, kad internetinės dokumentų valdymo sistemos įdiegimas yra svarbus bet kokiai organizacijai. Tai pagerina darbų paskirstymą, užtikrina geresnę dokumentų kontrolę, duomenų saugumą ir komandos produktyvumą ir padeda išvengti nenumatytų verslo išlaidų, todėl „Vecticum“ įrankis išties vertas Jūsų dėmesio.
+
+Ieškote daugiau išmanių sprendimų savo verslui? <a style="color:#C81E6A" href="https://vecticum.lt/sutarciu-valdymas">Turime ir daugiau</a>!
+
+    <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
+  </div>
+</section>

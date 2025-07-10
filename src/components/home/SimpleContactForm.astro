@@ -1,74 +1,174 @@
+---
+---
+
 <div>
-    <form id="simple-contact-form-lead" action="#" method="POST" class="space-y-6 bg-white p-6 rounded-xl shadow-md">
-      <div>
-        <label for="name" class="block text-sm font-medium text-gray-700">Vardas</label>
+  <form id="simple-contact-form-lead" action="#" method="POST" class="space-y-6 bg-white p-6 rounded-xl shadow-md">
+    <div id="responseMessage" class="mt-4 text-center"></div>
+    <div>
+      <label for="name" class="block text-sm font-medium text-gray-700">Vardas</label>
+      <div class="relative">
         <input type="text" name="name" id="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#C81F6A] focus:border-[#C81F6A]">
+        <span id="name-error" class="absolute text-xs text-red-600 mt-1"></span>
       </div>
+    </div>
 
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">El. paštas</label>
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700">El. paštas</label>
+      <div class="relative">
         <input type="email" name="email" id="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#C81F6A] focus:border-[#C81F6A]">
+        <span id="email-error" class="absolute text-xs text-red-600 mt-1"></span>
       </div>
+    </div>
 
-      <div>
-        <label for="message" class="block text-sm font-medium text-gray-700">Žinutė</label>
+    <div>
+      <label for="message" class="block text-sm font-medium text-gray-700">Žinutė</label>
+      <div class="relative">
         <textarea name="message" id="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-[#C81F6A] focus:border-[#C81F6A]"></textarea>
+        <span id="message-error" class="absolute text-xs text-red-600 mt-1"></span>
       </div>
+    </div>
 
-      <button type="submit" class="w-full bg-[#C81F6A] text-white py-2 px-4 rounded-md hover:bg-pink-700 transition">Siųsti užklausą</button>
-    </form>
-
-    <div id="responseMessage" class="mt-4 text-center text-sm"></div>
-  </div>
+    <button type="submit" class="w-full bg-[#C81F6A] text-white py-2 px-4 rounded-md hover:bg-pink-700 transition">Siųsti užklausą</button>
+  </form>
 </div>
 
-
 <script is:inline>
-    // Get the form and response message element
-    const form = document.getElementById('simple-contact-form-lead');
-    const responseMessage = document.getElementById('responseMessage');
-  
-    // Add an event listener for form submission
-    form.addEventListener('submit', async (event) => {
-      // Prevent the default form submission behavior (page reload)
-      event.preventDefault();
-  
-      // Collect form data
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
-      
-  
-      // Display a loading message
-      responseMessage.textContent = 'Submitting...';
-      responseMessage.className = 'mt-4 text-center text-sm text-gray-600'; // Reset class
-  
-      try {
-        // Send the data to the Astro API route using fetch
-        const response = await fetch('/api/crm', { // This path should match your API route
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data), // Convert the JavaScript object to a JSON string
+  // Get the form and response message elements
+  const form = document.getElementById('simple-contact-form-lead');
+  const responseMessage = document.getElementById('responseMessage');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const nameInput = form.querySelector('#name');
+  const emailInput = form.querySelector('#email');
+  const messageInput = form.querySelector('#message');
+  const nameError = document.getElementById('name-error');
+  const emailError = document.getElementById('email-error');
+  const messageError = document.getElementById('message-error');
+
+  // Function to validate form fields and show errors
+  function validateForm() {
+    let isValid = true;
+    if (!nameInput.value.trim()) {
+      nameInput.classList.add('border-red-500');
+      nameError.textContent = 'Prašome įvesti vardą.';
+      isValid = false;
+    } else {
+      nameInput.classList.remove('border-red-500');
+      nameError.textContent = '';
+    }
+    if (!emailInput.value.trim()) {
+      emailInput.classList.add('border-red-500');
+      emailError.textContent = 'Prašome įvesti el. paštą.';
+      isValid = false;
+    } else {
+      emailInput.classList.remove('border-red-500');
+      emailError.textContent = '';
+    }
+    if (!messageInput.value.trim()) {
+      messageInput.classList.add('border-red-500');
+      messageError.textContent = 'Prašome įvesti žinutę.';
+      isValid = false;
+    } else {
+      messageInput.classList.remove('border-red-500');
+      messageError.textContent = '';
+    }
+    return isValid;
+  }
+
+  // Add an event listener for form submission
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // Validate form
+    if (!validateForm()) {
+      return; // Stop submission if validation fails
+    }
+
+    // Show loading indicator
+    responseMessage.innerHTML = `
+      <div class="bg-gray-100 border border-gray-400 text-gray-700 px-4 py-3 rounded-md shadow-lg flex items-center justify-center" role="alert">
+        <svg class="animate-spin h-5 w-5 mr-2 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+        </svg>
+        <span>Apdorojama...</span>
+      </div>
+    `;
+
+    // Collect form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/crm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        responseMessage.innerHTML = `
+          <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg animate-fade-in fixed top-0 left-0 w-full z-50" role="alert">
+            <div class="max-w-2xl mx-auto flex items-center justify-between">
+              <div>
+                <span>Jūsų užklausa sėkmingai išsiųsta. Atsakysime kaip įmanoma greičiau.</span>
+              </div>
+              <button id="closeSuccess" class="ml-4 text-green-700 hover:text-green-900">&times;</button>
+            </div>
+          </div>
+        `;
+        form.reset();
+        const closeButton = document.getElementById('closeSuccess');
+        closeButton.addEventListener('click', () => {
+          responseMessage.innerHTML = '';
         });
-  
-        // Parse the JSON response from the API route
-        const result = await response.json();
-  
-        // Update the response message based on the API's response
-        if (response.ok) { // Check if the HTTP status is 200-299
-          responseMessage.textContent = `Ačiū: ${result.message}`;
-          responseMessage.className = 'mt-4 text-center text-sm text-green-600';
-          form.reset(); // Clear the form fields on success
-        } else {
-          responseMessage.textContent = `Klaida: ${result.message || 'Something went wrong!'}`;
-          responseMessage.className = 'mt-4 text-center text-sm text-red-600';
-        }
-      } catch (error) {
-        // Handle any network errors or issues during the fetch request
-        console.error('Fetch error:', error);
-        responseMessage.textContent = 'Network error. Please try again.';
-        responseMessage.className = 'mt-4 text-center text-sm text-red-600';
+      } else {
+        responseMessage.innerHTML = `
+          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+            <strong class="font-bold">Klaida!</strong> <span>${result.message || 'Įvyko klaida. Bandykite dar kartą.'}</span>
+          </div>
+        `;
+      }
+    } catch (error) {
+      console.error('Klaida siunčiant: ', error);
+      responseMessage.innerHTML = `
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+          <strong class="font-bold">Klaida!</strong> <span>Tinklo klaida. Pabandykite dar kartą.</span>
+        </div>
+      `;
+    }
+  });
+
+  // Add input event listeners to clear errors on change
+  [nameInput, emailInput, messageInput].forEach(input => {
+    input.addEventListener('input', () => {
+      if (input.value.trim()) {
+        input.classList.remove('border-red-500');
+        document.getElementById(`${input.id}-error`).textContent = '';
       }
     });
-  </script>
+  });
+</script>
+
+<style is:inline>
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+</style>

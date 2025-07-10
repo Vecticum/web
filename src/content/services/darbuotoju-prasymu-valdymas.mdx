@@ -1,0 +1,318 @@
+---
+title: Darbuotojų prašymų valdymas
+description: Vecticum darbuotojų prašymų valdymo sprendimas leidžia darbuotojams greitai ir patogiai teikti įvairius prašymus elektroniniu būdu, o vadovams – efektyviai juos peržiūrėti ir tvirtinti. Sistema automatizuoja prašymų registravimą, tvirtinimo sekas ir informavimą, užtikrindama sklandų procesą bei aiškią dokumentų apskaitą.
+hero_image: "/media/services/darbuotoju-prasymai-hero.png"
+hero_image_alt: "Darbuotoju prasymu valdymas| VECTICUM"
+---
+
+import ContactForm from "../../components/home/ContactForm.astro";
+
+
+
+{/* first section */}
+
+
+<section class="w-full bg-[#EBEFF3] py-16">
+  <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl text-center mb-8 sm:mb-12">
+    Kodėl verta naudotis?
+  </h2>
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Patogi prieiga</h3>
+          <p class="mt-1 text-sm text-gray-600">Prie sistemos junkitės per išmanųjį telefoną ar kompiuterį bet kuriuo metu ir iš bet kurios pasaulio vietos.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Žinote, kas perskaitė naujieną</h3>
+          <p class="mt-1 text-sm text-gray-600">Aiški perskaitymo kontrolė ir el. laiškų pranešimai.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Komunikuojate tiksliai</h3>
+          <p class="mt-1 text-sm text-gray-600">Naujienos pasiekia tik konkrečius darbuotojus ar skyrius.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Skatinate įsitraukimą</h3>
+          <p class="mt-1 text-sm text-gray-600">Darbuotojai gali komentuoti ir reaguoti į naujienas.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Visos naujienos po ranka</h3>
+          <p class="mt-1 text-sm text-gray-600">Archyvas leidžia bet kada grįžti prie svarbios informacijos.</p>
+        </div>
+      </div>
+
+            <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Pateikiate informaciją patraukliai</h3>
+          <p class="mt-1 text-sm text-gray-600">Spalvinimo ir formatavimo galimybės gerina skaitymo patirtį</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{/* second section - image */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+        <div class="flex justify-center">
+      <img 
+        src="/media/services/darbuotoju-prasymas-schema.png" 
+        alt="Darbuotoju prasymai kaip veikia | VECTICUM"
+        class="w-full max-w-md h-auto object-cover"
+      />
+    </div>
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+      Kaip tai veikia?
+      </h2>
+<ol class="list-decimal pl-5 space-y-2">
+  <li>
+    <strong>Prašymo tipo pasirinkimas:</strong>
+    Darbuotojas pasirenka norimą prašymo tipą iš siūlomo sąrašo (pvz., dėl atostogų, pažymų, darbo sąlygų ar kt.) arba užpildo laisvos formos prašymą.
+  </li>
+  <li>
+    <strong>Prašymo pildymas:</strong>
+    Forma pildoma rankiniu būdu arba naudojamas iš anksto paruoštas šablonas, kurį galima koreguoti pagal poreikį.
+  </li>
+  <li>
+    <strong>Pateikimas sistemoje:</strong>
+    Užpildytas prašymas pateikiamas per kompiuterį arba mobilųjį telefoną ir automatiškai nukreipiamas tvirtinimui.
+  </li>
+  <li>
+    <strong>Tvirtinimo proceso vykdymas:</strong>
+    Prašymas nukeliauja per iš anksto nustatytą tvirtinimo seką (pvz., vadovas → HR → buhalterija), o atsakingi asmenys informuojami el. paštu arba sistemoje.
+  </li>
+  <li>
+    <strong>Komentavimas ir stebėjimas:</strong>
+    Galima palikti komentarus, stebėti tvirtinimo eigą bei peržiūrėti visą patvirtinimo istoriją.
+  </li>
+  <li>
+    <strong>Registravimas ir duomenų saugojimas:</strong>
+    Patvirtinti prašymai registruojami, saugomi sistemoje, juos galima filtruoti, ieškoti ir eksportuoti į Excel.
+  </li>
+</ol>
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+
+
+{/* 8 section - screenshot */}
+
+
+<section class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-12">
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900">
+      Darbuotojų prašymų valdymo funkcijos
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
+      <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
+        <li>Galimybė darbuotojui užpildyti ir pateikti darbdaviui prašymą, užtikrinant, kad prašymas bus priimtas ir užregistruotas</li>
+        <li>Bendras darbuotojų prašymų registras, kuriame prašymus galima rūšiuoti pagal skirtingus tipus</li>
+        <li>Galimybė sistemoje pateikti šių tipų elektroninius prašymus:</li>
+          <ul class="list-disc list-inside pl-5">
+            <li>Prašymas dėl darbo laiko sąlygos pakeitimo</li>
+            <li>Prašymas dėl atleidimo iš darbo</li>
+            <li>Prašymas dėl pažymos apie suteiktas kasmetines atostogas</li>
+            <li>Prašymas dėl pažymos apie vykdytą darbo funkciją ir DU išdavimą</li>
+            <li>Prašymas dėl pažymos apie kintamą darbo grafiką</li>
+            <li>Prašymas dėl išmokos</li>
+            <li>Prašymas dėl nuotolinio darbo</li>
+            <li>Prašymas dėl laikino ne viso darbo laiko nustatymo</li>
+            <li>Prašymas dėl pažymos apie vidutinį darbo užmokestį</li>
+            <li>Prašymas dėl atlyginimo mokėjimo</li>
+            <li>Prašymas dėl darbo užmokesčio mokėjimo vienas/du kartus per mėnesį</li>
+            <li>Prašymas dėl neapmokestinamų pajamų dydžio (NPD) taikymo</li>
+            <li>Prašymas dėl darbo nuotoliniu būdu</li>
+            <li>Prašymas / informavimas dėl negalavimo (kai darbuotojui pasijutus blogai leidžiama neateiti į darbą be apsilankymo pas gydytoją)</li>
+            <li>Laisvos formos prašymas (dėl kitų darbuotojo klausimų)</li>
+          </ul>
+          <li>Užsakovas gali savarankiškai susikurti papildomus prašymų tipus su standartine tvirtinimo seka: tvirtina HR – tvirtina buhalterija</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
+      <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
+        <li>Elektroniniame prašyme darbuotojas užpildo prašymo tekstą rankiniu būdu, su galimybe koreguoti Užsakovo sukurtą teksto formuluotę</li>
+        <li>Laukų kiekis formoje priklauso nuo prašymo tipo; papildomų laukų kūrimas pagal Užsakovo poreikius nėra įskaičiuotas į projekto kainą</li>
+        <li>Galimybė pateikti elektroninį prašymą per mobilųjį telefoną arba kompiuterį</li>
+        <li>Pateiktas elektroninis prašymas automatiškai nusiunčiamas derinimui ir tvirtinimui pagal numatytą tvirtinimo seką</li>
+        <li>Standartinės tvirtinimo sekos:</li>
+          <ul class="list-disc list-inside pl-5">
+            <li>Prašymai dėl nuotolinio darbo ir darbo šventiniu laikotarpiu: tvirtina tiesioginis vadovas – informuojamas HR</li>
+            <li>Prašymas dėl atleidimo iš darbo: tvirtina įmonės vadovas – informuojamas HR</li>
+            <li>Visi kiti prašymai: tvirtina HR – tvirtina buhalterija</li>
+          </ul>
+        <li>Tvirtinimo sekos dalyvių informavimas apie laukiančią tvirtinimo užduotį per sistemą, el. paštą arba telefoną</li>
+        <li>Tvirtinimo istorija</li>
+        <li>Komentavimo funkcija</li>
+        <li>Prašymų registravimas ir saugojimas</li>
+        <li>Prašymų paieška, filtravimas, peržiūra</li>
+        <li>Metaduomenų eksportavimas į Excel</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+{/* duk section */}
+
+<section class="w-full px-4 py-16 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">DUK</h2>
+
+    <div class="grid gap-6 sm:grid-cols-2">
+      
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar galiu bet kada nutraukti paslaugą?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip, galite bet kada nutraukti paslaugą be papildomų įsipareigojimų. Būtų malonu sulaukti jūsų grįžtamojo ryšio.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Kaip mano komanda gali naudoti kreditus?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Komanda gali naudoti kreditus aktyvuodama funkcijas sistemoje. Kiekvienas narys mato savo kreditų balansą ir panaudojimo istoriją.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Kaip veikia kainodara?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Mūsų kainodara yra lanksti – siūlome kelis planus pagal poreikį: nuo bazinių iki išplėstinių su papildomomis funkcijomis.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar sistema saugi?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip, mes naudojame naujausius duomenų šifravimo ir saugumo protokolus – jūsų informacija visada apsaugota.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar teikiate nuolaidas komandoms?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip! Siūlome nuolaidas komandoms ir ilgalaikiams planams. Susisiekite dėl individualaus pasiūlymo.
+        </p>
+      </details>
+
+      <details class="group bg-gray-50 p-6 rounded-xl shadow-sm open:shadow-md transition">
+        <summary class="flex justify-between items-center cursor-pointer text-lg font-medium text-gray-900">
+          Ar galima susigrąžinti pinigus?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-gray-600 text-sm leading-relaxed">
+          Taip – siūlome pinigų grąžinimo garantiją per 14 dienų, jei nesate patenkinti paslauga.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+  <ContactForm />
+
+
+
+
+{/*seo text */}
+
+
+<section class="w-full px-4 py-16 sm:px-6 lg:px-8 text-gray-800">
+
+  <div class="max-w-4xl mx-auto space-y-6">
+    <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
+    <h2 class="text-2xl sm:text-3xl font-bold">Darbuotojų prašymai: kaip juos valdyti išmaniau?</h2>
+
+Darbuotojų prašymai, pavyzdžiui, prašymas dėl atleidimo iš darbo, nuotolinio darbo, <a style="color:#C81E6A" href="https://vecticum.lt/atostogu-valdymas/">atostogų</a>, atlyginimo išmokėjimo užklausos, gali kelti iššūkių net patyrusiai vadovybei.
+
+Pirma, kiekvieną prašymą reikia atidžiai apsvarstyti ir įvertinti, siekiant užtikrinti, kad jis atitiktų įmonės politiką, teisinius reikalavimus ir bendrus organizacijos poreikius. Šis vertinimo procesas dažnai pareikalauja išties daug laiko, jame gali dalyvauti kelios suinteresuotosios šalys, todėl sunku vienu metu tvarkyti daugybę užklausų. Tai ypač sudėtinga, kai įmonė nedidelė ir vienu metu svarstomi kelių darbuotojų prašymai.
+
+Taip pat vadovybė turi suderinti individualius darbuotojų poreikius ir pageidavimus su platesniais įmonės tikslais ir uždaviniais. Jie turi įvertinti prašymo patenkinimo arba atmetimo poveikį komandos dinamikai, darbo krūvio paskirstymui ir bendram produktyvumui. Šis balansavimo veiksmas gali būti sudėtingas, nes vadovybė siekia išlaikyti sąžiningą ir teisingą darbo aplinką, kartu siekdama verslo tikslų. Tai ypač aktualu, kai pateikiami specifiniai prašymai, tokie, kaip prašymas dėl nuotolinio darbo, atlyginimo pakėlimo, <a href="https://vecticum.lt/komandiruociu-valdymas/">komandiruotės</a> ir pan.
+
+Be to, tam tikri prašymai, pvz., prašymas dėl atleidimo iš darbo, gali turėti teisinių pasekmių ir reikalauti atidžiai laikytis darbo įstatymų ir taisyklių. Vadovybė turi įveikti šiuos teisinius sudėtingumus ir užtikrinti, kad sprendimai būtų priimami nuosekliai ir nešališkai.
+
+Be to, darbuotojų prašymų valdymas apima veiksmingą bendravimą ir skaidrumą. Vadovai turi aiškiai perteikti savo sprendimų priežastis, nesvarbu, ar jie patvirtina, ar atmeta prašymą, kad išlaikytų pasitikėjimą ir darbuotojų pasitenkinimą. Tai gali būti sudėtinga, ypač sprendžiant jautrias ar sudėtingas situacijas, tokias kaip prašymas dėl atlyginimo mokėjimo, paaukštinimo pareigose ir pan.
+
+Apskritai iššūkiai, susiję su darbuotojų prašymų valdymu, kyla dėl resursų, riboto pajėgumo patenkinti didesnį kiekį prašymų. Jeigu su tuo susidūrėte ir Jūs, verta rinktis patikrintą sprendimą: internetinį darbuotojų prašymų valdymo įrankį. Tai taupo Jūsų įmonės laiką ir pinigus!
+
+<h3 class="text-xl font-semibold">10 „Vecticum“ privalumų:</h3>
+<ul class="list-disc pl-5 space-y-2">
+ 	<li>Efektyvumas: prašymas dėl darbo nuotoliniu būdu, atostogų ar kitų poreikių? Tai ne bėda! Internetinis darbuotojų užklausų valdymas leidžia greičiau apdoroti ir sumažina laiką, sugaištą rankiniu būdu tvarkyti dokumentus.</li>
+ 	<li>Prieinamumas: darbuotojai gali pateikti savo užklausas bet kur ir bet kuriuo metu, jei tik turi interneto prieigą.</li>
+ 	<li>Patogumas: internetinėse sistemose yra patogi sąsaja, todėl darbuotojai gali lengvai pateikti prašymus ir stebėti, kaip apdorojamos jų užklausos.</li>
+ 	<li>Maksimalus tikslumas: automatizuotos internetinės sistemos sumažina klaidų ar klaidingo aiškinimo riziką, kuri gali atsirasti tvarkant užklausas rankiniu būdu.</li>
+ 	<li>Centralizuota duomenų saugykla: visos darbuotojų užklausos gali būti saugomos centralizuotoje duomenų bazėje, todėl vadovams lengviau jas pasiekti ir peržiūrėti. Duomenys saugūs ir matomi vienoje vietoje: geriau nebūna!</li>
+ 	<li>Supaprastinta darbo eiga: internetinės sistemos gali automatizuoti maršruto parinkimo ir patvirtinimo procesą, užtikrindamos, kad užklausos būtų nukreiptos atitinkamiems vadovams ir sumažintų vėlavimą.</li>
+ 	<li>100 procentų skaidrumas: tiek darbuotojai, tiek vadovai gali stebėti užklausų būseną realiuoju laiku, skatinant skaidrumą ir sumažinant tolesnių užklausų poreikį.</li>
+ 	<li>Mažiau popierinių dokumentų: internetinės sistemos gali sugeneruoti skaitmeninius visų užklausų įrašus. Tai užtikrina mažesnį popierizmo kiekį ir lengvesnį, efektyvesnį auditą, jeigu jį atliksite ateityje.</li>
+ 	<li>Skirtingų sprendimų integravimas: mūsų sukurta internetinė užklausų valdymo sistema gali būti integruojama su kitais <a style="color:#C81E6A" href="https://vecticum.lt/intraneto-valdymas/">HR įrankiais</a>, pavyzdžiui, darbo užmokesčio ar lankomumo sistemomis, supaprastinant bendrus žmogiškųjų išteklių procesus.</li>
+ 	<li>Ekonomiškas sprendimas: panaikinus fizinio popierizmo ir rankinio apdorojimo poreikį, internetinis užklausų valdymas gali sumažinti administracines išlaidas.</li>
+</ul>
+
+    <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
+  </div>
+</section>

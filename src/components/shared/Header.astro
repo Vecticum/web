@@ -44,7 +44,7 @@ const logoImg = '~/assets/images/logo.webp';
           class="relative"
           @mouseenter="flyoutVisible = true"
           @mouseleave="flyoutVisible = false"
-          x-data="{ flyoutVisible: false, activeCategory: 'Darbuotojų įdarbinimas/išdarbinimas' }"
+          x-data="{ flyoutVisible: false, activeCategory: 'Personalo savitarna' }"
         >
           <a
             class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
@@ -83,13 +83,12 @@ const logoImg = '~/assets/images/logo.webp';
               <!-- Categories -->
               <div class="w-1/4 border-r border-gray-200 p-6 space-y-4">
                 <template x-for="(category, index) in [
-                  'Darbuotojų įdarbinimas/išdarbinimas',
-                  'Atitikimo valdymas',
-                  'Sutarčių valdymas',
-                  'Darbuotojo informacijos valdymas',
+                  'Personalo savitarna',
+                  'Korporatyvinio valdymo sprendimai',
+                  'Turto valdymas',
+                  'Sprendimų valdymas',
                   'Dokumentų valdymas',
                   'Pirkimų valdymas',
-                  'Darbo laiko apskaita',
                   'Apskaitomų dokumentų valdymas']" :key="index">
                   <button
                     @mouseenter="activeCategory = category"
@@ -103,83 +102,115 @@ const logoImg = '~/assets/images/logo.webp';
               <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
               <div class="w-2/4 p-6">
-  <div class="flex flex-col gap-4" 
-       x-data="{
-         icons: {
-           'Atrankų valdymas': 'fa-users-line',
-           'Darbuotojų įdarbinimo savitarna': 'fa-fingerprint',
-           'Darbo sutarčių valdymas': 'fa-file-signature',
-           'Darbo vietos paruošimas': 'fa-briefcase',
-           'Bandomojo laikotarpio valdymas': 'fa-hourglass',
-           'Darbuotojo išdarbinimo valdymas': 'fa-user-slash',
-           'Privalomo supažindinimo su dokumentais valdymas': 'fa-file-shield',
-           'Darbuotojų testavimas': 'fa-clipboard-question',
-           'Mokymų valdymas': 'fa-graduation-cap',
-           'Veiklos vertinimas': 'fa-chart-line',
-           'Sutarčių valdymas': 'fa-folder-open',
-           'Darbuotojo duomenų valdymas': 'fa-id-badge',
-           'Išduodamo inventoriaus valdymas': 'fa-box-open',
-           'Intranetas (Įmonės naujienos)': 'fa-newspaper',
-           'Darbuotojų prašymų valdymas': 'fa-envelope-open-text',
-           'Dokumentų valdymas': 'fa-file-lines',
-           'Dokumentacijos plano valdymas': 'fa-clipboard-list',
-           'Gaunamos/siunčiamos korespondencijos valdymas': 'fa-paper-plane',
-           'Pirkimų valdymas': 'fa-cart-shopping',
-           'Atostogų prašymų ir kitų nebuvimų valdymas': 'fa-umbrella-beach',
-           'Komandiruočių valdymas': 'fa-plane-departure',
-           'Darbo laiko apskaitos žiniaraščiai': 'fa-calendar-days',
-           'Gaunamų sąskaitų valdymas': 'fa-file-invoice-dollar',
-           'Avansinės apyskaitos valdymas': 'fa-receipt',
-           'Kelionės lapų valdymas': 'fa-map-location-dot'
-         },
-         routes: {
-           'Atrankų valdymas': '/atrankos-valdymas',
-           'Darbuotojų įdarbinimo savitarna': '/darbuotoju-idarbinimo-savitarna',
-           'Darbo sutarčių valdymas': '/darbo-sutarciu-valdymas',
-           'Darbo vietos paruošimas': '/darbuotojo-idarbinimo-i-imone-valdymas',
-           'Bandomojo laikotarpio valdymas': '/bandomojo-laikotarpio-vertinimas-valdymas',
-           'Darbuotojo išdarbinimo valdymas': '/darbuotojo-isdarbinimo-is-imones-valdymas',
-           'Privalomo supažindinimo su dokumentais valdymas': '/privalomo-supazindinimo-su-dokumentais-valdymas',
-           'Darbuotojų testavimas': '/testavimo-is-norminiu-dokumentu-valdymas/',
-           'Mokymų valdymas': '/mokymu-valdymas',
-           'Veiklos vertinimas': '/veiklos-vertinimas',
-           'Sutarčių valdymas': '/sutarciu-valdymas',
-           'Darbuotojo duomenų valdymas': '/darbuotoju-duomenu-bazes-valdymas',
-           'Išduodamo inventoriaus valdymas': '/isduodamo-inventoriaus-darbuotojui-valdymas',
-           'Intranetas (Įmonės naujienos)': '/intranetas',
-           'Darbuotojų prašymų valdymas': '/prasymu-valdymas',
-           'Dokumentų valdymas': '/dokumentu-valdymas',
-           'Dokumentacijos plano valdymas': '/dokumentacijos-planas',
-           'Gaunamos/siunčiamos korespondencijos valdymas': '/korespondencijos-valdymas',
-           'Pirkimų valdymas': '/pirkimu-valdymas',
-           'Atostogų prašymų ir kitų nebuvimų valdymas': '/atostogu-valdymas',
-           'Komandiruočių valdymas': '/komandiruotes',
-           'Darbo laiko apskaitos žiniaraščiai': '/darbo-laiko-ziniarasciai',
-           'Gaunamų sąskaitų valdymas': '/saskaitu-valdymas',
-           'Avansinės apyskaitos valdymas': '/avansines-apyskaitos',
-           'Kelionės lapų valdymas': '/keliones-lapai'
-         }
-       }">
-    <template x-if="activeCategory">
-      <template x-for="(item, idx) in (
-        activeCategory === 'Darbuotojų įdarbinimas/išdarbinimas' ? ['Atrankų valdymas', 'Darbuotojų įdarbinimo savitarna', 'Darbo sutarčių valdymas', 'Darbo vietos paruošimas', 'Bandomojo laikotarpio valdymas', 'Darbuotojo išdarbinimo valdymas'] :
-        activeCategory === 'Atitikimo valdymas' ? ['Privalomo supažindinimo su dokumentais valdymas', 'Darbuotojų testavimas', 'Mokymų valdymas', 'Veiklos vertinimas'] :
-        activeCategory === 'Sutarčių valdymas' ? ['Sutarčių valdymas'] :
-        activeCategory === 'Darbuotojo informacijos valdymas' ? ['Darbuotojo duomenų valdymas', 'Išduodamo inventoriaus valdymas', 'Intranetas (Įmonės naujienos)', 'Darbuotojų prašymų valdymas'] :
-        activeCategory === 'Dokumentų valdymas' ? ['Dokumentų valdymas', 'Dokumentacijos plano valdymas', 'Gaunamos/siunčiamos korespondencijos valdymas'] :
-        activeCategory === 'Pirkimų valdymas' ? ['Pirkimų valdymas'] :
-        activeCategory === 'Darbo laiko apskaita' ? ['Atostogų prašymų ir kitų nebuvimų valdymas', 'Komandiruočių valdymas', 'Darbo laiko apskaitos žiniaraščiai'] :
-        activeCategory === 'Apskaitomų dokumentų valdymas' ? ['Gaunamų sąskaitų valdymas', 'Avansinės apyskaitos valdymas', 'Kelionės lapų valdymas', 'Komandiruočių valdymas'] : []
-      )" :key="item">
-        <a 
-          :href="routes[item]" 
-          class="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-md transition-all duration-200 group"
-        >
-          <i :class="`fa-solid ${icons[item]}`" class="text-[#3C7099] text-sm"></i>
-          <span class="text-sm text-gray-700 group-hover:text-[#3C7099]" x-text="item"></span>
-        </a>
-      </template>
-    </template>
+                <div 
+                  class="grid gap-4" 
+                  :class="{ 'grid-cols-2': activeCategory === 'Personalo savitarna', 'grid-cols-1': activeCategory !== 'Personalo savitarna' }"
+                  x-data="{
+                    icons: {
+                      'Darbuotojo duomenų valdymas': 'fa-user',
+                      'Intranetas (Įmonės naujienos)': 'fa-newspaper',
+                      'Darbuotojų prašymų valdymas': 'fa-file-signature',
+                      'Darbo sutarčių valdymas': 'fa-file-contract',
+                      'Atrankų valdymas': 'fa-user-check',
+                      'Darbuotojo įdarbinimo savitarna': 'fa-user-plus',
+                      'Darbo vietos paruošimas': 'fa-briefcase',
+                      'Bandomojo laikotarpio valdymas': 'fa-clock',
+                      'Darbuotojo išdarbinimo valdymas': 'fa-user-minus',
+                      'Atostogų prašymų ir kitų nebuvimų valdymas': 'fa-plane',
+                      'Komandiruočių valdymas': 'fa-suitcase',
+                      'Darbo laiko apskaitos žiniaraščiai': 'fa-calendar',
+                      'Darbuotojų testavimas': 'fa-clipboard-check',
+                      'Mokymų valdymas': 'fa-graduation-cap',
+                      'Veiklos vertinimas': 'fa-chart-line',
+                      'Korporatyvo valdymas (Įmonių grupė)': 'fa-building',
+                      'Išduodamo inventoriaus valdymas': 'fa-tools',
+                      'Valdybos posėdžiai': 'fa-users',
+                      'Dokumentų valdymas': 'fa-folder',
+                      'Dokumentacijos plano valdymas': 'fa-file-alt',
+                      'Gaunamos/siunčiamos korespondencijos valdymas': 'fa-envelope',
+                      'Privalomo supažindinimo su dokumentais valdymas': 'fa-file-signature',
+                      'Sutarčių valdymas': 'fa-file-contract',
+                      'Pirkimų valdymas': 'fa-shopping-cart',
+                      'Gaunamų sąskaitų valdymas': 'fa-file-invoice',
+                      'Avansinės apyskaitos valdymas': 'fa-money-check',
+                      'Kelionės lapų valdymas': 'fa-ticket-alt'
+                    },
+                    routes: {
+                      'Darbuotojo duomenų valdymas': '/darbuotoju-duomenu-bazes-valdymas',
+                      'Intranetas (Įmonės naujienos)': '/intraneto-valdymas',
+                      'Darbuotojų prašymų valdymas': '/darbuotoju-prasymu-valdymas',
+                      'Darbo sutarčių valdymas': '/darbo-sutarciu-valdymas',
+                      'Atrankų valdymas': '/atrankos-valdymas',
+                      'Darbuotojo įdarbinimo savitarna': '/darbuotoju-idarbinimo-savitarna',
+                      'Darbo vietos paruošimas': '/darbo-vietos-paruosimas-valdymas',
+                      'Bandomojo laikotarpio valdymas': '/bandomojo-laikotarpio-vertinimas-valdymas',
+                      'Darbuotojo išdarbinimo valdymas': '/darbuotojo-isdarbinimo-is-imones-valdymas',
+                      'Atostogų prašymų ir kitų nebuvimų valdymas': '/atostogu-valdymas',
+                      'Komandiruočių valdymas': '/komandiruociu-valdymas',
+                      'Darbo laiko apskaitos žiniaraščiai': '/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas',
+                      'Darbuotojų testavimas': '/testavimo-is-norminiu-dokumentu-valdymas',
+                      'Mokymų valdymas': '/mokymu-valdymas',
+                      'Veiklos vertinimas': '/veiklos-vertinimas',
+                      'Korporatyvo valdymas (Įmonių grupė)': '/atrankos-valdymas',
+                      'Išduodamo inventoriaus valdymas': '/isduodamo-inventoriaus-darbuotojui-valdymas',
+                      'Valdybos posėdžiai': '/valdybos-posedziu-valdymas',
+                      'Dokumentų valdymas': '/dokumentu-valdymas',
+                      'Dokumentacijos plano valdymas': '/dokumentacijos-plano-valdymas',
+                      'Gaunamos/siunčiamos korespondencijos valdymas': '/gaunamu-uzklausu-valdymas',
+                      'Privalomo supažindinimo su dokumentais valdymas': '/privalomo-supazindinimo-su-dokumentais-valdymas',
+                      'Sutarčių valdymas': '/sutarciu-valdymas',
+                      'Pirkimų valdymas': '/pirkimu-valdymas',
+                      'Gaunamų sąskaitų valdymas': '/gaunamu-saskaitu-valdymas',
+                      'Avansinės apyskaitos valdymas': '/avansines-apyskaitos-valdymas',
+                      'Kelionės lapų valdymas': '/keliones-lapu-valdymas'
+                    }
+                  }">
+                  <template x-if="activeCategory">
+                    <template x-for="(item, idx) in (
+                      activeCategory === 'Personalo savitarna' ? [
+                        'Darbuotojo duomenų valdymas',
+                        'Intranetas (Įmonės naujienos)',
+                        'Darbuotojų prašymų valdymas',
+                        'Darbo sutarčių valdymas',
+                        'Atrankų valdymas',
+                        'Darbuotojo įdarbinimo savitarna',
+                        'Darbo vietos paruošimas',
+                        'Bandomojo laikotarpio valdymas',
+                        'Darbuotojo išdarbinimo valdymas',
+                        'Atostogų prašymų ir kitų nebuvimų valdymas',
+                        'Komandiruočių valdymas',
+                        'Darbo laiko apskaitos žiniaraščiai',
+                        'Darbuotojų testavimas',
+                        'Mokymų valdymas',
+                        'Veiklos vertinimas'
+                      ] :
+                      activeCategory === 'Korporatyvinio valdymo sprendimai' ? ['Korporatyvo valdymas (Įmonių grupė)'] :
+                      activeCategory === 'Turto valdymas' ? ['Išduodamo inventoriaus valdymas'] :
+                      activeCategory === 'Sprendimų valdymas' ? ['Valdybos posėdžiai'] :
+                      activeCategory === 'Dokumentų valdymas' ? [
+                        'Dokumentų valdymas',
+                        'Dokumentacijos plano valdymas',
+                        'Gaunamos/siunčiamos korespondencijos valdymas',
+                        'Privalomo supažindinimo su dokumentais valdymas',
+                        'Sutarčių valdymas'
+                      ] :
+                      activeCategory === 'Pirkimų valdymas' ? ['Pirkimų valdymas'] :
+                      activeCategory === 'Apskaitomų dokumentų valdymas' ? [
+                        'Gaunamų sąskaitų valdymas',
+                        'Avansinės apyskaitos valdymas',
+                        'Kelionės lapų valdymas',
+                        'Komandiruočių valdymas'
+                      ] : []
+                    )" :key="item">
+                      <a 
+                        :href="routes[item]" 
+                        class="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-md transition-all duration-200 group"
+                      >
+                        <i :class="`fa-solid ${icons[item]}`" class="text-[#3C7099] text-sm"></i>
+                        <span class="text-sm text-gray-700 group-hover:text-[#3C7099]" x-text="item"></span>
+                      </a>
+                    </template>
+                  </template>
                 </div>
               </div>
 
@@ -193,458 +224,491 @@ const logoImg = '~/assets/images/logo.webp';
                 </div>
                 <div class="mt-4">
                   <Image src={headerImg} alt="Dokumentacija | VECTICUM" class="w-full rounded-lg mb-2" />
-<a href="https://vecticum.freshdesk.com/support/home" class="hover:text-[#3C7099] text-sm hover:underline">
-  Pagalba &gt;
-</a>
+                  <a href="https://vecticum.freshdesk.com/support/home" class="hover:text-[#3C7099] text-sm hover:underline">
+                    Pagalba >
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </li>
         <li
-              class="relative"
-              @mouseenter="planaiFlyoutOpen = true"
-              @mouseleave="planaiFlyoutOpen = false"
-            >
-              <a
-                class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
-              
-              >
-                Kaina
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg
-                >
-              </a>
-
-              <!-- Planai Vecticum Flyout Menu -->
-              <div
-                x-show="planaiFlyoutOpen"
-                x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 -translate-y-1"
-                x-transition:enter-end="opacity-100 translate-y-0"
-                x-transition:leave="transition ease-in duration-150"
-                x-transition:leave-start="opacity-100 translate-y-0"
-                x-transition:leave-end="opacity-0 -translate-y-1"
-                class="absolute left-0 z-10 mt-2 w-60 -translate-x-1/4 transform px-2 sm:px-0"
-              >
-                <div
-                  class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
-                >
-                  <div class="relative grid grid-cols-1 gap-2 bg-white p-6">
-                    <div class="space-y-4">
-                      <div class="space-y-2">
-                        <a
-                          href="/personalo-valdymo-sprendimu-planai"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Personalo valdymo planai
-                        </a>
-                        <a
-                          href="/kiti-planai"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Kiti sprendimai
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li
-              class="relative"
-              @mouseenter="apieFlyoutOpen = true"
-              @mouseleave="apieFlyoutOpen = false"
-            >
-              <a
-                class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
-              
-              >
-                Apie Vecticum
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg
-                >
-              </a>
-
-              <!-- Apie Vecticum Flyout Menu -->
-              <div
-                x-show="apieFlyoutOpen"
-                x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 -translate-y-1"
-                x-transition:enter-end="opacity-100 translate-y-0"
-                x-transition:leave="transition ease-in duration-150"
-                x-transition:leave-start="opacity-100 translate-y-0"
-                x-transition:leave-end="opacity-0 -translate-y-1"
-                class="absolute left-0 z-10 mt-2 w-60 -translate-x-1/4 transform px-2 sm:px-0"
-              >
-                <div
-                  class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
-                >
-                  <div class="relative grid grid-cols-1 gap-2 bg-white p-6">
-                    <div class="space-y-4">
-                      <div class="space-y-2">
-                        <a
-                          href="/rekomendacijos"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Rekomendacijos
-                        </a>
-                        <a
-                          href="/naujienos"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Naujienos
-                        </a>
-                        <a
-                          href="/versijos"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Versijos
-                        </a>
-                        <a
-                          href="/karjera"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Karjera
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <a
-                class="text-gray-800 transition hover:text-[#3C7099]"
-                href="/kontaktai"
-              >
-                Kontaktai
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="flex items-center gap-4">
-        <!-- Desktop Login/Register -->
-        <div class="sm:flex sm:gap-4 hidden">
+          class="relative"
+          @mouseenter="planaiFlyoutOpen = true"
+          @mouseleave="planaiFlyoutOpen = false"
+        >
           <a
-            class="rounded-full bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white shadow"
-            href="#contact"
-            target="_blank"
+            class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
           >
-            Išbandyti
-          </a>
-          <a
-            class="rounded-full border-2 border-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-black shadow"
-            href="https://app.vecticum.com/"
-            target="_blank"
-          >
-            Prisijungti
-          </a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="block md:hidden">
-          <button
-            @click="isOpen = !isOpen"
-            class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
-          >
+            Kaina
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-5"
-              fill="none"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
+              fill="none"
               stroke="currentColor"
               stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
+          </a>
+
+          <!-- Planai Vecticum Flyout Menu -->
+          <div
+            x-show="planaiFlyoutOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-1"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-1"
+            class="absolute left-0 z-10 mt-2 w-60 -translate-x-1/4 transform px-2 sm:px-0"
+          >
+            <div
+              class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+            >
+              <div class="relative grid grid-cols-1 gap-2 bg-white p-6">
+                <div class="space-y-4">
+                  <div class="space-y-2">
+                    <a
+                      href="/personalo-valdymo-sprendimu-planai"
+                      class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
+                    >
+                      Personalo valdymo planai
+                    </a>
+                    <a
+                      href="/kiti-planai"
+                      class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
+                    >
+                      Kiti sprendimai
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li
+          class="relative"
+          @mouseenter="apieFlyoutOpen = true"
+          @mouseleave="apieFlyoutOpen = false"
+        >
+          <a
+            class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
+          >
+            Apie Vecticum
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg
+            >
+          </a>
+
+          <!-- Apie Vecticum Flyout Menu -->
+          <div
+            x-show="apieFlyoutOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-1"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-1"
+            class="absolute left-0 z-10 mt-2 w-60 -translate-x-1/4 transform px-2 sm:px-0"
+          >
+            <div
+              class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+            >
+              <div class="relative grid grid-cols-1 gap-2 bg-white p-6">
+                <div class="space-y-4">
+                  <div class="space-y-2">
+                    <a
+                      href="/rekomendacijos"
+                      class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
+                    >
+                      Rekomendacijos
+                    </a>
+                    <a
+                      href="/naujienos"
+                      class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
+                    >
+                      Naujienos
+                    </a>
+                    <a
+                      href="/versijos"
+                      class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
+                    >
+                      Versijos
+                    </a>
+                    <a
+                      href="/karjera"
+                      class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
+                    >
+                      Karjera
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a
+            class="text-gray-800 transition hover:text-[#3C7099]"
+            href="/kontaktai"
+          >
+            Kontaktai
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
 
-  <!-- Mobile Menu Dropdown -->
-  <div
-    x-show="isOpen"
-    x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="opacity-0 transform -translate-y-full"
-    x-transition:enter-end="opacity-100 transform translate-y-0"
-    x-transition:leave="transition ease-in duration-200"
-    x-transition:leave-start="opacity-100 transform translate-y-0"
-    x-transition:leave-end="opacity-0 transform -translate-y-full"
-    class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg md:hidden min-h-screen overflow-y-auto"
-  >
-    <div class="pt-20 pb-8 px-4">
-      <!-- Close Button -->
+  <div class="flex items-center gap-4">
+    <!-- Desktop Login/Register -->
+    <div class="sm:flex sm:gap-4 hidden">
+      <a
+        class="rounded-full bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white shadow"
+        href="#contact"
+        target="_blank"
+      >
+        Išbandyti
+      </a>
+      <a
+        class="rounded-full border-2 border-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-black shadow"
+        href="https://app.vecticum.com/"
+        target="_blank"
+      >
+        Prisijungti
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="block md:hidden">
       <button
-        @click="isOpen = false"
-        class="absolute top-4 right-4 p-2 text-gray-600"
+        @click="isOpen = !isOpen"
+        class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="size-5"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
+          stroke-width="2"
         >
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"></path>
+            d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
-
-      <nav class="space-y-6">
-<!-- Sprendimai Section -->
-<div class="space-y-4" x-data="{ activeMobileCategory: null,
- routes: {
-    'Atrankų valdymas': '/atrankos-valdymas',
-    'Darbuotojų įdarbinimo savitarna': '/darbuotoju-idarbinimo-savitarna',
-    'Darbo sutarčių valdymas': '/darbo-sutarciu-valdymas',
-    'Darbo vietos paruošimas': '/darbuotojo-idarbinimo-i-imone-valdymas',
-    'Bandomojo laikotarpio valdymas': '/bandomojo-laikotarpio-vertinimas-valdymas',
-    'Darbuotojo išdarbinimo valdymas': '/darbuotojo-isdarbinimo-is-imones-valdymas',
-    'Privalomo supažindinimo su dokumentais valdymas': '/privalomo-supazindinimo-su-dokumentais-valdymas',
-    'Darbuotojų testavimas': 'testavimo-is-norminiu-dokumentu-valdymas/',
-    'Mokymų valdymas': '/mokymu-valdymas',
-    'Veiklos vertinimas': '/veiklos-vertinimas',
-    'Sutarčių valdymas': '/sutarciu-valdymas',
-    'Darbuotojo duomenų valdymas': '/darbuotoju-duomenu-bazes-valdymas',
-    'Išduodamo inventoriaus valdymas': '/isduodamo-inventoriaus-darbuotojui-valdymas',
-    'Intranetas (Įmonės naujienos)': '/intranetas',
-    'Darbuotojų prašymų valdymas': '/prasymu-valdymas',
-    'Dokumentų valdymas': '/dokumentu-valdymas',
-    'Dokumentacijos plano valdymas': '/dokumentacijos-planas',
-    'Gaunamos/siunčiamos korespondencijos valdymas': '/korespondencijos-valdymas',
-    'Pirkimų valdymas': '/pirkimu-valdymas',
-    'Atostogų prašymų ir kitų nebuvimų valdymas': '/atostogu-valdymas',
-    'Komandiruočių valdymas': '/komandiruotes',
-    'Darbo laiko apskaitos žiniaraščiai': '/darbo-laiko-ziniarasciai',
-    'Gaunamų sąskaitų valdymas': '/saskaitu-valdymas',
-    'Avansinės apyskaitos valdymas': '/avansines-apyskaitos',
-    'Kelionės lapų valdymas': '/keliones-lapai'
-  }
-}">
-  <div class="flex items-center justify-between">
-    <span class="block text-sm text-gray-600">Sprendimai</span>
+    </div>
   </div>
+</div>
+</div>
 
-  <!-- Categories List -->
-  <div class="space-y-2 pl-2">
-    <template x-for="category in [
-      'Darbuotojų įdarbinimas/išdarbinimas',
-      'Atitikimo valdymas',
-      'Sutarčių valdymas',
-      'Darbuotojo informacijos valdymas',
-      'Dokumentų valdymas',
-      'Pirkimų valdymas',
-      'Darbo laiko apskaita',
-      'Apskaitomų dokumentų valdymas'
-    ]" :key="category">
-      <div class="space-y-1">
-        <button 
-          @click="activeMobileCategory === category ? activeMobileCategory = null : activeMobileCategory = category"
-          class="flex justify-between items-center w-full text-left text-sm text-gray-600 py-2"
+<!-- Mobile Menu Dropdown -->
+<div
+  x-show="isOpen"
+  x-transition:enter="transition ease-out duration-300"
+  x-transition:enter-start="opacity-0 transform -translate-y-full"
+  x-transition:enter-end="opacity-100 transform translate-y-0"
+  x-transition:leave="transition ease-in duration-200"
+  x-transition:leave-start="opacity-100 transform translate-y-0"
+  x-transition:leave-end="opacity-0 transform -translate-y-full"
+  class="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg md:hidden min-h-screen overflow-y-auto"
+>
+  <div class="pt-20 pb-8 px-4">
+    <!-- Close Button -->
+    <button
+      @click="isOpen = false"
+      class="absolute top-4 right-4 p-2 text-gray-600"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <nav class="space-y-6">
+      <!-- Sprendimai Section -->
+      <div class="space-y-4" x-data="{ activeMobileCategory: null,
+        routes: {
+          'Darbuotojo duomenų valdymas': '/darbuotoju-duomenu-bazes-valdymas',
+          'Intranetas (Įmonės naujienos)': '/intraneto-valdymas',
+          'Darbuotojų prašymų valdymas': '/darbuotoju-prasymu-valdymas',
+          'Darbo sutarčių valdymas': '/darbo-sutarciu-valdymas',
+          'Atrankų valdymas': '/atrankos-valdymas',
+          'Darbuotojo įdarbinimo savitarna': '/darbuotoju-idarbinimo-savitarna',
+          'Darbo vietos paruošimas': '/darbo-vietos-paruosimas-valdymas',
+          'Bandomojo laikotarpio valdymas': '/bandomojo-laikotarpio-vertinimas-valdymas',
+          'Darbuotojo išdarbinimo valdymas': '/darbuotojo-isdarbinimo-is-imones-valdymas',
+          'Atostogų prašymų ir kitų nebuvimų valdymas': '/atostogu-valdymas',
+          'Komandiruočių valdymas': '/komandiruociu-valdymas',
+          'Darbo laiko apskaitos žiniaraščiai': '/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas',
+          'Darbuotojų testavimas': '/testavimo-is-norminiu-dokumentu-valdymas',
+          'Mokymų valdymas': '/mokymu-valdymas',
+          'Veiklos vertinimas': '/veiklos-vertinimas',
+          'Korporatyvo valdymas (Įmonių grupė)': '/atrankos-valdymas',
+          'Išduodamo inventoriaus valdymas': '/isduodamo-inventoriaus-darbuotojui-valdymas',
+          'Valdybos posėdžiai': '/valdybos-posedziu-valdymas',
+          'Dokumentų valdymas': '/dokumentu-valdymas',
+          'Dokumentacijos plano valdymas': '/dokumentacijos-plano-valdymas',
+          'Gaunamos/siunčiamos korespondencijos valdymas': '/gaunamu-uzklausu-valdymas',
+          'Privalomo supažindinimo su dokumentais valdymas': '/privalomo-supazindinimo-su-dokumentais-valdymas',
+          'Sutarčių valdymas': '/sutarciu-valdymas',
+          'Pirkimų valdymas': '/pirkimu-valdymas',
+          'Gaunamų sąskaitų valdymas': '/gaunamu-saskaitu-valdymas',
+          'Avansinės apyskaitos valdymas': '/avansines-apyskaitos-valdymas',
+          'Kelionės lapų valdymas': '/keliones-lapu-valdymas'
+        }
+      }">
+        <div class="flex items-center justify-between">
+          <span class="block text-sm text-gray-600">Sprendimai</span>
+        </div>
+
+        <!-- Categories List -->
+        <div class="space-y-2 pl-2">
+          <template x-for="category in [
+            'Personalo savitarna',
+            'Korporatyvinio valdymo sprendimai',
+            'Turto valdymas',
+            'Sprendimų valdymas',
+            'Dokumentų valdymas',
+            'Pirkimų valdymas',
+            'Apskaitomų dokumentų valdymas']" :key="category">
+            <div class="space-y-1">
+              <button 
+                @click="activeMobileCategory === category ? activeMobileCategory = null : activeMobileCategory = category"
+                class="flex justify-between items-center w-full text-left text-sm text-gray-600 py-2"
+              >
+                <span x-text="category"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform duration-200" 
+                  :class="{ 'rotate-180': activeMobileCategory === category }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+
+              <!-- Solutions List -->
+              <div 
+                x-show="activeMobileCategory === category"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 transform -translate-y-2"
+                x-transition:enter-end="opacity-100 transform translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 transform translate-y-0"
+                x-transition:leave-end="opacity-0 transform -translate-y-2"
+                class="pl-4 space-y-1 text-sm text-gray-600"
+              >
+                <template x-for="item in (
+                  category === 'Personalo savitarna' ? [
+                    'Darbuotojo duomenų valdymas',
+                    'Intranetas (Įmonės naujienos)',
+                    'Darbuotojų prašymų valdymas',
+                    'Darbo sutarčių valdymas',
+                    'Atrankų valdymas',
+                    'Darbuotojo įdarbinimo savitarna',
+                    'Darbo vietos paruošimas',
+                    'Bandomojo laikotarpio valdymas',
+                    'Darbuotojo išdarbinimo valdymas',
+                    'Atostogų prašymų ir kitų nebuvimų valdymas',
+                    'Komandiruočių valdymas',
+                    'Darbo laiko apskaitos žiniaraščiai',
+                    'Darbuotojų testavimas',
+                    'Mokymų valdymas',
+                    'Veiklos vertinimas'
+                  ] :
+                  category === 'Korporatyvinio valdymo sprendimai' ? ['Korporatyvo valdymas (Įmonių grupė)'] :
+                  category === 'Turto valdymas' ? ['Išduodamo inventoriaus valdymas'] :
+                  category === 'Sprendimų valdymas' ? ['Valdybos posėdžiai'] :
+                  category === 'Dokumentų valdymas' ? [
+                    'Dokumentų valdymas',
+                    'Dokumentacijos plano valdymas',
+                    'Gaunamos/siunčiamos korespondencijos valdymas',
+                    'Privalomo supažindinimo su dokumentais valdymas',
+                    'Sutarčių valdymas'
+                  ] :
+                  category === 'Pirkimų valdymas' ? ['Pirkimų valdymas'] :
+                  category === 'Apskaitomų dokumentų valdymas' ? [
+                    'Gaunamų sąskaitų valdymas',
+                    'Avansinės apyskaitos valdymas',
+                    'Kelionės lapų valdymas',
+                    'Komandiruočių valdymas'
+                  ] : []
+                )" :key="item">
+                  <a 
+                    :href="routes[item]"
+                    class="block py-1 hover:text-[#3C7099] transition-colors duration-200"
+                    x-text="item"
+                  ></a>
+                </template>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Planai Vecticum Section -->
+      <div class="space-y-4">
+        <!-- Pridedam @click ant viso flex containerio -->
+        <div
+          class="flex items-center justify-between cursor-pointer"
+          @click="planaiOpen = !planaiOpen"
         >
-          <span x-text="category"></span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform transition-transform duration-200" 
-            :class="{ 'rotate-180': activeMobileCategory === category }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-          </svg>
-        </button>
+          <a class="block text-sm text-gray-600">Kaina</a>
+          <button class="p-1 text-gray-600 pointer-events-none">
+            <!-- pointer-events-none tam, kad paspaudimas veiktų per visą bloką -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 transition-transform duration-200"
+              :class="{ 'rotate-180': planaiOpen }"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+        </div>
 
-        <!-- Solutions List -->
-        <div 
-          x-show="activeMobileCategory === category"
+        <div
+          x-show="planaiOpen"
           x-transition:enter="transition ease-out duration-200"
           x-transition:enter-start="opacity-0 transform -translate-y-2"
           x-transition:enter-end="opacity-100 transform translate-y-0"
           x-transition:leave="transition ease-in duration-150"
           x-transition:leave-start="opacity-100 transform translate-y-0"
           x-transition:leave-end="opacity-0 transform -translate-y-2"
-          class="pl-4 space-y-1 text-sm text-gray-600"
+          class="pl-4 space-y-2"
         >
-          <template x-for="item in (
-            category === 'Darbuotojų įdarbinimas/išdarbinimas' ? ['Atrankų valdymas', 'Darbuotojų įdarbinimo savitarna', 'Darbo sutarčių valdymas', 'Darbo vietos paruošimas', 'Bandomojo laikotarpio valdymas', 'Darbuotojo išdarbinimo valdymas'] :
-            category === 'Atitikimo valdymas' ? ['Privalomo supažindinimo su dokumentais valdymas', 'Darbuotojų testavimas', 'Mokymų valdymas', 'Veiklos vertinimas'] :
-            category === 'Sutarčių valdymas' ? ['Sutarčių valdymas'] :
-            category === 'Darbuotojo informacijos valdymas' ? ['Darbuotojo duomenų valdymas', 'Išduodamo inventoriaus valdymas', 'Intranetas (Įmonės naujienos)', 'Darbuotojų prašymų valdymas'] :
-            category === 'Dokumentų valdymas' ? ['Dokumentų valdymas', 'Dokumentacijos plano valdymas', 'Gaunamos/siunčiamos korespondencijos valdymas'] :
-            category === 'Pirkimų valdymas' ? ['Pirkimų valdymas'] :
-            category === 'Darbo laiko apskaita' ? ['Atostogų prašymų ir kitų nebuvimų valdymas', 'Komandiruočių valdymas', 'Darbo laiko apskaitos žiniaraščiai'] :
-            category === 'Apskaitomų dokumentų valdymas' ? ['Gaunamų sąskaitų valdymas', 'Avansinės apyskaitos valdymas', 'Kelionės lapų valdymas', 'Komandiruočių valdymas'] : []
-          )" :key="item">
-            <a 
-              :href="routes[item]"
-              class="block py-1 hover:text-[#3C7099] transition-colors duration-200"
-              x-text="item"
-            ></a>
-          </template>
+          <a href="/personalo-valdymo-sprendimu-planai" class="block text-sm text-gray-600"
+            >Personalo valdymo planai</a
+          >
+          <a href="/kiti" class="block text-sm text-gray-600">Kiti sprendimai</a>
         </div>
       </div>
-    </template>
-  </div>
-</div>
 
-
-<!-- Planai Vecticum Section -->
-<div class="space-y-4">
-  <!-- Pridedam @click ant viso flex containerio -->
-  <div
-    class="flex items-center justify-between cursor-pointer"
-    @click="planaiOpen = !planaiOpen"
-  >
-    <a class="block text-sm text-gray-600">Kaina</a>
-    <button class="p-1 text-gray-600 pointer-events-none">
-      <!-- pointer-events-none tam, kad paspaudimas veiktų per visą bloką -->
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 transition-transform duration-200"
-        :class="{ 'rotate-180': planaiOpen }"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 9l-7 7-7-7"
-        ></path>
-      </svg>
-    </button>
-  </div>
-
-          <div
-            x-show="planaiOpen"
-            x-transition:enter="transition ease-out duration-200"
-            x-transition:enter-start="opacity-0 transform -translate-y-2"
-            x-transition:enter-end="opacity-100 transform translate-y-0"
-            x-transition:leave="transition ease-in duration-150"
-            x-transition:leave-start="opacity-100 transform translate-y-0"
-            x-transition:leave-end="opacity-0 transform -translate-y-2"
-            class="pl-4 space-y-2"
-          >
-            <a href="/personalo-valdymo-sprendimu-planai" class="block text-sm text-gray-600"
-              >Personalo valdymo planai</a
+      <!-- Apie Vecticum Section -->
+      <div class="space-y-4">
+        <!-- Pridedam @click ant viso flex containerio -->
+        <div
+          class="flex items-center justify-between cursor-pointer"
+          @click="apieOpen = !apieOpen"
+        >
+          <a class="block text-sm text-gray-600">Apie Vecticum</a>
+          <button class="p-1 text-gray-600 pointer-events-none">
+            <!-- pointer-events-none tam, kad paspaudimas veiktų per visą bloką -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 transition-transform duration-200"
+              :class="{ 'rotate-180': apieOpen }"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-            <a href="/kiti" class="block text-sm text-gray-600">Kiti sprendimai</a>
-          </div>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
         </div>
 
-<!-- Apie Vecticum Section -->
-<div class="space-y-4">
-  <!-- Pridedam @click ant viso flex containerio -->
-  <div
-    class="flex items-center justify-between cursor-pointer"
-    @click="apieOpen = !apieOpen"
-  >
-    <a class="block text-sm text-gray-600">Apie Vecticum</a>
-    <button class="p-1 text-gray-600 pointer-events-none">
-      <!-- pointer-events-none tam, kad paspaudimas veiktų per visą bloką -->
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 transition-transform duration-200"
-        :class="{ 'rotate-180': apieOpen }"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 9l-7 7-7-7"
-        ></path>
-      </svg>
-    </button>
-  </div>
-
-          <div
-            x-show="apieOpen"
-            x-transition:enter="transition ease-out duration-200"
-            x-transition:enter-start="opacity-0 transform -translate-y-2"
-            x-transition:enter-end="opacity-100 transform translate-y-0"
-            x-transition:leave="transition ease-in duration-150"
-            x-transition:leave-start="opacity-100 transform translate-y-0"
-            x-transition:leave-end="opacity-0 transform -translate-y-2"
-            class="pl-4 space-y-2"
+        <div
+          x-show="apieOpen"
+          x-transition:enter="transition ease-out duration-200"
+          x-transition:enter-start="opacity-0 transform -translate-y-2"
+          x-transition:enter-end="opacity-100 transform translate-y-0"
+          x-transition:leave="transition ease-in duration-150"
+          x-transition:leave-start="opacity-100 transform translate-y-0"
+          x-transition:leave-end="opacity-0 transform -translate-y-2"
+          class="pl-4 space-y-2"
+        >
+          <a href="/recomendations" class="block text-sm text-gray-600"
+            >Rekomendacijos</a
           >
-            <a href="/recomendations" class="block text-sm text-gray-600"
-              >Rekomendacijos</a
-            >
-            <a href="/naujienos" class="block text-sm text-gray-600">Naujienos</a>
-            <a href="/versijos" class="block text-sm text-gray-600">Versijos</a>
-            <a href="/karjera" class="block text-sm text-gray-600">Karjera</a>
-          </div>
+          <a href="/naujienos" class="block text-sm text-gray-600">Naujienos</a>
+          <a href="/versijos" class="block text-sm text-gray-600">Versijos</a>
+          <a href="/karjera" class="block text-sm text-gray-600">Karjera</a>
         </div>
-
-        <!-- Kontaktai Section -->
-        <a href="/kontaktai" class="block text-sm text-gray-600">
-          Kontaktai
-        </a>
-      </nav>
-
-      <!-- Helpful Resource (Mobile) -->
-<div class="bg-blue-50 p-4 rounded-lg mt-6">
-  <h3 class="text-sm font-medium text-gray-900">Reikalinga pagalba?</h3>
-  <p class="text-sm text-gray-600 mt-1">
-    VECTICUM pagalbos tarnyba padės išspręsti kiekvieną klausimą
-  </p>
-  <Image
-    src={headerImg}
-    alt="Dokumentacija | VECTICUM"
-    class="w-full rounded-lg my-2"
-  />
-  <a 
-    href="https://vecticum.freshdesk.com/support/home" 
-    class="block text-sm text-[#3C7099] hover:underline"
-  >
-    Pagalba &gt;
-  </a>
-</div>
-
-
-      <!-- Action Buttons -->
-      <div class="flex flex-col gap-4 mt-8">
-        <a
-          class="rounded-full bg-accent py-3 text-center text-base font-medium text-white shadow"
-          href="https://app.vecticum.com/"
-          target="_blank"
-        >
-          Išbandyti
-        </a>
-        <a
-          class="rounded-full border-2 border-accent py-3 text-center text-base font-medium text-black shadow"
-          href="https://app.vecticum.com/"
-          target="_blank"
-        >
-          Prisijungti
-        </a>
       </div>
+
+      <!-- Kontaktai Section -->
+      <a href="/kontaktai" class="block text-sm text-gray-600">
+        Kontaktai
+      </a>
+    </nav>
+
+    <!-- Helpful Resource (Mobile) -->
+    <div class="bg-blue-50 p-4 rounded-lg mt-6">
+      <h3 class="text-sm font-medium text-gray-900">Reikalinga pagalba?</h3>
+      <p class="text-sm text-gray-600 mt-1">
+        VECTICUM pagalbos tarnyba padės išspręsti kiekvieną klausimą
+      </p>
+      <Image
+        src={headerImg}
+        alt="Dokumentacija | VECTICUM"
+        class="w-full rounded-lg my-2"
+      />
+      <a 
+        href="https://vecticum.freshdesk.com/support/home" 
+        class="block text-sm text-[#3C7099] hover:underline"
+      >
+        Pagalba >
+      </a>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col gap-4 mt-8">
+      <a
+        class="rounded-full bg-accent py-3 text-center text-base font-medium text-white shadow"
+        href="https://app.vecticum.com/"
+        target="_blank"
+      >
+        Išbandyti
+      </a>
+      <a
+        class="rounded-full border-2 border-accent py-3 text-center text-base font-medium text-black shadow"
+        href="https://app.vecticum.com/"
+        target="_blank"
+      >
+        Prisijungti
+      </a>
     </div>
   </div>
+</div>
 </header>
+
+<style>
+/* Ensure grid items are balanced and maintain consistent spacing */
+.grid-cols-2 {
+  column-gap: 1rem;
+  row-gap: 0.5rem;
+}
+.grid-cols-1 {
+  row-gap: 0.5rem;
+}
+</style>
