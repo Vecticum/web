@@ -8,7 +8,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead 
+      title={Astro.props.title ?? SITE_TITLE}
+      description={Astro.props.description ?? SITE_DESCRIPTION}
+      image={Astro.props.ogImage ?? ""}
+    />
   </head>
   <body class="">
     <Header />

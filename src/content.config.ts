@@ -18,9 +18,17 @@ const blog = defineCollection({
 const services = defineCollection({
   loader: glob({ base: "./src/content/services", pattern: "**/*.{md,mdx}" }),
   schema: z.object({
+    meta: z.object({
+      title: z.string(),
+      description: z.string(),
+      ogImage: z.string().optional(),
+      ogType: z.string().optional(),
+      canonical: z.string().optional(),
+    }),
     title: z.string(),
     description: z.string(),
     hero_image: z.string(),
+    hero_image_alt: z.string().optional(),
   }),
 });
 

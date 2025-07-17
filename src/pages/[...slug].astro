@@ -16,7 +16,13 @@ const service = Astro.props;
 const { Content } = await render(service);
 ---
 
-<MainLayout>
+<MainLayout
+  title={service.data.meta.title}
+  description={service.data.meta.description}
+  image={service.data.meta.ogImage ?? ""}
+  ogType={service.data.meta.ogType ?? "website"}
+  canonical={service.data.meta.canonical ?? ""}
+>
   <main class="py-8 md:py-12">
     <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center">
       
