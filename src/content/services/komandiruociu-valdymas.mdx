@@ -128,49 +128,112 @@ import ContactForm from "../../components/home/ContactForm.astro";
 
 </section>
 
-
-
-
-
 {/* 8 section - screenshot */}
 
 <section class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-12">
-  <div class="max-w-7xl mx-auto text-center mb-12">
-    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900">
-      Avansinės apyskaitos valdymo funkcijos
-    </h2>
-  </div>
+  <div class="grid grid-cols-1 gap-8 max-w-6xl mx-auto">
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
-      <ul class="space-y-3 list-disc list-inside text-gray-700 text-md leading-relaxed text-left">
- 	<li>Avansinių apyskaitų duomenų bazė;</li>
- 	<li>Įrankis darbuotojui pateikti visą paketą avansinės apyskaitos dokumentų vienu kartu iki einamojo mėnesio pabaigos;</li>
- 	<li>Sąskaitų įkėlimas į sistemą fotografuojant telefonu, arba įkeliant dokumentą per PC, arba atsiunčiant skanuotus dokumentus elektroniniu paštu;</li>
- 	<li>Supaprastintas avansinės apyskaitos sąskaitų/ čekių atpažinimas (OCR): iš dokumento atpažįstamas tik spausdintas tekstas, pagrindiniai laukai ( nr. data, tekėjo pavadinimas (nesusiejamas su Tiekėjų duomenų baze iš buhalterinės apskaitos programos), suma, valiuta), atpažįstama max iki 70% tikslumu. Atpažinimas vyksta ~15 sekundžių. Sistema neatpažįsta ranka rašytų čekių ar blogos kokybės dokumentų;</li>
- 	<li>Galimybė atjungti Avansinės apyskaitos sąskaitų atpažinimą (OCR);</li>
- 	<li>Galimybė išlaidas priskirti prie komandiruotės;</li>
- 	<li>Elektroninis išlaidų patvirtinimas pagal tvirtinimo seką (workflow).</li>
-      </ul>
+    <div class="bg-white rounded-lg shadow-sm flex flex-col sm:flex-row overflow-hidden">
+      <div class="sm:w-1/3 bg-gray-50 p-4 sm:p-6 flex items-start justify-start">
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">Komandiruočių prašymų ir jų išlaidų valdymo sprendimo funkcijos:</h3>
+      </div>
+      <div class="sm:w-2/3 p-4 sm:p-6">
+        <ul class="space-y-3 list-disc list-inside text-gray-700 text-base leading-relaxed">
+          <li>Komandiruočių prašymų registras;</li>
+          <li>Galimybė viename komandiruotės prašyme nurodyti keletą skirtingų šalių;</li>
+          <li>Pildant komandiruotės prašymą parodomi žmonės, kurių Jūsų komandiruotės dienomis taip pat nebus darbe. Galima matyti du pjūvius – mano komanda, visi;</li>
+          <li>Komandiruotės prašyme automatinis komandiruočių dienpinigių normų parodytų pagal nurodytas šalis. Sistema neskaičiuoja dienpinigių vidurkio, jei komandiruotė vyksta per kelias šalis. Užsakovo prašymu dienpinigių skaičiavimo funkcija gali būti išjungta;</li>
+          <li>Galimybė nurodyti komandiruotei reikalingą avansą ar įmonės kortelės papildymo sumą;</li>
+          <li>Jeigu vykstama automobiliu, tai galimybė nurodyti automobilio nuosavybės teisę ir automobilio numerį;</li>
+          <li>Galimybė pateikti elektroninį komandiruotės prašymą ar išlaidas per mobilųjį telefoną arba PC;</li>
+          <li>Diegimo metu įdiegiama viena tvirtinimo seka vienoda visiems komandiruočių tipams bei darbuotojams, be papildomo asmenų išskaičiavimo pagal papildomas taisykles. Ši tvirtinimo seka susideda iš dviejų dalių:</li>
+        <ul class="list-disc list-inside pl-5">
+          <li>Komandiruotės prašymo tvirtinimo;</li>
+          <li>Komandiruotės išlaidų tvirtinimo;</li>
+        </ul>
+          <li>Pateikus elektroninį komandiruotės prašymą, jis siunčiamas derinimui ir tvirtinimui pagal numatytą tvirtinimo seką: tvirtina darbuotojas -tvirtina tiesioginis vadovas – tvirtina Direktorius – informuojama Buhalterija. Diegimo metu į projekto kainą įskaičiuota iki 2 papildomų tvirtintojų įtraukimas į standartinę tvirtinimo seką;</li>
+          <li>Tvirtinimo sekos dalyvių informavimas apie laukiančią tvirtinimo užduotį bei užduoties vykdymas sistemoje PC, el. paštu arba telefonu;</li>
+          <li>Komandiruotės datų ir vietų keitimas iki komandiruotės užregistravimo (registravimo numerio sugeneravimo);</li>
+          <li>Galimybė prie komandiruotės pridėti kitus komandiruotės dokumentus (kelionės bilietus, viešbučio vaučerius);</li>
+          <li>Komandiruotės išlaidų suvedimas ir galimybė įkelti/ prisegti/ nufotografuoti išlaidą pagrindžiantį dokumentą;</li>
+          <li>Suvedus komandiruotės išlaidas, jos siunčiamos tvirtinimui pagal numatytą tvirtinimo seką: tvirtina tiesioginis vadovas – tvirtina Buhalterija. Diegimo metu į projekto kainą įskaičiuota iki 2 papildomų tvirtintojų įtraukimas į standartinę tvirtinimo seką;</li>
+          <li>Parengta spausdinimui komandiruotės išlaidų ataskaita pagal Vecticum šabloną;</li>
+          <li>Komandiruočių atvaizdavimas bendrame įmonės kalendoriuje;</li>
+          <li>Meta duomenų eksportavimas į Excel;</li>
+          <li>Informavimas apie tvirtinimo eigą;</li>
+          <li>Tvirtinimo istorija;</li>
+          <li>Komentavimo funkcija;</li>
+          <li>Prašymų registravimas, saugojimas;</li>
+          <li>Patvirtintų komandiruotės prašymų atvaizdavimas bendrame įmonės kalendoriuje (atskiras rodinys, kuris yra ne pačiame prašyme). Atvaizduojamus duomenis galima filtruoti pagal skyrius arba atskirus darbuotojus ir jų pavaldinius;</li>
+          <li>Užsakovui neimant „Avansinės apyskaitos“ modulio nėra galimybės komandiruotės išlaidų duomenis importuoti į buhalterinės apskaitos sistemą.</li>
+          <p><strong>Papildomai galimos funkcijos už papildomą mokestį:</strong></p>
+          <li>Komandiruotės pratęsimo ar keitimo funkcija;</li>
+          <li>Tvirtinimo sekos (workflow) dalyvių išskaičiavimas pagal skirtingas taisykles.</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
-      <ul class="space-y-3 list-disc list-inside text-gray-700 text-md leading-relaxed text-left">
-  <li>Tvirtinimo sekos nustatymas:</li>
-  <ul class="list-disc list-inside pl-5">
-  <li>Tvirtinimo seka visoms kategorijoms yra vienoda;</li>
-  <li>Registre išlaidos gali būti skirstomos į kategorijas. Kategorijų skaičius gali būti neribotas ir Užsakovas jas apsirašo savarankiškai;</li>
-  <li>Užsakovas skirtingoms kategorijoms nustato kategorijos tvirtinimo sekos (workflow) dalyvius;</li>
-</ul>
-  <li>Sąskaitos tvirtintojų informacija yra automatiškai perkeliama į sąskaitos failą (elektroninis antspaudas). Elektroninis antspaudas yra matomas ir ant atspausdintos sąskaitos;</li>
-  <li>Specialūs rodiniai, padedantys buhalterijos darbuotojams analizuoti avansinės apyskaitos dokumentus;</li>
-  <li>Galimybė rašyti komentarus bet kuriame proceso žingsnyje;</li>
-  <li>Sąskaitų paieška, filtravimas, peržiūra;</li>
-  <li>Prieigos teisių valdymas;</li>
-  <li>Meta duomenų eksportavimas į Excel.</li>
- </ul>
-      
+    <div class="bg-white rounded-lg shadow-sm flex flex-col sm:flex-row overflow-hidden">
+      <div class="sm:w-1/3 bg-gray-50 p-4 sm:p-6 flex items-start justify-start">
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">Grupinių komandiruočių prašymų ir jų išlaidų valdymo sprendimo funkcijos:</h3>
+      </div>
+      <div class="sm:w-2/3 p-4 sm:p-6">
+        <ul class="space-y-3 list-disc list-inside text-gray-700 text-base leading-relaxed">
+          <li>Grupinių komandiruočių prašymų registras;</li>
+          <li>Galimybė viename komandiruotės prašyme nurodyti keletą skirtingų darbuotojų;</li>
+          <li>Galimybė viename komandiruotės prašyme nurodyti keletą skirtingų šalių;</li>
+          <li>Automatinis komandiruočių dienpinigių paskaičiavimas pagal nurodytas šalis individualiai pagal kiekvieną žmogų;</li>
+          <li>Pildant komandiruotės prašymą parodomi žmonės, kurių Jūsų komandiruotės dienomis taip pat nebus darbe. Galima matyti du pjūvius – mano komanda, visi;</li>
+          <li>Galimybė nurodyti komandiruotei reikalingą avansą ar įmonės kortelės papildymo sumą;</li>
+          <li>Galimybė pateikti išlaidas per mobilųjį telefoną arba PC;</li>
+          <li>Pateikus elektroninį komandiruotės prašymą, jis siunčiamas derinimui ir tvirtinimui pagal numatytą tvirtinimo seką: tvirtina darbuotojas -tvirtina tiesioginis vadovas – tvirtina Direktorius – informuojama Buhalterija. Diegimo metu į projekto kainą įskaičiuota iki 2 papildomų tvirtintojų įtraukimas į standartinę tvirtinimo seką;</li>
+          <li>Diegimo metu įdiegiama viena tvirtinimo seka vienoda visiems komandiruočių tipams bei darbuotojams, bei visoms komandiruotėms, suformuotoms vienoje grupinėje komandiruotėje, be papildomo asmenų išskaičiavimo pagal papildomas taisykles;</li>
+          <li>Komandiruotės išlaidų suvedimas ir susiejimas su įkeltais išlaidų dokumentais. Galimybė įkelti komandiruočių išlaidų dokumentus (sąskaitų, čekių) iš mobilaus telefono arba kompiuterio, arba planšetės.</li>
+          <li>Pateiktos komandiruotės išlaidos susiejamos su konkretaus asmens komandiruote;</li>
+          <li>Diegimo metu įdiegiama viena išlaidų tvirtinimo seka;</li>
+          <li>Galimybė prie komandiruotės pridėti kitus komandiruotės dokumentus (kelionės bilietus, viešbučio vaučerius);</li>
+          <li>Apie laukiančią tvirtinimo užduotį bei užduoties vykdymas sistemoje PC, el. paštu arba telefonu;</li>
+          <li>Galimybė prie komandiruotės pridėti kitus komandiruotės dokumentus (kelionės bilietus, viešbučio vaučerius);</li>
+          <li>Komandiruotės išlaidų suvedimas ir galimybė įkelti/ prisegti/ nufotografuoti išlaidą pagrindžiantį dokumentą;</li>
+          <li>Parengta spausdinimui komandiruotės išlaidų ataskaita pagal Vecticum šabloną;</li>
+          <li>Meta duomenų eksportavimas į Excel;</li>
+          <li>Informavimas apie tvirtinimo eigą;</li>
+          <li>Tvirtinimo istorija;</li>
+          <li>Komentavimo funkcija;</li>
+          <li>Prašymų registravimas, saugojimas;</li>
+          <li>Patvirtintų komandiruotės prašymų atvaizdavimas bendrame įmonės kalendoriuje (atskiras rodinys, kuris yra ne pačiame prašyme). Atvaizduojamus duomenis galima filtruoti pagal skyrius arba atskirus darbuotojus ir jų pavaldinius;</li>
+          <li>Užsakovui neimant „Avansinės apyskaitos“ modulio nėra galimybės komandiruotės išlaidų duomenis importuoti į buhalterinės apskaitos sistemą.</li>
+          <p><strong>Papildomai galimos funkcijos už papildomą mokestį:</strong></p>
+          <li>Komandiruotės pratęsimo ar keitimo funkcija;</li>
+          <li>Tvirtinimo sekos (workflow) dalyvių išskaičiavimas pagal skirtingas taisykles.</li>
+        </ul>
+      </div>
     </div>
+
+    <div class="bg-white rounded-lg shadow-sm flex flex-col sm:flex-row overflow-hidden">
+      <div class="sm:w-1/3 bg-gray-50 p-4 sm:p-6 flex items-start justify-start">
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 leading-tight">Komandiruočių prašymų ir jų išlaidų valdymo sprendimo funkcijos:</h3>
+      </div>
+      <div class="sm:w-2/3 p-4 sm:p-6">
+        <ul class="space-y-3 list-disc list-inside text-gray-700 text-base leading-relaxed">
+          <li>komandiruočių trukmės, maršruto ir išlaidų planavimas;</li>
+          <li>galimybė viename komandiruotės prašyme nurodyti keletą skirtingų šalių;</li>
+          <li>planuojamų komandiruočių prašymų tvirtinimas pagal įmonėje nustatytas taisykles ir sekas (workflow);</li>
+          <li>automatinis komandiruočių dienpinigių paskaičiavimas pagal nurodytas šalis;</li>
+          <li>galimybė nurodyti komandiruotei reikalingą avansą ar įmonės kortelės papildymo sumą;</li>
+          <li>komandiruočių išlaidų dokumentų (sąskaitų, čekių) įkėlimas iš mobilaus telefono arba kompiuterio;</li>
+          <li>komandiruotės išlaidų suvedimas ir susiejimas su įkeltais išlaidų dokumentais;</li>
+          <li>komandiruotės išlaidų tvirtinimo procesas;</li>
+          <li>komandiruočių planuotų ir faktinių išlaidų palyginimas;</li>
+          <li>automatinės komandiruočių ataskaitos;</li>
+          <li>spausdinama komandiruotės ataskaitos forma;</li>
+          <li>komandiruočių atvaizdavimas kalendoriuje bendrame kalendoriuje;</li>
+          <li>galimybė komandiruotės duomenis importuoti į apskaitos sistemą;</li>
+          <li>galimybė pridėti kitus komandiruotės dokumentus (kelionės bilietai, viešbučio vaučeriai).</li>
+        </ul>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -268,65 +331,47 @@ import ContactForm from "../../components/home/ContactForm.astro";
 {/*seo text */}
 
 
-<section class="w-full px-4 py-16 sm:px-6 lg:px-8 text-gray-800">
 
+
+<section class="w-full px-4 py-16 sm:px-6 lg:px-8 text-gray-800">
   <div class="max-w-4xl mx-auto space-y-6">
     <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
-    <h2 class="text-2xl sm:text-3xl font-bold">Avansinė apyskaita be galvos skausmo: rinkitės išmanų sprendimą</h2>
+    <h2 class="text-2xl sm:text-3xl font-bold">Darbuotojų komandiruotės be streso: viskas, ko reikia sėkmei</h2>
 
-Avansinė apyskaita – tai, su kuo anksčiau ar vėliau susiduria kiekviena įmonė. Ši apyskaita naudojama, jeigu komandos narys, darbuotojas ruošiasi komandiruotei arba perka produktus / prekes / paslaugas įmonei už asmenines lėšas.
+Planuojant darbuotojų komandiruotes, tiek darbuotojui, tiek kolegoms bei vadovybei reikia atsižvelgti į keletą svarbių veiksnių.
 
-Avansinės apyskaitos valdymo apskaita ne visada yra paprasta, o ją atliekant vien tik savo jėgomis, dažnai įsivelia įvairių netikslumų, tenka paruošti krūvą dokumentų, kuriuos sunku pateikti vienu kartu. Ko imtis, kad avanso apyskaita būtų atlikta greitai, paprastai ir itin tiksliai?
+<h3 class="text-xl font-semibold">Dokumentų parengimas</h3>
 
-Verta rinktis „Vecticum“ avansinės apyskaitos valdymo sprendimą. Tai idealus įrankis, kuris leidžia Jūsų komandos nariams pateikti visą paketą avansinės apyskaitos dokumentų vienu metu. Šis sprendimas, kartu su kitais įrankiais (pavyzdžiui, <a style="color:#C81E6A" href="https://vecticum.lt/sutarciu-valdymas">sutarčių valdymu</a>) gerokai supaprastins Jūsų įmonės darbus.
-<h3 class="text-xl font-semibold">Atsakome į kelis dažnus klausimus apie avansinę apyskaitą:</h3>
+Jeigu komandiruotes planuojate užsienyje, labai svarbu užtikrinti, kad į jas vykstantys darbuotojai turėtų pasus ir kitus svarbius dokumentus. Jei kelionės tikslui reikalinga viza, darbuotojas turėtų patikrinti vizos reikalavimus ir pradėti <a style="color:#C81E6A" href="https://vecticum.lt/darbuotoju-prasymu-valdymas">prašymo pateikimo procesą</a> iš anksto.
+
+Be to, svarbu sekti visus būtinus kelionių leidimus ar leidimus, kurių gali prireikti vykdant tam tikras paskirties vietas arba vykdant konkrečias verslo veiklos rūšis. Tai gali apimti leidimus rengti verslo susitikimus, dalyvauti konferencijose ar užsiimti kita su darbu susijusia veikla.
+
+Svarbu išsiaiškinti visus konkrečius su jų profesija ar pramone susijusius dokumentų reikalavimus. Pavyzdžiui, tam tikroms profesijoms gali reikėti licencijų ar pažymėjimų, kuriuos reikia pateikti kelionės metu.
+
+<h3 class="text-xl font-semibold">Biudžeto sudarymas</h3>
+
+Darbuotojui svarbu tinkamai planuoti kelionę ir numatyti jos biudžetą. Komandiruotės išlaidos dažniausiai yra susijusios su transportu, apgyvendinimu, maitinimu ir pan. Patartina pasikonsultuoti su įmonės kelionių politika ir gauti patvirtinimą iš atitinkamų kanalų prieš susitariant.
+
+Papildomai, komandiruotėms svarbią išlaidų dalį sudaro dienpinigiai, kurių apskaičiavimas dažnai užima nemažai laiko. „Vecticum“ svetainėje rasite <span style="text-decoration: underline;"><a style="color:#C81E6A" href="https://vecticum.lt/naujienos/dienpinigiu-skaiciuokle/">dienpinigių skaičiuoklę</a></span>, padėsiančią lengvai ir greitai apskaičiuoti reikiamą dienpinigių sumą pagal kelionės šalį ir trukmę. Šis įrankis leidžia tiksliai apskaičiuoti kiekvienos komandiruotės dienpinigius, todėl galima iš anksto planuoti biudžetą ir aiškiau matyti išlaidas, susijusias su darbuotojų kelionėmis.
+
+<h3 class="text-xl font-semibold">Komunikacija su komanda</h3>
+
+Planuojant komandos narių komandiruotes, svarbu įvertinti kelionės planą ir uždavinius, siekiant užtikrinti, kad jis atitiktų įmonės tikslus. Šis aspektas yra neatsiejamas nuo sėkmingos komunikacijos su kitais įmonės nariais ir kitomis suinteresuotomis šalimis, pvz., vadovais, klientais. Tai apima aiškios ir glaustos informacijos apie kelionės tikslą, numatomus rezultatus ir visus būtinus susitarimus ar pagalbą, reikalingą darbuotojo nebuvimo metu, pateikimą.
+
+Apskritai, atsižvelgiant į kelionės tikslą, kelionės tikslo tyrimas, finansų planavimas ir efektyvi komunikacija yra pagrindiniai faktoriai darbuotojui, besikreipiančiam į komandiruotę.
+
+Deja, šiandien, griežtėjant reikalavimams, intensyvėjant veiklos tempams, darbuotojų komandiruočių valdymas įmonėms gali būti sudėtingas. Jeigu su tuo susidūrėte ir Jūs, padės „Vecticum“.
+<h3 class="text-xl font-semibold">Kuo ypatingas komandiruotės valdymas su „Vecticum“?</h3>
+
 <ol class="list-decimal">
- 	<li>
-<h5>Kas tai?</h5>
-</li>
+ 	<li>Efektyvumas: siūlome sprendimą, kuris leis valdyti komandiruotes, pateikti prašymus ir dar daugiau. Tai Jūsų komandai suteikia greitą ir lengvą prieigą prie daugybės informacijos ir išteklių. Darbuotojai gali naudotis platformomis norėdami ieškoti kelionių vietų, palyginti savo galimybes ir efektyviai paruošti komandiruotei reikalingus dokumentus. Tai taupo laiką ir palengvina planavimo procesą, o komandiruotės apmokėjimas įvyksta sklandžiai ir tiksliai.</li>
+ 	<li>Ekonomiškumas: naudojantis šiuo inovatyviu sprendimu, pavyks sutaupyti nemažai įmonės resursų, nes visą reikalingą informaciją turėsite vienoje vietoje, o prašymus parengti ir pateikti padės virtuali sistema. Tai sumažina neatitikimų, klaidų tikimybę.</li>
+ 	<li>Prieinamumas: sistema leidžia darbuotojams pasiekti kelionių informaciją ir dokumentus iš bet kurios vietos, kur yra interneto ryšys. Šis prieinamumas ypač naudingas nuotolinėms ar tarptautinėms komandoms, todėl jos gali būti atnaujintos ir organizuotos viso kelionės planavimo proceso metu.</li>
+ 	<li>Bendradarbiavimas: tai sprendimas, kuris palengvina komandos narių, dalyvaujančių kelionės planavimo procese, bendradarbiavimą. Keli asmenys vienu metu gali pasiekti ir atnaujinti kelionės dokumentus, todėl visi yra tame pačiame puslapyje ir sumažina nesusikalbėjimo ar klaidų riziką.</li>
+ 	<li>Visiškas duomenų saugumas: su mumis visi Jūsų įkelti duomenys, dokumentai, komandiruočių prašymai yra visiškai saugūs. Tai pažangi sistema, prie kurios prieigą turės tik įgalioti asmenys, todėl konfidencialumas yra garantuotas.</li>
+ 	<li>Patogiai susisteminama informacija: naudojant mūsų įrankį, komandiruotės valdymas paprastas kaip 2x2: galite į sistemą įkelti nufotografuotus kvitus ir sąskaitas iš karto, kai tik juos gaunate. Sklandi komandiruotė be papildomo rūpesčio: valdykite ją mygtuko paspaudimu.</li>
 </ol>
-Avansinė apyskaita, arba išankstinė verslo sąnaudų apskaita, reiškia sąnaudų registravimo ir pripažinimo praktiką prieš jas faktiškai patiriant arba sumokant. Šis apskaitos metodas leidžia įmonėms numatyti ir planuoti būsimas išlaidas, užtikrinant tikslią finansinę atskaitomybę ir biudžeto sudarymą.
-
-Kai išlaidos apskaitomos iš anksto, jos paprastai balanse įrašomos kaip iš anksto apmokėtos arba atidėtos sąnaudos.
-<ol class="list-decimal" start="2">
- 	<li>
-<h5>Kada reikalinga avansinės apskaitos apyskaita?</h5>
-</li>
-</ol>
-Puikus pavyzdys, kai reikalinga šio tipo apyskaita – darbuotojo komandiruotės išlaidų planavimas (<a style="color:#C81E6A" href="https://vecticum.lt/komandiruociu-valdymas/">čia</a> rasite daugiau itin naudingų komandiruotės valdymo įrankių). Taip pat ši avansinė apskaita svarbi, kai iš asmeninių lėšų perkamos paslaugos ar produktai, skirti įmonei.
-<ol class="list-decimal" start="3">
- 	<li>
-<h5>Kokias funkcijas turi „Vecticum“ avansinės apyskaitos apskaita?</h5>
-</li>
-</ol>
-Siūlome išmanų sprendimą, kuriame apgalvota kiekviena detalė. Jūsų laukia:
-<ul class="list-disc pl-5 space-y-2">
- 	<li>Viskas viename: gausite plačią išankstinių apyskaitų ir sąskaitų duomenų bazę. Tai suteikia galimybę greitai koreguoti apyskaitas pagal savo poreikius.</li>
- 	<li>Lengviau darbuotojams: komandos nariai gali vienu kartu pateikti visą avansinių apskaitos dokumentų paketą, todėl šis procesas gerokai paprastesnis.</li>
- 	<li>Paprastas dokumentų įkėlimas: visas sąskaitas, čekius, apyskaitas galite į sistemą įkelti juos nufotografavę telefonu, įkeliant dokumentą per asmeninį kompiuterį, arba siunčiant nuskenuotus dokumentus elektroniniu būdu.</li>
- 	<li>Įdiegtas supaprastintas avansinės apskaitos sąskaitų faktūrų / čekių atpažinimas, todėl tikrai ilgai netruksite!</li>
- 	<li>Greitai atliekami veiksmai: atpažinimas, dokumentų pateikimas ir kiti veiksmai atliekami vos per keliolika ar keliasdešimt sekundžių. Tai taupo Jūsų laiką ir pinigus!</li>
- 	<li>Apsaugo nuo klaidų ir netikslumų: sistema neatpažįsta ranka išrašytų čekių ar nekokybiškų dokumentų, todėl išvengsite neatitikimų ir avansinė apyskaita bei <a style="color:#C81E6A" href="https://vecticum.lt/dokumumentu-valdymas/">kitos Jūsų įmonės operacijos</a> vyks sklandžiai.</li>
-</ul>
-<ol class="list-decimal" start="4">
- 	<li>
-<h5>Ar tai tikrai saugu?</h5>
-</li>
-</ol>
-Mūsų sukurtas avansinės apyskaitos valdymo įrankis verslui užtikrina maksimalų jautrių duomenų saugumą, apyskaitos valdymo ir kitų operacijų efektyvumą, tikslumą, prieinamumą, organizavimą, integravimą.
-
-Šie privalumai prisideda prie geresnio finansų valdymo, sprendimų priėmimo ir bendros verslo sėkmės. Džiaugiamės, kad galime prie jos prisidėti!
-<ol class="list-decimal" start="5">
- 	<li>
-<h5>Kodėl avansinės apyskaitos valdymą verta patikėti profesionalams?</h5>
-</li>
-</ol>
-Avanso apskaita bei apyskaita ne visada yra lengvai parengiama. Jeigu susiduriate su sunkumais, laiko stoka ar tiesiog norite prasmingiau išnaudoti įmonės resursus, nukreipiant savo laiką ten, kur svarbiausia, pasinaudokite paprastu „Vecticum“ sprendimu, skirtu avansinės apyskaitos valdymui.
-<h3 class="text-xl font-semibold">Visi verslui reikalingi įrankiai vienoje vietoje</h3>
-
-Avanso apyskaita nėra vienintelis iššūkis, kurį kasdien patiria verslas. Esame tam, kad visi Jūsų veiklos aspektai būtų paprastesni. Siūlome įvairius įrankius: atostogų valdymą, darbo sutarčių valdymą ir daugybę kitų. Neabejojame, kad jie patiks ir Jums.
-
-Mus rekomenduoja <a style="color:#C81E6A" href="https://vecticum.lt/klientai/">kitos įmonės</a> – džiaugiamės, galėdami su kaupu pateisinti klientų lūkesčius!
+<a style="color:#C81E6A" href="https://vecticum.lt/rekomendacijos">Daugybė įmonių</a> jau naudojasi mūsų paslaugomis – prisijunkite!
 
     <div class="border-t border-gray-300 w-64 mx-auto mt-12"></div>
   </div>
