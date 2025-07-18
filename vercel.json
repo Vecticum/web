@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/prezentacijos",
+      "destination": "/rekomendacijos",
+      "permanent": true
+    },
+    {
+      "source": "/klientai",
+      "destination": "/rekomendacijos",
+      "permanent": true
+    }
+  ]
+}
