@@ -1,6 +1,6 @@
 ---
 title: 'Efektyvus dokumentų valdymas skaitmeninėje eroje: 2024-ųjų TOP 5 tendencijos'
-description: 'Skaitmeninėje eroje dokumentų valdymas tampa vis svarbesnis tiek įmonėms, tiek įstaigoms. Atėjus 2024-iesiems, dokumentų valdymo sistemos (DVS) susiduria su reikšmingais pokyčiais, kuriuos skatina technologijų pažanga ir besikeičiantys organizaciniai poreikiai.'
+description: 'Dokumentų valdymo sistemos (DVS) keičiasi: technologijų pažanga leidžia įmonėms ir įstaigoms efektyviau skaitmenizuoti ir valdyti dokumentus.'
 pubDate: '2024-06-03'
 heroImage: '/media/blog/top5-tendencijos.png'
 ---

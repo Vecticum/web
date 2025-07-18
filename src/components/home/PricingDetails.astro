@@ -155,9 +155,9 @@ table {
   { name: "Darbo sutarties tiesioginio vadovo tvirtinimas", plans: [true, true, true] },
   { name: "Darbo sutarties pakeitimo tiesioginio vadovo tvirtinimas", plans: [true, true, true] },
   { name: "Darbo sutarties nutraukimo tiesioginio vadovo tvirtinimas", plans: [true, true, true] },
-  { name: "Darbo sutarties pasirašymas elektroniniu parašu", plans: [false, true, true] },
-  { name: "Darbo sutarties pakeitimo pasirašymas elektroniniu parašu", plans: [false, true, true] },
-  { name: "Darbo sutarties nutraukimo pasirašymas elektroniniu parašu", plans: [false, true, true] },
+  { name: "Darbo sutarties pasirašymas elektroniniu parašu", plans: [true, true, true] },
+  { name: "Darbo sutarties pakeitimo pasirašymas elektroniniu parašu", plans: [true, true, true] },
+  { name: "Darbo sutarties nutraukimo pasirašymas elektroniniu parašu", plans: [true, true, true] },
   { name: "Darbo sutarties tvirtinimo/pasirašymo užduočių istorija", plans: [true, true, true] },
   { name: "Darbo sutarties pakeitimo tvirtinimo/pasirašymo užduočių istorija", plans: [true, true, true] },
   { name: "Darbo sutarties nutraukimo tvirtinimo/pasirašymo užduočių istorija", plans: [true, true, true] },
@@ -174,56 +174,158 @@ table {
   { name: "Galimybė papildyti darbo sutarties/pakeitimo/nutraukimo tvirtinimo seką papildomais tvirtintojais", plans: [false, false, true] }
 ],
       
-      "requests": [
-        { name: "Sutarties peržiūra", plans: [true, true, true] },
-        { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ],
+"requests": [
+  { name: "Darbuotojų prašymų pildymas", plans: [true, true, true] },
+  { name: "Darbuotojo prašymo tiesioginio vadovo tvirtinimas arba susipažinimas", plans: [true, true, true] },
+  { name: "Darbuotojo informavimas el. paštu apie prašymo patvirtinimą", plans: [true, true, true] },
+  { name: "Darbuotojo prašymo tvirtinimų/susipažinimų istorija", plans: [true, true, true] },
+  { name: "Darbuotojų prašymų komentavimo funkcija", plans: [true, true, true] },
+  { name: "Funkcija atsakyti į darbuotojo prašymo komentarą el. paštu", plans: [true, true, true] },
+  { name: "Darbuotojo prašymo pildymas per mobilųjį telefoną arba kompiuterį", plans: [true, true, true] },
+  { name: "Darbuotojų prašymų eksportavimas į Excel", plans: [true, true, true] },
+  { name: "Darbuotojo nuotolinio darbo peržiūra sistemos kalendoriuje", plans: [true, true, true] },
+  { name: "Darbuotojų prašymų filtravimas pagal skirtingus tipus", plans: [true, true, true] },
+  { name: "Papildomi darbuotojų prašymų tipai pagal įmonės tvarkas", plans: [true, true, true] },
+  { name: "Galimybė išplėsti darbuotojo prašymą papildomais laukais", plans: [false, false, true] },
+  { name: "Darbuotojų prašymų atvaizdavimas pagal pjūvius: einamujų metu, praėjusių metu", plans: [false, false, true] },
+  { name: "Papildomi darbuotojų prašymų atvaizdavimo pjūviai", plans: [false, false, true] },
+  { name: "Prašymo tvirtinimo sekos keitimas pagal įmonės vidines tvarkas", plans: [false, false, true] }
+],
 
-            "leaves": [
-        { name: "Sutarties peržiūra", plans: [true, true, true] },
-        { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ],
+"leaves": [
+  { name: "Atostogų prašymų registravimas", plans: [true, true, true] },
+  { name: "Neribotas atostogų prašymų pildymas pagal tipus", plans: [true, true, true] },
+  { name: "Atostogų prašymo tiesioginio vadovo tvirtinimas", plans: [true, true, true] },
+  { name: "Tuo pačiu metu atostogaujančių darbuotojų matymas atostogų prašyme", plans: [true, true, true] },
+  { name: "Darbuotojo informavimas el. paštu apie atostogų prašymo patvirtinimą", plans: [true, true, true] },
+  { name: "Atostogų tvirtinimų istorija", plans: [true, true, true] },
+  { name: "Atostogų prašymo komentavimo funkcija", plans: [true, true, true] },
+  { name: "Atostogų prašymo pildymas per mobilųjį telefoną arba kompiuterį", plans: [true, true, true] },
+  { name: "Atostogų prašymų sąrašo eksportavimas į Excel", plans: [true, true, true] },
+  { name: "Darbuotojų patvirtintų atostogų peržiūra sistemos kalendoriuje", plans: [true, true, true] },
+  { name: "Atostogų atšaukimo funkcija", plans: [true, true, true] },
+  { name: "Atostogų prašymų atvaizdavimas pagal pjūvius", plans: [true, true, true] },
+  { name: "Atostogų atšaukimo tiesioginio vadovo tvirtinimas", plans: [false, true, true] },
+  { name: "Atostogų likučio atvaizdavimas sistemoje", plans: [false, true, true] },
+  { name: "Atostogų likučių patikrinimas pildant atostogų prašymą", plans: [false, true, true] },
+  { name: "Atostogų kaupimų atvaizdavimas", plans: [false, true, true] },
+  { name: "Atostogų likučių perkėlimas", plans: [false, true, true] },
+  { name: "Atostogų likučių ataskaita", plans: [false, true, true] },
+  { name: "Tėvystės atostogų kontrolė pagal DK", plans: [false, true, true] },
+  { name: "Nemokamų atostogų tipo pasirinkimas", plans: [false, true, true] },
+  { name: "Atostogų likučio skaičiavimas", plans: [false, true, true] },
+  { name: "Atostogų prašymo komentavimas", plans: [false, true, true] },
+  { name: "Atostogų dienų pridėjimas pagal stažą", plans: [false, true, true] },
+  { name: "Draudimas pildyti atostogų neturint sukaupto atostogų likučio", plans: [false, true, true] },
+  { name: "Masinis atostogų prašymų tvirtinimas", plans: [false, true, true] },
+  { name: "Patvirtintų ir nepatvirtintų atostogų prašymų atvaizdavimas kalendoriuje", plans: [false, true, true] },
+  { name: "Papildomi atostogų tipai pagal įmonės tvarkas", plans: [false, false, true] },
+  { name: "Galimybė išplėsti atostogų prašymą papildomais laukais", plans: [false, false, true] },
+  { name: "Atostogų prašymo tvirtinimo atidėjimas", plans: [false, false, true] },
+  { name: "Atostogų dienų pridėjimas", plans: [false, false, true] },
+  { name: "Atostogų prašymo tvirtinimo proceso plėtimas", plans: [false, false, true] },
+  { name: "Papildomi pjūviai atostogų prašymų atvaizdavimui", plans: [false, false, true] },
+  { name: "Galimybė atsakyti į atostogų prašymo komentarą el. paštu", plans: [false, false, true] }
+],
 
-            "absences": [
-        { name: "Sutarties peržiūra", plans: [true, true, true] },
-        { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ],
+"absences": [
+  { name: "Neatvykimo prašymo registravimas", plans: [false, true, true] },
+  { name: "Neribotas neatvykimo prašymo pildymas", plans: [false, true, true] },
+  { name: "Neatvykimo prašymo tiesioginio vadovo tvirtinimas", plans: [false, true, true] },
+  { name: "Kitų darbuotojų neatvykimų atvaizdavimas", plans: [false, true, true] },
+  { name: "Neatvykimų tvirtinimo istorija", plans: [false, true, true] },
+  { name: "Neatvykimo prašymo komentavimo galimybė", plans: [false, true, true] },
+  { name: "Neatvykimo prašymo patvirtinimo informavimas", plans: [false, true, true] },
+  { name: "Neatvykimų prašymų sąrašo eksportavimas į Excel", plans: [false, true, true] },
+  { name: "Neatvykimo prašymo pildymas per mobilųjį telefoną arba kompiuterį", plans: [false, true, true] },
+  { name: "Darbuotojo neatvykimų peržiūra sistemos kalendoriuje", plans: [false, true, true] },
+  { name: "Neribotas neatvykimų tipų sukūrimas", plans: [false, true, true] },
+  { name: "Papildomas 3 laukų sukūrimas neatvykimų formoje", plans: [false, true, true] },
+  { name: "Neatvykimo prašymo tvirtinimo proceso plėtimas", plans: [false, false, true] },
+  { name: "Neatvykimo prašymo formos neribotas papildymas laukais", plans: [false, false, true] }
+],
 
-            "sick": [
-        { name: "Sutarties peržiūra", plans: [true, true, true] },
-        { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ],
+"sick": [
+  { name: "Neribotas darbuotojo ligų įrašų sukūrimas", plans: [true, true, true] },
+  { name: "Trumpalaikės ligos įrašo sukūrimas", plans: [true, true, true] },
+  { name: "Darbuotojo ligų atvaizdavimas sistemos kalendoriuje", plans: [true, true, true] },
+  { name: "Tiesioginio vadovo susipažinimas su darbuotojo neatvykimu dėl ligos", plans: [false, true, true] },
+  { name: "Ligų įrašų pasiėmimas iš Sodros (xml failo ataskaita)", plans: [false, true, true] }
+],
 
             "special": [
-        { name: "Sutarties peržiūra", plans: [true, true, true] },
-        { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ],
+  { name: "Mamadienio/tėvadienio prašymo pildymas", plans: [true, true, true] },
+  { name: "Pusė dienos rugsėjo 1 diena prašymo pildymas", plans: [true, true, true] },
+  { name: "Mamadienio/tėvadienio kontrolė atsižvegiant į DK taisykles", plans: [false, true, true] }
+],
 
             "travel": [
-        { name: "Sutarties peržiūra", plans: [true, true, true] },
-        { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ],
+  { name: "Komandiruočių prašymų registras", plans: [false, true, true] },
+  { name: "Komandiruočių prašymų registravimas, saugojimas", plans: [false, true, true] },
+  { name: "Galimybė viename komandiruotės prašyme nurodyti keletą skirtingų šalių", plans: [false, true, true] },
+  { name: "Pildant komandiruotės prašymą parodomi žmonės, kurių Jūsų komandiruotės dienomis taip pat nebus darbe.", plans: [false, true, true] },
+  { name: "Komandiruotės prašyme automatinis komandiruočių dienpinigių normų skaičiavimas pagal nurodytas šalis.", plans: [false, true, true] },
+  { name: "Užsakovo prašymu dienpinigių skaičiavimo funkcija gali būti išjungta", plans: [false, true, true] },
+  { name: "Galimybė nurodyti komandiruotei reikalingą avansą ar įmonės kortelės papildymo sumą", plans: [false, true, true] },
+  { name: "Jeigu vykstama automobiliu, tai galimybė nurodyti automobilio nuosavybės teisę ir automobilio numerį", plans: [false, true, true] },
+  { name: "Galimybė pateikti elektroninį komandiruotės prašymą ar išlaidas per mobilųjį telefoną arba kompiuterį", plans: [false, true, true] },
+  { name: "Diegimo metu įdiegiama viena tvirtinimo seka vienoda visiems komandiruočių tipams bei darbuotojams, be papildomo asmenų išskaičiavimo pagal papildomas taisykles.", plans: [false, true, true] },
+  { name: "Tvirtinimo sekos dalyvių informavimas apie laukiančią tvirtinimo užduotį bei užduoties vykdymas sistemoje kompiuteriu, el. paštu arba telefonu", plans: [false, true, true] },
+  { name: "Komandiruotės datų ir vietų keitimas iki komandiruotės užregistravimo", plans: [false, true, true] },
+  { name: "Galimybė prie komandiruotės pridėti kitus komandiruotės dokumentus", plans: [false, true, true] },
+  { name: "Komandiruotės išlaidų suvedimas ir galimybė įkelti/ prisegti/ nufotografuoti išlaidas pagrindžiantį dokumentą", plans: [false, true, true] },
+  { name: "Parengta spausdinimui komandiruotės išlaidų ataskaita pagal Vecticum šabloną", plans: [false, true, true] },
+  { name: "Komandiruočių atvaizdavimas bendrame įmonės kalendoriuje", plans: [false, true, true] },
+  { name: "Meta duomenų eksportavimas į Excel", plans: [false, true, true] },
+  { name: "Informavimas apie tvirtinimo eigą", plans: [false, true, true] },
+  { name: "Tvirtinimo istorija", plans: [false, true, true] },
+  { name: "Komentavimo funkcija", plans: [false, true, true] },
+  { name: "Patvirtintų komandiruotės prašymų atvaizdavimas bendrame įmonės kalendoriuje. Atvaizduojamus duomenis galima filtruoti pagal skyrius arba atskirus darbuotojus ir jų pavaldinius", plans: [false, true, true] },
+  { name: "Galimybė praplėsti komandiruotės prašymą arba išlaidų ataskaitą papildomais laukais", plans: [false, false, true] },
+  { name: "Galimybė keisti komandiruotės prašymo arba išlaidų ataskaitos tvirtinimo seką", plans: [false, false, true] },
+  { name: "Tvirtinimo sekos (workflow) dalyvių išskaičiavimas pagal skirtingas taisykles ar papildomas sąlygas", plans: [false, false, "Už papildomą mokestį"] },
+  { name: "Komandiruotės pratęsimo ar keitimo funkcija", plans: [false, false, "Už papildomą mokestį"] },
+  { name: "Užsakovui neimant ,,Avansinės apyskaitos“ modulio nėra galimybės komandiruotės išlaidų duomenų importuoti į buhalterinės apskaitos sistemą", plans: [false, false, "Už papildomą mokestį"] }
+],
 
         "calendar": [
-        { name: "Sutarties peržiūra", plans: [true, true, true] },
-        { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ],
+  { name: "Visų įmonės darbuotojų suplanuotų/ patvirtintų/ užregistruotų nebuvimų darbe atvaizdavimas bendrame įmonės kalendoriuje", plans: [true, true, true] },
+  { name: "Kalendoriuje matomos visi įmonės darbuotojų nebuvimai darbe", plans: [true, true, true] },
+  { name: "Atvaizduojamus duomenis galima filtruoti pagal skyrius, darbuotojus, vadovus ir jų tiesioginius pavaldinius", plans: [true, true, true] },
+  { name: "Šis kalendorius nėra darbuotojų darbo kalendorius, kuriame jis žymisi savo vykdomas veiklas ar užimtumą", plans: [true, true, true] }
+],
       
          "rules": [
-        { name: "Sutarties peržiūra", plans: [true, true, true] },
-        { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ],
+  { name: "Tvarkų versijavimas", plans: [false, true, true] },
+  { name: "Galimybė dokumentus į sistemą įkelti iš kompiuterio, arba įkelti iš savo mobilaus telefono", plans: [false, true, true] },
+  { name: "Galimybė turėti automatizuotą tvarkų patvirtinimo procesą (vidinis vizavimas) pagal įmonės vidinę tvarką", plans: [false, true, true] },
+  { name: "Galimybė individualiai parinkti žmones, kurie turi patvirtinti dokumentą", plans: [false, true, true] },
+  { name: "Galimybė dokumentus pasirašyti kvalifikuotu elektroniniu parašu, atitinkančiu ,,eiDAS“ reikalavimus", plans: [false, true, true] },
+  { name: "Ilgalaikis dokumentų saugojimas", plans: [false, true, true] },
+  { name: "Galimybė rašyti komentarus", plans: [false, true, true] },
+  { name: "Galimybė dokumentui nustatyti galiojimo datą ir sukurti automatinį priminimą apie artėjančią pabaigą", plans: [false, true, true] },
+  { name: "Prieigos teisių prie dokumento valdymas", plans: [false, true, true] },
+  { name: "Dokumentų paieška, filtravimas, peržiūra", plans: [false, true, true] },
+  { name: "Meta duomenų eksportavimas į Excel", plans: [false, true, true] },
+  { name: "Galimybė praplėsti tvarkos ar įsakymo registro kortelę papildomais laukais", plans: [false, false, true] },
+  { name: "Galimybė keisti tvarkos/ įsakymo tvirtinimo seką", plans: [false, false, true] }
+],
          "acknowledgements": [
-        { name: "Sutarties peržiūra", plans: [true, true, true] },
-        { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ],
+  { name: "Sistema užtikrina, kad darbuotojas prieš susipažindamas su Tvarka ar Įsakymu privalo jį atidaryti ir papildomai patvirtinti, kad su pridėtu dokumentu susipažino", plans: [false, true, true] },
+  { name: "Galimybė darbuotojus sistemoje suskirstyti į darbuotojų grupes. Vienas žmogus vienu metu gali būti priskirtas keliose skirtingose grupėse", plans: [false, true, true] },
+  { name: "Automatiškai suformuojamos užduotys darbuotojams susipažinti su tvarkomis ir įsakymais.", plans: [false, true, true] },
+  { name: "Susipažinimo su dokumentu patvirtinimas el. paštu, telefonu arba kompiuteriu prisijungus sistemoje", plans: [false, true, true] },
+  { name: "Užduoties iš naujo susipažinti su tvarka išsiuntimas darbuotojams, kai tvarkos yra atnaujinamos", plans: [false, true, true] },
+  { name: "Automatinis supažindinimo užtikrinimas darbuotojui pakeitus pareigas", plans: [false, true, true] }
+],
       "extra": [
-        { name: "Sutarties peržiūra", plans: [true, true, true] },
-        { name: "PDF atsisiuntimas", plans: [false, true, true] }
-      ],
+  { name: "Galimybė automatiškai konvertuoti Word formato failus į PDF formatą", plans: [false, "Už papildomą mokestį", "Už papildomą mokestį"] },
+  { name: "Pasirašyti PDF formato dokumentus elektroniniu parašu", plans: [false, "Už papildomą mokestį", "Už papildomą mokestį"] },
+  { name: "Galimybė integruotis su kitom sistemomis per API", plans: [false, "Už papildomą mokestį", "Už papildomą mokestį"] }
+],
     };
 
-    const tbody = document.getElementById('feature-table');
+const tbody = document.getElementById('feature-table');
     const tabs = document.querySelectorAll('.solution-categories li');
 
     function render(category) {
@@ -232,9 +334,15 @@ table {
       data[category].forEach(row => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
-  <td class="feature-cell text-gray-700 font-medium p-2">${row.name}</td>
-  ${row.plans.map(v => `<td class="feature-cell text-center">${v ? '<span><i class="fas fa-check icon-yes" style="color: #22c55e;"></i></span>' : '<span><i class="fas fa-times icon-no" style="color: #ef4444;"></i></span>'}</td>`).join('')}
-`;
+          <td class="feature-cell text-gray-700 font-medium p-2">${row.name}</td>
+          ${row.plans.map(v => {
+            if (typeof v === 'string' && v === "Už papildomą mokestį") {
+              return `<td class="feature-cell text-center">${v}</td>`;
+            } else {
+              return `<td class="feature-cell text-center">${v ? '<span><i class="fas fa-check icon-yes" style="color: #22c55e;"></i></span>' : '<span><i class="fas fa-times icon-no" style="color: #ef4444;"></i></span>'}</td>`;
+            }
+          }).join('')}
+        `;
         tbody.appendChild(tr);
       });
     }

@@ -9,7 +9,7 @@ import alpinejs from "@astrojs/alpinejs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://vecticum.lt",
   integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
   adapter: vercel(),
 });

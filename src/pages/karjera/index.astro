@@ -1,11 +1,17 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
-
+import BaseHead from "../../components/BaseHead.astro";
 const careers = await getCollection("careers");
 
 export const prerender = true;
+
+const seoTitle = "Karjera - prisijunkite prie mūsų komandos | Vecticum";
+const seoDescription = "Ieškote naujų karjeros galimybių? Prisijunkite prie Vecticum komandos! Peržiūrėkite mūsų darbo pasiūlymus ir prisijunkite!";
+const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
+
+<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
 
 <MainLayout>
 

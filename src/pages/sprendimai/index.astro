@@ -69,7 +69,14 @@ const categories = [
     ],
   },
 ];
+import BaseHead from "../../components/BaseHead.astro";
+
+const seoTitle = "Verslo sprendimai: personalo, dokumentų valdymas | Vecticum";
+const seoDescription = "Vecticum siūlo įvairius verslo sprendimus: personalo, dokumentų, pirkimų ir sąskaitų valdymą. Automatizuokite procesus ir optimizuokite savo verslo veiklą";
+const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
+
+<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
 
 <MainLayout>
   <section class="bg-[#F8FAFC] py-20 px-4 sm:px-6 lg:px-8">

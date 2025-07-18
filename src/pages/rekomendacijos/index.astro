@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
+import BaseHead from "../../components/BaseHead.astro";
 
 import dussmann from '/src/assets/media/dussmann.jpg';
 import iki from '/src/assets/media/iki.png';
@@ -57,7 +58,13 @@ const partner = [
   { src: "/media/partners/rivil.png", href: "https://www.google.com" },
   { src: "/media/partners/softera.png", href: "https://www.google.com" },
 ];
+
+const seoTitle = "Klientų atsiliepimai ir sėkmės Istorijos | Vecticum";
+const seoDescription = "Sužinokite, kaip Vecticum padeda įmonėms automatizuoti verslo procesus. Peržiūrėkite klientų atsiliepimus ir sėkmės istorijas iš įvairių pramonės šakų";
+const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
+
+<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
 
 <MainLayout>
   <!-- Hero -->

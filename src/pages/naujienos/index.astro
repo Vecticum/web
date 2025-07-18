@@ -2,11 +2,18 @@
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import BaseHead from "../../components/BaseHead.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const seoTitle = "Verslo procesų valdymo naujienos | Vecticum";
+const seoDescription = "Sužinokite naujausias verslo procesų valdymo tendencijas ir naujienas. Skaitykite apie verslo sprendimų naujoves, įmonių sėkmės istorijas ir inovacijas.";
+const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
+
+<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
 
 <MainLayout>
     <!-- Hero -->

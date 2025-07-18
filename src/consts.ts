@@ -1,8 +1,8 @@
 // Place any global data in this file.
 // You can import this data from anywhere in your site by using the `import` keyword.
 
-export const SITE_TITLE = "Verslo procesų automatizavimo sistema | VECTICUM";
-export const SITE_DESCRIPTION = "Automatizuokite visus verslo procesus su VECTICUM";
+export const SITE_TITLE = "Dokumentų valdymo sistema​ | DVS įrankis | Vecticum";
+export const SITE_DESCRIPTION = "Dokumentų valdymo sistema​, automatizuoti verslo procesų sprendimai: personalo, dokumentų, sąskaitų, verslo procesų valdymas ir daugiau. Išbandykite dabar!";
 
 export const CLIENTS = [
   {

@@ -1,11 +1,18 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
+import BaseHead from "../../components/BaseHead.astro";
 
 const versions = await getCollection("versions");
 
 export const prerender = true;
+
+const seoTitle = "Programinės Įrangos Versijos | Vecticum";
+const seoDescription = "Programinės įrangos versijos ir atnaujinimai. Sekite funkcijų patobulinimus, klaidų ištaisymus ir kitus įgynendintus sprendimus. ";
+const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
+
+<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
 
 <MainLayout>
     <!-- Hero -->
