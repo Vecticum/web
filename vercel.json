@@ -9,6 +9,46 @@
       "source": "/klientai",
       "destination": "/rekomendacijos",
       "permanent": true
+    },
+    {
+      "source": "/registracijademo",
+      "destination": "https://vecticum.lt",
+      "permanent": true
+    },
+    {
+      "source": "/personalo-valdymas/",
+      "destination": "https://vecticum.lt/personalo-valdymo-sprendimu-planai/",
+      "permanent": true
+    },
+    {
+      "source": "/registruotis/",
+      "destination": "https://vecticum.lt/",
+      "permanent": true
+    },
+    {
+      "source": "/sprendimai-ir-kainos/",
+      "destination": "https://vecticum.lt/sprendimai",
+      "permanent": true
+    },
+    {
+      "source": "/komandiruociu-prasymu-ir-ju-islaidu-valdymas",
+      "destination": "https://vecticum.lt/komandiruociu-valdymas/",
+      "permanent": true
+    },
+    {
+      "source": "/tvarkos-ir-isakymai",
+      "destination": "https://vecticum.lt/dokumentu-valdymas/",
+      "permanent": true
+    },
+    {
+      "source": "/komerciniu-sutarciu-valdymas",
+      "destination": "https://vecticum.lt/sutarciu-valdymas/",
+      "permanent": true
+    },
+    {
+      "source": "/dokumumentu-valdymas/",
+      "destination": "https://vecticum.lt/dokumentu-valdymas/",
+      "permanent": true
     }
   ]
 }

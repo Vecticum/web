@@ -8,22 +8,23 @@ const logoImg = '~/assets/images/logo.webp';
 
 <div class="bg-gray-50 border-b border-gray-200">
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-2">
-    <div class="flex justify-between items-center md:flex-row flex-col gap-2 md:gap-4 text-sm text-gray-600">
-      <div class="flex items-center gap-2 md:gap-4">
-        <a href="tel:+37061234567" class="hover:text-[#3C7099] transition-colors duration-200" aria-label="Pardavimų telefono numeris">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4 text-sm text-gray-600">
+      <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 w-full md:w-auto">
+        <a href="tel:+37061234567" class="hover:text-[#3C7099] transition-colors duration-200 flex items-center" aria-label="Pardavimų telefono numeris">
           Pardavimai: +370 696 05332
         </a>
         <span class="hidden md:inline text-gray-400">|</span>
-        <a href="tel:+37062345678" class="hover:text-[#3C7099] transition-colors duration-200" aria-label="Klientų aptarnavimo telefono numeris">
+        <a href="tel:+37062345678" class="hover:text-[#3C7099] transition-colors duration-200 flex items-center" aria-label="Klientų aptarnavimo telefono numeris">
           Klientų aptarnavimas: +370 618 15140
         </a>
       </div>
-      <a href="mailto:vecticum@vecticum.com" class="hover:text-[#3C7099] transition-colors duration-200" aria-label="Elektroninis paštas">
+      <a href="mailto:vecticum@vecticum.com" class="hover:text-[#3C7099] transition-colors duration-200 flex items-center md:ml-4" aria-label="Elektroninis paštas">
         info@vecticum.com
       </a>
     </div>
   </div>
 </div>
+
 
 <header
   class="sticky top-0 z-50 bg-white py-2 font-semibold shadow transition-transform duration-300"
@@ -398,7 +399,7 @@ const logoImg = '~/assets/images/logo.webp';
         <div class="sm:flex sm:gap-4 hidden">
           <a
             class="rounded-full bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white shadow"
-            href="#contact"
+            href="/registracijademo"
             target="_blank"
           >
             Išbandyti

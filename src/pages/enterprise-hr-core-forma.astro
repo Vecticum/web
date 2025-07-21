@@ -1,10 +1,21 @@
-<div class="border-t border-gray-300 w-80 mx-auto mt-12"></div>
+---
+import BaseHead from "../components/BaseHead.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+const seoTitle = "ENTERPRISE HR core paketas | Vecticum";
+const seoDescription = "Registruokitės ENTERPRISE HR Core paketui ir išbandykite nemokamai. Sužinokite, kaip Vecticum gali padėti optimizuoti verslo valdymo procesus.";
+const seoImage = '~/assets/images/logo.webp'; // Optional
+---
+
+<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
+
+<MainLayout>
+
 <div class="text-center pt-12 px-4 sm:px-6 lg:px-8">
-  <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
-    Susisiekite su mumis
-  </h2>
+  <h1 class="text-4xl sm:text-5xl font-bold text-gray-900">
+    ENTERPRISE paketas personalo valdymui
+  </h1>
   <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
-    Užpildykite formą ir užsisakykite sistemos demonstraciją
+    Registruokites ir išbandykite personalo valdymo ENTERPRISE paketą. Užpildžius formą nurodytu el. paštu gausite tolimesnę produkto implementacijos informaciją.
   </p>
 </div>
 
@@ -24,6 +35,9 @@
     <form id="contact-form-lead"
       class="space-y-6 bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-t-4 border-[#C81E6A]"
     >
+      <!-- Hidden field for form source -->
+      <input type="hidden" name="form_source" value="Leads iš ENTERPRISE HR formos">
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="relative">
           <label for="name" class="block text-sm font-medium text-gray-700 mb-1"
@@ -158,7 +172,7 @@
               name="email"
               required
               class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C81E6A] focus:border-transparent transition duration-200 hover:border-[#C81E6A]/50"
-              placeholder="jusu@imone.lt"
+              placeholder="jūsų@imone.lt"
             />
             <svg
               class="absolute left-3 top-3 w-5 h-5 text-gray-400"
@@ -190,7 +204,7 @@
             required
             class="w-full p-3 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#C81E6A] focus:border-transparent transition duration-200 hover:border-[#C81E6A]/50 resize-y"
             rows="4"
-            placeholder="Nurodykite Jus dominančius sprendimus"></textarea>
+            placeholder="Jūsų komentaras ar klausimas"></textarea>
           <svg
             class="absolute left-3 top-3 w-5 h-5 text-gray-400"
             fill="none"
@@ -320,7 +334,7 @@
       to { transform: rotate(360deg); }
     }
 
-    /* „Loading“ ir „success message“ stiliai iš pirmojo kodo */
+    /* „Loading“ ir „success message“ stiliai */
     #successMessage .loading {
       background: #f3f4f6;
       border: 1px solid #d1d5db;
@@ -486,7 +500,7 @@
 
       if (response.ok) {
         successMessage.innerHTML = `
-          <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg animate-fade-in fixed top-0 left-0 w-full" role="alert">
+          <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg animate-fade-in fixed top-0 left-0 w-full z-1" role="alert">
             <div class="max-w-2xl mx-auto flex items-center justify-between">
               <div>
                 <span>Ačiū, kad užpildėte registracijos formą! Dėl sistemos pristatymo mūsų vadybininkas su Jumis susisieks per dvi darbo dienas.</span>
@@ -538,3 +552,5 @@
     }
   });
 </script>
+
+</MainLayout>

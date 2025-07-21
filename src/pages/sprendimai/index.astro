@@ -3,72 +3,65 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
 const categories = [
   {
-    name: "Darbuotojų įdarbinimas/išdarbinimas",
-    services: [
-      { name: "Atrankų valdymas", href: "/atrankos-valdymas/", icon: "👥" },
-      { name: "Darbuotojo įdarbinimo savitarna", href: "/darbuotoju-idarbinimo-savitarna/", icon: "🆕" },
-      { name: "Darbo sutarčių valdymas", href: "/darbo-sutarciu-valdymas/", icon: "📄" },
-      { name: "Darbo vietos paruošimas", href: "/darbuotojo-idarbinimo-i-imone-valdymas/", icon: "💼" },
-      { name: "Bandomojo laikotarpio valdymas", href: "/bandomojo-laikotarpio-vertinimas-valdymas/", icon: "📋" },
-      { name: "Darbuotojo išdarbinimo valdymas", href: "/darbuotojo-isdarbinimo-is-imones-valdymas/", icon: "🚪" },
-    ],
-  },
-  {
-    name: "Darbuotojo informacijos valdymas",
-    services: [
-      { name: "Darbuotojo duomenų valdymas", href: "/darbuotoju-duomenu-bazes-valdymas/", icon: "📊" },
-      { name: "Išduodamo inventoriaus valdymas", href: "/isduodamo-inventoriaus-darbuotojui-valdymas/", icon: "🔧" },
-      { name: "Intranetas (Įmonės naujienos)", href: "/intraneto-valdymas/", icon: "📰" },
-      { name: "Darbuotojų prašymų valdymas", href: "/darbuotoju-prasymu-valdymas/", icon: "📝" },
-    ],
-  },
-  {
-    name: "Darbo laiko apskaita",
-    services: [
-      { name: "Atostogų prašymų ir kitų nebuvimų valdymas", href: "/atostogu-valdymas/", icon: "🌴" },
-      { name: "Komandiruočių valdymas", href: "/komandiruociu-valdymas/", icon: "✈️" },
-      { name: "Darbo laiko apskaitos žiniaraščiai", href: "/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/", icon: "📅" },
-    ],
-  },
-  {
-    name: "Atitikimo valdymas",
-    services: [
-      { name: "Privalomo supažindinimo su dokumentais valdymas", href: "/privalomo-supazindinimo-su-dokumentais-valdymas/", icon: "📚" },
-      { name: "Darbuotojų testavimas", href: "/testavimo-is-norminiu-dokumentu-valdymas/", icon: "✍️" },
-      { name: "Mokymų valdymas", href: "/mokymu-valdymas/", icon: "🎓" },
-      { name: "Veiklos vertinimas", href: "/veiklos-vertinimas/", icon: "📈" },
-    ],
-  },
-  {
-    name: "Dokumentų valdymas",
-    services: [
-      { name: "Dokumentų valdymas", href: "/dokumumentu-valdymas/", icon: "📑" },
-      { name: "Dokumentacijos plano valdymas", href: "/dokumentacijos-plano-valdymas/", icon: "🗂️" },
-      { name: "Gaunamos/siunčiamos korespondencijos valdymas", href: "/gaunamu-uzklausu-valdymas/", icon: "📨" },
-    ],
-  },
-  {
-    name: "Sutarčių valdymas",
-    services: [
-      { name: "Sutarčių valdymas", href: "/sutarciu-valdymas/", icon: "📎" },
-    ],
-  },
-  {
-    name: "Apskaitomų dokumentų valdymas",
-    services: [
-      { name: "Gaunamų sąskaitų valdymas", href: "/gaunamu-saskaitu-valdymas/", icon: "💳" },
-      { name: "Avansinės apyskaitos valdymas", href: "/avansines-apyskaitos-valdymas/", icon: "💰" },
-      { name: "Kelionės lapų valdymas", href: "/keliones-lapu-valdymas", icon: "🛣️" },
-      { name: "Komandiruočių valdymas", href: "/komandiruociu-valdymas/", icon: "✈️" },
-    ],
-  },
-  {
-    name: "Pirkimų valdymas",
-    services: [
-      { name: "Pirkimų valdymas", href: "/pirkimu-valdymas/", icon: "🛍️" },
-    ],
-  },
-];
+      name: "Personalo savitarna",
+      services: [
+        { name: "Darbuotojo duomenų valdymas", href: "/darbuotoju-duomenu-bazes-valdymas/", icon: "👤" },
+        { name: "Intranetas (Įmonės naujienos)", href: "/intraneto-valdymas/", icon: "📰" },
+        { name: "Darbuotojų prašymų valdymas", href: "/darbuotoju-prasymu-valdymas/", icon: "📝" },
+        { name: "Darbo sutarčių valdymas", href: "/darbo-sutarciu-valdymas/", icon: "📄" },
+        { name: "Atrankų valdymas", href: "/atrankos-valdymas/", icon: "👥" },
+        { name: "Darbuotojo įdarbinimo savitarna", href: "/darbuotoju-idarbinimo-savitarna/", icon: "🆕" },
+        { name: "Darbo vietos paruošimas", href: "/darbuotojo-idarbinimo-i-imone-valdymas/", icon: "💼" },
+        { name: "Bandomojo laikotarpio valdymas", href: "/bandomojo-laikotarpio-vertinimas-valdymas/", icon: "⏳" },
+        { name: "Darbuotojo išdarbinimo valdymas", href: "/darbuotojo-isdarbinimo-is-imones-valdymas/", icon: "🚪" },
+        { name: "Atostogų prašymų ir kitų nebuvimų valdymas", href: "/atostogu-valdymas/", icon: "🌴" },
+        { name: "Komandiruočių valdymas", href: "/komandiruociu-valdymas/", icon: "✈️" },
+        { name: "Darbo laiko apskaitos žiniaraščiai", href: "/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/", icon: "📅" },
+        { name: "Darbuotojų testavimas", href: "/testavimo-is-norminiu-dokumentu-valdymas/", icon: "✍️" },
+        { name: "Mokymų valdymas", href: "/mokymu-valdymas/", icon: "🎓" },
+        { name: "Veiklos vertinimas", href: "/veiklos-vertinimas/", icon: "📈" },
+      ],
+    },
+    {
+      name: "Dokumentų valdymas",
+      services: [
+        { name: "Dokumentų valdymas", href: "/dokumumentu-valdymas/", icon: "📑" },
+        { name: "Dokumentacijos plano valdymas", href: "/dokumentacijos-plano-valdymas/", icon: "🗂️" },
+        { name: "Gaunamos/siunčiamos korespondencijos valdymas", href: "/gaunamu-uzklausu-valdymas/", icon: "📨" },
+        { name: "Privalomo supažindinimo su dokumentais valdymas", href: "/privalomo-supazindinimo-su-dokumentais-valdymas/", icon: "📚" },
+        { name: "Sutarčių valdymas", href: "/sutarciu-valdymas/", icon: "📎" },
+      ],
+    },
+    {
+      name: "Sąskaitų ir pirkimų valdymas",
+      services: [
+        { name: "Gaunamų sąskaitų valdymas", href: "/gaunamu-saskaitu-valdymas/", icon: "💳" },
+        { name: "Pirkimų valdymas", href: "/pirkimu-valdymas/", icon: "🛍️" },
+      ],
+    },
+    {
+      name: "Apskaitomų dokumentų valdymas",
+      services: [
+        { name: "Avansinės apyskaitos valdymas", href: "/avansines-apyskaitos-valdymas/", icon: "💰" },
+        { name: "Kelionės lapų valdymas", href: "/keliones-lapu-valdymas", icon: "🛣️" },
+        { name: "Komandiruočių valdymas", href: "/komandiruociu-valdymas/", icon: "✈️" },
+        { name: "Gaunamų sąskaitų valdymas", href: "/gaunamu-saskaitu-valdymas/", icon: "💳" },
+      ],
+    },
+    {
+      name: "Turto valdymas",
+      services: [
+        { name: "Išduodamo inventoriaus valdymas", href: "/isduodamo-inventoriaus-darbuotojui-valdymas/", icon: "🔧" },
+      ],
+    },
+    {
+      name: "Sprendimų valdymas",
+      services: [
+        { name: "Valdybos posėdžiai", href: "/valdybos-posedziu-valdymas", icon: "👥" },
+      ],
+    },
+  ];
+
 import BaseHead from "../../components/BaseHead.astro";
 
 const seoTitle = "Verslo sprendimai: personalo, dokumentų valdymas | Vecticum";
