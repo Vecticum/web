@@ -12,5 +12,6 @@ export default defineConfig({
   site: "https://vecticum.lt",
   integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
   adapter: vercel(),
+  trailingSlash: "never",
 });
 

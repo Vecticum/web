@@ -6,12 +6,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="en">  <head>
     <BaseHead 
       title={Astro.props.title ?? SITE_TITLE}
       description={Astro.props.description ?? SITE_DESCRIPTION}
-      image={Astro.props.ogImage ?? ""}
+      image={Astro.props.image ?? ""}
+      canonical={Astro.props.canonical ?? ""}
     />
   </head>
   <body class="">
