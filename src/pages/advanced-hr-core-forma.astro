@@ -3,10 +3,16 @@ import BaseHead from "../components/BaseHead.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 const seoTitle = "ADVANCED HR core paketas | Vecticum";
 const seoDescription = "Registruokitės ADVANCED HR Core paketui ir išbandykite nemokamai. Sužinokite, kaip Vecticum gali padėti optimizuoti verslo valdymo procesus.";
-const seoImage = '~/assets/images/logo.webp'; // Optional
+const seoImage = '~/assets/images/logo.webp';
+const canonical = 'https://vecticum.lt/advanced-hr-core-forma';
 ---
 
-<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
+<BaseHead 
+  title={seoTitle} 
+  description={seoDescription} 
+  image={seoImage}
+  canonical={canonical}
+/>
 
 <MainLayout>
 
