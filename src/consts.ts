@@ -3,6 +3,7 @@
 
 export const SITE_TITLE = "Dokumentų valdymo sistema​ | DVS įrankis | Vecticum";
 export const SITE_DESCRIPTION = "Dokumentų valdymo sistema​, automatizuoti verslo procesų sprendimai: personalo, dokumentų, sąskaitų, verslo procesų valdymas ir daugiau. Išbandykite dabar!";
+export const OMNISEND_BRAND_ID = "654b561447acf802c1017b43";// Replace with your actual Omnisend Brand ID
 
 export const CLIENTS = [
   {

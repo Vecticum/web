@@ -2,7 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, OMNISEND_BRAND_ID } from "../consts";
 
 interface Props {
   title: string;
@@ -84,3 +84,11 @@ const { title, description, image = "/blog-placeholder-1.jpg", canonical } = Ast
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Omnisend Integration -->
+<script is:inline define:vars={{ brandId: OMNISEND_BRAND_ID }}>
+  window.omnisend = window.omnisend || [];
+  omnisend.push(["brandID", brandId]);
+  omnisend.push(["track", "$pageViewed"]);
+  !function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://omnisnippet1.com/inshop/launcher-v2.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
+</script>
