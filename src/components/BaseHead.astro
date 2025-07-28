@@ -29,7 +29,7 @@ const { title, description, image = "/blog-placeholder-1.jpg", canonical } = Ast
 />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Google tag (gtag.js) -->
+<!-- Google Ads gtag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-556627524"></script>
 <script is:inline>
   window.dataLayer = window.dataLayer || [];
@@ -38,6 +38,12 @@ const { title, description, image = "/blog-placeholder-1.jpg", canonical } = Ast
   }
   gtag('js', new Date());
   gtag('config', 'AW-556627524');
+</script>
+
+<!-- Google Analytics gtag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7Q1V1LNGEG"></script>
+<script is:inline>
+  gtag('config', 'G-7Q1V1LNGEG');
 </script>
 
 <!-- Font preloads -->
