@@ -36,10 +36,28 @@ const versions = defineCollection({
   loader: glob({ base: "./src/content/versions", pattern: "**/*.{md,mdx}" }),
   schema: z.object({
     version: z.string(),
-    releaseDate: z.coerce.date(),
-    description: z.string(),
-    features: z.array(z.string()),
-    improvements: z.array(z.string()).optional(),
+    releaseDate: z.string(),
+    description: z.string().optional(),
+    features: z.array(
+      z.union([
+        z.string(),
+        z.object({
+          text: z.string(),
+          image: z.string().optional(),
+          imageAlt: z.string().optional(),
+        })
+      ])
+    ),
+    improvements: z.array(
+      z.union([
+        z.string(),
+        z.object({
+          text: z.string(),
+          image: z.string().optional(),
+          imageAlt: z.string().optional(),
+        })
+      ])
+    ).optional(),
   }),
 });
 

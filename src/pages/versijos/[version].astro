@@ -20,10 +20,8 @@ const { Content } = await render(version);
     <h1
       class="mt-2 mx-auto text-center text-4xl font-semibold tracking-normal text-balance text-gray-950 sm:text-5xl"
     >
-      Version {version.data.version}
-    </h1>
-    <p class="mt-4 text-center text-lg text-gray-600">
-      Released on: {version.data.releaseDate.toDateString()}
+      Versija {version.data.version}    </h1>    <p class="mt-4 text-center text-lg text-gray-600">
+      Išleidimo data: {version.data.releaseDate.split('-').reverse().join('.')}
     </p>
   </div>
   <div
@@ -32,7 +30,7 @@ const { Content } = await render(version);
     <div
       class="border px-4 group flex flex-col border-gray-200 rounded-lg bg-white-100 justify-start items-start shadow-md"
     >
-      <h2 class="text-xl font-semibold text-gray-950">Features</h2>
+      <h2 class="text-xl font-semibold text-gray-950">Funkcionalumai</h2>
       <ul class="list-disc text-sm text-gray-600">
         {version.data.features.map((feature) => <li>{feature}</li>)}
       </ul>
@@ -40,7 +38,7 @@ const { Content } = await render(version);
     {
       version.data.improvements && (
         <div class="border group flex flex-col sm:gap-4 border-gray-200 rounded-lg px-4 bg-white-100 justify-start items-start shadow-md">
-          <h2 class="text-xl font-semibold text-gray-950">Improvements</h2>
+          <h2 class="text-xl font-semibold text-gray-950">Atnaujinimai</h2>
           <ul class="list-disc text-sm text-gray-600">
             {version.data.improvements.map((improvement) => (
               <li>{improvement}</li>

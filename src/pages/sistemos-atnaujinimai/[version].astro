@@ -1,0 +1,88 @@
+---
+import { getCollection, render } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const versions = await getCollection("versions");
+  return versions.map((version) => ({
+    params: { version: version.id },
+    props: version,
+  }));
+}
+
+const version = Astro.props;
+
+const { Content } = await render(version);
+---
+
+<MainLayout>
+  <div class="py-8 sm:py-16 md:py-20">
+    <h1
+      class="mt-2 mx-auto text-center text-4xl font-semibold tracking-normal text-balance text-gray-950 sm:text-5xl"
+    >
+     {version.data.version}    </h1>    <p class="mt-4 text-center text-lg text-gray-600">
+      Išleidimo data: {version.data.releaseDate.split('-').reverse().join('.')}
+    </p>
+  </div>
+  <div
+    class="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-16 md:mb-20 prose"
+  >    <div
+      class="border px-6 pt-1 pb-6 group flex flex-col border-gray-200 rounded-lg bg-white-100 justify-start items-start shadow-md"
+    >
+      <h2 class="text-xl font-semibold text-gray-950 mb-4">Funkcionalumai</h2>
+      <div class="space-y-4 w-full">
+        {version.data.features.map((feature) => (
+          <div class="flex flex-col space-y-2">            {typeof feature === 'string' ? (
+              <div class="text-sm text-gray-600" set:html={`• ${feature}`}></div>
+            ) : (
+              <div class="space-y-2">
+                <div class="text-sm text-gray-600" set:html={`• ${feature.text}`}></div>
+                {feature.image && (
+                  <div class="flex justify-center">
+                    <img 
+                      src={feature.image} 
+                      alt={feature.imageAlt || feature.text}
+                      class="rounded-lg shadow-sm max-w-md w-full h-auto"
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+    {
+      version.data.improvements && (
+        <div class="border px-6 pt-2 pb-6 group flex flex-col border-gray-200 rounded-lg bg-white-100 justify-start items-start shadow-md">
+          <h2 class="text-xl font-semibold text-gray-950 mb-4">Klaidų pataisymai</h2>
+          <div class="space-y-4 w-full">
+            {version.data.improvements.map((improvement) => (
+              <div class="flex flex-col space-y-2">                {typeof improvement === 'string' ? (
+                  <div class="text-sm text-gray-600" set:html={`• ${improvement}`}></div>
+                ) : (
+                  <div class="space-y-2">
+                    <div class="text-sm text-gray-600" set:html={`• ${improvement.text}`}></div>
+                    {improvement.image && (
+                      <div class="flex justify-center">
+                        <img 
+                          src={improvement.image} 
+                          alt={improvement.imageAlt || improvement.text}
+                          class="rounded-lg shadow-sm max-w-md w-full h-auto"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    <div class="prose max-w-none">
+      <Content />
+    </div>
+  </div>
+</MainLayout>

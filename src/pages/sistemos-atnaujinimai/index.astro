@@ -7,8 +7,8 @@ const versions = await getCollection("versions");
 
 export const prerender = true;
 
-const seoTitle = "Programinės Įrangos Versijos | Vecticum";
-const seoDescription = "Programinės įrangos versijos ir atnaujinimai. Sekite funkcijų patobulinimus, klaidų ištaisymus ir kitus įgynendintus sprendimus. ";
+const seoTitle = "Sistemos atnaujinimai | Vecticum";
+const seoDescription = "Sistemos atnaujinimai ir naujausios versijos. Sekite funkcijų patobulinimus, klaidų ištaisymus ir kitus sprendimų pagerinimus.";
 const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
 
@@ -18,9 +18,9 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
     <!-- Hero -->
   <section class="text-center py-20 px-6 bg-gradient-to-b from-white to-[#f4f7fa]">
     <div class="max-w-3xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Versijos</h1>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Sistemos atnaujinimai</h1>
       <p class="text-lg text-gray-600">
-        Visi VECTICUM sistemos atnaujinimai – vienoje vietoje
+        Sužinokite apie naujausius VECTICUM sistemos atnaujinimus vienoje vietoje. Čia rasite informaciją apie naujas funkcijas, išspręstas klaidas ir patobulintus sprendimus, kurie padeda dirbti greičiau ir patogiau. Nuolat atnaujiname šį puslapį, kad galėtumėte maksimaliai išnaudoti VECTICUM galimybes savo įmonei!
       </p>
     </div>
   </section>
@@ -34,10 +34,8 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
             {version.data.version}
           </h2>          <p class="text-sm text-gray-600">
             Išleidimo data: {version.data.releaseDate.split('-').reverse().join('.')}
-          </p>
-
-          <a
-            href={`/versijos/${version.id}`}
+          </p>          <a
+            href={`/sistemos-atnaujinimai/${version.id}`}
             class="mt-4 inline-block rounded-md bg-accent px-5 py-2.5 text-base font-medium text-white shadow"
           >
             Daugiau
