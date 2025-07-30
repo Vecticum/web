@@ -2,7 +2,7 @@
 title: 'Neliko prievolės saugoti popierines sąskaitas faktūras'
 description: 'Nuo 2021 sausio 1 dienos įsigaliojusioje Pridėtinės vertės mokesčio įstatymo redakcijoje, nebeliko lig tol galiojusio reikalavimo saugoti popierines sąskaitas faktūras.'
 pubDate: '2021-01-14'
-heroImage: '/media/blog/popierines-sf.jpg'
+heroImage: '/media/blog/popierines-sf.webp'
 ---
 
 <p class="x_MsoNormal">Nuo 2021<span lang="LT"> sausio 1 dienos įsigaliojusioje Pridėtinės vertės mokesčio įstatymo redakcijoje, nebeliko lig tol galiojusio reikalavimo saugoti popierines sąskaitas faktūras.<span style="color: #c81f6a;"> </span></span><span style="text-decoration: underline; color: #c81f6a;"><strong><a style="color: #c81f6a; text-decoration: underline;" href="https://www.vz.lt/finansai-apskaita/2021/01/12/palengvejimas-neliko-prievoles-saugoti-popieriniu-saskaitu-fakturu?utm_source=nl&amp;utm_medium=email&amp;utm_campaign=naujienlaiskis-premium-rec&amp;oohb4" target="_blank" rel="noopener noreferrer" data-auth="NotApplicable">Palengvėjimas: neliko prievolės saugoti popierinių sąskaitų faktūrų - Verslo žinios (vz.lt)</a></strong></span></p>

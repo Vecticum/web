@@ -2,7 +2,7 @@
 title: 'CargoGO ir Vecticum darbuotojų veiklos vertinimo sprendimas'
 description: 'Atraskite, kaip Cargogo įdiegė VECTICUM darbuotojų veiklos vertinimo sprendimą, kuris padeda sistemingai vertinti komandos rezultatus ir didina įmonės efektyvumą.'
 pubDate: '2021-03-02'
-heroImage: '/media/blog/veiklos-vertinimas.jpg'
+heroImage: '/media/blog/veiklos-vertinimas.webp'
 ---
 
 <strong>Darbuotojų veiklos vertinimo procesas tampa vis svarbesnis šiuolaikiniame verslo pasaulyje, kuriame darbuotojai nori dažniau ir patogiau išgirsti grįžtamąjį ryšį iš savo vadovų, bei atidžiau sekti savo karjeros progresą. Tai taip pat tampa vis vertingesniu įrankiu vadovams,  kurie nori efektyviai įvertinti savo darbuotojų motyvaciją, pasiektus rezultatus ir suderinti ateities tikslus su savo komandos nariais.</strong>

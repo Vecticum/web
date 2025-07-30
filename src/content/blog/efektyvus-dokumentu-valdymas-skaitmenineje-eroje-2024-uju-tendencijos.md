@@ -2,7 +2,7 @@
 title: 'Efektyvus dokumentų valdymas skaitmeninėje eroje: 2024-ųjų TOP 5 tendencijos'
 description: 'Dokumentų valdymo sistemos (DVS) keičiasi: technologijų pažanga leidžia įmonėms ir įstaigoms efektyviau skaitmenizuoti ir valdyti dokumentus.'
 pubDate: '2024-06-03'
-heroImage: '/media/blog/top5-tendencijos.png'
+heroImage: '/media/blog/top5-tendencijos.webp'
 ---
 
 <strong>Skaitmeninėje eroje <span style="text-decoration: underline;"><a href="https://vecticum.lt/dokumentu-valdymas/">dokumentų valdymas</a></span> tampa vis svarbesnis tiek įmonėms, tiek įstaigoms. Atėjus 2024-iesiems, dokumentų valdymo sistemos (<span style="text-decoration: underline;"><a href="https://vecticum.lt/sprendimai/#dokument-valdymas">DVS</a></span>) susiduria su reikšmingais pokyčiais, kuriuos skatina technologijų pažanga ir besikeičiantys organizaciniai poreikiai. Pateikiame pagrindines tendencijas, kurios keičia šią sritį ir darys didelį poveikį ateityje.</strong>

@@ -2,7 +2,7 @@
 title: 'VECTICUM tampa Lietuvos projektų vadybos asociacijos (LPVA) nariais!'
 description: 'Džiaugiamės galėdami pranešti, kad VECTICUM tapo Lietuvos projektų vadybos asociacijos LPVA | IPMA Lithuania nare!'
 pubDate: '2024-06-03'
-heroImage: '/media/blog/lpva-nariai.png'
+heroImage: '/media/blog/lpva-nariai.webp'
 ---
 
 <div>

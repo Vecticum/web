@@ -2,7 +2,7 @@
 title: "Kaip išsirinkti tinkamą personalo valdymo sistemą?"
 description: "Apžvelgiame svarbiausias personalo valdymo tendencijas 2024 metais ir kaip jos paveiks įmones."
 pubDate: "2024-10-01"
-heroImage: "/media/blog/Kaip_issirinkti_hr_sistema.png" 
+heroImage: "/media/blog/Kaip_issirinkti_hr_sistema.webp" 
 
 ---
 

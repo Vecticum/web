@@ -2,7 +2,7 @@
 title: 'VECTICUM gavo 100 000 JAV dolerių investiciją iš GOOGLE'
 description: 'Lietuvos startuolis „Vecticum“, kuriantis darbuotojų savitarnos ir verslo procesų automatizavimo platformą, gavo 100 000 JAV dolerių investiciją iš technologijų gigantės „Google“'
 pubDate: '2024-01-04'
-heroImage: '/media/blog/google-parama.jpg'
+heroImage: '/media/blog/google-parama.webp'
 
 ---
 
