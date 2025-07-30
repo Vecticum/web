@@ -27,9 +27,7 @@ const headerImg = '~/assets/images/docs-img.png';
 
 
 <header
-  class="sticky top-0 z-50 bg-white py-2 font-semibold shadow transition-transform duration-300"
-  :class="{ '-translate-y-full': hideHeader, 'translate-y-0': !hideHeader }"
-  x-data="{ 
+  class="sticky top-0 z-50 bg-white py-2 font-semibold shadow transition-transform duration-300"  :class="{ '-translate-y-full': hideHeader, 'translate-y-0': !hideHeader }"  x-data="{ 
     isOpen: false, 
     flyoutOpen: false, 
     planaiFlyoutOpen: false, 
@@ -38,7 +36,7 @@ const headerImg = '~/assets/images/docs-img.png';
     apieOpen: false, 
     planaiOpen: false, 
     lastScroll: 0, 
-    hideHeader: false 
+    hideHeader: false
   }"
   x-init="window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -393,16 +391,14 @@ const headerImg = '~/assets/images/docs-img.png';
         </nav>
       </div>
 
-      <div class="flex items-center gap-4">
-        <!-- Desktop Login/Register -->
+      <div class="flex items-center gap-4">        <!-- Desktop Login/Register -->
         <div class="sm:flex sm:gap-4 hidden">
-          <a
-            class="rounded-full bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white shadow"
-            href="/registracijademo"
-            target="_blank"
+          <button
+            @click="trialPopupOpen = true"
+            class="rounded-full bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white shadow hover:bg-accent/90 transition-colors"
           >
             Išbandyti
-          </a>
+          </button>
           <a
             class="rounded-full border-2 border-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-black shadow"
             href="https://app.vecticum.com/"
@@ -706,25 +702,21 @@ const headerImg = '~/assets/images/docs-img.png';
         >
           Pagalba >
         </a>
-      </div>
-
-      <!-- Action Buttons -->
+      </div>      <!-- Action Buttons -->
       <div class="flex flex-col gap-4 mt-8">
-        <a
-          class="rounded-full bg-accent py-3 text-center text-base font-medium text-white shadow"
-          href="https://app.vecticum.com/"
-          target="_blank"
+        <button
+          @click="trialPopupOpen = true; isOpen = false"
+          class="rounded-full bg-accent py-3 text-center text-base font-medium text-white shadow hover:bg-accent/90 transition-colors"
         >
           Išbandyti
-        </a>
+        </button>
         <a
           class="rounded-full border-2 border-accent py-3 text-center text-base font-medium text-black shadow"
           href="https://app.vecticum.com/"
           target="_blank"
         >
           Prisijungti
-        </a>
-      </div>
+        </a>      </div>
     </div>
   </div>
 </header>

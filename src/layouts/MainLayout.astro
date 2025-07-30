@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/shared/Footer.astro";
 import Header from "../components/shared/Header.astro";
+import TrialPopup from "../components/common/TrialPopup.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 ---
 
@@ -13,12 +14,19 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
       image={Astro.props.image ?? ""}
       canonical={Astro.props.canonical ?? ""}
     />
-  </head>
-  <body class="">
+  </head>  <body 
+    class=""
+    x-data="{ 
+      trialPopupOpen: false
+    }"
+  >
     <Header />
     <main class="">
       <slot />
     </main>
     <Footer />
+    
+    <!-- Trial Popup - positioned over entire page -->
+    <TrialPopup />
   </body>
 </html>
