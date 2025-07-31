@@ -14,7 +14,7 @@ features:
 ```yaml
 features:
   - text: "Funkcionalumas su nuotrauka"
-    image: "/media/services/pavyzdys.png"
+    image: "/media/services/pavyzdys.webp"
     imageAlt: "Alternatyvus tekstas nuotraukai"
 ```
 
@@ -32,7 +32,7 @@ features:
 ```yaml
 features:
   - text: "Funkcionalumas su nuoroda ir nuotrauka. Skaitykite daugiau: <a href='https://vecticum.lt/puslapis' target='_blank' class='text-blue-600 hover:text-blue-800 underline'>čia</a>"
-    image: "/media/services/pavyzdys.png"
+    image: "/media/services/pavyzdys.webp"
     imageAlt: "Alternatyvus tekstas"
 ```
 
@@ -50,18 +50,15 @@ Nuorodų CSS klasės:
 ---
 version: "Vecticum sistemos 2024 rugsėjo mėn. naujienos"
 releaseDate: "2024-09-25"
-features:
-  - text: "Nauja darbuotojų duomenų bazės valdymo sistema"
-    image: "/media/services/darbuotoju-duomenu-bazes-hero.png"
+features:  - text: "Nauja darbuotojų duomenų bazės valdymo sistema"
+    image: "/media/services/darbuotoju-duomenu-bazes-hero.webp"
     imageAlt: "Darbuotojų duomenų bazės valdymo sistema"
   - "Paprastas funkcionalumas be nuotraukos"
-  - "Patobulinta savitarna. Daugiau informacijos: <a href='https://vecticum.lt/darbuotoju-idarbinimo-savitarna/' target='_blank' class='text-blue-600 hover:text-blue-800 underline'>Darbuotojų įdarbinimo savitarna</a>"
-  - text: "Darbo sutarčių automatinis generavimas su nuoroda"
-    image: "/media/services/darbo-sutarciu-hero.png"  
+  - "Patobulinta savitarna. Daugiau informacijos: <a href='https://vecticum.lt/darbuotoju-idarbinimo-savitarna/' target='_blank' class='text-blue-600 hover:text-blue-800 underline'>Darbuotojų įdarbinimo savitarna</a>"  - text: "Darbo sutarčių automatinis generavimas su nuoroda"
+    image: "/media/services/darbo-sutarciu-hero.webp"  
     imageAlt: "Darbo sutarčių valdymo sistema"
-improvements:
-  - text: "Pagreitintas duomenų įkėlimas iki 50%"
-    image: "/media/services/greitis.png"
+improvements:  - text: "Pagreitintas duomenų įkėlimas iki 50%"
+    image: "/media/services/greitis.webp"
     imageAlt: "Sistemos greičio patobulinimas"
   - "Patobulinta vartotojo sąsaja su <a href='https://vecticum.lt/kontaktai' target='_blank' class='text-blue-600 hover:text-blue-800 underline'>palaikymo komanda</a>"
 ---
