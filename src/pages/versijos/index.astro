@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
-import BaseHead from "../../components/BaseHead.astro";
 
 const versions = await getCollection("versions");
 
@@ -12,9 +11,7 @@ const seoDescription = "Programinės įrangos versijos ir atnaujinimai. Sekite f
 const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
 
-<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
-
-<MainLayout>
+<MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
     <!-- Hero -->
   <section class="text-center py-20 px-6 bg-gradient-to-b from-white to-[#f4f7fa]">
     <div class="max-w-3xl mx-auto">

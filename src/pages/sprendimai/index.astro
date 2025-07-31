@@ -59,19 +59,14 @@ const categories = [
       services: [
         { name: "Valdybos posėdžiai", href: "/valdybos-posedziu-valdymas", icon: "👥" },
       ],
-    },
-  ];
-
-import BaseHead from "../../components/BaseHead.astro";
+    },  ];
 
 const seoTitle = "Verslo sprendimai: personalo, dokumentų valdymas | Vecticum";
 const seoDescription = "Vecticum siūlo įvairius verslo sprendimus: personalo, dokumentų, pirkimų ir sąskaitų valdymą. Automatizuokite procesus ir optimizuokite savo verslo veiklą";
 const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
 
-<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
-
-<MainLayout>
+<MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
   <section class="bg-[#F8FAFC] py-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
       <h1 class="text-4xl sm:text-5xl font-bold text-center text-gray-900 mb-16">Sistemos sprendimai</h1>

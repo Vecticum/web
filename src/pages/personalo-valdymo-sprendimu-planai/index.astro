@@ -2,7 +2,6 @@
 import ContactForm from "../../components/home/ContactForm.astro";
 import PricingDetails from "../../components/home/PricingDetails.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
-import BaseHead from "../../components/BaseHead.astro";
 
 import Image from "../../components/common/Image.astro";
 
@@ -13,9 +12,7 @@ const seoDescription = "Lankstūs personalo valdymo sprendimų planai. Efektyvus
 const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
 
-<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
-
-<MainLayout>
+<MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
 <!-- HERO PRADŽIA -->
 <div
   class="relative py-20 px-6 sm:px-8 flex items-center overflow-hidden text-white bg-gradient-to-br from-[#121629] via-[#3C7099] to-[#1c2237]"

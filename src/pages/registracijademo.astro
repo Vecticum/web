@@ -1,14 +1,11 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 const seoTitle = "Procesų valdymo sistemos demonstracija | Vecticum";
 const seoDescription = "Registruokitės nemokamai Vecticum demonstracijai ir sužinokite, kaip efektyviai valdyti savo verslo procesus. Atraskite automatizuotus sprendimus savo įmonei.";
 const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
 
-<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
-
-<MainLayout>
+<MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
 
 <div class="text-center pt-12 px-4 sm:px-6 lg:px-8">
   <h1 class="text-4xl sm:text-5xl font-bold text-gray-900">

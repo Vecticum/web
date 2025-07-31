@@ -1,5 +1,4 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 const seoTitle = "Basic HR Core paketas personalo valdymui | Vecticum";
 const seoDescription = "Registruokitės Basic HR Core paketui ir išbandykite nemokamai. Sužinokite, kaip Vecticum gali padėti optimizuoti verslo valdymo procesus.";
@@ -7,14 +6,7 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
 const canonical = 'https://vecticum.lt/basic-hr-core-forma';
 ---
 
-<BaseHead 
-  title={seoTitle} 
-  description={seoDescription} 
-  image={seoImage}
-  canonical={canonical}
-/>
-
-<MainLayout>
+<MainLayout title={seoTitle} description={seoDescription} image={seoImage} canonical={canonical}>
 
 <div class="text-center pt-12 px-4 sm:px-6 lg:px-8">
   <h1 class="text-4xl sm:text-5xl font-bold text-gray-900">

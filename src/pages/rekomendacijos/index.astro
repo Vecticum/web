@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
-import BaseHead from "../../components/BaseHead.astro";
 
 import dussmann from '/src/assets/media/dussmann.jpg';
 import iki from '/src/assets/media/iki.png';
@@ -64,9 +63,7 @@ const seoDescription = "Sužinokite, kaip Vecticum padeda įmonėms automatizuot
 const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
 
-<BaseHead title={seoTitle} description={seoDescription} image={seoImage} />
-
-<MainLayout>
+<MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
   <!-- Hero -->
   <section class="text-center py-20 px-6 bg-gradient-to-b from-white to-[#f4f7fa]">
     <div class="max-w-3xl mx-auto">
