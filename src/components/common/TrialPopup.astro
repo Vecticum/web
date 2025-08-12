@@ -16,9 +16,8 @@
 >
   <!-- Backdrop -->
   <div class="fixed inset-0 bg-black bg-opacity-50"></div>
-  
-  <!-- Modal Container -->
-  <div class="flex min-h-screen items-center justify-center p-4">    <div 
+    <!-- Modal Container -->
+  <div class="flex min-h-screen items-start justify-center p-4 pt-[10vh]"><div 
       x-show="trialPopupOpen"
       x-transition:enter="transition ease-out duration-300"
       x-transition:enter-start="opacity-0 transform scale-95"
@@ -26,7 +25,7 @@
       x-transition:leave="transition ease-in duration-200"
       x-transition:leave-start="opacity-100 transform scale-100"
       x-transition:leave-end="opacity-0 transform scale-95"
-      class="relative w-full max-w-xl transform rounded-2xl bg-white p-6 shadow-xl"
+      class="relative w-full max-w-2xl transform rounded-2xl bg-white p-8 shadow-xl"
       @click.stop
     >
       <!-- Close Button -->
@@ -37,61 +36,71 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
-      </button>
-
-      <!-- Header -->
-      <div class="mb-6">
-        <h4 class="text-2xl font-bold text-gray-900">
+      </button>      <!-- Header -->
+      <div class="mb-8 text-center">
+        <h3 class="text-2xl font-bold text-gray-900 leading-tight">
           Ieškote VECTICUM savitarnos ar domitės kaip naujas klientas?
-        </h4>
+        </h3>
+        <p class="mt-2 text-gray-600">Pasirinkite tinkamiausią variantą</p>
       </div>      <!-- Option 1 -->
       <div class="mb-4">
         <a 
           href="https://app.vecticum.com/"
           target="_blank"
-          class="block w-full p-4 rounded-lg border-2 border-gray-200 hover:border-[#3C7099] transition-colors group relative"
+          class="block w-full p-5 rounded-lg bg-gradient-to-r from-[#3C7099] to-[#4A7FA7] text-white hover:from-[#2a5470] hover:to-[#3C7099] hover:shadow-lg transition-all duration-200 group relative overflow-hidden"
         >
-          <div class="flex items-start justify-between mb-3">
-            <h4 class="font-medium text-gray-900 pr-2">Ieškau, kaip prisijungti prie VECTICUM savitarnos</h4>
-            <!-- Badge for existing users -->
-            <div class="bg-[#3C7099] text-white text-xs px-2 py-1 rounded-full font-medium whitespace-nowrap">
-              Esamiems vartotojams
+          <!-- Subtle decoration -->
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -translate-y-16 translate-x-16"></div>
+          
+          <div class="relative flex items-center justify-between">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">                <div class="flex-shrink-0 w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg">Esamiems klientams</h4>
+                  <p class="text-white text-opacity-90 text-sm">Įmonė, kurioje dirbate, naudojasi VECTICUM sistema, ir jūs jau turite sukurtą vartotojo paskyrą. Spauskite čia ir įveskite savo prisijungimo duomenis.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="flex-shrink-0">
+              <svg class="w-6 h-6 text-white group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
             </div>
           </div>
-          <ul class="text-sm text-gray-600 space-y-1 pr-12">
-            <li>• Noriu prisijungti prie VECTICUM savitarnos;</li>
-            <li>• Noriu pateikti atostogų prašymą ar kitą personalo užklausą;</li>
-            <li>• Noriu rasti gautą dokumentą;</li>
-            <li>• Noriu atlikti kitus veiksmus VECTICUM savitarnoje.</li>
-          </ul>
-          <div class="absolute top-1/2 right-4 transform -translate-y-1/2">
-            <svg class="w-6 h-6 text-[#3C7099] group-hover:text-[#2a5470] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </div>
         </a>
-      </div><!-- Option 2 -->
+      </div>      <!-- Option 2 -->
       <div class="mb-6">
         <a 
           href="/registracijademo"
-          class="block w-full p-4 rounded-lg border-2 border-gray-200 hover:border-[#C81F6A] transition-colors group relative"
+          class="block w-full p-5 rounded-lg bg-gradient-to-r from-[#C81F6A] to-[#E91E63] text-white hover:from-[#a31755] hover:to-[#C81F6A] hover:shadow-lg transition-all duration-200 group relative overflow-hidden"
         >
-          <div class="flex items-start justify-between mb-3">
-            <h4 class="font-medium text-gray-900 pr-2">Noriu susipažinti su VECTICUM sistema</h4>
-            <!-- Badge for new clients -->
-            <div class="bg-[#C81F6A] text-white text-xs px-2 py-1 rounded-full font-medium whitespace-nowrap">
-              Naujiems klientams
+          <!-- Subtle decoration -->
+          <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -translate-y-16 translate-x-16"></div>
+          
+          <div class="relative flex items-center justify-between">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-2">                <div class="flex-shrink-0 w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold text-lg">Naujiems klientams</h4>
+                  <p class="text-white text-opacity-90 text-sm">Norite sužinoti daugiau apie VECTICUM sistemą? Užsiregistruokite konsultacijai ir mes su jumis susisieksime.</p>
+                </div>
+              </div>
             </div>
-          </div>
-          <ul class="text-sm text-gray-600 space-y-1 pr-12">
-            <li>• Noriu išbandyti VECTICUM demonstracinę aplinką;</li>
-            <li>• Noriu VECTICUM sistemos pristatymo/prezentacijos;</li>
-            <li>• Noriu sužinoti daugiau informacijos apie VECTICUM sistemos naudojimą.</li>
-          </ul>
-          <div class="absolute top-1/2 right-4 transform -translate-y-1/2">
-            <svg class="w-6 h-6 text-[#C81F6A] group-hover:text-[#a31755] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
+            
+            <div class="flex-shrink-0">
+              <svg class="w-6 h-6 text-white group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
           </div>
         </a>
       </div></div>
