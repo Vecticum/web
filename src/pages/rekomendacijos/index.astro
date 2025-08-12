@@ -48,14 +48,14 @@ const recommendations = await getCollection("recomendations");
 export const prerender = true;
 
 const partner = [
-  { src: "/media/partners/Google_cloud.png", href: "https://www.google.com" },
-  { src: "/media/partners/dokobit.png", href: "https://www.google.com" },
-  { src: "/media/partners/finvalda.png", href: "https://www.google.com" },
-  { src: "/media/partners/fortevento.png", href: "https://www.google.com" },
-  { src: "/media/partners/infotek.png", href: "https://www.google.com" },
-  { src: "/media/partners/marksign.png", href: "https://www.google.com" },
-  { src: "/media/partners/rivil.png", href: "https://www.google.com" },
-  { src: "/media/partners/softera.png", href: "https://www.google.com" },
+  { src: "/media/partners/Google_cloud.png", href: "https://cloud.google.com/", alt: "Google Cloud - debesų kompiuterijos paslaugos" },
+  { src: "/media/partners/dokobit.png", href: "https://www.dokobit.com/", alt: "Dokobit - elektroninio parašo sprendimai" },
+  { src: "/media/partners/finvalda.png", href: "https://finvalda.lt/", alt: "Finvalda - finansų valdymo sprendimai" },
+  { src: "/media/partners/fortevento.png", href: "https://fortevento.lt/", alt: "Fortevento - verslo konsultacijų paslaugos" },
+  { src: "/media/partners/infotek.png", href: "https://www.infotec.lt/", alt: "Infotek - informacinių technologijų sprendimai" },
+  { src: "/media/partners/marksign.png", href: "https://marksign.lt/", alt: "MarkSign - elektroninio parašo technologijos" },
+  { src: "/media/partners/rivil.png", href: "https://www.rivile.lt/", alt: "Rivil - IT infrastruktūros sprendimai" },
+  { src: "/media/partners/softera.png", href: "https://www.softera.lt/", alt: "Softera - programinės įrangos sprendimai" },
 ];
 
 const seoTitle = "Klientų atsiliepimai ir sėkmės Istorijos | Vecticum";
@@ -94,12 +94,9 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
               <h2 class="text-xl font-semibold text-gray-900 mb-2">
                 {rec.data.title}
               </h2>
-              <p class="text-gray-600 text-sm mb-4 line-clamp-4">{rec.data.description}</p>
-              <a href={rec.data.link} class="inline-flex items-center gap-2 text-accent hover:text-accent-dark font-medium mt-auto">
+              <p class="text-gray-600 text-sm mb-4 line-clamp-4">{rec.data.description}</p>              <a href={rec.data.link} class="inline-flex items-center gap-2 text-accent hover:text-accent-dark font-medium mt-auto">
                 Skaityti daugiau
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 01..." />
-                </svg>
+                <span class="text-lg" aria-label="Rodyklė dešinėn">></span>
               </a>
             </div>
           </article>
@@ -110,25 +107,20 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
 
   <!-- Trumpi atsiliepimai -->
   <section class="bg-gray-50 py-20">
-  <div class="max-w-6xl mx-auto px-6 space-y-16">
-    <div class="flex flex-col md:flex-row items-center gap-8 border-b pb-12">
-      <Image src={retal} alt="Retal logo" class="w-32 h-auto" />
+  <div class="max-w-6xl mx-auto px-6 space-y-16">    <div class="flex flex-col md:flex-row items-center gap-8 border-b pb-12">
+      <Image src={retal} alt="Retal - PET pakuočių gamintoja" class="w-32 h-auto" />
       <div class="flex-1 text-gray-700 text-lg leading-relaxed">
           <p>Naudojame ir komandiruočių, ir atostogų valdymo programas. Neseniai įsivedėme veiklos vertinimo programą. Pasakysiu, kad „Vecticum“ produktas komandiruočių valdyme mums labai padeda. Business trip sprendimas labai patogus. Čekiuką gali vietoje nufotografuoti. Viskas įkraunama iškart į sistemą. Kelionių agentūra, kuri taip pat turi prieiga prie programos, įkelia savo dokumentus. Tai mums labai palengvina procesą. Planuojame daryti sklaidą ir į kitas mūsų grupės Europoje įmones. Su „Vecticum“ komanda lengva komunikuoti, atsižvelgia į norus, į įmonės specifiką</p>
           <p class="mt-4 text-sm italic">Aušra Čepulienė, <strong>„Retal Industrines“ įmonių grupės, gaminančios PET pakuotes, personalo vadovė</strong></p>
         </div>
-      </div>
-
-    <div class="flex flex-col md:flex-row items-center gap-8 border-b pb-12">
-      <Image src={woodline} alt="Woodline logo" class="w-28 h-auto" />
+      </div>    <div class="flex flex-col md:flex-row items-center gap-8 border-b pb-12">
+      <Image src={woodline} alt="Wood Line - baldų ir interjero žaliavų prekyba" class="w-28 h-auto" />
       <div class="flex-1 text-gray-700 text-lg leading-relaxed">
           <p>Mūsų atsiliepimai yra labai geri. Pateisino lūkesčius, sumažėjo popierizmo, paprasta naudoti. Darbuotojai taip pat gerai vertina. Labai palengvina visas biurokratines procedūras.</p>
           <p class="mt-4 text-sm italic">Vaidotas Razminas, <strong>„Wood Line“ (pagrindinė veiklos sritis - didmeninė ir mažmeninė prekyba baldų ir interjero pramonei skirtomis žaliavomis) finansų direktorius</strong></p>
         </div>
-      </div>
-
-    <div class="flex flex-col md:flex-row items-center gap-8">
-      <Image src={bpo} alt="BPO House logo" class="w-28 h-auto" />
+      </div>    <div class="flex flex-col md:flex-row items-center gap-8">
+      <Image src={bpo} alt="BPO House - buhalterinės apskaitos paslaugos" class="w-28 h-auto" />
       <div class="flex-1 text-gray-700 text-lg leading-relaxed">
           <p>Iki šiol naudojome kitą programą. „Vecticum“ produktą naudoti pradėjome neseniai. Atsiliepiame tik teigiamai. Viskas gerai.</p>
           <p class="mt-4 text-sm italic">Kęstutis Vanagas, <strong>„BPO House“, buhalterinės apskaitos ir kitas finansų valdymo paslaugas, direktorius</strong></p>
@@ -142,15 +134,49 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-12">
       Keletas įmonių, naudojančių VECTICUM sprendimus
-    </h2>
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 items-center justify-center">
+    </h2>    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-8 items-center justify-center">
       {
-        logos.map(logo => (
-          <img
-            src={logo.src}
-            class="mx-auto h-auto grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300"
-          />
-        ))
+        logos.map((logo, index) => {
+          const logoNames = [
+            'Dussmann Service - paslaugų įmonė',
+            'IKI - prekybos tinklas',
+            'Civinity - konsultacijų bendrovė',
+            'Auto Juta - automobilių prekybos centras',
+            'Perlas - tekstilės gamintojas',
+            'Vilkyškių pieninė - pieno perdirbimo įmonė',
+            'Linas Agro - žemės ūkio bendrovė',
+            'Omberg - logistikos įmonė',
+            'Modus Group - IT sprendimų bendrovė',
+            'Nokia - telekomunikacijų technologijų lyderis',
+            'CGates - IT konsultacijų įmonė',
+            'CityBee - automobilių dalijimosi platforma',
+            'Cargo Go - krovinių pervežimo paslaugos',
+            'Air Guru - aviacijos paslaugų teikėjas',
+            'Narbutas - baldų gamintojas',
+            'Aradas - technologijų sprendimų bendrovė',
+            'Garant Group - finansų paslaugų grupė',
+            'Alta Medica - medicinos paslaugų centras',
+            'Homanit - pramonės įmonė',
+            'Retal - PET pakuočių gamintoja',
+            'Mana Ranga - drabužių gamyba',
+            'Projektana - projektų valdymo sprendimai',
+            'BPO - verslo procesų optimizavimas',
+            'Neogroup - konsultacijų grupė',
+            'Vilniaus švietimas - švietimo paslaugos',
+            'Triniti Jurex - teisinių paslaugų bendrovė',
+            'Yukon - technologijų sprendimai',
+            'Freda - gamybos įmonė',
+            'Garant - finansų sprendimai',
+            'BNM Finance - finansų paslaugos'
+          ];
+          return (
+            <img
+              src={logo.src}
+              alt={logoNames[index] || 'Vecticum klientas'}
+              class="mx-auto h-auto grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition duration-300"
+            />
+          );
+        })
       }
     </div>
   </div>
@@ -161,14 +187,13 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-12">
       Įmonės, kurios prisideda prie mūsų sistemos veikimo
-    </h2>
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-10 items-center justify-center">
+    </h2>    <div class="grid grid-cols-2 sm:grid-cols-4 gap-10 items-center justify-center">
       {
         partner.slice(0, 8).map(logo => (
           <a href={logo.href} target="_blank" rel="noopener noreferrer">
             <img
               src={logo.src}
-              alt="Partnerio logotipas"
+              alt={logo.alt}
               class="mx-auto h-20 sm:h-16 md:h-32 transition duration-300"
             />
           </a>

@@ -72,19 +72,53 @@ const doubledLogos = logos.concat(logos); // begalinis slinkimas
 
 <section class="pt-10 pb-10">
   <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <div class="carousel-wrapper w-full bg-white py-6">
-      <div class="carousel-track">
+    <div class="carousel-wrapper w-full bg-white py-6">      <div class="carousel-track">
         {
-          doubledLogos.map((logo, i) => (
-            <div class="flex-shrink-0 px-8">
-              <img
-                src={logo.src}
-                alt={`Kliento logotipas ${i + 1}`}
-                class="h-12 w-auto object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
-                loading="lazy"
-              />
-            </div>
-          ))
+          doubledLogos.map((logo, i) => {
+            const logoNames = [
+              'Dussmann Service - paslaugų įmonė',
+              'IKI - prekybos tinklas',
+              'Civinity - konsultacijų bendrovė',
+              'Auto Juta - automobilių prekybos centras',
+              'Perlas - tekstilės gamintojas',
+              'Vilkyškių pieninė - pieno perdirbimo įmonė',
+              'Linas Agro - žemės ūkio bendrovė',
+              'Omberg - logistikos įmonė',
+              'Modus Group - IT sprendimų bendrovė',
+              'Nokia - telekomunikacijų technologijų lyderis',
+              'CGates - IT konsultacijų įmonė',
+              'CityBee - automobilių dalijimosi platforma',
+              'Cargo Go - krovinių pervežimo paslaugos',
+              'Air Guru - aviacijos paslaugų teikėjas',
+              'Narbutas - baldų gamintojas',
+              'Aradas - technologijų sprendimų bendrovė',
+              'Garant Group - finansų paslaugų grupė',
+              'Alta Medica - medicinos paslaugų centras',
+              'Homanit - pramonės įmonė',
+              'Retal - PET pakuočių gamintoja',
+              'Mana Ranga - drabužių gamyba',
+              'Projektana - projektų valdymo sprendimai',
+              'BPO - verslo procesų optimizavimas',
+              'Neogroup - konsultacijų grupė',
+              'Vilniaus švietimas - švietimo paslaugos',
+              'Triniti Jurex - teisinių paslaugų bendrovė',
+              'Yukon - technologijų sprendimai',
+              'Freda - gamybos įmonė',
+              'Garant - finansų sprendimai',
+              'BNM Finance - finansų paslaugos'
+            ];
+            const logoIndex = i % 30; // Kadangi logotipai dubliuojami
+            return (
+              <div class="flex-shrink-0 px-8">
+                <img
+                  src={logo.src}
+                  alt={logoNames[logoIndex] || 'Vecticum klientas'}
+                  class="h-12 w-auto object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
+                  loading="lazy"
+                />
+              </div>
+            );
+          })
         }
       </div>
     </div>
