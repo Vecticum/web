@@ -332,20 +332,6 @@
       align-items: center;
       justify-content: center;
     }
-    #successMessage .success {
-      background: #dcfce7;
-      border: 1px solid #9ae6b4;
-      color: #15803d;
-      padding: 0.75rem 1rem;
-      border-radius: 0.375rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 0.5s ease-in;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 50;
-    }
     #successMessage .error {
       background: #fee2e2;
       border: 1px solid #f87171;
@@ -353,13 +339,6 @@
       padding: 0.75rem 1rem;
       border-radius: 0.375rem;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    }
-    #successMessage .success .close-btn {
-      margin-left: 1rem;
-      color: #15803d;
-    }
-    #successMessage .success .close-btn:hover {
-      color: #14532d;
     }
   </style>
 </section>
@@ -486,12 +465,12 @@
 
       if (response.ok) {
         successMessage.innerHTML = `
-          <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg animate-fade-in fixed top-0 left-0 w-full" role="alert">
+          <div class="sticky top-0 left-0 w-full z-[99999] bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg animate-fade-in" role="alert">
             <div class="max-w-2xl mx-auto flex items-center justify-between">
               <div>
                 <span>Ačiū, kad užpildėte registracijos formą! Dėl sistemos pristatymo mūsų vadybininkas su Jumis susisieks per dvi darbo dienas.</span>
               </div>
-              <button id="closeSuccess" class="ml-4 text-green-700 hover:text-green-900">×</button>
+              <button id="closeSuccess" class="ml-4 text-green-700 hover:text-green-900 text-xl font-bold">×</button>
             </div>
           </div>
         `;

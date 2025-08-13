@@ -111,12 +111,12 @@
 
       if (response.ok) {
         responseMessage.innerHTML = `
-          <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg animate-fade-in fixed top-0 left-0 w-full z-50" role="alert">
+          <div class="sticky top-0 left-0 w-full z-[99999] bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg animate-fade-in" role="alert">
             <div class="max-w-2xl mx-auto flex items-center justify-between">
               <div>
                 <span>Jūsų užklausa sėkmingai išsiųsta. Atsakysime kaip įmanoma greičiau.</span>
               </div>
-              <button id="closeSuccess" class="ml-4 text-green-700 hover:text-green-900">&times;</button>
+              <button id="closeSuccess" class="ml-4 text-green-700 hover:text-green-900 text-xl font-bold">&times;</button>
             </div>
           </div>
         `;

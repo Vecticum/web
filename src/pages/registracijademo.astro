@@ -497,12 +497,12 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
 
       if (response.ok) {
         successMessage.innerHTML = `
-          <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg animate-fade-in fixed top-0 left-0 w-full z-1" role="alert">
+          <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg animate-fade-in sticky top-0 left-0 w-full z-[99999]" role="alert">
             <div class="max-w-2xl mx-auto flex items-center justify-between">
               <div>
                 <span>Ačiū, kad užpildėte registracijos formą! Dėl sistemos pristatymo mūsų vadybininkas su Jumis susisieks per dvi darbo dienas.</span>
               </div>
-              <button id="closeSuccess" class="ml-4 text-green-700 hover:text-green-900">×</button>
+              <button id="closeSuccess" class="ml-4 text-green-700 hover:text-green-900 text-xl font-bold">×</button>
             </div>
           </div>
         `;

@@ -23,53 +23,55 @@ export const POST: APIRoute = async ({ request }) => {
         // const { name, email, message } = data;
 
         // Basic validation: Check if required fields are present
-        // if (!name || !email || !message) {
-        //     return new Response(JSON.stringify({ message: 'Missing required fields (name, email, message)' }), {
-        //         status: 400, // Bad Request
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //     });
-        // }
+        if (!data.name || !data.email || !data.message) {
+            return new Response(JSON.stringify({ message: 'Trūksta būtinų laukų' }), {
+                status: 400,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        }
 
-        // --- In a real application, you would process this data here ---
+        // Log received data for debugging
+        console.log('Received form data:', data);
 
+        // Send data to external CRM API
+        const url = 'https://crm-jz6p53srgq-ew.a.run.app/api/crm/v1/new-lead';
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error(`CRM API error! status: ${response.status}`);
+        }
+        
+        // Handle empty response or non-JSON response from CRM
+        const contentType = response.headers.get('content-type');
+        let responseData;
         
         try {
-            // const url = 'https://app.vecticum.com/api/crm/v1/new-lead';
-            const url = 'https://crm-jz6p53srgq-ew.a.run.app/api/crm/v1/new-lead';
-            const response = await fetch(url, {
-              method: 'POST', // Uncomment for POST request
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(data) // Uncomment for POST request body
-            });
-  
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
+            if (contentType && contentType.includes('application/json')) {
+                responseData = await response.json();
+            } else {
+                // If response is empty or not JSON, treat as success
+                const text = await response.text();
+                responseData = text ? { message: text } : { success: true };
             }
-            const responseData = await response.json();
-            console.log('Data fetched successfully:', responseData);
-            // Update your UI here with the fetched data, perhaps displaying it next to the form
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        // For example:
-        // - Save to a database
-        // - Send an email
-        // - Perform some business logic
-        // For this example, we'll just log it to the console.
-        console.log('Received form submission:');
-        console.log(data);
-        // console.log(`Name: ${name}`);
-        // console.log(`Email: ${email}`);
-        // console.log(`Message: ${message}`);
-        // ---------------------------------------------------------------
-
-        // Send a success response
+        } catch (parseError) {
+            // If JSON parsing fails, treat as success since CRM returned 200
+            console.log('CRM returned non-JSON response, treating as success');
+            responseData = { success: true };
+        }
+        
+        console.log('Data sent to CRM successfully:', responseData);
+        
+        // Send a success response back to the frontend
         return new Response(JSON.stringify({ message: 'Užklausa sėkmingai pateikta!' }), {
-            status: 200, // OK
+            status: 200,
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -78,8 +80,11 @@ export const POST: APIRoute = async ({ request }) => {
     } catch (error) {
         // Handle errors during parsing or processing
         console.error('Error processing form submission:', error);
-        return new Response(JSON.stringify({ message: 'Klaida apdorojant užklausą.' }), {
-            status: 500, // Internal Server Error
+        return new Response(JSON.stringify({ 
+            message: 'Klaida apdorojant užklausą.',
+            error: error instanceof Error ? error.message : 'Unknown error'
+        }), {
+            status: 500,
             headers: {
                 'Content-Type': 'application/json',
             },
