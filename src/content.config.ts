@@ -73,6 +73,13 @@ const pages = defineCollection({
 const careers = defineCollection({
   loader: glob({ base: "./src/content/careers", pattern: "**/*.{md,mdx}" }),
   schema: z.object({
+    meta: z.object({
+      title: z.string(),
+      description: z.string(),
+      ogImage: z.string().optional(),
+      ogType: z.string().optional(),
+      canonical: z.string().optional(),
+    }),
     title: z.string(),
     location: z.string(),
     description: z.string(),

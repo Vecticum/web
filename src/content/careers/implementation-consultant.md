@@ -1,68 +1,64 @@
 ---
-title: "Implementation consultant"
+meta:
+  title: Implementation Consultant darbo pozicija | Vecticum
+  description: Tapkite Implementation Consultant Vecticum komandoje Vilniuje. Konfigūruokite sprendimus, konsultuokite klientus ir dalyvaukite visame projekto cikle. Atlyginimas 2500-4500€.
+  ogType: website
+  canonical: https://vecticum.lt/karjera/implementation-consultant
+title: "Implementation Consultant"
 location: "Vilnius"
-description: "Customer requirements evaluation and solution preparation, solution configuration, preparing the development specification, testing functionality, providing consultancy support to the clients"
+description: "Klientų reikalavimų vertinimas ir sprendimų parengimas, sistemos konfigūravimas, specifikacijų rengimas, funkcionalumo testavimas, konsultacinė pagalba klientams"
 applyLink: "/karjera/implementation-consultant"
 ---
 
+# Implementation Consultant
 
+Vecticum kuria programinę įrangą geresnei darbuotojų patirčiai kasdienėse darbo užduotyse. Tai atostogų prašymai, sąskaitų faktūrų pateikimas patvirtinimui, biudžetų sekimas, mokymų ir komandiruočių valdymas, darbuotojų ir organizacijos struktūros informacijos atnaujinimas ir kt.
 
-# Implementation consultant
+Dešimtmečių patirtis, žinios ir technologijų derinys lėmė produkto sėkmę, kuriuo naudojasi daugiau nei 200 įmonių visame pasaulyje ir auga 3 kartus kasmet.
 
-Vecticum develops software for the best employee experience with everyday tasks at work. Is it vacation applications, submitting invoices for approval, tracking budgets, managing trainings and business trips, updating employee and org. structure information, etc.
+Kaip Implementation Consultant jūsų tipinė darbo diena apims įvairias veiklas, susijusias su visu projekto gyvavimo ciklu: pradedant klientų reikalavimų vertinimu ir sprendimų parengimu, sistemos konfigūravimu, vystymo specifikacijų rengimu, funkcionalumo testavimu, konsultacinės pagalbos teikimu klientams.
 
-Decades of experience, know-how, and technology mix determined the product success which served for more than 200 companies over the world and growing x3 every year.
+<h2>Kaip Implementation Consultant jūs:</h2>
 
-As an Implementation consultant your typical day would involve a variety of activities, involving the whole lifecycle of a project: starting from customer requirements evaluation and solution preparation, solution configuration, preparing the development specification, testing functionality, providing consultancy support to the clients.
+- Teiksite produkto ekspertų žinias ir vadovavimą klientams visų konsultacijų ir diegimo metu
+- Proaktyviai vystysime ir dalinsitės geriausia praktika Vecticum komandos viduje ir su klientais
+- Teiksite mokymus ir galutinių vartotojų palaikymą diegimo metu ir/arba po jo
+- Rengsite instrukcijas ir sistemos konfigūracijos dokumentaciją
 
-# As an Implementation consultant you will:
+<h2>Kaip Vecticum komandos narys jūs:</h2>
 
-<ul>
-<li>Provide product expertise and guidance to clients throughout the consulting and implementation</li>
-<li>Pro-actively develop and share best practices internally with Vecticum team and externally with clients</li>
-<li>Provide training and end-user support, during and/or after the implementation</li>
-<li>Provide manuals and system configuration documentation</li>
-</ul>
+- Būsite atsakingi už sprendimų dizainą
+- Būsite atsakingi už sukurtos konfigūracijos kokybę
+- Būsite atsakingi už konsultantų sistemos dizaino standartų laikymąsi
+- Teiksite paramą vystimo komandai užtikrinant sistemos kokybę, funkcionalumą ir našumą
+- Būsite techninio eskalarimo taškas techniniams klausimams
+- Prisidėsite prie produkto backlog kūrimo ir sprint'ų planavimo
+- Prisidėsite prie projekto testavimo strategijų ir prižiūrėsite test case'ų gamybą
+- Reikalui esant teiksite paramą pardavimų galimybėms
 
-# As a part of Vecticum team you will:
-<ul>
-<li>Be accountable for solution design</li>
-<li>Be accountable for the quality of configuration produced</li>
-<li>Be responsible for consultants adhering to system design standards</li>
-<li>Provide support to the development team to ensure system quality, functionality, and performance</li>
-<li>Be escalation point for technical issues</li>
-<li>Contribute to product backlog creation and sprint planning</li>
-<li>Contribute to project test strategies and provide oversight for test case production</li>
-<li>Support for sales opportunities as required</li>
-</ul>
+<h2>Įmonė siūlo</h2>
 
-# The company offers
-<ul>
-<li>Self-education time and trainings from both, technology, and business matters</li>
-<li>Flexible work time, at Vecticum we strive to be an organization empower employees to be judged by their output not their hours. We measurable objectives, professional growth, and personal responsibility rather than rigid leave patterns</li>
-<li>Any specific need for gadgets or software</li>
-<li>Team building budget</li>
-</ul>
+- Savišvietos laiką ir mokymus tiek technologijų, tiek verslo klausimais
+- Lankstų darbo laiką - Vecticum siekiame būti organizacija, kur darbuotojai vertinami pagal rezultatus, o ne valandas. Matuojame konkrečius tikslus, profesinį augimą ir asmeninę atsakomybę, o ne griežtus darbo laiko šablonus
+- Bet kokius specifinius poreikius įrenginiams ar programinei įrangai
+- Komandos formavimo biudžetą
 
-# Requirements:
-<ul>
-<li>Significant relevant experience, gained within an implementation focused role and a software solutions organization;</li>
-<li>Good understanding of business management processes in finance, supply chain management and/or personnel management;</li>
-<li>Programming language – no development experience and knowledge are required, however understanding the JavaScript syntax, code reviewing and debugging experience is highly appreciated;</li>
-<li>Any BSc degree, Computer Science, Physics, Economics, Business Management or Engineering;</li>
-<li>Consultative, technical and problem-solving approach and experience.</li>
-<li>ull time job.</li>
-</ul>
+<h2>Reikalavimai:</h2>
 
-# NICE TO HAVE
+- Reikšminga patirtis, įgyta diegimo orientuotoje pozicijoje ir programinių sprendimų organizacijoje
+- Geras verslo valdymo procesų supratimas finansų, tiekimo grandinės valdymo ir/arba personalo valdymo srityse
+- Programavimo kalbos - nereikalaujama vystymo patirties ir žinių, tačiau JavaScript sintaksės supratimas, kodo peržiūros ir derinimo patirtis būtų labai vertinama
+- Bet koks BSc laipsnis: kompiuterių mokslai, fizika, ekonomika, verslo vadyba arba inžinerija
+- Konsultacinis, techninis ir problemų sprendimo požiūris bei patirtis
+- Pilnas darbo laikas
 
-Vecticum software elements are highly configurable; so, good technical skills understanding configuration management patterns would be beneficial.
+<h2>Būtų puiku turėti</h2>
 
-# Are you Interested?
+Vecticum programinės įrangos elementai yra labai konfigūruojami, todėl geri techniniai įgūdžiai suprantant konfigūracijos valdymo šablonus būtų naudingi.
 
-If you have any questions about the role or want to apply complete form below.
+<h2>Susidomėjote?</h2>
 
- 
+Jei turite klausimų apie poziciją arba norite pateikti paraišką, susisiekite su mumis.
 
-<b>Location: Vilnius</b>
-<b>Gross salary: 2500-4500 Eur</b>
+<strong>Vieta:</strong> Vilnius  
+<strong>Bruto atlyginimas:</strong> 2500-4500 Eur
