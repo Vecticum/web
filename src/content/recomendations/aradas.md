@@ -1,4 +1,9 @@
 ---
+meta:
+  title: ARADAS sėkmės istorija | Klientų atsiliepimai | Vecticum
+  description: Sužinokite, kaip ARADAS automatizavo HR procesus ir sumažino administracinę naštą naudodami Vecticum sistemą. Tikra klientų patirtis.
+  ogType: website
+  canonical: https://vecticum.lt/rekomendacijos/aradas
 title: "ARADAS sėkmės istorija: efektyvumas per inovacijas ir skaitmenizaciją"
 description: "Vecticum sistema leido mums automatizuoti daugelį HR procesų ir sumažinti administracinę naštą. Puikus sprendimas skirtingo dydžio įmonėms."
 image: "/media/recomendations/rec-aradas.webp"

@@ -1,4 +1,9 @@
 ---
+meta:
+  title: KAVITA sėkmės istorija | Klientų atsiliepimai | Vecticum
+  description: Sužinokite, kaip KAVITA išsprendė vidinių procesų iššūkius automatizuodama darbą su Vecticum sprendimais. Tikra klientų patirtis.
+  ogType: website
+  canonical: https://vecticum.lt/rekomendacijos/kavita
 title: "Kaip KAVITA išsprendė vidinių procesų iššūkius automatizuodama darbą"
 description: "Įdiegus VECTICUM sprendimus, mūsų kasdieniai procesai tapo žymiai efektyvesni. Automatizavus daugelį darbų, galime daugiau dėmesio skirti savo pagrindiniams tikslams."
 image: "/media/recomendations/rec-kavita.webp"

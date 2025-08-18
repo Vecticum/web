@@ -93,6 +93,13 @@ const recomendations = defineCollection({
     pattern: "**/*.{md,mdx}",
   }),
   schema: z.object({
+    meta: z.object({
+      title: z.string(),
+      description: z.string(),
+      ogImage: z.string().optional(),
+      ogType: z.string().optional(),
+      canonical: z.string().optional(),
+    }).optional(),
     title: z.string(),
     description: z.string(),
     image: z.string(),
