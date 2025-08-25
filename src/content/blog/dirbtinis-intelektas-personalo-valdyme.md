@@ -7,10 +7,10 @@ heroImage: '/media/blog/dirbtinis-intelektas-personalo-valdyme.webp'
 
 <div>
 <h3>Kaip dirbtinis intelektas keičia personalo valdymą?</h3>
-  <p><strong>Dirbtinis intelektas personalo valdyme tampa vienu svarbiausių pokyčių veiksnių šiuolaikiniame versle. Organizacijos vis dažniau pasitelkia DI sprendimus, siekdamos optimizuoti darbuotojų atranką, <a href="https://www.linkedin.com/company/lpva-ipma-lithuania/" target="_blank" rel="noopener noreferrer">mokymą</a>, motyvaciją ir įsitraukimą. Ši technologija ne tik padeda taupyti laiką, bet ir leidžia priimti duomenimis grįstus sprendimus, kurie gerina darbo kultūrą ir stiprina ryšį tarp darbuotojo ir organizacijos.</strong></p>
+  <p><strong>Dirbtinis intelektas personalo valdyme tampa vienu svarbiausių pokyčių veiksnių šiuolaikiniame versle. Organizacijos vis dažniau pasitelkia DI sprendimus, siekdamos optimizuoti darbuotojų atranką, <a href="https://vecticum.lt/mokymu-valdymas" target="_blank" rel="noopener noreferrer">mokymą</a>, motyvaciją ir įsitraukimą. Ši technologija ne tik padeda taupyti laiką, bet ir leidžia priimti duomenimis grįstus sprendimus, kurie gerina darbo kultūrą ir stiprina ryšį tarp darbuotojo ir organizacijos.</strong></p>
 
   <h3>Atranka: dirbtinis intelektas padeda rasti tinkamiausius kandidatus</h3>
-  <p><a href="https://www.linkedin.com/company/lpva-ipma-lithuania/" target="_blank" rel="noopener noreferrer">Kandidatų atranka</a> – viena iš sričių, kur dirbtinis intelektas HR srityje jau dabar daro didelę įtaką. DI algoritmai analizuoja gyvenimo aprašymus, palygina juos su darbo pozicijos reikalavimais ir net prognozuoja kandidato sėkmę remiantis istoriniais duomenimis. Tokie sprendimai leidžia organizacijoms greičiau ir tiksliau identifikuoti tinkamus kandidatus, sumažinti šališkumo riziką ir padidinti atrankos efektyvumą.</p>
+  <p><a href="https://vecticum.lt/atrankos-valdymas" target="_blank" rel="noopener noreferrer">Kandidatų atranka</a> – viena iš sričių, kur dirbtinis intelektas HR srityje jau dabar daro didelę įtaką. DI algoritmai analizuoja gyvenimo aprašymus, palygina juos su darbo pozicijos reikalavimais ir net prognozuoja kandidato sėkmę remiantis istoriniais duomenimis. Tokie sprendimai leidžia organizacijoms greičiau ir tiksliau identifikuoti tinkamus kandidatus, sumažinti šališkumo riziką ir padidinti atrankos efektyvumą.</p>
   <p>Nepaisant technologinės pažangos, žmogaus sprendimas išlieka esminis. DI turėtų būti laikomas pagalbiniu įrankiu, kuris padeda HR specialistams priimti geresnius sprendimus, o ne juos pakeisti.</p>
 
   <h3>Mokymasis: DI kuria individualizuotas mokymosi trajektorijas</h3>
@@ -22,7 +22,7 @@ heroImage: '/media/blog/dirbtinis-intelektas-personalo-valdyme.webp'
   <p>Toks požiūris leidžia HR komandai pereiti nuo universalių sprendimų prie labiau personalizuotų iniciatyvų, kurios atitinka konkretaus darbuotojo poreikius. Tai stiprina lojalumą, mažina darbuotojų kaitą ir kuria tvirtesnį ryšį su organizacija.</p>
 
   <h3>Darbuotojų patirtis: DI padeda kurti įtraukesnę darbo aplinką</h3>
-  <p>Dirbtinis intelektas <a href="https://www.linkedin.com/company/lpva-ipma-lithuania/" target="_blank" rel="noopener noreferrer">personalo valdyme</a> taip pat prisideda prie geresnės darbuotojų patirties kūrimo. DI analizuoja apklausų rezultatus, komunikacijos kanalų duomenis ir darbo našumo pokyčius, kad identifikuotų rizikos zonas – pavyzdžiui, perdegimo grėsmę ar mažėjantį įsitraukimą. Tai leidžia HR komandai veikti proaktyviai ir užkirsti kelią problemoms dar prieš joms išryškėjant.</p>
+  <p>Dirbtinis intelektas <a href="https://vecticum.lt/personalo-valdymo-sprendimu-planai" target="_blank" rel="noopener noreferrer">personalo valdyme</a> taip pat prisideda prie geresnės darbuotojų patirties kūrimo. DI analizuoja apklausų rezultatus, komunikacijos kanalų duomenis ir darbo našumo pokyčius, kad identifikuotų rizikos zonas – pavyzdžiui, perdegimo grėsmę ar mažėjantį įsitraukimą. Tai leidžia HR komandai veikti proaktyviai ir užkirsti kelią problemoms dar prieš joms išryškėjant.</p>
   <p>Toks prevencinis požiūris stiprina darbuotojų pasitikėjimą organizacija ir kuria kultūrą, kurioje žmonės jaučiasi išgirsti, vertinami ir saugūs.</p>
 
   <h3>Iššūkiai: etika, šališkumas ir kompetencijų trūkumas</h3>
