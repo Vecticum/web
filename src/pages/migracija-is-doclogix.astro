@@ -1,5 +1,54 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+
+// Import client logos (expanded list)
+import ikiLogo from '/src/assets/media/iki.png';
+import linasAgroLogo from '/src/assets/media/Linas_agro.png';
+import retalLogo from '/src/assets/media/retal.png';
+import perlasLogo from '/src/assets/media/Perlas.png';
+import autojutaLogo from '/src/assets/media/Autojuta.png';
+import modusLogo from '/src/assets/media/ModusGroup.png';
+import cgatesLogo from '/src/assets/media/Cgates.png';
+import aradasLogo from '/src/assets/media/Aradas.png';
+import garantGroupLogo from '/src/assets/media/GarantGroup.png';
+import homanitLogo from '/src/assets/media/Homanit.png';
+import ombergLogo from '/src/assets/media/Omberg.png';
+import civilityLogo from '/src/assets/media/civinity.png';
+import yukonLogo from '/src/assets/media/Yukon.png';
+import altaMedicaLogo from '/src/assets/media/AltaMedica.png';
+import projektanaLogo from '/src/assets/media/Projektana.png';
+import bpoLogo from '/src/assets/media/bpo.png';
+import trinitiJurexLogo from '/src/assets/media/TrinitiJurex.png';
+
+const logos = [
+  ikiLogo, linasAgroLogo, retalLogo, perlasLogo, autojutaLogo,
+  modusLogo, cgatesLogo, aradasLogo, garantGroupLogo, homanitLogo, 
+  ombergLogo, civilityLogo, yukonLogo, altaMedicaLogo, projektanaLogo, 
+  bpoLogo, trinitiJurexLogo
+];
+
+const logoNames = [
+  'IKI',
+  'Linas Agro',
+  'Retal',
+  'Perlas',
+  'Auto Juta',
+  'Modus Group',
+  'CGates',
+  'Aradas',
+  'Garant Group',
+  'Homanit',
+  'Omberg',
+  'Civinity',
+  'Yukon',
+  'Alta Medica',
+  'Projektana',
+  'BPO',
+  'Triniti Jurex'
+];
+
+const doubledLogos = logos.concat(logos); // begalinis slinkimas
+
 const seoTitle = "Migracija iš DocLogix į VECTICUM | Lengvas perėjimas per 30-60 dienų";
 const seoDescription = "Pereikite iš DocLogix į VECTICUM be trikdžių. Perkeliame dokumentus, teises ir procesus per 30-60 dienų. Gaukite vertinimą nemokama migracija.";
 const seoImage = '~/assets/images/logo.webp';
@@ -113,6 +162,41 @@ const canonical = 'https://vecticum.lt/migracija-is-doclogix';
   .section-padding-lg {
     @apply py-20 md:py-24;
   }
+
+  /* Carousel animations */
+  .carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .carousel-track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: fit-content;
+    animation: scroll 60s linear infinite;
+    will-change: transform;
+    transform: translateZ(0); /* force GPU */
+  }
+
+  .carousel-track:hover {
+    animation-play-state: paused;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-track {
+      animation-duration: 25s; /* mobile greitesnis loopas */
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 </style>
 
 <div 
@@ -211,163 +295,27 @@ const canonical = 'https://vecticum.lt/migracija-is-doclogix';
     
     <!-- Client Logos Carousel -->
     <div class="carousel-wrapper overflow-hidden w-full mb-16">
-      <div class="carousel-track flex flex-nowrap w-fit animate-scroll">
-        <!-- First set of logos (all transparent PNG files) -->
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/iki.png" alt="IKI" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/civinity.png" alt="Civinity" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Autojuta.png" alt="Auto Juta" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Perlas.png" alt="Perlas" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Linas_agro.png" alt="Linas Agro" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/ModusGroup.png" alt="Modus Group" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Cgates.png" alt="CGates" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Aradas.png" alt="Aradas" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/GarantGroup.png" alt="Garant Group" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/AltaMedica.png" alt="Alta Medica" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Homanit.png" alt="Homanit" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/retal.png" alt="Retal" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/ManaRanga.png" alt="Mana Ranga" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Projektana.png" alt="Projektana" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/bpo.png" alt="BPO" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/VilniausApsvietimas.png" alt="Vilniaus švietimas" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/TrinitiJurex.png" alt="Triniti Jurex" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Yukon.png" alt="Yukon" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        
-        <!-- Duplicate set for seamless loop -->
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/iki.png" alt="IKI" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/civinity.png" alt="Civinity" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Autojuta.png" alt="Auto Juta" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Perlas.png" alt="Perlas" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Linas_agro.png" alt="Linas Agro" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/ModusGroup.png" alt="Modus Group" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Cgates.png" alt="CGates" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Aradas.png" alt="Aradas" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/GarantGroup.png" alt="Garant Group" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/AltaMedica.png" alt="Alta Medica" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Homanit.png" alt="Homanit" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/retal.png" alt="Retal" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/ManaRanga.png" alt="Mana Ranga" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Projektana.png" alt="Projektana" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/bpo.png" alt="BPO" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/VilniausApsvietimas.png" alt="Vilniaus švietimas" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/TrinitiJurex.png" alt="Triniti Jurex" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
-        <div class="flex-shrink-0 px-8">
-          <img src="/src/assets/media/Yukon.png" alt="Yukon" class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300" loading="lazy">
-        </div>
+      <div class="carousel-track">
+        {
+          doubledLogos.map((logo, i) => {
+            const logoIndex = i % logos.length;
+            return (
+              <div class="flex-shrink-0 px-8">
+                <img
+                  src={logo.src}
+                  alt={logoNames[logoIndex] || 'VECTICUM klientas'}
+                  class="h-20 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
+                  loading="lazy"
+                />
+              </div>
+            );
+          })
+        }
       </div>
     </div>
     
   </div>
 </section>
-
-<style>
-  .carousel-wrapper {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-  }
-
-  .carousel-track {
-    display: flex;
-    flex-wrap: nowrap;
-    width: fit-content;
-    will-change: transform;
-    transform: translateZ(0);
-  }
-
-  .animate-scroll {
-    animation: scroll 40s linear infinite;
-  }
-
-  @media (max-width: 768px) {
-    .animate-scroll {
-      animation-duration: 25s;
-    }
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-  /* Pause animation on hover for better UX */
-  .carousel-wrapper:hover .carousel-track {
-    animation-play-state: paused;
-  }
-</style>
 
 <!-- Migracijos žingsniai -->
 <section id="migracijos-zingsniai" class="section-padding bg-white">
