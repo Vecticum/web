@@ -33,7 +33,13 @@ export const POST: APIRoute = async ({ request }) => {
         }
 
         // Log received data for debugging
-        console.log('Received form data:', data);
+        const timestamp = new Date().toLocaleString('lt-LT', { timeZone: 'Europe/Vilnius' });
+        console.log(`[${timestamp}] Received form data:`, {
+            name: data.name,
+            email: data.email,
+            company: data.company || 'N/A',
+            form_source: data.form_source || 'Unknown'
+        });
 
         // Send data to external CRM API
         const url = 'https://crm-jz6p53srgq-ew.a.run.app/api/crm/v1/new-lead';
@@ -67,7 +73,7 @@ export const POST: APIRoute = async ({ request }) => {
             responseData = { success: true };
         }
         
-        console.log('Data sent to CRM successfully:', responseData);
+        console.log(`[${timestamp}] Data sent to CRM successfully for ${data.email}:`, responseData);
         
         // Send a success response back to the frontend
         return new Response(JSON.stringify({ message: 'Užklausa sėkmingai pateikta!' }), {

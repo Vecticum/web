@@ -1326,13 +1326,25 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Add an event listener for form submission
+  let isMigrationSubmitting = false; // Prevent duplicate submissions
   migrationForm.addEventListener('submit', async (event) => {
     event.preventDefault();
+    
+    // Prevent duplicate submissions
+    if (isMigrationSubmitting) {
+      console.log('Migration form submission already in progress, ignoring duplicate submission');
+      return;
+    }
+    
+    isMigrationSubmitting = true;
+    migrationSubmitButton.disabled = true;
     console.log('Migration form submission triggered at', new Date().toLocaleString('lt-LT', { timeZone: 'Europe/Vilnius' }));
 
     // Validate form only on submit
     if (!validateMigrationForm()) {
       console.log('Migration form validation failed');
+      isMigrationSubmitting = false; // Reset submission state on validation failure
+      migrationSubmitButton.disabled = false;
       return;
     }
 
@@ -1414,6 +1426,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       `;
     } finally {
+      isMigrationSubmitting = false; // Reset submission state
       migrationSubmitButton.disabled = false;
       console.log('Migration form submission process completed at', new Date().toLocaleString('lt-LT', { timeZone: 'Europe/Vilnius' }));
     }

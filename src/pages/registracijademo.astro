@@ -449,13 +449,25 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
   }
 
   // Add an event listener for form submission
+  let isSubmitting = false; // Prevent duplicate submissions
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
+    
+    // Prevent duplicate submissions
+    if (isSubmitting) {
+      console.log('Form submission already in progress, ignoring duplicate submission');
+      return;
+    }
+    
+    isSubmitting = true;
+    submitButton.disabled = true;
     console.log('Form submission triggered at', new Date().toLocaleString('lt-LT', { timeZone: 'Europe/Vilnius' }));
 
     // Validate form only on submit
     if (!validateForm()) {
       console.log('Validation failed');
+      isSubmitting = false; // Reset submission state on validation failure
+      submitButton.disabled = false;
       return;
     }
 
@@ -526,6 +538,7 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
         </div>
       `;
     } finally {
+      isSubmitting = false; // Reset submission state
       submitButton.disabled = false;
       console.log('Submission process completed at', new Date().toLocaleString('lt-LT', { timeZone: 'Europe/Vilnius' }));
     }
