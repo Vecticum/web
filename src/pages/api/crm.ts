@@ -27,8 +27,8 @@ export const POST: APIRoute = async ({ request }) => {
         // const { name, email, message } = data;
 
         // Basic validation: Check if required fields are present
-        if (!data.name || !data.email || !data.message) {
-            return new Response(JSON.stringify({ message: 'Trūksta būtinų laukų' }), {
+        if (!data.name || !data.email) {
+            return new Response(JSON.stringify({ message: 'Trūksta būtinų laukų (vardas ir el. paštas)' }), {
                 status: 400,
                 headers: {
                     'Content-Type': 'application/json',
@@ -74,6 +74,11 @@ export const POST: APIRoute = async ({ request }) => {
         
         // Record this submission
         recentSubmissions.set(submissionKey, currentTime);
+
+        // Ensure message field has content for CRM API (even if optional on frontend)
+        if (!data.message || data.message.trim() === '') {
+            data.message = 'Užklausa pateikta be papildomo pranešimo.';
+        }
 
         // Send data to external CRM API
         const url = 'https://crm-jz6p53srgq-ew.a.run.app/api/crm/v1/new-lead';
