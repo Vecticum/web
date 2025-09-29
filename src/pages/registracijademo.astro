@@ -513,9 +513,7 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
     
-    // Add unique submission identifier to prevent server-side duplicates
-    data.submission_id = `demo_${currentTime}_${Math.random().toString(36).substr(2, 9)}`;
-    data.form_source = 'Leads iš bendros regisracijos formos (demo page)';
+    data.form_source = 'Leads iš regisracijos formos landing page';
     
     console.log('Demo form data:', data);
 

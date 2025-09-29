@@ -3,6 +3,8 @@
 
 <div>
   <form id="simple-contact-form-lead" action="#" method="POST" class="space-y-6 bg-white p-6 rounded-xl shadow-md">
+    <!-- Hidden field for form source -->
+    <input type="hidden" name="form_source" value="Leads iš kontaktų puslapio">
     <div id="responseMessage" class="mt-4 text-center"></div>
     <div>
       <label for="name" class="block text-sm font-medium text-gray-700">Vardas</label>
@@ -97,6 +99,9 @@
     // Collect form data
     const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
+    
+    // Ensure form_source is set
+    data.form_source = data.form_source || 'Leads iš kontaktų puslapio';
 
     try {
       const response = await fetch('/api/crm', {
