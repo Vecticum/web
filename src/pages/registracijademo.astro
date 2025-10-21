@@ -521,8 +521,7 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
       
-      // Add reCAPTCHA token and form source
-      data.recaptcha_token = recaptchaToken;
+      // Add form source but keep reCAPTCHA token separate for backend validation only
       data.form_source = 'Leads iš regisracijos formos landing page';
     
     console.log('Demo form data:', data);
@@ -532,8 +531,9 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'X-Recaptcha-Token': recaptchaToken  // Send reCAPTCHA token in header instead
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data),  // data without reCAPTCHA token
       });
 
       if (!response.ok) {

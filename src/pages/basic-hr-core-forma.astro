@@ -465,8 +465,7 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
       
-      // Add reCAPTCHA token
-      data.recaptcha_token = recaptchaToken;
+      // Don't add reCAPTCHA token to data - it will be sent in header
     console.log('Form data:', data);
 
     try {
@@ -474,6 +473,7 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'X-Recaptcha-Token': recaptchaToken  // Send reCAPTCHA token in header
         },
         body: JSON.stringify(data),
       });

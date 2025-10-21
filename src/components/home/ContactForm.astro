@@ -496,6 +496,7 @@
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'X-Recaptcha-Token': recaptchaToken  // Send reCAPTCHA token in header
         },
         body: JSON.stringify(data),
       });
