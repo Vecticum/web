@@ -242,6 +242,8 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
         </div>
       </div>
 
+      <!-- reCAPTCHA v3 - invisible -->
+
       <div class="relative">
         <button
           type="submit"
@@ -495,25 +497,33 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
       return;
     }
 
-    console.log('Validation passed, sending data...');
-    // Show loading indicator
-    successMessage.classList.remove('hidden');
-    successMessage.innerHTML = `
-      <div class="bg-gray-100 border border-gray-400 text-gray-700 px-4 py-3 rounded-md shadow-lg flex items-center justify-center" role="alert">
-        <svg class="animate-spin h-5 w-5 mr-2 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-        </svg>
-        <span>Apdorojama...</span>
-      </div>
-    `;
-    submitButton.disabled = true;
-
-    // Collect form data
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    console.log('Validation passed, checking reCAPTCHA...');
     
-    data.form_source = 'Leads iš regisracijos formos landing page';
+    try {
+      // Execute reCAPTCHA v3
+      const recaptchaToken = await grecaptcha.execute('6LcP6_ArAAAAAGeVnrM_7mlRq2cjrC6l4Xifj0qQ', {action: 'submit'});
+      console.log('reCAPTCHA token received:', recaptchaToken.substring(0, 20) + '...');
+      
+      // Show loading indicator
+      successMessage.classList.remove('hidden');
+      successMessage.innerHTML = `
+        <div class="bg-gray-100 border border-gray-400 text-gray-700 px-4 py-3 rounded-md shadow-lg flex items-center justify-center" role="alert">
+          <svg class="animate-spin h-5 w-5 mr-2 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+          </svg>
+          <span>Apdorojama...</span>
+        </div>
+      `;
+      submitButton.disabled = true;
+
+      // Collect form data
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      
+      // Add reCAPTCHA token and form source
+      data.recaptcha_token = recaptchaToken;
+      data.form_source = 'Leads iš regisracijos formos landing page';
     
     console.log('Demo form data:', data);
 
@@ -564,10 +574,22 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
           <strong class="font-bold">Klaida!</strong> <span>${error.message}</span>
         </div>
       `;
-    } finally {
-      isSubmitting = false; // Reset submission state
+      } finally {
+        isSubmitting = false; // Reset submission state
+        submitButton.disabled = false;
+        console.log('Submission process completed at', new Date().toLocaleString('lt-LT', { timeZone: 'Europe/Vilnius' }));
+      }
+    
+    } catch (recaptchaError) {
+      console.error('reCAPTCHA error:', recaptchaError);
+      successMessage.classList.remove('hidden');
+      successMessage.innerHTML = `
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+          <strong class="font-bold">Klaida!</strong> <span>Nepavyko patvirtinti saugumo patikros. Pabandykite dar kartą.</span>
+        </div>
+      `;
+      isSubmitting = false;
       submitButton.disabled = false;
-      console.log('Submission process completed at', new Date().toLocaleString('lt-LT', { timeZone: 'Europe/Vilnius' }));
     }
   });
 

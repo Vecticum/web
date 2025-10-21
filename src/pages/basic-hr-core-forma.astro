@@ -243,6 +243,8 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
         </div>
       </div>
 
+      <!-- reCAPTCHA v3 - invisible -->
+
       <div class="relative">
         <button
           type="submit"
@@ -439,23 +441,32 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
       return;
     }
 
-    console.log('Validation passed, sending data...');
-    // Show loading indicator
-    successMessage.classList.remove('hidden');
-    successMessage.innerHTML = `
-      <div class="bg-gray-100 border border-gray-400 text-gray-700 px-4 py-3 rounded-md shadow-lg flex items-center justify-center" role="alert">
-        <svg class="animate-spin h-5 w-5 mr-2 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-        </svg>
-        <span>Apdorojama...</span>
-      </div>
-    `;
-    submitButton.disabled = true;
+    console.log('Validation passed, checking reCAPTCHA...');
+    
+    try {
+      // Execute reCAPTCHA v3
+      const recaptchaToken = await grecaptcha.execute('6LcP6_ArAAAAAGeVnrM_7mlRq2cjrC6l4Xifj0qQ', {action: 'submit'});
+      console.log('reCAPTCHA token received:', recaptchaToken.substring(0, 20) + '...');
+      
+      // Show loading indicator
+      successMessage.classList.remove('hidden');
+      successMessage.innerHTML = `
+        <div class="bg-gray-100 border border-gray-400 text-gray-700 px-4 py-3 rounded-md shadow-lg flex items-center justify-center" role="alert">
+          <svg class="animate-spin h-5 w-5 mr-2 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+          </svg>
+          <span>Apdorojama...</span>
+        </div>
+      `;
+      submitButton.disabled = true;
 
-    // Collect form data
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+      // Collect form data
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      
+      // Add reCAPTCHA token
+      data.recaptcha_token = recaptchaToken;
     console.log('Form data:', data);
 
     try {
@@ -505,9 +516,20 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
           <strong class="font-bold">Klaida!</strong> <span>${error.message}</span>
         </div>
       `;
-    } finally {
+      } finally {
+        submitButton.disabled = false;
+        console.log('Submission process completed at', new Date().toLocaleString('lt-LT', { timeZone: 'Europe/Vilnius' }));
+      }
+    
+    } catch (recaptchaError) {
+      console.error('reCAPTCHA error:', recaptchaError);
+      successMessage.classList.remove('hidden');
+      successMessage.innerHTML = `
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+          <strong class="font-bold">Klaida!</strong> <span>Nepavyko patvirtinti saugumo patikros. Pabandykite dar kartą.</span>
+        </div>
+      `;
       submitButton.disabled = false;
-      console.log('Submission process completed at', new Date().toLocaleString('lt-LT', { timeZone: 'Europe/Vilnius' }));
     }
   });
 

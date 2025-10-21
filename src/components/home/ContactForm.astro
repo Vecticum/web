@@ -236,6 +236,8 @@
         </div>
       </div>
 
+      <!-- reCAPTCHA v3 - invisible -->
+
       <div class="relative">
         <button
           type="submit"
@@ -472,6 +474,17 @@
 
     // Collect form data
     const formData = new FormData(form);
+
+    // reCAPTCHA v3 validation
+    try {
+      const recaptchaToken = await grecaptcha.execute('6LcP6_ArAAAAAGeVnrM_7mlRq2cjrC6l4Xifj0qQ', {action: 'contact_form_submit'});
+      formData.append('recaptcha_token', recaptchaToken);
+    } catch (recaptchaError) {
+      console.error('reCAPTCHA validation failed:', recaptchaError);
+      responseMessage.innerHTML = '<span style="color: red;">Saugumo patikrinimas nepavyko. Bandykite dar kartą.</span>';
+      return;
+    }
+
     const data = Object.fromEntries(formData.entries());
     
     // Ensure form_source is set
