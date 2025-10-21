@@ -458,9 +458,10 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
     const formData = new FormData(form);
 
     // reCAPTCHA v3 validation
+    let recaptchaToken;
     try {
-      const recaptchaToken = await grecaptcha.execute('6LcP6_ArAAAAAGeVnrM_7mlRq2cjrC6l4Xifj0qQ', {action: 'enterprise_form_submit'});
-      formData.append('recaptcha_token', recaptchaToken);
+      recaptchaToken = await grecaptcha.execute('6LcP6_ArAAAAAGeVnrM_7mlRq2cjrC6l4Xifj0qQ', {action: 'enterprise_form_submit'});
+      // Note: reCAPTCHA token will be sent in HTTP header, not in form data
     } catch (recaptchaError) {
       console.error('reCAPTCHA validation failed:', recaptchaError);
       responseMessage.innerHTML = '<span style="color: red;">Saugumo patikrinimas nepavyko. Bandykite dar kartą.</span>';
