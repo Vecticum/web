@@ -1,0 +1,334 @@
+---
+import ContactForm from "../../components/home/ContactForm.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Image from "../../components/common/Image.astro";
+
+const heroImage = '~/assets/images/planai-hero.webp';
+
+const seoTitle = "Papildomi funkcionalumai ir kainodara | Vecticum";
+const seoDescription = "Praplėskite savo personalo valdymo sistemą papildomomis funkcijomis: API integracija, Email reply, Co-autgoting, Elektroninis parašas ir kt.";
+const seoImage = '~/assets/images/logo.webp';
+---
+
+<MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
+<!-- HERO PRADŽIA -->
+<div
+  class="relative py-20 px-6 sm:px-8 flex items-center overflow-hidden text-white bg-gradient-to-br from-[#121629] via-[#3C7099] to-[#1c2237]"
+>
+  <!-- Glow Effect Background -->
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-[-20%] left-1/2 w-[1200px] h-[1200px] bg-[#3C7099] opacity-30 blur-[200px] transform -translate-x-1/2"></div>
+    <div class="absolute bottom-[-30%] right-[10%] w-[600px] h-[600px] bg-[#C81F6A] opacity-20 blur-[180px]"></div>
+  </div>
+
+  <!-- Turinys -->
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-12">
+      
+      <!-- Teksto blokas -->
+      <div class="flex-[1.4] text-center sm:text-left animate-fade-in-up">
+        <h1 class="mx-auto max-w-4xl text-4xl sm:text-5xl font-semibold tracking-normal">
+          Papildomi funkcionalumai
+        </h1>
+        <p class="my-8 sm:my-10 max-w-xl text-lg leading-7 text-white/90">
+          Praplėskite savo personalo valdymo sistemos galimybes papildomomis funkcijomis. Integracijos, automatizacija ir išplėstinė funkcionalumas jūsų verslo poreikiams.<br><br>
+          Kiekvienas funkcionalumas susideda iš aktyvavimo ir mėnesinio prenumeratos mokesčio. Susisiekite dėl detalesnės informacijos ir individualaus pasiūlymo.
+        </p>
+        <div class="flex justify-center sm:justify-start gap-4">
+          <a
+            class="rounded-full bg-white px-6 py-3 text-base font-medium text-[#C81F6A] shadow-md hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+            href="#contact"
+            target="_blank"
+          >
+            Gauti pasiūlymą
+          </a>
+        </div>
+      </div>
+
+      <!-- Vaizdo blokas -->
+      <div class="flex-[1.1] flex justify-center sm:justify-end animate-fade-in">
+        <Image
+        src={heroImage}
+        alt="Papildomi funkcionalumai | VECTICUM"
+        class="w-full max-w-[400px] sm:max-w-[480px] object-contain rounded-lg transition-transform duration-300"
+      />
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- HERO PABAIGA -->
+
+<section class="relative py-20 px-6 sm:px-8 bg-white text-gray-900">
+  <div class="relative z-10 max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl sm:text-5xl text-[#3C7099]">Papildomi funkcionalumai</h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Pasirinkite funkcionalumus, kurie geriausiai atitinka jūsų organizacijos poreikius. Kiekvienas funkcionalumas susideda iš aktyvavimo ir mėnesinio prenumeratos mokesčio.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- API kainodara -->
+      <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
+            <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#3C7099]">API kainodara</h3>
+        </div>
+        <div class="text-2xl font-bold text-[#C81F6A] mb-4">Individuali kaina</div>
+        <p class="text-gray-600 mb-6">REST API integracija su kitomis sistemomis. Automatinis duomenų keitimasis su apskaitos, atlyginimų ar kitomis verslo sistemomis.</p>
+        <ul class="space-y-3 text-gray-700 text-sm mb-8">
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            REST API prieiga
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Duomenų sinchronizacija
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Techninis palaikymas
+          </li>
+        </ul>
+        <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
+      </div>
+
+      <!-- Email reply -->
+      <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
+            <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#3C7099]">Email reply</h3>
+        </div>
+        <div class="text-2xl font-bold text-[#C81F6A] mb-4">Individuali kaina</div>
+        <p class="text-gray-600 mb-6">Automatinis atsakymų į el. laiškus funkcionalumas. Greitas ir efektyvus komunikacijos valdymas su darbuotojais.</p>
+        <ul class="space-y-3 text-gray-700 text-sm mb-8">
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Automatiniai atsakymai
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Šablonų valdymas
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Komunikacijos istorija
+          </li>
+        </ul>
+        <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
+      </div>
+
+      <!-- Co-autgoting -->
+      <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
+            <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#3C7099]">Co-autgoting</h3>
+        </div>
+        <div class="text-2xl font-bold text-[#C81F6A] mb-4">Individuali kaina</div>
+        <p class="text-gray-600 mb-6">Pažangus automatizacijos funkcionalumas darbo procesų valdymui. Sumažina rankinį darbą ir padidina efektyvumą.</p>
+        <ul class="space-y-3 text-gray-700 text-sm mb-8">
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Procesų automatizacija
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Užduočių valdymas
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Progreso sekimas
+          </li>
+        </ul>
+        <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
+      </div>
+
+      <!-- Elektroninis parašas -->
+      <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
+            <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#3C7099]">Elektroninis parašas</h3>
+        </div>
+        <div class="text-2xl font-bold text-[#C81F6A] mb-4">Individuali kaina</div>
+        <p class="text-gray-600 mb-6">Integracija su Dokobit ir Marksign elektroninio parašo sprendimais. Saugus ir teisiškai galiojantis dokumentų pasirašymas.</p>
+        <ul class="space-y-3 text-gray-700 text-sm mb-8">
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Dokobit integracija
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Marksign palaikymas
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Teisiškai galiojantis
+          </li>
+        </ul>
+        <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
+      </div>
+
+      <!-- Rebranding -->
+      <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
+            <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h4a2 2 0 002-2V9a2 2 0 00-2-2H7a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#3C7099]">Rebranding</h3>
+        </div>
+        <div class="text-2xl font-bold text-[#C81F6A] mb-4">Individuali kaina</div>
+        <p class="text-gray-600 mb-6">Sistemos vizualinio identiteto pritaikymas jūsų įmonės brandui. Logo, spalvos, dizaino elementų keitimas pagal jūsų brandbook.</p>
+        <ul class="space-y-3 text-gray-700 text-sm mb-8">
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Logo keitimas
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Spalvų schema
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Dizaino pritaikymas
+          </li>
+        </ul>
+        <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
+      </div>
+
+      <!-- Ad hoc task modulis -->
+      <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
+            <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-[#3C7099]">Ad hoc task modulis</h3>
+        </div>
+        <div class="text-2xl font-bold text-[#C81F6A] mb-4">Individuali kaina</div>
+        <p class="text-gray-600 mb-6">Lanksčių užduočių valdymo modulis nenumatytoms situacijoms ir projektams. Greita užduočių kūrimo ir paskirstymo sistema.</p>
+        <ul class="space-y-3 text-gray-700 text-sm mb-8">
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Užduočių kūrimas
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Darbuotojų priskirimas
+          </li>
+          <li class="flex items-start">
+            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Progreso sekimas
+          </li>
+        </ul>
+        <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Papildoma informacija -->
+<section class="relative py-16 px-6 sm:px-8 bg-gray-50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl text-[#3C7099] mb-4">Kodėl pasirinkti papildomus funkcionalumus?</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Papildomi funkcionalumai leidžia maksimaliai išnaudoti jūsų personalo valdymo sistemos potencialą ir pritaikyti ją specifinius verslo poreikius.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-[#3C7099]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Efektyvumas</h3>
+        <p class="text-gray-600">Automatizacija ir integracijos padidina darbo efektyvumą ir sumažina rankinį darbą.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-[#3C7099]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Lankstumas</h3>
+        <p class="text-gray-600">Pritaikykite sistemą savo unikaliais verslo procesais ir poreikiais.</p>
+      </div>
+
+      <div class="text-center">
+        <div class="w-16 h-16 bg-[#3C7099]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">Saugumas</h3>
+        <p class="text-gray-600">Visi funkcionalumai atitinka aukščiausius saugumo ir duomenų apsaugos standartus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact forma -->
+<ContactForm />
+
+</MainLayout>
