@@ -23,6 +23,52 @@ export const POST: APIRoute = async ({ request }) => {
         // Parse the request body as JSON
         const data = await request.json();
 
+        // Get reCAPTCHA token from header
+        const recaptchaToken = request.headers.get('x-recaptcha-token');
+        
+        // Validate reCAPTCHA token
+        if (!recaptchaToken) {
+            console.log('Missing reCAPTCHA token - possible bot submission');
+            return new Response(JSON.stringify({ message: 'Saugumo patikrinimas nepavyko' }), {
+                status: 400,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        }
+
+        // Verify reCAPTCHA with Google
+        const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `secret=6LcP6_ArAAAAAPA4CJEflmfPHfXt0FleWbZILiU6&response=${recaptchaToken}`
+        });
+
+        const recaptchaResult = await recaptchaResponse.json();
+        
+        // Check if reCAPTCHA validation passed and score is acceptable
+        if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
+            console.log('reCAPTCHA validation failed:', {
+                success: recaptchaResult.success,
+                score: recaptchaResult.score,
+                'error-codes': recaptchaResult['error-codes']
+            });
+            return new Response(JSON.stringify({ message: 'Saugumo patikrinimas nepavyko - galimas bot\'as' }), {
+                status: 400,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        }
+
+        console.log('reCAPTCHA validation passed:', {
+            success: recaptchaResult.success,
+            score: recaptchaResult.score,
+            action: recaptchaResult.action
+        });
+
         // Extract the fields from the parsed data
         // const { name, email, message } = data;
 
