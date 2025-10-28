@@ -26,48 +26,69 @@ export const POST: APIRoute = async ({ request }) => {
         // Get reCAPTCHA token from header
         const recaptchaToken = request.headers.get('x-recaptcha-token');
         
-        // Validate reCAPTCHA token
-        if (!recaptchaToken) {
-            console.log('Missing reCAPTCHA token - possible bot submission');
-            return new Response(JSON.stringify({ message: 'Saugumo patikrinimas nepavyko' }), {
-                status: 400,
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-        }
-
-        // Verify reCAPTCHA with Google
-        const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `secret=6LcP6_ArAAAAAPA4CJEflmfPHfXt0FleWbZILiU6&response=${recaptchaToken}`
-        });
-
-        const recaptchaResult = await recaptchaResponse.json();
+        // Check if running in development mode (localhost)
+        const requestUrl = new URL(request.url);
+        const isDevelopment = requestUrl.hostname === 'localhost' || requestUrl.hostname === '127.0.0.1' || requestUrl.port === '4321' || requestUrl.port === '4322' || requestUrl.port === '4323';
         
-        // Check if reCAPTCHA validation passed and score is acceptable
-        if (!recaptchaResult.success || recaptchaResult.score < 0.5) {
-            console.log('reCAPTCHA validation failed:', {
+        console.log(`Request from: ${requestUrl.hostname}:${requestUrl.port}, isDevelopment: ${isDevelopment}`);
+        
+        // Skip reCAPTCHA validation entirely in development
+        if (isDevelopment) {
+            console.log('Development mode: skipping reCAPTCHA validation entirely');
+        } else {
+            // Validate reCAPTCHA token in production
+            if (!recaptchaToken) {
+                console.log('Missing reCAPTCHA token - possible bot submission');
+                return new Response(JSON.stringify({ message: 'Saugumo patikrinimas nepavyko' }), {
+                    status: 400,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+            }
+
+            // Verify reCAPTCHA with Google
+            const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `secret=6LcP6_ArAAAAAPA4CJEflmfPHfXt0FleWbZILiU6&response=${recaptchaToken}`
+            });
+
+            const recaptchaResult = await recaptchaResponse.json();
+            
+            // Check if reCAPTCHA validation passed and score is acceptable
+            if (!recaptchaResult.success || recaptchaResult.score < 0.3) {
+                console.log('reCAPTCHA validation failed:', {
+                    success: recaptchaResult.success,
+                    score: recaptchaResult.score,
+                    'error-codes': recaptchaResult['error-codes'],
+                    action: recaptchaResult.action,
+                    challenge_ts: recaptchaResult.challenge_ts,
+                    hostname: recaptchaResult.hostname
+                });
+                return new Response(JSON.stringify({ 
+                    message: `Saugumo patikrinimas nepavyko (score: ${recaptchaResult.score})`,
+                    debug: {
+                        score: recaptchaResult.score,
+                        success: recaptchaResult.success,
+                        errors: recaptchaResult['error-codes']
+                    }
+                }), {
+                    status: 400,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+            }
+
+            console.log('reCAPTCHA validation passed:', {
                 success: recaptchaResult.success,
                 score: recaptchaResult.score,
-                'error-codes': recaptchaResult['error-codes']
-            });
-            return new Response(JSON.stringify({ message: 'Saugumo patikrinimas nepavyko - galimas bot\'as' }), {
-                status: 400,
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                action: recaptchaResult.action
             });
         }
-
-        console.log('reCAPTCHA validation passed:', {
-            success: recaptchaResult.success,
-            score: recaptchaResult.score,
-            action: recaptchaResult.action
-        });
 
         // Extract the fields from the parsed data
         // const { name, email, message } = data;

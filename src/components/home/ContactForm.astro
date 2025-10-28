@@ -475,15 +475,39 @@
     // Collect form data
     const formData = new FormData(form);
 
-    // reCAPTCHA v3 validation
-    let recaptchaToken;
-    try {
-      recaptchaToken = await grecaptcha.execute('6LcP6_ArAAAAAGeVnrM_7mlRq2cjrC6l4Xifj0qQ', {action: 'contact_form_submit'});
-      // Note: reCAPTCHA token will be sent in HTTP header, not in form data
-    } catch (recaptchaError) {
-      console.error('reCAPTCHA validation failed:', recaptchaError);
-      responseMessage.innerHTML = '<span style="color: red;">Saugumo patikrinimas nepavyko. Bandykite dar kartą.</span>';
+    // reCAPTCHA v3 validation (optional in development)
+    let recaptchaToken = null;
+    const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    
+    if (typeof grecaptcha !== 'undefined' && grecaptcha.execute) {
+      try {
+        recaptchaToken = await grecaptcha.execute('6LcP6_ArAAAAAGeVnrM_7mlRq2cjrC6l4Xifj0qQ', {action: 'contact_form_submit'});
+        console.log('reCAPTCHA token generated successfully');
+      } catch (recaptchaError) {
+        console.error('reCAPTCHA validation failed:', recaptchaError);
+        if (!isDevelopment) {
+          successMessage.innerHTML = `
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+              <strong class="font-bold">Klaida!</strong> <span>Saugumo patikrinimas nepavyko. Bandykite dar kartą.</span>
+            </div>
+          `;
+          isSubmitting = false;
+          submitButton.disabled = false;
+          return;
+        }
+      }
+    } else if (!isDevelopment) {
+      console.error('reCAPTCHA not loaded properly');
+      successMessage.innerHTML = `
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+          <strong class="font-bold">Klaida!</strong> <span>reCAPTCHA neįkėlė tinkamai. Perkraukite puslapį ir bandykite dar kartą.</span>
+        </div>
+      `;
+      isSubmitting = false;
+      submitButton.disabled = false;
       return;
+    } else {
+      console.log('Development mode: reCAPTCHA not available, skipping');
     }
 
     const data = Object.fromEntries(formData.entries());
@@ -493,21 +517,38 @@
     console.log('Form data:', data);
 
     try {
+      // Prepare headers
+      const headers = {
+        'Content-Type': 'application/json'
+      };
+      
+      // Add reCAPTCHA token to headers if available
+      if (recaptchaToken) {
+        headers['X-Recaptcha-Token'] = recaptchaToken;
+      }
+      
       const response = await fetch('/api/crm', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Recaptcha-Token': recaptchaToken  // Send reCAPTCHA token in header
-        },
+        headers: headers,
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      console.log('Response status:', response.status);
+      console.log('Response headers:', response.headers);
+      
       const text = await response.text();
       console.log('Raw response:', text);
-      const result = text ? JSON.parse(text) : {};
+      
+      let result = {};
+      if (text) {
+        try {
+          result = JSON.parse(text);
+        } catch (parseError) {
+          console.error('Failed to parse response JSON:', parseError);
+          result = { message: 'Serverio atsakymo klaida' };
+        }
+      }
+      
       console.log('API response:', response.status, result);
 
       if (response.ok) {
@@ -525,11 +566,22 @@
         const closeButton = document.getElementById('closeSuccess');
         closeButton.addEventListener('click', () => {
           successMessage.innerHTML = '';
+          successMessage.classList.add('hidden');
         });
       } else {
+        // Get error message from response
+        let errorMessage = 'Įvyko klaida. Bandykite dar kartą.';
+        try {
+          if (result && result.message) {
+            errorMessage = result.message;
+          }
+        } catch (e) {
+          console.log('Failed to parse error message:', e);
+        }
+        
         successMessage.innerHTML = `
           <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
-            <strong class="font-bold">Klaida!</strong> <span>${result.message || 'Įvyko klaida. Bandykite dar kartą.'}</span>
+            <strong class="font-bold">Klaida!</strong> <span>${errorMessage}</span>
           </div>
         `;
       }
@@ -537,7 +589,7 @@
       console.error('Error during fetch:', error);
       successMessage.innerHTML = `
         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
-          <strong class="font-bold">Klaida!</strong> <span>${error.message}</span>
+          <strong class="font-bold">Klaida!</strong> <span>Tinklo klaida. Pabandykite dar kartą.</span>
         </div>
       `;
     } finally {
