@@ -106,6 +106,25 @@ export const POST: APIRoute = async ({ request }) => {
             });
         }
 
+        // Validate form_source - reject submissions without valid form source (likely bots)
+        if (!data.form_source || typeof data.form_source !== 'string' || data.form_source.trim() === '') {
+            console.log('Rejected submission without form_source:', {
+                name: data.name,
+                email: data.email,
+                timestamp: new Date().toISOString(),
+                userAgent: request.headers.get('user-agent'),
+                ip: request.headers.get('x-forwarded-for') || 'unknown'
+            });
+            
+            // Return success to not alert the bot, but don't process the submission
+            return new Response(JSON.stringify({ message: 'Užklausa sėkmingai pateikta!' }), {
+                status: 200,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        }
+
         // Honeypot check - if website field is filled, it's a bot
         if (data.website && data.website.trim() !== '') {
             console.log('Honeypot triggered - bot detected:', {
