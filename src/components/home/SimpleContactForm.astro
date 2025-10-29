@@ -30,6 +30,12 @@
       </div>
     </div>
 
+    <!-- Honeypot field - hidden from users, only bots will fill it -->
+    <div style="position: absolute; left: -9999px; top: -9999px;">
+      <label for="website">Website (leave empty)</label>
+      <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+    </div>
+
     <!-- reCAPTCHA v3 - invisible -->
 
     <button type="submit" class="w-full bg-[#C81F6A] text-white py-2 px-4 rounded-md hover:bg-pink-700 transition">Siųsti užklausą</button>

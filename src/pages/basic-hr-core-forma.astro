@@ -243,6 +243,12 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
         </div>
       </div>
 
+      <!-- Honeypot field - hidden from users, only bots will fill it -->
+      <div style="position: absolute; left: -9999px; top: -9999px;">
+        <label for="website">Website (leave empty)</label>
+        <input type="text" name="website" id="website" tabindex="-1" autocomplete="off">
+      </div>
+
       <!-- reCAPTCHA v3 - invisible -->
 
       <div class="relative">
@@ -444,9 +450,20 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
     console.log('Validation passed, checking reCAPTCHA...');
     
     try {
-      // Execute reCAPTCHA v3
-      const recaptchaToken = await grecaptcha.execute('6LcP6_ArAAAAAGeVnrM_7mlRq2cjrC6l4Xifj0qQ', {action: 'submit'});
-      console.log('reCAPTCHA token received:', recaptchaToken.substring(0, 20) + '...');
+      // Execute reCAPTCHA v3 - handle development mode gracefully
+      let recaptchaToken = null;
+      try {
+        if (typeof grecaptcha !== 'undefined') {
+          recaptchaToken = await grecaptcha.execute('6LcP6_ArAAAAAGeVnrM_7mlRq2cjrC6l4Xifj0qQ', {action: 'submit'});
+          console.log('reCAPTCHA token received:', recaptchaToken.substring(0, 20) + '...');
+        } else {
+          console.log('Development mode: reCAPTCHA not available');
+          recaptchaToken = 'dev-mode-token';
+        }
+      } catch (recaptchaError) {
+        console.warn('reCAPTCHA execution failed, continuing in development mode:', recaptchaError);
+        recaptchaToken = 'dev-mode-token';
+      }
       
       // Show loading indicator
       successMessage.classList.remove('hidden');
@@ -511,9 +528,13 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
       }
     } catch (error) {
       console.error('Error during fetch:', error);
+      let errorMessage = 'Įvyko klaida. Bandykite dar kartą.';
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        errorMessage = 'Tinklo klaida. Patikrinkite interneto ryšį ir bandykite dar kartą.';
+      }
       successMessage.innerHTML = `
         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
-          <strong class="font-bold">Klaida!</strong> <span>${error.message}</span>
+          <strong class="font-bold">Klaida!</strong> <span>${errorMessage}</span>
         </div>
       `;
       } finally {

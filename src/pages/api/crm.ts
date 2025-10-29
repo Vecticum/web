@@ -4,6 +4,11 @@ export const prerender = false;
 const recentSubmissions = new Map();
 const DUPLICATE_WINDOW_MS = 30000; // 30 seconds window to detect duplicates
 
+// Rate limiting per IP
+const ipSubmissions = new Map();
+const RATE_LIMIT_WINDOW_MS = 300000; // 5 minutes
+const MAX_SUBMISSIONS_PER_IP = 5; // Max 5 submissions per IP per 5 minutes
+
 // src/pages/api/crm.ts
 import type { APIRoute } from 'astro';
 
@@ -36,9 +41,9 @@ export const POST: APIRoute = async ({ request }) => {
         if (isDevelopment) {
             console.log('Development mode: skipping reCAPTCHA validation entirely');
         } else {
-            // Validate reCAPTCHA token in production
+            // Validate reCAPTCHA token in production - STRICT MODE
             if (!recaptchaToken) {
-                console.log('Missing reCAPTCHA token - possible bot submission');
+                console.log('Missing reCAPTCHA token in production - blocking request');
                 return new Response(JSON.stringify({ message: 'Saugumo patikrinimas nepavyko' }), {
                     status: 400,
                     headers: {
@@ -58,23 +63,20 @@ export const POST: APIRoute = async ({ request }) => {
 
             const recaptchaResult = await recaptchaResponse.json();
             
-            // Check if reCAPTCHA validation passed and score is acceptable
+            // Balanced validation for production - moderate score threshold
             if (!recaptchaResult.success || recaptchaResult.score < 0.3) {
-                console.log('reCAPTCHA validation failed:', {
+                console.log('reCAPTCHA validation failed in production:', {
                     success: recaptchaResult.success,
                     score: recaptchaResult.score,
                     'error-codes': recaptchaResult['error-codes'],
                     action: recaptchaResult.action,
                     challenge_ts: recaptchaResult.challenge_ts,
-                    hostname: recaptchaResult.hostname
+                    hostname: recaptchaResult.hostname,
+                    userAgent: request.headers.get('user-agent'),
+                    ip: request.headers.get('x-forwarded-for') || 'unknown'
                 });
                 return new Response(JSON.stringify({ 
-                    message: `Saugumo patikrinimas nepavyko (score: ${recaptchaResult.score})`,
-                    debug: {
-                        score: recaptchaResult.score,
-                        success: recaptchaResult.success,
-                        errors: recaptchaResult['error-codes']
-                    }
+                    message: 'Saugumo patikrinimas nepavyko'
                 }), {
                     status: 400,
                     headers: {
@@ -83,10 +85,11 @@ export const POST: APIRoute = async ({ request }) => {
                 });
             }
 
-            console.log('reCAPTCHA validation passed:', {
+            console.log('reCAPTCHA validation passed in production:', {
                 success: recaptchaResult.success,
                 score: recaptchaResult.score,
-                action: recaptchaResult.action
+                action: recaptchaResult.action,
+                hostname: recaptchaResult.hostname
             });
         }
 
@@ -96,6 +99,107 @@ export const POST: APIRoute = async ({ request }) => {
         // Basic validation: Check if required fields are present
         if (!data.name || !data.email) {
             return new Response(JSON.stringify({ message: 'Trūksta būtinų laukų (vardas ir el. paštas)' }), {
+                status: 400,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        }
+
+        // Honeypot check - if website field is filled, it's a bot
+        if (data.website && data.website.trim() !== '') {
+            console.log('Honeypot triggered - bot detected:', {
+                name: data.name,
+                email: data.email,
+                website: data.website,
+                timestamp: new Date().toISOString()
+            });
+            
+            // Return success to not alert the bot
+            return new Response(JSON.stringify({ message: 'Užklausa sėkmingai pateikta!' }), {
+                status: 200,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        }
+
+        // Rate limiting check (not in development)
+        if (!isDevelopment) {
+            const clientIP = request.headers.get('x-forwarded-for') || 
+                           request.headers.get('x-real-ip') || 
+                           'unknown';
+            
+            const currentTime = Date.now();
+            
+            // Clean old IP submission records
+            for (const [ip, submissions] of ipSubmissions.entries()) {
+                const filteredSubmissions = submissions.filter((time: number) => currentTime - time < RATE_LIMIT_WINDOW_MS);
+                if (filteredSubmissions.length === 0) {
+                    ipSubmissions.delete(ip);
+                } else {
+                    ipSubmissions.set(ip, filteredSubmissions);
+                }
+            }
+            
+            // Check current IP submission count
+            const currentIPSubmissions = ipSubmissions.get(clientIP) || [];
+            if (currentIPSubmissions.length >= MAX_SUBMISSIONS_PER_IP) {
+                console.log(`Rate limit exceeded for IP: ${clientIP}, submissions: ${currentIPSubmissions.length}`);
+                return new Response(JSON.stringify({ message: 'Per daug užklausų. Bandykite vėliau.' }), {
+                    status: 429,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+            }
+            
+            // Record this submission
+            currentIPSubmissions.push(currentTime);
+            ipSubmissions.set(clientIP, currentIPSubmissions);
+        }
+
+        // Advanced spam detection (focused on obvious bot patterns)
+        const spamPatterns = [
+            /^[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}/, // Pattern like OVviAMbQwKvU
+            /^[A-Z]+[a-z]+[A-Z]+[a-z]+[A-Z]+/, // Alternating caps pattern
+            /^[0-9]+[A-Za-z]+[0-9]+/, // Mixed numbers and letters
+        ];
+
+        const suspiciousNames = [
+            'test', 'testing', 'bot', 'spam', 'fake', 'demo',
+            'qwerty', 'asdfgh', 'zxcvbn', 'admin', 'user'
+        ];
+
+        // Check name for spam patterns (only obvious spam patterns)
+        const nameSpamCheck = spamPatterns.some(pattern => pattern.test(data.name)) ||
+                             suspiciousNames.some(word => data.name.toLowerCase().includes(word));
+
+        // Check email for basic validity and suspicious patterns
+        const emailSpamCheck = !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data.email) ||
+                              data.email.includes('test@') ||
+                              data.email.includes('fake@') ||
+                              data.email.includes('spam@') ||
+                              data.email.includes('@test.') ||
+                              data.email.length > 100;
+
+        // Check message for spam (if provided) - only obvious spam patterns
+        let messageSpamCheck = false;
+        if (data.message) {
+            messageSpamCheck = spamPatterns.some(pattern => pattern.test(data.message));
+        }
+
+        if (nameSpamCheck || emailSpamCheck || messageSpamCheck) {
+            console.log('Spam detected:', {
+                name: data.name,
+                email: data.email,
+                nameSpam: nameSpamCheck,
+                emailSpam: emailSpamCheck,
+                messageSpam: messageSpamCheck,
+                timestamp: new Date().toISOString()
+            });
+            
+            return new Response(JSON.stringify({ message: 'Netinkama duomenų forma' }), {
                 status: 400,
                 headers: {
                     'Content-Type': 'application/json',
