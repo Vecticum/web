@@ -9,11 +9,12 @@ interface Props {
   description: string;
   image?: string;
   canonical?: string;
+  schema?: string;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, image = "/blog-placeholder-1.jpg", canonical } = Astro.props;
+const { title, description, image = "/blog-placeholder-1.jpg", canonical, schema } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -149,3 +150,8 @@ src="https://www.facebook.com/tr?id=1182845313669998&ev=PageView&noscript=1"
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "p222q6dix4");
 </script>
+
+<!-- Schema.org Structured Data -->
+{schema && (
+  <script type="application/ld+json" set:html={schema}></script>
+)}

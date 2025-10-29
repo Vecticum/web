@@ -24,6 +24,7 @@ const services = defineCollection({
       ogImage: z.string().optional(),
       ogType: z.string().optional(),
       canonical: z.string().optional(),
+      schema: z.string().optional(),
     }),
     title: z.string(),
     description: z.string(),
