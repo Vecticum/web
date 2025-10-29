@@ -172,8 +172,10 @@ export const POST: APIRoute = async ({ request }) => {
         ];
 
         // Check name for spam patterns (only obvious spam patterns)
+        // Use word boundaries to match whole words only, not parts of words
+        const nameWords = data.name.toLowerCase().split(/\s+/);
         const nameSpamCheck = spamPatterns.some(pattern => pattern.test(data.name)) ||
-                             suspiciousNames.some(word => data.name.toLowerCase().includes(word));
+                             suspiciousNames.some(word => nameWords.includes(word));
 
         // Check email for basic validity and suspicious patterns
         const emailSpamCheck = !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data.email) ||
