@@ -120,6 +120,14 @@
         <span>Apdorojama...</span>
       </div>
     `;
+    
+    // Scroll to loading message immediately
+    setTimeout(() => {
+      responseMessage.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      });
+    }, 50);
 
     // Collect form data
     const formData = new FormData(form);
@@ -216,6 +224,7 @@
           </div>
         `;
         form.reset();
+        
         const closeButton = document.getElementById('closeSuccess');
         closeButton.addEventListener('click', () => {
           responseMessage.innerHTML = '';

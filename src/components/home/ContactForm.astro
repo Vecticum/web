@@ -476,6 +476,15 @@
         <span>Apdorojama...</span>
       </div>
     `;
+    
+    // Scroll to loading message immediately
+    setTimeout(() => {
+      successMessage.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      });
+    }, 50);
+    
     submitButton.disabled = true;
 
     // Collect form data
@@ -569,6 +578,7 @@
           </div>
         `;
         form.reset();
+        
         const closeButton = document.getElementById('closeSuccess');
         closeButton.addEventListener('click', () => {
           successMessage.innerHTML = '';
