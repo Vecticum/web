@@ -116,9 +116,9 @@ export const POST: APIRoute = async ({ request }) => {
                 ip: request.headers.get('x-forwarded-for') || 'unknown'
             });
             
-            // Return success to not alert the bot, but don't process the submission
-            return new Response(JSON.stringify({ message: 'Užklausa sėkmingai pateikta!' }), {
-                status: 200,
+            // Return a generic error that doesn't reveal it's bot detection
+            return new Response(JSON.stringify({ message: 'Įvyko sistemos klaida. Bandykite dar kartą.' }), {
+                status: 400,
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -183,6 +183,8 @@ export const POST: APIRoute = async ({ request }) => {
             /^[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}/, // Pattern like OVviAMbQwKvU
             /^[A-Z]+[a-z]+[A-Z]+[a-z]+[A-Z]+/, // Alternating caps pattern
             /^[0-9]+[A-Za-z]+[0-9]+/, // Mixed numbers and letters
+            /^[a-zA-Z]{15,}$/, // Very long single words (like tZtzKrZkyEztsbLZfPs)
+            /^[tT][A-Za-z]*[zZ][A-Za-z]*[kK][A-Za-z]*/, // Pattern starting with t, containing z and k (like tZtzKrZky...)
         ];
 
         const suspiciousNames = [
@@ -196,7 +198,7 @@ export const POST: APIRoute = async ({ request }) => {
         const nameSpamCheck = spamPatterns.some(pattern => pattern.test(data.name)) ||
                              suspiciousNames.some(word => nameWords.includes(word));
 
-        // Check email for basic validity and suspicious patterns
+        // Check email for basic validity and suspicious patterns        
         const emailSpamCheck = !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data.email) ||
                               data.email.includes('test@') ||
                               data.email.includes('fake@') ||
