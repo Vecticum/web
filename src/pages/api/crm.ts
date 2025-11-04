@@ -38,59 +38,51 @@ export const POST: APIRoute = async ({ request }) => {
         console.log(`Request from: ${requestUrl.hostname}:${requestUrl.port}, isDevelopment: ${isDevelopment}`);
         
         // Skip reCAPTCHA validation entirely in development
+        let recaptchaPassedInProduction = false;
+        
         if (isDevelopment) {
             console.log('Development mode: skipping reCAPTCHA validation entirely');
+            recaptchaPassedInProduction = true; // Consider it passed for development
         } else {
-            // Validate reCAPTCHA token in production - STRICT MODE
+            // Validate reCAPTCHA token in production - FALLBACK TO SPAM DETECTION
             if (!recaptchaToken) {
-                console.log('Missing reCAPTCHA token in production - blocking request');
-                return new Response(JSON.stringify({ message: 'Saugumo patikrinimas nepavyko' }), {
-                    status: 400,
+                console.log('Missing reCAPTCHA token in production - will fallback to spam detection');
+                recaptchaPassedInProduction = false;
+            } else {
+                // Verify reCAPTCHA with Google
+                const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+                    method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/x-www-form-urlencoded',
                     },
+                    body: `secret=6LcP6_ArAAAAAPA4CJEflmfPHfXt0FleWbZILiU6&response=${recaptchaToken}`
                 });
+
+                const recaptchaResult = await recaptchaResponse.json();
+                
+                // Balanced validation for production - moderate score threshold
+                if (!recaptchaResult.success || recaptchaResult.score < 0.3) {
+                    console.log('reCAPTCHA validation failed in production - will fallback to spam detection:', {
+                        success: recaptchaResult.success,
+                        score: recaptchaResult.score,
+                        'error-codes': recaptchaResult['error-codes'],
+                        action: recaptchaResult.action,
+                        challenge_ts: recaptchaResult.challenge_ts,
+                        hostname: recaptchaResult.hostname,
+                        userAgent: request.headers.get('user-agent'),
+                        ip: request.headers.get('x-forwarded-for') || 'unknown'
+                    });
+                    recaptchaPassedInProduction = false;
+                } else {
+                    console.log('reCAPTCHA validation passed in production:', {
+                        success: recaptchaResult.success,
+                        score: recaptchaResult.score,
+                        action: recaptchaResult.action,
+                        hostname: recaptchaResult.hostname
+                    });
+                    recaptchaPassedInProduction = true;
+                }
             }
-
-            // Verify reCAPTCHA with Google
-            const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `secret=6LcP6_ArAAAAAPA4CJEflmfPHfXt0FleWbZILiU6&response=${recaptchaToken}`
-            });
-
-            const recaptchaResult = await recaptchaResponse.json();
-            
-            // Balanced validation for production - moderate score threshold
-            if (!recaptchaResult.success || recaptchaResult.score < 0.3) {
-                console.log('reCAPTCHA validation failed in production:', {
-                    success: recaptchaResult.success,
-                    score: recaptchaResult.score,
-                    'error-codes': recaptchaResult['error-codes'],
-                    action: recaptchaResult.action,
-                    challenge_ts: recaptchaResult.challenge_ts,
-                    hostname: recaptchaResult.hostname,
-                    userAgent: request.headers.get('user-agent'),
-                    ip: request.headers.get('x-forwarded-for') || 'unknown'
-                });
-                return new Response(JSON.stringify({ 
-                    message: 'Saugumo patikrinimas nepavyko'
-                }), {
-                    status: 400,
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-            }
-
-            console.log('reCAPTCHA validation passed in production:', {
-                success: recaptchaResult.success,
-                score: recaptchaResult.score,
-                action: recaptchaResult.action,
-                hostname: recaptchaResult.hostname
-            });
         }
 
         // Extract the fields from the parsed data
@@ -111,12 +103,32 @@ export const POST: APIRoute = async ({ request }) => {
             console.log('Rejected submission without form_source:', {
                 name: data.name,
                 email: data.email,
+                source: data.source || 'none',
                 timestamp: new Date().toISOString(),
                 userAgent: request.headers.get('user-agent'),
                 ip: request.headers.get('x-forwarded-for') || 'unknown'
             });
             
             // Return a generic error that doesn't reveal it's bot detection
+            return new Response(JSON.stringify({ message: 'Įvyko sistemos klaida. Bandykite dar kartą.' }), {
+                status: 400,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        }
+
+        // Additional check: reject if has 'source' field but not 'form_source' (bot behavior)
+        if (data.source && !data.form_source) {
+            console.log('Rejected bot with source field but no form_source:', {
+                name: data.name,
+                email: data.email,
+                source: data.source,
+                timestamp: new Date().toISOString(),
+                userAgent: request.headers.get('user-agent'),
+                ip: request.headers.get('x-forwarded-for') || 'unknown'
+            });
+            
             return new Response(JSON.stringify({ message: 'Įvyko sistemos klaida. Bandykite dar kartą.' }), {
                 status: 400,
                 headers: {
@@ -143,7 +155,7 @@ export const POST: APIRoute = async ({ request }) => {
             });
         }
 
-        // Rate limiting check (not in development)
+        // Rate limiting check (disabled in development, but run spam check anyway)
         if (!isDevelopment) {
             const clientIP = request.headers.get('x-forwarded-for') || 
                            request.headers.get('x-real-ip') || 
@@ -178,56 +190,82 @@ export const POST: APIRoute = async ({ request }) => {
             ipSubmissions.set(clientIP, currentIPSubmissions);
         }
 
-        // Advanced spam detection (focused on obvious bot patterns)
-        const spamPatterns = [
-            /^[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}/, // Pattern like OVviAMbQwKvU
-            /^[A-Z]+[a-z]+[A-Z]+[a-z]+[A-Z]+/, // Alternating caps pattern
-            /^[0-9]+[A-Za-z]+[0-9]+/, // Mixed numbers and letters
-            /^[a-zA-Z]{15,}$/, // Very long single words (like tZtzKrZkyEztsbLZfPs)
-            /^[tT][A-Za-z]*[zZ][A-Za-z]*[kK][A-Za-z]*/, // Pattern starting with t, containing z and k (like tZtzKrZky...)
-        ];
-
-        const suspiciousNames = [
-            'test', 'testing', 'bot', 'spam', 'fake', 'demo',
-            'qwerty', 'asdfgh', 'zxcvbn', 'admin', 'user'
-        ];
-
-        // Check name for spam patterns (only obvious spam patterns)
-        // Use word boundaries to match whole words only, not parts of words
-        const nameWords = data.name.toLowerCase().split(/\s+/);
-        const nameSpamCheck = spamPatterns.some(pattern => pattern.test(data.name)) ||
-                             suspiciousNames.some(word => nameWords.includes(word));
-
-        // Check email for basic validity and suspicious patterns        
-        const emailSpamCheck = !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data.email) ||
-                              data.email.includes('test@') ||
-                              data.email.includes('fake@') ||
-                              data.email.includes('spam@') ||
-                              data.email.includes('@test.') ||
-                              data.email.length > 100;
-
-        // Check message for spam (if provided) - only obvious spam patterns
-        let messageSpamCheck = false;
-        if (data.message) {
-            messageSpamCheck = spamPatterns.some(pattern => pattern.test(data.message));
-        }
-
-        if (nameSpamCheck || emailSpamCheck || messageSpamCheck) {
-            console.log('Spam detected:', {
-                name: data.name,
-                email: data.email,
-                nameSpam: nameSpamCheck,
-                emailSpam: emailSpamCheck,
-                messageSpam: messageSpamCheck,
-                timestamp: new Date().toISOString()
-            });
+        // If reCAPTCHA failed in production, use spam detection as fallback
+        if (!recaptchaPassedInProduction && !isDevelopment) {
+            console.log('reCAPTCHA failed - performing spam detection as fallback');
             
-            return new Response(JSON.stringify({ message: 'Netinkama duomenų forma' }), {
-                status: 400,
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+            // Advanced spam detection (focused on obvious bot patterns)
+            const spamPatterns = [
+                /^[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}[A-Z]{2}[a-z]{2}/, // Pattern like OVviAMbQwKvU
+                /^[A-Z]+[a-z]+[A-Z]+[a-z]+[A-Z]+/, // Alternating caps pattern
+                /^[0-9]+[A-Za-z]+[0-9]+/, // Mixed numbers and letters
+                /^[a-zA-Z]{15,}$/, // Very long single words (like tZtzKrZkyEztsbLZfPs, JqNQfwBErGeFtusxRjeNH)
+                /^[tT][A-Za-z]*[zZ][A-Za-z]*[kK][A-Za-z]*/, // Pattern starting with t, containing z and k (like tZtzKrZky...)
+                /^[A-Z][a-z][A-Z][a-z][A-Z][a-z]/, // Alternating case pattern like JqNQfw...
+                /^[a-z]+[A-Z][a-z]+[A-Z][a-z]+[A-Z]/, // Mixed case random pattern
+            ];
+
+            const suspiciousNames = [
+                'test', 'testing', 'bot', 'spam', 'fake', 'demo',
+                'qwerty', 'asdfgh', 'zxcvbn', 'admin', 'user'
+            ];
+
+            // Check name for spam patterns (only obvious spam patterns)
+            // Use word boundaries to match whole words only, not parts of words
+            const nameWords = data.name.toLowerCase().split(/\s+/);
+            const nameSpamCheck = spamPatterns.some(pattern => {
+                const match = pattern.test(data.name);
+                if (match) {
+                    console.log(`Spam pattern matched for name "${data.name}":`, pattern);
+                }
+                return match;
+            }) || suspiciousNames.some(word => nameWords.includes(word));
+            
+            // Debug logging for this specific case
+            console.log('Spam check details:', {
+                name: data.name,
+                nameLength: data.name.length,
+                nameWords: nameWords,
+                patterns: spamPatterns.map(p => ({ pattern: p.toString(), match: p.test(data.name) })),
+                nameSpamCheck: nameSpamCheck
             });
+
+            // Check email for basic validity and suspicious patterns        
+            const emailSpamCheck = !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(data.email) ||
+                                  data.email.includes('test@') ||
+                                  data.email.includes('fake@') ||
+                                  data.email.includes('spam@') ||
+                                  data.email.includes('@test.') ||
+                                  data.email.length > 100;
+
+            // Check message for spam (if provided) - only obvious spam patterns
+            let messageSpamCheck = false;
+            if (data.message) {
+                messageSpamCheck = spamPatterns.some(pattern => pattern.test(data.message));
+            }
+
+            if (nameSpamCheck || emailSpamCheck || messageSpamCheck) {
+                console.log('SPAM DETECTED!!! Details:', {
+                    name: data.name,
+                    nameLength: data.name.length,
+                    email: data.email,
+                    company: data.company,
+                    nameSpam: nameSpamCheck,
+                    emailSpam: emailSpamCheck,
+                    messageSpam: messageSpamCheck,
+                    patterns: spamPatterns.map(p => ({ pattern: p.toString(), nameMatch: p.test(data.name) })),
+                    timestamp: new Date().toISOString()
+                });
+                
+                return new Response(JSON.stringify({ message: 'Netinkama duomenų forma' }), {
+                    status: 400,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+            }
+            
+            console.log('Spam detection passed - allowing submission despite reCAPTCHA failure');
         }
 
         // Log received data for debugging
