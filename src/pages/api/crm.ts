@@ -44,10 +44,21 @@ export const POST: APIRoute = async ({ request }) => {
             console.log('Development mode: skipping reCAPTCHA validation entirely');
             recaptchaPassedInProduction = true; // Consider it passed for development
         } else {
-            // Validate reCAPTCHA token in production - FALLBACK TO SPAM DETECTION
+            // MANDATORY reCAPTCHA validation in production
             if (!recaptchaToken) {
-                console.log('Missing reCAPTCHA token in production - will fallback to spam detection');
-                recaptchaPassedInProduction = false;
+                console.log('BLOCKED: Missing reCAPTCHA token in production (likely bot):', {
+                    name: data.name,
+                    email: data.email,
+                    hasFormSource: !!data.form_source,
+                    userAgent: request.headers.get('user-agent'),
+                    ip: request.headers.get('x-forwarded-for') || 'unknown'
+                });
+                return new Response(JSON.stringify({ message: 'Saugumo patikrinimas nepavyko. Bandykite iš naujo.' }), {
+                    status: 400,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
             } else {
                 // Verify reCAPTCHA with Google
                 const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
@@ -98,19 +109,44 @@ export const POST: APIRoute = async ({ request }) => {
             });
         }
 
+        // Strict field validation - reject submissions with unexpected fields (bots often add extra fields)
+        const allowedFields = ['name', 'email', 'company', 'message', 'form_source', 'submission_id', 'source', 'website', 'g-recaptcha-response', 'position', 'phone'];
+        const submittedFields = Object.keys(data);
+        const unexpectedFields = submittedFields.filter(field => !allowedFields.includes(field));
+        
+        if (unexpectedFields.length > 0) {
+            console.log('Rejected submission with unexpected fields (likely bot):', {
+                name: data.name,
+                email: data.email,
+                unexpectedFields: unexpectedFields,
+                allFields: submittedFields,
+                timestamp: new Date().toISOString(),
+                userAgent: request.headers.get('user-agent'),
+                ip: request.headers.get('x-forwarded-for') || 'unknown'
+            });
+            
+            return new Response(JSON.stringify({ message: 'Netinkama duomenų forma' }), {
+                status: 400,
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+        }
+
         // Validate form_source - reject submissions without valid form source (likely bots)
         if (!data.form_source || typeof data.form_source !== 'string' || data.form_source.trim() === '') {
-            console.log('Rejected submission without form_source:', {
+            console.log('REJECTED: Submission without form_source (likely direct API attack):', {
                 name: data.name,
                 email: data.email,
                 source: data.source || 'none',
+                allFields: Object.keys(data),
                 timestamp: new Date().toISOString(),
                 userAgent: request.headers.get('user-agent'),
                 ip: request.headers.get('x-forwarded-for') || 'unknown'
             });
             
             // Return a generic error that doesn't reveal it's bot detection
-            return new Response(JSON.stringify({ message: 'Įvyko sistemos klaida. Bandykite dar kartą.' }), {
+            return new Response(JSON.stringify({ message: 'Trūksta būtinų sistemos duomenų. Bandykite per oficialią formą.' }), {
                 status: 400,
                 headers: {
                     'Content-Type': 'application/json',
@@ -244,16 +280,50 @@ export const POST: APIRoute = async ({ request }) => {
                 messageSpamCheck = spamPatterns.some(pattern => pattern.test(data.message));
             }
 
-            if (nameSpamCheck || emailSpamCheck || messageSpamCheck) {
+            // Check company for spam patterns (if provided)
+            let companySpamCheck = false;
+            if (data.company && data.company.trim() !== '' && data.company !== 'N/A') {
+                const companyWords = data.company.toLowerCase().split(/\s+/);
+                companySpamCheck = spamPatterns.some(pattern => {
+                    const match = pattern.test(data.company);
+                    if (match) {
+                        console.log(`Spam pattern matched for company "${data.company}":`, pattern);
+                    }
+                    return match;
+                }) || suspiciousNames.some(word => companyWords.includes(word));
+            }
+
+            // Check position for spam patterns (if provided)
+            let positionSpamCheck = false;
+            if (data.position && data.position.trim() !== '' && data.position !== 'N/A') {
+                const positionWords = data.position.toLowerCase().split(/\s+/);
+                positionSpamCheck = spamPatterns.some(pattern => {
+                    const match = pattern.test(data.position);
+                    if (match) {
+                        console.log(`Spam pattern matched for position "${data.position}":`, pattern);
+                    }
+                    return match;
+                }) || suspiciousNames.some(word => positionWords.includes(word));
+            }
+
+            if (nameSpamCheck || emailSpamCheck || messageSpamCheck || companySpamCheck || positionSpamCheck) {
                 console.log('SPAM DETECTED!!! Details:', {
                     name: data.name,
                     nameLength: data.name.length,
                     email: data.email,
                     company: data.company,
+                    position: data.position,
                     nameSpam: nameSpamCheck,
                     emailSpam: emailSpamCheck,
                     messageSpam: messageSpamCheck,
-                    patterns: spamPatterns.map(p => ({ pattern: p.toString(), nameMatch: p.test(data.name) })),
+                    companySpam: companySpamCheck,
+                    positionSpam: positionSpamCheck,
+                    patterns: spamPatterns.map(p => ({ 
+                        pattern: p.toString(), 
+                        nameMatch: p.test(data.name),
+                        companyMatch: data.company ? p.test(data.company) : false,
+                        positionMatch: data.position ? p.test(data.position) : false
+                    })),
                     timestamp: new Date().toISOString()
                 });
                 
