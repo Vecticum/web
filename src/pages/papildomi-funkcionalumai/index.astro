@@ -33,7 +33,7 @@ const seoImage = '~/assets/images/logo.webp';
   </section>
 <!-- HERO PABAIGA -->
 
-<section class="relative py-20 px-6 sm:px-8 bg-white text-gray-900">
+<section id="services" class="relative py-20 px-6 sm:px-8 bg-white text-gray-900">
   <div class="relative z-10 max-w-7xl mx-auto">
     <div class="text-center mb-14">
       <h2 class="text-4xl sm:text-5xl text-[#3C7099]">Papildomi funkcionalumai</h2>
@@ -42,441 +42,525 @@ const seoImage = '~/assets/images/logo.webp';
       </p>
     </div>
 
-    <!-- OCR sprendimai -->
-    <div class="mb-16">
-      <h3 class="text-2xl font-semibold text-[#3C7099] mb-8 text-center">OCR sprendimai</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Tikslusis OCR -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-[#3C7099]">Tikslusis OCR</h4>
-          </div>
-          <p class="text-gray-600 mb-6">Suminės ir kiekinės sąskaitos pagrindinių laukų bei eilučių atpažinimas ir automatinis įvedimas į sistemą.</p>
-          <div class="space-y-3 text-gray-700 text-sm mb-8">
-            <div class="flex justify-between items-center p-3 bg-white rounded-lg">
-              <span>Suminės sąskaitos</span>
-              <span class="font-semibold text-[#C81F6A]">0,25€ / sąskaitą</span>
-            </div>
-            <div class="flex justify-between items-center p-3 bg-white rounded-lg">
-              <span>Kiekinės sąskaitos</span>
-              <span class="font-semibold text-[#C81F6A]">0,35€ / A4 lapą</span>
-            </div>
-          </div>
-          <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
-        </div>
-
-        <!-- Greitasis OCR -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-[#3C7099]">Greitasis OCR</h4>
-          </div>
-          <p class="text-gray-600 mb-6">Avansinės apyskaitos sąskaitų faktūrų/čekių duomenų atpažinimas iki 70% tikslumu.</p>
-          <div class="space-y-3 text-gray-700 text-sm mb-8">
-            <div class="flex justify-between items-center p-3 bg-white rounded-lg">
-              <span>Pagrindiniai laukai</span>
-              <span class="font-semibold text-[#C81F6A]">0,07€ / dokumentą</span>
-            </div>
-            <div class="text-xs text-gray-500 italic">Max 70% atpažinimo tikslumas</div>
-          </div>
-          <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
-        </div>
-
-        <!-- Sąskaitų saugojimas -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-[#3C7099]">Sąskaitų saugojimas</h4>
-          </div>
-          <p class="text-gray-600 mb-6">Papildomas sąskaitų saugojimas sistemoje, kai viršijamas licencijos limitas.</p>
-          <div class="space-y-3 text-gray-700 text-sm mb-8">
-            <div class="flex justify-between items-center p-3 bg-white rounded-lg">
-              <span>Papildomi 100 vnt./mėn.</span>
-              <span class="font-semibold text-[#C81F6A]">9€ / mėn.</span>
-            </div>
-          </div>
-          <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
-        </div>
-      </div>
+    <!-- Temų filtras -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <button class="filter-btn active px-6 py-2.5 text-sm font-medium rounded-full border-2 transition-all bg-[#3C7099] text-white border-[#3C7099]" data-filter="all">
+        Visi
+      </button>
+      <button class="filter-btn px-6 py-2.5 text-sm font-medium rounded-full border-2 transition-all text-[#3C7099] border-[#3C7099] hover:bg-[#3C7099] hover:text-white" data-filter="ocr">
+        OCR
+      </button>
+      <button class="filter-btn px-6 py-2.5 text-sm font-medium rounded-full border-2 transition-all text-[#3C7099] border-[#3C7099] hover:bg-[#3C7099] hover:text-white" data-filter="email">
+        Email
+      </button>
+      <button class="filter-btn px-6 py-2.5 text-sm font-medium rounded-full border-2 transition-all text-[#3C7099] border-[#3C7099] hover:bg-[#3C7099] hover:text-white" data-filter="signature">
+        El. parašas
+      </button>
+      <button class="filter-btn px-6 py-2.5 text-sm font-medium rounded-full border-2 transition-all text-[#3C7099] border-[#3C7099] hover:bg-[#3C7099] hover:text-white" data-filter="api">
+        API
+      </button>
+      <button class="filter-btn px-6 py-2.5 text-sm font-medium rounded-full border-2 transition-all text-[#3C7099] border-[#3C7099] hover:bg-[#3C7099] hover:text-white" data-filter="other">
+        Kita
+      </button>
     </div>
 
-    <!-- Email ir komunikacija -->
-    <div class="mb-16">
-      <h3 class="text-2xl font-semibold text-[#3C7099] mb-8 text-center">Email ir komunikacija</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        
-        <!-- Email Reply -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-[#3C7099]">Email Reply funkcija</h4>
-          </div>
-          <div class="text-2xl font-bold text-[#C81F6A] mb-4">20€ / mėn.</div>
-          <p class="text-gray-600 mb-6">El. paštu gautas užduotis galima pakomentuoti atsakant į el. laišką. Komentarai automatiškai atsiranda prie užduoties sistemoje.</p>
-          <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
-        </div>
-
-        <!-- SMS autentifikavimas -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-[#3C7099]">SMS autentifikavimas</h4>
-          </div>
-          <div class="text-2xl font-bold text-[#C81F6A] mb-4">10€ / mėn.</div>
-          <p class="text-gray-600 mb-6">Prisijungimas prie sistemos su vienkartiniu slaptažodžiu, siunčiamu SMS žinute į mobilų telefoną.</p>
-          <p class="text-sm text-gray-500 mb-6">Iki 50 vartotojų</p>
-          <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Elektroninis parašas -->
-    <div class="mb-16">
-      <h3 class="text-2xl font-semibold text-[#3C7099] mb-8 text-center">Elektroninis parašas</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        
-        <!-- Dokobit -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-[#3C7099]">Dokobit integracija</h4>
-          </div>
-          <p class="text-gray-600 mb-6">Kvalifikuoto elektroninio parašo sprendimas integruotas į Vecticum sistemą.</p>
-          <div class="space-y-3 text-gray-700 text-sm mb-8">
-            <div class="flex items-start">
-              <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Kvalifikuotas el. parašas
-            </div>
-            <div class="flex items-start">
-              <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Integruota į sistemą
-            </div>
-            <div class="text-xs text-gray-500">
-              <a href="https://www.dokobit.com/docs/pricing/Dokobit-el-pasirasymo-sprendimu-kainodara.pdf" target="_blank" class="text-[#3C7099] hover:underline">
-                Aktuali Dokobit kainodara
-              </a>
-            </div>
-          </div>
-          <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
-        </div>
-
-        <!-- MarkSign -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-[#3C7099]">MarkSign integracija</h4>
-          </div>
-          <p class="text-gray-600 mb-6">Kvalifikuoto elektroninio parašo sprendimas integruotas į Vecticum sistemą.</p>
-          <div class="space-y-3 text-gray-700 text-sm mb-8">
-            <div class="flex items-start">
-              <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Kvalifikuotas el. parašas
-            </div>
-            <div class="flex items-start">
-              <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              Integruota į sistemą
-            </div>
-          </div>
-          <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- API ir integracijos -->
-    <div class="mb-16">
-      <h3 class="text-2xl font-semibold text-[#3C7099] mb-8 text-center">API ir integracijos</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- API raktas -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-[#3C7099]">API rakto išdavimas</h4>
-          </div>
-          <div class="text-2xl font-bold text-[#C81F6A] mb-4">80€</div>
-          <p class="text-gray-600 mb-6">API rakto sukūrimas vienai įmonei sistemų integracijai.</p>
-          <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
-        </div>
-
-        <!-- API palaikymas -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-[#3C7099]">API palaikymo licencija</h4>
-          </div>
-          <p class="text-gray-600 mb-6">Mėnesinio API naudojimo licencija pagal siunčiamų/gaunamų įrašų kiekį.</p>
-          <div class="space-y-2 text-gray-700 text-sm mb-8">
-            <div class="flex justify-between items-center p-2 bg-white rounded">
-              <span>1.000 įrašų</span>
-              <span class="font-semibold text-green-600">Nemokamai</span>
-            </div>
-            <div class="flex justify-between items-center p-2 bg-white rounded">
-              <span>10.000</span>
-              <span class="font-semibold text-[#C81F6A]">35€/mėn.</span>
-            </div>
-            <div class="flex justify-between items-center p-2 bg-white rounded">
-              <span>100.000</span>
-              <span class="font-semibold text-[#C81F6A]">70€/mėn.</span>
-            </div>
-            <div class="flex justify-between items-center p-2 bg-white rounded">
-              <span>1.000.000</span>
-              <span class="font-semibold text-[#C81F6A]">140€/mėn.</span>
-            </div>
-            <div class="text-xs text-gray-500">Virš 1 mln.: 140€ + 35€/mln./mėn.</div>
-          </div>
-          <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
-        </div>
-
-        <!-- Integracijos -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V9a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 001-1z"></path>
-              </svg>
-            </div>
-            <h4 class="text-xl font-semibold text-[#3C7099]">Sistemos integracijos</h4>
-          </div>
-          <p class="text-gray-600 mb-6">Integracija su buhalterinės ar DU apskaitos sistemomis.</p>
-          <div class="space-y-2 text-gray-700 text-sm mb-8">
-            <div class="p-3 bg-white rounded-lg">
-              <div class="font-medium">Su konsultacijomis</div>
-              <div class="text-[#C81F6A] font-semibold">600€ / proceso API</div>
-              <div class="text-xs text-gray-500">Iki 2 val. konsultacijų</div>
-            </div>
-            <div class="p-3 bg-white rounded-lg">
-              <div class="font-medium">Pilnas diegimas</div>
-              <div class="text-[#C81F6A] font-semibold">Nuo 3.000€ / procesą</div>
-              <div class="text-xs text-gray-500">Vecticum atlieka visus darbus</div>
-            </div>
-          </div>
-          <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Kiti sprendimai -->
-    <div class="mb-16">
-      <h3 class="text-2xl font-semibold text-[#3C7099] mb-8 text-center">Kiti sprendimai</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- Dokumentų talpykla -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-6 shadow-md hover:shadow-lg transition">
-          <div class="text-center">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"></path>
-              </svg>
-            </div>
-            <h5 class="font-semibold text-[#3C7099] mb-2">Dokumentų talpykla</h5>
-            <div class="text-lg font-bold text-[#C81F6A] mb-2">5€ / mėn.</div>
-            <p class="text-sm text-gray-600">Papildomi 20 GB</p>
-          </div>
-        </div>
-
-        <!-- Kalbos -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-6 shadow-md hover:shadow-lg transition">
-          <div class="text-center">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-              </svg>
-            </div>
-            <h5 class="font-semibold text-[#3C7099] mb-2">Papildomos kalbos</h5>
-            <div class="text-lg font-bold text-[#C81F6A] mb-2">Nuo 150€</div>
-            <p class="text-sm text-gray-600">Kalbą / modulį</p>
-          </div>
-        </div>
-
-        <!-- PDF konvertavimas -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-6 shadow-md hover:shadow-lg transition">
-          <div class="text-center">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-              </svg>
-            </div>
-            <h5 class="font-semibold text-[#3C7099] mb-2">PDF konvertavimas</h5>
-            <div class="text-lg font-bold text-[#C81F6A] mb-2">20-400€/mėn.</div>
-            <p class="text-sm text-gray-600">Pagal transakcijų kiekį</p>
-          </div>
-        </div>
-
-        <!-- Roll-out -->
-        <div class="rounded-3xl bg-gray-50 border border-gray-200 p-6 shadow-md hover:shadow-lg transition">
-          <div class="text-center">
-            <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-              </svg>
-            </div>
-            <h5 class="font-semibold text-[#3C7099] mb-2">Roll-out</h5>
-            <div class="text-lg font-bold text-[#C81F6A] mb-2">400-1500€</div>
-            <p class="text-sm text-gray-600">Dukterinėms įmonėms</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Funkcionalumų sąrašas -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="features-grid">
       
+      <!-- Tikslusis OCR -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="ocr">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700">OCR</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Tikslusis OCR</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Suminės ir kiekinės sąskaitos pagrindinių laukų bei eilučių atpažinimas ir automatinis įvedimas į sistemą.</p>
+          </div>
+        </div>
+        <div class="space-y-2 mb-6">
+          <div class="flex justify-between items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
+            <span class="text-sm text-gray-700">Suminės sąskaitos</span>
+            <span class="font-bold text-[#C81F6A]">0,25€ / sąskaitą</span>
+          </div>
+          <div class="flex justify-between items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
+            <span class="text-sm text-gray-700">Kiekinės sąskaitos</span>
+            <span class="font-bold text-[#C81F6A]">0,35€ / A4 lapą</span>
+          </div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
 
-      <!-- Co-autgoting -->
-      <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-            <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Greitasis OCR -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="ocr">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700">OCR</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-[#3C7099]">Co-authoring</h3>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Greitasis OCR</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Avansinės apyskaitos sąskaitų faktūrų/čekių duomenų atpažinimas iki 70% tikslumu.</p>
+          </div>
         </div>
-        <div class="text-2xl font-bold text-[#C81F6A] mb-4">Individuali kaina</div>
-        <p class="text-gray-600 mb-6">Pažangus automatizacijos funkcionalumas darbo procesų valdymui. Sumažina rankinį darbą ir padidina efektyvumą.</p>
-        <ul class="space-y-3 text-gray-700 text-sm mb-8">
-          <li class="flex items-start">
-            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            Procesų automatizacija
-          </li>
-          <li class="flex items-start">
-            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            Užduočių valdymas
-          </li>
-          <li class="flex items-start">
-            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            Progreso sekimas
-          </li>
-        </ul>
-        <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
+        <div class="space-y-2 mb-6">
+          <div class="flex justify-between items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
+            <span class="text-sm text-gray-700">Pagrindiniai laukai</span>
+            <span class="font-bold text-[#C81F6A]">0,07€ / dokumentą</span>
+          </div>
+          <div class="text-xs text-gray-500 italic px-3">Max 70% atpažinimo tikslumas</div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
       </div>
 
-      
-
-      <!-- Rebranding -->
-      <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-            <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h4a2 2 0 002-2V9a2 2 0 00-2-2H7a2 2 0 00-2 2v6a2 2 0 002 2z"></path>
+      <!-- Sąskaitų saugojimas -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="ocr">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700">OCR</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-[#3C7099]">Rebranding</h3>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Sąskaitų saugojimas</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Papildomas sąskaitų saugojimas sistemoje, kai viršijamas licencijos limitas.</p>
+          </div>
         </div>
-        <div class="text-2xl font-bold text-[#C81F6A] mb-4">Individuali kaina</div>
-        <p class="text-gray-600 mb-6">Sistemos vizualinio identiteto pritaikymas jūsų įmonės brandui. Logo, spalvos, dizaino elementų keitimas pagal jūsų brandbook.</p>
-        <ul class="space-y-3 text-gray-700 text-sm mb-8">
-          <li class="flex items-start">
-            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+        <div class="space-y-2 mb-6">
+          <div class="flex justify-between items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
+            <span class="text-sm text-gray-700">Papildomi 100 vnt./mėn.</span>
+            <span class="font-bold text-[#C81F6A]">9€ / mėn.</span>
+          </div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- Email Reply -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="email">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-700">Email</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Email Reply funkcija</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">El. paštu gautas užduotis galima pakomentuoti atsakant į el. laišką. Komentarai automatiškai atsiranda prie užduoties sistemoje.</p>
+          </div>
+        </div>
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">20€ <span class="text-base font-normal text-gray-600">/ mėn.</span></div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- SMS autentifikavimas -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="email">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-700">Email</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">SMS autentifikavimas</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Prisijungimas prie sistemos su vienkartiniu slaptažodžiu, siunčiamu SMS žinute į mobilų telefoną. Iki 50 vartotojų.</p>
+          </div>
+        </div>
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">10€ <span class="text-base font-normal text-gray-600">/ mėn.</span></div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- Dokobit -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="signature">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-700">El. parašas</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Dokobit integracija</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Kvalifikuoto elektroninio parašo sprendimas integruotas į Vecticum sistemą.</p>
+          </div>
+        </div>
+        <div class="space-y-2 mb-6">
+          <div class="flex items-center text-sm text-gray-700">
+            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
             </svg>
-            Logo keitimas
-          </li>
-          <li class="flex items-start">
-            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            Kvalifikuotas el. parašas
+          </div>
+          <div class="flex items-center text-sm text-gray-700">
+            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
             </svg>
-            Spalvų schema
-          </li>
-          <li class="flex items-start">
-            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            Integruota į sistemą
+          </div>
+          <div class="text-xs text-gray-500 pt-2">
+            <a href="https://www.dokobit.com/docs/pricing/Dokobit-el-pasirasymo-sprendimu-kainodara.pdf" target="_blank" class="text-[#3C7099] hover:underline">
+              Dokobit kainodara →
+            </a>
+          </div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- MarkSign -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="signature">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-700">El. parašas</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">MarkSign integracija</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Kvalifikuoto elektroninio parašo sprendimas integruotas į Vecticum sistemą.</p>
+          </div>
+        </div>
+        <div class="space-y-2 mb-6">
+          <div class="flex items-center text-sm text-gray-700">
+            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
             </svg>
-            Dizaino pritaikymas
-          </li>
-        </ul>
-        <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
+            Kvalifikuotas el. parašas
+          </div>
+          <div class="flex items-center text-sm text-gray-700">
+            <svg class="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            Integruota į sistemą
+          </div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- API raktas -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="api">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-700">API</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">API rakto išdavimas</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">API rakto sukūrimas vienai įmonei sistemų integracijai.</p>
+          </div>
+        </div>
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">80€</div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- API palaikymas -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="api">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-700">API</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">API palaikymo licencija</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Mėnesinio API naudojimo licencija pagal siunčiamų/gaunamų įrašų kiekį.</p>
+          </div>
+        </div>
+        <div class="space-y-1.5 mb-6">
+          <div class="flex justify-between items-center p-2.5 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-sm">
+            <span class="text-gray-700">1.000 įrašų</span>
+            <span class="font-bold text-green-600">Nemokamai</span>
+          </div>
+          <div class="flex justify-between items-center p-2.5 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-sm">
+            <span class="text-gray-700">10.000</span>
+            <span class="font-bold text-[#C81F6A]">35€/mėn.</span>
+          </div>
+          <div class="flex justify-between items-center p-2.5 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-sm">
+            <span class="text-gray-700">100.000</span>
+            <span class="font-bold text-[#C81F6A]">70€/mėn.</span>
+          </div>
+          <div class="flex justify-between items-center p-2.5 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg text-sm">
+            <span class="text-gray-700">1.000.000</span>
+            <span class="font-bold text-[#C81F6A]">140€/mėn.</span>
+          </div>
+          <div class="text-xs text-gray-500 px-2">Virš 1 mln.: 140€ + 35€/mln./mėn.</div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- Integracijos -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="api">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-700">API</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a1 1 0 01-1-1V9a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 001-1z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Sistemos integracijos</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Integracija su buhalterinės ar DU apskaitos sistemomis.</p>
+          </div>
+        </div>
+        <div class="space-y-2 mb-6">
+          <div class="p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
+            <div class="font-semibold text-gray-800 text-sm">Su konsultacijomis</div>
+            <div class="text-[#C81F6A] font-bold">600€ / proceso API</div>
+            <div class="text-xs text-gray-500">Iki 2 val. konsultacijų</div>
+          </div>
+          <div class="p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
+            <div class="font-semibold text-gray-800 text-sm">Pilnas diegimas</div>
+            <div class="text-[#C81F6A] font-bold">Nuo 3.000€ / procesą</div>
+            <div class="text-xs text-gray-500">Vecticum atlieka visus darbus</div>
+          </div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- Dokumentų talpykla -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Dokumentų talpykla</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Papildomi 20 GB dokumentų saugojimo erdvės.</p>
+          </div>
+        </div>
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">5€ <span class="text-base font-normal text-gray-600">/ mėn.</span></div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- Kalbos -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Papildomos kalbos</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Sistemos interfeiso vertimas į papildomas kalbas.</p>
+          </div>
+        </div>
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">Nuo 150€</div>
+          <div class="text-sm text-gray-600">Kalbą / modulį</div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- PDF konvertavimas -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">PDF konvertavimas</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Dokumentų konvertavimas į PDF formatą pagal transakcijų kiekį.</p>
+          </div>
+        </div>
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">20-400€<span class="text-base font-normal text-gray-600">/mėn.</span></div>
+          <div class="text-sm text-gray-600">Pagal transakcijų kiekį</div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- Roll-out -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Roll-out</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Sistemos diegimas dukterinėms įmonėms su centralizuotu valdymu.</p>
+          </div>
+        </div>
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">400-1500€</div>
+          <div class="text-sm text-gray-600">Dukterinėms įmonėms</div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- Co-authoring -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Co-authoring</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Pažangus automatizacijos funkcionalumas darbo procesų valdymui ir bendradarbiavimui.</p>
+          </div>
+        </div>
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">Individuali kaina</div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
+      </div>
+
+      <!-- Rebranding -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Rebranding</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Sistemos vizualinio identiteto pritaikymas jūsų įmonės brandui - logo, spalvos, dizaino elementai.</p>
+          </div>
+        </div>
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">Individuali kaina</div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
       </div>
 
       <!-- Ad hoc task modulis -->
-      <div class="rounded-3xl bg-gray-50 border border-gray-200 p-8 shadow-md hover:shadow-lg transition">
-        <div class="flex items-center mb-4">
-          <div class="w-12 h-12 bg-[#3C7099]/10 rounded-lg flex items-center justify-center mr-3">
-            <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-semibold text-[#3C7099]">Ad hoc task modulis</h3>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Ad hoc task modulis</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Lanksčių užduočių valdymo modulis nenumatytoms situacijoms ir projektams su greitu paskirstymu.</p>
+          </div>
         </div>
-        <div class="text-2xl font-bold text-[#C81F6A] mb-4">Individuali kaina</div>
-        <p class="text-gray-600 mb-6">Lanksčių užduočių valdymo modulis nenumatytoms situacijoms ir projektams. Greita užduočių kūrimo ir paskirstymo sistema.</p>
-        <ul class="space-y-3 text-gray-700 text-sm mb-8">
-          <li class="flex items-start">
-            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            Užduočių kūrimas
-          </li>
-          <li class="flex items-start">
-            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            Darbuotojų priskirimas
-          </li>
-          <li class="flex items-start">
-            <svg class="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            Progreso sekimas
-          </li>
-        </ul>
-        <a href="#contact" class="w-full inline-block text-center bg-[#C81F6A] hover:bg-[#a31755] text-white px-6 py-3 rounded-full font-medium transition">Gauti pasiūlymą</a>
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">Individuali kaina</div>
+        </div>
+        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Gauti pasiūlymą
+        </a>
       </div>
 
     </div>
   </div>
 </section>
+
+<script>
+  // Filtravimo funkcionalumas
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const featureCards = document.querySelectorAll('.feature-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+
+        // Update active button
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active', 'bg-[#3C7099]', 'text-white');
+          btn.classList.add('text-[#3C7099]', 'border-[#3C7099]');
+        });
+        button.classList.add('active', 'bg-[#3C7099]', 'text-white');
+        button.classList.remove('text-[#3C7099]');
+
+        // Filter cards
+        featureCards.forEach(card => {
+          const htmlCard = card as HTMLElement;
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            htmlCard.style.display = 'block';
+            setTimeout(() => {
+              htmlCard.style.opacity = '1';
+              htmlCard.style.transform = 'scale(1)';
+            }, 10);
+          } else {
+            htmlCard.style.opacity = '0';
+            htmlCard.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              htmlCard.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .feature-card {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+  }
+</style>
 
 <!-- Papildoma informacija -->
 <section class="relative py-16 px-6 sm:px-8 bg-gray-50">
