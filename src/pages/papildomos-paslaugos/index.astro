@@ -1,22 +1,23 @@
----
+﻿---
 import ContactForm from "../../components/home/ContactForm.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 
-const seoTitle = "Papildomi funkcionalumai ir kainodara | Vecticum";
-const seoDescription = "Praplėskite savo personalo valdymo sistemą papildomomis funkcijomis: API integracija, Email reply, Co-autgoting, Elektroninis parašas ir kt.";
+const seoTitle = "Papildomos paslaugos ir kainodara | Vecticum";
+const seoDescription = "Praplėskite savo personalo valdymo sistemą papildomomis paslaugomis: API integracija, Email reply, Co-autgoting, Elektroninis parašas ir kt.";
 const seoImage = '~/assets/images/logo.webp';
+const canonical = 'https://vecticum.lt/papildomos-paslaugos/';
 ---
 
-<MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
+<MainLayout title={seoTitle} description={seoDescription} image={seoImage} canonical={canonical}>
 <!-- HERO PRADŽIA -->
   <!-- Hero sekcija -->
   <section class="text-center py-20 px-6 bg-gradient-to-b from-white to-[#f4f7fa]">
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-        Papildomi Vecticum <span class="text-[#C81F6A]">funkcionalumai</span>
+        Papildomos Vecticum <span class="text-[#C81F6A]">paslaugos</span>
       </h1>
       <p class="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-        Praplėskite savo personalo valdymo sistemos galimybes papildomomis funkcijomis ir integracijom. OCR technologijos, elektroninis parašas, API integracijos ir kiti sprendimai jūsų verslo poreikiams.
+        Praplėskite savo personalo valdymo sistemos galimybes papildomomis paslaugomis ir integracijom. OCR technologijos, elektroninis parašas, API integracijos ir kiti sprendimai jūsų verslo poreikiams.
       </p>
       <p class="text-sm text-gray-500 mb-8">
         Visos kainos nurodytos be PVM. Susisiekite dėl detalesnės informacijos ir individualaus pasiūlymo. 
@@ -25,8 +26,8 @@ const seoImage = '~/assets/images/logo.webp';
         <a href="#services" class="inline-flex items-center justify-center px-8 py-3 bg-[#C81F6A] text-white font-medium rounded-full hover:bg-[#a31755] transition-colors">
           Peržiūrėti paslaugas
         </a>
-        <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 border-2 border-[#3C7099] text-[#3C7099] font-medium rounded-full hover:bg-[#3C7099] hover:text-white transition-colors">
-          Gauti pasiūlymą
+        <a href="mailto:support@vecticum.com" class="inline-flex items-center justify-center px-8 py-3 border-2 border-[#3C7099] text-[#3C7099] font-medium rounded-full hover:bg-[#3C7099] hover:text-white transition-colors">
+          Užsakyti
         </a>
       </div>
     </div>
@@ -35,9 +36,6 @@ const seoImage = '~/assets/images/logo.webp';
 
 <section id="services" class="relative py-20 px-6 sm:px-8 bg-white text-gray-900">
   <div class="relative z-10 max-w-7xl mx-auto">
-    <div class="text-center mb-14">
-      <h2 class="text-4xl sm:text-5xl text-[#3C7099]">Platus sprendimų pasirinkimas</h2>
-    </div>
 
     <!-- Temų filtras -->
     <div class="flex flex-wrap justify-center gap-3 mb-12">
@@ -56,6 +54,9 @@ const seoImage = '~/assets/images/logo.webp';
       <button class="filter-btn px-6 py-2.5 text-sm font-medium rounded-full border-2 transition-all text-[#3C7099] border-[#3C7099] hover:bg-[#3C7099] hover:text-white" data-filter="api">
         API
       </button>
+      <button class="filter-btn px-6 py-2.5 text-sm font-medium rounded-full border-2 transition-all text-[#3C7099] border-[#3C7099] hover:bg-[#3C7099] hover:text-white" data-filter="scorm">
+        SCORM
+      </button>
       <button class="filter-btn px-6 py-2.5 text-sm font-medium rounded-full border-2 transition-all text-[#3C7099] border-[#3C7099] hover:bg-[#3C7099] hover:text-white" data-filter="other">
         Kita
       </button>
@@ -65,37 +66,40 @@ const seoImage = '~/assets/images/logo.webp';
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="features-grid">
       
       <!-- Tikslusis OCR -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="ocr">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="ocr">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700">OCR</span>
-        <div class="flex items-start mb-4">
-          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-            </svg>
+        <div class="flex-grow">
+          <div class="flex items-start mb-4">
+            <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-xl font-bold text-[#3C7099] mb-2">Tikslusis OCR</h4>
+              <p class="text-gray-600 text-sm leading-relaxed">Suminės ir kiekinės sąskaitos pagrindinių laukų bei eilučių atpažinimas ir automatinis įvedimas į sistemą.</p>
+            </div>
           </div>
-          <div>
-            <h4 class="text-xl font-bold text-[#3C7099] mb-2">Tikslusis OCR</h4>
-            <p class="text-gray-600 text-sm leading-relaxed">Suminės ir kiekinės sąskaitos pagrindinių laukų bei eilučių atpažinimas ir automatinis įvedimas į sistemą.</p>
+          <div class="space-y-2 mb-6">
+            <div class="flex justify-between items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
+              <span class="text-sm text-gray-700">Suminės sąskaitos</span>
+              <span class="font-bold text-[#C81F6A]">0,25€ / sąskaitą</span>
+            </div>
+            <div class="flex justify-between items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
+              <span class="text-sm text-gray-700">Kiekinės sąskaitos</span>
+              <span class="font-bold text-[#C81F6A]">0,35€ / A4 lapą</span>
+            </div>
           </div>
         </div>
-        <div class="space-y-2 mb-6">
-          <div class="flex justify-between items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
-            <span class="text-sm text-gray-700">Suminės sąskaitos</span>
-            <span class="font-bold text-[#C81F6A]">0,25€ / sąskaitą</span>
-          </div>
-          <div class="flex justify-between items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg">
-            <span class="text-sm text-gray-700">Kiekinės sąskaitos</span>
-            <span class="font-bold text-[#C81F6A]">0,35€ / A4 lapą</span>
-          </div>
-        </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Greitasis OCR -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="ocr">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="ocr">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700">OCR</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,14 +118,16 @@ const seoImage = '~/assets/images/logo.webp';
           </div>
           <div class="text-xs text-gray-500 italic px-3">Max 70% atpažinimo tikslumas</div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Sąskaitų saugojimas -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="ocr">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="ocr">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-700">OCR</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,14 +145,16 @@ const seoImage = '~/assets/images/logo.webp';
             <span class="font-bold text-[#C81F6A]">9€ / mėn.</span>
           </div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Email Reply -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="email">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="email">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-700">Email</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,14 +169,16 @@ const seoImage = '~/assets/images/logo.webp';
         <div class="mb-6">
           <div class="text-3xl font-bold text-[#C81F6A] mb-2">20€ <span class="text-base font-normal text-gray-600">/ mėn.</span></div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- SMS autentifikavimas -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="email">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="email">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-700">Email</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,14 +193,16 @@ const seoImage = '~/assets/images/logo.webp';
         <div class="mb-6">
           <div class="text-3xl font-bold text-[#C81F6A] mb-2">10€ <span class="text-base font-normal text-gray-600">/ mėn.</span></div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Dokobit -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="signature">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="signature">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-700">El. parašas</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -221,14 +233,16 @@ const seoImage = '~/assets/images/logo.webp';
             </a>
           </div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- MarkSign -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="signature">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="signature">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-700">El. parašas</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -254,14 +268,16 @@ const seoImage = '~/assets/images/logo.webp';
             Integruota į sistemą
           </div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- API raktas -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="api">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="api">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-700">API</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -276,14 +292,16 @@ const seoImage = '~/assets/images/logo.webp';
         <div class="mb-6">
           <div class="text-3xl font-bold text-[#C81F6A] mb-2">80€</div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- API palaikymas -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="api">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="api">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-700">API</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -314,14 +332,16 @@ const seoImage = '~/assets/images/logo.webp';
           </div>
           <div class="text-xs text-gray-500 px-2">Virš 1 mln.: 140€ + 35€/mln./mėn.</div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Integracijos -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="api">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="api">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-700">API</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -345,14 +365,16 @@ const seoImage = '~/assets/images/logo.webp';
             <div class="text-xs text-gray-500">Vecticum atlieka visus darbus</div>
           </div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Dokumentų talpykla -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="other">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -367,14 +389,16 @@ const seoImage = '~/assets/images/logo.webp';
         <div class="mb-6">
           <div class="text-3xl font-bold text-[#C81F6A] mb-2">5€ <span class="text-base font-normal text-gray-600">/ mėn.</span></div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Kalbos -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="other">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -390,14 +414,16 @@ const seoImage = '~/assets/images/logo.webp';
           <div class="text-3xl font-bold text-[#C81F6A] mb-2">Nuo 150€</div>
           <div class="text-sm text-gray-600">Kalbą / modulį</div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- PDF konvertavimas -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="other">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -413,14 +439,16 @@ const seoImage = '~/assets/images/logo.webp';
           <div class="text-3xl font-bold text-[#C81F6A] mb-2">20-400€<span class="text-base font-normal text-gray-600">/mėn.</span></div>
           <div class="text-sm text-gray-600">Pagal transakcijų kiekį</div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Roll-out -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="other">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -436,14 +464,16 @@ const seoImage = '~/assets/images/logo.webp';
           <div class="text-3xl font-bold text-[#C81F6A] mb-2">400-1500€</div>
           <div class="text-sm text-gray-600">Dukterinėms įmonėms</div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Co-authoring -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="other">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -458,14 +488,16 @@ const seoImage = '~/assets/images/logo.webp';
         <div class="mb-6">
           <div class="text-3xl font-bold text-[#C81F6A] mb-2">Individuali kaina</div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Rebranding -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="other">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -480,14 +512,16 @@ const seoImage = '~/assets/images/logo.webp';
         <div class="mb-6">
           <div class="text-3xl font-bold text-[#C81F6A] mb-2">Individuali kaina</div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
       <!-- Ad hoc task modulis -->
-      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all" data-category="other">
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="other">
         <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-700">Kita</span>
+        <div class="flex-grow">
         <div class="flex items-start mb-4">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -502,8 +536,61 @@ const seoImage = '~/assets/images/logo.webp';
         <div class="mb-6">
           <div class="text-3xl font-bold text-[#C81F6A] mb-2">Individuali kaina</div>
         </div>
-        <a href="#contact" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
-          Gauti pasiūlymą
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
+        </a>
+      </div>
+
+      <!-- SCORM -->
+      <div class="feature-card relative rounded-2xl bg-white border-2 border-gray-200 p-8 shadow-sm hover:shadow-lg hover:border-[#3C7099]/30 transition-all flex flex-col h-full" data-category="scorm">
+        <span class="absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full bg-indigo-100 text-indigo-700">SCORM</span>
+        <div class="flex-grow">
+        <div class="flex items-start mb-4">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-md">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <div>
+            <h4 class="text-xl font-bold text-[#3C7099] mb-2">SCORM palaikymas</h4>
+            <p class="text-gray-600 text-sm leading-relaxed">Interaktyvių mokymų medžiagos (kursų, testų) palaikymas pagal tarptautinį SCORM standartą su rezultatų stebėjimu realiu laiku.</p>
+          </div>
+        </div>
+        
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700">Interaktyvūs kursai</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700">Rezultatų stebėjimas realiu laiku</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700">Automatinis darbuotojų informavimas</span>
+          </li>
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span class="text-gray-700">Detalios ataskaitos apie mokymų progresą</span>
+          </li>
+        </ul>
+       
+        <div class="mb-6">
+          <div class="text-3xl font-bold text-[#C81F6A] mb-2">Individuali kaina</div>
+        </div>
+        </div>
+        <a href="mailto:support@vecticum.com" class="block w-full text-center bg-gradient-to-r from-[#C81F6A] to-[#a31755] hover:from-[#a31755] hover:to-[#8a1448] text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-md hover:shadow-lg">
+          Užsakyti
         </a>
       </div>
 
