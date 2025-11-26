@@ -5,11 +5,11 @@ import BlogCard from "./BlogCard.astro";
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 4);
+  .slice(0, 3);
 ---
 
 <section
-  class="bg-[#EBEFF3] py-20 flex flex-col gap-4 px-2 md:px-4 lg:px-4 xl:px-0 sm:py-8 md:py-12"
+  class="bg-[#EBEFF3] py-20 flex flex-col gap-4 px-4 sm:px-6 lg:px-8 sm:py-8 md:py-12"
 >
   <div class="mx-auto max-w-screen-xl w-full py-4">
     <div
@@ -24,7 +24,7 @@ const posts = (await getCollection("blog"))
     </div>
   </div>
   <div
-    class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-screen-xl mx-auto"
+    class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-screen-xl mx-auto w-full"
   >
     {posts.map((post) => <BlogCard post={post} />)}
   </div>
