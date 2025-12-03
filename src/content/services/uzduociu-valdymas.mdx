@@ -1,0 +1,304 @@
+---
+meta:
+  title: Užduočių valdymas dokumentuose | Vecticum
+  description: Patogiai siųskite užduotis kolegoms tiesiai iš bet kurio dokumento. Efektyvus užduočių valdymas nesutrikdant pagrindinių dokumentų procesų
+  ogImage: /media/services/uzduotys-hero.webp
+  ogType: website
+  canonical: https://vecticum.lt/uzduociu-valdymas/
+title: Užduočių valdymas
+description: Tai patogus įrankis siųsti kolegoms užduotis iš bet kurio dokumento nesutrikdant pagrindinio dokumento proceso. Pavyzdžiui, sutarties derinimo metu galite paprašyti nedalyvaujančio procese kolegos pateikti sutarties kliento kreditingumo ataskaitą.
+hero_image: "/media/services/uzduociu-valdymas-srvc.png"
+hero_image_alt: "Užduočių valdymas | VECTICUM"
+---
+
+import ContactForm from "../../components/home/ContactForm.astro";
+
+
+
+{/* first section */}
+
+
+<section class="w-full bg-[#EBEFF3] py-16">
+  <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl text-center mb-8 sm:mb-12">
+    Kodėl verta naudotis?
+  </h2>
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Užduotys tiesiai iš dokumentų</h3>
+          <p class="mt-1 text-sm text-gray-600">Galimybė siųsti užduotis kolegoms tiesiogiai iš bet kurio dokumento nesutrikdant pagrindinio dokumento proceso. Darbas tampa sklandesnis ir greičiau įvykdomas.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Veikia visuose dokumentuose</h3>
+          <p class="mt-1 text-sm text-gray-600">Funkcija veikia visuose Vecticum dokumentuose ir leidžiama vartotojui su rašymo teise į dokumentą. Naudokite ten, kur reikia.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Automatinės prieigos teisės</h3>
+          <p class="mt-1 text-sm text-gray-600">Užduoties gavėjai automatiškai gauna skaitymo teises į dokumentą, o pati užduotis bus matoma vartotojo užduočių sąraše. Visa reikalinga informacija – vienoje vietoje.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Lankstus užduočių kūrimas</h3>
+          <p class="mt-1 text-sm text-gray-600">Galima sukurti vieną arba kelias lygiagrečias užduotis. Aprašant užduotį galima įrašyti pavadinimą, nurodyti vieną ar kelis vykdytojus, terminą, detalesnį aprašymą bei asmenį, kuris turi būti informuotas po užduoties atlikimo.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Netrukdo kitų procesų</h3>
+          <p class="mt-1 text-sm text-gray-600">Užduotis nestabdo kitų, su dokumentu susijusių procesų. Dokumentas gali būti toliau vizuojamas, derinamas ar tvirtinamas, o užduotis vykdoma lygiagrečiai.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+        <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900">Automatiniai pranešimai</h3>
+          <p class="mt-1 text-sm text-gray-600">Užduotyje nurodytas asmuo automatiškai gaus pranešimą apie užduoties atlikimą. Nebereikia atskiro informavimo – sistema pasirūpina komunikacija.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{/* second section - image */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 relative">
+
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    
+    <div class="flex justify-center">
+      <img 
+        src="/media/services/uzduociu-valdymas-srvc2.png" 
+        alt="Užduočių valdymo procesas | VECTICUM"
+        class="w-full max-w-md h-auto object-cover"
+      />
+    </div>
+
+    <div>
+      <h2 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
+        Kaip tai veikia?
+      </h2>
+      <ol class="list-decimal pl-5 space-y-2">
+        <li>
+          <strong>Užduoties kūrimas iš dokumento:</strong>
+          Dirbdami su bet kuriuo dokumentu, galite sukurti užduotį kolegai – įrašote pavadinimą, pasirenkate vykdytojus ir terminą.
+        </li>
+        <li>
+          <strong>Detalaus aprašymo įvedimas:</strong>
+          Prie užduoties galima pridėti detalesnį aprašymą bei nurodyti asmenį, kuris turi būti informuotas po užduoties atlikimo.
+        </li>
+        <li>
+          <strong>Automatinės teisės ir matomumas:</strong>
+          Užduoties gavėjai automatiškai gauna skaitymo teises į dokumentą, o užduotis atsiranda jų asmeniniame užduočių sąraše.
+        </li>
+        <li>
+          <strong>Užduoties vykdymas ir ataskaitavimas:</strong>
+          Vykdytojai mato užduotį savo sąraše, atlieka reikiamus veiksmus ir pažymi kaip atliktą. Sistema automatiškai informuoja nurodytą asmenį.
+        </li>
+      </ol>
+    </div>
+
+  </div>
+
+</section>
+
+
+{/* 8 section - screenshot */}
+
+<section class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-12">
+  <div class="max-w-7xl mx-auto text-center mb-12">
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900">
+      Užduočių valdymo funkcijos
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
+      <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
+        <li>Galimybė siųsti užduotis kolegoms tiesiai iš bet kurio Vecticum dokumento, kuriame turite rašymo teises</li>
+        <li>Galimybė sukurti vieną arba kelias lygiagrečias užduotis</li>
+        <li>Aprašant užduotį galima įrašyti užduoties pavadinimą, nurodyti vieną ar kelis vykdytojus, terminą, detalesnį aprašymą bei asmenį, kuris turi būti informuotas po užduoties atlikimo</li>
+        <li>Galimybė nustatyti ar užduotis bus laikoma atlikta, jei ją išvykdys bent vienas arba visi nurodyti vykdytojai</li>
+        <li>Užduoties gavėjai automatiškai gauna skaitymo teises į dokumentą</li>
+        <li>Užduotis matoma vartotojo asmeniniame užduočių sąraše</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 shadow-sm flex flex-col justify-between h-full">
+      <ul class="space-y-3 list-disc list-inside text-gray-700 text-sm leading-relaxed text-left">
+        <li>Užduotis nestabdo kitų, su dokumentu susijusių procesų – dokumentas gali toliau būti derinamas ar tvirtinamas</li>
+        <li>Užduotyje nurodytas asmuo automatiškai gauna pranešimą apie užduoties atlikimą</li>
+        <li>Galimybė peržiūrėti visų dokumentui priskirtų užduočių būsenas ir istoriją</li>
+        <li>Galimybė filtruoti ir ieškoti užduočių pagal įvairius kriterijus užduočių sąraše</li>
+        <li>Automatinis priminimas apie artėjančius užduočių terminus</li>
+        <li>Galimybė redaguoti arba atšaukti užduotį, jei ji dar neįvykdyta</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+{/* 4 section */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-6">
+      Pavyzdžiai, kada naudinga užduočių funkcija
+    </h2>
+    <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto mb-4">
+      Užduočių valdymas dokumentuose padeda efektyviai koordinuoti darbą tarp skirtingų komandos narių, kai reikalinga papildoma informacija ar veiksmai, nesutrikdant pagrindinio dokumento proceso.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+      <div class="bg-gradient-to-br from-[#3C7099]/5 to-[#C81F6A]/5 rounded-xl p-6 text-left hover:shadow-md transition">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">📄 Sutarčių derinimas</h3>
+        <p class="text-sm text-gray-700">
+          Sutarties derinimo metu galite paprašyti finansų skyriaus kolegos pateikti kliento kreditingumo ataskaitą, kol sutartis yra vizavimo procese.
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-[#3C7099]/5 to-[#C81F6A]/5 rounded-xl p-6 text-left hover:shadow-md transition">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">📋 Pirkimų užsakymai</h3>
+        <p class="text-sm text-gray-700">
+          Tvirtinant pirkimo užsakymą galite paprašyti sandėlio vadovo patikrinti prekių likučius ar pateikti alternatyvius tiekėjus.
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-[#3C7099]/5 to-[#C81F6A]/5 rounded-xl p-6 text-left hover:shadow-md transition">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">💰 Sąskaitų apmokėjimas</h3>
+        <p class="text-sm text-gray-700">
+          Prieš patvirtinant sąskaitą galite paprašyti projekto vadovo patvirtinti, kad darbai atlikti ir galima apmokėti.
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-[#3C7099]/5 to-[#C81F6A]/5 rounded-xl p-6 text-left hover:shadow-md transition">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">📝 Darbo sutartys</h3>
+        <p class="text-sm text-gray-700">
+          Rengiant naują darbo sutartį galite paprašyti IT specialisto paruošti darbo vietą ir techninę įrangą būsimam darbuotojui.
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-[#3C7099]/5 to-[#C81F6A]/5 rounded-xl p-6 text-left hover:shadow-md transition">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">✈️ Komandiruotės</h3>
+        <p class="text-sm text-gray-700">
+          Tvirtinant komandiruotės prašymą galite paprašyti asistenčių užsakyti viešbutį ir transportą komandiruojamam darbuotojui.
+        </p>
+      </div>
+
+      <div class="bg-gradient-to-br from-[#3C7099]/5 to-[#C81F6A]/5 rounded-xl p-6 text-left hover:shadow-md transition">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">📊 Ataskaitos</h3>
+        <p class="text-sm text-gray-700">
+          Rengiant mėnesinę ataskaitą galite paprašyti padalinių vadovų pateikti reikiamus duomenis ar patvirtinti skaičius.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{/* 5 section - FAQ */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 bg-[#EBEFF3]">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 text-center mb-12">
+      Dažniausiai užduodami klausimai
+    </h2>
+
+    <div class="space-y-4">
+      <details class="bg-white rounded-xl p-6 shadow-sm group">
+        <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+          Ar užduotis sustabdo dokumento tvirtinimą?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600">
+          Ne, užduotis nestabdo kitų, su dokumentu susijusių procesų. Dokumentas gali toliau būti derinamas, vizuojamas ar tvirtinamas, o užduotis vykdoma lygiagrečiai.
+        </p>
+      </details>
+
+      <details class="bg-white rounded-xl p-6 shadow-sm group">
+        <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+          Ar galiu sukurti kelias užduotis vienam dokumentui?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600">
+          Taip, galima sukurti vieną arba kelias lygiagrečias užduotis tam pačiam dokumentui. Kiekviena užduotis bus vykdoma nepriklausomai.
+        </p>
+      </details>
+
+      <details class="bg-white rounded-xl p-6 shadow-sm group">
+        <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+          Ar užduoties gavėjas matys visą dokumentą?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600">
+          Užduoties gavėjai automatiškai gauna skaitymo teises į dokumentą, todėl galės matyti visą dokumento turinį. Tai padeda geriau suprasti užduoties kontekstą.
+        </p>
+      </details>
+
+      <details class="bg-white rounded-xl p-6 shadow-sm group">
+        <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+          Kaip sužinosiu, kad užduotis atlikta?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600">
+          Užduotyje nurodytas asmuo automatiškai gaus pranešimą apie užduoties atlikimą. Taip pat galite peržiūrėti užduočių būsenas dokumento skiltyje.
+        </p>
+      </details>
+
+      <details class="bg-white rounded-xl p-6 shadow-sm group">
+        <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+          Ar galiu nustatyti, kad užduotis turi atlikti visi nurodyti vykdytojai?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600">
+          Taip, galite nustatyti, ar užduotis bus laikoma atlikta, jei ją išvykdys bent vienas arba visi nurodyti vykdytojai. Tai leidžia lanksčiai valdyti užduočių įvykdymą.
+        </p>
+      </details>
+
+      <details class="bg-white rounded-xl p-6 shadow-sm group">
+        <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center">
+          Ar galiu atšaukti ar redaguoti užduotį?
+          <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </summary>
+        <p class="mt-3 text-sm text-gray-600">
+          Taip, galite redaguoti arba atšaukti užduotį, jei ji dar neįvykdyta. Tai leidžia lanksčiai reaguoti į besikeičiančius poreikius.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+{/* Contact Form */}
+
+<ContactForm />
