@@ -14,6 +14,13 @@ industry: "Gamyba"
 
 import ContactForm from "../../components/home/ContactForm.astro";
 import Services from "../../components/home/Services.astro";
+import { Image } from "astro:assets";
+
+import LietuvosMonetuKalykla from '/src/assets/media/LietuvosMonetuKalykla.webp';
+import NARBUTAS from '/src/assets/media/NARBUTAS.webp';
+import Freda from '/src/assets/media/Freda.png';
+import woodline from '/src/assets/media/woodline.png';
+import Homanit from '/src/assets/media/Homanit.png';
 
 {/* Vertės gamybos įmonėms */}
 
@@ -223,19 +230,19 @@ import Services from "../../components/home/Services.astro";
       <div>
         <div class="grid grid-cols-2 gap-8">
           <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
-            <img src="/media/LietuvosMonetuKalykla.webp" alt="Lietuvos Monetų Kalykla" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+            <Image src={LietuvosMonetuKalykla} alt="Lietuvos Monetų Kalykla" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
           </div>
           <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
-            <img src="/media/NARBUTAS.webp" alt="Narbutas" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+            <Image src={NARBUTAS} alt="Narbutas" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
           </div>
           <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
-            <img src="/media/Freda.png" alt="Freda" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+            <Image src={Freda} alt="Freda" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
           </div>
           <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
-            <img src="/media/woodline.png" alt="Woodline" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+            <Image src={woodline} alt="Woodline" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
           </div>
           <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
-            <img src="/media/Homanit.png" alt="Homanit" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+            <Image src={Homanit} alt="Homanit" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
           </div>
           <div class="flex items-center justify-center p-6 bg-gradient-to-br from-[#3C7099]/10 to-[#C81F6A]/10 rounded-2xl">
             <div class="text-center">
@@ -262,7 +269,7 @@ import Services from "../../components/home/Services.astro";
             
             <div class="flex items-center gap-4 pt-6 border-t border-gray-200">
               <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0 p-2">
-                <img src="/media/woodline.png" alt="Wood Line" class="w-full h-full object-contain" />
+                <Image src={woodline} alt="Wood Line" class="w-full h-full object-contain" />
               </div>
               <div>
                 <div class="font-bold text-gray-900 text-lg">Vaidotas Razminas</div>
