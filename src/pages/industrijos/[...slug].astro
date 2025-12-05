@@ -1,0 +1,59 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import { render } from "astro:content";
+import MainLayout from "~/layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  const industries = await getCollection("industries");
+  return industries.map((industry) => ({
+    params: { slug: industry.id },
+    props: industry,
+  }));
+}
+type Props = CollectionEntry<"industries">;
+
+const industry = Astro.props;
+const { Content } = await render(industry);
+---
+
+<MainLayout
+  title={industry.data.meta.title}
+  description={industry.data.meta.description}
+  image={industry.data.meta.ogImage ?? ""}
+  ogType={industry.data.meta.ogType ?? "website"}
+  canonical={industry.data.meta.canonical ?? ""}
+>
+  <main class="py-8 md:py-12">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-0">
+      
+      <!-- Image Section -->
+      <div class="w-full">
+        <img src={industry.data.hero_image} alt={industry.data.title} class="w-full h-auto object-cover rounded-xl" />
+      </div>
+
+      <!-- Text Content Section -->
+      <div class="space-y-6">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          {industry.data.title}
+        </h1>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          {industry.data.description}
+        </p>
+        <a
+          href="#contact"
+          class="inline-block rounded-full bg-gradient-to-r from-[#C81F6A] to-[#D41E6B] px-8 py-4 text-white font-medium text-base hover:opacity-90 transition"
+        >
+          Susisiekti
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Markdown Content Section -->
+    <section>
+      <div class="mx-auto text-gray-800">
+        <Content />
+      </div>
+    </section>
+  </main>
+</MainLayout>

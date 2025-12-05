@@ -31,10 +31,12 @@ const headerImg = '~/assets/images/docs-img.png';
     isOpen: false, 
     flyoutOpen: false, 
     planaiFlyoutOpen: false, 
-    apieFlyoutOpen: false, 
+    apieFlyoutOpen: false,
+    industrijosFlyoutOpen: false,
     sprendimaiOpen: false,
     apieOpen: false, 
-    planaiOpen: false, 
+    planaiOpen: false,
+    industrijoOpen: false,
     lastScroll: 0, 
     hideHeader: false
   }"
@@ -385,6 +387,99 @@ const headerImg = '~/assets/images/docs-img.png';
                 Rekomendacijos
               </a>
             </li>
+            <li
+              class="relative hidden"
+              @mouseenter="industrijosFlyoutOpen = true"
+              @mouseleave="industrijosFlyoutOpen = false"
+            >
+              <a
+                class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
+              >
+                Industrijos
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg
+                >
+              </a>
+
+              <!-- Industrijos Flyout Menu -->
+              <div
+                x-show="industrijosFlyoutOpen"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 -translate-y-1"
+                class="absolute left-0 z-10 mt-2 w-60 -translate-x-1/4 transform px-2 sm:px-0"
+              >
+                <div
+                  class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+                >
+                  <div class="relative grid grid-cols-1 gap-2 bg-white p-6">
+                    <div class="space-y-4">
+                      <div class="space-y-2">
+                        <a
+                          href="/industrijos/gamyba"
+                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
+                        >
+                          Gamyba
+                        </a>
+                        <a
+                          href="#"
+                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
+                        >
+                          Prekyba
+                        </a>
+                        <a
+                          href="#"
+                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
+                        >
+                          Logistika
+                        </a>
+                        <a
+                          href="#"
+                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
+                        >
+                          IT ir technologijos
+                        </a>
+                        <a
+                          href="#"
+                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
+                        >
+                          Paslaugos
+                        </a>
+                        <a
+                          href="#"
+                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
+                        >
+                          Statyba
+                        </a>
+                        <a
+                          href="#"
+                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
+                        >
+                          Sveikatos priežiūra
+                        </a>
+                        <a
+                          href="#"
+                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
+                        >
+                          Švietimas
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
           </ul>
         </nav>
       </div>
@@ -681,6 +776,50 @@ const headerImg = '~/assets/images/docs-img.png';
         <a href="/rekomendacijos" class="block text-sm text-gray-600">
           Rekomendacijos
         </a>
+
+        <!-- Industrijos Section -->
+        <div class="space-y-2 hidden">
+          <button
+            @click="industrijoOpen = !industrijoOpen"
+            class="flex items-center justify-between w-full text-sm text-gray-600"
+          >
+            Industrijos
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 transition-transform"
+              :class="{ 'rotate-180': industrijoOpen }"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+          <div
+            x-show="industrijoOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 transform -translate-y-2"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 transform translate-y-0"
+            x-transition:leave-end="opacity-0 transform -translate-y-2"
+            class="pl-4 space-y-2"
+          >
+            <a href="/industrijos/gamyba" class="block text-sm text-gray-600">Gamyba</a>
+            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Prekyba</a>
+            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Logistika</a>
+            <a href="#" class="block text-sm text-gray-400 pointer-events-none">IT ir technologijos</a>
+            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Paslaugos</a>
+            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Statyba</a>
+            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Sveikatos priežiūra</a>
+            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Švietimas</a>
+          </div>
+        </div>
       </nav>
 
       <!-- Helpful Resource (Mobile) -->

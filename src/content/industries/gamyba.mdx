@@ -1,0 +1,356 @@
+---
+meta:
+  title: Gamybos įmonėms | VECTICUM personalo ir dokumentų valdymo sistema
+  description: Efektyvus personalo ir dokumentų valdymas gamybos įmonėms. Sumažinkite administracinę naštą ir optimizuokite procesus gamybos sektoriuje
+  ogImage: /media/industries/gamyba-hero.webp
+  ogType: website
+  canonical: https://vecticum.lt/industrijos/gamyba/
+title: Automatizuojame gamybos įmonių procesus
+description: VECTICUM padeda gamybos įmonėms efektyviai valdyti personalą, dokumentus ir procesus. Mūsų sprendimas pritaikytas gamybos sektoriaus specifikai – nuo darbuotojų laiko apskaitos iki saugos instrukcijų valdymo.
+hero_image: "/media/services/gamyba-hero.webp"
+hero_image_alt: "Gamybos įmonių valdymo sprendimai | VECTICUM"
+industry: "Gamyba"
+---
+
+import ContactForm from "../../components/home/ContactForm.astro";
+import Services from "../../components/home/Services.astro";
+
+{/* Vertės gamybos įmonėms */}
+
+<section class="w-full bg-[#EBEFF3] py-20">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Kodėl gamybos įmonės renkasi VECTICUM?
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Sprendimas, suprantantis gamybos specifiką – nuo 3 pamainų valdymo iki darbo saugos instruktažų
+      </p>
+    </div>
+
+    {/* Stats Grid */}
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div class="text-center p-6 bg-white rounded-xl border border-gray-200">
+        <div class="text-4xl font-bold text-[#3C7099] mb-2">24/7</div>
+        <div class="text-sm text-gray-600">Gamybos stebėsena</div>
+      </div>
+      <div class="text-center p-6 bg-white rounded-xl border border-gray-200">
+        <div class="text-4xl font-bold text-[#C81F6A] mb-2">-40%</div>
+        <div class="text-sm text-gray-600">HR administravimo laikas</div>
+      </div>
+      <div class="text-center p-6 bg-white rounded-xl border border-gray-200">
+        <div class="text-4xl font-bold text-[#3C7099] mb-2">100%</div>
+        <div class="text-sm text-gray-600">Saugos instruktažų apskaita</div>
+      </div>
+      <div class="text-center p-6 bg-white rounded-xl border border-gray-200">
+        <div class="text-4xl font-bold text-[#C81F6A] mb-2">3 min</div>
+        <div class="text-sm text-gray-600">Pamainos užfiksavimas</div>
+      </div>
+    </div>
+
+    {/* Features Grid */}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      
+      {/* Left Column - Primary Features */}
+      <div class="grid grid-rows-3 gap-6">
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300 flex flex-col">
+          <div class="flex items-start gap-4 mb-4 flex-grow">
+            <div class="w-12 h-12 rounded-lg bg-[#3C7099] flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-clock text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">3 pamainų darbo apskaita</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Automatiškai skaičiuojami naktiniai priedai (50%), viršvalandžiai ir poilsio laikas tarp pamainų. 
+                Integruojasi su praėjimo kontrolės sistemomis.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="inline-flex items-center gap-2 text-[#3C7099] font-medium">
+              <i class="fa-solid fa-check"></i>
+              Lietuvos DK reikalavimai
+            </span>
+            <span class="inline-flex items-center gap-2 text-[#3C7099] font-medium">
+              <i class="fa-solid fa-check"></i>
+              SODRA integracija
+            </span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#C81F6A] transition-all duration-300 flex flex-col">
+          <div class="flex items-start gap-4 mb-4 flex-grow">
+            <div class="w-12 h-12 rounded-lg bg-[#C81F6A] flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-helmet-safety text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Darbo saugos valdymas</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Skaitmeniniai instruktažai su el. parašais (Dokobit), sertifikatų galiojimo kontrolė, 
+                automatiniai priminjimai apie keltuvo operatorių, suvirintojų ir kitos kvalifikacijos atnaujinimą.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="inline-flex items-center gap-2 text-[#C81F6A] font-medium">
+              <i class="fa-solid fa-check"></i>
+              Atitinka BDAR reikalavimus
+            </span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300 flex flex-col">
+          <div class="flex items-start gap-4 mb-4 flex-grow">
+            <div class="w-12 h-12 rounded-lg bg-[#3C7099] flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-mobile-screen text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Mobilumas gamybos ceche</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Darbuotojai be darbo kompiuterio gali per telefoną žymėti darbo laiką, peržiūrėti pamainos grafiką, 
+                teikti atostogų prašymus, pasitikrinti algalapį ir peržiūrėti saugos instrukcijas.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="inline-flex items-center gap-2 text-[#3C7099] font-medium">
+              <i class="fa-solid fa-check"></i>
+              iOS & Android
+            </span>
+            <span class="inline-flex items-center gap-2 text-[#3C7099] font-medium">
+              <i class="fa-solid fa-check"></i>
+              Offline režimas
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Column - Secondary Features */}
+      <div class="grid grid-rows-3 gap-6">
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#C81F6A] transition-all duration-300 flex flex-col">
+          <div class="flex items-start gap-4 mb-4 flex-grow">
+            <div class="w-12 h-12 rounded-lg bg-[#C81F6A] flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-calendar-days text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Atostogų ir pamainų planavimas</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Sistema įspėja, jei po atostogų nepakanka darbuotojų gamybos linijoje. 
+                Automatinis pamainos plano sudarymas pagal kvalifikacijas ir darbo krūvį.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="inline-flex items-center gap-2 text-[#C81F6A] font-medium">
+              <i class="fa-solid fa-check"></i>
+              Smart notifikacijos
+            </span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300 flex flex-col">
+          <div class="flex items-start gap-4 mb-4 flex-grow">
+            <div class="w-12 h-12 rounded-lg bg-[#3C7099] flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-chart-line text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Gamybos analitika</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                Realaus laiko ataskaitos apie darbuotojų skaičių ceche, produktyvumo metrikos, 
+                ligų statistika, viršvalandžių analizė. Excel/PDF eksportai finansų skyriui.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="inline-flex items-center gap-2 text-[#3C7099] font-medium">
+              <i class="fa-solid fa-check"></i>
+              Excel/PDF eksportai
+            </span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#C81F6A] transition-all duration-300 flex flex-col">
+          <div class="flex items-start gap-4 mb-4 flex-grow">
+            <div class="w-12 h-12 rounded-lg bg-[#C81F6A] flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-plug text-white text-xl"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">ERP/MES integracija</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">
+                REST API integracija su buhalterinės apskaitos ir ERP sistemomis. 
+                Automatinis darbuotojų ir darbo laiko duomenų sinchronizavimas.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 text-sm">
+            <span class="inline-flex items-center gap-2 text-[#C81F6A] font-medium">
+              <i class="fa-solid fa-check"></i>
+              REST API
+            </span>
+            <span class="inline-flex items-center gap-2 text-[#C81F6A] font-medium">
+              <i class="fa-solid fa-check"></i>
+              Saugi integracija
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{/* Klientai gamybos sektoriuje */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-7xl mx-auto">
+    
+    {/* Header */}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Gamybos įmonės, kurios pasitiki VECTICUM
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Daugiau nei 100 gamybos įmonių Lietuvoje jau naudoja VECTICUM kasdieniniam personalo ir dokumentų valdymui
+      </p>
+    </div>
+
+    {/* Two Column Layout */}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left - Client Logos */}
+      <div>
+        <div class="grid grid-cols-2 gap-8">
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
+            <img src="/src/assets/media/LietuvosMonetuKalykla.webp" alt="Lietuvos Monetų Kalykla" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+          </div>
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
+            <img src="/src/assets/media/NARBUTAS.webp" alt="Narbutas" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+          </div>
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
+            <img src="/src/assets/media/Freda.png" alt="Freda" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+          </div>
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
+            <img src="/src/assets/media/woodline.png" alt="Woodline" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+          </div>
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
+            <img src="/src/assets/media/Homanit.png" alt="Homanit" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+          </div>
+          <div class="flex items-center justify-center p-6 bg-gradient-to-br from-[#3C7099]/10 to-[#C81F6A]/10 rounded-2xl">
+            <div class="text-center">
+              <div class="text-3xl font-bold bg-gradient-to-r from-[#3C7099] to-[#C81F6A] bg-clip-text text-transparent">100+</div>
+              <div class="text-sm text-gray-600 mt-1">Įmonių</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right - Testimonial */}
+      <div>
+        <div class="bg-gradient-to-br from-[#EBEFF3] to-white rounded-2xl p-8 lg:p-10 border-2 border-gray-200 relative overflow-hidden h-full">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#3C7099]/10 to-[#C81F6A]/10 rounded-full blur-3xl"></div>
+          
+          <div class="relative h-full flex flex-col">
+            <div class="mb-6">
+              <i class="fa-solid fa-quote-left text-5xl text-[#C81F6A]/20"></i>
+            </div>
+            
+            <blockquote class="text-lg lg:text-xl text-gray-800 leading-relaxed mb-8 flex-grow">
+              Mūsų atsiliepimai yra labai geri. Pateisino lūkesčius, sumažėjo popierizmo, paprasta naudoti. Darbuotojai taip pat gerai vertina. Labai palengvina visas biurokratines procedūras.
+            </blockquote>
+            
+            <div class="flex items-center gap-4 pt-6 border-t border-gray-200">
+              <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0 p-2">
+                <img src="/src/assets/media/woodline.png" alt="Wood Line" class="w-full h-full object-contain" />
+              </div>
+              <div>
+                <div class="font-bold text-gray-900 text-lg">Vaidotas Razminas</div>
+                <div class="text-sm text-gray-600">Finansų direktorius</div>
+                <div class="text-xs text-gray-500">Wood Line</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{/* Jūsų gamybos ekspertai */}
+
+<section class="w-full bg-white py-20">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Header */}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Gamybos specialistai su <span class="text-[#C81F6A]">20+ metų patirtimi</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Kiekvienas projektas turi skirtą ekspertų komandą, kuri supranta gamybos specifiką – nuo pamainų valdymo iki sudėtingų ERP integracijų
+      </p>
+    </div>
+
+    {/* Content Grid */}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left - Image */}
+      <div class="flex justify-center items-center">
+        <img 
+          src="/media/services/support_team.png" 
+          alt="VECTICUM gamybos ekspertų komanda"
+          class="w-4/5 h-auto"
+          style="box-shadow: 0 10px 5px -5px rgba(0, 0, 0, 0.15);"
+        />
+      </div>
+
+      {/* Right - Features */}
+      <div class="space-y-6">
+        
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300">
+          <div class="w-12 h-12 bg-[#3C7099] rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-industry text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Gamybos procesų ekspertai</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Supranta gamybos specifiką: pamainų valdymą, darbo laiko apskaitą, saugos instruktažus ir kvalifikacijų registrą.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#C81F6A] transition-all duration-300">
+          <div class="w-12 h-12 bg-[#C81F6A] rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-gears text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Technologijų integracija</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Patirtis integruojant VECTICUM su ERP, MES ir kitomis sistemomis. Jūsų sistemos dirbs kartu be sutrikdymų.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300">
+          <div class="w-12 h-12 bg-[#3C7099] rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-headset text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Nuolatinis palaikymas</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Pagalba lietuvių kalba kiekvieną dieną. Nuo įdiegimo iki kasdienio naudojimo - mes visada su jumis.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{/* Siūlomi sprendimai */}
+
+<Services />
+
+{/* Contact Form */}
+
+<ContactForm />
