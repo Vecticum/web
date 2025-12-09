@@ -3,7 +3,10 @@ import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/shared/Footer.astro";
 import Header from "../components/shared/Header.astro";
 import TrialPopup from "../components/common/TrialPopup.astro";
+import ChatWidget from "../components/ChatWidget.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+const showChatWidget = Astro.url.pathname === "/kontaktai" || Astro.url.pathname === "/kontaktai/";
 ---
 
 <!doctype html>
@@ -35,5 +38,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     
     <!-- Trial Popup - positioned over entire page -->
     <TrialPopup />
+    
+    <!-- AI Chat Widget - Only on Contact page -->
+    {showChatWidget && <ChatWidget />}
   </body>
 </html>

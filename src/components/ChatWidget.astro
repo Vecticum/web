@@ -1,0 +1,235 @@
+---
+// ChatWidget.astro - AI Chat Widget component
+---
+
+<div id="chat-widget" class="fixed bottom-6 right-6 z-50">
+  <!-- Chat Button -->
+  <button
+    id="chat-toggle"
+    class="bg-[#3C7099] hover:bg-[#2d5573] text-white rounded-full p-4 shadow-lg transition-all duration-300 flex items-center justify-center"
+    aria-label="Atidaryti pokalbių langą"
+  >
+    <svg id="chat-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+    </svg>
+    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+
+  <!-- Chat Window -->
+  <div
+    id="chat-window"
+    class="hidden absolute bottom-20 right-0 w-96 h-[500px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200"
+    style="display: none;"
+  >
+    <div class="flex flex-col h-full">
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-[#3C7099] to-[#2d5573] text-white p-4 flex items-center gap-3">
+      <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+        <span class="text-2xl">🤖</span>
+      </div>
+      <div>
+        <h3 class="font-semibold">VECTICUM Asistentas</h3>
+        <p class="text-xs opacity-90">Visada pasiruošęs padėti</p>
+      </div>
+    </div>
+
+    <!-- Messages -->
+    <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
+      <div class="flex gap-2">
+        <div class="w-8 h-8 bg-[#3C7099] rounded-full flex items-center justify-center flex-shrink-0">
+          <span class="text-white text-sm">🤖</span>
+        </div>
+        <div class="bg-white rounded-2xl rounded-tl-none p-3 shadow-sm max-w-[80%]">
+          <p class="text-sm text-gray-800">Sveiki! Aš esu VECTICUM asistentas. Kaip galiu jums padėti?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="p-4 bg-white border-t border-gray-200">
+      <form id="chat-form" class="flex gap-2">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="Įveskite žinutę..."
+          class="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#3C7099] focus:border-transparent text-sm"
+          autocomplete="off"
+        />
+        <button
+          type="submit"
+          id="send-button"
+          class="bg-[#3C7099] hover:bg-[#2d5573] text-white rounded-full p-2 transition-colors duration-200 flex-shrink-0 w-10 h-10 flex items-center justify-center"
+          aria-label="Siųsti žinutę"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  #chat-messages::-webkit-scrollbar {
+    width: 6px;
+  }
+  #chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  #chat-messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+  #chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+</style>
+
+<script>
+  const chatToggle = document.getElementById('chat-toggle');
+  const chatWindow = document.getElementById('chat-window');
+  const chatIcon = document.getElementById('chat-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const chatForm = document.getElementById('chat-form') as HTMLFormElement;
+  const chatInput = document.getElementById('chat-input') as HTMLInputElement;
+  const chatMessages = document.getElementById('chat-messages');
+  const sendButton = document.getElementById('send-button') as HTMLButtonElement;
+
+  const API_URL = 'http://localhost:3000/api/chat'; // Pakeiskite į savo serverio URL
+
+  let isOpen = false;
+
+  // Toggle chat window
+  chatToggle?.addEventListener('click', () => {
+    isOpen = !isOpen;
+    if (isOpen) {
+      if (chatWindow) {
+        chatWindow.classList.remove('hidden');
+        chatWindow.style.display = 'block';
+      }
+      chatIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+      chatInput?.focus();
+    } else {
+      if (chatWindow) {
+        chatWindow.classList.add('hidden');
+        chatWindow.style.display = 'none';
+      }
+      chatIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  });
+
+  // Add message to chat
+  function addMessage(text: string, isUser: boolean) {
+    if (!chatMessages) return;
+
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'flex gap-2' + (isUser ? ' flex-row-reverse' : '');
+
+    const avatar = document.createElement('div');
+    avatar.className = `w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+      isUser ? 'bg-[#C81F6A]' : 'bg-[#3C7099]'
+    }`;
+    avatar.innerHTML = `<span class="text-white text-sm">${isUser ? '👤' : '🤖'}</span>`;
+
+    const bubble = document.createElement('div');
+    bubble.className = `rounded-2xl p-3 shadow-sm max-w-[80%] ${
+      isUser 
+        ? 'bg-[#3C7099] text-white rounded-tr-none' 
+        : 'bg-white rounded-tl-none'
+    }`;
+    
+    const textP = document.createElement('p');
+    textP.className = `text-sm whitespace-pre-wrap ${isUser ? 'text-white' : 'text-gray-800'}`;
+    textP.textContent = text;
+    
+    bubble.appendChild(textP);
+    messageDiv.appendChild(avatar);
+    messageDiv.appendChild(bubble);
+    chatMessages.appendChild(messageDiv);
+
+    // Scroll to bottom
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  // Show typing indicator
+  function showTyping() {
+    if (!chatMessages) return;
+
+    const typingDiv = document.createElement('div');
+    typingDiv.id = 'typing-indicator';
+    typingDiv.className = 'flex gap-2';
+    typingDiv.innerHTML = `
+      <div class="w-8 h-8 bg-[#3C7099] rounded-full flex items-center justify-center flex-shrink-0">
+        <span class="text-white text-sm">🤖</span>
+      </div>
+      <div class="bg-white rounded-2xl rounded-tl-none p-3 shadow-sm">
+        <div class="flex gap-1">
+          <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0s"></div>
+          <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+          <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
+        </div>
+      </div>
+    `;
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function hideTyping() {
+    const typingIndicator = document.getElementById('typing-indicator');
+    if (typingIndicator) {
+      typingIndicator.remove();
+    }
+  }
+
+  // Handle form submission
+  chatForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    // Add user message
+    addMessage(message, true);
+    chatInput.value = '';
+
+    // Disable input while processing
+    chatInput.disabled = true;
+    if (sendButton) (sendButton as HTMLButtonElement).disabled = true;
+
+    // Show typing indicator
+    showTyping();
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const data = await response.json();
+      
+      hideTyping();
+      addMessage(data.reply, false);
+    } catch (error) {
+      console.error('Chat error:', error);
+      hideTyping();
+      addMessage('Atsiprašome, įvyko klaida. Bandykite dar kartą.', false);
+    } finally {
+      // Re-enable input
+      chatInput.disabled = false;
+      if (sendButton) (sendButton as HTMLButtonElement).disabled = false;
+      chatInput.focus();
+    }
+  });
+</script>

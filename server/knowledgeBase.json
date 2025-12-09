@@ -1,0 +1,34 @@
+[
+  {
+    "id": "tasks-core",
+    "title": "Užduočių valdymas dokumentuose",
+    "tags": ["užduotys", "dokumentai", "vecticum", "darbų valdymas"],
+    "content": "Vecticum leidžia kurti užduotis tiesiogiai iš bet kurio dokumento, kuriame vartotojas turi rašymo teises. Galima nurodyti pavadinimą, terminą, vieną ar kelis vykdytojus bei detalų aprašą. Užduoties gavėjai automatiškai gauna skaitymo teises į dokumentą ir užduotis atsiranda jų asmeniniame sąraše, todėl pagrindinis dokumento procesas nesustoja."
+  },
+  {
+    "id": "tasks-notifications",
+    "title": "Užduočių eigą palaikantys pranešimai",
+    "tags": ["pranešimai", "automatiniai įspėjimai", "terminai"],
+    "content": "Sistema siunčia automatinius pranešimus apie užduoties atlikimą ir artėjančius terminus. Galima nuspręsti, ar užduotis laikoma įvykdyta, jei ją atlieka bent vienas ar visi vykdytojai, o neatliktas užduotis galima redaguoti ar atšaukti."
+  },
+  {
+    "id": "tasks-use-cases",
+    "title": "Pavyzdiniai užduočių valdymo scenarijai",
+    "tags": ["sutartys", "pirkimai", "komandiruotės", "ataskaitos"],
+    "content": "Dažniausi scenarijai: sutarties derinimo metu paprašoma kolegos pateikti kliento kreditingumo ataskaitą; pirkimo užsakyme – sandėlio vadovo patikrinti likučius; prieš apmokant sąskaitą – projekto vadovo patvirtinti darbų atlikimą; rengiant komandiruotės prašymą – administracijos užsakyti viešbutį; ruošiant ataskaitas – padalinių vadovų pateikti duomenis."
+  },
+  {
+    "id": "company-contacts",
+    "title": "VECTICUM įmonės kontaktai",
+    "tags": [
+      "kontaktai",
+      "el. paštas",
+      "telefonas",
+      "adresas",
+      "pagalba",
+      "support",
+      "vecticum"
+    ],
+    "content": "Įmonė: UAB \"Vecticum\", įmonės kodas 304867945. Adresas: T. Kosciuškos g. 24, LT-01100 Vilnius, Lietuva. Bendras el. paštas: info@vecticum.lt. Pagalbos el. paštas: support@vecticum.com. Telefonas: +370 696 05332."
+  }
+]
