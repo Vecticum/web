@@ -83,6 +83,8 @@ function logConversation(entry) {
   try {
     const record = {
       timestamp: new Date().toISOString(),
+      sessionId: entry.sessionId,
+      userEmail: entry.userEmail || null,
       userMessage: entry.userMessage,
       reply: entry.reply,
       contextEntries: entry.contextEntries?.map((ctx) => ({
@@ -99,7 +101,7 @@ function logConversation(entry) {
 
 app.post("/api/chat", async (req, res) => {
   try {
-    const userMessage = req.body.message;
+    const { message: userMessage, sessionId, userEmail } = req.body;
 
     if (!userMessage) {
       return res.status(400).json({ error: "Message is required" });
@@ -155,7 +157,13 @@ Tavo atsakymas:`;
 
     const rawReply = data.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
     const reply = formatReply(rawReply);
-    logConversation({ userMessage, reply, contextEntries });
+    logConversation({ 
+      sessionId: sessionId || "unknown", 
+      userEmail: userEmail || null,
+      userMessage, 
+      reply, 
+      contextEntries 
+    });
     res.json({ reply });
   } catch (err) {
     console.error("Gemini API Error:", err);

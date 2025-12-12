@@ -25,14 +25,25 @@
   >
     <div class="flex flex-col h-full">
     <!-- Header -->
-    <div class="bg-gradient-to-r from-[#3C7099] to-[#2d5573] text-white p-4 flex items-center gap-3">
-      <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-        <span class="text-2xl">🤖</span>
+    <div class="bg-gradient-to-r from-[#3C7099] to-[#2d5573] text-white p-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+          <span class="text-2xl">🤖</span>
+        </div>
+        <div>
+          <h3 class="font-semibold">VECTICUM Asistentas</h3>
+          <p class="text-xs opacity-90">Visada pasiruošęs padėti</p>
+        </div>
       </div>
-      <div>
-        <h3 class="font-semibold">VECTICUM Asistentas</h3>
-        <p class="text-xs opacity-90">Visada pasiruošęs padėti</p>
-      </div>
+      <button
+        id="reset-chat"
+        class="text-white hover:bg-white hover:bg-opacity-20 rounded-full p-2 transition-colors"
+        title="Pradėti naują sesiją"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+        </svg>
+      </button>
     </div>
 
     <!-- Messages -->
@@ -42,7 +53,7 @@
           <span class="text-white text-sm">🤖</span>
         </div>
         <div class="bg-white rounded-2xl rounded-tl-none p-3 shadow-sm max-w-[80%]">
-          <p class="text-sm text-gray-800">Sveiki! Aš esu VECTICUM asistentas. Kaip galiu jums padėti?</p>
+          <p class="text-sm text-gray-800">Sveiki! Prieš pradedant pokalbį, prašome nurodyti savo el. paštą:</p>
         </div>
       </div>
     </div>
@@ -100,7 +111,41 @@
 
   const API_URL = 'http://localhost:3000/api/chat'; // Pakeiskite į savo serverio URL
 
+  // Generate or retrieve session ID
+  function getSessionId() {
+    let sessionId = localStorage.getItem('vecticum_chat_session');
+    if (!sessionId) {
+      sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      localStorage.setItem('vecticum_chat_session', sessionId);
+    }
+    return sessionId;
+  }
+
+  const sessionId = getSessionId();
   let isOpen = false;
+  let userEmail: string | null = null;
+  let isEmailVerified = false;
+
+  // Check if email already stored for THIS session
+  const storedEmailKey = `vecticum_email_${sessionId}`;
+  const storedEmail = localStorage.getItem(storedEmailKey);
+  if (storedEmail && validateEmail(storedEmail)) {
+    userEmail = storedEmail;
+    isEmailVerified = true;
+  }
+
+  // Email validation
+  function validateEmail(email: string): boolean {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  // Extract email from text
+  function extractEmail(text: string): string | null {
+    const emailRegex = /[^\s@]+@[^\s@]+\.[^\s@]+/;
+    const match = text.match(emailRegex);
+    return match ? match[0] : null;
+  }
 
   // Toggle chat window
   chatToggle?.addEventListener('click', () => {
@@ -113,6 +158,14 @@
       chatIcon?.classList.add('hidden');
       closeIcon?.classList.remove('hidden');
       chatInput?.focus();
+      
+      // If email verified, show welcome message
+      if (isEmailVerified && chatMessages) {
+        const existingWelcome = chatMessages.querySelector('[data-welcome]');
+        if (!existingWelcome) {
+          addMessage(`Sveiki, ${userEmail}! Aš esu VECTICUM asistentas. Kaip galiu jums padėti?`, false, true);
+        }
+      }
     } else {
       if (chatWindow) {
         chatWindow.classList.add('hidden');
@@ -124,11 +177,12 @@
   });
 
   // Add message to chat
-  function addMessage(text: string, isUser: boolean) {
+  function addMessage(text: string, isUser: boolean, isWelcome = false) {
     if (!chatMessages) return;
 
     const messageDiv = document.createElement('div');
     messageDiv.className = 'flex gap-2' + (isUser ? ' flex-row-reverse' : '');
+    if (isWelcome) messageDiv.setAttribute('data-welcome', 'true');
 
     const avatar = document.createElement('div');
     avatar.className = `w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
@@ -193,7 +247,35 @@
     const message = chatInput.value.trim();
     if (!message) return;
 
-    // Add user message
+    // If email not verified, validate email first
+    if (!isEmailVerified) {
+      const extractedEmail = extractEmail(message);
+      
+      if (extractedEmail && validateEmail(extractedEmail)) {
+        userEmail = extractedEmail;
+        isEmailVerified = true;
+        // Store email with session-specific key
+        localStorage.setItem(storedEmailKey, extractedEmail);
+        
+        addMessage(message, true);
+        chatInput.value = '';
+        
+        // Clear initial message and show welcome
+        if (chatMessages) {
+          chatMessages.innerHTML = '';
+        }
+        addMessage(`Ačiū! El. paštas ${userEmail} patvirtintas. Aš esu VECTICUM asistentas. Kaip galiu jums padėti?`, false);
+        chatInput.placeholder = 'Įveskite žinutę...';
+        return;
+      } else {
+        addMessage(message, true);
+        addMessage('Prašome nurodyti teisingą el. pašto adresą (pvz., jusu@email.com)', false);
+        chatInput.value = '';
+        return;
+      }
+    }
+
+    // Normal chat flow
     addMessage(message, true);
     chatInput.value = '';
 
@@ -210,7 +292,7 @@
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ message, sessionId, userEmail }),
       });
 
       if (!response.ok) {
