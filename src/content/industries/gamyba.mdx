@@ -16,74 +16,90 @@ import ContactForm from "../../components/home/ContactForm.astro";
 import Services from "../../components/home/Services.astro";
 import { Image } from "astro:assets";
 
-import LietuvosMonetuKalykla from '/src/assets/media/LietuvosMonetuKalykla.webp';
+import novameta from '/src/assets/media/novameta_logo.png';
 import NARBUTAS from '/src/assets/media/NARBUTAS.webp';
 import Freda from '/src/assets/media/Freda.png';
-import woodline from '/src/assets/media/woodline.png';
+import mantinga from '/src/assets/media/mantinga-logo.png';
 import Homanit from '/src/assets/media/Homanit.png';
 
 {/* Vertės gamybos įmonėms */}
 
-<section class="w-full bg-gradient-to-br from-[#F8FAFB] to-[#EEF2F6] py-24">
+<section class="w-full bg-gradient-to-b from-gray-50 to-white py-24 border-t border-gray-200">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <div class="text-center mb-16">
+    <div class="text-center mb-20">
       <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
         Kodėl gamybos įmonės renkasi VECTICUM?
       </h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
         Profesionalūs sprendimai gamybos įmonių efektyvumui
       </p>
     </div>
 
-    {/* 4 USP Cards - Premium B2B Design */}
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {/* 4 USP Items - Minimal Design with Lines */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
       
-      <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-[#3C7099] hover:shadow-xl transition-all duration-300 group">
-        <div class="text-center">
-          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2d5573] rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-md">
-            <i class="fa-solid fa-door-open text-white text-2xl"></i>
+      <div class="group relative pl-6 py-6 border-l-4 border-[#3C7099] hover:border-[#3C7099] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#3C7099]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#3C7099]/20 transition-all duration-300">
+              <i class="fa-solid fa-door-open text-[#3C7099] text-2xl"></i>
+            </div>
           </div>
-          <h3 class="font-bold text-xl mb-3 text-gray-900">Praėjimo kontrolė</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Automatinis darbo laiko fiksavimas per kortelių skaitytuvus su 3 pamainų apskaita
-          </p>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Praėjimo kontrolė</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Automatinis darbo laiko fiksavimas per kortelių skaitytuvus su 3 pamainų apskaita
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-[#C81F6A] hover:shadow-xl transition-all duration-300 group">
-        <div class="text-center">
-          <div class="w-14 h-14 bg-gradient-to-br from-[#C81F6A] to-[#a01854] rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-md">
-            <i class="fa-solid fa-graduation-cap text-white text-2xl"></i>
+      <div class="group relative pl-6 py-6 border-l-4 border-[#C81F6A] hover:border-[#C81F6A] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#C81F6A]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#C81F6A]/20 transition-all duration-300">
+              <i class="fa-solid fa-graduation-cap text-[#C81F6A] text-2xl"></i>
+            </div>
           </div>
-          <h3 class="font-bold text-xl mb-3 text-gray-900">SCORM mokymai</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Darbo saugos instruktažai su sertifikatų galiojimo kontrole ir el. parašais
-          </p>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">SCORM mokymai</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Darbo saugos instruktažai su sertifikatų galiojimo kontrole ir el. parašais
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-[#3C7099] hover:shadow-xl transition-all duration-300 group">
-        <div class="text-center">
-          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2d5573] rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-md">
-            <i class="fa-solid fa-mobile-screen text-white text-2xl"></i>
+      <div class="group relative pl-6 py-6 border-l-4 border-[#3C7099] hover:border-[#3C7099] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#3C7099]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#3C7099]/20 transition-all duration-300">
+              <i class="fa-solid fa-mobile-screen text-[#3C7099] text-2xl"></i>
+            </div>
           </div>
-          <h3 class="font-bold text-xl mb-3 text-gray-900">Mobilumas ceche</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            iOS & Android programėlė darbuotojams be kompiuterio su offline režimu
-          </p>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Mobilumas ceche</h3>
+            <p class="text-gray-600 leading-relaxed">
+              iOS & Android programėlė darbuotojams be kompiuterio su offline režimu
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="bg-white p-8 rounded-2xl border border-gray-200 hover:border-[#C81F6A] hover:shadow-xl transition-all duration-300 group">
-        <div class="text-center">
-          <div class="w-14 h-14 bg-gradient-to-br from-[#C81F6A] to-[#a01854] rounded-xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-300 shadow-md">
-            <i class="fa-solid fa-chart-line text-white text-2xl"></i>
+      <div class="group relative pl-6 py-6 border-l-4 border-[#C81F6A] hover:border-[#C81F6A] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#C81F6A]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#C81F6A]/20 transition-all duration-300">
+              <i class="fa-solid fa-chart-line text-[#C81F6A] text-2xl"></i>
+            </div>
           </div>
-          <h3 class="font-bold text-xl mb-3 text-gray-900">Gamybos analitika</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">
-            Realaus laiko ataskaitos su REST API ir ERP sistemų integracija
-          </p>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Gamybos analitika</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Realaus laiko ataskaitos su REST API ir ERP sistemų integracija
+            </p>
+          </div>
         </div>
       </div>
 
@@ -94,7 +110,7 @@ import Homanit from '/src/assets/media/Homanit.png';
 
 {/* Sprendimai gamybos įmonėms */}
 
-<section class="w-full bg-[#FAFBFC] py-24">
+<section class="w-full bg-gradient-to-br from-[#E8EDF2] to-[#DFE6ED] py-24">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     
     <div class="text-center mb-20">
@@ -109,7 +125,7 @@ import Homanit from '/src/assets/media/Homanit.png';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
       
       {/* Atranka ir įtraukimas */}
-      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+      <div class="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
         <div class="flex items-start gap-5 mb-8 pb-6 border-b border-gray-100">
           <div class="w-16 h-16 bg-gradient-to-br from-[#3C7099] to-[#2d5573] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
             <i class="fa-solid fa-user-plus text-white text-2xl"></i>
@@ -119,22 +135,22 @@ import Homanit from '/src/assets/media/Homanit.png';
           </div>
         </div>
         <div class="space-y-2">
-          <a href="/atrankos-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-blue-100">
+          <a href="/atrankos-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Atrankų valdymas</span>
-              <i class="fa-solid fa-arrow-right text-[#3C7099] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/darbuotoju-idarbinimo-savitarna/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-blue-100">
+          <a href="/darbuotoju-idarbinimo-savitarna/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Įdarbinimo savitarna</span>
-              <i class="fa-solid fa-arrow-right text-[#3C7099] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/bandomojo-laikotarpio-vertinimas-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-blue-100">
+          <a href="/bandomojo-laikotarpio-vertinimas-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Bandomasis laikotarpis</span>
-              <i class="fa-solid fa-arrow-right text-[#3C7099] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
         </div>
@@ -151,22 +167,22 @@ import Homanit from '/src/assets/media/Homanit.png';
           </div>
         </div>
         <div class="space-y-2">
-          <a href="/atostogu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-pink-100">
+          <a href="/atostogu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Atostogų valdymas</span>
-              <i class="fa-solid fa-arrow-right text-[#C81F6A] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/darbuotoju-prasymu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-pink-100">
+          <a href="/darbuotoju-prasymu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Prašymų valdymas</span>
-              <i class="fa-solid fa-arrow-right text-[#C81F6A] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/komandiruociu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-pink-100">
+          <a href="/komandiruociu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Komandiruočių valdymas</span>
-              <i class="fa-solid fa-arrow-right text-[#C81F6A] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
         </div>
@@ -183,22 +199,22 @@ import Homanit from '/src/assets/media/Homanit.png';
           </div>
         </div>
         <div class="space-y-2">
-          <a href="/testavimo-is-norminiu-dokumentu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-blue-100">
+          <a href="/testavimo-is-norminiu-dokumentu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Instruktažų valdymas</span>
-              <i class="fa-solid fa-arrow-right text-[#3C7099] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/mokymu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-blue-100">
+          <a href="/mokymu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Sertifikatų kontrolė</span>
-              <i class="fa-solid fa-arrow-right text-[#3C7099] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/isduodamo-inventoriaus-darbuotojui-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-blue-100">
+          <a href="/isduodamo-inventoriaus-darbuotojui-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Darbo apranga</span>
-              <i class="fa-solid fa-arrow-right text-[#3C7099] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
         </div>
@@ -215,22 +231,22 @@ import Homanit from '/src/assets/media/Homanit.png';
           </div>
         </div>
         <div class="space-y-2">
-          <a href="/mokymu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-pink-100">
+          <a href="/mokymu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Mokymų valdymas</span>
-              <i class="fa-solid fa-arrow-right text-[#C81F6A] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/testavimo-is-norminiu-dokumentu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-pink-100">
+          <a href="/testavimo-is-norminiu-dokumentu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Testavimas</span>
-              <i class="fa-solid fa-arrow-right text-[#C81F6A] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/veiklos-vertinimas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-pink-100">
+          <a href="/veiklos-vertinimas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Veiklos vertinimas</span>
-              <i class="fa-solid fa-arrow-right text-[#C81F6A] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
         </div>
@@ -247,16 +263,16 @@ import Homanit from '/src/assets/media/Homanit.png';
           </div>
         </div>
         <div class="space-y-2">
-          <a href="/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-blue-100">
+          <a href="/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Grafikai ir tabeliai</span>
-              <i class="fa-solid fa-arrow-right text-[#3C7099] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/atostogu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-blue-100">
+          <a href="/atostogu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Nebuvimų apskaita</span>
-              <i class="fa-solid fa-arrow-right text-[#3C7099] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
         </div>
@@ -273,16 +289,16 @@ import Homanit from '/src/assets/media/Homanit.png';
           </div>
         </div>
         <div class="space-y-2">
-          <a href="/pirkimu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-pink-100">
+          <a href="/pirkimu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Pirkimų paraiškos</span>
-              <i class="fa-solid fa-arrow-right text-[#C81F6A] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/saskaitu-valdymas/" class="group/link block p-4 rounded-2xl hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border border-transparent hover:border-pink-100">
+          <a href="/saskaitu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Sąskaitų valdymas</span>
-              <i class="fa-solid fa-arrow-right text-[#C81F6A] opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all text-sm"></i>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
         </div>
@@ -294,7 +310,7 @@ import Homanit from '/src/assets/media/Homanit.png';
     <div class="text-center">
       <a 
         href="/sprendimai/" 
-        class="inline-flex items-center gap-3 bg-gradient-to-r from-[#3C7099] to-[#2d5573] text-white px-10 py-5 rounded-xl font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-white"
+        class="inline-flex items-center gap-3 bg-gradient-to-r from-[#3C7099] to-[#2d5573] text-white px-10 py-5 rounded-full font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-white"
       >
         <span>Visi sprendimai</span>
         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
@@ -325,22 +341,22 @@ import Homanit from '/src/assets/media/Homanit.png';
       {/* Left - Client Logos */}
       <div>
         <div class="grid grid-cols-2 gap-8">
-          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
-            <Image src={LietuvosMonetuKalykla} alt="Lietuvos Monetų Kalykla" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl h-32">
+            <Image src={novameta} alt="Novameta" class="h-12 w-auto object-contain hover:scale-105 transition duration-300" />
           </div>
-          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
-            <Image src={NARBUTAS} alt="Narbutas" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl h-32">
+            <Image src={NARBUTAS} alt="Narbutas" class="h-12 w-auto object-contain hover:scale-105 transition duration-300" />
           </div>
-          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
-            <Image src={Freda} alt="Freda" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl h-32">
+            <Image src={Freda} alt="Freda" class="h-12 w-auto object-contain hover:scale-105 transition duration-300" />
           </div>
-          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
-            <Image src={woodline} alt="Woodline" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl h-32">
+            <Image src={mantinga} alt="Mantinga" class="h-12 w-auto object-contain hover:scale-105 transition duration-300" />
           </div>
-          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl">
-            <Image src={Homanit} alt="Homanit" class="max-h-16 w-auto hover:scale-105 transition duration-300" />
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl h-32">
+            <Image src={Homanit} alt="Homanit" class="h-12 w-auto object-contain hover:scale-105 transition duration-300" />
           </div>
-          <div class="flex items-center justify-center p-6 bg-gradient-to-br from-[#3C7099]/10 to-[#C81F6A]/10 rounded-2xl">
+          <div class="flex items-center justify-center p-6 bg-gradient-to-br from-[#3C7099]/10 to-[#C81F6A]/10 rounded-2xl h-32">
             <div class="text-center">
               <div class="text-3xl font-bold bg-gradient-to-r from-[#3C7099] to-[#C81F6A] bg-clip-text text-transparent">100+</div>
               <div class="text-sm text-gray-600 mt-1">Įmonių</div>
@@ -360,17 +376,17 @@ import Homanit from '/src/assets/media/Homanit.png';
             </div>
             
             <blockquote class="text-lg lg:text-xl text-gray-800 leading-relaxed mb-8 flex-grow">
-              Mūsų atsiliepimai yra labai geri. Pateisino lūkesčius, sumažėjo popierizmo, paprasta naudoti. Darbuotojai taip pat gerai vertina. Labai palengvina visas biurokratines procedūras.
+              Šis sprendimas ženkliai pagerino mūsų įmonės dokumentų valdymo procesus. Sistema veikia patikimai ir yra lengvai pritaikoma augantiems poreikiams. Bendradarbiavimas su Vecticum komanda leidžia efektyviai diegti naujus funkcionalumus ir užtikrinti, kad dokumentų apdorojimas vyktų sklandžiai.
             </blockquote>
             
             <div class="flex items-center gap-4 pt-6 border-t border-gray-200">
               <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0 p-2">
-                <Image src={woodline} alt="Wood Line" class="w-full h-full object-contain" />
+                <Image src={Freda} alt="Freda" class="w-full h-full object-contain" />
               </div>
               <div>
-                <div class="font-bold text-gray-900 text-lg">Vaidotas Razminas</div>
-                <div class="text-sm text-gray-600">Finansų direktorius</div>
-                <div class="text-xs text-gray-500">Wood Line</div>
+                <div class="font-bold text-gray-900 text-lg">Skaistė Grėbliauskė</div>
+                <div class="text-sm text-gray-600">Finansų direktorė</div>
+                <div class="text-xs text-gray-500">FREDA</div>
               </div>
             </div>
           </div>

@@ -1,5 +1,9 @@
 ---
 // ChatWidget.astro - AI Chat Widget component
+const chatApiUrl =
+  typeof import.meta.env.PUBLIC_CHATBOT_API_URL === "string"
+    ? import.meta.env.PUBLIC_CHATBOT_API_URL.trim()
+    : "";
 ---
 
 <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
@@ -99,7 +103,7 @@
   }
 </style>
 
-<script>
+<script is:inline>
   const chatToggle = document.getElementById('chat-toggle');
   const chatWindow = document.getElementById('chat-window');
   const chatIcon = document.getElementById('chat-icon');
@@ -109,7 +113,18 @@
   const chatMessages = document.getElementById('chat-messages');
   const sendButton = document.getElementById('send-button') as HTMLButtonElement;
 
-  const API_URL = 'http://localhost:3000/api/chat'; // Pakeiskite į savo serverio URL
+  const API_URL_ENV = ${JSON.stringify(chatApiUrl)};
+
+  // Determine backend endpoint with environment + local fallbacks
+  const API_URL = (() => {
+    if (API_URL_ENV) {
+      return API_URL_ENV;
+    }
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      return 'http://localhost:3000/api/chat';
+    }
+    return '/api/chat';
+  })();
 
   // Generate or retrieve session ID
   function getSessionId() {

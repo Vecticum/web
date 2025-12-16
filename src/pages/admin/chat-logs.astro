@@ -1,135 +1,62 @@
 ---
 // Admin Chat Logs Page - View all chatbot conversations
 import MainLayout from "../../layouts/MainLayout.astro";
+
+const chatApiUrl =
+  typeof import.meta.env.PUBLIC_CHATBOT_API_URL === "string"
+    ? import.meta.env.PUBLIC_CHATBOT_API_URL.trim()
+    : "";
+
+const configuredConversationsUrl =
+  typeof import.meta.env.PUBLIC_CHATBOT_CONVERSATIONS_URL === "string"
+    ? import.meta.env.PUBLIC_CHATBOT_CONVERSATIONS_URL.trim()
+    : "";
+
+const conversationsApiUrl = configuredConversationsUrl
+  ? configuredConversationsUrl
+  : chatApiUrl && /\/chat\/?$/.test(chatApiUrl)
+  ? chatApiUrl.replace(/\/chat\/?$/, "/conversations")
+  : "";
 ---
+  <script is:inline>
+    /**
+     * @typedef {Object} Conversation
+     * @property {string} timestamp
+     * @property {string} userMessage
+     * @property {string} reply
+     * @property {string} sessionId
+     * @property {string} [userEmail]
+     * @property {{ id: string, title: string, tags?: string[] }[]} [contextEntries]
+     */
 
-<MainLayout title="Chat Logs - Admin">
-  <div class="min-h-screen bg-gray-50 py-8">
-    <div class="container mx-auto px-4">
-      <!-- Header -->
-      <div class="mb-8">
-        <h1 class="text-3xl font-bold text-gray-900 mb-2">Chatbot Pokalbių Žurnalas</h1>
-        <p class="text-gray-600">Peržiūrėkite visus klientų pokalbius pagal sesijas</p>
-      </div>
+    const API_URL_ENV = ${JSON.stringify(conversationsApiUrl)};
+    const API_URL = (() => {
+      if (API_URL_ENV) {
+        return API_URL_ENV;
+      }
+      if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+        return "http://localhost:3000/api/conversations";
+      }
+      return "/api/conversations";
+    })();
 
-      <!-- Controls -->
-      <div class="bg-white rounded-lg shadow-sm p-6 mb-6">
-        <div class="flex flex-col md:flex-row gap-4 items-start md:items-center justify-between">
-          <!-- Search -->
-          <div class="flex-1 w-full md:max-w-md">
-            <label for="search" class="block text-sm font-medium text-gray-700 mb-2">Paieška</label>
-            <input
-              type="text"
-              id="search"
-              placeholder="Ieškokite pagal klausimą, atsakymą ar sesijos ID..."
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-          </div>
-
-          <!-- Date Filter -->
-          <div class="w-full md:w-auto">
-            <label for="dateFilter" class="block text-sm font-medium text-gray-700 mb-2">Laikotarpis</label>
-            <select
-              id="dateFilter"
-              class="w-full md:w-48 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            >
-              <option value="all">Visi</option>
-              <option value="today">Šiandien</option>
-              <option value="week">Paskutinė savaitė</option>
-              <option value="month">Paskutinis mėnuo</option>
-            </select>
-          </div>
-
-          <!-- Refresh Button -->
-          <div class="w-full md:w-auto">
-            <label class="block text-sm font-medium text-gray-700 mb-2 invisible md:visible">Veiksmai</label>
-            <button
-              id="refreshBtn"
-              class="w-full md:w-auto px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              🔄 Atnaujinti
-            </button>
-          </div>
-        </div>
-
-        <!-- Stats -->
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div class="bg-blue-50 rounded-lg p-4">
-            <div class="text-sm text-blue-600 font-medium">Unikalių klientų</div>
-            <div id="totalCount" class="text-2xl font-bold text-blue-900">-</div>
-          </div>
-          <div class="bg-green-50 rounded-lg p-4">
-            <div class="text-sm text-green-600 font-medium">Iš viso pokalbių</div>
-            <div id="todayCount" class="text-2xl font-bold text-green-900">-</div>
-          </div>
-          <div class="bg-purple-50 rounded-lg p-4">
-            <div class="text-sm text-purple-600 font-medium">Šiandien</div>
-            <div id="avgLength" class="text-2xl font-bold text-purple-900">-</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Loading State -->
-      <div id="loadingState" class="text-center py-12">
-        <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-        <p class="mt-4 text-gray-600">Kraunami duomenys...</p>
-      </div>
-
-      <!-- Error State -->
-      <div id="errorState" class="hidden bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-        <div class="text-red-600 text-lg font-semibold mb-2">❌ Klaida įkeliant duomenis</div>
-        <p class="text-red-700" id="errorMessage"></p>
-        <button
-          onclick="window.location.reload()"
-          class="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700"
-        >
-          Bandyti dar kartą
-        </button>
-      </div>
-
-      <!-- Sessions Container -->
-      <div id="sessionsContainer" class="hidden space-y-4">
-        <!-- Session cards will be inserted here -->
-      </div>
-
-      <!-- Empty State -->
-      <div id="emptyState" class="hidden text-center py-12 bg-white rounded-lg shadow-sm">
-        <div class="text-gray-400 text-5xl mb-4">💬</div>
-        <p class="text-gray-600">Nerasta jokių pokalbių</p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    interface Conversation {
-      timestamp: string;
-      userMessage: string;
-      reply: string;
-      sessionId: string;
-      userEmail?: string;
-      contextEntries?: Array<{ id: string; title: string; tags?: string[] }>;
-    }
-
-    interface SessionGroup {
-      [sessionId: string]: Conversation[];
-    }
-
-    const API_URL = "http://localhost:3000/api/conversations";
-    let allConversations: Conversation[] = [];
-    let filteredConversations: Conversation[] = [];
+    /** @type {Conversation[]} */
+    let allConversations = [];
+    /** @type {Conversation[]} */
+    let filteredConversations = [];
 
     // Elements
-    const loadingState = document.getElementById("loadingState") as HTMLElement | null;
-    const errorState = document.getElementById("errorState") as HTMLElement | null;
-    const errorMessage = document.getElementById("errorMessage") as HTMLElement | null;
-    const sessionsContainer = document.getElementById("sessionsContainer") as HTMLElement | null;
-    const emptyState = document.getElementById("emptyState") as HTMLElement | null;
-    const searchInput = document.getElementById("search") as HTMLInputElement | null;
-    const dateFilter = document.getElementById("dateFilter") as HTMLSelectElement | null;
-    const refreshBtn = document.getElementById("refreshBtn") as HTMLButtonElement | null;
-    const totalCount = document.getElementById("totalCount") as HTMLElement | null;
-    const todayCount = document.getElementById("todayCount") as HTMLElement | null;
-    const avgLength = document.getElementById("avgLength") as HTMLElement | null;
+    const loadingState = document.getElementById("loadingState");
+    const errorState = document.getElementById("errorState");
+    const errorMessage = document.getElementById("errorMessage");
+    const sessionsContainer = document.getElementById("sessionsContainer");
+    const emptyState = document.getElementById("emptyState");
+    const searchInput = document.getElementById("search");
+    const dateFilter = document.getElementById("dateFilter");
+    const refreshBtn = document.getElementById("refreshBtn");
+    const totalCount = document.getElementById("totalCount");
+    const todayCount = document.getElementById("todayCount");
+    const avgLength = document.getElementById("avgLength");
 
     // Fetch conversations
     async function fetchConversations() {
@@ -145,10 +72,10 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
         allConversations = await response.json();
         filteredConversations = [...allConversations];
-        
+
         updateStats();
         applyFilters();
-        
+
         if (loadingState) loadingState.classList.add("hidden");
         if (sessionsContainer) sessionsContainer.classList.remove("hidden");
       } catch (error) {
@@ -163,11 +90,8 @@ import MainLayout from "../../layouts/MainLayout.astro";
     function updateStats() {
       const total = allConversations.length;
       const today = new Date().toDateString();
-      const todayConvos = allConversations.filter((c: Conversation) => 
-        new Date(c.timestamp).toDateString() === today
-      ).length;
-      
-      const uniqueSessions = new Set(allConversations.map((c: Conversation) => c.sessionId)).size;
+      const todayConvos = allConversations.filter((c) => new Date(c.timestamp).toDateString() === today).length;
+      const uniqueSessions = new Set(allConversations.map((c) => c.sessionId)).size;
 
       if (totalCount) totalCount.textContent = String(total);
       if (todayCount) todayCount.textContent = String(todayConvos);
@@ -176,16 +100,14 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
     // Apply filters
     function applyFilters() {
-      const searchTerm = searchInput?.value.toLowerCase() || "";
-      const dateFilterValue = dateFilter?.value || "all";
+      const searchTerm = (searchInput && "value" in searchInput ? searchInput.value : "").toLowerCase();
+      const dateFilterValue = dateFilter && "value" in dateFilter ? dateFilter.value : "all";
 
-      filteredConversations = allConversations.filter((conv: Conversation) => {
-        // Search filter
-        const matchesSearch = 
+      filteredConversations = allConversations.filter((conv) => {
+        const matchesSearch =
           conv.userMessage.toLowerCase().includes(searchTerm) ||
           conv.reply.toLowerCase().includes(searchTerm);
 
-        // Date filter
         const convDate = new Date(conv.timestamp);
         const now = new Date();
         let matchesDate = true;
@@ -208,10 +130,10 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
     // Render sessions
     function renderTable() {
-      // Group conversations by sessionId
-      const sessionGroups: SessionGroup = {};
-      
-      filteredConversations.forEach((conv: Conversation) => {
+      /** @type {Record<string, Conversation[]>} */
+      const sessionGroups = {};
+
+      filteredConversations.forEach((conv) => {
         const sid = conv.sessionId || "unknown";
         if (!sessionGroups[sid]) {
           sessionGroups[sid] = [];
@@ -226,21 +148,122 @@ import MainLayout from "../../layouts/MainLayout.astro";
       }
 
       if (emptyState) emptyState.classList.add("hidden");
-      
-      // Sort sessions by most recent message
+
       const sortedSessions = Object.entries(sessionGroups).sort((a, b) => {
-        const aLatest = Math.max(...a[1].map((c: Conversation) => new Date(c.timestamp).getTime()));
-        const bLatest = Math.max(...b[1].map((c: Conversation) => new Date(c.timestamp).getTime()));
+        const aLatest = Math.max(...a[1].map((c) => new Date(c.timestamp).getTime()));
+        const bLatest = Math.max(...b[1].map((c) => new Date(c.timestamp).getTime()));
         return bLatest - aLatest;
       });
 
       if (!sessionsContainer) return;
-      
-      sessionsContainer.innerHTML = sortedSessions.map(([sessionId, conversations]: [string, Conversation[]]) => {
-        const firstMsg = conversations[0];
-        const lastMsg = conversations[conversations.length - 1];
-        const firstDate = new Date(firstMsg.timestamp);
-        const lastDate = new Date(lastMsg.timestamp);
+
+      sessionsContainer.innerHTML = sortedSessions
+        .map(([sessionId, conversations]) => {
+          const firstMsg = conversations[0];
+          const lastMsg = conversations[conversations.length - 1];
+          const firstDate = new Date(firstMsg.timestamp);
+          const lastDate = new Date(lastMsg.timestamp);
+          const userEmail = firstMsg.userEmail || "Nepateikta";
+
+          const messagesHtml = conversations
+            .map((conv) => {
+              const date = new Date(conv.timestamp);
+              const time = date.toLocaleTimeString("lt-LT", { hour: "2-digit", minute: "2-digit" });
+
+              return `
+            <div class="border-l-2 border-gray-200 pl-4 py-3 space-y-2">
+              <div class="text-xs text-gray-500">${time}</div>
+              
+              <div class="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                <div class="text-xs font-medium text-blue-700 mb-1">👤 Klausimas:</div>
+                <div class="text-sm text-gray-800">${escapeHtml(conv.userMessage)}</div>
+              </div>
+              
+              <div class="bg-green-50 rounded-lg p-3 border border-green-100">
+                <div class="text-xs font-medium text-green-700 mb-1">🤖 Atsakymas:</div>
+                <div class="text-sm text-gray-800 whitespace-pre-wrap">${escapeHtml(conv.reply)}</div>
+              </div>
+              
+              ${conv.contextEntries && conv.contextEntries.length ? `
+                <div class="text-xs text-gray-600">
+                  📚 Kontekstas: ${conv.contextEntries.map((ctx) => ctx.title).join(", ")}
+                </div>
+              ` : ''}
+            </div>
+          `;
+            })
+            .join("");
+
+          const shortId = sessionId.substring(sessionId.length - 8);
+
+          return `
+          <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-4 cursor-pointer hover:from-blue-600 hover:to-blue-700 transition-all"
+                 onclick="toggleSession('${sessionId}')">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                    <span class="text-xl">👤</span>
+                  </div>
+                  <div>
+                    <div class="font-semibold">📧 ${escapeHtml(userEmail)}</div>
+                    <div class="text-xs opacity-90">Sesija: #${shortId} • ${conversations.length} žinutė(-s)</div>
+                  </div>
+                </div>
+                <div class="text-right text-xs opacity-90">
+                  <div>Pradėta: ${firstDate.toLocaleString("lt-LT", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}</div>
+                  <div>Paskutinė: ${lastDate.toLocaleString("lt-LT", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" })}</div>
+                </div>
+                <div id="arrow-${sessionId}" class="transform transition-transform">▼</div>
+              </div>
+            </div>
+            
+            <div id="session-${sessionId}" class="hidden p-4 space-y-3 bg-gray-50">
+              ${messagesHtml}
+            </div>
+          </div>
+        `;
+        })
+        .join("");
+    }
+
+    // Toggle session visibility
+    window.toggleSession = function toggleSession(sessionId) {
+      const content = document.getElementById(`session-${sessionId}`);
+      const arrow = document.getElementById(`arrow-${sessionId}`);
+
+      if (content && content.classList.contains("hidden")) {
+        content.classList.remove("hidden");
+        if (arrow) arrow.style.transform = "rotate(180deg)";
+      } else {
+        if (content) content.classList.add("hidden");
+        if (arrow) arrow.style.transform = "rotate(0deg)";
+      }
+    };
+
+    // Escape HTML
+    function escapeHtml(text) {
+      const map = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;"
+      };
+        return text.replace(/[&<>"]'/g, (m) => map[m] || m);
+    }
+
+    // Event listeners
+    if (searchInput) searchInput.addEventListener("input", applyFilters);
+    if (dateFilter) dateFilter.addEventListener("change", applyFilters);
+    if (refreshBtn) refreshBtn.addEventListener("click", fetchConversations);
+
+    // Initial load
+    fetchConversations();
+
+    // Auto-refresh every 30 seconds
+    setInterval(fetchConversations, 30000);
+  </script>
         const userEmail = firstMsg.userEmail || "Nepateikta";
         
         const messagesHtml = conversations.map((conv: Conversation) => {
