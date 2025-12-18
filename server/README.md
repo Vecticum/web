@@ -1,8 +1,125 @@
-# VECTICUM Chat Server
+# VECTICUM Chatbot Server
 
-Express serveris, integruotas su OpenAI API, skirtas VECTICUM svetainės chatbot funkcijai.
+Express.js serveris su Google Gemini AI integracija VECTICUM chatbot funkcionalumui.
 
-## Diegimo instrukcijos
+## 🚀 Quick Railway Deploy (5 minutės)
+
+### Žingsnis 1: Paruošti GitHub
+```bash
+# Workspace root direktorijoje
+git add .
+git commit -m "Add chatbot server for Railway deployment"
+git push origin main
+```
+
+### Žingsnis 2: Deploy į Railway
+
+1. **Eikite į Railway.app**
+   - Atidarykite: https://railway.app/
+   - Paspauskite "Login" → Prisijunkite per GitHub
+
+2. **Sukurkite naują projektą**
+   - Paspauskite "+ New Project"
+   - Pasirinkite "Deploy from GitHub repo"
+   - Pasirinkite savo repository (pvz., `DomasLalas/web`)
+
+3. **Konfigūruokite Root Directory**
+   - Railway Settings → Service Settings
+   - "Root Directory" nustatykite: `/server`
+   - Išsaugokite
+
+4. **Pridėkite Environment Variables**
+   - Settings → Variables → Raw Editor
+   - Įklijuokite:
+   ```
+   GEMINI_API_KEY=AIzaSyDKJUp3xAU8kDTxU9dNlfkWg9NS7eMm8M4
+   PORT=3000
+   ```
+   - Paspauskite "Add" arba "Update Variables"
+
+5. **Deploy**
+   - Railway automatiškai pradės deployment
+   - Palaukite ~1-2 minutes
+   - Matysite "Deployed" statusą
+
+6. **Gaukite Public URL**
+   - Settings → Networking
+   - Paspauskite "Generate Domain"
+   - Nukopijuokite URL (pvz., `https://web-production-a1b2.up.railway.app`)
+
+### Žingsnis 3: Atnaujinkite Vercel
+
+1. **Eikite į Vercel Dashboard**
+   - https://vercel.com/dashboard
+   - Pasirinkite savo projektą
+
+2. **Pridėkite Environment Variables**
+   - Settings → Environment Variables
+   - Pridėkite 2 kintamuosius:
+
+   **Kintamasis 1:**
+   - Key: `PUBLIC_CHATBOT_API_URL`
+   - Value: `https://jūsų-railway-url.railway.app/api/chat`
+
+   **Kintamasis 2:**
+   - Key: `PUBLIC_CHATBOT_CONVERSATIONS_URL`
+   - Value: `https://jūsų-railway-url.railway.app/api/conversations`
+
+3. **Redeploy**
+   - Deployments → Pasirinkite paskutinį deployment
+   - "..." meniu → "Redeploy"
+   - Arba tiesiog push'inkite naują commit
+
+### ✅ Baigta!
+
+Jūsų chatbotas dabar veikia:
+- ✅ Production svetainėje (Vercel)
+- ✅ Pokalbių istorija admin panelėje
+- ✅ 24/7 veikimas Railway serveryje
+
+## 🔧 Troubleshooting
+
+### Railway neranda Node.js projekto
+- Patikrinkite, ar "Root Directory" nustatytas į `/server`
+- Patikrinkite, ar `package.json` yra `server/` direktorijoje
+
+### Serveris crashina
+- Railway → Logs → Patikrinkite klaidas
+- Įsitikinkite, kad `GEMINI_API_KEY` nustatytas teisingai
+- Patikrinkite, ar PORT=3000
+
+### Chatbotas neveikia production
+- Patikrinkite Vercel environment variables
+- URL turi būti: `https://...railway.app/api/chat` (su `/api/chat` pabaigoje)
+- Vercel → Deployments → Redeploy po variable pakeitimų
+
+### Admin panel nerodo pokalbių
+- Patikrinkite `PUBLIC_CHATBOT_CONVERSATIONS_URL`
+- URL turi būti: `https://...railway.app/api/conversations`
+- Patikrinkite naršyklės Console (F12) klaidas
+
+## 📊 Railway Free Tier Limits
+
+- **500 valandų/mėnesį** - Daugiau nei užtenka chatbotui
+- **Automatic sleep** - Neramus, kai nėra traffic
+- **1GB RAM** - Pakanka Express serveriui
+
+Jei viršijate limits, Railway praneš ir galėsite upgrade'inti.
+
+## 🔄 Auto-Deploy iš GitHub
+
+Railway automatiškai redeployina kai push'inate į GitHub:
+```bash
+git add .
+git commit -m "Update chatbot"
+git push
+```
+
+Railway aptiks pakeitimus ir redeployins per ~1 minutę.
+
+---
+
+## Diegimo instrukcijos (Localhost)
 
 ### 1. Įdiekite priklausomybes
 
