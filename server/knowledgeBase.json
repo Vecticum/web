@@ -30,5 +30,53 @@
       "vecticum"
     ],
     "content": "Įmonė: UAB \"Vecticum\", įmonės kodas 304867945. Adresas: T. Kosciuškos g. 24, LT-01100 Vilnius, Lietuva. Bendras el. paštas: info@vecticum.lt. Pagalbos el. paštas: support@vecticum.com. Telefonas: +370 696 05332."
+  },
+  {
+    "id": "about-vecticum",
+    "title": "Kas yra VECTICUM sistema",
+    "tags": ["kas yra vecticum", "aprašymas", "dokumentų valdymas", "personalo valdymas"],
+    "content": "VECTICUM – personalo ir dokumentų valdymo sistema, skirta automatizuoti darbuotojų įdarbinimą ir išdarbinimą, darbo sutarčių bei dokumentų tvirtinimą, atostogų ir komandiruočių procesus, užduočių valdymą. Sistema palaiko integracijas per REST API, gali būti jungiama su buhalterine apskaita ir ERP, o darbo saugos srityje užtikrina instruktažų bei sertifikatų galiojimo kontrolę su el. parašais."
+  },
+  {
+    "id": "feature-access-control-time",
+    "title": "Praėjimo kontrolė ir darbo laiko fiksavimas",
+    "tags": ["praėjimo kontrolė", "darbo laikas", "pamainos", "laiko apskaita", "gamyba"],
+    "content": "Automatinis darbo laiko fiksavimas per kortelių skaitytuvus, palaikant 3 pamainų apskaitą. Informacija gali būti naudojama ataskaitoms ir integracijoms su kitomis sistemomis (pvz., ERP). Šaltinis: industrijos – gamyba."
+  },
+  {
+    "id": "feature-scorm-safety",
+    "title": "Darbo sauga ir SCORM mokymai",
+    "tags": ["darbo sauga", "SCORM", "instruktažai", "sertifikatai", "el. parašas"],
+    "content": "Sistema leidžia vykdyti darbo saugos instruktažus, valdyti sertifikatų galiojimą, rinkti parašus elektroniniu būdu ir kaupti įrašus audito tikslams. Šaltinis: industrijos – gamyba."
+  },
+  {
+    "id": "feature-mobile-shopfloor",
+    "title": "Mobilumas ceche (iOS/Android)",
+    "tags": ["mobilumas", "programėlė", "offline", "android", "ios", "gamyba"],
+    "content": "Darbuotojams, kurie nedirba prie kompiuterio, prieinama iOS ir Android programėlė su offline režimu. Šaltinis: industrijos – gamyba."
+  },
+  {
+    "id": "feature-analytics-integration",
+    "title": "Analitika ir integracijos per REST API",
+    "tags": ["analitika", "ataskaitos", "REST API", "ERP integracija"],
+    "content": "Realaus laiko ataskaitos ir integracijos su ERP sistemomis per REST API leidžia automatizuoti duomenų mainus ir matyti aktualią informaciją vienoje vietoje. Šaltinis: industrijos – gamyba."
+  },
+  {
+    "id": "module-onboarding-selfservice",
+    "title": "Darbuotojų įdarbinimo savitarna",
+    "tags": ["įdarbinimas", "savitarna", "onboarding", "automatizacija"],
+    "content": "Naujas darbuotojas pats pateikia reikiamą informaciją, pasirašo dokumentus, o personalo specialistas patvirtina ar atmeta duomenis su komentarais. Galima praplėsti anketą papildomais laukais, automatizuoti kortelės ir dokumentų kūrimą, integruoti su kitais VECTICUM sprendimais. Šaltinis: paslauga – darbuotojų įdarbinimo savitarna."
+  },
+  {
+    "id": "module-leave-management",
+    "title": "Atostogų ir nebuvimų valdymas",
+    "tags": ["atostogos", "nebuvimai", "likučiai", "prašymai"],
+    "content": "Savitarnos įrankis darbuotojams leidžia patogiai teikti atostogų prašymus, matyti likučius, automatizuoti tvirtinimo eigą ir sumažinti administracinį krūvį. Palaikomas likučių paėmimas per API integracijas. Šaltinis: paslauga – atostogų valdymas ir versijų naujienos."
+  },
+  {
+    "id": "module-business-travel",
+    "title": "Komandiruočių valdymas",
+    "tags": ["komandiruotės", "išlaidos", "tvirtinimas", "ataskaitos", "biudžetas"],
+    "content": "Komandiruotės planavimas ir registravimas, automatizuotas tvirtinimas pagal logiką, pranešimai apie statusą, išlaidų fiksavimas ir ataskaitos, galimybė palyginti planuojamas ir faktines išlaidas, integracijos su buhalterine apskaita. Šaltinis: paslauga – komandiruočių valdymas."
   }
 ]

@@ -8,6 +8,41 @@ const SHEET_WEBHOOK_URL = import.meta.env.GOOGLE_SHEET_WEBHOOK_URL || '';
 const SHEET_ID = import.meta.env.GOOGLE_SHEET_ID || '';
 const GOOGLE_API_KEY = import.meta.env.GOOGLE_SHEETS_API_KEY || '';
 
+// --- Lightweight knowledge base support (keyword matching) ---
+type KBEntry = { id: string; title: string; tags?: string[]; content: string };
+let kbCache: KBEntry[] | null = null;
+
+async function loadKnowledgeBase(): Promise<KBEntry[]> {
+  if (kbCache) return kbCache;
+  try {
+    // Import JSON packaged with the build (under project root /server)
+    const mod: any = await import('../../../server/knowledgeBase.json');
+    kbCache = (mod?.default ?? mod) as KBEntry[];
+  } catch (err) {
+    console.warn('Nepavyko įkelti knowledgeBase.json:', err);
+    kbCache = [];
+  }
+  return kbCache;
+}
+
+function pickContext(entries: KBEntry[], query: string, maxItems = 3): KBEntry[] {
+  if (!query || entries.length === 0) return [];
+  const normalized = query.toLowerCase();
+  const keywords = normalized.split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+
+  return entries
+    .map((e) => {
+      const hay = `${e.title} ${(e.tags ?? []).join(' ')} ${e.content}`.toLowerCase();
+      let score = 0;
+      for (const w of keywords) if (hay.includes(w)) score += 1;
+      return { e, score };
+    })
+    .filter((x) => x.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, maxItems)
+    .map((x) => x.e);
+}
+
 // Simple rule-based fallback answers for common queries
 function generateFallbackReply(message: string): string {
   const q = (message || '').toLowerCase();
@@ -77,11 +112,27 @@ export const POST: APIRoute = async ({ request }) => {
       aiReply = `Ačiū už jūsų klausimą! Šiuo metu chatbot veikia testiniu režimu. Prašome susisiekti su mumis el. paštu info@vecticum.lt arba telefonu, kad galėtume jums padėti.`;
     } else {
       try {
-        const prompt = `Tu esi VECTICUM personalo ir dokumentų valdymo sistemos pagalbos asistentas. Atsakyk lietuviškai, profesionaliai ir draugiškai.
+        const kb = await loadKnowledgeBase();
+        const ctx = pickContext(kb, message, 3);
+        const contextText =
+          ctx.length > 0
+            ? ctx
+                .map(
+                  (c) => `# ${c.title}\nŽymos: ${(c.tags ?? []).join(', ')}\n${c.content}`
+                )
+                .join('\n\n')
+            : 'Papildomas kontekstas nerastas – remkis bazine VECTICUM informacija.';
 
-Klausimas: ${message}
+        const prompt = `Tu esi VECTICUM personalo ir dokumentų valdymo sistemos pagalbos asistentas.
+Tavo tikslas – aiškiai, trumpai ir profesionaliai lietuvių kalba atsakyti į kliento klausimus.
+Naudok sąrašus, kai tai padeda; venk perteklinių frazių; jei trūksta tikslios informacijos – pasiūlyk susisiekti arba užsiregistruoti demonstracijai.
 
-Tavo atsakymas:`;
+Papildomas kontekstas (vidinė žinių bazė):
+${contextText}
+
+Kliento klausimas: ${message}
+
+Tavo atsakymas (LT):`;
 
         const resp = await fetch(
           `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiApiKey}`,
