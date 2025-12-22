@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "kb:build": "node scripts/generate_kb.js",
+    "prebuild": "node scripts/generate_kb.js"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.3",

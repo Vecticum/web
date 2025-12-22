@@ -17,7 +17,16 @@ async function loadKnowledgeBase(): Promise<KBEntry[]> {
   try {
     // Import JSON packaged with the build (under project root /server)
     const mod: any = await import('../../../server/knowledgeBase.json');
-    kbCache = (mod?.default ?? mod) as KBEntry[];
+    const base = (mod?.default ?? mod) as KBEntry[];
+    let generated: KBEntry[] = [];
+    try {
+      const genMod: any = await import('../../../server/knowledgeBase.generated.json');
+      generated = (genMod?.default ?? genMod) as KBEntry[];
+    } catch (e) {
+      // Optional: generated file may not exist in dev
+      generated = [];
+    }
+    kbCache = [...base, ...generated];
   } catch (err) {
     console.warn('Nepavyko įkelti knowledgeBase.json:', err);
     kbCache = [];
@@ -57,7 +66,8 @@ function generateFallbackReply(message: string): string {
   if (q.includes('kaina') || q.includes('planai') || q.includes('pricing') || q.includes('planu')) {
     return (
       'Kainodara priklauso nuo pasirinkto plano ir darbuotojų skaičiaus. '
-      + 'Siūlome Basic, Advanced ir Enterprise planus. Parašykite mums arba palikite el. paštą – atsiųsime pasiūlymą.'
+      + 'Siūlome Basic, Advanced ir Enterprise planus. Daugiau informacijos ir pavyzdžių rasite: '\
+      + '\nhttps://vecticum.lt/personalo-valdymo-sprendimu-planai/\nhttps://vecticum.lt/sprendimai'
     );
   }
   if (q.includes('demo') || q.includes('pabandyti') || q.includes('bandomoji')) {
@@ -117,15 +127,18 @@ export const POST: APIRoute = async ({ request }) => {
         const contextText =
           ctx.length > 0
             ? ctx
-                .map(
-                  (c) => `# ${c.title}\nŽymos: ${(c.tags ?? []).join(', ')}\n${c.content}`
-                )
+                .map((c: any) => {
+                  const url = c.url ? `\nURL: ${c.url}` : '';
+                  return `# ${c.title}\nŽymos: ${(c.tags ?? []).join(', ')}\n${c.content}${url}`;
+                })
                 .join('\n\n')
             : 'Papildomas kontekstas nerastas – remkis bazine VECTICUM informacija.';
 
         const prompt = `Tu esi VECTICUM personalo ir dokumentų valdymo sistemos pagalbos asistentas.
 Tavo tikslas – aiškiai, trumpai ir profesionaliai lietuvių kalba atsakyti į kliento klausimus.
 Naudok sąrašus, kai tai padeda; venk perteklinių frazių; jei trūksta tikslios informacijos – pasiūlyk susisiekti arba užsiregistruoti demonstracijai.
+
+Svarbu: jei kontekste yra URL, atsakymo pabaigoje išvardink 2–3 aktualiausias nuorodas (pilni URL), po vieną eilutėje, be papildomo teksto.
 
 Papildomas kontekstas (vidinė žinių bazė):
 ${contextText}

@@ -104,6 +104,8 @@ const chatApiUrl =
 </style>
 
 <script is:inline define:vars={{ chatApiUrl }}>
+  // Session expires after inactivity; then email must be re-entered
+  const SESSION_TTL_MS = 30 * 60 * 1000; // 30 minutes
   const chatToggle = document.getElementById('chat-toggle');
   const chatWindow = document.getElementById('chat-window');
   const chatIcon = document.getElementById('chat-icon');
@@ -112,6 +114,7 @@ const chatApiUrl =
   const chatInput = document.getElementById('chat-input');
   const chatMessages = document.getElementById('chat-messages');
   const sendButton = document.getElementById('send-button');
+  const resetBtn = document.getElementById('reset-chat');
 
   const API_URL_ENV = chatApiUrl;
 
@@ -127,20 +130,33 @@ const chatApiUrl =
   // Generate or retrieve session ID
   function getSessionId() {
     let sessionId = localStorage.getItem('vecticum_chat_session');
-    if (!sessionId) {
+    const expiresRaw = localStorage.getItem('vecticum_chat_session_expires');
+    const expires = expiresRaw ? parseInt(expiresRaw, 10) : 0;
+
+    // If no session or expired, create a new one and clear previous email
+    if (!sessionId || !expires || Date.now() > expires) {
+      if (sessionId) {
+        const oldEmailKey = `vecticum_email_${sessionId}`;
+        localStorage.removeItem(oldEmailKey);
+      }
       sessionId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
       localStorage.setItem('vecticum_chat_session', sessionId);
+      localStorage.setItem('vecticum_chat_session_expires', String(Date.now() + SESSION_TTL_MS));
     }
     return sessionId;
   }
 
-  const sessionId = getSessionId();
+  function extendSession() {
+    localStorage.setItem('vecticum_chat_session_expires', String(Date.now() + SESSION_TTL_MS));
+  }
+
+  let sessionId = getSessionId();
   let isOpen = false;
   let userEmail = null;
   let isEmailVerified = false;
 
   // Check if email already stored for THIS session
-  const storedEmailKey = `vecticum_email_${sessionId}`;
+  let storedEmailKey = `vecticum_email_${sessionId}`;
   const storedEmail = localStorage.getItem(storedEmailKey);
   if (storedEmail && validateEmail(storedEmail)) {
     userEmail = storedEmail;
@@ -164,6 +180,7 @@ const chatApiUrl =
   chatToggle?.addEventListener('click', () => {
     isOpen = !isOpen;
     if (isOpen) {
+      extendSession();
       if (chatWindow) {
         chatWindow.classList.remove('hidden');
         chatWindow.style.display = 'block';
@@ -186,6 +203,31 @@ const chatApiUrl =
       }
       chatIcon?.classList.remove('hidden');
       closeIcon?.classList.add('hidden');
+    }
+  });
+
+  // Reset chat: end session and require email again
+  resetBtn?.addEventListener('click', () => {
+    // Remove stored email for current session and session data
+    localStorage.removeItem(storedEmailKey);
+    localStorage.removeItem('vecticum_chat_session');
+    localStorage.removeItem('vecticum_chat_session_expires');
+
+    // Create new session and reset state
+    sessionId = getSessionId();
+    storedEmailKey = `vecticum_email_${sessionId}`;
+    userEmail = null;
+    isEmailVerified = false;
+
+    // Reset UI
+    if (chatMessages) {
+      chatMessages.innerHTML = '';
+      addMessage('Sveiki! Prieš pradedant pokalbį, prašome nurodyti savo el. paštą:', false);
+    }
+    if (chatInput) {
+      chatInput.placeholder = 'Įveskite žinutę...';
+      chatInput.value = '';
+      chatInput.focus();
     }
   });
 
@@ -257,6 +299,7 @@ const chatApiUrl =
   // Handle form submission
   chatForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    extendSession();
 
     const message = chatInput.value.trim();
     if (!message) return;
