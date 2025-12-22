@@ -1,5 +1,4 @@
 import type { APIRoute } from 'astro';
-import { GoogleGenerativeAI } from '@google/generative-ai';
 
 // Mark this endpoint as server-rendered
 export const prerender = false;
@@ -8,6 +7,44 @@ export const prerender = false;
 const SHEET_WEBHOOK_URL = import.meta.env.GOOGLE_SHEET_WEBHOOK_URL || '';
 const SHEET_ID = import.meta.env.GOOGLE_SHEET_ID || '';
 const GOOGLE_API_KEY = import.meta.env.GOOGLE_SHEETS_API_KEY || '';
+
+// Simple rule-based fallback answers for common queries
+function generateFallbackReply(message: string): string {
+  const q = (message || '').toLowerCase();
+  if (/(kas\s+yra|what\s+is).*vecticum/.test(q) || q.includes('kas yra vecticum') || q.includes('vecticum')) {
+    return (
+      'VECTICUM – tai personalo ir dokumentų valdymo sistema, padedanti automatizuoti įdarbinimą, '
+      + 'darbo sutarčių ir dokumentų tvirtinimą, atostogų bei komandiruočių procesus, darbo užmokesčio '
+      + 'skaičiavimą ir integracijas su „Sodra“, VMI, i.SAF/i.VAZ. Sistema pritaikyta augančioms įmonėms, '
+      + 'užtikrina saugumą ir atitiktį teisės aktams.'
+    );
+  }
+  if (q.includes('kaina') || q.includes('planai') || q.includes('pricing') || q.includes('planu')) {
+    return (
+      'Kainodara priklauso nuo pasirinkto plano ir darbuotojų skaičiaus. '
+      + 'Siūlome Basic, Advanced ir Enterprise planus. Parašykite mums arba palikite el. paštą – atsiųsime pasiūlymą.'
+    );
+  }
+  if (q.includes('demo') || q.includes('pabandyti') || q.includes('bandomoji')) {
+    return (
+      'Galite užsiregistruoti demonstracijai per puslapį „Registracija demo“ arba parašyti el. paštu info@vecticum.lt – '
+      + 'pademonstruosime sistemą ir atsakysime į klausimus.'
+    );
+  }
+  if (q.includes('migracija') || q.includes('perkelti') || q.includes('perkėlimas')) {
+    return (
+      'Padedame migruoti duomenis iš esamų sistemų (Excel, buhalterinės programos, HR sistemos). '
+      + 'Parengiame duomenų struktūrą, atliekame patikrinimus ir mokymus.'
+    );
+  }
+  if (q.includes('kontakt') || q.includes('susisiekti') || q.includes('telefon') || q.includes('email')) {
+    return 'Kontaktai: info@vecticum.lt • Tel.: +370 000 00000. Lauksime žinutės!';
+  }
+  return (
+    'Ačiū už klausimą! Šiuo metu negalime sugeneruoti AI atsakymo. '
+    + 'Parašykite, kuo konkrečiai galiu padėti, arba susisiekite el. paštu info@vecticum.lt – atsakysime greitai.'
+  );
+}
 
 export const POST: APIRoute = async ({ request }) => {
   try {
@@ -31,31 +68,47 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Initialize Gemini AI
-    let aiReply;
+    // Initialize Gemini via REST API (avoids SDK model/version issues)
+    let aiReply: string;
     const geminiApiKey = import.meta.env.GEMINI_API_KEY;
-    
+
     if (!geminiApiKey) {
-      // Fallback response if no API key
+      console.error('❌ GEMINI_API_KEY not found in environment variables');
       aiReply = `Ačiū už jūsų klausimą! Šiuo metu chatbot veikia testiniu režimu. Prašome susisiekti su mumis el. paštu info@vecticum.lt arba telefonu, kad galėtume jums padėti.`;
     } else {
       try {
-        const genAI = new GoogleGenerativeAI(geminiApiKey);
-        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
+        const prompt = `Tu esi VECTICUM personalo ir dokumentų valdymo sistemos pagalbos asistentas. Atsakyk lietuviškai, profesionaliai ir draugiškai.
 
-        // Generate AI response
-        const prompt = `Esi VECTICUM personalo ir dokumentų valdymo sistemos pagalbos asistentas. 
-Atsakyk į klausimą lietuviškai, profesionaliai ir draugiškai.
+Klausimas: ${message}
 
-Klausimas: ${message}`;
+Tavo atsakymas:`;
 
-        const result = await model.generateContent(prompt);
-        const response = await result.response;
-        aiReply = response.text();
+        const resp = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiApiKey}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [
+                {
+                  parts: [{ text: prompt }],
+                },
+              ],
+            }),
+          }
+        );
+
+        const data = await resp.json();
+        if (!resp.ok) {
+          console.error('Gemini API error:', data);
+          throw new Error(data?.error?.message || 'Gemini API error');
+        }
+        aiReply =
+          data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ||
+          'Atsiprašome, šiuo metu negaliu atsakyti. Bandykite dar kartą.';
       } catch (aiError) {
         console.error('Gemini API error:', aiError);
-        // Fallback response if AI fails
-        aiReply = `Ačiū už jūsų klausimą: "${message}". Šiuo metu susidūrėme su laikinu techniniu sutrikdimu. Prašome susisiekti su mumis tiesiogiai el. paštu info@vecticum.lt arba telefonu, kad galėtume jums padėti.`;
+        aiReply = generateFallbackReply(message);
       }
     }
 
