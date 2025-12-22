@@ -2,8 +2,8 @@
 // Build a consolidated knowledge base from site content (MD/MDX/Astro)
 // Outputs: server/knowledgeBase.generated.json
 
-const fs = require('fs');
-const path = require('path');
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 
 const ROOT = process.cwd();
 const OUTPUT = path.join(ROOT, 'server', 'knowledgeBase.generated.json');
