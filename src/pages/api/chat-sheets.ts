@@ -66,7 +66,7 @@ function generateFallbackReply(message: string): string {
   if (q.includes('kaina') || q.includes('planai') || q.includes('pricing') || q.includes('planu')) {
     return (
       'Kainodara priklauso nuo pasirinkto plano ir darbuotojų skaičiaus. '
-      + 'Siūlome Basic, Advanced ir Enterprise planus. Daugiau informacijos ir pavyzdžių rasite: '\
+      + 'Siūlome Basic, Advanced ir Enterprise planus. Daugiau informacijos ir pavyzdžių rasite: '
       + '\nhttps://vecticum.lt/personalo-valdymo-sprendimu-planai/\nhttps://vecticum.lt/sprendimai'
     );
   }
