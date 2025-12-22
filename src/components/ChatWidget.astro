@@ -120,10 +120,8 @@ const chatApiUrl =
     if (API_URL_ENV) {
       return API_URL_ENV;
     }
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      return 'http://localhost:3000/api/chat';
-    }
-    return '/api/chat';
+    // Use the Astro API endpoint
+    return '/api/chat-sheets';
   })();
 
   // Generate or retrieve session ID

@@ -1,13 +1,27 @@
 import type { APIRoute } from 'astro';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-// Google Sheets integration
+// Mark this endpoint as server-rendered
+export const prerender = false;
+
+// Google Sheets integration - using Google Apps Script Web App
+const SHEET_WEBHOOK_URL = import.meta.env.GOOGLE_SHEET_WEBHOOK_URL || '';
 const SHEET_ID = import.meta.env.GOOGLE_SHEET_ID || '';
 const GOOGLE_API_KEY = import.meta.env.GOOGLE_SHEETS_API_KEY || '';
 
 export const POST: APIRoute = async ({ request }) => {
   try {
-    const body = await request.json();
+    // Parse JSON body safely
+    let body;
+    try {
+      const text = await request.text();
+      body = text ? JSON.parse(text) : {};
+    } catch (parseError) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid JSON in request body' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
     const { message, sessionId, userEmail } = body;
 
     if (!message) {
@@ -18,26 +32,35 @@ export const POST: APIRoute = async ({ request }) => {
     }
 
     // Initialize Gemini AI
+    let aiReply;
     const geminiApiKey = import.meta.env.GEMINI_API_KEY;
+    
     if (!geminiApiKey) {
-      throw new Error('GEMINI_API_KEY not configured');
-    }
+      // Fallback response if no API key
+      aiReply = `Ačiū už jūsų klausimą! Šiuo metu chatbot veikia testiniu režimu. Prašome susisiekti su mumis el. paštu info@vecticum.lt arba telefonu, kad galėtume jums padėti.`;
+    } else {
+      try {
+        const genAI = new GoogleGenerativeAI(geminiApiKey);
+        const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
 
-    const genAI = new GoogleGenerativeAI(geminiApiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-
-    // Generate AI response
-    const prompt = `Esi VECTICUM personalo ir dokumentų valdymo sistemos pagalbos asistentas. 
+        // Generate AI response
+        const prompt = `Esi VECTICUM personalo ir dokumentų valdymo sistemos pagalbos asistentas. 
 Atsakyk į klausimą lietuviškai, profesionaliai ir draugiškai.
 
 Klausimas: ${message}`;
 
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    const aiReply = response.text();
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        aiReply = response.text();
+      } catch (aiError) {
+        console.error('Gemini API error:', aiError);
+        // Fallback response if AI fails
+        aiReply = `Ačiū už jūsų klausimą: "${message}". Šiuo metu susidūrėme su laikinu techniniu sutrikdimu. Prašome susisiekti su mumis tiesiogiai el. paštu info@vecticum.lt arba telefonu, kad galėtume jums padėti.`;
+      }
+    }
 
-    // Save to Google Sheets
-    if (SHEET_ID && GOOGLE_API_KEY) {
+    // Save to Google Sheets via Web App
+    if (SHEET_WEBHOOK_URL) {
       try {
         await saveToGoogleSheets({
           timestamp: new Date().toISOString(),
@@ -77,7 +100,7 @@ Klausimas: ${message}`;
   }
 };
 
-// Function to save conversation to Google Sheets
+// Function to save conversation to Google Sheets via Apps Script Web App
 async function saveToGoogleSheets(data: {
   timestamp: string;
   sessionId: string;
@@ -85,29 +108,18 @@ async function saveToGoogleSheets(data: {
   userMessage: string;
   aiReply: string;
 }) {
-  const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Conversations:append?valueInputOption=USER_ENTERED&key=${GOOGLE_API_KEY}`;
-
-  const row = [
-    data.timestamp,
-    data.sessionId,
-    data.userEmail,
-    data.userMessage,
-    data.aiReply,
-  ];
-
-  const response = await fetch(url, {
+  // Use Google Apps Script Web App endpoint
+  const response = await fetch(SHEET_WEBHOOK_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({
-      values: [row],
-    }),
+    body: JSON.stringify(data),
   });
 
   if (!response.ok) {
     const error = await response.text();
-    throw new Error(`Google Sheets API error: ${error}`);
+    throw new Error(`Google Sheets Web App error: ${error}`);
   }
 
   return response.json();
