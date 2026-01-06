@@ -1,0 +1,427 @@
+---
+meta:
+  title: Interaktyvūs mokymai su TALENTATOR | VECTICUM
+  description: Paruošti SCORM e. mokymai su TALENTATOR – greitas startas, aiškus atsekamumas ir mažiau rankinio administravimo VECTICUM sistemoje.
+  ogImage: /media/services/mokymai-hero.webp
+  ogType: website
+  canonical: https://vecticum.lt/talentator-scorm-mokymai/
+title: Interaktyvūs mokymai su TALENTATOR
+description: Paruošti interaktyvūs e. mokymai ir instrukcijos, kuriuos galite įsigyti per VECTICUM ir naudoti savo organizacijoje. Greitas startas, atitiktis ir pilnas atsekamumas.
+hero_image: "/media/services/mokymai-hero.webp"
+hero_image_alt: "SCORM mokymai | VECTICUM × TALENTATOR"
+---
+
+import ContactForm from "../../components/home/ContactForm.astro";
+
+<style>{`
+  main > section:first-child {
+    display: none !important;
+  }
+  main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  body {
+    padding-top: 0 !important;
+  }
+  .mx-auto.text-gray-800 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+  .mt-12 {
+    margin-top: 0 !important;
+  }
+`}</style>
+
+{/* Custom Hero tik šiam puslapiui */}
+<section class="relative bg-[#3C7099] overflow-hidden" style="margin-top: 0 !important;">
+  {/* Decorative elements */}
+  <div class="absolute inset-0 bg-white/10 mix-blend-soft-light"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#1e3a55]/25 rounded-full blur-3xl"></div>
+  
+  <div class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 px-4 sm:px-6 lg:px-8 py-16 md:py-24 items-center">
+    
+    {/* Text Content Section */}
+    <div class="space-y-8 text-white">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
+        Interaktyvūs mokymai su TALENTATOR
+      </h1>
+      <p class="text-xl text-white/90 leading-relaxed">
+        Paruošti interaktyvūs e. mokymai ir instrukcijos, kuriuos galite įsigyti per VECTICUM ir naudoti savo organizacijoje. Greitas startas, atitiktis ir pilnas atsekamumas.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a
+          href="/registracijademo"
+          class="inline-flex items-center justify-center rounded-full bg-white text-[#3C7099] px-8 py-4 text-lg font-bold hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl"
+        >
+          Registruotis demo versijai
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a
+          href="#contact"
+          class="inline-flex items-center justify-center rounded-full border-2 border-white text-white px-8 py-4 text-lg font-bold hover:bg-white/10 transition-all"
+        >
+          Susisiekti
+        </a>
+      </div>
+    </div>
+
+    {/* Image Section */}
+    <div class="w-full flex justify-center">
+      <div class="relative w-full max-w-lg">
+        <span class="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-white/20 blur-2xl"></span>
+        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-gradient-to-br from-white/10 to-white/0 rounded-full blur-3xl"></span>
+        <div class="relative z-10 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden">
+          <div class="bg-gradient-to-br from-white/15 via-white/5 to-transparent p-8">
+            <img src="/src/assets/media/Talentator-hero.webp" alt="Interaktyvūs mokymai su TALENTATOR" class="w-full h-auto object-contain" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{/* Partnerystė su TALENTATOR */}
+<section class="w-full py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-wrap items-center justify-center gap-6 mb-12">
+      <img src="/src/assets/images/logo.webp" alt="VECTICUM" class="h-10 sm:h-12 w-auto" />
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+        <svg class="w-8 h-8 text-[#C81E6A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+        <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+      </div>
+      <img src="/src/assets/media/talentator-logo.png" alt="TALENTATOR" class="h-10 sm:h-12 w-auto" />
+    </div>
+    <p class="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto text-center">
+      <span class="font-semibold text-[#C81E6A]">VECTICUM</span> ir <span class="font-semibold text-[#C81E6A]">TALENTATOR</span> bendradarbiavimo tikslas – 
+      sukurti interaktyvius e. mokymus ir e. instrukcijas, kurie aiškiai ir praktiškai supažindintų organizacijų darbuotojus su DSS, ESG, kibernetiniu saugumu ir kitomis svarbiomis temomis, 
+      padėtų organizacijoms paprastai įgyvendinti teisės aktų reikalavimus ir neapsunkintų jų papildoma administracine našta.
+    </p>
+  </div>
+</section>
+
+{/* Kodėl pasirinkti SCORM mokymus */}
+<section class="w-full py-16 px-4 sm:px-6 lg:px-8 bg-[#EBEFF3]">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#1e3a55] mb-4">Kodėl pasirinkti interaktyvius e. mokymus?</h2>
+      <p class="text-lg text-[#3C7099] max-w-3xl mx-auto">Efektyvus, modernus ir lankstus būdas apmokyti darbuotojus</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-[#C81E6A] to-pink-600 flex items-center justify-center mb-4">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Sutaupote laiką ir pinigus</h3>
+        <p class="text-gray-600">Nereikia organizuoti kontaktinių mokymų, rinkti žmonių vienoje vietoje ar planuoti logistikos – mokymai vyksta online, darbuotojui patogiu laiku.</p>
+      </div>
+      
+      <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Pasiekiate visus darbuotojus</h3>
+        <p class="text-gray-600">Nuotoliniai mokymai leidžia apmokyti didelę auditoriją – net jei darbuotojai dirba skirtinguose miestuose ar nuotoliu. Visi gauna vienodą informaciją.</p>
+      </div>
+      
+      <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mb-4">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Užtikrinate atitiktį</h3>
+        <p class="text-gray-600">Standartizuotas turinys garantuoja, kad visi darbuotojai gauna tą pačią, teisingą ir teisės aktų reikalavimus atitinkančią informaciją.</p>
+      </div>
+      
+      <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mb-4">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Interaktyvūs ir įdomūs</h3>
+        <p class="text-gray-600">Ne ilgi nuobodūs tekstai – praktiniai scenarijai, užduotys, vizualizacijos ir testai padeda geriau įsiminti ir pritaikyti žinias.</p>
+      </div>
+      
+      <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-4">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Stebite progresą</h3>
+        <p class="text-gray-600">Vadovai mato, kas jau baigė mokymus, kas dar mokosi. Testų rezultatai fiksuojami automatiškai, ataskaitos paruoštos auditui.</p>
+      </div>
+      
+      <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center mb-4">
+          <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Greitas startas</h3>
+        <p class="text-gray-600">Turinys jau paruoštas – nebereikia kurti mokymų nuo nulio. Pritaikote prie savo organizacijos ir galite startuoti iš karto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{/* Mokymų katalogas */}
+<section id="catalog" class="w-full py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24 bg-white" aria-labelledby="katalogas-heading">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 id="katalogas-heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Mokymų katalogas</h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Pasirinkite iš plačios mokymų ir instrukcijų pasiūlos</p>
+    </div>
+
+    <div class="space-y-12">
+      {/* 1) DSS interaktyvūs e. mokymai */}
+      <div class="group">
+        <div class="bg-gradient-to-br from-[#C81E6A]/5 to-pink-50 rounded-3xl p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+          <div class="flex flex-col lg:flex-row items-start gap-8">
+            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-[#C81E6A] to-pink-600 flex items-center justify-center flex-shrink-0 shadow-xl">
+              <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                <div>
+                  <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Darbuotojų sauga ir sveikata</h3>
+                  <p class="text-base text-gray-600">Interaktyvūs e. mokymai įvairiems sektoriams</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-[#C81E6A] px-4 py-2 text-sm font-semibold text-white shadow-md">Interaktyvūs</span>
+              </div>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-gray-700">
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-[#C81E6A] flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Gaisrinė sauga (LT/EN/RU, ~70 min)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-[#C81E6A] flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Biuro darbuotojų sauga (LT/EN, ~45 min)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-[#C81E6A] flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Pramonės sektorius (LT, ~120 min)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-[#C81E6A] flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Statybų sektorius (LT, ~120 min)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-[#C81E6A] flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Transporto sektorius (LT, ~90 min)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-[#C81E6A] flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Automobilių remontas (LT, ~100 min)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-[#C81E6A] flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Radiacinė sauga (LT, ~30 min)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-[#C81E6A] flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ekstremali situacija (LT/EN/RU, ~10 min)</span></li>
+              </ul>
+              <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
+                <p class="text-lg font-bold text-gray-900">Kainos nuo <span class="text-[#C81E6A]">500 €</span></p>
+                <a href="#contact" class="inline-flex items-center gap-2 text-base font-semibold text-[#C81E6A] hover:text-pink-700 transition-colors">Gauti pasiūlymą <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 2) DSS instrukcijos biurui */}
+      <div class="group">
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+          <div class="flex flex-col lg:flex-row items-start gap-8">
+            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-xl">
+              <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                <div>
+                  <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">DSS instrukcijos biurui</h3>
+                  <p class="text-base text-gray-600">E. instrukcijos darbuotojų saugai biure</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-md">Instrukcijos</span>
+              </div>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-gray-700">
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-blue-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Darbuotojų, tvarkančių krovinius rankomis, saugos ir sveikatos instrukcija</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-blue-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Darbuotojo, vairuojančio automobilį darbo reikalais, saugos ir sveikatos instrukcija</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-blue-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Biuro / Administracijos darbuotojų saugos ir sveikatos instrukcija</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-blue-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Neblaivumo darbe prevencijos įgyvendinimo ir nušalinimo nuo darbo tvarka</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-blue-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Bendroji gaisrinės saugos instrukcija</span></li>
+              </ul>
+              <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
+                <p class="text-lg font-bold text-gray-900">Kainos nuo <span class="text-blue-600">400 €</span></p>
+                <a href="#contact" class="inline-flex items-center gap-2 text-base font-semibold text-blue-600 hover:text-blue-700 transition-colors">Gauti pasiūlymą <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 3) Administracinės tvarkos */}
+      <div class="group">
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+          <div class="flex flex-col lg:flex-row items-start gap-8">
+            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-xl">
+              <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                <div>
+                  <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Administracinės tvarkos</h3>
+                  <p class="text-base text-gray-600">E. instrukcijos ir interaktyvūs mokymai</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-md">Mišrus</span>
+              </div>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-gray-700">
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Darbuotojų ir darbdavių teisės bei pareigos darbų saugos ir sveikatos srityje</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Žalos atlyginimo tvarka</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Nuotolinio darbo taisyklės</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lygių galimybių politika</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Darbuotojų asmens duomenų tvarkymo taisyklės</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Darbo tvarkos taisyklės</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Konfidencialios informacijos apsaugos taisyklės</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Atostogų suteikimo tvarka</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Prašymų teikimo ir nagrinėjimo tvarka</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>IKT naudojimo bei darbuotojų stebėsenos ir kontrolės darbo vietoje tvarka</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Nuotolinis darbas (interaktyvus e. mokymas)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-purple-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lygios galimybės organizacijoje (interaktyvus e. mokymas)</span></li>
+              </ul>
+              <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
+                <p class="text-lg font-bold text-gray-900">Kainos nuo <span class="text-purple-600">450 €</span></p>
+                <a href="#contact" class="inline-flex items-center gap-2 text-base font-semibold text-purple-600 hover:text-purple-700 transition-colors">Gauti pasiūlymą <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 4) Smurto ir priekabiavimo prevencija */}
+      <div class="group">
+        <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+          <div class="flex flex-col lg:flex-row items-start gap-8">
+            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0 shadow-xl">
+              <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                <div>
+                  <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Smurto ir priekabiavimo prevencija</h3>
+                  <p class="text-base text-gray-600">Mokymai ir politikos</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-orange-600 px-4 py-2 text-sm font-semibold text-white shadow-md">Politikos</span>
+              </div>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-gray-700">
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-orange-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mobingas: kaip atpažinti ir reaguoti? (LT/EN)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-orange-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Smurto ir priekabiavimo prevencija darbe (LT/EN)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-orange-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Įtampą darbe mažinančių priemonių nustatymo ir taikymo politika (LT)</span></li>
+              </ul>
+              <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
+                <p class="text-lg font-bold text-gray-900">Kainos nuo <span class="text-orange-600">500 €</span></p>
+                <a href="#contact" class="inline-flex items-center gap-2 text-base font-semibold text-orange-600 hover:text-orange-700 transition-colors">Gauti pasiūlymą <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 5) ESG mokymai */}
+      <div class="group">
+        <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+          <div class="flex flex-col lg:flex-row items-start gap-8">
+            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center flex-shrink-0 shadow-xl">
+              <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                <div>
+                  <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">ESG mokymai</h3>
+                  <p class="text-base text-gray-600">Aplinkosauga, socialinė atsakomybė ir valdymas</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-md">ESG</span>
+              </div>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-gray-700">
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-green-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Smurto ir priekabiavimo prevencija darbe (LT/EN)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-green-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lygių galimybių užtikrinimas</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-green-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>BDAR</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-green-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Interesų konfliktas</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-green-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Aplinkosaugos mokymas</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-green-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Atliekų rūšiavimas (LT, e. instrukcija)</span></li>
+              </ul>
+              <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
+                <p class="text-lg font-bold text-gray-900">Kainos nuo <span class="text-green-600">550 €</span></p>
+                <a href="#contact" class="inline-flex items-center gap-2 text-base font-semibold text-green-600 hover:text-green-700 transition-colors">Gauti pasiūlymą <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 6) Kibernetinis saugumas */}
+      <div class="group">
+        <div class="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-3xl p-8 lg:p-12 hover:shadow-2xl transition-all duration-500">
+          <div class="flex flex-col lg:flex-row items-start gap-8">
+            <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-xl">
+              <svg class="w-8 h-8 lg:w-10 lg:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+                <div>
+                  <h3 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">Kibernetinis saugumas</h3>
+                  <p class="text-base text-gray-600">15 modulių prenumerata</p>
+                </div>
+                <span class="inline-flex items-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-md">Prenumerata</span>
+              </div>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-gray-700">
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Saugus naršymas internete</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Įvadas į kibernetinio saugumo atitiktis ir TIS2 direktyvą</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Kenkėjiška programinė įranga 101</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dirbtinis intelektas socialinėje inžinerijoje</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Saugus elgesys socialiniuose tinkluose</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Socialinės inžinerijos atakos</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Višingas (Vishing)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fišingas (Phishing)</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Trumpas BDAR vadovas</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Wi-Fi saugumas</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Švaraus stalo politika</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Slaptažodžiai</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Saugus darbas iš namų</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Mobiliųjų įrenginių saugumas</span></li>
+                <li class="flex items-start gap-3"><svg class="mt-1 w-5 h-5 text-indigo-600 flex-shrink-0" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fizinė darbo vietos apsauga</span></li>
+              </ul>
+              <div class="mt-6 pt-6 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
+                <p class="text-lg font-bold text-gray-900">Prenumerata nuo <span class="text-indigo-600">155 €/mėn.</span></p>
+                <a href="#contact" class="inline-flex items-center gap-2 text-base font-semibold text-indigo-600 hover:text-indigo-700 transition-colors">Gauti pasiūlymą <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16 text-center">
+      <a href="#contact" class="inline-flex items-center justify-center rounded-xl bg-[#C81E6A] text-white px-8 py-4 text-lg font-bold hover:bg-pink-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C81E6A] shadow-xl hover:shadow-2xl transition-all">
+        Gauti visą mokymų sąrašą
+        <svg class="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+{/* Kontaktų forma */}
+<ContactForm />
+
+{/* DUK */}
+<section class="w-full bg-white py-16 px-4 sm:px-6 lg:px-8" aria-labelledby="duk-heading">
+  <div class="max-w-4xl mx-auto">
+    <h2 id="duk-heading" class="text-3xl font-bold text-gray-900 mb-10 text-center">Klausimai ir atsakymai</h2>
+    <div class="space-y-4">
+      <details class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <summary class="font-semibold text-gray-900 cursor-pointer">Kas yra SCORM?</summary>
+        <p class="mt-3 text-gray-700">Standartas, leidžiantis e. mokymus diegti LMS sistemose su testų ir progreso fikasavimu.</p>
+      </details>
+      <details class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <summary class="font-semibold text-gray-900 cursor-pointer">Ar veikia su VECTICUM be integracijų?</summary>
+        <p class="mt-3 text-gray-700">Taip. Priskyrimai, terminai, rezultatai – viskas vienoje vietoje.</p>
+      </details>
+      <details class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <summary class="font-semibold text-gray-900 cursor-pointer">Ar galimos kelios kalbos?</summary>
+        <p class="mt-3 text-gray-700">Taip, bet skirtingos kalbos skaičiuojamos kaip atskiri mokymai.</p>
+      </details>
+      <details class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <summary class="font-semibold text-gray-900 cursor-pointer">Ar yra testai ir pažymėjimai?</summary>
+        <p class="mt-3 text-gray-700">Dalis mokymų turi testus, o baigimo faktas ir rezultatai fiksuojami automatiškai.</p>
+      </details>
+      <details class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <summary class="font-semibold text-gray-900 cursor-pointer">Per kiek laiko galima startuoti?</summary>
+        <p class="mt-3 text-gray-700">Turinys paruoštas, todėl diegimas vyksta greitai – suderinus sąlygas.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+
