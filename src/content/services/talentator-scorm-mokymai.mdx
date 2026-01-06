@@ -12,6 +12,10 @@ hero_image_alt: "SCORM mokymai | VECTICUM × TALENTATOR"
 ---
 
 import ContactForm from "../../components/home/ContactForm.astro";
+import { Image } from "astro:assets";
+import TalentatorHero from '../../assets/media/Talentator-hero.webp';
+import VecticumLogo from '../../assets/images/logo.webp';
+import TalentatorLogo from '../../assets/media/talentator-logo.png';
 
 <style>{`
   main > section:first-child {
@@ -75,7 +79,7 @@ import ContactForm from "../../components/home/ContactForm.astro";
         <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-gradient-to-br from-white/10 to-white/0 rounded-full blur-3xl"></span>
         <div class="relative z-10 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden">
           <div class="bg-gradient-to-br from-white/15 via-white/5 to-transparent p-8">
-            <img src="/src/assets/media/Talentator-hero.webp" alt="Interaktyvūs mokymai su TALENTATOR" class="w-full h-auto object-contain" />
+            <Image src={TalentatorHero} alt="Interaktyvūs mokymai su TALENTATOR" class="w-full h-auto object-contain" />
           </div>
         </div>
       </div>
@@ -88,13 +92,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
 <section class="w-full py-16 px-4 sm:px-6 lg:px-8 bg-white">
   <div class="max-w-5xl mx-auto">
     <div class="flex flex-wrap items-center justify-center gap-6 mb-12">
-      <img src="/src/assets/images/logo.webp" alt="VECTICUM" class="h-10 sm:h-12 w-auto" />
+      <Image src={VecticumLogo} alt="VECTICUM" class="h-10 sm:h-12 w-auto" />
       <div class="flex items-center gap-4">
         <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
         <svg class="w-8 h-8 text-[#C81E6A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
         <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
       </div>
-      <img src="/src/assets/media/talentator-logo.png" alt="TALENTATOR" class="h-10 sm:h-12 w-auto" />
+      <Image src={TalentatorLogo} alt="TALENTATOR" class="h-10 sm:h-12 w-auto" />
     </div>
     <p class="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto text-center">
       <span class="font-semibold text-[#C81E6A]">VECTICUM</span> ir <span class="font-semibold text-[#C81E6A]">TALENTATOR</span> bendradarbiavimo tikslas – 
