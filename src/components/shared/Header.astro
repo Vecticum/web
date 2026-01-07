@@ -6,20 +6,31 @@ const headerImg = '~/assets/images/docs-img.png';
 
 ---
 
-<div class="bg-gray-50 border-b border-gray-200">
-  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-2">
-    <div class="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4 text-sm text-gray-600">
-      <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4 w-full md:w-auto">
-        <a href="tel:+370 696 05332" class="hover:text-[#3C7099] transition-colors duration-200 flex items-center" aria-label="Pardavimų telefono numeris">
-          Pardavimai: +370 696 05332
+<!-- Top Bar -->
+<div class="bg-gradient-to-r from-gray-900 to-gray-800 border-b border-gray-700">
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-2.5">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-6 text-xs text-gray-300">
+      <div class="flex flex-col md:flex-row items-center gap-3 md:gap-6 w-full md:w-auto">
+        <a href="tel:+370 696 05332" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group" aria-label="Pardavimų telefono numeris">
+          <svg class="w-3.5 h-3.5 text-[#3C7099] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+          </svg>
+          <span>Pardavimai: +370 696 05332</span>
         </a>
-        <span class="hidden md:inline text-gray-400">|</span>
-        <a href="tel:+370 618 15140" class="hover:text-[#3C7099] transition-colors duration-200 flex items-center" aria-label="Klientų aptarnavimo telefono numeris">
-          Helpdesk: +370 618 15140
+        <span class="hidden md:inline text-gray-600">|</span>
+        <a href="tel:+370 618 15140" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group" aria-label="Klientų aptarnavimo telefono numeris">
+          <svg class="w-3.5 h-3.5 text-[#3C7099] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z" clip-rule="evenodd"/>
+          </svg>
+          <span>Helpdesk: +370 618 15140</span>
         </a>
       </div>
-      <a href="mailto:vecticum@vecticum.com" class="hover:text-[#3C7099] transition-colors duration-200 flex items-center md:ml-4" aria-label="Elektroninis paštas">
-        info@vecticum.com
+      <a href="mailto:vecticum@vecticum.com" class="hover:text-white transition-colors duration-200 flex items-center gap-2 group" aria-label="Elektroninis paštas">
+        <svg class="w-3.5 h-3.5 text-[#3C7099] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+        </svg>
+        <span>info@vecticum.com</span>
       </a>
     </div>
   </div>
@@ -27,7 +38,9 @@ const headerImg = '~/assets/images/docs-img.png';
 
 
 <header
-  class="sticky top-0 z-50 bg-white py-2 font-semibold shadow transition-transform duration-300"  :class="{ '-translate-y-full': hideHeader, 'translate-y-0': !hideHeader }"  x-data="{ 
+  class="sticky top-0 z-50 bg-white backdrop-blur-sm bg-opacity-95 shadow-md transition-all duration-300"
+  :class="{ '-translate-y-full': hideHeader, 'translate-y-0': !hideHeader, 'shadow-lg': hideHeader === false }"
+  x-data="{ 
     isOpen: false, 
     flyoutOpen: false, 
     planaiFlyoutOpen: false, 
@@ -47,42 +60,43 @@ const headerImg = '~/assets/images/docs-img.png';
   })"
 >
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
+    <div class="flex h-20 items-center justify-between">
       <!-- Logo Section -->
       <div class="md:flex md:items-center md:gap-12">
-        <a class="block text-teal-600 py-2" href="/">
+        <a class="block text-teal-600 py-2 transition-transform hover:scale-105 duration-200" href="/">
           <span class="sr-only">Home</span>
-          <Image src={logoImg} alt="Vecticum logo"   class="h-auto w-auto !max-h-10 !max-w-[140px] !sm:max-h-12 !sm:max-w-[160px]"  />
+          <Image src={logoImg} alt="Vecticum logo" class="h-auto w-auto !max-h-11 !max-w-[150px] !sm:max-h-12 !sm:max-w-[170px]" />
         </a>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden md:block">
         <nav aria-label="Global">
-          <ul class="flex items-center gap-8 text-base">
+          <ul class="flex items-center gap-1 text-sm font-medium">
             <li
-              class="relative"
+              class="relative group"
               @mouseenter="flyoutVisible = true"
               @mouseleave="flyoutVisible = false"
               x-data="{ flyoutVisible: false, activeCategory: 'Personalo savitarna' }"
             >
               <a
-                class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
+                class="flex items-center gap-1.5 px-4 py-2 text-gray-700 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:text-[#3C7099]"
                 href="/sprendimai"
                 @click.stop
               >
-                Sprendimai
+                <span class="font-semibold">Sprendimai</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.5"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  class="transition-transform duration-300 group-hover:rotate-180"
+                  class="transition-transform duration-200"
+                  :class="{ 'rotate-180': flyoutVisible }"
                 >
                   <path d="m6 9 6 6 6-6"></path>
                 </svg>
@@ -91,39 +105,44 @@ const headerImg = '~/assets/images/docs-img.png';
               <!-- Flyout Menu -->
               <div
                 x-show="flyoutVisible"
-                x-transition:enter="transition ease-out duration-300"
-                x-transition:enter-start="opacity-0 scale-95"
-                x-transition:enter-end="opacity-100 scale-100"
-                x-transition:leave="transition ease-in duration-200"
-                x-transition:leave-start="opacity-100 scale-100"
-                x-transition:leave-end="opacity-0 scale-95"
-                class="absolute left-0 z-20 mt-2 w-screen max-w-6xl -translate-x-1/4 transform px-4 sm:px-6 lg:px-8"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 translate-y-2"
+                class="absolute left-0 z-50 mt-3 w-screen max-w-6xl -translate-x-1/4 transform"
+                style="filter: drop-shadow(0 20px 25px rgb(0 0 0 / 0.15));"
               >
-                <div class="overflow-hidden rounded-xl shadow-2xl ring-1 ring-black ring-opacity-5 bg-white flex">
-                  <!-- Categories -->
-                  <div class="w-1/4 border-r border-gray-200 p-6 space-y-4">
-                    <template x-for="(category, index) in [
-                      'Personalo savitarna',
-                      'Dokumentų valdymas',
-                      'Sąskaitų ir pirkimų valdymas',
-                      'Apskaitomų dokumentų valdymas',
-                      'Turto valdymas',
-                      'Sprendimų valdymas',
-                    ]" :key="index">
-                      <button
-                        @mouseenter="activeCategory = category"
-                        class="w-full text-left text-gray-700 hover:text-[#3C7099] text-sm font-semibold transition-colors duration-200"
-                        x-text="category"
-                      ></button>
-                    </template>
+                <div class="overflow-hidden rounded-2xl bg-white border border-gray-100 flex">
+                  <!-- Categories Sidebar -->
+                  <div class="w-64 bg-gradient-to-br from-gray-50 to-white border-r border-gray-100 p-6">
+                    <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Kategorijos</h3>
+                    <div class="space-y-1">
+                      <template x-for="(category, index) in [
+                        'Personalo savitarna',
+                        'Dokumentų valdymas',
+                        'Sąskaitų ir pirkimų valdymas',
+                        'Apskaitomų dokumentų valdymas',
+                        'Turto valdymas',
+                        'Sprendimų valdymas',
+                      ]" :key="index">
+                        <button
+                          @mouseenter="activeCategory = category"
+                          class="w-full text-left px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
+                          :class="activeCategory === category ? 'bg-white text-[#3C7099] shadow-sm' : 'text-gray-600 hover:bg-white/50 hover:text-gray-900'"
+                          x-text="category"
+                        ></button>
+                      </template>
+                    </div>
                   </div>
 
-                  <!-- Solutions -->
+                  <!-- Solutions Grid -->
                   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-                  <div class="w-2/4 p-6">
+                  <div class="flex-1 p-8 bg-white">
                     <div 
-                      class="grid gap-4" 
+                      class="grid gap-2" 
                       :class="{ 'grid-cols-2': activeCategory === 'Personalo savitarna', 'grid-cols-1': activeCategory !== 'Personalo savitarna' }"
                       x-data="{
                         icons: {
@@ -231,28 +250,38 @@ const headerImg = '~/assets/images/docs-img.png';
                         )" :key="item">
                           <a 
                             :href="routes[item]" 
-                            class="flex items-center gap-3 hover:bg-gray-50 p-2 rounded-md transition-all duration-200 group"
+                            class="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group hover:bg-blue-50 hover:shadow-sm"
                           >
-                            <i :class="`fa-solid ${icons[item]}`" class="text-[#3C7099] text-sm"></i>
-                            <span class="text-sm text-gray-700 group-hover:text-[#3C7099]" x-text="item"></span>
+                            <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center group-hover:bg-[#3C7099] transition-colors duration-200">
+                              <i :class="`fa-solid ${icons[item]}`" class="text-[#3C7099] text-sm group-hover:text-white transition-colors duration-200"></i>
+                            </div>
+                            <span class="text-sm font-medium text-gray-700 group-hover:text-[#3C7099] transition-colors duration-200" x-text="item"></span>
                           </a>
                         </template>
                       </template>
                     </div>
                   </div>
 
-                  <!-- Helpful Resource -->
-                  <div class="w-1/4 bg-blue-50 p-6 rounded-r-xl flex flex-col">
+                  <!-- Help Section -->
+                  <div class="w-72 bg-gradient-to-br from-blue-50 to-indigo-50 p-6 flex flex-col justify-between border-l border-gray-100">
                     <div>
-                      <h3 class="text-sm font-semibold text-gray-900">Reikalinga pagalba?</h3>
-                      <p class="text-sm text-gray-600 mt-2">
-                        VECTICUM pagalbos tarnyba padės išspręsti kiekvieną klausimą
+                      <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#3C7099] mb-4">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                      </div>
+                      <h3 class="text-base font-bold text-gray-900 mb-2">Reikalinga pagalba?</h3>
+                      <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                        VECTICUM pagalbos tarnyba padės išspręsti kiekvieną klausimą greitai ir efektyviai
                       </p>
                     </div>
-                    <div class="mt-4">
-                      <Image src={headerImg} alt="Dokumentacija | VECTICUM" class="w-full rounded-lg mb-2" />
-                      <a href="https://vecticum.freshdesk.com/support/home" class="hover:text-[#3C7099] text-sm hover:underline">
-                        Pagalba >
+                    <div>
+                      <Image src={headerImg} alt="Dokumentacija | VECTICUM" class="w-full rounded-xl mb-3 shadow-sm" />
+                      <a href="https://vecticum.freshdesk.com/support/home" class="inline-flex items-center gap-2 text-sm font-semibold text-[#3C7099] hover:text-[#2d5573] transition-colors group">
+                        <span>Pagalbos centras</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
                       </a>
                     </div>
                   </div>
@@ -265,53 +294,58 @@ const headerImg = '~/assets/images/docs-img.png';
               @mouseleave="planaiFlyoutOpen = false"
             >
               <a
-                class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
+                class="flex items-center gap-1.5 px-4 py-2 text-gray-700 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:text-[#3C7099]"
               >
-                Kaina
+                <span class="font-semibold">Kaina</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.5"
                   stroke-linecap="round"
-                  stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg
+                  stroke-linejoin="round"
+                  class="transition-transform duration-200"
+                  :class="{ 'rotate-180': planaiFlyoutOpen }"
                 >
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </a>
 
               <!-- Planai Vecticum Flyout Menu -->
               <div
                 x-show="planaiFlyoutOpen"
                 x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 -translate-y-1"
+                x-transition:enter-start="opacity-0 translate-y-2"
                 x-transition:enter-end="opacity-100 translate-y-0"
                 x-transition:leave="transition ease-in duration-150"
                 x-transition:leave-start="opacity-100 translate-y-0"
-                x-transition:leave-end="opacity-0 -translate-y-1"
-                class="absolute left-0 z-10 mt-2 w-60 -translate-x-1/4 transform px-2 sm:px-0"
+                x-transition:leave-end="opacity-0 translate-y-2"
+                class="absolute left-0 z-50 mt-3 w-72 -translate-x-1/4 transform"
+                style="filter: drop-shadow(0 10px 15px rgb(0 0 0 / 0.1));"
               >
-                <div
-                  class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
-                >
-                  <div class="relative grid grid-cols-1 gap-2 bg-white p-6">
-                    <div class="space-y-4">
-                      <div class="space-y-2">
-                        <a
-                          href="/personalo-valdymo-sprendimu-planai"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Personalo valdymo planai
-                        </a>
-                        <a
-                          href="/papildomos-paslaugos"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Papildomos paslaugos
-                        </a>
-                      </div>
-                    </div>
+                <div class="overflow-hidden rounded-xl bg-white border border-gray-100">
+                  <div class="p-4 space-y-1">
+                    <a
+                      href="/personalo-valdymo-sprendimu-planai"
+                      class="flex items-start gap-3 px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-[#3C7099] transition-all duration-200 group"
+                    >
+                      <svg class="w-5 h-5 text-[#3C7099] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      <span>Personalo valdymo planai</span>
+                    </a>
+                    <a
+                      href="/papildomos-paslaugos"
+                      class="flex items-start gap-3 px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-[#3C7099] transition-all duration-200 group"
+                    >
+                      <svg class="w-5 h-5 text-[#3C7099] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
+                      </svg>
+                      <span>Papildomos paslaugos</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -322,159 +356,169 @@ const headerImg = '~/assets/images/docs-img.png';
               @mouseleave="apieFlyoutOpen = false"
             >
               <a
-                class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
+                class="flex items-center gap-1.5 px-4 py-2 text-gray-700 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:text-[#3C7099]"
               >
-                Apie Vecticum
+                <span class="font-semibold">Apie Vecticum</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.5"
                   stroke-linecap="round"
-                  stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg
+                  stroke-linejoin="round"
+                  class="transition-transform duration-200"
+                  :class="{ 'rotate-180': apieFlyoutOpen }"
                 >
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </a>
 
               <!-- Apie Vecticum Flyout Menu -->
               <div
                 x-show="apieFlyoutOpen"
                 x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 -translate-y-1"
+                x-transition:enter-start="opacity-0 translate-y-2"
                 x-transition:enter-end="opacity-100 translate-y-0"
                 x-transition:leave="transition ease-in duration-150"
                 x-transition:leave-start="opacity-100 translate-y-0"
-                x-transition:leave-end="opacity-0 -translate-y-1"
-                class="absolute left-0 z-10 mt-2 w-60 -translate-x-1/4 transform px-2 sm:px-0"
+                x-transition:leave-end="opacity-0 translate-y-2"
+                class="absolute left-0 z-50 mt-3 w-64 -translate-x-1/4 transform"
+                style="filter: drop-shadow(0 10px 15px rgb(0 0 0 / 0.1));"
               >
-                <div
-                  class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
-                >
-                  <div class="relative grid grid-cols-1 gap-2 bg-white p-6">
-                    <div class="space-y-4">
-                      <div class="space-y-2">
-                        <a
-                          href="/kontaktai"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Kontaktai
-                        </a>
-                        <a
-                          href="/naujienos"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Naujienos
-                        </a>
-                        <a
-                          href="/karjera"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Karjera
-                        </a>
-                      </div>
-                    </div>
+                <div class="overflow-hidden rounded-xl bg-white border border-gray-100">
+                  <div class="p-4 space-y-1">
+                    <a
+                      href="/kontaktai"
+                      class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-[#3C7099] transition-all duration-200"
+                    >
+                      <svg class="w-5 h-5 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      </svg>
+                      <span>Kontaktai</span>
+                    </a>
+                    <a
+                      href="/naujienos"
+                      class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-[#3C7099] transition-all duration-200"
+                    >
+                      <svg class="w-5 h-5 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+                      </svg>
+                      <span>Naujienos</span>
+                    </a>
+                    <a
+                      href="/karjera"
+                      class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-[#3C7099] transition-all duration-200"
+                    >
+                      <svg class="w-5 h-5 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      </svg>
+                      <span>Karjera</span>
+                    </a>
                   </div>
                 </div>
               </div>
             </li>
             <li>
               <a
-                class="text-gray-800 transition hover:text-[#3C7099]"
+                class="flex items-center gap-1.5 px-4 py-2 text-gray-700 font-semibold rounded-lg transition-all duration-200 hover:bg-gray-50 hover:text-[#3C7099]"
                 href="/rekomendacijos"
               >
                 Rekomendacijos
               </a>
             </li>
             <li
-              class="relative hidden"
+              class="relative"
               @mouseenter="industrijosFlyoutOpen = true"
               @mouseleave="industrijosFlyoutOpen = false"
             >
               <a
-                class="text-gray-800 transition hover:text-[#3C7099] flex items-center gap-1"
+                class="flex items-center gap-1.5 px-4 py-2 text-gray-700 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:text-[#3C7099]"
               >
-                Industrijos
+                <span class="font-semibold">Industrijos</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="2.5"
                   stroke-linecap="round"
-                  stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg
+                  stroke-linejoin="round"
+                  class="transition-transform duration-200"
+                  :class="{ 'rotate-180': industrijosFlyoutOpen }"
                 >
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
               </a>
 
               <!-- Industrijos Flyout Menu -->
               <div
                 x-show="industrijosFlyoutOpen"
                 x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 -translate-y-1"
+                x-transition:enter-start="opacity-0 translate-y-2"
                 x-transition:enter-end="opacity-100 translate-y-0"
                 x-transition:leave="transition ease-in duration-150"
                 x-transition:leave-start="opacity-100 translate-y-0"
-                x-transition:leave-end="opacity-0 -translate-y-1"
-                class="absolute left-0 z-10 mt-2 w-60 -translate-x-1/4 transform px-2 sm:px-0"
+                x-transition:leave-end="opacity-0 translate-y-2"
+                class="absolute left-0 z-50 mt-3 w-80 -translate-x-1/4 transform"
+                style="filter: drop-shadow(0 10px 15px rgb(0 0 0 / 0.1));"
               >
-                <div
-                  class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
-                >
-                  <div class="relative grid grid-cols-1 gap-2 bg-white p-6">
-                    <div class="space-y-4">
-                      <div class="space-y-2">
-                        <a
-                          href="/industrijos/gamyba"
-                          class="flex items-center gap-2 text-sm text-gray-600 hover:text-[#3C7099]"
-                        >
-                          Gamyba
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
-                        >
-                          Prekyba
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
-                        >
-                          Logistika
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
-                        >
-                          IT ir technologijos
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
-                        >
-                          Paslaugos
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
-                        >
-                          Statyba
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
-                        >
-                          Sveikatos priežiūra
-                        </a>
-                        <a
-                          href="#"
-                          class="flex items-center gap-2 text-sm text-gray-400 pointer-events-none"
-                        >
-                          Švietimas
-                        </a>
-                      </div>
+                <div class="overflow-hidden rounded-xl bg-white border border-gray-100">
+                  <div class="p-4 space-y-1">
+                    <a
+                      href="/industrijos/gamyba"
+                      class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-[#3C7099] transition-all duration-200 group"
+                    >
+                      <svg class="w-5 h-5 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                      </svg>
+                      <span>Gamyba</span>
+                    </a>
+                    <div class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-400 cursor-not-allowed">
+                      <svg class="w-5 h-5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                      </svg>
+                      <span class="text-xs">Statyba, NT ir pastatų priežiūra <span class="text-xs opacity-60">(Ruošiama)</span></span>
+                    </div>
+                    <div class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-400 cursor-not-allowed">
+                      <svg class="w-5 h-5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                      </svg>
+                      <span class="text-xs">Transportas, logistika ir sandėliavimas <span class="opacity-60">(Ruošiama)</span></span>
+                    </div>
+                    <div class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-400 cursor-not-allowed">
+                      <svg class="w-5 h-5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                      </svg>
+                      <span class="text-xs">Apskaitos ir personalo paslaugos <span class="opacity-60">(Ruošiama)</span></span>
+                    </div>
+                    <div class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-400 cursor-not-allowed">
+                      <svg class="w-5 h-5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                      </svg>
+                      <span class="text-xs">Medicina ir sveikatos priežiūra <span class="opacity-60">(Ruošiama)</span></span>
+                    </div>
+                    <div class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-400 cursor-not-allowed">
+                      <svg class="w-5 h-5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                      </svg>
+                      <span class="text-xs">Finansų ir draudimo sektorius <span class="opacity-60">(Ruošiama)</span></span>
+                    </div>
+                    <div class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-400 cursor-not-allowed">
+                      <svg class="w-5 h-5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                      </svg>
+                      <span class="text-xs">Prekyba (didmena ir mažmena) <span class="opacity-60">(Ruošiama)</span></span>
+                    </div>
+                    <div class="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-400 cursor-not-allowed">
+                      <svg class="w-5 h-5 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                      </svg>
+                      <span class="text-xs">IT ir technologijos <span class="opacity-60">(Ruošiama)</span></span>
                     </div>
                   </div>
                 </div>
@@ -484,7 +528,8 @@ const headerImg = '~/assets/images/docs-img.png';
         </nav>
       </div>
 
-      <div class="flex items-center gap-4">        <!-- Desktop Login/Register -->
+      <div class="flex items-center gap-4">
+        <!-- Desktop Login/Register -->
         <div class="sm:flex sm:gap-4 hidden">
           <button
             @click="trialPopupOpen = true"
@@ -505,15 +550,15 @@ const headerImg = '~/assets/images/docs-img.png';
         <div class="block md:hidden">
           <button
             @click="isOpen = !isOpen"
-            class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+            class="relative inline-flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-gray-100 to-gray-200 text-gray-700 hover:from-[#3C7099] hover:to-[#2d5573] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="size-5"
+              class="w-5 h-5"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              stroke-width="2"
+              stroke-width="2.5"
             >
               <path
                 stroke-linecap="round"
@@ -778,7 +823,7 @@ const headerImg = '~/assets/images/docs-img.png';
         </a>
 
         <!-- Industrijos Section -->
-        <div class="space-y-2 hidden">
+        <div class="space-y-2">
           <button
             @click="industrijoOpen = !industrijoOpen"
             class="flex items-center justify-between w-full text-sm text-gray-600"
@@ -811,13 +856,13 @@ const headerImg = '~/assets/images/docs-img.png';
             class="pl-4 space-y-2"
           >
             <a href="/industrijos/gamyba" class="block text-sm text-gray-600">Gamyba</a>
-            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Prekyba</a>
-            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Logistika</a>
-            <a href="#" class="block text-sm text-gray-400 pointer-events-none">IT ir technologijos</a>
-            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Paslaugos</a>
-            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Statyba</a>
-            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Sveikatos priežiūra</a>
-            <a href="#" class="block text-sm text-gray-400 pointer-events-none">Švietimas</a>
+            <span class="block text-sm text-gray-400 opacity-60">Statyba, NT ir pastatų priežiūra <span class="text-xs">(Puslapis ruošiamas)</span></span>
+            <span class="block text-sm text-gray-400 opacity-60">Transportas, logistika ir sandėliavimas <span class="text-xs">(Puslapis ruošiamas)</span></span>
+            <span class="block text-sm text-gray-400 opacity-60">Apskaitos ir personalo paslaugos <span class="text-xs">(Puslapis ruošiamas)</span></span>
+            <span class="block text-sm text-gray-400 opacity-60">Medicina ir sveikatos priežiūra <span class="text-xs">(Puslapis ruošiamas)</span></span>
+            <span class="block text-sm text-gray-400 opacity-60">Finansų ir draudimo sektorius <span class="text-xs">(Puslapis ruošiamas)</span></span>
+            <span class="block text-sm text-gray-400 opacity-60">Prekyba (didmena ir mažmena) <span class="text-xs">(Puslapis ruošiamas)</span></span>
+            <span class="block text-sm text-gray-400 opacity-60">IT ir technologijos <span class="text-xs">(Puslapis ruošiamas)</span></span>
           </div>
         </div>
       </nav>
