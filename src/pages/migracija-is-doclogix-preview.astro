@@ -115,11 +115,11 @@ const PinAuth = {
     return sessionStorage.getItem('doclogix_preview_auth') === 'true';
   },
   
-  setAuth(value) {
+  setAuth(value: string) {
     sessionStorage.setItem('doclogix_preview_auth', value);
   },
   
-  verifyPin(pin) {
+  verifyPin(pin: string) {
     return pin === CORRECT_PIN;
   }
 };
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
     pinForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const enteredPin = pinInput.value;
+      const enteredPin = (pinInput as HTMLInputElement)?.value || '';
       
       if (PinAuth.verifyPin(enteredPin)) {
         // Correct PIN
@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (pinError) pinError.classList.remove('hidden');
         if (pinInput) {
           pinInput.classList.add('animate-shake');
-          pinInput.value = '';
+          (pinInput as HTMLInputElement).value = '';
           
           // Remove shake animation after it completes
           setTimeout(() => {
@@ -170,8 +170,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Allow only numbers in PIN input
   if (pinInput) {
     pinInput.addEventListener('input', function(e) {
-      const value = e.target.value;
-      e.target.value = value.replace(/[^0-9]/g, '');
+      const target = e.target as HTMLInputElement;
+      if (target) {
+        const value = target.value;
+        target.value = value.replace(/[^0-9]/g, '');
+      }
     });
   }
 });
