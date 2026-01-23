@@ -1,56 +1,1829 @@
----
-import Image from "../common/Image.astro";
+<style>
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+    color: #111827;
+    max-width: 100vw;
+  }
 
-const heroDashboardImage = '~/assets/images/hero-dashboard.webp';
----
+  @media (max-width: 640px) {
+    .hero {
+      overflow-x: hidden;
+      width: 100%;
+    }
+  }
 
-<div
-  class="flex w-full flex-col sm:flex-row items-center justify-center py-20 sm:py-24 px-8"
->
-  <div class="max-w-7xl w-full flex flex-col sm:flex-row items-center justify-between gap-8">
-    <!-- Teksto blokas -->
-    <div class="flex-[1.4] text-center sm:text-left">
-      <h1
-        class="mx-auto relative max-w-4xl text-4xl sm:text-5xl font-semibold tracking-normal text-white-300"
-      >
-        Automatizuota procesų
-        <span class="relative whitespace-nowrap text-white-600">valdymo</span>
-        <span class="relative whitespace-nowrap text-accent">
-          <span class="">sistema</span>
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 418 42"
-            class="h-[0.58em] w-80 fill-accent absolute sm:top-16 md:top-16"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005 .417-4.348-3.529-6-16.878-7.066Z"
-            ></path>
-          </svg>
-        </span>
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: -12%;
+    background: radial-gradient(520px circle at 30% 28%, rgba(241, 245, 249, 0.85), transparent 72%);
+    opacity: 0.48;
+    filter: blur(22px);
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -18%;
+    height: 40%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 75%);
+    pointer-events: none;
+  }
+
+  .hero-ambient {
+    position: absolute;
+    inset: -18% -10%;
+    pointer-events: none;
+  }
+
+  .hero-accent {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.88;
+    mix-blend-mode: normal;
+    filter: drop-shadow(0 26px 48px rgba(15, 23, 42, 0.16));
+    animation: heroAccentDrift 26s ease-in-out infinite;
+  }
+
+  .hero-accent-doc {
+    top: 8%;
+    left: -6%;
+    width: 220px;
+    height: 260px;
+    border-radius: 24px;
+    background: linear-gradient(182deg, #ffffff 0%, #f3f4f6 100%);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    animation-duration: 28s;
+  }
+
+  .hero-accent-doc::before {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 24px;
+    right: 60px;
+    height: 12px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(200, 30, 106, 0.3), rgba(200, 30, 106, 0.12));
+  }
+
+  .hero-accent-doc::after {
+    content: "";
+    position: absolute;
+    top: 56px;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    border-radius: 18px;
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(15, 23, 42, 0.14) 0,
+      rgba(15, 23, 42, 0.14) 6px,
+      transparent 6px,
+      transparent 18px
+    );
+  }
+
+  .hero-accent-checklist {
+    bottom: -4%;
+    left: 8%;
+    width: 260px;
+    height: 200px;
+    border-radius: 28px;
+    background: linear-gradient(182deg, #ffffff 0%, #eef2f7 100%);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    animation-duration: 32s;
+    animation-direction: reverse;
+  }
+
+  .hero-accent-checklist::before {
+    content: "";
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 18px;
+    height: 18px;
+    border-radius: 6px;
+    border: 2px solid rgba(60, 112, 153, 0.7);
+    background:
+      linear-gradient(135deg, transparent 48%, rgba(60, 112, 153, 0.8) 48%, rgba(60, 112, 153, 0.8) 62%, transparent 62%);
+    box-shadow:
+      0 52px 0 0 rgba(60, 112, 153, 0.65),
+      0 104px 0 0 rgba(60, 112, 153, 0.4);
+  }
+
+  .hero-accent-checklist::after {
+    content: "";
+    position: absolute;
+    top: 34px;
+    left: 64px;
+    right: 34px;
+    bottom: 34px;
+    background: repeating-linear-gradient(180deg, rgba(15, 23, 42, 0.16) 0, rgba(15, 23, 42, 0.16) 1px, transparent 1px, transparent 13px);
+    border-radius: 18px;
+  }
+
+  .hero-accent-flow {
+    top: 26%;
+    right: -8%;
+    width: 200px;
+    height: 320px;
+    border-radius: 28px;
+    background: linear-gradient(182deg, #ffffff 0%, #f2f5fb 100%);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    animation-duration: 30s;
+  }
+
+  .hero-accent-flow::before,
+  .hero-accent-flow::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .hero-accent-flow::before {
+    top: 40px;
+    bottom: 40px;
+    width: 6px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(200, 30, 106, 0.28), rgba(60, 112, 153, 0.2));
+  }
+
+  .hero-accent-flow::after {
+    top: 32px;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: rgba(200, 30, 106, 0.85);
+    box-shadow:
+      0 82px 0 0 rgba(60, 112, 153, 0.85),
+      0 164px 0 0 rgba(200, 30, 106, 0.75);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: -6%;
+    background-image:
+      linear-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+    background-size: 74px 74px;
+    mix-blend-mode: normal;
+    opacity: 0.45;
+    transform: rotate(2deg);
+    animation: heroGridDrift 22s linear infinite;
+  }
+
+  .hero-blob {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 9999px;
+    mix-blend-mode: normal;
+    opacity: 0.48;
+    animation: heroBlobPulse 18s ease-in-out infinite;
+  }
+
+  .hero-blob-one {
+    top: -4%;
+    left: -2%;
+    background: radial-gradient(circle, rgba(148, 163, 184, 0.28), transparent 60%);
+    animation-delay: -6s;
+  }
+
+  .hero-blob-two {
+    bottom: -14%;
+    right: 2%;
+    background: radial-gradient(circle, rgba(148, 163, 184, 0.22), transparent 62%);
+    animation-delay: -12s;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.35rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 18px 45px -24px rgba(200, 30, 106, 0.45);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #c81f6a;
+  }
+
+  .hero-badge-dot {
+    display: inline-block;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: currentColor;
+  }
+
+  .hero-title {
+    position: relative;
+    margin: 0;
+    color: #0f172a;
+    font-size: clamp(1.5rem, 5vw, 3.85rem);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    .hero-title {
+      font-size: clamp(1.35rem, 7vw, 2rem);
+      line-height: 1.2;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-title {
+      text-align: left;
+    }
+  }
+
+  .hero-title-strong {
+    color: #c81f6a;
+    font-weight: 750;
+  }
+
+  .hero-form {
+    position: relative;
+    margin-top: 3rem;
+    border-radius: clamp(20px, 5vw, 32px);
+    padding: clamp(1.2rem, 2.5vw, 1.1rem);
+    background: #ffffff;
+    border: 1.5px solid rgba(200, 30, 106, 0.32);
+    box-shadow: 0 14px 32px -20px rgba(15, 23, 42, 0.28);
+    transition: border-color 0.2s ease, box-shadow 0.25s ease;
+    --hero-form-gap: clamp(1rem, 2vw, 1.2rem);
+    width: 100%;
+    max-width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    .hero-form {
+      margin-top: 2rem;
+    }
+  }
+
+  .hero-form.is-expanded {
+    border-color: rgba(200, 30, 106, 0.45);
+    box-shadow: 0 22px 48px -24px rgba(15, 23, 42, 0.32);
+  }
+
+  .hero-form-stack {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-form-primary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hero-form-gap);
+  }
+
+  .hero-form-input {
+    flex: 1 1 auto;
+    border-radius: clamp(14px, 3vw, 18px);
+    border: 1px solid rgba(200, 30, 106, 0.18);
+    padding: clamp(1rem, 2.5vw, 0.92rem) clamp(1.2rem, 3vw, 1.4rem);
+    font-size: clamp(1rem, 2.5vw, 1rem);
+    background: #ffffff;
+    color: #0f172a;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    min-height: 48px;
+    width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    .hero-form-input {
+      font-size: 16px;
+    }
+  }
+
+  .hero-form-input::placeholder {
+    color: rgba(107, 114, 128, 0.76);
+  }
+
+  .hero-form-input:focus {
+    outline: none;
+    border-color: rgba(200, 30, 106, 0.45);
+
+  }
+
+  .hero-form-button {
+    border-radius: 999px;
+    padding: clamp(1.1rem, 2.8vw, 0.96rem) clamp(2rem, 4vw, 2.5rem);
+    background: linear-gradient(120deg, #ff3c8b, #c81f6a 58%);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: clamp(1rem, 2.5vw, 1rem);
+    box-shadow: 0 18px 36px -24px rgba(200, 30, 106, 0.62);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    margin-top: var(--hero-form-gap);
+    cursor: pointer;
+    border: none;
+  }
+
+  .hero-form-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  @media (min-width: 768px) {
+    .hero-form-button {
+      width: auto;
+      min-width: clamp(9.5rem, 18vw, 12rem);
+    }
+  }
+
+  .hero-form-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 24px 48px -28px rgba(200, 30, 106, 0.7);
+  }
+
+  .hero-form-button:active {
+    transform: translateY(0);
+  }
+
+  .hero-form-extra {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease, margin-top 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: var(--hero-form-gap);
+  }
+
+  .hero-form.is-expanded .hero-form-extra {
+    max-height: 480px;
+    opacity: 1;
+    margin-top: var(--hero-form-gap);
+  }
+
+  .hero-form-extra-inline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hero-form-gap);
+  }
+
+  @media (min-width: 768px) {
+    .hero-form-extra-inline {
+      flex-direction: row;
+    }
+
+    .hero-form-extra-inline .hero-form-field {
+      flex: 1 1 0;
+    }
+  }
+
+  .hero-form-textarea {
+    border-radius: clamp(14px, 3vw, 18px);
+    min-height: clamp(100px, 20vw, 120px);
+    resize: vertical;
+    padding: clamp(0.9rem, 2.5vw, 1rem) clamp(1.1rem, 2.8vw, 1.25rem);
+    font-size: clamp(0.95rem, 2.3vw, 0.95rem);
+    line-height: 1.5;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    width: 100%;
+  }
+
+  @media (max-width: 640px) {
+    .hero-form-textarea {
+      font-size: 16px;
+      min-height: 100px;
+    }
+  }
+
+  .hero-form-label {
+    display: block;
+    font-size: clamp(0.8rem, 2vw, 0.75rem);
+    font-weight: 600;
+    color: rgba(17, 24, 39, 0.68);
+    margin-bottom: clamp(0.4rem, 1.5vw, 0.5rem);
+  }
+
+  @media (max-width: 640px) {
+    .hero-form-label {
+      font-size: 0.85rem;
+    }
+  }
+
+  .hero-form-field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-form-field .hero-form-input {
+    padding: 0.9rem 1.25rem;
+    border-radius: 18px;
+    border-color: rgba(200, 30, 106, 0.16);
+  }
+
+  .hero-form-field--tel .hero-form-input {
+    padding-left: 1.25rem;
+  }
+
+  .hero-form-field--textarea {
+    width: 100%;
+  }
+
+
+
+  .hero-visual {
+    position: relative;
+    flex: 1 1 0;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-ui-grid {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 1.3rem;
+    align-items: start;
+    width: 100%;
+    max-width: 660px;
+  }
+
+  .hero-ui-window {
+    position: relative;
+    border-radius: 20px;
+    padding: 1.1rem 1.25rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(244, 247, 252, 0.95));
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    box-shadow: 0 24px 56px -32px rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(18px);
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    animation: heroCardFloat 18s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+  }
+
+  .hero-ui-window:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 32px 72px -28px rgba(15, 23, 42, 0.45);
+  }
+
+  .hero-ui-window:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    min-height: 420px;
+    animation-delay: 0s;
+  }
+
+  .hero-ui-window:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+    animation-delay: -4s;
+  }
+
+  .hero-ui-window:nth-child(3) {
+    grid-column: 2;
+    grid-row: 2;
+    animation-delay: -8s;
+  }
+
+  .hero-ui-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero-ui-dots {
+    display: inline-flex;
+    gap: 0.32rem;
+  }
+
+  .hero-ui-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.55);
+  }
+
+  .hero-ui-dot:nth-child(1) {
+    background: rgba(200, 30, 106, 0.65);
+  }
+
+  .hero-ui-dot:nth-child(2) {
+    background: rgba(252, 191, 73, 0.65);
+  }
+
+  .hero-ui-dot:nth-child(3) {
+    background: rgba(60, 112, 153, 0.65);
+  }
+
+  .hero-ui-header-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+  }
+
+  .hero-ui-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #111827;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-ui-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    padding: 0.26rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(60, 112, 153, 0.16);
+    color: #3c7099;
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+
+  .hero-ui-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-ui-category--hr {
+    background: rgba(200, 30, 106, 0.12);
+    color: #c81f6a;
+  }
+
+  .hero-ui-category--docs {
+    background: rgba(60, 112, 153, 0.12);
+    color: #3c7099;
+  }
+
+  .hero-ui-category--auto {
+    background: rgba(132, 204, 22, 0.12);
+    color: #4b7a17;
+  }
+
+  .hero-ui-category--analytics {
+    background: rgba(252, 191, 73, 0.12);
+    color: #b8860b;
+  }
+
+  .hero-ui-category {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.22rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .hero-ui-category--hr {
+    background: rgba(200, 30, 106, 0.12);
+    color: #c81f6a;
+  }
+
+  .hero-ui-category--docs {
+    background: rgba(60, 112, 153, 0.12);
+    color: #3c7099;
+  }
+
+  .hero-ui-category--auto {
+    background: rgba(132, 204, 22, 0.12);
+    color: #4b7a17;
+  }
+
+  .hero-ui-category--analytics {
+    background: rgba(252, 191, 73, 0.12);
+    color: #b8860b;
+  }
+
+  .hero-ui-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .hero-ui-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.38rem 0.85rem;
+    border-radius: 999px;
+    border: 1px solid rgba(60, 112, 153, 0.22);
+    background: rgba(44, 130, 201, 0.12);
+    color: #3c7099;
+    font-size: 0.68rem;
+    font-weight: 600;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .hero-ui-action--accent {
+    background: rgba(200, 30, 106, 0.14);
+    border-color: rgba(200, 30, 106, 0.2);
+    color: #c81f6a;
+  }
+
+  .hero-ui-dropzone {
+    border: 1px dashed rgba(148, 163, 184, 0.45);
+    border-radius: 14px;
+    background: rgba(248, 250, 252, 0.9);
+    padding: 0.55rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 0.68rem;
+    color: rgba(71, 85, 105, 0.7);
+  }
+
+  .hero-ui-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .hero-ui-requests {
+    gap: 1rem;
+  }
+
+  .hero-ui-requests-overview {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .hero-ui-vacation-card {
+    width: min(240px, 100%);
+    border-radius: 18px;
+    padding: 0.95rem 1rem;
+    background: linear-gradient(160deg, rgba(255, 235, 247, 0.96), rgba(255, 254, 244, 0.88));
+    border: 1px solid rgba(234, 191, 220, 0.55);
+    box-shadow: 0 18px 44px -28px rgba(200, 30, 106, 0.55);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .hero-ui-vacation-chip {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.22rem 0.58rem;
+    border-radius: 999px;
+    background: rgba(200, 30, 106, 0.18);
+    color: #c81f6a;
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-ui-vacation-days {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: #9c1f56;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-ui-vacation-meta {
+    font-size: 0.68rem;
+    color: rgba(71, 85, 105, 0.75);
+  }
+
+  .hero-ui-vacation-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+    font-size: 0.64rem;
+    color: rgba(71, 85, 105, 0.85);
+  }
+
+  .hero-ui-vacation-button {
+    border-radius: 999px;
+    padding: 0.32rem 0.65rem;
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #c81f6a, #a21876);
+    border: none;
+    box-shadow: 0 14px 32px -24px rgba(162, 24, 118, 0.72);
+  }
+
+  .hero-ui-requests-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .hero-ui-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .hero-ui-icon--sun {
+    color: #f97316;
+  }
+
+  .hero-ui-icon--palm {
+    color: #22c55e;
+  }
+
+  .hero-ui-absent {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  }
+
+  .hero-ui-absent-label {
+    font-size: 0.66rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(55, 65, 81, 0.75);
+  }
+
+  .hero-ui-absent-avatars {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-ui-absent-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #c81f6a, #ff3c8b);
+    border: 1.5px solid #ffffff;
+    box-shadow: 0 6px 18px -12px rgba(15, 23, 42, 0.4);
+  }
+
+  .hero-ui-absent-avatar + .hero-ui-absent-avatar {
+    margin-left: -12px;
+  }
+
+  .hero-ui-absent-avatar.is-alt {
+    background: linear-gradient(135deg, #3c7099, #6aa7cc);
+  }
+
+  .hero-ui-toolbar--wrap {
+    flex-wrap: wrap;
+  }
+
+  .hero-ui-dropzone-note {
+    font-size: 0.64rem;
+    color: rgba(71, 85, 105, 0.72);
+  }
+
+  .hero-ui-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+  }
+
+  .hero-ui-item-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .hero-ui-item-icon--hr {
+    background: rgba(200, 30, 106, 0.14);
+    color: #c81f6a;
+  }
+
+  .hero-ui-item-icon--docs {
+    background: rgba(60, 112, 153, 0.14);
+    color: #3c7099;
+  }
+
+  .hero-ui-item-icon--auto {
+    background: rgba(132, 204, 22, 0.14);
+    color: #4b7a17;
+  }
+
+  .hero-ui-item-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .hero-ui-item-title {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  .hero-ui-item-meta {
+    font-size: 0.62rem;
+    color: rgba(75, 85, 99, 0.7);
+  }
+
+  .hero-ui-column-left,
+  .hero-ui-column-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-ui-section {
+    border-radius: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    padding: 0.7rem 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .hero-ui-profile {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.7rem 0.85rem;
+  }
+
+  .hero-ui-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #1f2937;
+    background: rgba(226, 232, 240, 0.78);
+    border: 1px solid rgba(200, 30, 106, 0.16);
+  }
+
+  .hero-ui-avatar-accent {
+    color: #ffffff;
+    background: linear-gradient(135deg, #c81f6a, #a21876);
+    box-shadow: 0 16px 32px -20px rgba(200, 30, 106, 0.5);
+  }
+
+  .hero-ui-profile-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.18rem;
+  }
+
+  .hero-ui-profile-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .hero-ui-profile-meta {
+    font-size: 0.72rem;
+    color: rgba(75, 85, 99, 0.75);
+  }
+
+  .hero-ui-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+
+  .hero-ui-tasks-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .hero-ui-tasks-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .hero-ui-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.3rem;
+  }
+
+  .hero-ui-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(226, 232, 240, 0.65);
+    color: rgba(55, 65, 81, 0.8);
+    font-size: 0.65rem;
+    font-weight: 600;
+  }
+
+  .hero-ui-tab.is-active {
+    background: rgba(60, 112, 153, 0.18);
+    color: #3c7099;
+  }
+
+  .hero-ui-tasklist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .hero-ui-taskrow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.55rem;
+    border-radius: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  }
+
+  .hero-ui-checkbox {
+    width: 14px;
+    height: 14px;
+    border-radius: 5px;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    background: rgba(248, 250, 252, 0.9);
+  }
+
+  .hero-ui-task-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+    flex: 1 1 auto;
+  }
+
+  .hero-ui-task-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  .hero-ui-task-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.32rem;
+    font-size: 0.64rem;
+    color: rgba(75, 85, 99, 0.75);
+  }
+
+  .hero-ui-task-company {
+    font-weight: 500;
+  }
+
+  .hero-ui-task-date {
+    padding: 0.18rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(36, 124, 240, 0.75);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+  }
+
+  .hero-ui-task-date--today {
+    background: rgb(212, 47, 47);
+    color: #ffffff;
+  }
+
+  .hero-ui-task-date--overdue {
+    background: rgba(200, 30, 106, 0.14);
+    color: #c81f6a;
+  }
+
+  .hero-ui-task-action {
+    border-radius: 999px;
+    padding: 0.32rem 0.6rem;
+    font-size: 0.64rem;
+    font-weight: 600;
+    background: rgba(132, 204, 22, 0.18);
+    color: #4b7a17;
+    border: 1px solid rgba(132, 204, 22, 0.3);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  }
+
+  .hero-ui-summary {
+    font-size: 0.7rem;
+    color: rgba(55, 65, 81, 0.75);
+  }
+
+  .hero-ui-summary-card {
+    gap: 0.35rem;
+  }
+
+  .hero-ui-summary-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(55, 65, 81, 0.62);
+  }
+
+  .hero-ui-summary-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .hero-ui-summary-meta {
+    font-size: 0.66rem;
+    color: rgba(55, 65, 81, 0.72);
+  }
+
+  .hero-ui-summary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.62rem;
+    color: rgba(55, 65, 81, 0.72);
+  }
+
+  .hero-ui-news-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .hero-ui-news-heading {
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #3c7099;
+  }
+
+  .hero-ui-news-title {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .hero-ui-news-text {
+    font-size: 0.64rem;
+    line-height: 1.38;
+    color: rgba(55, 65, 81, 0.8);
+  }
+
+  .hero-ui-news-link {
+    font-size: 0.62rem;
+    color: #3c7099;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  .hero-ui-quick-actions {
+    gap: 0.3rem;
+  }
+
+  .hero-ui-quick-actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .hero-ui-quick-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.62rem;
+    color: rgba(55, 65, 81, 0.8);
+  }
+
+  .hero-ui-quick-pill {
+    border-radius: 999px;
+    padding: 0.15rem 0.4rem;
+    background: rgba(60, 112, 153, 0.14);
+    color: #3c7099;
+    font-weight: 600;
+    font-size: 0.58rem;
+  }
+
+  .hero-ui-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.6rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+  }
+
+  .hero-ui-item-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .hero-ui-item-icon--hr {
+    background: rgba(200, 30, 106, 0.14);
+    color: #c81f6a;
+  }
+
+  .hero-ui-item-icon--docs {
+    background: rgba(60, 112, 153, 0.14);
+    color: #3c7099;
+  }
+
+  .hero-ui-item-icon--auto {
+    background: rgba(132, 204, 22, 0.14);
+    color: #4b7a17;
+  }
+
+  .hero-ui-item-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .hero-ui-item-title {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  .hero-ui-item-meta {
+    font-size: 0.62rem;
+    color: rgba(75, 85, 99, 0.7);
+  }
+
+  .hero-spark {
+    position: absolute;
+    inset: auto;
+    width: 420px;
+    height: 420px;
+    border-radius: 9999px;
+    background: radial-gradient(circle, rgba(241, 245, 249, 0.4) 0%, transparent 72%);
+    opacity: 0.24;
+    transform: translate(-12%, -10%);
+    animation: heroSparkPulse 24s ease-in-out infinite;
+  }
+
+  @keyframes heroGridDrift {
+    0% {
+      transform: translate3d(0, 0, 0) rotate(2deg);
+    }
+    50% {
+      transform: translate3d(-18px, -12px, 0) rotate(2deg);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) rotate(2deg);
+    }
+  }
+
+  @keyframes heroBlobPulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.55;
+    }
+    45% {
+      transform: scale(1.08);
+      opacity: 0.75;
+    }
+  }
+
+  @keyframes heroCardFloat {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-18px);
+    }
+  }
+
+  @keyframes heroAccentDrift {
+    0% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+      transform: translate3d(16px, -18px, 0) scale(1.04);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+
+  @keyframes heroSparkPulse {
+    0%, 100% {
+      opacity: 0.22;
+      transform: translate(-12%, -10%) scale(0.95);
+    }
+    50% {
+      opacity: 0.4;
+      transform: translate(-12%, -10%) scale(1.05);
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .hero-title {
+      font-size: clamp(2rem, 6vw + 0.5rem, 3.45rem);
+      max-width: 100%;
+    }
+
+    .hero-visual {
+      order: 2;
+      min-height: 0;
+      padding-top: 1.5rem;
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+
+    .hero-ui-grid {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 420px;
+      gap: 1rem;
+    }
+
+    .hero-ui-window {
+      grid-column: 1;
+    }
+
+    .hero-ui-requests-overview {
+      justify-content: flex-start;
+    }
+
+    .hero-ui-vacation-card {
+      width: 100%;
+    }
+
+    .hero-spark {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding-bottom: 0.5rem;
+    }
+
+    .hero-ambient,
+    .hero-accent,
+    .hero-grid,
+    .hero-blob,
+    .hero-blob-one,
+    .hero-blob-two,
+    .hero-spark {
+      display: none;
+    }
+
+    .hero-badge {
+      font-size: 0.75rem;
+      padding: 0.4rem 1rem;
+    }
+
+    .hero-title {
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-form {
+      margin-top: 1rem;
+      padding: 1rem;
+    }
+
+    .hero-form-extra-inline {
+      gap: 0.8rem;
+    }
+
+    .hero-form-field .hero-form-input {
+      padding: 0.85rem 1rem;
+      font-size: 16px;
+    }
+
+    .hero-visual {
+      display: none;
+    }
+
+    .hero-ui-grid {
+      max-width: min(100%, 320px);
+      padding: 0;
+      gap: 0.75rem;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .hero-ui-window + .hero-ui-window {
+      display: none;
+    }
+
+    .hero-ui-window {
+      padding: 0.85rem 0.95rem;
+      border-radius: 16px;
+    }
+
+    .hero-ui-window:nth-child(1) {
+      min-height: auto;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-form {
+      padding: 0.9rem;
+      border-radius: 16px;
+    }
+
+    .hero-form-button {
+      padding: 0.9rem 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .hero-ui-vacation-card {
+      padding: 0.75rem 0.85rem;
+    }
+
+    .hero-ui-vacation-days {
+      font-size: 1.4rem;
+    }
+
+    .hero-ui-window {
+      padding: 0.75rem 0.85rem;
+    }
+
+    .hero-ui-tasks-title,
+    .hero-ui-profile-name {
+      font-size: 0.8rem;
+    }
+
+    .hero-ui-action {
+      padding: 0.3rem 0.65rem;
+      font-size: 0.62rem;
+    }
+
+    .hero-visual {
+      margin-top: 0.75rem;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-grid,
+    .hero-blob,
+    .hero-accent,
+    .hero-ui-window,
+    .hero-spark {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<section class="hero" id="hero-section">
+  <div class="hero-ambient" aria-hidden="true">
+    <div class="hero-accent hero-accent-doc"></div>
+    <div class="hero-accent hero-accent-checklist"></div>
+    <div class="hero-accent hero-accent-flow"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-blob hero-blob-one"></div>
+    <div class="hero-blob hero-blob-two"></div>
+  </div>
+
+  <div class="relative mx-auto flex max-w-6xl flex-col gap-6 px-3 py-8 sm:gap-12 sm:px-6 sm:py-16 lg:flex-row lg:items-center lg:gap-16 lg:px-8 lg:py-28">
+    <div class="flex flex-1 flex-col items-center sm:items-start">
+      <h1 class="hero-title mt-2 text-center sm:mt-6 sm:text-left md:mt-8">
+        <span class="hero-title-strong">Automatizuota</span> procesų valdymo sistema
       </h1>
-      <p
-        class="my-8 sm:my-16 text-center sm:text-left max-w-xl text-lg text-white-500 leading-7"
-      >
-        Vecticum – tai sprendimai verslui greičiau ir paprasčiau atlikti visus
-        procesus nuo sąskaitų ir atostogų tvirtinimo iki specializuotų sprendimų
-        individualiems poreikiams. Mes automatizuojame kasdieninius verslo
-        procesus.
-      </p>      <div class="flex justify-center sm:justify-start gap-4">
-        <button
-          @click="trialPopupOpen = true"
-          class="rounded-full bg-accent px-5 sm:px-8 py-2.5 sm:py-3 text-base font-medium text-white shadow hover:bg-accent/90 transition-colors"
-        >
-          Susisiekti
-        </button>
-      </div>
+
+      <p class="mt-3 max-w-xl text-sm leading-relaxed text-primary-600 text-center sm:mt-6 sm:text-left sm:text-base md:text-lg">
+        Vecticum – tai sprendimai verslui greičiau ir paprasčiau atlikti visus procesus nuo sąskaitų ir atostogų tvirtinimo iki specializuotų sprendimų individualiems poreikiams. Mes automatizuojame kasdieninius verslo procesus.
+      </p>
+
+      <form class="hero-form w-full max-w-xl mt-4 sm:mt-6" id="hero-contact-form" method="POST">
+        <input type="hidden" name="newsletterConsent" value="false" data-hero-consent />
+        <div class="hero-form-stack">
+          <div class="hero-form-primary">
+            <input
+              type="email"
+              placeholder="El. paštas"
+              class="hero-form-input hero-form-input--email"
+              name="businessEmail"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="hero-form-extra" data-hero-extra>
+            <div class="hero-form-extra-inline">
+              <label class="hero-form-field">
+                <span class="hero-form-label">Pareigos</span>
+                <input
+                  type="text"
+                  name="jobTitle"
+                  placeholder="Pvz., Personalo vadovas"
+                  class="hero-form-input"
+                  autocomplete="organization-title"
+                />
+              </label>
+              <label class="hero-form-field hero-form-field--tel">
+                <span class="hero-form-label">Telefono numeris</span>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="+370 600 00000"
+                  class="hero-form-input"
+                  autocomplete="tel"
+                />
+              </label>
+            </div>
+            <label class="hero-form-field hero-form-field--textarea">
+              <span class="hero-form-label">Kokie sprendimai jus domina?</span>
+              <textarea
+                name="interest"
+                placeholder="Trumpai apibūdinkite poreikius arba dominančių sprendimų sritį"
+                class="hero-form-input hero-form-textarea"
+                rows="4"
+              ></textarea>
+            </label>
+          </div>
+          <button type="submit" class="hero-form-button">
+            Registruokitės pristatymui
+          </button>
+        </div>
+      </form>
+
+      <div id="hero-response-message" class="hidden mt-3 w-full max-w-xl"></div>
+
+      <label for="hero-consent" class="mt-3 flex max-w-xl items-start gap-2 sm:gap-3 text-left text-xs sm:text-sm text-primary-500 cursor-pointer">
+        <input id="hero-consent" type="checkbox" class="mt-0.5 h-4 w-4 sm:h-5 sm:w-5 min-w-[16px] sm:min-w-[20px] flex-shrink-0 rounded border-primary-200 text-accent focus:ring-accent focus:ring-2 cursor-pointer" />
+        <span class="leading-relaxed">Taip, noriu gauti naujienas apie Vecticum produktus, įvykius ir pasiūlymus el. paštu.</span>
+      </label>
+
+      <p class="mt-2 max-w-xl text-xs sm:text-sm text-primary-400 leading-relaxed text-center sm:text-left">
+        Pateikdami formą, sutinkate su
+        <a href="/privatumo-politika" class="text-accent hover:text-accent-600 underline focus:ring-2 focus:ring-accent focus:outline-none rounded">Privatumo politika</a>
+        ir
+        <a href="/naudojimosi-salygos" class="text-accent hover:text-accent-600 underline focus:ring-2 focus:ring-accent focus:outline-none rounded">Naudojimosi sąlygomis</a>.
+      </p>
     </div>
 
-    <!-- Vaizdo blokas -->
-    <div class="flex-[1.1] flex flex-col justify-center sm:justify-end mt-12 sm:mt-0 space-y-4">
-      <Image src={heroDashboardImage} alt="Verslo procesų valdymo sistema | VECTICUM" class="w-[80%] sm:w-full max-w-[500px] object-cover mx-auto" />      <div class="flex flex-row justify-center gap-2 sm:gap-4">
-    
+    <div class="hero-visual">
+      <div class="hero-ui-grid">
+        <!-- Prašymai ir atostogos -->
+        <div class="hero-ui-window hero-ui-window--requests">
+          <div class="hero-ui-header">
+            <div class="hero-ui-dots">
+              <span class="hero-ui-dot"></span>
+              <span class="hero-ui-dot"></span>
+              <span class="hero-ui-dot"></span>
+            </div>
+            <span class="hero-ui-category hero-ui-category--auto">Prašymai</span>
+          </div>
+
+          <div class="hero-ui-content hero-ui-requests">
+            <div class="hero-ui-requests-overview">
+              <div class="hero-ui-vacation-card">
+                <span class="hero-ui-vacation-chip">
+                  <svg
+                    class="hero-ui-icon hero-ui-icon--sun"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <line x1="12" y1="3" x2="12" y2="5.4"></line>
+                    <line x1="12" y1="18.6" x2="12" y2="21"></line>
+                    <line x1="4.6" y1="4.6" x2="6.4" y2="6.4"></line>
+                    <line x1="17.6" y1="17.6" x2="19.4" y2="19.4"></line>
+                    <line x1="3" y1="12" x2="5.4" y2="12"></line>
+                    <line x1="18.6" y1="12" x2="21" y2="12"></line>
+                    <line x1="4.6" y1="19.4" x2="6.4" y2="17.6"></line>
+                    <line x1="17.6" y1="6.4" x2="19.4" y2="4.6"></line>
+                  </svg>
+                  <span>Atostogos</span>
+                </span>
+                <span class="hero-ui-vacation-days">12 d.</span>
+                <span class="hero-ui-vacation-meta">Atostogų likutis šiandien</span>
+                <span class="hero-ui-vacation-meta">Panaudota: 3 d. šiais metais</span>
+                <div class="hero-ui-vacation-footer">
+                  <button class="hero-ui-vacation-button" type="button">Planuoti</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-ui-requests-body">
+              <span class="hero-ui-tasks-title" style="font-size: 0.82rem;">Pradėkite naują prašymą</span>
+              <div class="hero-ui-toolbar hero-ui-toolbar--wrap">
+                <button class="hero-ui-action" type="button">Atostogos</button>
+                <button class="hero-ui-action" type="button">Nuotolinis darbas</button>
+                <button class="hero-ui-action" type="button">Komandiruotė</button>
+                <button class="hero-ui-action" type="button">Liga</button>
+              </div>
+
+              <div class="hero-ui-dropzone">Įkelkite failus arba vilkite čia</div>
+              <div class="hero-ui-absent" aria-live="polite">
+                <span class="hero-ui-absent-label">Šiandien darbe nėra:</span>
+                <div class="hero-ui-absent-avatars" role="list">
+                  <span class="hero-ui-absent-avatar" role="listitem" title="Aistė K.">AK</span>
+                  <span class="hero-ui-absent-avatar is-alt" role="listitem" title="Jonas M.">JM</span>
+                  <span class="hero-ui-absent-avatar" role="listitem" title="Greta P.">GP</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Laukiančios užduotys -->
+        <div class="hero-ui-window">
+          <div class="hero-ui-header">
+            <div class="hero-ui-dots">
+              <span class="hero-ui-dot"></span>
+              <span class="hero-ui-dot"></span>
+              <span class="hero-ui-dot"></span>
+            </div>
+            <span class="hero-ui-category hero-ui-category--docs">Užduotys</span>
+          </div>
+
+          <div class="hero-ui-content">
+            <div class="hero-ui-tasks-header" style="margin-bottom: 0.3rem;">
+              <span class="hero-ui-tasks-title" style="font-size: 0.8rem;">Laukia patvirtinimo</span>
+              <div class="hero-ui-tabs">
+                <span class="hero-ui-tab is-active">Viso: 5</span>
+              </div>
+            </div>
+
+            <div class="hero-ui-tasklist">
+              <div class="hero-ui-taskrow">
+                <span class="hero-ui-checkbox" aria-hidden="true"></span>
+                <div class="hero-ui-task-content">
+                  <span class="hero-ui-task-title">Pirkimo/Pardavimo sąskaitos</span>
+                  <div class="hero-ui-task-meta">
+                    <span class="hero-ui-task-company">3 laukia</span>
+                    <span class="hero-ui-task-date hero-ui-task-date--today">Skubu</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-ui-taskrow">
+                <span class="hero-ui-checkbox" aria-hidden="true"></span>
+                <div class="hero-ui-task-content">
+                  <span class="hero-ui-task-title">Sutartys</span>
+                  <div class="hero-ui-task-meta">
+                    <span class="hero-ui-task-company">2 dokumentai</span>
+                    <span class="hero-ui-task-date">Rytoj</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Darbuotojo kortelė -->
+        <div class="hero-ui-window">
+          <div class="hero-ui-header">
+            <div class="hero-ui-dots">
+              <span class="hero-ui-dot"></span>
+              <span class="hero-ui-dot"></span>
+              <span class="hero-ui-dot"></span>
+            </div>
+            <span class="hero-ui-category hero-ui-category--analytics">Darbuotojo profilis</span>
+          </div>
+
+          <div class="hero-ui-content">
+            <div class="hero-ui-section hero-ui-profile">
+              <span class="hero-ui-avatar hero-ui-avatar-accent">JP</span>
+              <div class="hero-ui-profile-body">
+                <span class="hero-ui-profile-name">Jonas Petraitis</span>
+                <span class="hero-ui-profile-meta">Projektų vadovas</span>
+                <span class="hero-ui-news-text">Darbo vietoje</span>
+              </div>
+            </div>
+
+            <div class="hero-ui-section hero-ui-news-block">
+              <span class="hero-ui-news-heading">Įmonės naujienos</span>
+              <span class="hero-ui-news-title">Naujas atostogų planas</span>
+              <span class="hero-ui-news-text">2026 metų atostogų grafikas jau patvirtintas.</span>
+              <a class="hero-ui-news-link" href="#">Peržiūrėti</a>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="hero-spark"></div>
     </div>
   </div>
-</div>
+</section>
+
+<script is:inline>
+  const heroForm = document.getElementById('hero-contact-form');
+
+  if (heroForm) {
+    const emailInput = heroForm.querySelector('.hero-form-input--email');
+    const submitButton = heroForm.querySelector('.hero-form-button');
+    const extraFields = heroForm.querySelector('[data-hero-extra]');
+    const consentSource = document.getElementById('hero-consent');
+    const consentTarget = heroForm.querySelector('[data-hero-consent]');
+    const responseMessage = document.getElementById('hero-response-message');
+
+    const updateConsentValue = () => {
+      if (consentTarget && consentSource) {
+        consentTarget.value = consentSource.checked ? 'true' : 'false';
+      }
+    };
+
+    updateConsentValue();
+
+    if (consentSource) {
+      consentSource.addEventListener('change', updateConsentValue);
+    }
+
+    if (submitButton && emailInput && extraFields) {
+      submitButton.addEventListener('click', async (event) => {
+        event.preventDefault();
+        const isExpanded = heroForm.classList.contains('is-expanded');
+
+        if (!isExpanded) {
+          if (!emailInput.checkValidity()) {
+            emailInput.reportValidity();
+            return;
+          }
+
+          heroForm.classList.add('is-expanded');
+
+          const firstExtraInput = extraFields.querySelector('input, textarea');
+          if (firstExtraInput) {
+            requestAnimationFrame(() => firstExtraInput.focus());
+          }
+        } else {
+          // Form is expanded, submit the data to CRM
+          
+          // Show loading indicator
+          responseMessage.classList.remove('hidden');
+          responseMessage.innerHTML = `
+            <div class="bg-gray-100 border border-gray-400 text-gray-700 px-4 py-3 rounded-md shadow-lg flex items-center justify-center" role="alert">
+              <svg class="animate-spin h-5 w-5 mr-2 text-gray-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+              </svg>
+              <span>Apdorojama...</span>
+            </div>
+          `;
+          
+          // Disable submit button
+          submitButton.disabled = true;
+          
+          const formData = new FormData(heroForm);
+          const email = formData.get('businessEmail');
+          const newsletterConsent = formData.get('newsletterConsent') === 'true';
+          
+          const data = {
+            name: email, // Use email as name since we don't collect name
+            email: email,
+            phone: formData.get('phone') || '',
+            position: formData.get('jobTitle') || '',
+            message: formData.get('interest') || '',
+            newsletterConsent: newsletterConsent,
+            form_source: 'Leads iš pagrindinio Hero formos'
+          };
+
+          console.log('Submitting data:', data);
+
+          try {
+            const response = await fetch('/api/crm', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
+            });
+
+            console.log('Response status:', response.status);
+            
+            const text = await response.text();
+            console.log('Raw response:', text);
+            
+            let result = {};
+            if (text) {
+              try {
+                result = JSON.parse(text);
+              } catch (parseError) {
+                console.error('Failed to parse response JSON:', parseError);
+                result = { message: 'Serverio atsakymo klaida' };
+              }
+            }
+            
+            console.log('Parsed result:', result);
+
+            if (response.ok) {
+              responseMessage.innerHTML = `
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+                  <div class="flex items-center justify-between">
+                    <span>Ačiū, kad užpildėte registracijos formą! Dėl sistemos pristatymo mūsų vadybininkas su Jumis susisieks per dvi darbo dienas.</span>
+                    <button id="hero-close-success" class="ml-4 text-green-700 hover:text-green-900 text-xl font-bold">&times;</button>
+                  </div>
+                </div>
+              `;
+              responseMessage.classList.remove('hidden');
+              heroForm.reset();
+              heroForm.classList.remove('is-expanded');
+              submitButton.disabled = false;
+              
+              document.getElementById('hero-close-success').addEventListener('click', () => {
+                responseMessage.innerHTML = '';
+                responseMessage.classList.add('hidden');
+              });
+              
+              // Scroll to message
+              responseMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+              let errorMessage = 'Įvyko klaida. Bandykite dar kartą.';
+              if (result && result.message) {
+                errorMessage = result.message;
+              }
+              responseMessage.innerHTML = `
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+                  <div class="flex items-center justify-between">
+                    <span>${errorMessage}</span>
+                    <button id="hero-close-error" class="ml-4 text-red-700 hover:text-red-900 text-xl font-bold">&times;</button>
+                  </div>
+                </div>
+              `;
+              responseMessage.classList.remove('hidden');
+              submitButton.disabled = false;
+              
+              document.getElementById('hero-close-error').addEventListener('click', () => {
+                responseMessage.innerHTML = '';
+                responseMessage.classList.add('hidden');
+              });
+            }
+          } catch (error) {
+            console.error('Klaida:', error);
+            responseMessage.innerHTML = `
+              <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+                <div class="flex items-center justify-between">
+                  <span>Įvyko klaida. Bandykite dar kartą.</span>
+                  <button id="hero-close-error" class="ml-4 text-red-700 hover:text-red-900 text-xl font-bold">&times;</button>
+                </div>
+              </div>
+            `;
+            responseMessage.classList.remove('hidden');
+            submitButton.disabled = false;
+            
+            document.getElementById('hero-close-error').addEventListener('click', () => {
+              responseMessage.innerHTML = '';
+              responseMessage.classList.add('hidden');
+            });
+          }
+        }
+      });
+
+      emailInput.addEventListener('input', () => {
+        if (emailInput.value.trim() === '') {
+          heroForm.classList.remove('is-expanded');
+        }
+      });
+    }
+  }
+</script>

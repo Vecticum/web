@@ -110,7 +110,7 @@ export const POST: APIRoute = async ({ request }) => {
         }
 
         // Strict field validation - reject submissions with unexpected fields (bots often add extra fields)
-        const allowedFields = ['name', 'email', 'company', 'message', 'form_source', 'submission_id', 'source', 'website', 'g-recaptcha-response', 'position', 'phone'];
+        const allowedFields = ['name', 'email', 'company', 'message', 'form_source', 'submission_id', 'source', 'website', 'g-recaptcha-response', 'position', 'phone', 'newsletterConsent'];
         const submittedFields = Object.keys(data);
         const unexpectedFields = submittedFields.filter(field => !allowedFields.includes(field));
         

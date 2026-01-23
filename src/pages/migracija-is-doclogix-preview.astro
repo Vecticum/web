@@ -1445,6 +1445,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <form id="migration-form" class="space-y-6">
           <!-- Hidden field for form source -->
           <input type="hidden" name="form_source" value="DocLogix migracijos forma">
+          <input type="hidden" name="newsletterConsent" value="false" data-newsletter-consent>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="relative">
@@ -1570,6 +1571,11 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
 
+          <label for="migration-consent" class="flex items-start gap-2 text-sm text-gray-600 leading-relaxed cursor-pointer select-none">
+            <input id="migration-consent" type="checkbox" class="mt-1 h-5 w-5 rounded border-gray-300 text-primary focus:ring-primary focus:ring-2 focus:ring-offset-0">
+            <span>Taip, noriu gauti naujienas apie Vecticum produktus, įvykius ir pasiūlymus el. paštu.</span>
+          </label>
+
           <div class="relative">
             <button
               type="submit"
@@ -1624,6 +1630,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const migrationEmailInput = migrationForm.querySelector('#migration-email');
   const migrationEmployeesInput = migrationForm.querySelector('#migration-employees');
   const migrationMessageInput = migrationForm.querySelector('#migration-message');
+  const migrationConsentCheckbox = migrationForm.querySelector('#migration-consent');
+  const migrationConsentField = migrationForm.querySelector('[data-newsletter-consent]');
   
   // Get error elements
   const migrationNameError = document.getElementById('migration-name-error');
@@ -1632,6 +1640,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const migrationPhoneError = document.getElementById('migration-phone-error');
   const migrationEmailError = document.getElementById('migration-email-error');
   const migrationMessageError = document.getElementById('migration-message-error');
+
+  const syncMigrationConsent = () => {
+    if (migrationConsentField && migrationConsentCheckbox) {
+      migrationConsentField.value = migrationConsentCheckbox.checked ? 'true' : 'false';
+    }
+  };
+
+  syncMigrationConsent();
+  migrationConsentCheckbox?.addEventListener('change', syncMigrationConsent);
 
   // Function to validate form fields and show errors
   function validateMigrationForm() {
@@ -1727,6 +1744,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Collect form data
     const formData = new FormData(migrationForm);
     const data = Object.fromEntries(formData.entries());
+    data.newsletterConsent = data.newsletterConsent === 'true';
     console.log('Migration form data:', data);
 
     try {

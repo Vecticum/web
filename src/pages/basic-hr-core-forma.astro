@@ -35,6 +35,7 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
     >
       <!-- Hidden field for form source -->
       <input type="hidden" name="form_source" value="Leads iš BASIC HR formos">
+      <input type="hidden" name="newsletterConsent" value="false" data-newsletter-consent>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="relative">
@@ -243,6 +244,11 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
         </div>
       </div>
 
+      <label for="basic-contact-consent" class="flex items-start gap-2 text-sm text-gray-600 leading-relaxed cursor-pointer select-none">
+        <input id="basic-contact-consent" type="checkbox" class="mt-1 h-5 w-5 rounded border-gray-300 text-[#C81E6A] focus:ring-[#C81E6A] focus:ring-2 focus:ring-offset-0">
+        <span>Taip, noriu gauti naujienas apie Vecticum produktus, įvykius ir pasiūlymus el. paštu.</span>
+      </label>
+
       <!-- Honeypot field - hidden from users, only bots will fill it -->
       <div style="position: absolute; left: -9999px; top: -9999px;">
         <label for="website">Website (leave empty)</label>
@@ -382,6 +388,17 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
   const emailError = document.getElementById('email-error');
   const messageError = document.getElementById('message-error');
   const sourceError = document.getElementById('source-error');
+  const consentCheckbox = form.querySelector('#basic-contact-consent');
+  const consentField = form.querySelector('[data-newsletter-consent]');
+
+  const syncConsent = () => {
+    if (consentField && consentCheckbox) {
+      consentField.value = consentCheckbox.checked ? 'true' : 'false';
+    }
+  };
+
+  syncConsent();
+  consentCheckbox?.addEventListener('change', syncConsent);
 
   // Function to validate form fields and show errors
   function validateForm() {
@@ -481,6 +498,7 @@ const canonical = 'https://vecticum.lt/basic-hr-core-forma';
       // Collect form data
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
+      data.newsletterConsent = data.newsletterConsent === 'true';
       
       // Don't add reCAPTCHA token to data - it will be sent in header
     console.log('Form data:', data);
