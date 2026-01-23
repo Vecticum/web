@@ -319,6 +319,24 @@
 
   }
 
+  .hero-form-input.is-invalid,
+  .hero-form-textarea.is-invalid {
+    border-color: rgba(220, 38, 38, 0.6);
+    box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.35);
+  }
+
+  .hero-form-error {
+    display: none;
+    color: #dc2626;
+    font-size: 0.75rem;
+    margin-top: 0.35rem;
+    line-height: 1.3;
+  }
+
+  .hero-form-error.is-visible {
+    display: block;
+  }
+
   .hero-form-button {
     border-radius: 999px;
     padding: clamp(1.1rem, 2.8vw, 0.96rem) clamp(2rem, 4vw, 2.5rem);
@@ -376,18 +394,23 @@
   }
 
   .hero-form-extra-inline {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: var(--hero-form-gap);
+    grid-template-columns: 1fr;
+  }
+
+  .hero-form-field.hero-form-field--full {
+    width: 100%;
   }
 
   @media (min-width: 768px) {
     .hero-form-extra-inline {
-      flex-direction: row;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
     }
 
-    .hero-form-extra-inline .hero-form-field {
-      flex: 1 1 0;
+    .hero-form-field.hero-form-field--full {
+      grid-column: 1 / -1;
     }
   }
 
@@ -1455,6 +1478,18 @@
           <div class="hero-form-extra" data-hero-extra>
             <div class="hero-form-extra-inline">
               <label class="hero-form-field">
+                <span class="hero-form-label">Įmonės pavadinimas</span>
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Pvz., Vecticum"
+                  class="hero-form-input"
+                  autocomplete="organization"
+                  required
+                />
+                <span class="hero-form-error" data-hero-error="company"></span>
+              </label>
+              <label class="hero-form-field">
                 <span class="hero-form-label">Pareigos</span>
                 <input
                   type="text"
@@ -1462,9 +1497,11 @@
                   placeholder="Pvz., Personalo vadovas"
                   class="hero-form-input"
                   autocomplete="organization-title"
+                  required
                 />
+                <span class="hero-form-error" data-hero-error="jobTitle"></span>
               </label>
-              <label class="hero-form-field hero-form-field--tel">
+              <label class="hero-form-field hero-form-field--tel hero-form-field--full">
                 <span class="hero-form-label">Telefono numeris</span>
                 <input
                   type="tel"
@@ -1472,7 +1509,9 @@
                   placeholder="+370 600 00000"
                   class="hero-form-input"
                   autocomplete="tel"
+                  required
                 />
+                <span class="hero-form-error" data-hero-error="phone"></span>
               </label>
             </div>
             <label class="hero-form-field hero-form-field--textarea">
@@ -1482,7 +1521,9 @@
                 placeholder="Trumpai apibūdinkite poreikius arba dominančių sprendimų sritį"
                 class="hero-form-input hero-form-textarea"
                 rows="4"
+                required
               ></textarea>
+              <span class="hero-form-error" data-hero-error="interest"></span>
             </label>
           </div>
           <button type="submit" class="hero-form-button">
@@ -1666,6 +1707,70 @@
     const consentSource = document.getElementById('hero-consent');
     const consentTarget = heroForm.querySelector('[data-hero-consent]');
     const responseMessage = document.getElementById('hero-response-message');
+    const fieldConfigs = [
+      {
+        input: heroForm.querySelector('input[name="company"]'),
+        error: heroForm.querySelector('[data-hero-error="company"]'),
+        message: 'Prašome įvesti įmonės pavadinimą.'
+      },
+      {
+        input: heroForm.querySelector('input[name="jobTitle"]'),
+        error: heroForm.querySelector('[data-hero-error="jobTitle"]'),
+        message: 'Prašome įvesti pareigas.'
+      },
+      {
+        input: heroForm.querySelector('input[name="phone"]'),
+        error: heroForm.querySelector('[data-hero-error="phone"]'),
+        message: 'Prašome įvesti telefono numerį.'
+      },
+      {
+        input: heroForm.querySelector('textarea[name="interest"]'),
+        error: heroForm.querySelector('[data-hero-error="interest"]'),
+        message: 'Prašome apibūdinti dominančius sprendimus.'
+      }
+    ];
+
+    const hideFieldError = (config) => {
+      if (!config) {
+        return;
+      }
+      config.input?.classList.remove('is-invalid');
+      config.error?.classList.remove('is-visible');
+      if (config.error) {
+        config.error.textContent = '';
+      }
+    };
+
+    const showFieldError = (config) => {
+      if (!config) {
+        return;
+      }
+      config.input?.classList.add('is-invalid');
+      if (config.error) {
+        config.error.textContent = config.message;
+        config.error.classList.add('is-visible');
+      }
+    };
+
+    const validateExpandedFields = () => {
+      let isValid = true;
+      fieldConfigs.forEach((config) => {
+        if (!config.input) {
+          return;
+        }
+        const value = config.input.value.trim();
+        if (value === '') {
+          showFieldError(config);
+          if (isValid) {
+            config.input.focus();
+          }
+          isValid = false;
+        } else {
+          hideFieldError(config);
+        }
+      });
+      return isValid;
+    };
 
     const updateConsentValue = () => {
       if (consentTarget && consentSource) {
@@ -1698,6 +1803,9 @@
           }
         } else {
           // Form is expanded, submit the data to CRM
+          if (!validateExpandedFields()) {
+            return;
+          }
           
           // Show loading indicator
           responseMessage.classList.remove('hidden');
@@ -1721,6 +1829,7 @@
           const data = {
             name: email, // Use email as name since we don't collect name
             email: email,
+            company: formData.get('company') || '',
             phone: formData.get('phone') || '',
             position: formData.get('jobTitle') || '',
             message: formData.get('interest') || '',
@@ -1823,6 +1932,10 @@
         if (emailInput.value.trim() === '') {
           heroForm.classList.remove('is-expanded');
         }
+      });
+
+      fieldConfigs.forEach((config) => {
+        config.input?.addEventListener('input', () => hideFieldError(config));
       });
     }
   }
