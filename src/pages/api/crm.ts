@@ -60,38 +60,49 @@ export const POST: APIRoute = async ({ request }) => {
                     },
                 });
             } else {
-                // Verify reCAPTCHA with Google
-                const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: `secret=6LcP6_ArAAAAAPA4CJEflmfPHfXt0FleWbZILiU6&response=${recaptchaToken}`
-                });
+                // Verify reCAPTCHA with Google with timeout
+                try {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+                    
+                    const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: `secret=6LcP6_ArAAAAAPA4CJEflmfPHfXt0FleWbZILiU6&response=${recaptchaToken}`,
+                        signal: controller.signal
+                    });
+                    
+                    clearTimeout(timeoutId);
 
-                const recaptchaResult = await recaptchaResponse.json();
-                
-                // Balanced validation for production - moderate score threshold
-                if (!recaptchaResult.success || recaptchaResult.score < 0.3) {
-                    console.log('reCAPTCHA validation failed in production - will fallback to spam detection:', {
-                        success: recaptchaResult.success,
-                        score: recaptchaResult.score,
-                        'error-codes': recaptchaResult['error-codes'],
-                        action: recaptchaResult.action,
-                        challenge_ts: recaptchaResult.challenge_ts,
-                        hostname: recaptchaResult.hostname,
-                        userAgent: request.headers.get('user-agent'),
-                        ip: request.headers.get('x-forwarded-for') || 'unknown'
-                    });
+                    const recaptchaResult = await recaptchaResponse.json();
+                    
+                    // Balanced validation for production - moderate score threshold
+                    if (!recaptchaResult.success || recaptchaResult.score < 0.3) {
+                        console.log('reCAPTCHA validation failed in production - will fallback to spam detection:', {
+                            success: recaptchaResult.success,
+                            score: recaptchaResult.score,
+                            'error-codes': recaptchaResult['error-codes'],
+                            action: recaptchaResult.action,
+                            challenge_ts: recaptchaResult.challenge_ts,
+                            hostname: recaptchaResult.hostname,
+                            userAgent: request.headers.get('user-agent'),
+                            ip: request.headers.get('x-forwarded-for') || 'unknown'
+                        });
+                        recaptchaPassedInProduction = false;
+                    } else {
+                        console.log('reCAPTCHA validation passed in production:', {
+                            success: recaptchaResult.success,
+                            score: recaptchaResult.score,
+                            action: recaptchaResult.action,
+                            hostname: recaptchaResult.hostname
+                        });
+                        recaptchaPassedInProduction = true;
+                    }
+                } catch (error) {
+                    console.log('reCAPTCHA verification timed out or failed - using spam detection fallback:', error);
                     recaptchaPassedInProduction = false;
-                } else {
-                    console.log('reCAPTCHA validation passed in production:', {
-                        success: recaptchaResult.success,
-                        score: recaptchaResult.score,
-                        action: recaptchaResult.action,
-                        hostname: recaptchaResult.hostname
-                    });
-                    recaptchaPassedInProduction = true;
                 }
             }
         }
