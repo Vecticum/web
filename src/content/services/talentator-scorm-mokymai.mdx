@@ -40,17 +40,13 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
 
 {/* Custom Hero tik šiam puslapiui */}
 <section class="relative bg-[#3C7099] overflow-hidden" style="margin-top: 0 !important;">
-  {/* Decorative elements */}
-  <div class="absolute inset-0 bg-white/10 mix-blend-soft-light"></div>
-  <div class="absolute top-0 right-0 w-96 h-96 bg-white/20 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#1e3a55]/25 rounded-full blur-3xl"></div>
-  
-  <div class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 px-4 sm:px-6 lg:px-8 py-16 md:py-24 items-center">
-    
+
+  <div class="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 px-4 sm:px-6 lg:px-8 py-16 md:py-24 items-center">
+
     {/* Text Content Section */}
     <div class="space-y-8 text-white">
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-        Interkatyvus e. mokymai kokybiškam darbuotojų žinių įsisavinimui
+        Interaktyvūs e. mokymai kokybiškam darbuotojų žinių įsisavinimui
       </h1>
       <p class="text-xl text-white/90 leading-relaxed">
         Profesionaliai paruošti interaktyvūs mokymai – vadovai ramūs, darbuotojai apmokyti, organizacija saugi ir atitinkanti reikalavimus.
@@ -61,7 +57,7 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
       <div class="flex flex-wrap gap-4">
         <a
           href="#contact"
-          class="inline-flex items-center justify-center rounded-full bg-white text-[#3C7099] px-8 py-4 text-lg font-bold hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl"
+          class="inline-flex items-center justify-center rounded-full bg-white text-[#0F2740] px-8 py-4 text-lg font-bold hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl"
         >
           Gauti pasiūlymą
           <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
@@ -76,14 +72,10 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
     </div>
 
     {/* Image Section */}
-    <div class="w-full flex justify-center">
-      <div class="relative w-full max-w-lg">
-        <span class="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-white/20 blur-2xl"></span>
-        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-72 h-72 bg-gradient-to-br from-white/10 to-white/0 rounded-full blur-3xl"></span>
-        <div class="relative z-10 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden">
-          <div class="bg-gradient-to-br from-white/15 via-white/5 to-transparent p-8">
-            <Image src={TalentatorHero} alt="Interaktyvūs mokymai su TALENTATOR" class="w-full h-auto object-contain" />
-          </div>
+    <div class="w-full flex justify-center lg:justify-end">
+      <div class="relative w-full max-w-md lg:max-w-sm xl:max-w-md">
+        <div class="relative z-10 rounded-3xl overflow-hidden">
+          <Image src={TalentatorHero} alt="Interaktyvūs mokymai su TALENTATOR" class="w-full h-auto object-contain" />
         </div>
       </div>
     </div>
@@ -104,270 +96,269 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
       <Image src={TalentatorLogo} alt="TALENTATOR" class="h-10 sm:h-12 w-auto" />
     </div>
     <p class="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto text-center">
-      <span class="font-semibold text-[#C81E6A]">VECTICUM</span> ir <span class="font-semibold text-[#C81E6A]">TALENTATOR</span> bendradarbiavimo tikslas – 
-      sukurti interaktyvius e. mokymus ir e. instrukcijas, kurie aiškiai ir praktiškai supažindintų organizacijų darbuotojus su DSS, ESG, kibernetiniu saugumu ir kitomis svarbiomis temomis, 
+      <span class="font-semibold text-[#C81E6A]">VECTICUM</span> ir <span class="font-semibold text-[#C81E6A]">TALENTATOR</span> bendradarbiavimo tikslas –
+      sukurti interaktyvius e. mokymus ir e. instrukcijas, kurie aiškiai ir praktiškai supažindintų organizacijų darbuotojus su DSS, ESG, kibernetiniu saugumu ir kitomis svarbiomis temomis,
       padėtų organizacijoms paprastai įgyvendinti teisės aktų reikalavimus ir neapsunkintų jų papildoma administracine našta.
     </p>
   </div>
 </section>
 
 {/* Kodėl pasirinkti SCORM mokymus */}
-<section class="w-full py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Kodėl pasirinkti interaktyvius e. mokymus?</h2>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto">Orientuota į rezultatą – ne tik mokoma, bet ir užtikrinama</p>
+<section class="relative w-full bg-[#F2F6FA] py-20 px-4 sm:px-6 lg:px-8">
+  <div class="relative mx-auto max-w-6xl">
+    <div class="flex flex-col gap-4 text-center">
+      <h2 class="text-[2.5rem] leading-tight font-semibold text-[#0F2740] tracking-tight pb-6">
+        SCORM mokymai padeda organizacijoms greičiau įgyvendinti reikalavimus
+      </h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-lg p-6 border border-gray-200">
-        <div class="w-12 h-12 rounded-lg bg-[#3C7099] flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-2">Atitiktis ir kontrolė</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Vadovas mato mokymų statusą, ataskaitas ir progresą – pilna kontrolė ir pasiruošimas auditui.</p>
-      </div>
-      
-      <div class="bg-white rounded-lg p-6 border border-gray-200">
-        <div class="w-12 h-12 rounded-lg bg-[#3C7099] flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-        </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-2">Užtikrinamas įsisavinimas</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Testai ir patikrinimas po medžiagos užtikrina, kad darbuotojai tikrai suprato ir įsisavino žinias.</p>
-      </div>
-      
-      <div class="bg-white rounded-lg p-6 border border-gray-200">
-        <div class="w-12 h-12 rounded-lg bg-[#3C7099] flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        </div>
-        <h3 class="text-lg font-bold text-gray-900 mb-2">Viskas paruošta ir vienoje sistemoje</h3>
-        <p class="text-gray-600 text-sm leading-relaxed">Nereikia papildomo darbo – mokymai, testai, dokumentai ir darbuotojai valdomi VECTICUM.</p>
-      </div>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {[{
+        title: 'Valdomas progresas',
+        description: 'Statusai, dalyvių aktyvumas ir terminai matomi realiu laiku, o ataskaitos pasiruošusios auditui.',
+        icon: (
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        )
+      }, {
+        title: 'Įtraukiantis turinys',
+        description: 'Interaktyvūs scenarijai ir testai padeda darbuotojams įsisavinti žinias ir pritaikyti praktikoje.',
+        icon: (
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 5h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2zm-6-4l3 3 4-4"/></svg>
+        )
+      }, {
+        title: 'Greitas įdiegimas',
+        description: 'Turinys, testai ir administravimo procesai jau paruošti – liko tik priskirti mokymus darbuotojams.',
+        icon: (
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        )
+      }].map((item) => (
+        <article key={item.title} class="group relative overflow-hidden rounded-2xl border border-white bg-white p-8 shadow-sm">
+          <div class="absolute -right-12 -top-10 h-24 w-24 rounded-full bg-[#6DD3FF]/10 blur-3xl transition group-hover:bg-[#6DD3FF]/20"></div>
+          <div class="relative flex h-full flex-col items-center gap-5 text-center">
+            <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E7F5FF] text-[#0F2740]">
+              {item.icon}
+            </span>
+            <h3 class="text-xl font-semibold text-[#0F2740]">{item.title}</h3>
+            <p class="text-base leading-relaxed text-[#42566B]">{item.description}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
 {/* Kaip pradėti naudotis */}
-<section class="w-full py-16 px-4 sm:px-6 lg:px-8 bg-white">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Kaip pradėti naudotis?</h2>
-      <p class="text-xl text-[#C81E6A] font-semibold mb-2">Labai paprasta ir greita pradėti</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="text-center">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-[#C81E6A] to-pink-600 text-white text-2xl font-bold mb-4 shadow-lg">1</div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Pasirinkite mokymus</h3>
-        <p class="text-gray-600">Peržiūrėkite katalogą arba gaukite rekomendacijų pagal savo poreikius.</p>
-      </div>
-      <div class="text-center">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-white text-2xl font-bold mb-4 shadow-lg">2</div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Užsakykite</h3>
-        <p class="text-gray-600">Esamiems klientams – itin greitai. Naujiems – pasiūlymas per 1 dieną.</p>
-      </div>
-      <div class="text-center">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 text-white text-2xl font-bold mb-4 shadow-lg">3</div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Pradėkite mokyti</h3>
-        <p class="text-gray-600">Priskirkite darbuotojams ir stebėkite mokymų progresą sistemoje.</p>
-      </div>
-    </div>
-    <div class="mt-12 text-center">
-      <a href="#contact" class="inline-flex items-center justify-center rounded-xl bg-[#C81E6A] text-white px-8 py-4 text-lg font-bold hover:bg-pink-700 transition-all shadow-xl">
-        Pradėti dabar
-        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+<section class="relative w-full overflow-hidden bg-white py-24 px-4 sm:px-6 lg:px-8">
+  <div class="relative mx-auto flex max-w-6xl flex-col gap-16 lg:flex-row lg:items-start lg:justify-between">
+    <div class="max-w-xl space-y-6">
+
+      <h2 class="text-3xl font-semibold text-[#0F2740] sm:text-[2.5rem] sm:leading-[1.15]">
+        Procesas išlieka paprastas – nuo pasirinkimo iki rezultatų fiksavimo
+      </h2>
+      <p class="text-lg leading-relaxed text-[#42566B]">
+        Esamiems VECTICUM klientams aktyvacijos užtenka kelių paspaudimų. Naujiems – pradedame nuo poreikio aptarimo ir jau kitą dieną parengiame pasiūlymą.
+      </p>
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center rounded-full bg-[#3C7099] px-8 py-4 text-base font-semibold text-white shadow-md transition hover:bg-[#315E84] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#6DD3FF]"
+      >
+        Susiderinti demo
+        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
+    </div>
+
+    <div class="relative flex-1">
+      <span class="pointer-events-none absolute left-[1.15rem] top-0 hidden h-full w-[2px] bg-gradient-to-b from-[#3C7099] via-[#6DD3FF] to-transparent sm:block"></span>
+      <div class="relative flex flex-col gap-8 pl-6 sm:pl-16">
+        {[{
+          title: 'Pasirenkame reikiamus modulius',
+          description: 'Kartu su mūsų komanda atsirenkate temas ir apimtį. Galime pateikti rekomendacijas pagal sektorių, roles ir teisės aktų reikalavimus.'
+        }, {
+          title: 'Suaktyviname mokymus sistemoje',
+          description: 'Paruošiame dalyvių grupes, terminus ir testus. Esamiems klientams tai dažniausiai užtrunka iki 1 darbo dienos.'
+        }, {
+          title: 'Stebite progresą realiu laiku',
+          description: 'Visi rezultatai, priminimai ir sertifikatai fiksuojami automatiškai. Ataskaitos eksportuojamos pasirinktiniu formatu.'
+        }].map((step, index) => (
+          <div key={step.title} class="group relative rounded-2xl border border-[#E4ECF5] bg-white/80 p-8 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md">
+            <span class="absolute -left-12 top-8 hidden h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#0F2740] to-[#3C7099] text-sm font-semibold text-white shadow-sm sm:inline-flex">
+              {(index + 1).toString().padStart(2, '0')}
+            </span>
+            <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-[#0F2740] to-[#3C7099] text-sm font-semibold text-white shadow-sm sm:hidden">
+              {(index + 1).toString().padStart(2, '0')}
+            </span>
+            <h3 class="text-lg font-semibold text-[#0F2740]">{step.title}</h3>
+            <p class="mt-3 text-base leading-relaxed text-[#42566B]">{step.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
 
 {/* Mokymų katalogas */}
-<section id="catalog" class="w-full py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 relative overflow-hidden" aria-labelledby="katalogas-heading">
-  {/* Decorative background */}
-  <div class="absolute inset-0 opacity-30">
-    <div class="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-pink-400 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-400 rounded-full blur-3xl"></div>
-  </div>
-  
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="text-center mb-16">
-      <span class="inline-block px-5 py-2 bg-white/80 backdrop-blur-sm text-[#C81E6A] rounded-full text-sm font-bold mb-4 shadow-md">📚 Mokymų katalogas</span>
-      <h2 id="katalogas-heading" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Pasirinkite sau tinkamą kategoriją</h2>
-      <p class="text-xl text-gray-700 max-w-3xl mx-auto font-medium">6 skirtingos sritys – visos su profesionaliai paruoštais mokymais</p>
+<section id="catalog" class="relative w-full scroll-mt-24 bg-[#F2F6FA] py-24 px-4 sm:px-6 lg:px-8" aria-labelledby="katalogas-heading">
+  <div class="relative mx-auto max-w-7xl">
+    <div class="text-center">
+      <h2 id="katalogas-heading" class="mt-6 text-3xl font-semibold text-[#0F2740] sm:text-[2.75rem] sm:leading-[1.15]">
+        Pasirinkite temą – mes pateiksime turinį ir visą administravimą
+      </h2>
+      <p class="mx-auto mt-4 max-w-3xl text-base text-[#42566B] sm:text-lg">
+        Šešios sritys, kurios dažniausiai reikalingos organizacijoms. Visi moduliai turi aiškius tikslus, testus ir sertifikatus.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {/* DSS mokymai - RED/ORANGE */}
-      <div class="group bg-gradient-to-br from-red-500 to-orange-500 rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-        <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-3">Darbuotojų sauga ir sveikata</h3>
-        <p class="text-white/90 mb-6 leading-relaxed">Gaisrinė sauga, biuro darbuotojai, pramonė, statyba, transportas ir kt.</p>
-        <a href="#contact" class="inline-flex items-center text-white font-bold hover:gap-3 transition-all group bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full">
-          Peržiūrėti <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      {/* DSS instrukcijos - BLUE */}
-      <div class="group bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-        <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-3">DSS instrukcijos biurui</h3>
-        <p class="text-white/90 mb-6 leading-relaxed">Darbuotojų saugos instrukcijos, gaisrinė sauga, neblaivumo prevencija.</p>
-        <a href="#contact" class="inline-flex items-center text-white font-bold hover:gap-3 transition-all group bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full">
-          Peržiūrėti <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      {/* Administracinės tvarkos - PURPLE */}
-      <div class="group bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-        <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-3">Administracinės tvarkos</h3>
-        <p class="text-white/90 mb-6 leading-relaxed">Darbo tvarkos, atostogų suteikimas, asmens duomenų tvarkymas ir kt.</p>
-        <a href="#contact" class="inline-flex items-center text-white font-bold hover:gap-3 transition-all group bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full">
-          Peržiūrėti <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      {/* Smurto prevencija - AMBER */}
-      <div class="group bg-gradient-to-br from-amber-500 to-yellow-500 rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-        <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-3">Smurto ir priekabiavimo prevencija</h3>
-        <p class="text-white/90 mb-6 leading-relaxed">Mobingas, smurto prevencija darbe, įtampą mažinančios priemonės.</p>
-        <a href="#contact" class="inline-flex items-center text-white font-bold hover:gap-3 transition-all group bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full">
-          Peržiūrėti <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      {/* ESG - GREEN */}
-      <div class="group bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-        <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-3">ESG mokymai</h3>
-        <p class="text-white/90 mb-6 leading-relaxed">Aplinkosaugos mokymai, lygių galimybių užtikrinimas, BDAR, interesų konfliktas.</p>
-        <a href="#contact" class="inline-flex items-center text-white font-bold hover:gap-3 transition-all group bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full">
-          Peržiūrėti <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-
-      {/* Kibernetinis saugumas - INDIGO */}
-      <div class="group bg-gradient-to-br from-indigo-600 to-blue-600 rounded-2xl p-7 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-105">
-        <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform">
-          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-3">Kibernetinis saugumas</h3>
-        <p class="text-white/90 mb-6 leading-relaxed">15 modulių prenumerata: fišingas, BDAR, slaptažodžiai, saugus darbas iš namų.</p>
-        <a href="#contact" class="inline-flex items-center text-white font-bold hover:gap-3 transition-all group bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full">
-          Peržiūrėti <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/></svg>
-        </a>
-      </div>
+    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {[{
+        title: 'Darbuotojų sauga ir sveikata',
+        description: 'Gaisrinė sauga, darbai aukštyje, biuro ir gamybos instrukcijos, transporto ir statybų temos.',
+        icon: (
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        ),
+        accent: 'from-[#F54F6D] to-[#FFA173]'
+      }, {
+        title: 'DSS instrukcijos biurui',
+        description: 'Darbuotojų saugos, gaisrinės saugos ir darbo vietos higienos instrukcijos, neblaivumo prevencija.',
+        icon: (
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        ),
+        accent: 'from-[#2D7FE6] to-[#46D5FF]'
+      }, {
+        title: 'Administracinės tvarkos',
+        description: 'Darbo tvarkos, atostogų suteikimas, nuotolinio darbo, duomenų tvarkymo ir kiti procesai.',
+        icon: (
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+        ),
+        accent: 'from-[#8158F6] to-[#F58AF5]'
+      }, {
+        title: 'Smurto ir priekabiavimo prevencija',
+        description: 'Mobingo prevencija, konfliktų sprendimas, emociškai saugios aplinkos kūrimas, pagalbos kanalai.',
+        icon: (
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        ),
+        accent: 'from-[#F7B733] to-[#FFDD87]'
+      }, {
+        title: 'ESG mokymai',
+        description: 'Aplinkosaugos, lygių galimybių, BDAR, antikorupcinės praktikos ir interesų konfliktų temos.',
+        icon: (
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        ),
+        accent: 'from-[#43C27C] to-[#9AF6B8]'
+      }, {
+        title: 'Kibernetinis saugumas',
+        description: '15 modulių prenumerata: fišingas, slaptažodžių higiena, nuotolinio darbo sauga, duomenų apsauga.',
+        icon: (
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        ),
+        accent: 'from-[#3A52F6] to-[#6EC8FF]'
+      }].map((item) => (
+        <article key={item.title} class="flex h-full flex-col overflow-hidden rounded-2xl border border-white bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <div class={`h-1.5 w-full bg-gradient-to-r ${item.accent}`}></div>
+          <div class="flex flex-1 flex-col gap-6 p-8">
+            <span class="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F0F5FB] text-[#0F2740]">
+              {item.icon}
+            </span>
+            <div class="space-y-3">
+              <h3 class="text-xl font-semibold text-[#0F2740]">{item.title}</h3>
+              <p class="text-base leading-relaxed text-[#42566B]">{item.description}</p>
+            </div>
+            <div class="mt-auto">
+              <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0F2740] transition hover:gap-3">
+                Gauti pasiūlymą
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
 
     <div class="mt-16 text-center">
-      <a href="#contact" class="inline-flex items-center justify-center rounded-xl bg-[#C81E6A] text-white px-8 py-4 text-lg font-bold hover:bg-pink-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#C81E6A] shadow-xl hover:shadow-2xl transition-all">
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center rounded-full bg-[#0F2740] px-10 py-4 text-base font-semibold text-white transition hover:bg-[#12385A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0F2740]"
+      >
         Gauti visą mokymų sąrašą
-        <svg class="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        <svg class="ml-3 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
     </div>
   </div>
 </section>
 
 {/* Mokymų nauda ir klientų atsiliepimai */}
-<section class="w-full py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#3C7099] to-[#2d5573] relative overflow-hidden">
-  {/* Decorative background elements */}
-  <div class="absolute inset-0 opacity-10">
-    <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#C81E6A] rounded-full blur-3xl"></div>
-  </div>
-  
-  <div class="max-w-6xl mx-auto relative z-10">
-    {/* Nauda */}
-    <div class="text-center mb-16">
-      <span class="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-4">Rezultatai</span>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Kokia mokymų nauda?</h2>
-      <p class="text-xl text-white/90 max-w-3xl mx-auto">Konkreti vertė jūsų organizacijai</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-        <div class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3 class="text-lg font-bold text-white mb-2">Visi praėjo</h3>
-        <p class="text-white/80 text-sm">Aiškūs rezultatai ir pilni duomenys.</p>
-      </div>
+<section class="relative w-full bg-white py-24 px-4 sm:px-6 lg:px-8">
+  <div class="relative mx-auto flex max-w-6xl flex-col gap-20 text-[#0F2740]">
+    <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+      <article class="rounded-3xl border border-[#E4ECF5] bg-[#F6F9FD] p-10 text-left shadow-[0_18px_45px_-32px_rgba(15,39,64,0.18)]">
+        <h2 class="mt-6 text-3xl font-semibold sm:text-[2.5rem] sm:leading-[1.15] text-[#0F2740]">
+          Mes užtikriname, kad visi praėjo ir organizacija jaučiasi saugi
+        </h2>
+        <p class="mt-4 text-base text-[#42566B] sm:text-lg">
+          SCORM duomenys kaupiami vienoje vietoje, todėl matote realaus laiko progresą, sertifikatus ir rizikas be papildomo rankinio darbo.
+        </p>
 
-      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-        <div class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        </div>
-        <h3 class="text-lg font-bold text-white mb-2">Saugiau</h3>
-        <p class="text-white/80 text-sm">Darbuotojai įsisavino reikalavimus.</p>
-      </div>
-
-      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-        <div class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        </div>
-        <h3 class="text-lg font-bold text-white mb-2">Ramiau</h3>
-        <p class="text-white/80 text-sm">Sistema automatiškai seka ir fiksuoja.</p>
-      </div>
-
-      <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-        <div class="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-        </div>
-        <h3 class="text-lg font-bold text-white mb-2">Atsekama</h3>
-        <p class="text-white/80 text-sm">Pasiruošimas auditui paprastas.</p>
-      </div>
-    </div>
-
-    {/* Atsiliepimai */}
-    <div class="text-center mb-12">
-      <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">Klientų atsiliepimai</h3>
-      <p class="text-white/80 text-lg">Kas jau naudoja VECTICUM mokymus</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div class="bg-white rounded-2xl p-8 shadow-2xl">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#3C7099] to-[#2d5573] flex items-center justify-center shadow-lg">
-            <span class="text-2xl font-bold text-white">N</span>
-          </div>
-          <div>
-            <div class="font-bold text-gray-900 text-lg">NOVAMETA</div>
-            <div class="text-sm text-gray-500">Gamybos sektorius</div>
-          </div>
-        </div>
-        <div class="flex gap-1 mb-4">
-          {[...Array(5)].map((_, i) => (
-            <svg key={i} class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+        <div class="mt-10 grid gap-6 sm:grid-cols-3">
+          {[{
+            stat: '98%',
+            label: 'darbuotojų mokymus baigia laiku',
+            icon: (
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            )
+          }, {
+            stat: '12 val.',
+            label: 'sutaupytas HR laikas per mėn.',
+            icon: (
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6v6l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            )
+          }, {
+            stat: '100%',
+            label: 'auditui pasiruošusios ataskaitos',
+            icon: (
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a2 2 0 011.414.586l5.414 5.414a2 2 0 01.586 1.414V19a2 2 0 01-2 2z"/></svg>
+            )
+          }].map((metric) => (
+            <div
+              key={metric.label}
+              class="relative flex h-full flex-col justify-between rounded-3xl border border-[#DFE6F1] bg-white p-6 text-left text-[#0F2740] shadow-[0_24px_45px_-32px_rgba(15,39,64,0.18)] transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0_30px_60px_-34px_rgba(15,39,64,0.24)]"
+            >
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-[#E7F0FB] text-[#0F2740]">
+                {metric.icon}
+              </span>
+              <p class="mt-4 text-4xl font-semibold tracking-tight text-[#0F2740]">{metric.stat}</p>
+              <p class="mt-3 text-sm font-medium text-[#42566B] leading-relaxed">{metric.label}</p>
+            </div>
           ))}
         </div>
-        <p class="text-gray-700 leading-relaxed italic">"Patogu, aišku ir greita pradėti. Darbuotojai mokosi savo tempu, o mes matome realų progresą."</p>
-      </div>
+      </article>
 
-      <div class="bg-white rounded-2xl p-8 shadow-2xl">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#3C7099] to-[#2d5573] flex items-center justify-center shadow-lg">
-            <span class="text-2xl font-bold text-white">D</span>
-          </div>
-          <div>
-            <div class="font-bold text-gray-900 text-lg">Dussmann Service</div>
-            <div class="text-sm text-gray-500">Paslaugų sektorius</div>
+      <article class="flex h-full flex-col gap-6 rounded-3xl border border-[#E4ECF5] bg-white p-10 text-left text-[#0F2740] shadow-[0_18px_45px_-34px_rgba(15,39,64,0.22)]">
+        <div class="flex items-center justify-between text-xs font-semibold uppercase tracking-[0.2em] text-[#3C7099]">
+          <span>Pasitiki VECTICUM</span>
+          <span class="flex items-center gap-1 text-[#E2B046]">
+            <svg class="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <span class="align-middle text-[0.7rem] font-medium tracking-wide text-[#0F2740]">5.0</span>
+          </span>
+        </div>
+
+        <blockquote class="space-y-4">
+          <p class="text-[1.35rem] font-medium leading-relaxed text-[#0F2740]">
+            “Patogu, aišku ir greita pradėti. Darbuotojai mokosi savo tempu, o mes matome realų progresą.”
+          </p>
+          <p class="text-sm leading-relaxed text-[#42566B]">
+            Mokymų aktyvacijai užteko kelių dienų – dabar vadovai nuolat mato rizikas, o HR taupo laiką, nes priminimai ir sertifikatai siunčiami automatiškai.
+          </p>
+        </blockquote>
+
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#3C7099]/12 text-lg font-semibold text-[#0B2A3A]">
+            N
+          </span>
+          <div class="space-y-1">
+            <p class="text-sm font-semibold text-[#0B2A3A]">NOVAMETA</p>
+            <p class="text-xs text-[#64748B]">Gamybos sektorius · 250+ darbuotojų · Moduliai: DSS, ESG, Saugumas · Aktyvacija: 2 savaitės</p>
           </div>
         </div>
-        <div class="flex gap-1 mb-4">
-          {[...Array(5)].map((_, i) => (
-            <svg key={i} class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          ))}
-        </div>
-        <p class="text-gray-700 leading-relaxed italic">"Sistema leidžia efektyviai valdyti mokymus ir užtikrinti, kad visi darbuotojai laiku įsisavino būtinas žinias."</p>
-      </div>
+      </article>
     </div>
   </div>
 </section>
@@ -375,33 +366,5 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
 {/* Kontaktų forma */}
 <ContactForm />
 
-{/* DUK */}
-<section class="w-full bg-white py-16 px-4 sm:px-6 lg:px-8" aria-labelledby="duk-heading">
-  <div class="max-w-4xl mx-auto">
-    <h2 id="duk-heading" class="text-3xl font-bold text-gray-900 mb-10 text-center">Klausimai ir atsakymai</h2>
-    <div class="space-y-4">
-      <details class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-        <summary class="font-semibold text-gray-900 cursor-pointer">Kas yra SCORM?</summary>
-        <p class="mt-3 text-gray-700">Standartas, leidžiantis e. mokymus diegti LMS sistemose su testų ir progreso fikasavimu.</p>
-      </details>
-      <details class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-        <summary class="font-semibold text-gray-900 cursor-pointer">Ar veikia su VECTICUM be integracijų?</summary>
-        <p class="mt-3 text-gray-700">Taip. Priskyrimai, terminai, rezultatai – viskas vienoje vietoje.</p>
-      </details>
-      <details class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-        <summary class="font-semibold text-gray-900 cursor-pointer">Ar galimos kelios kalbos?</summary>
-        <p class="mt-3 text-gray-700">Taip, bet skirtingos kalbos skaičiuojamos kaip atskiri mokymai.</p>
-      </details>
-      <details class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-        <summary class="font-semibold text-gray-900 cursor-pointer">Ar yra testai ir pažymėjimai?</summary>
-        <p class="mt-3 text-gray-700">Dalis mokymų turi testus, o baigimo faktas ir rezultatai fiksuojami automatiškai.</p>
-      </details>
-      <details class="bg-gray-50 rounded-xl p-6 border border-gray-200">
-        <summary class="font-semibold text-gray-900 cursor-pointer">Per kiek laiko galima startuoti?</summary>
-        <p class="mt-3 text-gray-700">Turinys paruoštas, todėl diegimas vyksta greitai – suderinus sąlygas.</p>
-      </details>
-    </div>
-  </div>
-</section>
 
 
