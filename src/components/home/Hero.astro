@@ -1840,11 +1840,62 @@
           console.log('Submitting data:', data);
 
           try {
+            const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+            let recaptchaToken = null;
+
+            if (typeof grecaptcha !== 'undefined' && grecaptcha.execute) {
+              try {
+                recaptchaToken = await grecaptcha.execute('6LcP6_ArAAAAAGeVnrM_7mlRq2cjrC6l4Xifj0qQ', { action: 'hero_form_submit' });
+              } catch (recaptchaError) {
+                console.error('Hero form reCAPTCHA validation failed:', recaptchaError);
+                if (!isDevelopment) {
+                  responseMessage.innerHTML = `
+                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+                      <div class="flex items-center justify-between">
+                        <span>Saugumo patikrinimas nepavyko. Bandykite dar kartą.</span>
+                        <button id="hero-close-error" class="ml-4 text-red-700 hover:text-red-900 text-xl font-bold">&times;</button>
+                      </div>
+                    </div>
+                  `;
+                  responseMessage.classList.remove('hidden');
+                  submitButton.disabled = false;
+                  document.getElementById('hero-close-error')?.addEventListener('click', () => {
+                    responseMessage.innerHTML = '';
+                    responseMessage.classList.add('hidden');
+                  });
+                  return;
+                }
+              }
+            } else if (!isDevelopment) {
+              console.error('Hero form reCAPTCHA not loaded');
+              responseMessage.innerHTML = `
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg" role="alert">
+                  <div class="flex items-center justify-between">
+                    <span>reCAPTCHA neįkėlė tinkamai. Perkraukite puslapį ir bandykite dar kartą.</span>
+                    <button id="hero-close-error" class="ml-4 text-red-700 hover:text-red-900 text-xl font-bold">&times;</button>
+                  </div>
+                </div>
+              `;
+              responseMessage.classList.remove('hidden');
+              submitButton.disabled = false;
+              document.getElementById('hero-close-error')?.addEventListener('click', () => {
+                responseMessage.innerHTML = '';
+                responseMessage.classList.add('hidden');
+              });
+              return;
+            }
+
+            const headers = {
+              'Content-Type': 'application/json'
+            };
+
+            if (recaptchaToken) {
+              headers['X-Recaptcha-Token'] = recaptchaToken;
+            }
+
             const response = await fetch('/api/crm', {
               method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
+              headers,
               body: JSON.stringify(data)
             });
 
