@@ -11,7 +11,7 @@ hero_image: "/media/services/mokymai-hero.webp"
 hero_image_alt: "SCORM mokymai | VECTICUM × TALENTATOR"
 ---
 
-import ContactForm from "../../components/home/ContactForm.astro";
+import SimpleContactForm from "../../components/home/SimpleContactForm.astro";
 import { Image } from "astro:assets";
 import TalentatorHero from '../../assets/media/Talentator-hero.webp';
 import VecticumLogo from '../../assets/images/logo.webp';
@@ -56,7 +56,7 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
       </p>
       <div class="flex flex-wrap gap-4">
         <a
-          href="#contact"
+          href="/kontaktai"
           class="inline-flex items-center justify-center rounded-full bg-white text-[#0F2740] px-8 py-4 text-lg font-bold hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl"
         >
           Gauti pasiūlymą
@@ -108,26 +108,26 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
   <div class="relative mx-auto max-w-6xl">
     <div class="flex flex-col gap-4 text-center">
       <h2 class="text-[2.5rem] leading-tight font-semibold text-[#0F2740] tracking-tight pb-6">
-        SCORM mokymai padeda organizacijoms greičiau įgyvendinti reikalavimus
+        Interaktyvių mokymų nauda jūsų organizacijai
       </h2>
     </div>
 
     <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {[{
-        title: 'Valdomas progresas',
-        description: 'Statusai, dalyvių aktyvumas ir terminai matomi realiu laiku, o ataskaitos pasiruošusios auditui.',
+        title: 'Atitikties užtikrinimas',
+        description: 'Mokymų procesas stebimas sistemoje – vadovas mato visą informaciją apie statusą, rizikas ir ataskaitas auditui.',
         icon: (
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
         )
       }, {
-        title: 'Įtraukiantis turinys',
-        description: 'Interaktyvūs scenarijai ir testai padeda darbuotojams įsisavinti žinias ir pritaikyti praktikoje.',
+        title: 'Žinių įsisavinimas',
+        description: 'Interaktyvūs testai ir scenarijai užtikrina, kad darbuotojai iš tikrųjų įsisavino medžiagą ir gali pritaikyti praktikoje.',
         icon: (
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9 5h6m-6 4h6m2 5H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2zm-6-4l3 3 4-4"/></svg>
         )
       }, {
-        title: 'Greitas įdiegimas',
-        description: 'Turinys, testai ir administravimo procesai jau paruošti – liko tik priskirti mokymus darbuotojams.',
+        title: 'Viskas vienoje sistemoje',
+        description: 'Mokymai jau paruošti – nieko papildomai daryti nereikia. Viskas valdoma VECTICUM: mokymai, testai, dokumentai ir darbuotojai.',
         icon: (
           <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         )
@@ -153,16 +153,16 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
     <div class="max-w-xl space-y-6">
 
       <h2 class="text-3xl font-semibold text-[#0F2740] sm:text-[2.5rem] sm:leading-[1.15]">
-        Procesas išlieka paprastas – nuo pasirinkimo iki rezultatų fiksavimo
+        Greitas ir paprastas mokymų paleidimas jūsų organizacijoje
       </h2>
       <p class="text-lg leading-relaxed text-[#42566B]">
-        Esamiems VECTICUM klientams aktyvacijos užtenka kelių paspaudimų. Naujiems – pradedame nuo poreikio aptarimo ir jau kitą dieną parengiame pasiūlymą.
+        Esamiems VECTICUM klientams aktyvacijos užtenka kelių paspaudimų. Naujiems – pradedame nuo poreikio aptarimo.
       </p>
       <a
-        href="#contact"
+        href="/kontaktai"
         class="inline-flex items-center justify-center rounded-full bg-[#3C7099] px-8 py-4 text-base font-semibold text-white shadow-md transition hover:bg-[#315E84] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#6DD3FF]"
       >
-        Susiderinti demo
+        Gauti pasiūlymą
         <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
       </a>
     </div>
@@ -201,7 +201,7 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
   <div class="relative mx-auto max-w-7xl">
     <div class="text-center">
       <h2 id="katalogas-heading" class="mt-6 text-3xl font-semibold text-[#0F2740] sm:text-[2.75rem] sm:leading-[1.15]">
-        Pasirinkite temą – mes pateiksime turinį ir visą administravimą
+        Interaktyvių mokymų katalogas
       </h2>
       <p class="mx-auto mt-4 max-w-3xl text-base text-[#42566B] sm:text-lg">
         Šešios sritys, kurios dažniausiai reikalingos organizacijoms. Visi moduliai turi aiškius tikslus, testus ir sertifikatus.
@@ -263,7 +263,7 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
               <p class="text-base leading-relaxed text-[#42566B]">{item.description}</p>
             </div>
             <div class="mt-auto">
-              <a href="#contact" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0F2740] transition hover:gap-3">
+              <a href="/kontaktai" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0F2740] transition hover:gap-3">
                 Gauti pasiūlymą
                 <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </a>
@@ -275,7 +275,7 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
 
     <div class="mt-16 text-center">
       <a
-        href="#contact"
+        href="/kontaktai"
         class="inline-flex items-center justify-center rounded-full bg-[#0F2740] px-10 py-4 text-base font-semibold text-white transition hover:bg-[#12385A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#0F2740]"
       >
         Gauti visą mokymų sąrašą
@@ -364,7 +364,15 @@ import TalentatorLogo from '../../assets/media/talentator-logo.png';
 </section>
 
 {/* Kontaktų forma */}
-<ContactForm />
+<section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#0F2740] mb-4">Susisiekite su mumis</h2>
+      <p class="text-lg text-[#42566B]">Užpildykite formą ir mes susisieksime su jumis artimiausiuo metu</p>
+    </div>
+    <SimpleContactForm />
+  </div>
+</section>
 
 
 
