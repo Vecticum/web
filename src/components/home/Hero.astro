@@ -956,121 +956,183 @@
     gap: 0.45rem;
   }
 
-  .hero-ui-tasks-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-  }
-
   .hero-ui-tasks-title {
     font-size: 0.9rem;
     font-weight: 600;
     color: #111827;
   }
 
-  .hero-ui-tabs {
+  .hero-ui-content--tasks {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 0.3rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    width: 100%;
+    min-width: 0;
+    max-width: 350px;
+    min-height: 0;
+    border-radius: 22px;
+    box-sizing: border-box;
   }
 
-  .hero-ui-tab {
+  .hero-ui-tasktabs {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.18rem 0.18rem;
+    border-radius: 999px;
+    background: rgba(241, 245, 255, 0.92);
+    border: 1.5px solid rgba(30, 75, 143, 0.18);
+    align-self: center;
+    margin-bottom: 0.2rem;
+  }
+
+  .hero-ui-tasktab {
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
-    padding: 0.25rem 0.55rem;
+    gap: 0.36rem;
+    padding: 0.38rem 0.85rem;
+    border-radius: 30px;
+    border: 1.2px solid transparent;
+    background: transparent;
+    color: rgba(47, 62, 84, 0.82);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+
+  .hero-ui-tasktab.is-active {
+    background: #ffffff;
+    color: #1e4b8f;
+    border-color: rgba(30, 75, 143, 0.32);
+    box-shadow: 0 8px 18px -10px rgba(30, 75, 143, 0.13);
+  }
+
+  .hero-ui-tasktab-label {
+    line-height: 1.1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 1em;
+  }
+
+  .hero-ui-tasktab-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.3rem;
+    padding: 0.12rem 0.32rem;
     border-radius: 999px;
-    background: rgba(226, 232, 240, 0.65);
-    color: rgba(55, 65, 81, 0.8);
-    font-size: 0.65rem;
+    background: rgba(30, 75, 143, 0.14);
+    color: #1e4b8f;
+    font-size: 0.62rem;
     font-weight: 600;
   }
 
-  .hero-ui-tab.is-active {
-    background: rgba(60, 112, 153, 0.18);
-    color: #3c7099;
+  .hero-ui-tasktabs .hero-ui-tasktab:not(.is-active) .hero-ui-tasktab-count {
+    background: rgba(148, 163, 184, 0.16);
+    color: rgba(47, 62, 84, 0.6);
   }
 
   .hero-ui-tasklist {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .hero-ui-taskrow {
-    display: flex;
-    align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 0.55rem;
+  }
+
+  .hero-ui-tasklist--detail {
+    gap: 0.6rem;
+    padding: 0.2rem 0 0 0;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 2px 8px -6px rgba(30, 75, 143, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-ui-taskitem {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.45rem;
+    align-items: center;
+    padding: 0.65rem 0.7rem 0.65rem 0.7rem;
     border-radius: 12px;
-    border: 1px solid rgba(148, 163, 184, 0.18);
-    background: rgba(255, 255, 255, 0.96);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    border: 1.2px solid rgba(148, 163, 184, 0.13);
+    background: #ffffff;
+    box-shadow:
+      0 4px 16px -10px rgba(30, 75, 143, 0.10),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    width: 100%;
+    box-sizing: border-box;
   }
 
-  .hero-ui-checkbox {
-    width: 14px;
-    height: 14px;
-    border-radius: 5px;
-    border: 1px solid rgba(148, 163, 184, 0.45);
-    background: rgba(248, 250, 252, 0.9);
-  }
-
-  .hero-ui-task-content {
+  .hero-ui-taskbody {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 0.22rem;
-    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
   }
 
-  .hero-ui-task-title {
+  .hero-ui-taskbadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    font-size: 0.56rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.22rem 0.45rem;
+    border-radius: 0.55rem;
+    background: rgba(30, 75, 143, 0.12);
+    color: #1e4b8f;
+  }
+
+  .hero-ui-taskcompany {
     font-size: 0.78rem;
     font-weight: 600;
-    color: #1f2937;
+    color: #0f2740;
+    letter-spacing: 0.01em;
+    line-height: 1.13;
+    word-break: break-word;
   }
 
-  .hero-ui-task-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.32rem;
-    font-size: 0.64rem;
-    color: rgba(75, 85, 99, 0.75);
-  }
-
-  .hero-ui-task-company {
-    font-weight: 500;
-  }
-
-  .hero-ui-task-date {
-    padding: 0.18rem 0.5rem;
-    border-radius: 999px;
-    background: rgba(36, 124, 240, 0.75);
-    color: rgba(255, 255, 255, 0.8);
+  .hero-ui-taskdate {
+    font-size: 0.62rem;
     font-weight: 600;
+    color: rgba(63, 76, 92, 0.82);
+    letter-spacing: 0.04em;
+    margin-top: 0.08em;
+    word-break: break-word;
   }
 
-  .hero-ui-task-date--today {
-    background: rgb(212, 47, 47);
-    color: #ffffff;
-  }
-
-  .hero-ui-task-date--overdue {
-    background: rgba(200, 30, 106, 0.14);
+  .hero-ui-taskdate--overdue {
     color: #c81f6a;
   }
 
-  .hero-ui-task-action {
-    border-radius: 999px;
-    padding: 0.32rem 0.6rem;
-    font-size: 0.64rem;
-    font-weight: 600;
-    background: rgba(132, 204, 22, 0.18);
-    color: #4b7a17;
-    border: 1px solid rgba(132, 204, 22, 0.3);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.65);
+  .hero-ui-taskicon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.2rem;
+    min-height: 2.2rem;
+    padding: 0.35rem 0.55rem;
+    border-radius: 0.65rem;
+    background: linear-gradient(145deg, rgba(113, 178, 56, 0.95), rgba(94, 162, 42, 0.88));
+    color: #ffffff;
+    border: 1px solid rgba(94, 162, 42, 0.55);
+    box-shadow: 0 10px 18px -12px rgba(94, 162, 42, 0.62);
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .hero-ui-taskicon:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 30px -20px rgba(94, 162, 42, 0.88);
   }
 
   .hero-ui-summary {
@@ -1177,17 +1239,20 @@
     border: 1px solid rgba(148, 163, 184, 0.16);
   }
 
-  .hero-ui-item-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: 10px;
-    display: flex;
+  .hero-ui-taskicon {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    flex-shrink: 0;
-  }
-
+    justify-content: center;}
+    min-width: 2.7rem;
+    min-height: 2.7rem;
+    padding: 0.55rem 0.85rem;
+    color: #ffffff;
+    border: 1.5px solid rgba(94, 162, 42, 0.65);
+    border-radius: 12px;
+    background: linear-gradient(90deg, #5ea22a 0%, #7ed957 100%);
+    box-shadow: 0 16px 26px -18px rgba(94, 162, 42, 0.82);
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
   .hero-ui-item-icon--hr {
     background: rgba(200, 30, 106, 0.14);
     color: #c81f6a;
@@ -1628,37 +1693,111 @@
             <span class="hero-ui-category hero-ui-category--docs">Užduotys</span>
           </div>
 
-          <div class="hero-ui-content">
-            <div class="hero-ui-tasks-header" style="margin-bottom: 0.3rem;">
-              <span class="hero-ui-tasks-title" style="font-size: 0.8rem;">Laukia patvirtinimo</span>
-              <div class="hero-ui-tabs">
-                <span class="hero-ui-tab is-active">Viso: 5</span>
-              </div>
+          <div class="hero-ui-content hero-ui-content--tasks">
+            <span class="hero-ui-tasks-title" style="font-size: 0.82rem; display: block; text-align: left;">Mano laukiančios užduotys</span>
+            <div class="hero-ui-tasktabs" role="tablist" aria-label="Užduočių filtrai">
+              <button class="hero-ui-tasktab is-active" type="button" role="tab" aria-selected="true">
+                <span class="hero-ui-tasktab-label">Visos</span>
+                <span class="hero-ui-tasktab-count">3</span>
+              </button>
+              <button class="hero-ui-tasktab" type="button" role="tab" aria-selected="false">
+                <span class="hero-ui-tasktab-label">Failai</span>
+                <span class="hero-ui-tasktab-count">2</span>
+              </button>
             </div>
 
-            <div class="hero-ui-tasklist">
-              <div class="hero-ui-taskrow">
-                <span class="hero-ui-checkbox" aria-hidden="true"></span>
-                <div class="hero-ui-task-content">
-                  <span class="hero-ui-task-title">Pirkimo/Pardavimo sąskaitos</span>
-                  <div class="hero-ui-task-meta">
-                    <span class="hero-ui-task-company">3 laukia</span>
-                    <span class="hero-ui-task-date hero-ui-task-date--today">Skubu</span>
-                  </div>
+            <ul class="hero-ui-tasklist hero-ui-tasklist--plain" role="list">
+              <li class="hero-ui-taskitem-plain" role="listitem">
+                <input type="checkbox" class="hero-ui-taskcheckbox" aria-label="Pažymėti užduotį" />
+                <div class="hero-ui-taskbody">
+                  <span class="hero-ui-taskcompany">Susipažinti su tvarkomis</span>
+                  <span class="hero-ui-taskdate hero-ui-taskdate--overdue">27 SAU</span>
                 </div>
-              </div>
+                <button class="hero-ui-taskcta" type="button" aria-label="Atlikti veiksmą">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4l5 5-5 5"/></svg>
+                </button>
+              </li>
+              <li class="hero-ui-taskitem-plain" role="listitem">
+                <input type="checkbox" class="hero-ui-taskcheckbox" aria-label="Pažymėti užduotį" />
+                <div class="hero-ui-taskbody">
+                  <span class="hero-ui-taskcompany">Pasirašyti darbo sutartį</span>
+                  <span class="hero-ui-taskdate hero-ui-taskdate--overdue">27 SAU</span>
+                </div>
+                <button class="hero-ui-taskcta" type="button" aria-label="Atlikti veiksmą">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4l5 5-5 5"/></svg>
+                </button>
+              </li>
+              <li class="hero-ui-taskitem-plain" role="listitem">
+                <input type="checkbox" class="hero-ui-taskcheckbox" aria-label="Pažymėti užduotį" />
+                <div class="hero-ui-taskbody">
+                  <span class="hero-ui-taskcompany">Patvirtinti komandiruotę</span>
+                  <span class="hero-ui-taskdate hero-ui-taskdate--overdue">27 SAU</span>
+                </div>
+                <button class="hero-ui-taskcta" type="button" aria-label="Atlikti veiksmą">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4l5 5-5 5"/></svg>
+                </button>
+              </li>
+            </ul>
+            <style>
+              .hero-ui-tasklist--plain {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                background: none;
+                box-shadow: none;
+                border-radius: 0;
+                list-style: none;
+              }
 
-              <div class="hero-ui-taskrow">
-                <span class="hero-ui-checkbox" aria-hidden="true"></span>
-                <div class="hero-ui-task-content">
-                  <span class="hero-ui-task-title">Sutartys</span>
-                  <div class="hero-ui-task-meta">
-                    <span class="hero-ui-task-company">2 dokumentai</span>
-                    <span class="hero-ui-task-date">Rytoj</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+              .hero-ui-taskitem-plain {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.7rem;
+                padding: 0.55rem 0 0.55rem 0;
+                border: none;
+                background: none;
+                box-shadow: none;
+                border-radius: 0;
+                width: 100%;
+                border-bottom: 1px solid #e5e7eb;
+              }
+              .hero-ui-taskitem-plain:last-child {
+                border-bottom: none;
+              }
+
+              .hero-ui-taskcheckbox {
+                margin-top: 0.18em;
+                accent-color: #b5c7e6;
+                width: 1.1em;
+                height: 1.1em;
+                flex-shrink: 0;
+                border-radius: 4px;
+                border: 1.2px solid #b5c7e6;
+                background: #fff;
+                cursor: pointer;
+              }
+
+              .hero-ui-taskcta {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #5ea22a;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                padding: 0.22rem 0.5rem;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background 0.15s;
+                margin-left: auto;
+              }
+              .hero-ui-taskcta:hover {
+                background: #4b8c22;
+              }
+            </style>
           </div>
         </div>
 
