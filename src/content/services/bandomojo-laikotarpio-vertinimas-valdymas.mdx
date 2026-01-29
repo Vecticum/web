@@ -5,55 +5,6 @@ meta:
   ogImage: /media/services/bandomojo-vertinimas-hero.webp
   ogType: website
   canonical: https://vecticum.lt/bandomojo-laikotarpio-vertinimas-valdymas/
-
-  schema: |
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Kas yra bandomojo laikotarpio valdymo sistema?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Tai Vecticum sprendimas, automatizuojantis naujo darbuotojo bandomojo laikotarpio užduotis, vertinimus, priminimus ir sprendimų priėmimą. Sistema užtikrina sklandų ir nuoseklų darbuotojo įvedimą."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Kaip veikia bandomojo laikotarpio procesas?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sukūrus darbuotojo kortelę, automatiškai pasileidžia darbuotojui skirtas bandomojo užduočių rinkinys. Vadovas personalizuoja planą, atsakingi darbuotojai vykdo savo užduotis, o likus nustatytam laikui iki pabaigos sugeneruojamas vertinimo veiksmas."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Ar galima kurti skirtingus bandomojo laikotarpio šablonus?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Taip. Šablonų skaičius neribojamas – galima kurti planus skirtingoms darbuotojų grupėms ir papildyti individualiomis užduotimis."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Ar galima stebėti užduočių eigą ir istoriją?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Taip. Sistema rodo visų užduočių būsenas, progresą ir komentarus. Kiekvienas veiksmas turi aiškią istoriją, todėl galima lengvai analizuoti proceso eigą."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Ar sistema pritaikyta darbui telefonu?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Taip. Visi bandomojo laikotarpio veiksmai – užduočių peržiūra, komentavimas, tvirtinimas ir vertinimas – gali būti atliekami mobiliajame telefone."
-          }
-        }
-      ]
-    }
-
 title: Bandomojo laikotarpio valdymas
 description: Efektyviai planuokite, stebėkite ir vertinkite bandomąjį laikotarpį – VECTICUM įrankis padės greičiau priimti sprendimus dėl darbuotojų integracijos.
 hero_image: "/media/services/bandomojo-vertinimas-hero.webp"
@@ -73,6 +24,7 @@ import ContactForm from "../../components/home/ContactForm.astro";
   </h2>
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
       <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
         <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
         <div>
@@ -80,6 +32,7 @@ import ContactForm from "../../components/home/ContactForm.astro";
           <p class="mt-1 text-sm text-gray-600">Automatizuotas užduočių paskirstymas, automatiniai priminimai ir aiški užduočių eiga užtikrina greitą ir kokybišką bandomojo laikotarpio valdymą.</p>
         </div>
       </div>
+
       <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
         <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
         <div>
@@ -87,6 +40,7 @@ import ContactForm from "../../components/home/ContactForm.astro";
           <p class="mt-1 text-sm text-gray-600">Individualizuoti užduočių šablonai skirtingoms darbuotojų grupėms ir galimybė paleisti papildomus užduočių rinkinius prisitaikant prie besikeičiančių poreikių.</p>
         </div>
       </div>
+
       <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
         <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
         <div>
@@ -94,6 +48,7 @@ import ContactForm from "../../components/home/ContactForm.astro";
           <p class="mt-1 text-sm text-gray-600">Vieninga tvirtinimo seka, standartizuoti šablonai ir aiškiai apibrėžtos atsakomybės užtikrina skaidrų ir lengvai valdomą procesą.</p>
         </div>
       </div>
+
       <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
         <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
         <div>
@@ -101,6 +56,7 @@ import ContactForm from "../../components/home/ContactForm.astro";
           <p class="mt-1 text-sm text-gray-600">Galimybė stebėti bandomojo laikotarpio eigą realiu laiku bei analizuoti procesų efektyvumą pasitelkiant meta duomenų eksportavimą į Excel.</p>
         </div>
       </div>
+
       <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
         <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
         <div>
@@ -108,13 +64,15 @@ import ContactForm from "../../components/home/ContactForm.astro";
           <p class="mt-1 text-sm text-gray-600">Automatiniai pranešimai ir priminimai bei galimybė palikti konfidencialius komentarus užtikrina sklandų bendradarbiavimą ir svarbios informacijos fiksavimą.</p>
         </div>
       </div>
-      <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+
+            <div class="flex items-start gap-4 bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
         <img src="/media/icons/why-icon.svg" alt="Ikona" class="w-12 h-12 rounded-full object-cover" />
         <div>
           <h3 class="text-lg font-semibold text-gray-900">Laiku priimami sprendimai</h3>
           <p class="mt-1 text-sm text-gray-600">Automatiniai priminimai tiesioginiam vadovui prieš bandomojo laikotarpio pabaigą padeda laiku priimti sprendimus dėl darbuotojo tolimesnio darbo įmonėje.</p>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -210,7 +168,96 @@ Jei darbuotojas keičia poziciją ar skyrių — galima paleisti naują bandomoj
 
 
 
+{/* DUK section */}
 
+<section class="w-full px-4 py-16 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 text-center mb-12">Dažnai užduodami klausimai</h2>
+
+    <div class="space-y-4">      
+      <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
+        <details class="group">
+          <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
+            <span>Kas yra bandomojo laikotarpio valdymo sistema?</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
+            <p class="pt-4">
+              Tai Vecticum sprendimas, automatizuojantis naujo darbuotojo bandomojo laikotarpio užduotis, vertinimus, priminimus ir sprendimų priėmimą. Sistema užtikrina sklandų ir nuoseklų darbuotojo įvedimą.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
+        <details class="group">
+          <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
+            <span>Kaip veikia bandomojo laikotarpio procesas?</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
+            <p class="pt-4">
+              Sukūrus darbuotojo kortelę, automatiškai pasileidžia darbuotojui skirtas bandomojo užduočių rinkinys. Vadovas personalizuoja planą, atsakingi darbuotojai vykdo savo užduotis, o likus nustatytam laikui iki pabaigos sugeneruojamas vertinimo veiksmas.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
+        <details class="group">
+          <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
+            <span>Ar galima kurti skirtingus bandomojo laikotarpio šablonus?</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
+            <p class="pt-4">
+              Taip. Šablonų skaičius neribojamas – galima kurti planus skirtingoms darbuotojų grupėms ir papildyti individualiomis užduotimis.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
+        <details class="group">
+          <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
+            <span>Ar galima stebėti užduočių eigą ir istoriją?</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
+            <p class="pt-4">
+              Taip. Sistema rodo visų užduočių būsenas, progresą ir komentarus. Kiekvienas veiksmas turi aiškią istoriją, todėl galima lengvai analizuoti proceso eigą.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
+        <details class="group">
+          <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
+            <span>Ar sistema pritaikyta darbui telefonu?</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
+            <p class="pt-4">
+              Taip. Visi bandomojo laikotarpio veiksmai – užduočių peržiūra, komentavimas, tvirtinimas ir vertinimas – gali būti atliekami mobiliajame telefone.
+            </p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <section class="bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-8 mt-20">
   <div class="max-w-7xl mx-auto">
