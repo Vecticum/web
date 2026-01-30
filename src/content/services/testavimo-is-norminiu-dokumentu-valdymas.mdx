@@ -5,6 +5,49 @@ meta:
   ogImage: /media/services/testavimas-hero.webp
   ogType: website
   canonical: https://vecticum.lt/testavimo-is-norminiu-dokumentu-valdymas/
+schema: |
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Kas yra darbuotojų testavimo iš norminių dokumentų sistema?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tai Vecticum sprendimas, skirtas automatizuotai tikrinti darbuotojų žinias pagal vidinius ir norminius dokumentus. Sistema generuoja testus, vertina rezultatus ir užtikrina mokymų atitiktį."
+        }
+      },{
+        "@type": "Question",
+        "name": "Ar testai sugeneruojami automatiškai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Taip. Susipažinus su mokymų medžiaga, sistema automatiškai sukuria testą ir pateikia jį darbuotojui atlikti. Testų generavimas vyksta iš atsitiktinai parinkto klausimų sąrašo."
+        }
+      },{
+        "@type": "Question",
+        "name": "Kokio tipo klausimus galima sukurti sprendime?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Galima sukurti įvairių tipų klausimus – vienas ar keli teisingi atsakymai, pasirinkimas iš sąrašo, klausimai su paveikslėliais ar nuorodomis. Tai leidžia kurti informatyvius ir įvairius testus."
+        }
+      },{
+        "@type": "Question",
+        "name": "Ar testus galima atlikti telefone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Taip. Testai pateikiami wizard formatu, rodant po vieną klausimą viename ekrane. Vaizdas pritaikytas patogiam naudojimui mobiliajame įrenginyje."
+        }
+      },{
+        "@type": "Question",
+        "name": "Ar rezultatus galima eksportuoti ir ar sprendimas integruojamas su kitais moduliais?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Taip. Visi testų meta duomenys gali būti eksportuojami į Excel. Sprendimas integruojamas su dokumentų supažindinimu, mokymų valdymu, veiklos vertinimu ir kitais Vecticum moduliais."
+        }
+      }]
+    }
+
+
 title: Testavimas iš norminių dokumentų
 description: Automatizuokite žinių tikrinimo procesą — kurkite testus, stebėkite rezultatus ir sumažinkite administracinį krūvį personalui ir vadovams.
 hero_image: "/media/services/testavimas-hero.webp"
