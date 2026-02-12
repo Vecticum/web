@@ -1,5 +1,5 @@
 ---
-version: "Vecticum sistemos 2024 rugsėjo mėn. naujienos"
+version: "Versija 2024.9"
 releaseDate: "2024-09-25"
 features:
   - "Sukurtas dokumentų (darbo sutarčių ir kitų tipų dokumentų) šablonų praplėtimas - vardo, pavardės ir pareigų linksniavimas. Ši funkcija suteikia galimybę šablone nurodyti kokiu linksniu turi būti atvaizduojamas darbuotojo vardas, pavardė ir pareigos."

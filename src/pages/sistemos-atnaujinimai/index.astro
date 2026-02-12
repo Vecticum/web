@@ -2,7 +2,9 @@
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
 
-const versions = await getCollection("versions");
+const versions = (await getCollection("versions")).sort((a, b) => {
+  return new Date(b.data.releaseDate).getTime() - new Date(a.data.releaseDate).getTime();
+});
 
 export const prerender = true;
 
@@ -11,34 +13,81 @@ const seoDescription = "Sistemos atnaujinimai ir naujausios versijos. Sekite fun
 const seoImage = '~/assets/images/logo.webp'; // Optional
 ---
 
-<MainLayout title={seoTitle} description={seoDescription} image={seoImage} noIndex={true}>
-    <!-- Hero -->
+<MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
+  <!-- Hero -->
   <section class="text-center py-20 px-6 bg-gradient-to-b from-white to-[#f4f7fa]">
     <div class="max-w-3xl mx-auto">
       <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Sistemos atnaujinimai</h1>
       <p class="text-lg text-gray-600">
-        Sužinokite apie naujausius VECTICUM sistemos atnaujinimus vienoje vietoje. Čia rasite informaciją apie naujas funkcijas, išspręstas klaidas ir patobulintus sprendimus, kurie padeda dirbti greičiau ir patogiau. Nuolat atnaujiname šį puslapį, kad galėtumėte maksimaliai išnaudoti VECTICUM galimybes savo įmonei!
+        Sekite VECTICUM sistemos tobulėjimą. Čia rasite visus naujausius funkcionalumus, patobulinimus ir klaidų ištaisymus.
       </p>
     </div>
   </section>
-  <div
-    class="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-16 md:mb-20 mt-12"
-  >
-    {
-      versions.map((version) => (
-        <div class="border group flex flex-col sm:gap-4 border-gray-200 rounded-lg p-4 bg-white-100 justify-center items-center gap-2 shadow-md">
-          <h2 class="text-xl font-semibold text-gray-950">
-            {version.data.version}
-          </h2>          <p class="text-sm text-gray-600">
-            Išleidimo data: {version.data.releaseDate.split('-').reverse().join('.')}
-          </p>          <a
-            href={`/sistemos-atnaujinimai/${version.id}`}
-            class="mt-4 inline-block rounded-md bg-accent px-5 py-2.5 text-base font-medium text-white shadow"
-          >
-            Daugiau
-          </a>
-        </div>
-      ))
-    }
-  </div>
+
+  <!-- Versions Timeline -->
+  <section class="bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      <div class="space-y-6">
+        {
+          versions.map((version, index) => (
+            <article class="group relative rounded-2xl border border-gray-200 bg-white p-4 shadow-sm transition-all hover:border-[#3C7099]/30 hover:shadow-lg md:p-5">
+              {/* Timeline dot for desktop */}
+              <div class="absolute -left-3 top-5 hidden h-6 w-6 rounded-full border-4 border-white bg-[#3C7099] shadow-md md:block" />
+              
+              <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div class="flex-1">
+                  <div class="flex items-center gap-3 mb-2">
+                    <span class="inline-flex items-center gap-1.5 rounded-lg bg-[#3C7099] px-3 py-1 text-sm font-semibold text-white">
+                      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                      </svg>
+                      {version.data.version}
+                    </span>
+                  </div>
+                  
+                  <div class="flex items-center gap-4 text-sm text-gray-500">
+                    <div class="flex items-center gap-1.5">
+                      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                      </svg>
+                      {new Date(version.data.releaseDate).toLocaleDateString('lt-LT', { year: 'numeric', month: 'long', day: 'numeric' })}
+                    </div>
+                    {version.data.features && version.data.features.length > 0 && (
+                      <span class="inline-flex items-center gap-1 rounded-md bg-green-50 px-2 py-0.5 text-xs font-medium text-green-700">
+                        <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                        </svg>
+                        {version.data.features.length} funkcijos
+                      </span>
+                    )}
+                    {version.data.improvements && version.data.improvements.length > 0 && (
+                      <span class="inline-flex items-center gap-1 rounded-md bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700">
+                        <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        {version.data.improvements.length} patobulinimai
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <a
+                  href={`/sistemos-atnaujinimai/${version.id}`}
+                  class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#3C7099] px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-[#2d5573] hover:shadow-md md:w-auto"
+                >
+                  Žiūrėti detaliau
+                  <svg class="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      {/* Timeline line for desktop */}
+      <div class="absolute left-0 top-0 hidden h-full w-0.5 bg-gradient-to-b from-[#3C7099] via-[#3C7099]/50 to-transparent md:block" style="margin-left: -0.125rem;" />
+    </div>
+  </section>
 </MainLayout>
