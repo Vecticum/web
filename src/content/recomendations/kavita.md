@@ -48,22 +48,22 @@ Prieš įsidiegiant VECTICUM sprendimus, „Kavita“ susidurdavo su keletu esmi
 ### VECTICUM SPRENDIMAI, KURIUOS NAUDOJA KAVITA
 
 #### Dokumentų valdymas
-- Dokumentų valdymas  
-- Įmonės gaunamos/siunčiamos korespondencijos valdymas
+- [Dokumentų valdymas](/dokumentu-valdymas)  
+- [Įmonės gaunamos/siunčiamos korespondencijos valdymas](/gaunamu-uzklausu-valdymas)
 
 #### Personalo valdymas
-- Atostogų ir kitų nebuvimų valdymas  
-- Darbo sutarčių valdymas  
-- Darbo vietos paruošimo valdymas  
-- Darbuotojų įdarbinimo/išdarbinimo valdymas  
-- Darbuotojų prašymų valdymas  
-- Komandiruočių prašymų valdymas  
-- Mokymų valdymas  
-- Privalomo supažindinimo su norminiais dokumentais valdymas
+- [Atostogų ir kitų nebuvįmų valdymas](/atostogu-valdymas)  
+- [Darbo sutarčių valdymas](/darbo-sutarciu-valdymas)  
+- [Darbo vietos paruošimo valdymas](/darbuotojo-idarbinimo-i-imone-valdymas)  
+- [Darbuotojų įdarbinimo/išdarbinimo valdymas](/darbuotoju-idarbinimo-savitarna)  
+- [Darbuotojų prašymų valdymas](/darbuotoju-prasymu-valdymas)  
+- [Komandiruotčių prašymų valdymas](/komandiruociu-valdymas)  
+- [Mokymų valdymas](/mokymu-valdymas)  
+- [Privalomo supažindinimo su norminiais dokumentais valdymas](/privalomo-supazindinimo-su-dokumentais-valdymas)
 
 #### Sąskaitų valdymas
-- Avansinės apyskaitos valdymas  
-- Gaunamų sąskaitų valdymas
+- [Avansinės apyskaitos valdymas](/avansines-apyskaitos-valdymas)  
+- [Gaunamų sąskaitų valdymas](/gaunamu-saskaitu-valdymas)
 
 #### Kita
 - Kiti individualiai pritaikyti funkcionalumai/sprendimai

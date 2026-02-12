@@ -48,16 +48,16 @@ VECTICUM padėjo optimizuoti daugelį mūsų veiklos procesų ir pasiekti reikš
 ### VECTICUM SPRENDIMAI, KURIUOS NAUDOJA YUKON
 
 #### Dokumentų valdymas
-- Dokumentų valdymas  
-- Sutarčių valdymas  
-- Sąskaitų valdymas
+- [Dokumentų valdymas](/dokumentu-valdymas)  
+- [Sutarčių valdymas](/sutarciu-valdymas)  
+- [Sąskaitų valdymas](/gaunamu-saskaitu-valdymas)
 
 #### Personalo valdymas
-- Atostogų ir kitų nebuvimų valdymas  
-- Darbo sutarčių valdymas  
-- Darbuotojų prašymų valdymas  
-- Komandiruočių prašymų valdymas  
-- Mokymų valdymas
+- [Atostogų ir kitų nebuvįmų valdymas](/atostogu-valdymas)  
+- [Darbo sutarčių valdymas](/darbo-sutarciu-valdymas)  
+- [Darbuotojų prašymų valdymas](/darbuotoju-prasymu-valdymas)  
+- [Komandiruotčių prašymų valdymas](/komandiruociu-valdymas)  
+- [Mokymų valdymas](/mokymu-valdymas)
 
 #### Kita
 - Kiti individualiai pritaikyti funkcionalumai/sprendimai
