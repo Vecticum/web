@@ -229,17 +229,24 @@
     margin: 0;
     color: #0f172a;
     font-size: clamp(1.5rem, 5vw, 3.85rem);
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
     max-width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
   }
 
   @media (max-width: 640px) {
     .hero-title {
       font-size: clamp(1.35rem, 7vw, 2rem);
       line-height: 1.2;
+    }
+
+    .hero-title-main {
+      font-size: 1.6rem;
     }
   }
 
@@ -251,7 +258,23 @@
 
   .hero-title-strong {
     color: #c81f6a;
-    font-weight: 750;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-title-kicker {
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    text-transform: none;
+    color: inherit;
+  }
+
+  .hero-title-main {
+    font-size: clamp(1.6rem, 5.4vw, 3.5rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: #0f172a;
   }
 
   .hero-form {
@@ -1392,7 +1415,11 @@
 
   @media (max-width: 640px) {
     .hero {
-      padding-bottom: 0.5rem;
+      padding-bottom: 1.5rem;
+    }
+
+    .hero-content {
+      display: contents;
     }
 
     .hero-ambient,
@@ -1411,12 +1438,23 @@
     }
 
     .hero-title {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.9rem !important;
+      line-height: 1.2;
+    }
+
+    .hero-title,
+    .hero-content > p {
+      text-align: center;
     }
 
     .hero-form {
       margin-top: 1rem;
+      margin-bottom: 0.5rem;
       padding: 1rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 18px;
+      box-shadow: 0 3px 16px rgba(0, 0, 0, 0.08);
     }
 
     .hero-form-extra-inline {
@@ -1429,35 +1467,232 @@
     }
 
     .hero-visual {
-      display: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 0.75rem;
+      order: 2;
+      padding: 0;
+      min-height: auto;
+    }
+
+    .hero-form {
+      order: 1;
+    }
+
+    .hero-consent {
+      order: 2;
+      margin-top: 0.4rem;
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .hero-legal {
+      order: 3;
+      margin-top: 0.25rem;
+      text-align: left;
+    }
+
+    .hero-response {
+      order: 4;
+      margin-top: 0.75rem;
+    }
+
+    .hero-visual {
+      order: 5;
+      margin-top: 1rem;
     }
 
     .hero-ui-grid {
-      max-width: min(100%, 320px);
-      padding: 0;
-      gap: 0.75rem;
+      max-width: 100%;
       width: 100%;
+      padding: 0;
+      gap: 0.8rem;
       margin: 0 auto;
-    }
-
-    .hero-ui-window + .hero-ui-window {
-      display: none;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      align-items: start;
+      justify-content: center;
+      transform: scale(1);
+      transform-origin: top center;
     }
 
     .hero-ui-window {
-      padding: 0.85rem 0.95rem;
-      border-radius: 16px;
+      padding: 1.1rem 1.25rem;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 100%;
+      box-shadow: 0 24px 56px -32px rgba(15, 23, 42, 0.35);
     }
 
     .hero-ui-window:nth-child(1) {
-      min-height: auto;
+      min-height: 320px;
+      display: block;
+    }
+
+    .hero-ui-window:nth-child(2),
+    .hero-ui-window:nth-child(3) {
+      display: block;
+    }
+
+    .hero-ui-window:nth-child(1) .hero-ui-content {
+      padding-top: 0.5rem;
+    }
+
+    .hero-ui-vacation-card {
+      padding: 0.7rem 0.85rem;
+      border-radius: 12px;
+    }
+
+    .hero-ui-vacation-days {
+      font-size: 1.35rem;
+    }
+
+    .hero-ui-requests-body {
+      display: block;
+    }
+
+    .hero-ui-content--tasks {
+      display: flex;
+    }
+
+    .hero-ui-content .hero-ui-section {
+      display: flex;
+    }
+
+    .hero-ui-news-block {
+      display: flex;
+    }
+
+    .hero-ui-tasktabs {
+      display: flex;
+    }
+
+    .hero-ui-tasklist {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .hero-ui-taskitem-plain {
+      display: flex;
+      padding: 0.45rem 0;
+      font-size: 0.7rem;
+    }
+
+    .hero-ui-taskcta {
+      display: flex;
+    }
+
+    .hero-ui-taskcheckbox {
+      display: inline-block;
+    }
+
+    .hero-ui-news-link {
+      display: inline;
+    }
+
+    .hero-ui-header {
+      gap: 0.4rem;
+    }
+
+    .hero-ui-dot {
+      width: 8px;
+      height: 8px;
+    }
+
+    .hero-ui-category {
+      font-size: 0.6rem;
+    }
+
+    .hero-ui-tasks-title {
+      font-size: 0.7rem;
+      line-height: 1.2;
+    }
+
+    .hero-ui-tasktabs {
+      padding: 0.1rem 0.1rem;
+      gap: 0.25rem;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    .hero-ui-tasktab {
+      padding: 0.12rem 0.4rem;
+      font-size: 0.48rem;
+      white-space: nowrap;
+    }
+
+    .hero-ui-tasktab-count {
+      display: inline-flex;
+      font-size: 0.45rem;
+      padding: 0.02rem 0.3rem;
+    }
+
+    .hero-ui-taskcompany {
+      font-size: 0.6rem;
+      line-height: 1.2;
+      word-break: break-word;
+    }
+
+    .hero-ui-taskdate {
+      font-size: 0.55rem;
+    }
+
+    .hero-ui-profile-name {
+      font-size: 0.62rem;
+      line-height: 1.2;
+    }
+
+    .hero-ui-profile-meta,
+    .hero-ui-news-text {
+      font-size: 0.55rem;
+      line-height: 1.2;
+    }
+
+    .hero-ui-news-heading {
+      font-size: 0.55rem;
+    }
+
+    .hero-ui-news-title {
+      font-size: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .hero-ui-news-link {
+      font-size: 0.55rem;
+    }
+
+    .hero-ui-toolbar {
+      gap: 0.5rem;
+    }
+
+    .hero-ui-action {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.7rem;
+    }
+
+    .hero-ui-dropzone {
+      padding: 0.85rem;
+      font-size: 0.75rem;
+    }
+
+    .hero-ui-absent {
+      padding: 0.75rem;
     }
   }
 
   @media (max-width: 480px) {
+    .hero-title {
+      font-size: 1.65rem !important;
+    }
+
+    .hero-title-main {
+      font-size: 1.45rem;
+    }
+
     .hero-form {
-      padding: 0.9rem;
-      border-radius: 16px;
+      padding: 1rem;
+      border-radius: 18px;
     }
 
     .hero-form-button {
@@ -1465,31 +1700,36 @@
       font-size: 0.9rem;
     }
 
-    .hero-ui-vacation-card {
-      padding: 0.75rem 0.85rem;
-    }
-
-    .hero-ui-vacation-days {
-      font-size: 1.4rem;
+    .hero-visual {
+      margin-top: 2rem;
+      transform: none;
     }
 
     .hero-ui-window {
-      padding: 0.75rem 0.85rem;
+      padding: 0.95rem 1rem;
+      max-width: 100%;
     }
 
-    .hero-ui-tasks-title,
-    .hero-ui-profile-name {
-      font-size: 0.8rem;
+    .hero-ui-vacation-card {
+      padding: 0.9rem;
+    }
+
+    .hero-ui-vacation-days {
+      font-size: 1.75rem;
+    }
+
+    .hero-ui-tasks-title {
+      font-size: 0.75rem;
     }
 
     .hero-ui-action {
-      padding: 0.3rem 0.65rem;
-      font-size: 0.62rem;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.65rem;
     }
 
-    .hero-visual {
-      margin-top: 0.75rem;
-      transform: none;
+    .hero-ui-dropzone {
+      padding: 0.75rem;
+      font-size: 0.7rem;
     }
   }
 
@@ -1517,16 +1757,17 @@
   </div>
 
   <div class="relative mx-auto flex max-w-6xl flex-col gap-6 px-3 py-8 sm:gap-12 sm:px-6 sm:py-16 lg:flex-row lg:items-center lg:gap-16 lg:px-8 lg:py-28">
-    <div class="flex flex-1 flex-col items-center sm:items-start">
+    <div class="hero-content flex flex-1 flex-col items-center sm:items-start order-1 lg:order-none">
       <h1 class="hero-title mt-2 text-center sm:mt-6 sm:text-left md:mt-8">
-        <span class="hero-title-strong">Automatizuota</span> procesų valdymo sistema
+
+        <span class="hero-title-main"><span class="hero-title-strong">Automatizuota</span> procesų valdymo sistema</span>
       </h1>
 
       <p class="mt-3 max-w-xl text-sm leading-relaxed text-primary-600 text-center sm:mt-6 sm:text-left sm:text-base md:text-lg">
-        Vecticum – tai sprendimai verslui greičiau ir paprasčiau atlikti visus procesus nuo sąskaitų ir atostogų tvirtinimo iki specializuotų sprendimų individualiems poreikiams. Mes automatizuojame kasdieninius verslo procesus.
+       Sprendimai verslui greičiau ir paprasčiau atlikti visus procesus nuo sąskaitų ir atostogų tvirtinimo iki specializuotų sprendimų individualiems poreikiams. Mes automatizuojame kasdieninius verslo procesus.
       </p>
 
-      <form class="hero-form w-full max-w-xl mt-4 sm:mt-6" id="hero-contact-form" method="POST">
+      <form class="hero-form w-full max-w-xl mt-4 sm:mt-6 order-1 lg:order-none" id="hero-contact-form" method="POST">
         <input type="hidden" name="newsletterConsent" value="false" data-hero-consent />
         <div class="hero-form-stack">
           <div class="hero-form-primary">
@@ -1597,14 +1838,14 @@
         </div>
       </form>
 
-      <div id="hero-response-message" class="hidden mt-3 w-full max-w-xl"></div>
+      <div id="hero-response-message" class="hero-response hidden mt-3 w-full max-w-xl"></div>
 
-      <label for="hero-consent" class="mt-3 flex max-w-xl items-start gap-2 sm:gap-3 text-left text-xs sm:text-sm text-primary-500 cursor-pointer">
+      <label for="hero-consent" class="hero-consent mt-3 flex max-w-xl items-start gap-2 sm:gap-3 text-left text-xs sm:text-sm text-primary-500 cursor-pointer">
         <input id="hero-consent" type="checkbox" class="mt-0.5 h-4 w-4 sm:h-5 sm:w-5 min-w-[16px] sm:min-w-[20px] flex-shrink-0 rounded border-primary-200 text-accent focus:ring-accent focus:ring-2 cursor-pointer" />
         <span class="leading-relaxed">Taip, noriu gauti naujienas apie Vecticum produktus, įvykius ir pasiūlymus el. paštu.</span>
       </label>
 
-      <p class="mt-2 max-w-xl text-xs sm:text-sm text-primary-400 leading-relaxed text-center sm:text-left">
+      <p class="hero-legal mt-2 max-w-xl text-xs sm:text-sm text-primary-400 leading-relaxed text-center sm:text-left">
         Pateikdami formą, sutinkate su
         <a href="/privatumo-politika" class="text-accent hover:text-accent-600 underline focus:ring-2 focus:ring-accent focus:outline-none rounded">Privatumo politika</a>
         ir
@@ -1612,7 +1853,7 @@
       </p>
     </div>
 
-    <div class="hero-visual">
+    <div class="hero-visual order-2 lg:order-none">
       <div class="hero-ui-grid">
         <!-- Prašymai ir atostogos -->
         <div class="hero-ui-window hero-ui-window--requests">
@@ -1727,16 +1968,6 @@
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4l5 5-5 5"/></svg>
                 </button>
               </li>
-              <li class="hero-ui-taskitem-plain" role="listitem">
-                <input type="checkbox" class="hero-ui-taskcheckbox" aria-label="Pažymėti užduotį" />
-                <div class="hero-ui-taskbody">
-                  <span class="hero-ui-taskcompany">Patvirtinti komandiruotę</span>
-                  <span class="hero-ui-taskdate hero-ui-taskdate--overdue">27 SAU</span>
-                </div>
-                <button class="hero-ui-taskcta" type="button" aria-label="Atlikti veiksmą">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4l5 5-5 5"/></svg>
-                </button>
-              </li>
             </ul>
             <style>
               .hero-ui-tasklist--plain {
@@ -1825,7 +2056,6 @@
             <div class="hero-ui-section hero-ui-news-block">
               <span class="hero-ui-news-heading">Įmonės naujienos</span>
               <span class="hero-ui-news-title">Naujas atostogų planas</span>
-              <span class="hero-ui-news-text">2026 metų atostogų grafikas jau patvirtintas.</span>
               <a class="hero-ui-news-link" href="#">Peržiūrėti</a>
             </div>
           </div>
