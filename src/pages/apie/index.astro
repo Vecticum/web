@@ -1,73 +1,673 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import ClientsLogo from "../../components/home/ClientsLogo.astro";
+import BlogPreview from "../../components/blog/BlogPreview.astro";
+
+const PASSWORD = "vecticum2026";
+
+const seoTitle = "Apie mus | VECTICUM";
+const seoDescription = "Sužinokite VECTICUM istoriją, vertybes, komandą ir pasiekimus. Kuriame patikimus, modernius sprendimus ilgalaikėms partnerystėms.";
+
+const timeline = [
+  {
+    year: "2016",
+    title: "VECTICUM pradžia",
+    description: "Pradėjome kaip mažas produktų kūrimo kolektyvas, siekęs supaprastinti dokumentų, HR ir procesų valdymą. Pirmieji sprendimai buvo orientuoti į darbo laiko apskaitą ir atostogų valdymą, padedant įmonėms automatizuoti kasdienius procesus ir sumažinti popierinį dokumentų srautą.",
+  },
+  {
+    year: "2019",
+    title: "Pirmieji 50 klientų ir ISO 27001 sertifikatas",
+    description: "Išplėtėme sprendimų rinkinį ir sėkmingai įdiegėme sistemas skirtinguose sektoriuose – nuo gamybos įmonių iki viešojo sektoriaus institucijų. Gavome ISO 27001 informacijos saugumo sertifikatą, patvirtinantį aukščiausius duomenų apsaugos standartus ir BDAR atitikimą.",
+  },
+  {
+    year: "2022",
+    title: "Plėtra Baltijos regione ir naujos integracijos",
+    description: "Sustiprinome partnerystes ir pradėjome projektus su tarptautinėmis įmonėmis Lietuvoje, Latvijoje, Estijoje ir Lenkijoje. Sukūrėme integracijas su populiariausiomis buhalterinėmis sistemomis (Merit Aktiva, Directo, Dynamics NAV/BC) ir laiko apskaitos terminalais, išplėtėme platformą iki 6 kalbų.",
+  },
+  {
+    year: "2025",
+    title: "Naujos kartos platforma ir dirbtinis intelektas",
+    description: "Atnaujinome architektūrą, sustiprindami saugumą, našumą ir integracijas. Pristatėme naują cloud-native platformą su pagerintu vartotojo patirtimi, mobilią aplikaciją iOS ir Android įrenginiams bei AI funkcionalumą, padedantį automatizuoti dokumentų valdymą ir sprendimų priėmimą. Pasiekėme 120+ aktyvių klientų ir 45,000+ naudotojų bazę.",
+  },
+];
+
+const team = [
+  {
+    name: "Jaroslav Gil",
+    role: "CEO ir įkūrėjas",
+    bio: "10+ metų patirtis skaitmeninių produktų kūrime, orientuota į vertės kūrimą klientams.",
+    image: "/media/team/Jaroslav.jpg",
+  },
+  {
+    name: "Tomas Masiulis",
+    role: "CTO ir įkūrėjas",
+    bio: "Veda technologijų kryptį, užtikrina platformos saugumą, patikimumą ir augimą.",
+    image: "/media/team/Tomas.jpg",
+  },
+  {
+    name: "Jevgenij Goretov",
+    role: "Diegimo projektų direktorius",
+    bio: "Vadovauja diegimo projektams ir užtikrina aukščiausią kokybę.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Darius Kelevišius",
+    role: "Projektų valdymo direktorius",
+    bio: "Valdo projektų portfelį ir užtikrina strateginių tikslų pasiekimą.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Ieva Šilinskaitė",
+    role: "Pardavimų ir plėtros direktorė",
+    bio: "Veda pardavimų strategiją ir plėtoja verslo galimybes naujose rinkose.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Domas Lalas",
+    role: "Marketingo vadovas",
+    bio: "Kuria marketingo strategijas ir padeda pritraukti naujus klientus.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Ignas Prakapas",
+    role: "Konsultantų komandos vadovas",
+    bio: "Veda konsultantų komandą ir užtikrina aukščiausią aptarnavimo kokybę.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Paulius Prakapas",
+    role: "Projektų vadovas",
+    bio: "Koordinuoja projektus nuo planavimo iki sėkmingo įgyvendinimo.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Linas Merkys",
+    role: "Projektų vadovas",
+    bio: "Valdo projektus ir užtikrina jų laiku ir kokybišką įgyvendinimą.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Raimondas Mačionis",
+    role: "Projektų vadovas",
+    bio: "Koordinuoja sudėtingus projektus ir užtikrina jų sėkmingą pristatymą.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Julija Drozdova",
+    role: "Projektų vadovė",
+    bio: "Valdo projektus ir užtikrina efektyvią komunikaciją su klientais.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Agnė Jazdzauskienė",
+    role: "Diegimo konsultantė",
+    bio: "Padeda klientams sklandžiai įdiegti sprendimus ir pasiekti greitus rezultatus.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Viktoras Staičiūnas",
+    role: "Diegimo konsultantas",
+    bio: "Užtikrina sklandų sistemų diegimą ir adaptaciją klientų aplinkoje.",
+    image: "/media/services/support_team.png",
+  },
+  {
+    name: "Maciej Kasprzykowski",
+    role: "Techninis konsultantas",
+    bio: "Teikia technines konsultacijas ir padeda optimizuoti sistemų veikimą.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Viktorija Žukauskaite",
+    role: "Techninė konsultantė",
+    bio: "Konsultuoja klientus techniniais klausimais ir padeda rasti geriausius sprendimus.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Evelina Zalieckienė",
+    role: "Techninė konsultantė",
+    bio: "Teikia technines konsultacijas ir padeda spręsti sudėtingas problemas.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Živilė Juknevičiūtė-Akstinė",
+    role: "Techninė konsultantė",
+    bio: "Konsultuoja klientus ir padeda optimaliai naudoti sistemas.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Vitaliy Melnyk",
+    role: "Programuotojas",
+    bio: "Kuria patikimas ir modernias sistemas naudojant naujausias technologijas.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Šarūnas Mažintas",
+    role: "Programuotojas",
+    bio: "Specializuojasi backend sistemų kūrime ir integracijos sprendimuose.",
+    image: "/media/team/user-avatar.svg",
+  },
+  {
+    name: "Dovydas Gricius",
+    role: "Programuotojas",
+    bio: "Kuria modernias web aplikacijas ir užtikrina aukštą kodo kokybę.",
+    image: "/media/team/user-avatar.svg",
+  },
+];
+
+const values = [
+  {
+    title: "Kokybė ir modernumas",
+    description: "Kuriame patikimus sprendimus, kurie atitinka šiuolaikinius saugumo ir našumo standartus.",
+  },
+  {
+    title: "Lankstumas ir pritaikomumas",
+    description: "Lengvai prisitaikome prie kliento procesų ir augančių poreikių.",
+  },
+  {
+    title: "Ilgalaikė partnerystė",
+    description: "Mūsų tikslas – ne vienas projektas, o ilgalaikis bendradarbiavimas.",
+  },
+];
+
+const stats = [
+  { value: "120+", label: "aktyvių klientų įmonių" },
+  { value: "45K+", label: "aktyvių naudotojų" },
+  { value: "8", label: "rinkos ir šalys" },
+  { value: "6", label: "kalbų palaikymas" },
+];
+
+const certificates = [
+  {
+    title: "ISO/IEC 27001",
+    text: "Esame sertifikuoti pagal tarptautinį informacijos saugos standartą",
+    logo: "/media/services/ISO27001.webp",
+    alt: "ISO 27001 informacijos saugumo vadybos sistemos sertifikatas",
+  },
+  {
+    title: "Google Cloud",
+    text: "Vecticum veikia saugioje ir lengvai plečiamoje debesijos aplinkoje",
+    logo: "/media/services/google-cloud-emblem.webp",
+    alt: "Google Cloud Platform partnerio logotipas",
+  },
+  {
+    title: "eIDAS",
+    text: "Atitinkame ES reglamento reikalavimus dėl saugaus naudotojų tapatybės patvirtinimo",
+    logo: "/media/services/eidas-emblem.webp",
+    alt: "eIDAS elektroninio parašo reglamento atitikties ženklas",
+  },
+];
+
+
+
+ 
 ---
 
-<MainLayout title="About Me" description="Lorem ipsum dolor sit amet">
-  <div
-    class="flex flex-col gap-4 max-w-7xl px-2 md:px-4 lg:px-8 mx-auto py-8 md:py-24"
-  >
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo
-      integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu
-      turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-      adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus
-      sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna
-      fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet
-      mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer
-      quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit
-      amet.
-    </p>
-
-    <p>
-      Morbi tristique senectus et netus. Id semper risus in hendrerit gravida
-      rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis
-      purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae
-      congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-      porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt
-      lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer
-      feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue
-      quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum.
-      Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et
-      pharetra pharetra massa massa ultricies mi.
-    </p>
-
-    <p>
-      Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque.
-      Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac
-      felis donec. Egestas integer eget aliquet nibh praesent tristique magna
-      sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa
-      sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget
-      lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed
-      viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse
-      interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem
-      sed risus ultricies tristique. Rhoncus dolor purus non enim praesent
-      elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus
-      egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti
-      nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor
-      rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-    </p>
-
-    <p>
-      Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere
-      ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut
-      sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris
-      in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-      gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas
-      tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla
-      pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas
-      volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-      cursus metus aliquam eleifend mi.
-    </p>
-
-    <p>
-      Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus
-      imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu
-      cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum.
-      Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit
-      libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed
-      pulvinar proin gravida. Egestas integer eget aliquet nibh praesent
-      tristique magna.
-    </p>
+<MainLayout title={seoTitle} description={seoDescription}>
+  <!-- Password Protection Overlay -->
+  <div id="passwordOverlay" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex items-center justify-center">
+    <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
+      <div class="text-center mb-6">
+        <svg class="w-16 h-16 text-[#3C7099] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+        </svg>
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Apsaugotas puslapis</h2>
+        <p class="text-gray-600">Įveskite slaptažodį, kad peržiūrėtumėte šį puslapį</p>
+      </div>
+      <form id="passwordForm" class="space-y-4">
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Slaptažodis</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3C7099] focus:border-transparent outline-none"
+            placeholder="Įveskite slaptažodį"
+            required
+          />
+        </div>
+        <div id="errorMessage" class="text-red-600 text-sm hidden">Neteisingas slaptažodis</div>
+        <button
+          type="submit"
+          class="w-full bg-[#3C7099] text-white py-3 rounded-lg font-semibold hover:bg-[#2d5573] transition-colors"
+        >
+          Patvirtinti
+        </button>
+      </form>
+    </div>
   </div>
+
+  <script define:vars={{ PASSWORD }}>
+    document.addEventListener('DOMContentLoaded', function() {
+      const overlay = document.getElementById('passwordOverlay');
+      const form = document.getElementById('passwordForm');
+      const passwordInput = document.getElementById('password');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // Check if already authenticated
+      if (sessionStorage.getItem('apiePageAuth') === 'true') {
+        overlay.style.display = 'none';
+      }
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const enteredPassword = passwordInput.value;
+        
+        if (enteredPassword === PASSWORD) {
+          sessionStorage.setItem('apiePageAuth', 'true');
+          overlay.style.display = 'none';
+          errorMessage.classList.add('hidden');
+        } else {
+          errorMessage.classList.remove('hidden');
+          passwordInput.value = '';
+          passwordInput.focus();
+        }
+      });
+    });
+  </script>
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-[#E8F1FF] via-white to-[#f8fafc] py-24 px-6 overflow-hidden">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzQzcwOTkiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0YzAtMS4xLjktMiAyLTJoMnYyaC0yYy0xLjEgMC0yLS45LTItMnptLTQgMGMwIDEuMS0uOSAyLTIgMnYtMmgyek0xMiAzNGMwLTEuMS45LTIgMi0yaDF2Mmgtek0yMCAxMmMxLjEgMCAyIC45IDIgMnYyaC0yYy0xLjEgMC0yLS45LTItMmgtMnYtMmgyem0tOCA4YzAtMS4xLjktMiAyLTJ2Mmgtemi+PC9wYXRoPjwvZz48L3N2Zz4=')] opacity-40"></div>
+    <div class="max-w-5xl mx-auto text-center relative">
+      <div class="inline-flex items-center rounded-full bg-[#3C7099]/10 px-4 py-2 mb-6">
+        <svg class="w-4 h-4 text-[#3C7099] mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+        </svg>
+        <span class="text-sm font-semibold text-[#3C7099]">Apie VECTICUM</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+        Kuriame <span class="text-[#3C7099]">sprendimus</span>,<br/>kurie padeda augti
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+        VECTICUM – komanda, kuri kuria modernias sistemas dokumentų, HR ir procesų valdymui. 
+        Dirbame tam, kad jūsų organizacija veiktų greičiau, saugiau ir skaidriau.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+        <a
+          href="/kontaktai"
+          class="inline-flex items-center justify-center rounded-full bg-[#3C7099] px-8 py-4 text-white text-base font-semibold shadow-lg hover:bg-[#2d5573] transition-all hover:scale-105"
+        >
+          Susisiekti su mumis
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a
+          href="#istorija"
+          class="inline-flex items-center justify-center rounded-full border-2 border-[#3C7099] px-8 py-4 text-base font-semibold text-gray-900 hover:bg-[#3C7099]/10 transition-colors"
+        >
+          Sužinoti daugiau
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apie įmonę + Istorija -->
+  <section id="istorija" class="py-20 px-6 bg-white border-t-2 border-gray-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-12">
+        <div class="text-center mb-8">
+          <span class="inline-block text-sm font-semibold text-[#3C7099] uppercase tracking-wider mb-4">Mūsų kelias</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Kas yra VECTICUM - verslo valdymo sistemų lyderis Lietuvoje</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-12">
+        <div class="relative group h-full">
+          <div class="absolute -inset-1 bg-gradient-to-r from-[#3C7099] to-[#5a8ab8] rounded-3xl blur opacity-25 group-hover:opacity-40 transition"></div>
+          <img
+            src="/ofisas.jpg"
+            alt="VECTICUM biuras"
+            class="relative w-full h-full object-cover rounded-2xl shadow-lg ring-1 ring-gray-200"
+            loading="lazy"
+          />
+        </div>
+        <div class="space-y-4">
+          <p class="text-lg text-gray-700 leading-relaxed">
+            <strong class="text-[#3C7099]">VECTICUM</strong> – tai visapusė <strong>verslo valdymo platforma</strong>, 
+            sukurta Lietuvoje, jungianti <strong>personalo valdymo sistemą (HR)</strong>, <strong>sąskaitų valdymą</strong> 
+            ir <strong>dokumentų valdymo sistemą (DMS)</strong>. Skirta įmonėms, kurios vertina efektyvumą, automatizaciją 
+            ir patogumą visuose verslo procesuose.
+          </p>
+          
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Mūsų platforma apima <strong>darbo laiko apskaitą</strong>, <strong>atostogų valdymą</strong>, 
+            <strong>sąskaitų faktūrų išrašymą ir valdymą</strong>, <strong>elektroninį dokumentų pasirašymą</strong>, 
+            <strong>dokumentų archyvą</strong>, <strong>savitarnos portalą darbuotojams</strong>, 
+            <strong>projektų valdymą</strong> ir kitas esmines <strong>verslo administravimo</strong> funkcijas vienoje vietoje.
+          </p>
+          
+          <p class="text-lg text-gray-700 leading-relaxed">
+            Nuo 2016 metų VECTICUM tapo <strong>patikimu partneriu</strong> įvairiose Lietuvos bei užsienio rinkose – 
+            nuo <strong>gamybos įmonių</strong> ir <strong>paslaugų sektoriaus</strong> iki <strong>viešojo sektoriaus institucijų</strong>. 
+            Mūsų sistema padeda automatizuoti kasdienius <strong>verslo procesus</strong>, sumažinti popierinį dokumentų srautą, 
+            valdyti <strong>finansinius dokumentus</strong> ir suteikti <strong>darbuotojų savitarnos funkcionalumą</strong>.
+          </p>
+          
+          <p class="text-lg text-gray-700 leading-relaxed">
+            VECTICUM sprendimai apima ne tik <strong>personalo valdymą</strong>, bet ir <strong>visą verslo dokumentų ciklą</strong> – 
+            nuo <strong>sąskaitų išrašymo</strong> iki <strong>ilgalaikio archyvavimo</strong>, nuo <strong>sutarčių valdymo</strong> 
+            iki <strong>elektroninio parašo</strong>. Tai viena sistema visiems įmonės administravimo poreikiams.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+        <div class="bg-[#E8F1FF] rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-[#3C7099]">120+</div>
+          <div class="text-xs text-gray-600 mt-1">Aktyvių klientų</div>
+        </div>
+        <div class="bg-[#E8F1FF] rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-[#3C7099]">45K+</div>
+          <div class="text-xs text-gray-600 mt-1">Naudotojų</div>
+        </div>
+        <div class="bg-[#E8F1FF] rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-[#3C7099]">8</div>
+          <div class="text-xs text-gray-600 mt-1">Rinkos</div>
+        </div>
+        <div class="bg-[#E8F1FF] rounded-xl p-4 text-center">
+          <div class="text-2xl font-bold text-[#3C7099]">6</div>
+          <div class="text-xs text-gray-600 mt-1">Kalbos</div>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-white to-[#f8fafc] rounded-2xl p-10 shadow-lg border border-gray-100">
+        <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center justify-center">
+          <svg class="w-6 h-6 text-[#3C7099] mr-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+          </svg>
+          Istorija ir pasiekimai
+        </h3>
+        <div class="max-w-4xl mx-auto flex justify-center">
+          <ol class="relative border-s-2 border-[#3C7099]/30 space-y-8 ms-4 ps-8">
+          {timeline.map((item, index) => (
+            <li class="ms-8 group/item">
+              <span class="absolute -start-5 flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#3C7099] to-[#5a8ab8] text-white text-sm font-bold shadow-lg ring-4 ring-white group-hover/item:scale-110 transition-transform">
+                {item.year}
+              </span>
+              <h4 class="text-lg font-bold text-gray-900 mb-2 group-hover/item:text-[#3C7099] transition-colors">{item.title}</h4>
+              <p class="text-base text-gray-600 leading-relaxed">{item.description}</p>
+            </li>
+          ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Komanda -->
+  <section class="py-20 px-6 bg-[#f8fafc] border-t-2 border-gray-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-sm font-semibold text-[#3C7099] uppercase tracking-wider mb-4">Mūsų žmonės</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Komanda</h2>
+        <p class="mt-4 text-lg text-gray-600">
+          Mūsų patirtis sujungia technologijas, verslo procesus ir dėmesį klientui.
+        </p>
+      </div>
+      <div class="space-y-8">
+        <!-- Įkūrėjai / Pagrindiniai darbuotojai -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {team.slice(0, 2).map((member) => (
+            <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center group hover:shadow-xl hover:border-[#3C7099]/20 transition-all hover:-translate-y-1">
+              <div class="relative inline-block">
+                <div class="absolute -inset-1 bg-gradient-to-r from-[#3C7099] to-[#5a8ab8] rounded-full blur opacity-25 group-hover:opacity-50 transition"></div>
+                <img
+                  src={member.image}
+                  alt={`${member.name} nuotrauka`}
+                  class="relative mx-auto h-32 w-32 rounded-full object-cover ring-4 ring-white"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="mt-5 text-xl font-bold text-gray-900 group-hover:text-[#3C7099] transition-colors">{member.name}</h3>
+              <p class="text-base text-[#3C7099] font-semibold mt-1">{member.role}</p>
+              <p class="mt-3 text-base text-gray-600 leading-relaxed">{member.bio}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Kiti komandos nariai -->
+        <div class="flex flex-wrap justify-center gap-6">
+          {team.slice(2).map((member) => (
+            <div class="w-full sm:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1.2rem)] bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl hover:border-[#3C7099]/20 transition-all hover:-translate-y-1">
+              <div class="relative inline-block">
+                <div class="absolute -inset-1 bg-gradient-to-r from-[#3C7099] to-[#5a8ab8] rounded-full blur opacity-25 group-hover:opacity-50 transition"></div>
+                <img
+                  src={member.image}
+                  alt={`${member.name} nuotrauka`}
+                  class="relative mx-auto h-20 w-20 rounded-full object-cover ring-4 ring-white"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="mt-4 text-base font-bold text-gray-900 group-hover:text-[#3C7099] transition-colors">{member.name}</h3>
+              <p class="text-xs text-[#3C7099] font-semibold mt-1">{member.role}</p>
+              <p class="mt-2 text-xs text-gray-600 leading-relaxed">{member.bio}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vertybės -->
+  <section class="py-20 px-6 bg-white border-t-2 border-gray-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-sm font-semibold text-[#3C7099] uppercase tracking-wider mb-4">Kas mus veda</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Vertybės</h2>
+        <p class="mt-4 text-lg text-gray-600">
+          Mūsų požiūris pagrįstas kokybe, inovacijomis ir ilgalaikiu bendradarbiavimu.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {values.map((value, index) => (
+          <div class="relative rounded-2xl bg-gradient-to-br from-white to-[#f8fafc] border-2 border-[#3C7099]/10 p-8 shadow-lg hover:shadow-xl hover:border-[#3C7099]/30 transition-all group hover:-translate-y-1">
+            <div class="absolute top-6 right-6 text-6xl font-bold text-[#3C7099]/5 group-hover:text-[#3C7099]/10 transition-colors">{index + 1}</div>
+            <div class="w-12 h-12 rounded-full bg-[#3C7099]/10 flex items-center justify-center mb-4 group-hover:bg-[#3C7099]/20 transition-colors">
+              <svg class="w-6 h-6 text-[#3C7099]" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#3C7099] transition-colors">{value.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Klientai ir projektai -->
+  <section class="py-20 px-6 bg-[#f8fafc] border-t-2 border-gray-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-sm font-semibold text-[#3C7099] uppercase tracking-wider mb-4">Mūsų įtaka</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Klientai ir įgyvendinti projektai</h2>
+        <p class="mt-4 text-lg text-gray-600">
+          Dirbame su skirtingo dydžio organizacijomis – nuo augančių komandų iki tarptautinių grupių.
+        </p>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="bg-gradient-to-br from-white to-[#f8fafc] rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#3C7099]/30 transition-all group">
+          <div class="flex items-start gap-4 mb-6">
+            <img src="/media/recomendations/rec-kavita.webp" alt="KAVITA" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
+            <div>
+              <h3 class="font-bold text-gray-900 text-lg">Vytautas Vasiliauskas</h3>
+              <p class="text-sm text-[#3C7099] font-medium">Technologijų direktorius, KAVITA</p>
+            </div>
+          </div>
+          <div class="relative">
+            <svg class="absolute -top-2 -left-2 w-8 h-8 text-[#3C7099]/10" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="text-gray-700 leading-relaxed pl-6">
+              Įdiegus VECTICUM sprendimus, mūsų kasdieniai procesai tapo žymiai efektyvesni. Pastebėjome aiškų laiko ir resursų taupymą, VECTICUM tapo mūsų komandos kasdienių darbų partneriu.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-[#f8fafc] rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#3C7099]/30 transition-all group">
+          <div class="flex items-start gap-4 mb-6">
+            <img src="/media/recomendations/yukon-rec.png" alt="YUKON" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
+            <div>
+              <h3 class="font-bold text-gray-900 text-lg">Georgij Nikonorov</h3>
+              <p class="text-sm text-[#3C7099] font-medium">HR vadovas, YUKON Advanced Optics</p>
+            </div>
+          </div>
+          <div class="relative">
+            <svg class="absolute -top-2 -left-2 w-8 h-8 text-[#3C7099]/10" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="text-gray-700 leading-relaxed pl-6">
+              Platforma padėjo mums sisteminti ir automatizuoti procesus, ženkliai padidinti darbo efektyvumą. Džiugina patogumas, apgalvotas funkcionalumas ir operatyvi pagalba.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-[#f8fafc] rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#3C7099]/30 transition-all group">
+          <div class="flex items-start gap-4 mb-6">
+            <img src="/media/recomendations/FREDA-REC.png" alt="FREDA" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
+            <div>
+              <h3 class="font-bold text-gray-900 text-lg">Skaistė Grėbliauskė</h3>
+              <p class="text-sm text-[#3C7099] font-medium">Finansų direktorė, FREDA</p>
+            </div>
+          </div>
+          <div class="relative">
+            <svg class="absolute -top-2 -left-2 w-8 h-8 text-[#3C7099]/10" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="text-gray-700 leading-relaxed pl-6">
+              Sprendimas ženkliai pagerino dokumentų valdymo procesus. Sistema veikia patikimai ir yra lengvai pritaikoma augantiems poreikiams.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-[#f8fafc] rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#3C7099]/30 transition-all group">
+          <div class="flex items-start gap-4 mb-6">
+            <img src="/media/recomendations/GATAS-rec.png" alt="GATAS" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
+            <div>
+              <h3 class="font-bold text-gray-900 text-lg">Erika Grigaliūnaitė</h3>
+              <p class="text-sm text-[#3C7099] font-medium">Pirkimų vadybininkė, GATAS</p>
+            </div>
+          </div>
+          <div class="relative">
+            <svg class="absolute -top-2 -left-2 w-8 h-8 text-[#3C7099]/10" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="text-gray-700 leading-relaxed pl-6">
+              Nesudėtingas programos naudojimas. Palengvėja sąskaitų apskaita, yra galimybė pasitikrinti, ar visos sąskaitos užregistruotos, todėl darbas tampa lengvesnis ir efektyvesnis.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mb-16">
+        <a
+          href="/rekomendacijos"
+          class="inline-flex items-center gap-2 font-semibold text-[#3C7099] hover:text-[#2d5573] transition-colors group"
+        >
+          Visos rekomendacijos
+          <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mt-16">
+        <ClientsLogo />
+      </div>
+    </div>
+  </section>
+
+  <!-- Sertifikatai -->
+  <section class="py-20 px-6 bg-white border-t-2 border-gray-200">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-sm font-semibold text-[#3C7099] uppercase tracking-wider mb-4">Standartai ir sertifikatai</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Sertifikuota. Patikima. Paruošta augti.</h2>
+        <p class="mt-4 text-lg text-gray-600">
+          Laikomės tarptautinių standartų ir nuolat investuojame į saugumą bei patikimumą.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {certificates.map((item) => (
+          <div class="bg-gradient-to-br from-white to-[#f8fafc] border-2 border-gray-200 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl hover:border-[#3C7099]/30 transition-all group hover:-translate-y-1">
+            <div class="h-24 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <img src={item.logo} alt={item.alt} class="h-20 w-auto object-contain" loading="lazy" />
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#3C7099] transition-colors">{item.title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Naujienos -->
+  <BlogPreview />
+
+  <!-- Kontaktai -->
+  <section class="py-20 px-6 bg-[#f8fafc] border-t-2 border-gray-200">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block text-sm font-semibold text-[#3C7099] uppercase tracking-wider mb-4">Susisiekime</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Kontaktai</h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Norite sužinoti daugiau ar gauti demonstraciją? Mūsų komanda pasiruošusi padėti.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#3C7099]/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-semibold text-gray-900">El. paštas</p>
+              <p class="text-base text-[#3C7099] font-medium">info@vecticum.lt</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#3C7099]/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-semibold text-gray-900">Telefonas</p>
+              <p class="text-base text-[#3C7099] font-medium">+370 696 05332</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-[#3C7099]/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div class="ml-4">
+              <p class="text-sm font-semibold text-gray-900">Adresas</p>
+              <p class="text-base text-[#3C7099] font-medium">T. Kosciuškos g. 24, Vilnius</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gradient-to-br from-white to-[#E8F1FF] p-10 rounded-2xl shadow-xl border border-[#3C7099]/20">
+        <h3 class="text-2xl font-bold text-gray-900 mb-3">Pasikalbėkime</h3>
+        <p class="text-base text-gray-600 mb-8">
+          Pasidalinkite poreikiais, o mes pasiūlysime geriausią sprendimą.
+        </p>
+        <a
+          href="/kontaktai"
+          class="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#3C7099] to-[#5a8ab8] px-8 py-4 text-white text-base font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105"
+        >
+          Susisiekti dabar
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
 </MainLayout>
