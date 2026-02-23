@@ -577,8 +577,9 @@
         try {
           result = JSON.parse(text);
         } catch (parseError) {
-          console.error('Failed to parse response JSON:', parseError);
-          result = { message: 'Serverio atsakymo klaida' };
+          console.error('Failed to parse response JSON, but will check status code:', parseError);
+          // Don't set error message here - let status code decide
+          result = {};
         }
       }
       

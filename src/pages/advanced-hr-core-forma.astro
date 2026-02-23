@@ -520,7 +520,15 @@ const canonical = 'https://vecticum.lt/advanced-hr-core-forma';
       }
       const text = await response.text();
       console.log('Raw response:', text);
-      const result = text ? JSON.parse(text) : {};
+      let result = {};
+      if (text) {
+        try {
+          result = JSON.parse(text);
+        } catch (parseError) {
+          console.error('Failed to parse response JSON, but will check status code:', parseError);
+          result = {};
+        }
+      }
       console.log('API response:', response.status, result);
 
       if (response.ok) {
