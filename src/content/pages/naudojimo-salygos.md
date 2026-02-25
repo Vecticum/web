@@ -1,5 +1,5 @@
 ---
-title: "Naudojimo sąlygos"
+title: "Naudojimo sąlygos | Vecticum"
 description: "Peržiūrėkite Vecticum naudojimo sąlygas ir susipažinkite su svetainės naudojimo taisyklėmis, autorinių teisių apsauga bei atsakomybe."
 ---
 

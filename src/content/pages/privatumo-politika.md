@@ -1,5 +1,5 @@
 ---
-title: "Privatumo politika"
+title: "Privatumo politika | Vecticum"
 description: "Vecticum užtikrina asmens duomenų saugumą pagal ES GDPR reglamentus. Skaitykite apie jūsų teises ir privatumo politiką mūsų svetainėje."
 ---
 
