@@ -1,0 +1,521 @@
+---
+meta:
+  title: Statybos, NT ir pastatų priežiūros įmonėms | VECTICUM valdymo sistema
+  description: Efektyvus personalo, projektų ir dokumentų valdymas statybos, nekilnojamojo turto ir pastatų priežiūros sektoriuje
+  ogImage: /media/industries/statyba-hero.webp
+  ogType: website
+  canonical: https://vecticum.lt/industrijos/statyba-nt-pastatu-prieziura/
+title: Automatizuojame statybos ir NT valdymo procesus
+description: VECTICUM padeda statybos, nekilnojamojo turto ir pastatų priežiūros įmonėms efektyviai valdyti personalą, projektus, dokumentus ir procesus. Mūsų sprendimas pritaikytas sektoriaus specifikai – nuo darbuotojų saugos iki sutarčių valdymo.
+hero_image: "/media/services/statyba-hero.webp"
+hero_image_alt: "Statybos ir NT įmonių valdymo sprendimai | VECTICUM"
+industry: "Statyba, NT ir pastatų priežiūra"
+---
+
+import ContactForm from "../../components/home/ContactForm.astro";
+import Services from "../../components/home/Services.astro";
+import { Image } from "astro:assets";
+
+{/* Vertės statybos ir NT įmonėms */}
+
+<section class="w-full bg-gradient-to-b from-gray-50 to-white py-24 border-t border-gray-200">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-20">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Kodėl statybos ir NT įmonės renkasi VECTICUM?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Profesionalūs sprendimai statybos ir nekilnojamojo turto valdymo efektyvumui
+      </p>
+    </div>
+
+    {/* 6 USP Items */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+      {/* Darbuotojų sauga ir darbo priemonių išdavimas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#C81F6A] hover:border-[#C81F6A] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#C81F6A]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#C81F6A]/20 transition-all duration-300">
+              <i class="fa-solid fa-helmet-safety text-[#C81F6A] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Darbuotojų sauga ir darbo priemonės</h3>
+            <p class="text-gray-600 leading-relaxed">Automatizuotas supažindinimas su darbo tvarkomis ir saugos taisyklėmis bei asmens apsaugos ir darbo priemonių išdavimo, apskaitos ir kontrolės valdymas.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Projektu ir objektu valdymas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#3C7099] hover:border-[#3C7099] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#3C7099]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#3C7099]/20 transition-all duration-300">
+              <i class="fa-solid fa-building text-[#3C7099] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Projektų ir objektų valdymas</h3>
+            <p class="text-gray-600 leading-relaxed">Centralizuotas projektų, objektų ir su jais susijusių dokumentų, sutarčių bei išteklių valdymas vienoje sistemoje.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Darbuotojų mobilumas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#3C7099] hover:border-[#3C7099] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#3C7099]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#3C7099]/20 transition-all duration-300">
+              <i class="fa-solid fa-mobile-screen text-[#3C7099] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Mobilumas ir savitarna</h3>
+            <p class="text-gray-600 leading-relaxed">Patogi darbuotojų savitarna iš bet kurios vietos – atostogų prašymai, dokumentų peržiūra ir išduoto inventoriaus stebėjimas telefone.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Sutarciu ir dokumentu valdymas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#C81F6A] hover:border-[#C81F6A] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#C81F6A]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#C81F6A]/20 transition-all duration-300">
+              <i class="fa-solid fa-file-contract text-[#C81F6A] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Sutarčių ir dokumentų valdymas</h3>
+            <p class="text-gray-600 leading-relaxed">Visų sutarčių su tiekėjais, rangovais ir subrangovais centralizuotas valdymas su automatiniais priminimais apie galiojimo terminus.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Pirkimų ir sąskaitų valdymas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#3C7099] hover:border-[#3C7099] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#3C7099]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#3C7099]/10 transition-all duration-300">
+              <i class="fa-solid fa-cart-shopping text-[#3C7099] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Pirkimų ir sąskaitų valdymas</h3>
+            <p class="text-gray-600 leading-relaxed">Centralizuotas įmonės pirkimų ir sąskaitų procesų valdymas – nuo poreikio inicijavimo iki tvirtinimo pagal projektus ar objektus.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Resursų planavimas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#C81F6A] hover:border-[#C81F6A] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#C81F6A]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#C81F6A]/20 transition-all duration-300">
+              <i class="fa-solid fa-calendar-days text-[#C81F6A] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Resursų planavimas</h3>
+            <p class="text-gray-600 leading-relaxed">Efektyvus žmonių, įrangos ir materialiųjų išteklių planavimas ir paskirstymas tarp skirtingų projektų bei objektų.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{/* Sprendimai statybos ir NT įmonėms */}
+
+<section class="w-full bg-gradient-to-br from-[#E8EDF2] to-[#DFE6ED] py-24">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-20">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Sprendimai, kuriuos renkasi <span class="text-[#3C7099]">statybos ir NT įmonės</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Pilnas funkcionalumas statybos ir NT įmonių kasdienybei – nuo darbo saugos iki sutarčių valdymo
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      
+      {/* Darbo sauga */}
+      <div class="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 group">
+        <div class="flex items-start gap-5 mb-8 pb-6 border-b border-gray-100">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#C81F6A] to-[#a01854] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-helmet-safety text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Darbo sauga</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/testavimo-is-norminiu-dokumentu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Instruktažų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/mokymu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Sertifikatų kontrolė</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/isduodamo-inventoriaus-darbuotojui-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Darbo apranga ir APD</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Sąskaitų valdymas */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-start gap-5 mb-8 pb-6 border-b border-gray-100">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#3C7099] to-[#2d5573] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-file-invoice-dollar text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Sąskaitų valdymas</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/gaunamu-saskaitu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Gaunamų sąskaitų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/gaunamu-saskaitu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Sąskaitų skaitmeninimas (OCR)</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/gaunamu-saskaitu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Kaštų paskirstymas projektams</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Pirkimų valdymas */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-start gap-5 mb-8 pb-6 border-b border-gray-100">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#C81F6A] to-[#a01854] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-cart-shopping text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Pirkimų valdymas</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/pirkimu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Pirkimų paraiškos</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/pirkimu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Pirkimų tvirtinimas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/pirkimu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Pirkimų archyvas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Sutarčių valdymas */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-start gap-5 mb-8 pb-6 border-b border-gray-100">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#3C7099] to-[#2d5573] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-file-contract text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Sutarčių valdymas</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/sutarciu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Komercinių sutarčių valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/sutarciu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Sutarčių termino kontrolė</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/sutarciu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Dokumentų archyvavimas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Turto valdymas */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-start gap-5 mb-8 pb-6 border-b border-gray-100">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#C81F6A] to-[#a01854] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-boxes-stacked text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Turto valdymas</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/isduodamo-inventoriaus-darbuotojui-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Darbo priemonių išdavimas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/isduodamo-inventoriaus-darbuotojui-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Inventoriaus apskaita</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/isduodamo-inventoriaus-darbuotojui-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Įrangos grąžinimas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Personalo valdymas */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-start gap-5 mb-8 pb-6 border-b border-gray-100">
+          <div class="w-16 h-16 bg-gradient-to-br from-[#3C7099] to-[#2d5573] rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-users text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Personalo valdymas</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/atostogu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Atostogų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/darbuotoju-prasymu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Prašymų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/darbuotoju-idarbinimo-savitarna/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Įdarbinimo savitarna</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    {/* CTA Button */}
+    <div class="text-center">
+      <a 
+        href="/sprendimai/" 
+        class="inline-flex items-center gap-3 bg-gradient-to-r from-[#3C7099] to-[#2d5573] text-white px-10 py-5 rounded-full font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-white"
+      >
+        <span>Visi sprendimai</span>
+        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{/* Klientai statybos ir NT sektoriuje */}
+
+<section class="w-full py-20 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-7xl mx-auto">
+    
+    {/* Header */}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Statybos ir NT įmonės, kurios pasitiki VECTICUM
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Įmonės iš statybos, nekilnojamojo turto ir pastatų priežiūros sektoriaus jau naudoja VECTICUM kasdieniniam procesų valdymui
+      </p>
+    </div>
+
+    {/* Two Column Layout */}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left - Client Logos */}
+      <div>
+        <div class="grid grid-cols-2 gap-8">
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl h-32">
+            <div class="text-gray-400 text-sm">Klientų logotipai</div>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl h-32">
+            <div class="text-gray-400 text-sm">Klientų logotipai</div>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl h-32">
+            <div class="text-gray-400 text-sm">Klientų logotipai</div>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl h-32">
+            <div class="text-gray-400 text-sm">Klientų logotipai</div>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-[#EBEFF3] rounded-2xl h-32">
+            <div class="text-gray-400 text-sm">Klientų logotipai</div>
+          </div>
+          <a
+            href="/rekomendacijos/"
+            aria-label="Kiti įmonės klientai"
+            class="group relative overflow-hidden flex items-center justify-center h-32 rounded-2xl border-2 border-gray-200 bg-white transition shadow-sm hover:shadow-lg hover:border-[#3C7099] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3C7099]/40"
+          >
+            <span class="pointer-events-none absolute -right-6 -top-6 w-28 h-28 rounded-full bg-gradient-to-br from-[#3C7099]/10 to-[#C81F6A]/10 blur-xl"></span>
+            <div class="text-center relative">
+              <div class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#3C7099]">Kiti klientai</div>
+              <div class="text-sm text-gray-600 mt-1 flex items-center justify-center gap-2">
+                Peržiūrėti rekomendacijas
+                <i class="fa-solid fa-arrow-right text-[#3C7099] transition-transform group-hover:translate-x-0.5"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Right - Testimonial */}
+      <div>
+        <div class="bg-gradient-to-br from-[#EBEFF3] to-white rounded-2xl p-8 lg:p-10 border-2 border-gray-200 relative overflow-hidden h-full">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#3C7099]/10 to-[#C81F6A]/10 rounded-full blur-3xl"></div>
+          
+          <div class="relative h-full flex flex-col">
+            <div class="mb-6">
+              <i class="fa-solid fa-quote-left text-5xl text-[#C81F6A]/20"></i>
+            </div>
+            
+            <blockquote class="text-lg lg:text-xl text-gray-800 leading-relaxed mb-8 flex-grow">
+              VECTICUM sistema padėjo mums centralizuotai valdyti visus projektus ir su jais susijusius dokumentus. Darbo saugos instruktažų valdymas tapo žymiai paprastesnis, o darbuotojai gali lengvai pasiekti reikalingą informaciją iš savo telefonų tiesiog statybvietėje.
+            </blockquote>
+            
+            <div class="flex items-center gap-4 pt-6 border-t border-gray-200">
+              <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-200">
+                <div class="w-full h-full flex items-center justify-center text-gray-400">
+                  <i class="fa-solid fa-user text-2xl"></i>
+                </div>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900 text-lg">Statybos įmonės atstovas</div>
+                <div class="text-sm text-gray-600">Projektų vadovas</div>
+                <div class="text-xs text-gray-500">Statybos įmonė</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{/* Jūsų statybos ir NT ekspertai */}
+
+<section class="w-full bg-white py-20">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Header */}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+      <span class="text-[#C81F6A]">Statybos ir NT sektoriaus</span> diegimo ekspertai jūsų paslaugoms
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Kiekvienas projektas turi skirtą ekspertų komandą, kuri supranta statybos ir NT valdymo specifiką – nuo darbo saugos iki projektų valdymo
+      </p>
+    </div>
+
+    {/* Content Grid */}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left - Image */}
+      <div class="flex justify-center items-center">
+        <div class="relative w-4/5">
+          <img 
+            src="/media/team/user-avatar.svg" 
+            alt="VECTICUM statybos ir NT ekspertų komanda"
+            class="w-full h-auto"
+          />
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white via-white/95 to-transparent py-6 px-6 flex justify-center">
+            <div class="bg-[#3C7099]/15 backdrop-blur-sm rounded-2xl px-6 py-4 border border-white/60">
+              <p class="text-gray-900 font-bold text-xl mb-1">Julija Drozdova</p>
+              <p class="text-[#3C7099] font-semibold text-sm">VECTICUM diegimo ekspertė</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right - Features */}
+      <div class="space-y-6">
+        
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300">
+          <div class="w-12 h-12 bg-[#3C7099] rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-building text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Statybos ir NT procesų ekspertai</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Supranta statybos ir NT sektoriaus specifiką: projektų valdymą, darbo saugą, sutarčių su rangovais valdymą ir išteklių planavimą.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#C81F6A] transition-all duration-300">
+          <div class="w-12 h-12 bg-[#C81F6A] rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-gears text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Integracijos su projektų valdymo sistemomis</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Patirtis integruojant VECTICUM su projektų valdymo, ERP ir buhalterinėmis sistemomis. Jūsų duomenys sinchronizuojami automatiškai.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300">
+          <div class="w-12 h-12 bg-[#3C7099] rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-headset text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Nuolatinis palaikymas</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Pagalba kiekvieną dieną. Nuo įdiegimo iki kasdienio naudojimo - mes visada su jumis.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+{/* Contact Form */}
+
+<ContactForm />
