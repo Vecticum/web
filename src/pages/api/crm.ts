@@ -393,41 +393,42 @@ export const POST: APIRoute = async ({ request }) => {
             data.message = 'Užklausa pateikta be papildomo pranešimo.';
         }
 
-        // Send data to external CRM API
+        // OPTIMISTIC RESPONSE: Return success immediately to user
+        // Send to CRM in background without waiting
         const url = 'https://crm-jz6p53srgq-ew.a.run.app/api/crm/v1/new-lead';
-        const response = await fetch(url, {
+        
+        // Fire and forget - don't await the response
+        fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
-        });
-
-        if (!response.ok) {
-            throw new Error(`CRM API error! status: ${response.status}`);
-        }
-        
-        // Handle empty response or non-JSON response from CRM
-        const contentType = response.headers.get('content-type');
-        let responseData;
-        
-        try {
-            if (contentType && contentType.includes('application/json')) {
-                responseData = await response.json();
+        }).then(async (response) => {
+            // Log success or failure in background
+            if (response.ok) {
+                const contentType = response.headers.get('content-type');
+                let responseData;
+                try {
+                    if (contentType && contentType.includes('application/json')) {
+                        responseData = await response.json();
+                    } else {
+                        const text = await response.text();
+                        responseData = text ? { message: text } : { success: true };
+                    }
+                } catch (parseError) {
+                    responseData = { success: true };
+                }
+                console.log(`[${timestamp}] Data sent to CRM successfully for ${data.email}:`, responseData);
             } else {
-                // If response is empty or not JSON, treat as success
-                const text = await response.text();
-                responseData = text ? { message: text } : { success: true };
+                console.error(`[${timestamp}] CRM API error for ${data.email}! status: ${response.status}`);
             }
-        } catch (parseError) {
-            // If JSON parsing fails, treat as success since CRM returned 200
-            console.log('CRM returned non-JSON response, treating as success');
-            responseData = { success: true };
-        }
+        }).catch((error) => {
+            console.error(`[${timestamp}] Failed to send to CRM for ${data.email}:`, error);
+        });
         
-        console.log(`[${timestamp}] Data sent to CRM successfully for ${data.email}:`, responseData);
-        
-        // Send a success response back to the frontend
+        // Immediately return success to user (don't wait for CRM)
+        console.log(`[${timestamp}] Returning immediate success response for ${data.email}`);
         return new Response(JSON.stringify({ message: 'Užklausa sėkmingai pateikta!' }), {
             status: 200,
             headers: {
