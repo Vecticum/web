@@ -393,22 +393,33 @@ export const POST: APIRoute = async ({ request }) => {
             data.message = 'Užklausa pateikta be papildomo pranešimo.';
         }
 
-        // OPTIMISTIC RESPONSE: Return success immediately to user
-        // Send to CRM in background without waiting
+        // Send data to external CRM API with timeout protection
         const url = 'https://crm-jz6p53srgq-ew.a.run.app/api/crm/v1/new-lead';
         
-        // Fire and forget - don't await the response
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        }).then(async (response) => {
-            // Log success or failure in background
-            if (response.ok) {
+        try {
+            // Set 12 second timeout (before Vercel's 15s limit)
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 12000);
+            
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+                signal: controller.signal
+            });
+            
+            clearTimeout(timeoutId);
+
+            if (!response.ok) {
+                console.error(`[${timestamp}] CRM API error for ${data.email}! status: ${response.status}`);
+                // Still return success to user even if CRM fails
+            } else {
+                // Handle empty response or non-JSON response from CRM
                 const contentType = response.headers.get('content-type');
                 let responseData;
+                
                 try {
                     if (contentType && contentType.includes('application/json')) {
                         responseData = await response.json();
@@ -419,16 +430,21 @@ export const POST: APIRoute = async ({ request }) => {
                 } catch (parseError) {
                     responseData = { success: true };
                 }
+                
                 console.log(`[${timestamp}] Data sent to CRM successfully for ${data.email}:`, responseData);
-            } else {
-                console.error(`[${timestamp}] CRM API error for ${data.email}! status: ${response.status}`);
             }
-        }).catch((error) => {
-            console.error(`[${timestamp}] Failed to send to CRM for ${data.email}:`, error);
-        });
+        } catch (error) {
+            // Timeout or network error - log but don't fail the request
+            if (error.name === 'AbortError') {
+                console.log(`[${timestamp}] CRM request timeout for ${data.email} - but returning success to user`);
+            } else {
+                console.error(`[${timestamp}] Failed to send to CRM for ${data.email}:`, error);
+            }
+            // Continue to return success anyway
+        }
         
-        // Immediately return success to user (don't wait for CRM)
-        console.log(`[${timestamp}] Returning immediate success response for ${data.email}`);
+        // Always return success to user
+        console.log(`[${timestamp}] Returning success response for ${data.email}`);
         return new Response(JSON.stringify({ message: 'Užklausa sėkmingai pateikta!' }), {
             status: 200,
             headers: {
