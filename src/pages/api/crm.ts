@@ -435,7 +435,7 @@ export const POST: APIRoute = async ({ request }) => {
             }
         } catch (error) {
             // Timeout or network error - log but don't fail the request
-            if (error.name === 'AbortError') {
+            if (error instanceof Error && error.name === 'AbortError') {
                 console.log(`[${timestamp}] CRM request timeout for ${data.email} - but returning success to user`);
             } else {
                 console.error(`[${timestamp}] Failed to send to CRM for ${data.email}:`, error);
