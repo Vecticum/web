@@ -1,0 +1,527 @@
+---
+meta:
+  title: Medicinos ir sveikatos priežiūros įstaigoms | VECTICUM valdymo sistema
+  description: Efektyvus personalo, dokumentų ir procesų valdymas medicinos ir sveikatos priežiūros sektoriuje
+  ogImage: /media/services/medicinos-industrija.png
+  ogType: website
+  canonical: https://vecticum.lt/industrijos/medicina-sveikatos-prieziura/
+title: Automatizuojame medicinos įstaigų valdymo procesus
+description: VECTICUM padeda medicinos ir sveikatos priežiūros įstaigoms efektyviai valdyti personalą, dokumentus ir procesus. Mūsų sprendimas pritaikytas sektoriaus specifikai – nuo kvalifikacijų valdymo iki darbo grafikų planavimo.
+hero_image: "/media/services/medicinos-industrija.png"
+hero_image_alt: "Medicinos ir sveikatos priežiūros įstaigų valdymo sprendimai | VECTICUM"
+industry: "Medicina ir sveikatos priežiūra"
+draft: true
+---
+
+import ContactForm from "../../components/home/ContactForm.astro";
+import Services from "../../components/home/Services.astro";
+
+{/* Vertės medicinos įstaigoms */}
+
+<section class="w-full bg-gradient-to-b from-gray-50 to-white py-24 border-t border-gray-200">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-20">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Kodėl medicinos įstaigos renkasi VECTICUM?
+      </h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Profesionalūs sprendimai sveikatos priežiūros įstaigų efektyvumui
+      </p>
+    </div>
+
+    {/* 6 USP Items */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+      {/* Kvalifikacijų valdymas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#3C7099] hover:border-[#3C7099] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#3C7099]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#3C7099]/20 transition-all duration-300">
+              <i class="fa-solid fa-user-doctor text-[#3C7099] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Medicinos personalui valdymas</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Gydytojų licencijų, sertifikatų, specialybių ir tęstinio mokymo valdymas vienoje vietoje. Automatiniai priminmai apie galiojimo terminus ir būtinus atnaujinimus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Grafikų valdymas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#C81F6A] hover:border-[#C81F6A] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#C81F6A]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#C81F6A]/20 transition-all duration-300">
+              <i class="fa-solid fa-calendar-days text-[#C81F6A] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Lankstūs darbo grafikai</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Budėjimų, pamainų, naktinių ir viršvalandžių valdymas. Automatinis tabelių generavimas integruojantis su darbo užmokesčio sistemomis. Pamainos ir rotacijos planavimas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* BDAR atitiktis */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#3C7099] hover:border-[#3C7099] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#3C7099]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#3C7099]/20 transition-all duration-300">
+              <i class="fa-solid fa-shield-halved text-[#3C7099] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Duomenų saugumas ir BDAR</h3>
+            <p class="text-gray-600 leading-relaxed">
+              ISO 27001 sertifikuota sistema, atitinkanti griežtus sveikatos duomenų apsaugos reikalavimus. Pilnas auditų žurnalas, šifravimas ir dviejų faktorių autentifikavimas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Dokumentų valdymas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#C81F6A] hover:border-[#C81F6A] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#C81F6A]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#C81F6A]/20 transition-all duration-300">
+              <i class="fa-solid fa-file-medical text-[#C81F6A] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Medicininių dokumentų valdymas</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Personalo medicininių pažymėjimų, vakcinacijų kortelių, sveikatos patikrinimų ir kitų dokumentų valdymas su automatiniais priminimais apie būtinus atnaujinimus.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Atostogų planavimas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#3C7099] hover:border-[#3C7099] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#3C7099]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#3C7099]/20 transition-all duration-300">
+              <i class="fa-solid fa-umbrella-beach text-[#3C7099] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Atostogų ir nebuvimų valdymas</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Darbuotojų atostogų planavimas su automatine patikra, kad visada būtų užtikrintas pakankamas darbuotojų skaičius. Skaidri likučių kontrolė ir patvirtinimo procesai.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobilumas */}
+      <div class="group relative pl-6 py-6 border-l-4 border-[#C81F6A] hover:border-[#C81F6A] transition-all duration-300">
+        <div class="flex items-start gap-6">
+          <div class="flex-shrink-0">
+            <div class="w-16 h-16 bg-[#C81F6A]/10 rounded-2xl flex items-center justify-center group-hover:bg-[#C81F6A]/20 transition-all duration-300">
+              <i class="fa-solid fa-mobile-screen text-[#C81F6A] text-2xl"></i>
+            </div>
+          </div>
+          <div class="flex-1">
+            <h3 class="font-bold text-xl mb-2 text-gray-900">Mobili darbuotojų savitarna</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Medicinos personalas gali peržiūrėti grafikus, pateikti atostogų prašymus, keistis pamainom ir gauti pranešimus mobiliajame telefone ar planšetėje.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{/* Sprendimai medicinos įstaigoms */}
+
+<section class="w-full bg-gradient-to-br from-[#E8EDF2] to-[#DFE6ED] py-24">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-20">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Sprendimai, kuriuos renkasi <span class="text-[#3C7099]">medicinos įstaigos</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Pilnas funkcionalumas sveikatos priežiūros įstaigų kasdienybei
+      </p>
+    </div>
+
+    {/* 6 Solution Categories */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {/* Personalo valdymas */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2d5573] rounded-2xl flex items-center justify-center">
+            <i class="fa-solid fa-users text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Personalo valdymas</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/medicinos-personalo-kvalifikaciju-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Kvalifikacijų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/darbuotoju-atostogu-prasymu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Atostogų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/atrankos-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Medicinos personalo atranka</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Darbo laiko apskaita */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2d5573] rounded-2xl flex items-center justify-center">
+            <i class="fa-solid fa-clock text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Darbo laiko apskaita</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Budėjimų ir pamainų grafikai</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/virsvalandziu-ir-papildomo-darbo-apskaita/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Viršvalandžių apskaita</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Dokumentų valdymas */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#C81F6A] to-[#A71B5B] rounded-2xl flex items-center justify-center">
+            <i class="fa-solid fa-file-medical text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Dokumentų valdymas</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/dokumentu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Medicininių dokumentų archyvas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/sutarciu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Sutarčių valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Mokymai */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#C81F6A] to-[#A71B5B] rounded-2xl flex items-center justify-center">
+            <i class="fa-solid fa-graduation-cap text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Mokymai ir atitiktis</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/mokymu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Tęstinio mokymo valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/testavimo-is-norminiu-dokumentu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Sertifikatų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Finansų valdymas */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2d5573] rounded-2xl flex items-center justify-center">
+            <i class="fa-solid fa-file-invoice-dollar text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Finansų valdymas</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/gaunamu-saskaitu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Sąskaitų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/pirkimu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Pirkimų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Turto valdymas */}
+      <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#C81F6A] to-[#A71B5B] rounded-2xl flex items-center justify-center">
+            <i class="fa-solid fa-box text-white text-2xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Turto valdymas</h3>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <a href="/isduodamo-inventoriaus-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Medicininės įrangos valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/turto-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Inventoriaus apskaita</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    {/* CTA Button */}
+    <div class="text-center mt-16">
+      <a 
+        href="/sprendimai/" 
+        class="inline-flex items-center gap-3 bg-gradient-to-r from-[#3C7099] to-[#2d5573] text-white px-10 py-5 rounded-full font-bold text-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-white"
+      >
+        <span>Visi sprendimai</span>
+        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{/* Medicinos įstaigų klientai */}
+
+<section class="w-full bg-white py-20 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Header */}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Medicinos įstaigos, kurios pasitiki VECTICUM
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Privačios klinikos, ligoninės ir sveikatos priežiūros centrai naudoja VECTICUM kasdieniniam personalo ir dokumentų valdymui
+      </p>
+    </div>
+
+    {/* Two Column Layout */}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      {/* Left - Client Logos - Placeholder for healthcare clients */}
+      <div>
+        <div class="grid grid-cols-2 gap-8">
+          <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
+            <div class="text-center">
+              <i class="fa-solid fa-hospital text-4xl text-[#3C7099] mb-2"></i>
+              <p class="text-sm text-gray-600">Privačios klinikos</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
+            <div class="text-center">
+              <i class="fa-solid fa-heart-pulse text-4xl text-[#C81F6A] mb-2"></i>
+              <p class="text-sm text-gray-600">Sveikatos centrai</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
+            <div class="text-center">
+              <i class="fa-solid fa-user-doctor text-4xl text-[#3C7099] mb-2"></i>
+              <p class="text-sm text-gray-600">Medicinos laboratorijos</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
+            <div class="text-center">
+              <i class="fa-solid fa-notes-medical text-4xl text-[#C81F6A] mb-2"></i>
+              <p class="text-sm text-gray-600">Diagnostikos centrai</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
+            <div class="text-center">
+              <i class="fa-solid fa-suitcase-medical text-4xl text-[#3C7099] mb-2"></i>
+              <p class="text-sm text-gray-600">Slaugos namai</p>
+            </div>
+          </div>
+          <a
+            href="/rekomendacijos/"
+            aria-label="Kiti įmonės klientai"
+            class="group relative overflow-hidden flex items-center justify-center h-32 rounded-2xl border-2 border-[#3C7099] bg-gradient-to-br from-[#3C7099]/10 to-[#C81F6A]/10 transition shadow-sm hover:shadow-lg hover:border-[#3C7099] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3C7099]/40"
+          >
+            <span class="pointer-events-none absolute -right-6 -top-6 w-28 h-28 rounded-full bg-gradient-to-br from-[#3C7099]/10 to-[#C81F6A]/10 blur-xl"></span>
+            <div class="text-center relative">
+              <div class="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#3C7099]">Kiti klientai</div>
+              <div class="text-sm text-gray-600 mt-1 flex items-center justify-center gap-2">
+                Peržiūrėti rekomendacijas
+                <i class="fa-solid fa-arrow-right text-[#3C7099] transition-transform group-hover:translate-x-0.5"></i>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* Right - Testimonial Placeholder */}
+      <div>
+        <div class="bg-gradient-to-br from-[#EBEFF3] to-white rounded-2xl p-8 lg:p-10 border-2 border-gray-200 relative overflow-hidden h-full">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#3C7099]/10 to-[#C81F6A]/10 rounded-full blur-3xl"></div>
+          
+          <div class="relative h-full flex flex-col">
+            <div class="mb-6">
+              <i class="fa-solid fa-quote-left text-5xl text-[#C81F6A]/20"></i>
+            </div>
+            
+            <blockquote class="text-lg lg:text-xl text-gray-800 leading-relaxed mb-8 flex-grow">
+              VECTICUM sistema labai supaprastino mūsų medicinos personalo darbo laiko apskaitą ir atostogų valdymą. Ypač vertinu medicininių kvalifikacijų ir sertifikatų valdymo funkcionalumą - viskas vienoje vietoje, visada prieinamas.
+            </blockquote>
+            
+            <div class="flex items-center gap-4 pt-6 border-t border-gray-200">
+              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#3C7099] to-[#C81F6A] flex items-center justify-center flex-shrink-0">
+                <i class="fa-solid fa-user-doctor text-white text-2xl"></i>
+              </div>
+              <div>
+                <div class="font-bold text-gray-900 text-lg">Medicinos įstaigos atstovas</div>
+                <div class="text-sm text-gray-600">Klinikos administratorius</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{/* Medicinos sektoriaus ekspertai */}
+
+<section class="w-full bg-white py-20">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Header */}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+      <span class="text-[#C81F6A]">Medicinos sektoriaus</span> diegimo ekspertai jūsų paslaugoms
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Kiekvienas projektas turi skirtą ekspertų komandą, kuri supranta medicinos specifiką – nuo budėjimų grafiko iki BDAR reikalavimų
+      </p>
+    </div>
+
+    {/* Content Grid */}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      
+      {/* Left - Expert Profile Card */}
+      <div class="sticky top-8">
+        <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
+          <div class="flex flex-col items-center text-center mb-8">
+            <div class="w-32 h-32 bg-gradient-to-br from-[#3C7099] to-[#C81F6A] rounded-full flex items-center justify-center mb-6 shadow-xl">
+              <span class="text-white font-bold text-5xl">ŽJ</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Živilė Juknevičiūtė-Akstinė</h3>
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#3C7099]/10 rounded-full mb-6">
+              <div class="w-2 h-2 bg-[#3C7099] rounded-full"></div>
+              <p class="text-[#3C7099] font-semibold text-sm">Diegimo ekspertė</p>
+            </div>
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
+              <div class="text-center">
+                <div class="text-2xl font-bold text-[#3C7099] mb-1">8+</div>
+                <div class="text-xs text-gray-600">metų patirties</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-[#C81F6A] mb-1">35+</div>
+                <div class="text-xs text-gray-600">projektų</div>
+              </div>
+              <div class="text-center">
+                <div class="text-2xl font-bold text-[#3C7099] mb-1">95%</div>
+                <div class="text-xs text-gray-600">įvertinimas</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right - Features */}
+      <div class="space-y-6">
+        
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300">
+          <div class="w-12 h-12 bg-[#3C7099] rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-hospital text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Medicinos procesų ekspertai</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Supranta medicinos specifiką: budėjimų grafikus, medicininių kvalifikacijų valdymą, BDAR reikalavimus ir pacientų duomenų saugumą.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#C81F6A] transition-all duration-300">
+          <div class="w-12 h-12 bg-[#C81F6A] rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-shield-halved text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Duomenų saugumo garantija</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Patirtis įdiegiant sistemas atitinkančias medicinos duomenų saugumo standartus. Jūsų pacientų duomenys bus saugūs.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300">
+          <div class="w-12 h-12 bg-[#3C7099] rounded-lg flex items-center justify-center mb-4">
+            <i class="fa-solid fa-headset text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Nuolatinis palaikymas</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Pagalba kiekvieną dieną. Nuo įdiegimo iki kasdienio naudojimo - mes visada su jumis.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{/* Kontaktų forma */}
+
+<ContactForm />
