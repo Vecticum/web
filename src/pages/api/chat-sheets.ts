@@ -72,7 +72,7 @@ function generateFallbackReply(message: string): string {
   }
   if (q.includes('demo') || q.includes('pabandyti') || q.includes('bandomoji')) {
     return (
-      'Galite užsiregistruoti demonstracijai per puslapį „Registracija demo“ arba parašyti el. paštu info@vecticum.lt – '
+      'Galite užsiregistruoti demonstracijai per puslapį „Registracija demo" arba parašyti el. paštu info@vecticum.com – '
       + 'pademonstruosime sistemą ir atsakysime į klausimus.'
     );
   }
@@ -83,11 +83,11 @@ function generateFallbackReply(message: string): string {
     );
   }
   if (q.includes('kontakt') || q.includes('susisiekti') || q.includes('telefon') || q.includes('email')) {
-    return 'Kontaktai: info@vecticum.lt • Tel.: +370 000 00000. Lauksime žinutės!';
+    return 'Kontaktai: info@vecticum.com • Tel.: +370 000 00000. Lauksime žinutės!';
   }
   return (
     'Ačiū už klausimą! Šiuo metu negalime sugeneruoti AI atsakymo. '
-    + 'Parašykite, kuo konkrečiai galiu padėti, arba susisiekite el. paštu info@vecticum.lt – atsakysime greitai.'
+    + 'Parašykite, kuo konkrečiai galiu padėti, arba susisiekite el. paštu info@vecticum.com – atsakysime greitai.'
   );
 }
 
@@ -119,7 +119,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     if (!geminiApiKey) {
       console.error('❌ GEMINI_API_KEY not found in environment variables');
-      aiReply = `Ačiū už jūsų klausimą! Šiuo metu chatbot veikia testiniu režimu. Prašome susisiekti su mumis el. paštu info@vecticum.lt arba telefonu, kad galėtume jums padėti.`;
+      aiReply = `Ačiū už jūsų klausimą! Šiuo metu chatbot veikia testiniu režimu. Prašome susisiekti su mumis el. paštu info@vecticum.com arba telefonu, kad galėtume jums padėti.`;
     } else {
       try {
         const kb = await loadKnowledgeBase();
