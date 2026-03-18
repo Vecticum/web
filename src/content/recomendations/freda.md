@@ -27,7 +27,11 @@ Prieš diegiant Vecticum sprendimus, mūsų įmonė susidūrė su reikšmingais 
 
 ### Skaistės Grėbliauskės, FREDA finansų direktorės, atsiliepimas
 
-> Šis sprendimas ženkliai pagerino mūsų įmonės dokumentų valdymo procesus. Sistema veikia patikimai ir yra lengvai pritaikoma augantiems poreikiams. Bendradarbiavimas su Vecticum komanda leidžia efektyviai diegti naujus funkcionalumus ir užtikrinti, kad dokumentų apdorojimas vyktų sklandžiai.
+<div style="font-style: normal; padding-left: 1.5rem; border-left: 4px solid #e5e7eb;">
+
+Šis sprendimas ženkliai pagerino mūsų įmonės dokumentų valdymo procesus. Sistema veikia patikimai ir yra lengvai pritaikoma augantiems poreikiams. Bendradarbiavimas su Vecticum komanda leidžia efektyviai diegti naujus funkcionalumus ir užtikrinti, kad dokumentų apdorojimas vyktų sklandžiai.
+
+</div>
 
 ---
 
@@ -51,6 +55,6 @@ Vecticum sprendimus naudojame automatizuotam dokumentų valdymui visame jų proc
 - **Sutarčių modulis užtikrino vieningą visų įmonės sutarčių valdymą** – visos įmonės sutartys tapo valdomos vienoje sistemoje, ženkliai pagerėjo jų administravimas, prieinamumas ir kontrolė. Nebeliko pamestų ar nerandamų sutarčių, sustiprintas dokumentų valdymo patikimumas.
 - **Skaidresnis ir aiškesnis projektų finansinis valdymas** – projektų sąnaudų, biudžetų ir finansinių srautų stebėsena tapo žymiai paprastesnė ir skaidresnė, užtikrinant tikslesnį ir efektyvesnį sprendimų priėmimą.
 - **Tvaresnis ir kontroliuojamas sąskaitų tvirtinimo procesas** – skaitmenizuotas tvirtinimo procesas suteikė galimybę nuosekliai valdyti apskaitą, sumažino klaidų riziką ir pagerino finansinių srautų kontrolę.
-- **Skaitmenizuotas ir automatizuotas kasdienis darbas** – darbas su „Vecticum" sistema iš esmės panaikino popierinius, pasikartojančius ir daug laiko reikalaujančius procesus, suteikdamas daugiau vertės kuriančio laiko ir padidinant bendrą organizacijos produktyvumą.
+- **Skaitmenizuotas ir automatizuotas kasdienis darbas** – darbas su "Vecticum" sistema iš esmės panaikino popierinius, pasikartojančius ir daug laiko reikalaujančius procesus, suteikdamas daugiau vertės kuriančio laiko ir padidinant bendrą organizacijos produktyvumą.
 
 ---

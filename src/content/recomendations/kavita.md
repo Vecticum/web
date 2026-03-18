@@ -13,8 +13,8 @@ link: "/rekomendacijos/kavita"
 
 ## Apie UAB KAVITA
 
-**KAVITA** – įmonė, veikianti daugiau nei 30 metų ir teikianti aukščiausios kokybės regos ir klausos priežiūros produktus bei medicinos įrangą. Įmonės misija – ne tik tiekti technologijas, bet ir suteikti žmonėms galimybę gyventi geriau, pasitelkiant pažangias technologijas sveikatos srityje.  
-„Kavita“ bendradarbiauja su įvairiomis sveikatos priežiūros įstaigomis, specialistais ir pacientais, siūlydama inovatyvius sprendimus, kurie padeda gerinti gyvenimo kokybę ir pasiekti geresnius rezultatus tiek gydytojų, tiek pacientų lygmenyje.
+**KAVITA** - įmonė, veikianti daugiau nei 30 metų ir teikianti aukščiausios kokybės regos ir klausos priežiūros produktus bei medicinos įrangą. Įmonės misija - ne tik tiekti technologijas, bet ir suteikti žmonėms galimybę gyventi geriau, pasitelkiant pažangias technologijas sveikatos srityje.  
+"Kavita" bendradarbiauja su įvairiomis sveikatos priežiūros įstaigomis, specialistais ir pacientais, siūlydama inovatyvius sprendimus, kurie padeda gerinti gyvenimo kokybę ir pasiekti geresnius rezultatus tiek gydytojų, tiek pacientų lygmenyje.
 
 Įdiegusi VECTICUM sprendimus, KAVITA pasiekė reikšmingų pokyčių vidiniuose procesuose, užtikrindama sklandesnį ir efektyvesnį darbą.
 
@@ -22,7 +22,7 @@ link: "/rekomendacijos/kavita"
 
 ### Iššūkiai prieš įsidiegiant VECTICUM
 
-Prieš įsidiegiant VECTICUM sprendimus, „Kavita“ susidurdavo su keletu esminių problemų:
+Prieš įsidiegiant VECTICUM sprendimus, "Kavita" susidurdavo su keletu esm inių problemų:
 
 - **Decentralizuoti procesai** – didėjant darbuotojų skaičiui ir procesų apimtims, tapo sudėtinga valdyti augančius duomenų kiekius be centralizuotos sistemos.  
 - **Laiko sąnaudos ir klaidos** – daugelis procesų buvo atliekami rankiniu būdu, todėl daug laiko darbuotojai praleisdavo tvarkydami administracines užduotis, kas didino klaidų tikimybę ir lėtino svarbių darbų atlikimą.  
@@ -39,9 +39,13 @@ Prieš įsidiegiant VECTICUM sprendimus, „Kavita“ susidurdavo su keletu esmi
 
 ---
 
-### Vytauto Vasiliausko, „Kavita“ technologijų direktoriaus, atsiliepimas
+### Vytauto Vasiliausko, "Kavita" technologijų direktoriaus, atsiliepimas
 
-> Įdiegus VECTICUM sprendimus, mūsų kasdieniai procesai tapo žymiai efektyvesni. Automatizavus daugelį darbų, galime daugiau dėmesio skirti savo pagrindiniams tikslams – klientų poreikiams ir jų įgyvendinimui. Pastebėjome aiškų laiko ir resursų taupymą, VECTICUM tapo mūsų komandos kasdienių darbų partneriu, padedančiu užtikrinti aukščiausią paslaugų kokybę.
+<div style="font-style: normal; padding-left: 1.5rem; border-left: 4px solid #e5e7eb;">
+
+Įdiegus VECTICUM sprendimus, mūsų kasdieniai procesai tapo žymiai efektyvesni. Automatizavus daugybę darbų, galime daugiau dėmesio skirti savo pagrindiniams tikslams - klientų poreikiams ir jų įgyvendinimui. Pastebėjome aikų laiko ir resursų taupymą, VECTICUM tapo mūsų komandos kasdienių darbų partneriu, padedandiu užtikrinti aukščiausią paslaugų kokybę.
+
+</div>
 
 ---
 

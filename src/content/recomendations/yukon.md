@@ -13,7 +13,7 @@ link: "/rekomendacijos/yukon"
 
 ## Apie YUKON Advanced Optics Worldwide
 
-„Yukon Advanced Optics Worldwide" yra viena iš lyderiaujančių skaitmeninės naktinio matymo ir termovizijos technologijų kūrėjų pasaulyje. Įmonės tikslas – kurti inovatyvius, aukščiausios kokybės produktus, skirtus profesionalams ir entuziastams, dirbantiems sudėtingiausiomis sąlygomis. Įmonė investuoja į naujausias technologijas, modernią gamybą ir aukštus kokybės standartus, kad užtikrintų geriausią klientų patirtį.
+"Yukon Advanced Optics Worldwide" yra viena iš lyderiaujantių skaitmeninės naktinio matymo ir termovizijos technologijų kūrėjų pasaulyje. Įmonės tikslas - kurti inovatyvius, aukščiausios kokybės produktus, skirtus profesionalams ir entuziastams, dirbantiems sudėtingiausiomis sąlygomis. Įmonė investuoja į naujausias technologijas, modernią gamybą ir aukštus kokybės standartus, kad užtikrintų geriausią klientų patirtį.
 
 Įdiegusi VECTICUM sprendimus, YUKON Advanced Optics pasiekė reikšmingų pokyčių vidiniuose procesuose, užtikrindama sklandesnį ir efektyvesnį darbą.
 
@@ -39,9 +39,13 @@ VECTICUM padėjo optimizuoti daugelį mūsų veiklos procesų ir pasiekti reikš
 
 ---
 
-### Georgij Nikonorov, „Yukon" HR vadovo, atsiliepimas
+### Georgij Nikonorov, "Yukon" HR vadovo, atsiliepimas
 
-> Mes nuoširdžiai vertiname Vecticum darbą — platforma padėjo mums sisteminti ir automatizuoti procesus, taip pat ženkliai padidinti mūsų darbo efektyvumą. Džiugina patogumas, apgalvotas funkcionalumas ir operatyvi pagalba. Komanda visada reaguoja į iškylančius klausimus ir greitai išsprendžia bet kokias problemas. Dėkojame Vecticum už bendradarbiavimą ir rūpestį klientais!
+<div style="font-style: normal; padding-left: 1.5rem; border-left: 4px solid #e5e7eb;">
+
+Mes nuoširdžiai vertiname Vecticum darbą - platforma padėjo mums sisteminti ir automatizuoti procesus, taip pat ženkliai padidinti mūsų darbo efektyvumą. Džiugina patogumas, apgalvotas funkcionalumas ir operatyvi pagalba. Komanda visada reaguoja į iškylančius klausimus ir greitai išsprendžia bet kokias problemas. Dėkojame Vecticum už bendradarbiavimą ir rūpesį klientais!
+
+</div>
 
 ---
 

@@ -26,8 +26,8 @@ UAB GATAS – daugiau nei dvidešimt metų transporto infrastruktūros srityje v
 ### Iššūkiai prieš VECTICUM diegimą
 
 Prieš pradedant naudotis VECTICUM, GATAS susidurdavo su administraciniais sunkumais:
-•	dideliais sąskaitų srautais, kuriuos reikėdavo apdoroti rankiniu būdu,
-•	dažnai dubliuojama informacija tarp skirtingų skyrių,
+-	dideliais sąskaitų srautais, kuriuos reikėdavo apdoroti rankiniu būdu,
+-	dažnai dubliuojama informacija tarp skirtingų skyrių,
 Šie iššūkiai lėtino kasdienę veiklą, kėlė žmogiškųjų klaidų riziką ir apsunkindavo informacijos sklaidą.
 
 ---
@@ -40,7 +40,11 @@ Prieš pradedant naudotis VECTICUM, GATAS susidurdavo su administraciniais sunku
 
 ### Erika Grigaliūnaitė, GATAS pirkimų vadybininkės, atsiliepiams
 
-> Nesudėtingas programos naudojimas. Palengvėja sąskaitų apskaita, yra galimybė pasitikrinti, ar visos sąskaitos užregistruotos, todėl darbas tampa lengvesnis ir efektyvesnis.
+<div style="font-style: normal; padding-left: 1.5rem; border-left: 4px solid #e5e7eb;">
+
+Nesudėtingas programos naudojimas. Palengvėja sąskaitų apskaita, yra galimybė pasitikrinti, ar visos sąskaitos užregistruotos, todėl darbas tampa lengvesnis ir efektyvesnis.
+
+</div>
 
 ---
 
