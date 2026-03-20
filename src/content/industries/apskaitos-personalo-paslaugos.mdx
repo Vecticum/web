@@ -10,11 +10,17 @@ description: VECTICUM padeda apskaitos ir personalo paslaugų įmonėms efektyvi
 hero_image: "/media/services/apskaita-industrija.png"
 hero_image_alt: "Apskaitos ir personalo paslaugų įmonių valdymo sprendimai | VECTICUM"
 industry: "Apskaitos ir personalo paslaugos"
-draft: true
 ---
 
 import ContactForm from "../../components/home/ContactForm.astro";
 import Services from "../../components/home/Services.astro";
+import { Image } from "astro:assets";
+
+import bpo from '/src/assets/media/bpo.png';
+import futureTeam from '/src/assets/media/future-team-management.jpg';
+import garantGroup from '/src/assets/media/GarantGroup.png';
+import headex from '/src/assets/media/HEADEX LOGO.png';
+import interna from '/src/assets/media/interna logo.png';
 
 {/* Vertės apskaitos ir personalo paslaugų įmonėms */}
 
@@ -44,7 +50,7 @@ import Services from "../../components/home/Services.astro";
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2 text-gray-900">Klientų dokumentų valdymas</h3>
             <p class="text-gray-600 leading-relaxed">
-              Centralizuotas kiekvieno kliento dokumentų archyvas, sutarčių valdymas, automatiniai galiojimo priminim ai. Greita prieiga prie kliento dokumentų bet kuriuo metu.
+              Centralizuotas kiekvieno kliento dokumentų archyvas, sutarčių valdymas, automatiniai galiojimo priminimai. Greita prieiga prie kliento dokumentų bet kuriuo metu.
             </p>
           </div>
         </div>
@@ -78,7 +84,7 @@ import Services from "../../components/home/Services.astro";
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2 text-gray-900">Duomenų saugumas ir atitiktis</h3>
             <p class="text-gray-600 leading-relaxed">
-              ISO 27001 sertifikuota sistema, atitinkanti BDAR reikalavimus. Auditų žurnalai, duomenų šifravimas, dviejų faktorių autentifikavimas ir pilnas duomenų atkūrimas.
+              ISO 27001 sertifikuota sistema, atitinkanti BDAR reikalavimus. Auditų žurnalai, duomenų šifravimas ir pilnas duomenų atkūrimas.
             </p>
           </div>
         </div>
@@ -129,7 +135,7 @@ import Services from "../../components/home/Services.astro";
           <div class="flex-1">
             <h3 class="font-bold text-xl mb-2 text-gray-900">Integracijos su buhalterinėmis sistemomis</h3>
             <p class="text-gray-600 leading-relaxed">
-              Sklandus duomenų perdavimas į/iš populiariausių buhalterinių sistemų (Alfa, Informa, Merit Aktiva, Rivilė). Nereikia dubliuoti darbo.
+              Sklandus duomenų perdavimas į/iš populiariausių buhalterinių sistemų.
             </p>
           </div>
         </div>
@@ -199,6 +205,12 @@ import Services from "../../components/home/Services.astro";
               <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
+          <a href="/pirkimu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Pirkimų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -213,6 +225,12 @@ import Services from "../../components/home/Services.astro";
           </div>
         </div>
         <div class="space-y-2">
+          <a href="/darbuotoju-duomenu-bazes-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Darbuotojų duomenų bazė</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
           <a href="/atostogu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
               <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Atostogų valdymas</span>
@@ -251,6 +269,12 @@ import Services from "../../components/home/Services.astro";
               <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
+          <a href="/keliones-lapu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Komandiruočių valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -265,20 +289,50 @@ import Services from "../../components/home/Services.astro";
           </div>
         </div>
         <div class="space-y-2">
+          <a href="/gaunamu-uzklausu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Užklausų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/darbuotoju-prasymu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Prašymų valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
         </div>
       </div>
 
-      {/* Ataskaitų valdymas */}
+      {/* Įdarbinimo valdymas */}
       <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
         <div class="flex items-center gap-4 mb-6">
           <div class="w-14 h-14 bg-gradient-to-br from-[#C81F6A] to-[#A71B5B] rounded-2xl flex items-center justify-center">
-            <i class="fa-solid fa-chart-bar text-white text-2xl"></i>
+            <i class="fa-solid fa-user-plus text-white text-2xl"></i>
           </div>
           <div>
-            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Ataskaitų valdymas</h3>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Įdarbinimo valdymas</h3>
           </div>
         </div>
         <div class="space-y-2">
+          <a href="/atrankos-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Atrankos valdymas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/darbuotojo-idarbinimo-i-imone-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Įdarbinimo procesas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
+          <a href="/darbuotojo-isdarbinimo-is-imones-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-pink-50 hover:to-transparent transition-all duration-200 border-2 border-[#C81F6A]/30 hover:border-[#C81F6A]">
+            <div class="flex items-center justify-between">
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#C81F6A]">Išdarbinimo procesas</span>
+              <i class="fa-solid fa-arrow-right text-[#C81F6A] group-hover/link:translate-x-1 transition-all text-sm"></i>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -316,38 +370,23 @@ import Services from "../../components/home/Services.astro";
     {/* Two Column Layout */}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       
-      {/* Left - Client Logos - Placeholder for accounting clients */}
+      {/* Left - Client Logos */}
       <div>
         <div class="grid grid-cols-2 gap-8">
           <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
-            <div class="text-center">
-              <i class="fa-solid fa-calculator text-4xl text-[#3C7099] mb-2"></i>
-              <p class="text-sm text-gray-600">Buhalterijos įmonės</p>
-            </div>
+            <Image src={bpo} alt="BPO" class="max-h-16 max-w-full object-contain hover:scale-105 transition duration-300" />
           </div>
           <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
-            <div class="text-center">
-              <i class="fa-solid fa-file-invoice text-4xl text-[#C81F6A] mb-2"></i>
-              <p class="text-sm text-gray-600">Audito įmonės</p>
-            </div>
+            <Image src={futureTeam} alt="Future Team Management" class="max-w-full object-contain hover:scale-105 transition duration-300" style="max-height: 6rem;" />
           </div>
           <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
-            <div class="text-center">
-              <i class="fa-solid fa-users text-4xl text-[#3C7099] mb-2"></i>
-              <p class="text-sm text-gray-600">Personalo paslaugų įmonės</p>
-            </div>
+            <Image src={garantGroup} alt="Garant Group" class="max-h-16 max-w-full object-contain hover:scale-105 transition duration-300" />
           </div>
           <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
-            <div class="text-center">
-              <i class="fa-solid fa-briefcase text-4xl text-[#C81F6A] mb-2"></i>
-              <p class="text-sm text-gray-600">Konsultacijų įmonės</p>
-            </div>
+            <Image src={headex} alt="Headex" class="max-h-16 max-w-full object-contain hover:scale-105 transition duration-300" />
           </div>
           <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
-            <div class="text-center">
-              <i class="fa-solid fa-scale-balanced text-4xl text-[#3C7099] mb-2"></i>
-              <p class="text-sm text-gray-600">Teisės paslaugų įmonės</p>
-            </div>
+            <Image src={interna} alt="Interna" class="max-h-16 max-w-full object-contain hover:scale-105 transition duration-300" />
           </div>
           <a
             href="/rekomendacijos/"
@@ -376,17 +415,17 @@ import Services from "../../components/home/Services.astro";
               <i class="fa-solid fa-quote-left text-5xl text-[#C81F6A]/20"></i>
             </div>
             
-            <blockquote class="text-lg lg:text-xl text-gray-800 leading-relaxed mb-8 flex-grow">
-              VECTICUM sistema tapo esminiu įrankiu mūsų organizacijoje, kadangi padėjo reikšmingai supaprastinti tiek personalo, tiek buhalterijos dokumentų valdymą. Dabar nebereikia dirbti su popieriniais prašymais – visi dokumentai, atostogų, nedarbingumo ir kitų personalo duomenys yra saugomi vienoje platformoje, prie kiekvieno darbuotojo kortelės.
-            </blockquote>
+            <div class="text-lg lg:text-xl text-gray-800 leading-relaxed mb-8 flex-grow" style="font-style: normal">
+              Iki šiol naudojome kitą programą. "Vecticum" produktą naudoti pradėjome neseniai. Atsiliepiame tik teigiamai. Viskas gerai.
+            </div>
             
             <div class="flex items-center gap-4 pt-6 border-t border-gray-200">
-              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#3C7099] to-[#C81F6A] flex items-center justify-center flex-shrink-0">
-                <i class="fa-solid fa-user-tie text-white text-2xl"></i>
+              <div class="w-16 h-16 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <Image src={bpo} alt="BPO House logo" class="w-full h-full object-contain p-2" />
               </div>
               <div>
-                <div class="font-bold text-gray-900 text-lg">Apskaitos įmonės atstovas</div>
-                <div class="text-sm text-gray-600">Vyriausiasis buhalteris</div>
+                <div class="font-bold text-gray-900 text-lg">Kęstutis Vanagas</div>
+                <div class="text-sm text-gray-600">"BPO House", buhalterinės apskaitos ir kitas finansų valdymo paslaugas, direktorius</div>
               </div>
             </div>
           </div>
@@ -430,11 +469,11 @@ import Services from "../../components/home/Services.astro";
             </div>
             <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
               <div class="text-center">
-                <div class="text-2xl font-bold text-[#3C7099] mb-1">8+</div>
+                <div class="text-2xl font-bold text-[#3C7099] mb-1">10+</div>
                 <div class="text-xs text-gray-600">metų patirties</div>
               </div>
               <div class="text-center">
-                <div class="text-2xl font-bold text-[#C81F6A] mb-1">35+</div>
+                <div class="text-2xl font-bold text-[#C81F6A] mb-1">45+</div>
                 <div class="text-xs text-gray-600">projektų</div>
               </div>
             </div>
