@@ -49,7 +49,7 @@ meta:
 
 
 title: Darbo grafikų ir darbo laiko apskaitos žiniaraščių valdymas
-description: Vecticum komandiruočių valdymo sprendimas padeda darbuotojui tinkamai įforminti komandiruotę ir pateikti informaciją apie patirtas išlaidas, apskaitai sumažina rankinio darbo krūvį, o vadovams suteikia galimybę vienoje vietoje turėti informaciją apie planuotas ir faktines komandiruočių išlaidas.
+description: Vecticum darbo grafikų ir darbo laiko apskaitos sprendimas automatizuoja darbo grafikų sudarymą, faktinio darbo laiko fiksavimą ir žiniaraščių formavimą. Sistema padeda užtikrinti teisinę atitiktį, mažina administracinio darbo krūvį ir suteikia galimybę tiksliai valdyti darbo laiką.
 hero_image: "/media/services/tabeliai-hero.webp"
 hero_image_alt: "Tabeliu valdymas | VECTICUM"
 ---
@@ -184,20 +184,20 @@ import ContactForm from "../../components/home/ContactForm.astro";
           <li>Galimybė priskirti darbo grafikus darbuotojų grupei pagal darbo grafiko ruošinį;</li>
           <li>Galimybė priskirti vieną iš ruošinių darbuotojui, nurodant jo įsigaliojimo datą;</li>
           <li>Automatinis darbo grafiko užpildymas pagal priskirtą šabloną 1 mėn.;</li>
-          <li>Darbo laiko ir poilsio laiko režimas tikrinimas pagal pagrindinius darbo kodekse nustatytus maksimaliojo darbo laiko reikalavimus:</li>
+          <li>Darbo laiko ir poilsio laiko režimo tikrinimas pagal pagrindinius darbo kodekse nustatytus maksimaliojo darbo laiko reikalavimus:</li>
         <ul class="list-disc list-inside pl-5">
           <li>Negali būti dirbama daugiau kaip 6 dienas per 7 paeiliui einančias dienas.</li>
           <li>Per 7 paeiliui einančių kalendorinių dienų laikotarpį negali būti dirbama ilgiau kaip 8 val. viršvalandžių, su darbuotojo rašytiniu sutikimu – iki 12 val. viršvalandžių per savaitę.</li>
           <li>Kasdienio nepertraukiamojo poilsio tarp darbo dienų (pamainų) trukmė negali būti trumpesnė kaip 11 valandų iš eilės.</li>
-          <li>7 paeiliui einančių dienų laikotarpį darbuotojui turi būti suteiktas bent 35 valandų nepertraukiamojo poilsio laikas.</li>
+          <li>Per 7 paeiliui einančių dienų laikotarpį darbuotojui turi būti suteiktas bent 35 valandų nepertraukiamojo poilsio laikas.</li>
           <li>Jeigu darbuotojo darbo dienos (pamainos) trukmė yra daugiau kaip 12 valandų, bet ne daugiau kaip 24 valandos, nepertraukiamojo poilsio tarp darbo dienų (pamainų) laikas negali būti mažesnis negu 24 valandos.</li>
           <li>Jeigu budėjimas trunka 24 valandas, poilsio laikas trunka ne mažiau kaip 24 valandas.</li>
         </ul>
-          <li>Galimybė vadovui ir/ ar atsakingam už darbo laiko apskaitą koreguoti jo grupės darbuotojui paruoštą grafiką ir jį paskelbti;</li>
+          <li>Galimybė vadovui ir/ar atsakingam asmeniui už darbo laiko apskaitą koreguoti jo grupės darbuotojui paruoštą grafiką ir jį paskelbti;</li>
           <li>Darbo grafiko generavimas ir paskelbimas</li>
-          <li>Darbuotojai savo paskyros kortelėje ,,Grafikai“ gali susipažinti su savo darbo grafiku. Prie paskelbto darbo grafiko yra nurodyta jo paskelbimo data;</li>
-          <li>Galimybė vadovui ir/ ar atsakingam už darbo laiko apskaitą fiksuoti darbo laiko nukrypimus (faktines darbo valandas);</li>
-          <li>Grafike informacija atvaizduojama realiuoju laiku. Visi patvirtinti nebuvimai (ligos, atostogos, komandiruotės) taip pat atvaizduojami grafike realiuoju laiku. Jeigu nebuvimas darbe atsirado po darbo grafiko paskelbimo, tai nebuvo darbe įrašas pakoreguos grafiką (ištrins tų dienų darbo val. įrašus). Visi nebuvimai darbe grafike atvaizduojami kaip pilna darbo diena, standartiškai į tabelį perkeliama pilnos nebuvimo dienos informacija;</li>
+          <li>Darbuotojai savo paskyros kortelėje „Grafikai" gali susipažinti su savo darbo grafiku. Prie paskelbto darbo grafiko yra nurodyta jo paskelbimo data;</li>
+          <li>Galimybė vadovui ir/ar atsakingam asmeniui už darbo laiko apskaitą fiksuoti darbo laiko nukrypimus (faktines darbo valandas);</li>
+          <li>Grafike informacija atvaizduojama realiuoju laiku. Visi patvirtinti nebuvimai (ligos, atostogos, komandiruotės) taip pat atvaizduojami grafike realiuoju laiku. Jeigu nebuvimas darbe atsirado po darbo grafiko paskelbimo, tai nebuvimo darbe įrašas pakoreguos grafiką (ištrins tų dienų darbo val. įrašus). Visi nebuvimai darbe grafike atvaizduojami kaip pilna darbo diena, standartiškai į tabelį perkeliama pilnos nebuvimo dienos informacija;</li>
           <li>Faktiškai išdirbto laiko fiksavimas;</li>
           <li>Galimybė pačiam darbuotojui užfiksuoti faktiškai išdirbtą darbo laiką;</li>
           <li>Tabelių spausdinimas į Excel pagal faktiškai išdirbtą darbo laiką;</li>
