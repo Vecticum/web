@@ -1,0 +1,430 @@
+---
+interface Props {
+  description?: string;
+}
+
+const { 
+  description = "Specializuoti produktų ekspertai, kurie supranta verslo specifiką ir padeda įgyvendinti sprendimus"
+} = Astro.props;
+---
+
+<section class="w-full bg-white py-20">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Header */}
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Savo srities <span class="text-[#C81F6A]">ekspertai</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        {description}
+      </p>
+    </div>
+
+    {/* Content Grid */}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      
+      {/* Left - Experts Carousel */}
+      <div class="sticky top-8">
+        <div class="relative">
+          {/* Navigation Buttons */}
+          <button 
+            id="prevBtn" 
+            class="absolute -left-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white text-[#3C7099] rounded-full shadow-lg flex items-center justify-center hover:bg-[#3C7099] hover:text-white transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed"
+            aria-label="Previous expert"
+          >
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          
+          <button 
+            id="nextBtn" 
+            class="absolute -right-4 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white text-[#3C7099] rounded-full shadow-lg flex items-center justify-center hover:bg-[#3C7099] hover:text-white transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed"
+            aria-label="Next expert"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          {/* Carousel Container */}
+          <div 
+            id="expertsCarousel" 
+            class="overflow-hidden rounded-3xl bg-gradient-to-br from-gray-50 to-white py-12 cursor-grab active:cursor-grabbing"
+          >
+            <div id="carouselInner" class="flex transition-transform duration-500 ease-out gap-6">
+              
+              {/* Expert 1 - Živilė Juknevičiūtė-Akstinė */}
+              <div class="carousel-card w-[60%] flex-shrink-0 px-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                  <div class="flex flex-col items-center text-center">
+                    <div class="w-36 h-36 rounded-full overflow-hidden mb-6 shadow-xl ring-4 ring-[#3C7099]/20 hover:ring-[#3C7099]/40 transition-all duration-300">
+                      <img 
+                        src="/media/team/aiste.svg" 
+                        alt="Živilė Juknevičiūtė-Akstinė"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Živilė Juknevičiūtė-Akstinė</h3>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#3C7099]/10 rounded-full mb-3">
+                      <div class="w-2 h-2 bg-[#3C7099] rounded-full"></div>
+                      <div class="text-[#3C7099] font-semibold text-sm">Techninė konsultantė</div>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-2 font-medium">Šių sričių ekspertas:</p>
+                    <div class="flex flex-wrap justify-center gap-1.5 mb-4">
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Atostogų valdymas</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Darbuotojų užklausos</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Darbo laiko apskaita</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Nebuvimų valdymas</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Personalo baziniai sprendimai</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Expert 2 - Ignas Prakapas */}
+              <div class="carousel-card w-[60%] flex-shrink-0 px-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                  <div class="flex flex-col items-center text-center">
+                    <div class="w-36 h-36 rounded-full overflow-hidden mb-6 shadow-xl ring-4 ring-[#C81F6A]/20 hover:ring-[#C81F6A]/40 transition-all duration-300">
+                      <img 
+                        src="/media/team/lukas.svg" 
+                        alt="Ignas Prakapas"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Ignas Prakapas</h3>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#C81F6A]/10 rounded-full mb-3">
+                      <div class="w-2 h-2 bg-[#C81F6A] rounded-full"></div>
+                      <div class="text-[#C81F6A] font-semibold text-sm">Konsultantų komandos vadovas</div>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-2 font-medium">Šių sričių ekspertas:</p>
+                    <div class="flex flex-wrap justify-center gap-1.5 mb-4">
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Dokumentų medis</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Įmonės dokumentai</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Personalo baziniai sprendimai</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Expert 3 - Viktoras Staišiūnas */}
+              <div class="carousel-card w-[60%] flex-shrink-0 px-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                  <div class="flex flex-col items-center text-center">
+                    <div class="w-36 h-36 rounded-full overflow-hidden mb-6 shadow-xl ring-4 ring-[#3C7099]/20 hover:ring-[#3C7099]/40 transition-all duration-300">
+                      <img 
+                        src="/media/team/viktoras-komanda.png" 
+                        alt="Viktoras Staišiūnas"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Viktoras Staišiūnas</h3>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#3C7099]/10 rounded-full mb-3">
+                      <div class="w-2 h-2 bg-[#3C7099] rounded-full"></div>
+                      <div class="text-[#3C7099] font-semibold text-sm">Diegimo konsultantas</div>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-2 font-medium">Šių sričių ekspertas:</p>
+                    <div class="flex flex-wrap justify-center gap-1.5 mb-4">
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Įmonės dokumentai</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Išdarbinimas/įdarbinimas</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Verslo kelionės</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Sutartys</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Sąskaitos</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Atrankos</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Darbuotojų užklausos</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Expert 4 - Julija Drozdova */}
+              <div class="carousel-card w-[60%] flex-shrink-0 px-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                  <div class="flex flex-col items-center text-center">
+                    <div class="w-36 h-36 rounded-full overflow-hidden mb-6 shadow-xl ring-4 ring-[#C81F6A]/20 hover:ring-[#C81F6A]/40 transition-all duration-300">
+                      <img 
+                        src="/media/team/egle.svg" 
+                        alt="Julija Drozdova"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Julija Drozdova</h3>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#C81F6A]/10 rounded-full mb-3">
+                      <div class="w-2 h-2 bg-[#C81F6A] rounded-full"></div>
+                      <div class="text-[#C81F6A] font-semibold text-sm">Projektų vadovė</div>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-2 font-medium">Šių sričių ekspertas:</p>
+                    <div class="flex flex-wrap justify-center gap-1.5 mb-4">
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Turto valdymas</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Darbuotojų testavimas</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Posėdžių valdymas</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Kelionių lapai</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Bandomasis laikotarpis</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Atrankos</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Darbuotojų veiklos vertinimas</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Darbuotojų mokymai</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Komandiruotės</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Expert 5 - Raimondas Mačionis */}
+              <div class="carousel-card w-[60%] flex-shrink-0 px-4">
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
+                  <div class="flex flex-col items-center text-center">
+                    <div class="w-36 h-36 rounded-full overflow-hidden mb-6 shadow-xl ring-4 ring-[#C81F6A]/20 hover:ring-[#C81F6A]/40 transition-all duration-300">
+                      <img 
+                        src="/media/team/raimondas-komanda.png" 
+                        alt="Raimondas Mačionis"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Raimondas Mačionis</h3>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#C81F6A]/10 rounded-full mb-3">
+                      <div class="w-2 h-2 bg-[#C81F6A] rounded-full"></div>
+                      <div class="text-[#C81F6A] font-semibold text-sm">Projektų vadovas</div>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-2 font-medium">Šių sričių ekspertas:</p>
+                    <div class="flex flex-wrap justify-center gap-1.5 mb-4">
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Sutarčių valdymas</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Sąskaitų apdorojimas</span>
+                      <span class="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full text-gray-700">Pirkimų valdymas</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Scroll Indicators */}
+          <div class="flex justify-center items-center gap-3 mt-8">
+            <div class="indicator h-2 rounded-full bg-gray-300 transition-all duration-300 w-2"></div>
+            <div class="indicator h-2 rounded-full bg-gray-300 transition-all duration-300 w-2"></div>
+            <div class="indicator h-2 rounded-full bg-[#3C7099] transition-all duration-300 w-8"></div>
+            <div class="indicator h-2 rounded-full bg-gray-300 transition-all duration-300 w-2"></div>
+            <div class="indicator h-2 rounded-full bg-gray-300 transition-all duration-300 w-2"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Right - Features */}
+      <div class="space-y-6">
+        
+        <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <i class="fa-solid fa-briefcase text-white text-lg"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Sektoriaus žinios</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Mūsų ekspertai supranta įvairių sektorių specifiką ir padės pritaikyti sistemą jūsų įmonės poreikiams.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#C81F6A] to-[#a01854] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <i class="fa-solid fa-user-tie text-white text-lg"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Individualus požiūris</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Kiekvienas projektas yra unikalus. Mūsų ekspertai skiria laiko išklausyti jūsų poreikius ir pasiūlyti geriausius sprendimus.
+          </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group">
+          <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2a5270] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <i class="fa-solid fa-headset text-white text-lg"></i>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Visada pasirengę padėti</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Teikiame operatyvią pagalbą visais sistemos naudojimo klausimais - ryte, dieną ir vakare.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style is:inline>
+{`
+  #expertsCarousel {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  #expertsCarousel * {
+    pointer-events: auto;
+  }
+  
+  #expertsCarousel.grabbing,
+  #expertsCarousel.grabbing * {
+    cursor: grabbing !important;
+  }
+  
+  .carousel-card {
+    touch-action: pan-y;
+  }
+`}
+</style>
+
+<script is:inline>
+  // Professional Carousel Implementation
+  const carousel = document.getElementById('expertsCarousel');
+  const carouselInner = document.getElementById('carouselInner');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const indicators = document.querySelectorAll('.indicator');
+  
+  if (carousel && carouselInner && prevBtn && nextBtn) {
+    let currentIndex = 2; // Start from middle expert (Viktoras)
+    const totalSlides = carouselInner.children.length;
+    let startX = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let isDragging = false;
+    
+    function getCardWidth() {
+      const containerWidth = carousel.offsetWidth;
+      // Card width is 60% of container, leaving 20% on each side for visibility
+      return containerWidth * 0.6;
+    }
+    
+    function getTranslateX(index) {
+      const containerWidth = carousel.offsetWidth;
+      const cardWidth = getCardWidth();
+      const gap = 24; // gap-6 = 24px
+      const totalCardWidth = cardWidth + gap;
+      
+      // Calculate to center the active card
+      const centerOffset = (containerWidth - cardWidth) / 2;
+      return -(index * totalCardWidth - centerOffset);
+    }
+    
+    function updateCarousel(smooth = true) {
+      if (smooth) {
+        carouselInner.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+      } else {
+        carouselInner.style.transition = 'none';
+      }
+      
+      const translateX = getTranslateX(currentIndex);
+      carouselInner.style.transform = `translateX(${translateX}px)`;
+      
+      // Update buttons
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === totalSlides - 1;
+      
+      // Update indicators
+      indicators.forEach((indicator, idx) => {
+        if (idx === currentIndex) {
+          indicator.classList.remove('bg-gray-300', 'w-2');
+          indicator.classList.add('bg-[#3C7099]', 'w-8');
+        } else {
+          indicator.classList.remove('bg-[#3C7099]', 'w-8');
+          indicator.classList.add('bg-gray-300', 'w-2');
+        }
+      });
+    }
+    
+    function goToSlide(index) {
+      currentIndex = Math.max(0, Math.min(index, totalSlides - 1));
+      updateCarousel();
+    }
+    
+    function nextSlide() {
+      if (currentIndex < totalSlides - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    }
+    
+    function prevSlide() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    }
+    
+    // Button navigation
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    });
+    
+    // Touch/Mouse drag support
+    function touchStart(e) {
+      isDragging = true;
+      startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+      carousel.classList.add('grabbing');
+      carouselInner.style.transition = 'none';
+    }
+    
+    function touchMove(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      
+      const currentX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+      const diff = currentX - startX;
+      const baseTranslate = getTranslateX(currentIndex);
+      currentTranslate = baseTranslate + diff;
+      
+      carouselInner.style.transform = `translateX(${currentTranslate}px)`;
+    }
+    
+    function touchEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+      carousel.classList.remove('grabbing');
+      
+      const movedBy = currentTranslate - getTranslateX(currentIndex);
+      const threshold = getCardWidth() * 0.2; // 20% of card width
+      
+      if (movedBy < -threshold && currentIndex < totalSlides - 1) {
+        nextSlide();
+      } else if (movedBy > threshold && currentIndex > 0) {
+        prevSlide();
+      } else {
+        updateCarousel();
+      }
+    }
+    
+    // Add touch event listeners
+    carousel.addEventListener('mousedown', touchStart);
+    carousel.addEventListener('mousemove', touchMove);
+    carousel.addEventListener('mouseup', touchEnd);
+    carousel.addEventListener('mouseleave', touchEnd);
+    
+    carousel.addEventListener('touchstart', touchStart, { passive: true });
+    carousel.addEventListener('touchmove', touchMove, { passive: false });
+    carousel.addEventListener('touchend', touchEnd);
+    
+    // Indicator clicks
+    indicators.forEach((indicator, idx) => {
+      indicator.addEventListener('click', () => goToSlide(idx));
+      indicator.style.cursor = 'pointer';
+    });
+    
+    // Responsive resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        updateCarousel(false);
+      }, 150);
+    });
+    
+    // Initialize
+    updateCarousel(false);
+  }
+</script>

@@ -14,6 +14,7 @@ industry: "Apskaitos ir personalo paslaugos"
 
 import ContactForm from "../../components/home/ContactForm.astro";
 import Services from "../../components/home/Services.astro";
+import ExpertsCarousel from "../../components/shared/ExpertsCarousel.astro";
 import { Image } from "astro:assets";
 
 import bpo from '/src/assets/media/bpo.png';
@@ -437,89 +438,11 @@ import interna from '/src/assets/media/interna logo.png';
   </div>
 </section>
 
-{/* Apskaitos ir personalo sektoriaus ekspertai */}
+{/* VECTICUM ekspertų komanda */}
 
-<section class="w-full bg-white py-20">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    {/* Header */}
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-      <span class="text-[#C81F6A]">Apskaitos ir personalo sektoriaus</span> diegimo ekspertai jūsų paslaugoms
-      </h2>
-      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-        Kiekvienas projektas turi skirtą ekspertų komandą, kuri supranta paslaugų teikėjų specifiką – nuo klientų dokumentų valdymo iki integracijų su apskaitos sistemomis
-      </p>
-    </div>
-
-    {/* Content Grid */}
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-      
-      {/* Left - Expert Profile Card */}
-      <div class="sticky top-8">
-        <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
-          <div class="flex flex-col items-center text-center mb-8">
-            <div class="w-32 h-32 bg-gradient-to-br from-[#3C7099] to-[#C81F6A] rounded-full flex items-center justify-center mb-6 shadow-xl">
-              <span class="text-white font-bold text-5xl">ŽJ</span>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-900 mb-2">Živilė Juknevičiūtė-Akstinė</h3>
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-[#3C7099]/10 rounded-full mb-6">
-              <div class="w-2 h-2 bg-[#3C7099] rounded-full"></div>
-              <p class="text-[#3C7099] font-semibold text-sm">Diegimo ekspertė</p>
-            </div>
-            <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-100">
-              <div class="text-center">
-                <div class="text-2xl font-bold text-[#3C7099] mb-1">10+</div>
-                <div class="text-xs text-gray-600">metų patirties</div>
-              </div>
-              <div class="text-center">
-                <div class="text-2xl font-bold text-[#C81F6A] mb-1">45+</div>
-                <div class="text-xs text-gray-600">projektų</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Right - Features */}
-      <div class="space-y-6">
-        
-        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300">
-          <div class="w-12 h-12 bg-[#3C7099] rounded-lg flex items-center justify-center mb-4">
-            <i class="fa-solid fa-users-gear text-white text-xl"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Apskaitos sektoriaus žinios</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Mūsų ekspertai supranta apskaitos paslaugų verslo specifiką ir padės pritaikyti sistemą jūsų įmonės poreikiams.
-          </p>
-        </div>
-
-        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#C81F6A] transition-all duration-300">
-          <div class="w-12 h-12 bg-[#C81F6A] rounded-lg flex items-center justify-center mb-4">
-            <i class="fa-solid fa-user-tie text-white text-xl"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Individualus požiūris</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Kiekvienas projektas yra unikalus. Mūsų ekspertai skiria laiko išklausyti jūsų poreikius ir pasiūlyti geriausius sprendimus.
-          </p>
-        </div>
-
-        <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#3C7099] transition-all duration-300">
-          <div class="w-12 h-12 bg-[#3C7099] rounded-lg flex items-center justify-center mb-4">
-            <i class="fa-solid fa-headset text-white text-xl"></i>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Visada pasirengę padėti</h3>
-          <p class="text-gray-600 text-sm leading-relaxed">
-            Teikiame operatyvią pagalbą visais sistemos naudojimo klausimais - ryte, dieną ir vakare.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
+<ExpertsCarousel 
+  description="Specializuoti produktų ekspertai, kurie supranta apskaitos ir personalo verslo specifiką ir padeda įgyvendinti sprendimus"
+/>
 
 {/* Kontaktų forma */}
 
