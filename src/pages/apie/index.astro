@@ -41,126 +41,139 @@ const timeline = [
   },
 ];
 
-const team = [
+type TeamMember = {
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  initials?: string;
+};
+
+const team: TeamMember[] = [
   {
     name: "Jaroslav Gil",
     role: "CEO ir įkūrėjas",
-    bio: "10+ metų patirtis skaitmeninių produktų kūrime, orientuota į vertės kūrimą klientams.",
+    bio: "Vadovauja produkto vizijai ir įmonės strategijai.",
     image: "/media/team/Jaroslav.svg",
   },
   {
     name: "Tomas Masiulis",
     role: "CTO ir įkūrėjas",
-    bio: "Veda technologijų kryptį, užtikrina platformos saugumą, patikimumą ir augimą.",
+    bio: "Vadovauja technologijų krypčiai ir platformos plėtrai.",
     image: "/media/team/TomasM.svg",
   },
   {
     name: "Jevgenij Goretov",
     role: "Diegimo projektų direktorius",
-    bio: "Vadovauja diegimo projektams ir užtikrina aukščiausią kokybę.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Vadovauja diegimo projektams ir užtikrina kokybę.",
+    image: "/media/team/Jevgenij.png",
   },
   {
     name: "Darius Kelevišius",
     role: "Projektų valdymo direktorius",
-    bio: "Valdo projektų portfelį ir užtikrina strateginių tikslų pasiekimą.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Valdo projektų portfelį ir užtikrina tikslų pasiekimą.",
+    image: "/media/team/Darius.png",
   },
   {
     name: "Ieva Šilinskaitė",
     role: "Pardavimų ir plėtros direktorė",
-    bio: "Veda pardavimų strategiją ir plėtoja verslo galimybes naujose rinkose.",
-    image: "/media/team/ieva-komanda.png",
+    bio: "Veda pardavimų strategiją ir plėtoja verslo galimybes.",
+    image: "/media/team/Ieva.png",
   },
   {
     name: "Domas Lalas",
     role: "Marketingo vadovas",
-    bio: "Kuria marketingo strategijas ir padeda pritraukti naujus klientus.",
-    image: "/media/team/Domas-komanda.png",
+    bio: "Kuria ir įgyvendina marketingo strategijas.",
+    image: "/media/team/Domas.png",
   },
   {
     name: "Ignas Prakapas",
     role: "Konsultantų komandos vadovas",
-    bio: "Veda konsultantų komandą ir užtikrina aukščiausią aptarnavimo kokybę.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Veda konsultantų komandą ir užtikrina aptarnavimo kokybę.",
+    image: "/media/team/Ignas.png",
   },
   {
     name: "Paulius Prakapas",
     role: "Projektų vadovas",
-    bio: "Koordinuoja projektus nuo planavimo iki sėkmingo įgyvendinimo.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Koordinuoja projektus, gerina produkto kokybę ir vysto sprendimus.",
+    image: "",
+    initials: "PP",
   },
   {
     name: "Linas Merkys",
     role: "Projektų vadovas",
-    bio: "Valdo projektus ir užtikrina jų laiku ir kokybišką įgyvendinimą.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Koordinuoja projektus, gerina produkto kokybę ir vysto sprendimus.",
+    image: "/media/team/Linas.png",
   },
   {
     name: "Raimondas Mačionis",
     role: "Projektų vadovas",
-    bio: "Koordinuoja sudėtingus projektus ir užtikrina jų sėkmingą pristatymą.",
-    image: "/media/team/raimondas-komanda.png",
+    bio: "Koordinuoja projektus, gerina produkto kokybę ir vysto sprendimus.",
+    image: "/media/team/Raimondas.png",
   },
   {
     name: "Julija Drozdova",
     role: "Projektų vadovė",
-    bio: "Valdo projektus ir užtikrina efektyvią komunikaciją su klientais.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Koordinuoja projektus, gerina produkto kokybę ir vysto sprendimus.",
+    image: "/media/team/Julija.png",
   },
   {
     name: "Agnė Jazdzauskienė",
     role: "Diegimo konsultantė",
-    bio: "Padeda klientams sklandžiai įdiegti sprendimus ir pasiekti greitus rezultatus.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Padeda klientams sklandžiai įdiegti ir pritaikyti sprendimus.",
+    image: "",
+    initials: "AJ",
   },
   {
     name: "Viktoras Staišiūnas",
     role: "Diegimo konsultantas",
-    bio: "Užtikrina sklandų sistemų diegimą ir adaptaciją klientų aplinkoje.",
-    image: "/media/team/viktoras-komanda.png",
+    bio: "Padeda klientams sklandžiai įdiegti ir pritaikyti sprendimus.",
+    image: "/media/team/Viktoras.png",
   },
   {
     name: "Maciej Kasprzykowski",
     role: "Techninis konsultantas",
-    bio: "Teikia technines konsultacijas ir padeda optimizuoti sistemų veikimą.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Konsultuoja klientus ir padeda optimaliai naudoti sistemą.",
+    image: "",
+    initials: "MK",
   },
   {
     name: "Viktorija Žukauskaite",
     role: "Techninė konsultantė",
-    bio: "Konsultuoja klientus techniniais klausimais ir padeda rasti geriausius sprendimus.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Konsultuoja klientus ir padeda optimaliai naudoti sistemą.",
+    image: "",
+    initials: "VŽ",
   },
   {
     name: "Evelina Zalieckienė",
     role: "Techninė konsultantė",
-    bio: "Teikia technines konsultacijas ir padeda spręsti sudėtingas problemas.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Konsultuoja klientus ir padeda optimaliai naudoti sistemą.",
+    image: "/media/team/Evelina.png",
   },
   {
     name: "Živilė Juknevičiūtė-Akstinė",
     role: "Techninė konsultantė",
-    bio: "Konsultuoja klientus ir padeda optimaliai naudoti sistemas.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Konsultuoja klientus ir padeda optimaliai naudoti sistemą.",
+    image: "/media/team/Živilė.png",
   },
   {
     name: "Vitaliy Melnyk",
     role: "Programuotojas",
-    bio: "Kuria patikimas ir modernias sistemas naudojant naujausias technologijas.",
-    image: "/media/team/user-avatar.svg",
+    bio: "Kuria ir tobulina platformos funkcionalumą.",
+    image: "",
+    initials: "VM",
   },
   {
     name: "Šarūnas Mažintas",
     role: "Programuotojas",
-    bio: "Specializuojasi backend sistemų kūrime ir integracijos sprendimuose.",
-    image: "/media/team/sarunas-komanda.png",
+    bio: "Kuria ir tobulina platformos funkcionalumą.",
+    image: "/media/team/Šarūnas.png",
   },
   {
     name: "Dovydas Gricius",
     role: "Programuotojas",
-    bio: "Kuria modernias web aplikacijas ir užtikrina aukštą kodo kokybę.",
-    image: "/media/team/dovydas-komanda.png",
+    bio: "Kuria ir tobulina platformos funkcionalumą.",
+    image: "/media/team/Dovydas.png",
   },
 ];
 
@@ -419,7 +432,7 @@ const certificates = [
                 <img
                   src={member.image}
                   alt={`${member.name} nuotrauka`}
-                  class="relative mx-auto h-32 w-32 rounded-full object-cover ring-4 ring-white"
+                  class="relative mx-auto h-32 w-32 rounded-full object-cover object-[center_20%] ring-4 ring-white"
                   loading="lazy"
                 />
               </div>
@@ -436,12 +449,18 @@ const certificates = [
             <div class="w-full sm:w-[calc(33.333%-1rem)] lg:w-[calc(20%-1.2rem)] bg-white rounded-2xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl hover:border-[#3C7099]/20 transition-all hover:-translate-y-1">
               <div class="relative inline-block">
                 <div class="absolute -inset-1 bg-gradient-to-r from-[#3C7099] to-[#5a8ab8] rounded-full blur opacity-25 group-hover:opacity-50 transition"></div>
-                <img
-                  src={member.image}
-                  alt={`${member.name} nuotrauka`}
-                  class="relative mx-auto h-20 w-20 rounded-full object-cover ring-4 ring-white"
-                  loading="lazy"
-                />
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={`${member.name} nuotrauka`}
+                    class="relative mx-auto h-20 w-20 rounded-full object-cover object-[center_20%] ring-4 ring-white"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div class="relative mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-[#3C7099] to-[#2d5573] ring-4 ring-white flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">{member.initials}</span>
+                  </div>
+                )}
               </div>
               <h3 class="mt-4 text-base font-bold text-gray-900 group-hover:text-[#3C7099] transition-colors">{member.name}</h3>
               <p class="text-xs text-[#3C7099] font-semibold mt-1">{member.role}</p>
