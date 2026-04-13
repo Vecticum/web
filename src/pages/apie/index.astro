@@ -3,8 +3,6 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import ClientsLogo from "../../components/home/ClientsLogo.astro";
 import BlogPreview from "../../components/blog/BlogPreview.astro";
 
-const PASSWORD = "vecticum2026";
-
 const seoTitle = "Apie mus | VECTICUM";
 const seoDescription = "Sužinokite VECTICUM istoriją, vertybes, komandą ir pasiekimus. Kuriame patikimus, modernius sprendimus ilgalaikėms partnerystėms.";
 
@@ -64,14 +62,14 @@ const team: TeamMember[] = [
   },
   {
     name: "Jevgenij Goretov",
-    role: "Diegimo projektų direktorius",
-    bio: "Vadovauja diegimo projektams ir užtikrina kokybę.",
+    role: "Priežiūros padalinio vadovas",
+    bio: "Organizuoja priežiūros komandos darbą ir sistemos prenumeratas.",
     image: "/media/team/Jevgenij.png",
   },
   {
     name: "Darius Kelevišius",
-    role: "Projektų valdymo direktorius",
-    bio: "Valdo projektų portfelį ir užtikrina tikslų pasiekimą.",
+    role: "Operacijų vadovas",
+    bio: "Užtikrina projektų bei priežiūros veiklas įmonėje.",
     image: "/media/team/Darius.png",
   },
   {
@@ -226,68 +224,6 @@ const certificates = [
 ---
 
 <MainLayout title={seoTitle} description={seoDescription}>
-  <!-- Password Protection Overlay -->
-  <div id="passwordOverlay" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex items-center justify-center">
-    <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
-      <div class="text-center mb-6">
-        <svg class="w-16 h-16 text-[#3C7099] mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-        </svg>
-        <h2 class="text-2xl font-bold text-gray-900 mb-2">Apsaugotas puslapis</h2>
-        <p class="text-gray-600">Įveskite slaptažodį, kad peržiūrėtumėte šį puslapį</p>
-      </div>
-      <form id="passwordForm" class="space-y-4">
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-700 mb-2">Slaptažodis</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3C7099] focus:border-transparent outline-none"
-            placeholder="Įveskite slaptažodį"
-            required
-          />
-        </div>
-        <div id="errorMessage" class="text-red-600 text-sm hidden">Neteisingas slaptažodis</div>
-        <button
-          type="submit"
-          class="w-full bg-[#3C7099] text-white py-3 rounded-lg font-semibold hover:bg-[#2d5573] transition-colors"
-        >
-          Patvirtinti
-        </button>
-      </form>
-    </div>
-  </div>
-
-  <script define:vars={{ PASSWORD }}>
-    document.addEventListener('DOMContentLoaded', function() {
-      const overlay = document.getElementById('passwordOverlay');
-      const form = document.getElementById('passwordForm');
-      const passwordInput = document.getElementById('password');
-      const errorMessage = document.getElementById('errorMessage');
-      
-      // Check if already authenticated
-      if (sessionStorage.getItem('apiePageAuth') === 'true') {
-        overlay.style.display = 'none';
-      }
-      
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const enteredPassword = passwordInput.value;
-        
-        if (enteredPassword === PASSWORD) {
-          sessionStorage.setItem('apiePageAuth', 'true');
-          overlay.style.display = 'none';
-          errorMessage.classList.add('hidden');
-        } else {
-          errorMessage.classList.remove('hidden');
-          passwordInput.value = '';
-          passwordInput.focus();
-        }
-      });
-    });
-  </script>
-
   <!-- Hero -->
   <section class="relative bg-gradient-to-br from-[#E8F1FF] via-white to-[#f8fafc] py-24 px-6 overflow-hidden">
     <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzQzcwOTkiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0YzAtMS4xLjktMiAyLTJoMnYyaC0yYy0xLjEgMC0yLS45LTItMnptLTQgMGMwIDEuMS0uOSAyLTIgMnYtMmgyek0xMiAzNGMwLTEuMS45LTIgMi0yaDF2Mmgtek0yMCAxMmMxLjEgMCAyIC45IDIgMnYyaC0yYy0xLjEgMC0yLS45LTItMmgtMnYtMmgyem0tOCA4YzAtMS4xLjktMiAyLTJ2Mmgtemi+PC9wYXRoPjwvZz48L3N2Zz4=')] opacity-40"></div>
