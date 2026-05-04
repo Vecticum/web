@@ -15,7 +15,7 @@ const showChatWidget = false; // Temporarily disabled
     <BaseHead 
       title={Astro.props.title ?? SITE_TITLE}
       description={Astro.props.description ?? SITE_DESCRIPTION}
-      image={Astro.props.image ?? ""}
+      image={Astro.props.image || undefined}
       canonical={Astro.props.canonical ?? ""}
       schema={Astro.props.schema ?? ""}
       noIndex={Astro.props.noIndex ?? false}
