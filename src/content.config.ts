@@ -123,6 +123,7 @@ const industries = defineCollection({
     hero_image: z.string(),
     hero_image_alt: z.string().optional(),
     industry: z.string(),
+    draft: z.boolean().optional(),
   }),
 });
 

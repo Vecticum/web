@@ -4,7 +4,7 @@ import { render } from "astro:content";
 import MainLayout from "~/layouts/MainLayout.astro";
 
 export async function getStaticPaths() {
-  const industries = await getCollection("industries");
+  const industries = await getCollection("industries", ({ data }) => !data.draft);
   return industries.map((industry) => ({
     params: { slug: industry.id },
     props: industry,
