@@ -1,0 +1,47 @@
+<script is:inline>
+  function initCatalogAccordion() {
+    var cards = document.querySelectorAll('[data-catalog-card]');
+    cards.forEach(function (card) {
+      var btn = card.querySelector('[data-catalog-btn]');
+      if (!btn || btn.getAttribute('data-catalog-init')) return;
+      btn.setAttribute('data-catalog-init', 'true');
+      btn.addEventListener('click', function () {
+        var panel = card.querySelector('[data-catalog-panel]');
+        var label = btn.querySelector('[data-catalog-label]');
+        var chevron = btn.querySelector('[data-catalog-chevron]');
+        if (!panel || !label || !chevron) return;
+        var isOpen = !panel.classList.contains('hidden');
+
+        // close all cards
+        cards.forEach(function (c) {
+          var p = c.querySelector('[data-catalog-panel]');
+          var l = c.querySelector('[data-catalog-btn] [data-catalog-label]');
+          var ch = c.querySelector('[data-catalog-btn] [data-catalog-chevron]');
+          if (p) { p.classList.add('hidden'); p.style.opacity = '0'; p.style.transform = 'translateY(-8px)'; }
+          if (l) l.textContent = 'Peržiūrėti';
+          if (ch) ch.style.transform = '';
+        });
+
+        // open this one if it was closed
+        if (!isOpen) {
+          panel.classList.remove('hidden');
+          // trigger animation
+          requestAnimationFrame(function () {
+            panel.style.transition = 'opacity 200ms ease-out, transform 200ms ease-out';
+            panel.style.opacity = '1';
+            panel.style.transform = 'translateY(0)';
+          });
+          label.textContent = 'Sutraukti';
+          chevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  }
+  // Run on load and after Astro page transitions
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCatalogAccordion);
+  } else {
+    initCatalogAccordion();
+  }
+  document.addEventListener('astro:page-load', initCatalogAccordion);
+</script>
