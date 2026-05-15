@@ -1,0 +1,114 @@
+---
+// Video Showcase - pristato VECTICUM platformos vaizdo įrašus per YouTube
+---
+
+<section class="w-full bg-[#F1F4F8] py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <h2 class="text-4xl sm:text-5xl font-bold text-gray-900">
+        Kaip tai atrodo <span class="text-[#C81F6A]">praktikoje?</span>
+      </h2>
+      <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+        Peržiūrėkite, kaip VECTICUM veikia kasdienėse situacijose
+      </p>
+    </div>
+
+    <!-- Video Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Video 1 - Darbuotojų savitarna ir atostogų prašymai -->
+      <div class="rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-300">
+        <div class="relative aspect-video bg-gray-900 yt-lite-wrapper" data-yt-id="KkbBkGCR3dM">
+          <img 
+            src="https://i.ytimg.com/vi/KkbBkGCR3dM/hqdefault.jpg" 
+            alt="VECTICUM darbuotojų savitarna ir atostogų prašymai" 
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <button 
+            class="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/15 transition-all duration-300 cursor-pointer group"
+            aria-label="Paleisti darbuotojų savitarnos vaizdo įrašą"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-[#3C7099] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#3C7099]/10 text-[#3C7099]">
+              Personalo savitarna
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Darbuotojų savitarna ir atostogų prašymai</h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            Sužinokite, kaip darbuotojai gali patogiai teikti atostogų prašymus, valdyti nebuvimus ir naudotis savitarnos funkcijomis.
+          </p>
+        </div>
+      </div>
+
+      <!-- Video 2 - Supažindinimas su tvarkomis ir testavimas -->
+      <div class="rounded-2xl overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-300">
+        <div class="relative aspect-video bg-gray-900 yt-lite-wrapper" data-yt-id="t2VBGcfhfEI">
+          <img 
+            src="https://i.ytimg.com/vi/t2VBGcfhfEI/hqdefault.jpg" 
+            alt="VECTICUM supažindinimas su tvarkomis ir testavimas" 
+            class="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <button 
+            class="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/15 transition-all duration-300 cursor-pointer group"
+            aria-label="Paleisti supažindinimų ir testavimo vaizdo įrašą"
+          >
+            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-7 h-7 sm:w-8 sm:h-8 text-[#3C7099] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </button>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#C81F6A]/10 text-[#C81F6A]">
+              Atitikties valdymas
+            </span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900">Supažindinimas su tvarkomis ir testavimas</h3>
+          <p class="mt-2 text-gray-600 text-sm">
+            Pažiūrėkite, kaip VECTICUM padeda automatizuoti darbuotojų supažindinimą su dokumentais ir žinių testavimą.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.yt-lite-wrapper').forEach(wrapper => {
+      const ytId = wrapper.getAttribute('data-yt-id');
+      const btn = wrapper.querySelector('button');
+      if (!btn || !ytId) return;
+
+      btn.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0`;
+        iframe.title = "YouTube video player";
+        iframe.frameBorder = "0";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        iframe.allowFullscreen = true;
+        iframe.className = "absolute inset-0 w-full h-full";
+        
+        // Clear wrapper and insert iframe
+        wrapper.innerHTML = '';
+        wrapper.style.position = 'relative';
+        wrapper.appendChild(iframe);
+      });
+    });
+  });
+</script>

@@ -26,3 +26,5 @@ pnpm-debug.log*
 
 # delete
 package-lock.json*
+# Large video files
+public/*.mp4
