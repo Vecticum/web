@@ -3,90 +3,216 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
 const categories = [
   {
-      name: "Personalo savitarna",
-      services: [
-        { name: "Darbuotojo duomenų valdymas", href: "/darbuotoju-duomenu-bazes-valdymas/", icon: "👤" },
-        { name: "Intranetas (Įmonės naujienos)", href: "/intraneto-valdymas/", icon: "📰" },
-        { name: "Darbuotojų prašymų valdymas", href: "/darbuotoju-prasymu-valdymas/", icon: "📝" },
-        { name: "Darbo sutarčių valdymas", href: "/darbo-sutarciu-valdymas/", icon: "📄" },
-        { name: "Atrankų valdymas", href: "/atrankos-valdymas/", icon: "👥" },
-        { name: "Darbuotojo įdarbinimo savitarna", href: "/darbuotoju-idarbinimo-savitarna/", icon: "🆕" },
-        { name: "Darbo vietos paruošimas", href: "/darbuotojo-idarbinimo-i-imone-valdymas/", icon: "💼" },
-        { name: "Bandomojo laikotarpio valdymas", href: "/bandomojo-laikotarpio-vertinimas-valdymas/", icon: "⏳" },
-        { name: "Darbuotojo išdarbinimo valdymas", href: "/darbuotojo-isdarbinimo-is-imones-valdymas/", icon: "🚪" },
-        { name: "Atostogų prašymų ir kitų nebuvimų valdymas", href: "/atostogu-valdymas/", icon: "🌴" },
-        { name: "Komandiruočių valdymas", href: "/komandiruociu-valdymas/", icon: "✈️" },
-        { name: "Darbo laiko apskaitos žiniaraščiai", href: "/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/", icon: "📅" },
-        { name: "Darbuotojų testavimas", href: "/testavimo-is-norminiu-dokumentu-valdymas/", icon: "✍️" },
-        { name: "Mokymų valdymas", href: "/mokymu-valdymas/", icon: "🎓" },
-        { name: "Veiklos vertinimas", href: "/veiklos-vertinimas/", icon: "📈" },
-      ],
-    },
-    {
-      name: "Dokumentų valdymas",
-      services: [
-        { name: "Dokumentų valdymas", href: "/dokumumentu-valdymas/", icon: "📑" },
-        { name: "Dokumentacijos plano valdymas", href: "/dokumentacijos-plano-valdymas/", icon: "🗂️" },
-        { name: "Gaunamos/siunčiamos korespondencijos valdymas", href: "/gaunamu-uzklausu-valdymas/", icon: "📨" },
-        { name: "Privalomo supažindinimo su dokumentais valdymas", href: "/privalomo-supazindinimo-su-dokumentais-valdymas/", icon: "📚" },
-        { name: "Sutarčių valdymas", href: "/sutarciu-valdymas/", icon: "📎" },
-        { name: "Užduočių valdymas", href: "/uzduociu-valdymas/", icon: "✅" },
-      ],
-    },
-    {
-      name: "Sąskaitų ir pirkimų valdymas",
-      services: [
-        { name: "Gaunamų sąskaitų valdymas", href: "/gaunamu-saskaitu-valdymas/", icon: "💳" },
-        { name: "Pirkimų valdymas", href: "/pirkimu-valdymas/", icon: "🛍️" },
-      ],
-    },
-    {
-      name: "Apskaitomų dokumentų valdymas",
-      services: [
-        { name: "Avansinės apyskaitos valdymas", href: "/avansines-apyskaitos-valdymas/", icon: "💰" },
-        { name: "Kelionės lapų valdymas", href: "/keliones-lapu-valdymas", icon: "🛣️" },
-        { name: "Komandiruočių valdymas", href: "/komandiruociu-valdymas/", icon: "✈️" },
-        { name: "Gaunamų sąskaitų valdymas", href: "/gaunamu-saskaitu-valdymas/", icon: "💳" },
-      ],
-    },
-    {
-      name: "Turto valdymas",
-      services: [
-        { name: "Išduodamo inventoriaus valdymas", href: "/isduodamo-inventoriaus-darbuotojui-valdymas/", icon: "🔧" },
-      ],
-    },
-    {
-      name: "Sprendimų valdymas",
-      services: [
-        { name: "Valdybos posėdžiai", href: "/valdybos-posedziu-valdymas", icon: "👥" },
-      ],
-    },  ];
+    name: "Personalo valdymas",
+    description: "Centralizuokite visus personalo procesus – nuo įdarbinimo iki atostogų valdymo – vienoje modernioje platformoje.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-1.053M15 19.128ZM12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg>`,
+    color: "from-[#3C7099] to-[#5a9bc4]",
+    bgLight: "bg-[#f0f6fb]",
+    textColor: "text-[#3C7099]",
+    borderColor: "border-[#3C7099]/20",
+    services: [
+      { name: "Darbuotojo duomenų valdymas", href: "/darbuotoju-duomenu-bazes-valdymas/", desc: "Visa informacija apie darbuotojus vienoje vietoje" },
+      { name: "Intranetas", href: "/intraneto-valdymas/", desc: "Įmonės naujienos ir vidinė komunikacija" },
+      { name: "Darbuotojų prašymų valdymas", href: "/darbuotoju-prasymu-valdymas/", desc: "Skaitmeninis prašymų pateikimas ir tvirtinimas" },
+      { name: "Darbo sutarčių valdymas", href: "/darbo-sutarciu-valdymas/", desc: "Sutarčių kūrimas, derinimas ir pasirašymas" },
+      { name: "Atrankų valdymas", href: "/atrankos-valdymas/", desc: "Kandidatų paieška ir atrankos procesai" },
+      { name: "Įdarbinimo savitarna", href: "/darbuotoju-idarbinimo-savitarna/", desc: "Naujo darbuotojo duomenų pateikimas" },
+      { name: "Darbo vietos paruošimas", href: "/darbuotojo-idarbinimo-i-imone-valdymas/", desc: "Onboarding procesų automatizavimas" },
+      { name: "Bandomojo laikotarpio valdymas", href: "/bandomojo-laikotarpio-vertinimas-valdymas/", desc: "Tikslai, vertinimai ir sprendimai" },
+      { name: "Išdarbinimo valdymas", href: "/darbuotojo-isdarbinimo-is-imones-valdymas/", desc: "Offboarding procesų koordinavimas" },
+      { name: "Atostogų ir nebuvimų valdymas", href: "/atostogu-valdymas/", desc: "Prašymai, likučiai ir kalendorius" },
+      { name: "Komandiruočių valdymas", href: "/komandiruociu-valdymas/", desc: "Kelionių planavimas ir dienpinigiai" },
+      { name: "Darbo laiko apskaita", href: "/darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas/", desc: "Grafikai ir žiniaraščiai" },
+      { name: "Darbuotojų testavimas", href: "/testavimo-is-norminiu-dokumentu-valdymas/", desc: "Žinių tikrinimas ir sertifikavimas" },
+      { name: "Mokymų valdymas", href: "/mokymu-valdymas/", desc: "Mokymų planavimas ir atsekamumas" },
+      { name: "SCORM mokymai (Talentator)", href: "/talentator-scorm-mokymai/", desc: "Interaktyvūs e. mokymai" },
+      { name: "Veiklos vertinimas", href: "/veiklos-vertinimas/", desc: "Tikslai, kompetencijos ir pokalbiai" },
+    ],
+  },
+  {
+    name: "Dokumentų valdymas",
+    description: "Struktūruotas dokumentų tvarkymas, elektroninis pasirašymas ir supažindinimas – viename sprendime.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>`,
+    color: "from-[#C81F6A] to-[#e04d8a]",
+    bgLight: "bg-[#fdf2f7]",
+    textColor: "text-[#C81F6A]",
+    borderColor: "border-[#C81F6A]/15",
+    services: [
+      { name: "Dokumentų valdymas", href: "/dokumentu-valdymas/", desc: "Kūrimas, saugojimas ir paieška" },
+      { name: "Dokumentacijos plano valdymas", href: "/dokumentacijos-plano-valdymas/", desc: "Bylų nomenklatūra ir archyvavimas" },
+      { name: "Korespondencijos valdymas", href: "/gaunamu-uzklausu-valdymas/", desc: "Gaunama ir siunčiama korespondencija" },
+      { name: "Supažindinimas su dokumentais", href: "/privalomo-supazindinimo-su-dokumentais-valdymas/", desc: "Privalomas supažindinimas ir atsekamumas" },
+      { name: "Sutarčių valdymas", href: "/sutarciu-valdymas/", desc: "Visa sutarties gyvavimo ciklo kontrolė" },
+      { name: "Užduočių valdymas", href: "/uzduociu-valdymas/", desc: "Užduočių skyrimas ir vykdymo stebėjimas" },
+    ],
+  },
+  {
+    name: "Sąskaitų ir pirkimų valdymas",
+    description: "Automatizuokite sąskaitų apdorojimą ir pirkimų procesus – nuo užsakymo iki apmokėjimo.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" /></svg>`,
+    color: "from-[#3C7099] to-[#5a9bc4]",
+    bgLight: "bg-[#f0f6fb]",
+    textColor: "text-[#3C7099]",
+    borderColor: "border-[#3C7099]/20",
+    services: [
+      { name: "Gaunamų sąskaitų valdymas", href: "/gaunamu-saskaitu-valdymas/", desc: "Automatinis atpažinimas ir tvirtinimas" },
+      { name: "Pirkimų valdymas", href: "/pirkimu-valdymas/", desc: "Užsakymai, patvirtinimai ir biudžetai" },
+    ],
+  },
+  {
+    name: "Apskaitomų dokumentų valdymas",
+    description: "Tvarkykite avansines ataskaitas, kelionės lapus ir kitus apskaitomus dokumentus skaitmeniškai.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V13.5Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V18Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V13.5Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V18Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V18Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25Z" /></svg>`,
+    color: "from-[#C81F6A] to-[#e04d8a]",
+    bgLight: "bg-[#fdf2f7]",
+    textColor: "text-[#C81F6A]",
+    borderColor: "border-[#C81F6A]/15",
+    services: [
+      { name: "Avansinės apyskaitos valdymas", href: "/avansines-apyskaitos-valdymas/", desc: "Išlaidų kompensavimas ir ataskaitos" },
+      { name: "Kelionės lapų valdymas", href: "/keliones-lapu-valdymas/", desc: "Maršrutai ir kuro apskaita" },
+      { name: "Komandiruočių valdymas", href: "/komandiruociu-valdymas/", desc: "Dienpinigiai ir kelionių apskaita" },
+      { name: "Gaunamų sąskaitų valdymas", href: "/gaunamu-saskaitu-valdymas/", desc: "Automatinis apdorojimas ir tvirtinimas" },
+    ],
+  },
+  {
+    name: "Turto valdymas",
+    description: "Sekite įmonės turtą ir inventorių – kas, kam ir kada buvo perduota.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" /></svg>`,
+    color: "from-[#3C7099] to-[#5a9bc4]",
+    bgLight: "bg-[#f0f6fb]",
+    textColor: "text-[#3C7099]",
+    borderColor: "border-[#3C7099]/20",
+    services: [
+      { name: "Išduodamo inventoriaus valdymas", href: "/isduodamo-inventoriaus-darbuotojui-valdymas/", desc: "Turto priskyrimas ir grąžinimas" },
+    ],
+  },
+  {
+    name: "Sprendimų valdymas",
+    description: "Organizuokite valdybos ir akcininkų posėdžius – nuo darbotvarkės iki protokolų.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" /></svg>`,
+    color: "from-[#C81F6A] to-[#e04d8a]",
+    bgLight: "bg-[#fdf2f7]",
+    textColor: "text-[#C81F6A]",
+    borderColor: "border-[#C81F6A]/15",
+    services: [
+      { name: "Valdybos posėdžių valdymas", href: "/valdybos-posedziu-valdymas/", desc: "Darbotvarkė, svarstymai ir protokolai" },
+    ],
+  },
+];
+
+const stats = [
+  { value: "800+", label: "Įmonių Lietuvoje ir Europoje" },
+  { value: "30k+", label: "Vartotojų" },
+  { value: "4", label: "Rinkos, kuriose veikiame" },
+  { value: "35+", label: "Sprendimai jūsų verslui" },
+];
 
 const seoTitle = "Verslo sprendimai: personalo, dokumentų valdymas (DVS) | Vecticum";
-const seoDescription = "Vecticum siūlo įvairius verslo sprendimus: personalo, dokumentų valdymo sistemą (DVS), pirkimų ir sąskaitų valdymą. Automatizuokite procesus ir optimizuokite savo verslo veiklą";
-const seoImage = '~/assets/images/logo.webp'; // Optional
+const seoDescription = "Vecticum siūlo įvairius verslo sprendimus: personalo, dokumentų valdymo sistemą (DVS), pirkimų ir sąskaitų valdymą. Automatizuokite procesus ir optimizuokite savo verslo veiklą.";
+const seoImage = '~/assets/images/logo.webp';
 ---
 
 <MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
-  <section class="bg-[#F8FAFC] py-20 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl font-bold text-center text-gray-900 mb-16">Sistemos sprendimai</h1>
 
-      <div class="space-y-24">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-[#3C7099] pt-20 pb-28 sm:pt-28 sm:pb-36">
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Ccircle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;1.5&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-1.5 mb-8">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#C81F6A] opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-[#C81F6A]"></span>
+        </span>
+        <span class="text-sm text-gray-200 font-medium">Vieninga platforma visiems verslo procesams</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
+        Visi įmonės procesai<br/>
+        vienoje sistemoje
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-white max-w-2xl mx-auto leading-relaxed">
+        Personalo valdymas, dokumentų tvarkymas, sąskaitų automatizavimas ir dar daugiau – viskas vienoje debesijos platformoje, pritaikytoje jūsų verslo procesams.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/registracijademo/" class="inline-flex items-center justify-center px-8 py-3 bg-[#C81F6A] text-white font-medium rounded-full hover:bg-[#a31755] transition-colors shadow-lg">
+          Išbandyti nemokamai
+        </a>
+        <a href="/kontaktai/" class="inline-flex items-center justify-center px-8 py-3 rounded-full border-2 border-white/30 text-white font-medium hover:bg-white/10 transition-colors">
+          Susisiekti su mumis
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="relative -mt-14 z-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+          {stats.map((stat) => (
+            <div class="text-center">
+              <div class="text-2xl sm:text-3xl font-bold text-gray-900">{stat.value}</div>
+              <div class="mt-1 text-sm text-gray-500">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions Grid -->
+  <section class="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Sprendimų kategorijos</h2>
+        <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Pasirinkite sritį ir sužinokite, kaip „Vecticum" padės automatizuoti jūsų verslo procesus.</p>
+      </div>
+
+      <div class="space-y-16">
         {categories.map((category, idx) => (
-          <div>
-            <h2 class="text-2xl sm:text-3xl font-semibold mb-6 text-center text-[#3C7099]">{category.name}</h2>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {category.services.map(service => (
-                <li class="bg-white rounded-xl p-6 shadow hover:shadow-md transition group text-center flex flex-col items-center">
-                  <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
-                  <a href={service.href} class="text-base font-medium text-gray-800 group-hover:text-[#3C7099] transition-colors">{service.name}</a>
-                </li>
+          <div class={`rounded-2xl border ${category.borderColor} ${category.bgLight} p-6 sm:p-8 lg:p-10`}>
+            <!-- Category Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
+              <div class={`flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center text-white shadow-lg`}>
+                <Fragment set:html={category.icon} />
+              </div>
+              <div>
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900">{category.name}</h3>
+                <p class="mt-1 text-gray-600 text-sm sm:text-base">{category.description}</p>
+              </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              {category.services.map((service) => (
+                <a href={service.href} class="group relative bg-white rounded-xl p-4 sm:p-5 border border-gray-100 hover:border-[#3C7099]/40 hover:shadow-md transition-all duration-200 flex flex-col">
+                  <div class="flex items-start justify-between gap-2">
+                    <h4 class="text-sm sm:text-base font-semibold text-gray-900 group-hover:text-[#3C7099] transition-colors leading-snug">{service.name}</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 flex-shrink-0 text-gray-300 group-hover:text-[#3C7099] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all mt-0.5"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" /></svg>
+                  </div>
+                  <p class="mt-2 text-xs sm:text-sm text-gray-500 leading-relaxed">{service.desc}</p>
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F8FAFC]">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Pasiruošę automatizuoti savo procesus?</h2>
+      <p class="mt-4 text-lg text-gray-600">Užsiregistruokite nemokamai arba susisiekite su mumis – padėsime rasti geriausiai jūsų poreikius atitinkantį sprendimą.</p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/registracijademo/" class="inline-flex items-center justify-center px-8 py-3 bg-[#C81F6A] text-white font-medium rounded-full hover:bg-[#a31755] transition-colors">
+          Pradėti nemokamai
+        </a>
+        <a href="/kontaktai/" class="inline-flex items-center justify-center px-8 py-3 border-2 border-[#3C7099] text-[#3C7099] font-medium rounded-full hover:bg-[#3C7099] hover:text-white transition-colors">
+          Gauti konsultaciją
+        </a>
+      </div>
+    </div>
+  </section>
+
 </MainLayout>
