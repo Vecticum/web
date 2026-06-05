@@ -44,36 +44,71 @@ const doubledLogos = logos.concat(logos); // begalinis slinkimas
   position: relative;
 }
 
+.carousel-wrapper::before,
+.carousel-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, white 0%, transparent 100%);
+}
+
+.carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, white 0%, transparent 100%);
+}
+
 .carousel-track {
   display: flex;
   flex-wrap: nowrap;
   width: fit-content;
-  animation: scroll 60s linear infinite;
+  animation: scroll 90s linear infinite;
   will-change: transform;
-  transform: translateZ(0); /* force GPU */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
 }
 
 @media (max-width: 768px) {
   .carousel-track {
-    animation-duration: 25s; /* mobile greitesnis loopas */
+    animation-duration: 40s;
+  }
+  .carousel-wrapper::before,
+  .carousel-wrapper::after {
+    width: 40px;
   }
 }
 
 @keyframes scroll {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 </style>
 
-<section class="pb-10">
-  <div class="mx-auto max-w-7xl px-0">
-    <p class="text-center text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 mb-8">Mumis pasitiki</p>
-    <div class="carousel-wrapper w-full bg-white py-6 rounded-2xl shadow-sm overflow-hidden">
+<section class="pt-6 pb-16 bg-white">
+  <div class="mx-auto max-w-7xl px-4">
+    <div class="text-center mb-10">
+      <p class="text-sm font-semibold tracking-widest text-[#3C7099] uppercase mb-3">800+ įmonių jau naudoja</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Mumis pasitiki pirmaujančios įmonės</h2>
+    </div>
+    <div class="carousel-wrapper w-full py-8 overflow-hidden">
       <div class="carousel-track">
         {
           doubledLogos.map((logo, i) => {
@@ -109,13 +144,13 @@ const doubledLogos = logos.concat(logos); // begalinis slinkimas
               'Garant - finansų sprendimai',
               'BNM Finance - finansų paslaugos'
             ];
-            const logoIndex = i % 30; // Kadangi logotipai dubliuojami
+            const logoIndex = i % 30;
             return (
-              <div class="flex-shrink-0 px-8">
+              <div class="flex-shrink-0 px-10 flex items-center justify-center">
                 <img
                   src={logo.src}
                   alt={logoNames[logoIndex] || 'Vecticum klientas'}
-                  class="h-12 w-auto object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
+                  class="h-10 sm:h-12 w-auto max-w-[140px] object-contain grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-500 ease-out"
                   loading="lazy"
                 />
               </div>

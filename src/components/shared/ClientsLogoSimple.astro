@@ -1,0 +1,127 @@
+---
+import dussmann from '/src/assets/media/dussmann.jpg';
+import iki from '/src/assets/media/iki.png';
+import civinity from '/src/assets/media/civinity.png';
+import autojuta from '/src/assets/media/Autojuta.png';
+import perlas from '/src/assets/media/Perlas.png';
+import vilkyskiu from '/src/assets/media/VilkyskiuPienine.png';
+import linasAgro from '/src/assets/media/Linas_agro.png';
+import omberg from '/src/assets/media/Omberg.png';
+import modus from '/src/assets/media/ModusGroup.png';
+import nokia from '/src/assets/media/nokia.png';
+import cgates from '/src/assets/media/Cgates.png';
+import citybee from '/src/assets/media/CityBee.png';
+import cargoGo from '/src/assets/media/Cargo_Go.jpg';
+import airGuru from '/src/assets/media/air_guru.jpg';
+import narbutas from '/src/assets/media/NARBUTAS.png';
+import aradas from '/src/assets/media/Aradas.png';
+import garantGroup from '/src/assets/media/GarantGroup.png';
+import altaMedica from '/src/assets/media/AltaMedica.png';
+import homanit from '/src/assets/media/Homanit.png';
+import retal from '/src/assets/media/retal.png';
+import manaRanga from '/src/assets/media/ManaRanga.png';
+import projektana from '/src/assets/media/Projektana.png';
+import bpo from '/src/assets/media/bpo.png';
+import neogroup from '/src/assets/media/Neogroup.jpg';
+import vilniausApsvietimas from '/src/assets/media/VilniausApsvietimas.png';
+import trinitiJurex from '/src/assets/media/TrinitiJurex.png';
+import yukon from '/src/assets/media/Yukon.png';
+ 
+const logos = [
+  dussmann, iki, civinity, autojuta, perlas, vilkyskiu, linasAgro, omberg,
+  modus, nokia, cgates, citybee, cargoGo, airGuru, narbutas, aradas,
+  garantGroup, altaMedica, homanit, retal, manaRanga, projektana, bpo,
+  neogroup, vilniausApsvietimas, trinitiJurex, yukon
+];
+
+const doubledLogos = logos.concat(logos);
+---
+
+<style>
+.carousel-wrapper-simple {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-wrapper-simple::before,
+.carousel-wrapper-simple::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.carousel-wrapper-simple::before {
+  left: 0;
+  background: linear-gradient(to right, white 0%, transparent 100%);
+}
+
+.carousel-wrapper-simple::after {
+  right: 0;
+  background: linear-gradient(to left, white 0%, transparent 100%);
+}
+
+.carousel-track-simple {
+  display: flex;
+  flex-wrap: nowrap;
+  width: fit-content;
+  animation: scroll-simple 80s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.carousel-track-simple:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+  .carousel-track-simple {
+    animation-duration: 35s;
+  }
+  .carousel-wrapper-simple::before,
+  .carousel-wrapper-simple::after {
+    width: 30px;
+  }
+}
+
+@keyframes scroll-simple {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+</style>
+
+<div class="carousel-wrapper-simple w-full py-6 overflow-hidden">
+  <div class="carousel-track-simple">
+    {
+      doubledLogos.map((logo, i) => {
+        const logoNames = [
+          'Dussmann Service', 'IKI', 'Civinity', 'Auto Juta', 'Perlas',
+          'Vilkyškių pieninė', 'Linas Agro', 'Omberg', 'Modus Group',
+          'Nokia', 'CGates', 'CityBee', 'Cargo Go', 'Air Guru',
+          'Narbutas', 'Aradas', 'Garant Group', 'Alta Medica',
+          'Homanit', 'Retal', 'Mana Ranga', 'Projektana', 'BPO',
+          'Neogroup', 'Vilniaus apšvietimas', 'Triniti Jurex', 'Yukon'
+        ];
+        const logoIndex = i % 27;
+        return (
+          <div class="flex-shrink-0 px-8 flex items-center justify-center">
+            <img
+              src={logo.src}
+              alt={logoNames[logoIndex] || 'Vecticum klientas'}
+              class="h-10 w-auto max-w-[120px] object-contain grayscale opacity-70 hover:opacity-100 transition-all duration-300"
+              loading="lazy"
+            />
+          </div>
+        );
+      })
+    }
+  </div>
+</div>
