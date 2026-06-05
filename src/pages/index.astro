@@ -9,12 +9,57 @@ import CompairBlock from "../components/home/CompairBlock.astro";
 import SecurityStandards from "../components/home/SecurityStandards.astro";
 import Testimonials from "../components/home/Testimonials.astro";
 import VideoShowcase from "../components/home/VideoShowcase.astro";
+
+const organizationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://vecticum.lt/#organization",
+      "name": "Vecticum",
+      "url": "https://vecticum.lt",
+      "logo": "https://vecticum.lt/_astro/logo.BmXpwNHg.webp",
+      "email": "info@vecticum.com",
+      "telephone": "+37069605332",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "T. Kosciuškos g. 24",
+        "addressLocality": "Vilnius",
+        "postalCode": "01100",
+        "addressCountry": "LT"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+37069605332",
+        "contactType": "sales",
+        "areaServed": ["LT", "PL", "GB"]
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://vecticum.lt/#software",
+      "name": "Vecticum",
+      "url": "https://vecticum.lt",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Dokumentų, sąskaitų ir personalo valdymo sistema vienoje vietoje.",
+      "publisher": {
+        "@id": "https://vecticum.lt/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://vecticum.lt/personalo-valdymo-sprendimu-planai"
+      }
+    }
+  ]
+});
 ---
 
 <MainLayout
   title="Personalo ir dokumentų valdymo sistema | Vecticum"
   description="VECTICUM – dokumentų, sąskaitų ir personalo valdymo sistema. Automatizuokite verslo procesus: atostogas, užduotis, sutartis ir daugiau. Išbandykite nemokamai!"
   image="/media/og-default.webp"
+  schema={organizationSchema}
 >
   <Hero />
     <ClientsLogo />

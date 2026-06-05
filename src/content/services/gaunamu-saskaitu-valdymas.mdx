@@ -11,31 +11,38 @@ meta:
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "Kas yra gaunamų sąskaitų valdymo modulis?",
+        "name": "Kaip galima įkelti gautas sąskaitas į sistemą?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tai Vecticum sprendimas, automatizuojantis gaunamų sąskaitų faktūrų apdorojimą – nuo gavimo ir duomenų nuskaitymo iki tvirtinimo ir perdavimo apskaitai."
+          "text": "Sistema yra lanksti ir siūlo kelis būdus: galite įkelti sąskaitas rankiniu būdu (PDF ar skanuotas), nufotografuoti jas mobiliuoju telefonu arba persiųsti el. paštu tiesiai į specialiai sukurtą dėžutę. Tiekėjai gali siųsti sąskaitas tiesiogiai į sistemą."
         }
       },{
         "@type": "Question",
-        "name": "Kaip veikia OCR technologija sąskaitų apdorojime?",
+        "name": "Ar įmanomas automatinis sistemos duomenų nuskaitymas (OCR)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "OCR automatiškai nuskaito sąskaitos duomenis – tiekėją, sumą, datą, PVM – ir užpildo sistemoje reikiamus laukus. Tai sumažina rankinio darbo poreikį ir klaidų tikimybę."
+          "text": "Taip, naudojama pažangi automatinio atpažinimo (OCR) technologija, kuri nuskaito duomenis (pvz., datą, sumą, tiekėją, PVM) ir sukuria sąskaitos įrašą sistemoje. Tai žymiai sumažina rankinio darbo kiekį ir klaidų tikimybę."
         }
       },{
         "@type": "Question",
-        "name": "Kaip vyksta sąskaitų tvirtinimo procesas?",
+        "name": "Kaip vyksta sąskaitų tvirtinimas ir paskirstymas?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Gauta sąskaita automatiškai nukreipiama atsakingam asmeniui pagal nustatytą tvarką. Tvirtintojas gali patvirtinti, atmesti arba persiųsti kitam darbuotojui su komentaru."
+          "text": "Procesas yra automatizuotas. Sistema pagal nustatytas taisykles (sumas, kaštų centrus) automatiškai priskiria tvirtintojus. Darbuotojai gali tvirtinti sąskaitas vienu paspaudimu tiesiai iš el. pašto, mobiliuoju telefonu arba prisijungę prie sistemos."
         }
       },{
         "@type": "Question",
-        "name": "Ar modulis integruojamas su apskaitos sistemomis?",
+        "name": "Ar galima sąskaitas susieti su biudžetu ar projektais?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Taip. Vecticum gaunamų sąskaitų modulis gali būti sujungtas su populiariomis apskaitos sistemomis, kad patvirtintos sąskaitos automatiškai pereitų į buhalterinę apskaitą."
+          "text": "Taip, sąskaitas galima priskirti konkretiems kaštų centrams, projektams ar pirkimų užsakymams. Tai leidžia kontroliuoti biudžetą – sistema gali automatiškai įspėti, jei sąskaitos suma viršija patvirtintą limitą."
+        }
+      },{
+        "@type": "Question",
+        "name": "Ar sistema integruojasi su buhalterinės apskaitos programomis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Taip, įmanoma integracija su populiariausiomis buhalterinėmis apskaitos ir ERP (pvz., Rivilė, Stekas, Navision, Microsoft Dynamics NAV) sistemomis, kas leidžia automatiškai perduoti patvirtintas sąskaitas."
         }
       }]
     }
@@ -426,19 +433,17 @@ Visos paruoštos perdavimui sąskaitos automatiniu būdu pagal suderintą tvarka
   <div class="max-w-5xl mx-auto">
     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 text-center mb-12">Dažnai užduodami klausimai</h2>
 
-    <div class="space-y-4">      
+    <div class="space-y-4">
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kas yra Vecticum?</span>
+            <span>Kaip galima įkelti gautas sąskaitas į sistemą?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Vecticum – tai lanksti verslo valdymo sistema, skirta automatizuoti įvairius procesus: nuo atostogų ar sąskaitų tvirtinimo iki individualių, įmonei pritaikytų sprendimų. Ji leidžia centralizuotai valdyti dokumentus, užtikrina saugumą, sklandų darbuotojų darbą ir lengvą pritaikomumą tiek mažoms, tiek didelėms organizacijoms.
-            </p>
+            <p class="pt-4">Sistema yra lanksti ir siūlo kelis būdus: galite įkelti sąskaitas rankiniu būdu (PDF ar skanuotas), nufotografuoti jas mobiliuoju telefonu arba persiųsti el. paštu tiesiai į specialiai sukurtą dėžutę. Tiekėjai gali siųsti sąskaitas tiesiogiai į sistemą.</p>
           </div>
         </details>
       </div>
@@ -446,15 +451,13 @@ Visos paruoštos perdavimui sąskaitos automatiniu būdu pagal suderintą tvarka
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kokia yra Vecticum kaina?</span>
+            <span>Ar įmanomas automatinis sistemos duomenų nuskaitymas (OCR)?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Vecticum siūlo lanksčius kainų planus, pritaikytus pagal įmonės darbuotojų skaičių ir pasirinktų sprendimų apimtį. Norėdami gauti individualų pasiūlymą, kviečiame užpildyti užklausos formą arba susisiekti su mūsų komanda.
-            </p>
+            <p class="pt-4">Taip, naudojama pažangi automatinio atpažinimo (OCR) technologija, kuri nuskaito duomenis (pvz., datą, sumą, tiekėją, PVM) ir sukuria sąskaitos įrašą sistemoje. Tai žymiai sumažina rankinio darbo kiekį ir klaidų tikimybę.</p>
           </div>
         </details>
       </div>
@@ -462,15 +465,13 @@ Visos paruoštos perdavimui sąskaitos automatiniu būdu pagal suderintą tvarka
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kaip išbandyti Vecticum?</span>
+            <span>Kaip vyksta sąskaitų tvirtinimas ir paskirstymas?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Norėdami išbandyti Vecticum, užpildykite registracijos formą – mūsų komanda su Jumis susisieks ir pasirūpins demonstracija bei išbandymo galimybe, atsižvelgiant į Jūsų poreikius.
-            </p>
+            <p class="pt-4">Procesas yra automatizuotas. Sistema pagal nustatytas taisykles (sumas, kaštų centrus) automatiškai priskiria tvirtintojus. Darbuotojai gali tvirtinti sąskaitas vienu paspaudimu tiesiai iš el. pašto, mobiliuoju telefonu arba prisijungę prie sistemos.</p>
           </div>
         </details>
       </div>
@@ -478,15 +479,13 @@ Visos paruoštos perdavimui sąskaitos automatiniu būdu pagal suderintą tvarka
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kaip greitai paleidžiama Vecticum sistema?</span>
+            <span>Ar galima sąskaitas susieti su biudžetu ar projektais?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Standartinių sprendimų paleidimas gali užtrukti iki vienos valandos. Kiekvienos įmonės paleidimo procesas derinamas individualiai, atsižvelgiant į pasirinktų modulių skaičių ir organizacijos vidinius procesus.
-            </p>
+            <p class="pt-4">Taip, sąskaitas galima priskirti konkretiems kaštų centrams, projektams ar pirkimų užsakymams. Tai leidžia kontroliuoti biudžetą – sistema gali automatiškai įspėti, jei sąskaitos suma viršija patvirtintą limitą.</p>
           </div>
         </details>
       </div>
@@ -494,31 +493,13 @@ Visos paruoštos perdavimui sąskaitos automatiniu būdu pagal suderintą tvarka
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Ar Vecticum tinkamas mažoms ir vidutinėms įmonėms?</span>
+            <span>Ar sistema integruojasi su buhalterinės apskaitos programomis?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Taip, Vecticum yra lanksti platforma, tinkama tiek mažoms, tiek vidutinėms ar didelėms organizacijoms. Sprendimai lengvai pritaikomi pagal individualius verslo poreikius.
-            </p>
-          </div>
-        </details>
-      </div>
-
-      <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
-        <details class="group">
-          <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Ar Vecticum gali naudotis užsienio įmonės ar darbuotojai?</span>
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Taip, Vecticum palaiko kelias kalbas – sistema prieinama anglų, lietuvių, rusų, lenkų ir latvių kalbomis, todėl ją gali lengvai naudoti ir tarptautinės komandos.
-            </p>
+            <p class="pt-4">Taip, įmanoma integracija su populiariausiomis buhalterinėmis apskaitos ir ERP (pvz., Rivilė, Stekas, Navision, Microsoft Dynamics NAV) sistemomis, kas leidžia automatiškai perduoti patvirtintas sąskaitas.</p>
           </div>
         </details>
       </div>

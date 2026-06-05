@@ -11,31 +11,38 @@ meta:
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "Kas yra gaunamų užklausų valdymo sistema?",
+        "name": "Ar galima sistemoje valdyti ir gautą, ir siunčiamą korespondenciją?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tai Vecticum modulis, skirtas centralizuotai registruoti, paskirstyti ir valdyti visas gautas užklausas – tiek iš klientų, tiek iš partnerių ar vidaus darbuotojų."
+          "text": "Taip, sistema turi atskirus sąrašus tiek gaunamai, tiek siunčiamai korespondencijai. Vienoje sistemoje galima registruoti, kaupti ir valdyti visus įmonės susirašinėjimus, užtikrinant tvarką ir greitą informacijos paiešką."
         }
       },{
         "@type": "Question",
-        "name": "Kaip užklausos paskirstomos atsakingiems darbuotojams?",
+        "name": "Kaip vyksta užduočių paskirstymas gavus naują užklausą?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Užklausos gali būti automatiškai paskirstomos pagal temą, padalinį ar darbuotojo kompetenciją. Taip pat galimas rankinis paskirstymas su terminų nustatymu."
+          "text": "Gavus dokumentą, atsakingas darbuotojas gali iškart sistemoje suformuoti vykdymo užduotį (rezoliuciją), priskirti atsakingą asmenį ir nustatyti įvykdymo terminą. Vykdytojas mato užduotį ir, esant poreikiui, gali ją perduoti kolegoms, o vadovai gali stebėti vykdymo eigą."
         }
       },{
         "@type": "Question",
-        "name": "Ar galima sekti užklausos vykdymo eigą?",
+        "name": "Ar galima gautus dokumentus susieti su kitais įmonės procesais (pvz., sąskaitomis ar sutartimis)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Taip. Kiekviena užklausa turi statusą ir istoriją – matoma, kas atsakingas, koks terminas, ar buvo atsakyta laiku, ir kokie veiksmai atlikti."
+          "text": "Taip, gautą korespondenciją galima lanksčiai paskirstyti ir automatiškai nukreipti į specifinius vidinius modulius – sutarčių, sąskaitų, raštinės ar atrankų. Tai sutrumpina dokumentų apdorojimo laiką ir sumažina rankinio darbo kiekį."
         }
       },{
         "@type": "Question",
-        "name": "Ar sistema informuoja apie vėluojančias užklausas?",
+        "name": "Ar galima atsakymus rengti ir siųsti tiesiai iš sistemos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Taip. Sistema automatiškai siunčia priminimus atsakingiems darbuotojams ir vadovams, kai artėja arba praeina užklausos atsakymo terminas."
+          "text": "Taip, sistemoje galima parengti atsakymą, jį suderinti, pasirašyti kvalifikuotu elektroniniu parašu ir išsiųsti adresatui tiesiai per korespondencijos el. pašto dėžutę, nenaudojant išorinių programų."
+        }
+      },{
+        "@type": "Question",
+        "name": "Ar sistema leidžia tvarkyti PDF failus (skaidyti arba jungti)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Taip, sprendimas turi integruotą funkciją darbui su PDF failais. Jei gaunate kelis dokumentus viename faile, galite jį išskaidyti į atskirus įrašus, arba atvirkščiai – sujungti kelis failus į vieną dokumentą tiesiogiai sistemoje."
         }
       }]
     }
@@ -207,19 +214,17 @@ import ContactForm from "../../components/home/ContactForm.astro";
   <div class="max-w-5xl mx-auto">
     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 text-center mb-12">Dažnai užduodami klausimai</h2>
 
-    <div class="space-y-4">      
+    <div class="space-y-4">
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kas yra Vecticum?</span>
+            <span>Ar galima sistemoje valdyti ir gautą, ir siunčiamą korespondenciją?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Vecticum – tai lanksti verslo valdymo sistema, skirta automatizuoti įvairius procesus: nuo atostogų ar sąskaitų tvirtinimo iki individualių, įmonei pritaikytų sprendimų. Ji leidžia centralizuotai valdyti dokumentus, užtikrina saugumą, sklandų darbuotojų darbą ir lengvą pritaikomumą tiek mažoms, tiek didelėms organizacijoms.
-            </p>
+            <p class="pt-4">Taip, sistema turi atskirus sąrašus tiek gaunamai, tiek siunčiamai korespondencijai. Vienoje sistemoje galima registruoti, kaupti ir valdyti visus įmonės susirašinėjimus, užtikrinant tvarką ir greitą informacijos paiešką.</p>
           </div>
         </details>
       </div>
@@ -227,15 +232,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kokia yra Vecticum kaina?</span>
+            <span>Kaip vyksta užduočių paskirstymas gavus naują užklausą?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Vecticum siūlo lanksčius kainų planus, pritaikytus pagal įmonės darbuotojų skaičių ir pasirinktų sprendimų apimtį. Norėdami gauti individualų pasiūlymą, kviečiame užpildyti užklausos formą arba susisiekti su mūsų komanda.
-            </p>
+            <p class="pt-4">Gavus dokumentą, atsakingas darbuotojas gali iškart sistemoje suformuoti vykdymo užduotį (rezoliuciją), priskirti atsakingą asmenį ir nustatyti įvykdymo terminą. Vykdytojas mato užduotį ir, esant poreikiui, gali ją perduoti kolegoms, o vadovai gali stebėti vykdymo eigą.</p>
           </div>
         </details>
       </div>
@@ -243,15 +246,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kaip išbandyti Vecticum?</span>
+            <span>Ar galima gautus dokumentus susieti su kitais įmonės procesais (pvz., sąskaitomis ar sutartimis)?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Norėdami išbandyti Vecticum, užpildykite registracijos formą – mūsų komanda su Jumis susisieks ir pasirūpins demonstracija bei išbandymo galimybe, atsižvelgiant į Jūsų poreikius.
-            </p>
+            <p class="pt-4">Taip, gautą korespondenciją galima lanksčiai paskirstyti ir automatiškai nukreipti į specifinius vidinius modulius – sutarčių, sąskaitų, raštinės ar atrankų. Tai sutrumpina dokumentų apdorojimo laiką ir sumažina rankinio darbo kiekį.</p>
           </div>
         </details>
       </div>
@@ -259,15 +260,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kaip greitai paleidžiama Vecticum sistema?</span>
+            <span>Ar galima atsakymus rengti ir siųsti tiesiai iš sistemos?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Standartinių sprendimų paleidimas gali užtrukti iki vienos valandos. Kiekvienos įmonės paleidimo procesas derinamas individualiai, atsižvelgiant į pasirinktų modulių skaičių ir organizacijos vidinius procesus.
-            </p>
+            <p class="pt-4">Taip, sistemoje galima parengti atsakymą, jį suderinti, pasirašyti kvalifikuotu elektroniniu parašu ir išsiųsti adresatui tiesiai per korespondencijos el. pašto dėžutę, nenaudojant išorinių programų.</p>
           </div>
         </details>
       </div>
@@ -275,31 +274,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Ar Vecticum tinkamas mažoms ir vidutinėms įmonėms?</span>
+            <span>Ar sistema leidžia tvarkyti PDF failus (skaidyti arba jungti)?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Taip, Vecticum yra lanksti platforma, tinkama tiek mažoms, tiek vidutinėms ar didelėms organizacijoms. Sprendimai lengvai pritaikomi pagal individualius verslo poreikius.
-            </p>
-          </div>
-        </details>
-      </div>
-
-      <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
-        <details class="group">
-          <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Ar Vecticum gali naudotis užsienio įmonės ar darbuotojai?</span>
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Taip, Vecticum palaiko kelias kalbas – sistema prieinama anglų, lietuvių, rusų, lenkų ir latvių kalbomis, todėl ją gali lengvai naudoti ir tarptautinės komandos.
-            </p>
+            <p class="pt-4">Taip, sprendimas turi integruotą funkciją darbui su PDF failais. Jei gaunate kelis dokumentus viename faile, galite jį išskaidyti į atskirus įrašus, arba atvirkščiai – sujungti kelis failus į vieną dokumentą tiesiogiai sistemoje.</p>
           </div>
         </details>
       </div>

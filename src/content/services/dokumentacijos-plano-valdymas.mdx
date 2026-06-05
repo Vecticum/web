@@ -11,31 +11,38 @@ meta:
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "Kas yra dokumentacijos plano valdymas Vecticum sistemoje?",
+        "name": "Ar galiu savarankiškai kurti ir redaguoti įmonės dokumentų struktūrą (medį)?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tai struktūruotas dokumentų klasifikavimo ir tvarkymo sprendimas, leidžiantis organizuoti visus įmonės dokumentus pagal dokumentų medžio principą – su bylomis, kategorijomis ir saugojimo terminais."
+          "text": "Taip, sistema suteikia galimybę savarankiškai kurti dokumentų medį, bylas bei registrus. Tai leidžia lanksčiai valdyti dokumentus pagal įmonės poreikius ir mažina priklausomybę nuo išorinių paslaugų teikėjų."
         }
       },{
         "@type": "Question",
-        "name": "Kaip veikia dokumentų medžio struktūra?",
+        "name": "Ar sistema palaiko kvalifikuotą elektroninį parašą ir ADOC formatą?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Dokumentai klasifikuojami hierarchine struktūra pagal veiklos sritis, padalinius ar dokumentų tipus. Kiekvienai bylai priskiriamas indeksas, pavadinimas ir saugojimo terminas."
+          "text": "Taip, dokumentus galima pasirašyti kvalifikuotu elektroniniu parašu, atitinkančiu „eIDAS" reikalavimus. Sistema palaiko naujų .pdf dokumentų pasirašymą, gautų .pdf dokumentų parašų nuskaitymą bei ADOC formato dokumentų parašų nuskaitymą ir papildymą."
         }
       },{
         "@type": "Question",
-        "name": "Ar galima nustatyti dokumentų saugojimo terminus?",
+        "name": "Kaip veikia dokumentų archyvavimas ir saugojimo terminų kontrolė?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Taip. Sistema leidžia priskirti kiekvienai dokumentų kategorijai saugojimo terminą, o pasibaigus terminui – automatiškai informuoja atsakingą asmenį apie būtinybę nurašyti ar archyvuoti dokumentus."
+          "text": "Sistema leidžia nustatyti bylos saugojimo periodą, uždaryti bylas bei registrus ir suformuoti naikintų dokumentų ataskaitą. Taip pat yra galimybė tvirtinti dokumentų naikinimą arba pažymėti dokumentus kaip archyvuotus, užtikrinant tvarkingą ilgalaikį saugojimą."
         }
       },{
         "@type": "Question",
-        "name": "Ar dokumentacijos planas atitinka Lietuvos archyvų reikalavimus?",
+        "name": "Ar galima automatizuoti dokumentų tvirtinimo procesą?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Taip. Vecticum dokumentacijos plano modulis sukurtas atsižvelgiant į Lietuvos archyvų departamento rekomendacijas ir dokumentų valdymo standartus."
+          "text": "Taip, sistema leidžia automatizuoti tvirtinimo sekas (workflow), užtikrinant, kad dokumentai būtų vizuojami ir pasirašomi laiku. Užsakovas gali nustatyti standartinius tvirtinimo dalyvius skirtingoms kategorijoms arba rankiniu būdu pridėti papildomus vizuotojus."
+        }
+      },{
+        "@type": "Question",
+        "name": "Kaip valdomos darbuotojų teisės matyti ar redaguoti dokumentus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Teisių valdymas yra labai lankstus – jas galima nustatyti ir valdyti bylų lygmenyje. Kiekvienai bylai galima atskirai suteikti teises kurti, skaityti, keisti arba trinti dokumentus, taip užtikrinant duomenų saugumą."
         }
       }]
     }
@@ -245,19 +252,17 @@ import ContactForm from "../../components/home/ContactForm.astro";
   <div class="max-w-5xl mx-auto">
     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 text-center mb-12">Dažnai užduodami klausimai</h2>
 
-    <div class="space-y-4">      
+    <div class="space-y-4">
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kas yra Vecticum?</span>
+            <span>Ar galiu savarankiškai kurti ir redaguoti įmonės dokumentų struktūrą (medį)?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Vecticum – tai lanksti verslo valdymo sistema, skirta automatizuoti įvairius procesus: nuo atostogų ar sąskaitų tvirtinimo iki individualių, įmonei pritaikytų sprendimų. Ji leidžia centralizuotai valdyti dokumentus, užtikrina saugumą, sklandų darbuotojų darbą ir lengvą pritaikomumą tiek mažoms, tiek didelėms organizacijoms.
-            </p>
+            <p class="pt-4">Taip, sistema suteikia galimybę savarankiškai kurti dokumentų medį, bylas bei registrus. Tai leidžia lanksčiai valdyti dokumentus pagal įmonės poreikius ir mažina priklausomybę nuo išorinių paslaugų teikėjų.</p>
           </div>
         </details>
       </div>
@@ -265,15 +270,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kokia yra Vecticum kaina?</span>
+            <span>Ar sistema palaiko kvalifikuotą elektroninį parašą ir ADOC formatą?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Vecticum siūlo lanksčius kainų planus, pritaikytus pagal įmonės darbuotojų skaičių ir pasirinktų sprendimų apimtį. Norėdami gauti individualų pasiūlymą, kviečiame užpildyti užklausos formą arba susisiekti su mūsų komanda.
-            </p>
+            <p class="pt-4">Taip, dokumentus galima pasirašyti kvalifikuotu elektroniniu parašu, atitinkančiu „eIDAS" reikalavimus. Sistema palaiko naujų .pdf dokumentų pasirašymą, gautų .pdf dokumentų parašų nuskaitymą bei ADOC formato dokumentų parašų nuskaitymą ir papildymą.</p>
           </div>
         </details>
       </div>
@@ -281,15 +284,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kaip išbandyti Vecticum?</span>
+            <span>Kaip veikia dokumentų archyvavimas ir saugojimo terminų kontrolė?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Norėdami išbandyti Vecticum, užpildykite registracijos formą – mūsų komanda su Jumis susisieks ir pasirūpins demonstracija bei išbandymo galimybe, atsižvelgiant į Jūsų poreikius.
-            </p>
+            <p class="pt-4">Sistema leidžia nustatyti bylos saugojimo periodą, uždaryti bylas bei registrus ir suformuoti naikintų dokumentų ataskaitą. Taip pat yra galimybė tvirtinti dokumentų naikinimą arba pažymėti dokumentus kaip archyvuotus, užtikrinant tvarkingą ilgalaikį saugojimą.</p>
           </div>
         </details>
       </div>
@@ -297,15 +298,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kaip greitai paleidžiama Vecticum sistema?</span>
+            <span>Ar galima automatizuoti dokumentų tvirtinimo procesą?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Standartinių sprendimų paleidimas gali užtrukti iki vienos valandos. Kiekvienos įmonės paleidimo procesas derinamas individualiai, atsižvelgiant į pasirinktų modulių skaičių ir organizacijos vidinius procesus.
-            </p>
+            <p class="pt-4">Taip, sistema leidžia automatizuoti tvirtinimo sekas (workflow), užtikrinant, kad dokumentai būtų vizuojami ir pasirašomi laiku. Užsakovas gali nustatyti standartinius tvirtinimo dalyvius skirtingoms kategorijoms arba rankiniu būdu pridėti papildomus vizuotojus.</p>
           </div>
         </details>
       </div>
@@ -313,31 +312,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Ar Vecticum tinkamas mažoms ir vidutinėms įmonėms?</span>
+            <span>Kaip valdomos darbuotojų teisės matyti ar redaguoti dokumentus?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Taip, Vecticum yra lanksti platforma, tinkama tiek mažoms, tiek vidutinėms ar didelėms organizacijoms. Sprendimai lengvai pritaikomi pagal individualius verslo poreikius.
-            </p>
-          </div>
-        </details>
-      </div>
-
-      <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
-        <details class="group">
-          <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Ar Vecticum gali naudotis užsienio įmonės ar darbuotojai?</span>
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Taip, Vecticum palaiko kelias kalbas – sistema prieinama anglų, lietuvių, rusų, lenkų ir latvių kalbomis, todėl ją gali lengvai naudoti ir tarptautinės komandos.
-            </p>
+            <p class="pt-4">Teisių valdymas yra labai lankstus – jas galima nustatyti ir valdyti bylų lygmenyje. Kiekvienai bylai galima atskirai suteikti teises kurti, skaityti, keisti arba trinti dokumentus, taip užtikrinant duomenų saugumą.</p>
           </div>
         </details>
       </div>

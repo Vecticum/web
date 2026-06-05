@@ -11,31 +11,38 @@ meta:
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "Kas yra Vecticum sutarčių valdymo sistema?",
+        "name": "Ar galima sutartis pasirašyti elektroniniu būdu tiesiai sistemoje?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tai modulis, leidžiantis registruoti, derinti ir pasirašyti komercines sutartis elektroniniu būdu – nuo projekto parengimo iki galutinio pasirašymo ir saugojimo."
+          "text": "Taip, sistema leidžia pasirašyti sutartis kvalifikuotu elektroniniu parašu, atitinkančiu „eIDAS" reikalavimus. Galite pasirašyti naujus PDF dokumentus, taip pat sistema nuskaito ir leidžia papildyti gautus PDF bei ADOC formato dokumentus el. parašais."
         }
       },{
         "@type": "Question",
-        "name": "Kaip vyksta sutarčių derinimas?",
+        "name": "Kaip vyksta sutarčių derinimo ir tvirtinimo procesas?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sutarties projektas automatiškai siunčiamas nustatytu derinimo maršrutu – teisininkai, finansininkai ir vadovai gali komentuoti, siūlyti pakeitimus ir tvirtinti savo dalį."
+          "text": "Procesas yra automatizuotas pagal nustatytas tvirtinimo sekas (workflow). Kiekvienai sutarčių kategorijai galima priskirti standartinius vizuotojus ir pasirašančius asmenis. Esant poreikiui, derinimo metu galima rankiniu būdu pridėti papildomus vizuotojus."
         }
       },{
         "@type": "Question",
-        "name": "Ar galima sutartis pasirašyti elektroniniu parašu?",
+        "name": "Ar sistema turi besibaigiančių sutarčių sąrašą?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Taip. Vecticum palaiko kvalifikuotą elektroninį parašą, todėl sutartis galima pasirašyti nuotoliniu būdu – greitai ir teisiškai galiojančiai."
+          "text": "Taip, siekiant valdyti rizikas ir nepraleisti terminų, sistemoje yra atskiras besibaigiančių sutarčių sąrašas."
         }
       },{
         "@type": "Question",
-        "name": "Ar sistema primena apie besibaigiantį sutarties galiojimą?",
+        "name": "Ar galiu naudoti įmonės standartizuotus sutarčių šablonus?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Taip. Galima nustatyti automatinius priminimus prieš sutarties galiojimo pabaigą, kad atsakingi asmenys spėtų pratęsti arba nutraukti sutartį laiku."
+          "text": "Taip, sistema leidžia rengti sutartis naudojant šablonus, kuriuose automatiškai užpildomi duomenys iš sutaties metaduomenų. Galite kurti neribotą kiekį šablonų ir juos individualizuoti pagal savo įmonės poreikius."
+        }
+      },{
+        "@type": "Question",
+        "name": "Ar galima susieti sutartis su kitais dokumentais, pavyzdžiui, sąskaitomis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Taip, siekiant matyti pilną pirkimo ar pardavimo kontekstą, sutartis galima susieti su kitais moduliais – pirkimų užsakymais ar gautomis sąskaitomis faktūromis (jei įmonė naudoja šiuos modulius)."
         }
       }]
     }
@@ -225,19 +232,17 @@ import ContactForm from "../../components/home/ContactForm.astro";
   <div class="max-w-5xl mx-auto">
     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 text-center mb-12">Dažnai užduodami klausimai</h2>
 
-    <div class="space-y-4">      
+    <div class="space-y-4">
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kas yra Vecticum?</span>
+            <span>Ar galima sutartis pasirašyti elektroniniu būdu tiesiai sistemoje?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Vecticum – tai lanksti verslo valdymo sistema, skirta automatizuoti įvairius procesus: nuo atostogų ar sąskaitų tvirtinimo iki individualių, įmonei pritaikytų sprendimų. Ji leidžia centralizuotai valdyti dokumentus, užtikrina saugumą, sklandų darbuotojų darbą ir lengvą pritaikomumą tiek mažoms, tiek didelėms organizacijoms.
-            </p>
+            <p class="pt-4">Taip, sistema leidžia pasirašyti sutartis kvalifikuotu elektroniniu parašu, atitinkančiu „eIDAS" reikalavimus. Galite pasirašyti naujus PDF dokumentus, taip pat sistema nuskaito ir leidžia papildyti gautus PDF bei ADOC formato dokumentus el. parašais.</p>
           </div>
         </details>
       </div>
@@ -245,15 +250,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kokia yra Vecticum kaina?</span>
+            <span>Kaip vyksta sutarčių derinimo ir tvirtinimo procesas?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Vecticum siūlo lanksčius kainų planus, pritaikytus pagal įmonės darbuotojų skaičių ir pasirinktų sprendimų apimtį. Norėdami gauti individualų pasiūlymą, kviečiame užpildyti užklausos formą arba susisiekti su mūsų komanda.
-            </p>
+            <p class="pt-4">Procesas yra automatizuotas pagal nustatytas tvirtinimo sekas (workflow). Kiekvienai sutarčių kategorijai galima priskirti standartinius vizuotojus ir pasirašančius asmenis. Esant poreikiui, derinimo metu galima rankiniu būdu pridėti papildomus vizuotojus.</p>
           </div>
         </details>
       </div>
@@ -261,15 +264,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kaip išbandyti Vecticum?</span>
+            <span>Ar sistema turi besibaigiančių sutarčių sąrašą?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Norėdami išbandyti Vecticum, užpildykite registracijos formą – mūsų komanda su Jumis susisieks ir pasirūpins demonstracija bei išbandymo galimybe, atsižvelgiant į Jūsų poreikius.
-            </p>
+            <p class="pt-4">Taip, siekiant valdyti rizikas ir nepraleisti terminų, sistemoje yra atskiras besibaigiančių sutarčių sąrašas.</p>
           </div>
         </details>
       </div>
@@ -277,15 +278,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kaip greitai paleidžiama Vecticum sistema?</span>
+            <span>Ar galiu naudoti įmonės standartizuotus sutarčių šablonus?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Standartinių sprendimų paleidimas gali užtrukti iki vienos valandos. Kiekvienos įmonės paleidimo procesas derinamas individualiai, atsižvelgiant į pasirinktų modulių skaičių ir organizacijos vidinius procesus.
-            </p>
+            <p class="pt-4">Taip, sistema leidžia rengti sutartis naudojant šablonus, kuriuose automatiškai užpildomi duomenys iš sutaties metaduomenų. Galite kurti neribotą kiekį šablonų ir juos individualizuoti pagal savo įmonės poreikius.</p>
           </div>
         </details>
       </div>
@@ -293,31 +292,13 @@ import ContactForm from "../../components/home/ContactForm.astro";
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Ar Vecticum tinkamas mažoms ir vidutinėms įmonėms?</span>
+            <span>Ar galima susieti sutartis su kitais dokumentais, pavyzdžiui, sąskaitomis?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Taip, Vecticum yra lanksti platforma, tinkama tiek mažoms, tiek vidutinėms ar didelėms organizacijoms. Sprendimai lengvai pritaikomi pagal individualius verslo poreikius.
-            </p>
-          </div>
-        </details>
-      </div>
-
-      <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
-        <details class="group">
-          <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Ar Vecticum gali naudotis užsienio įmonės ar darbuotojai?</span>
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Taip, Vecticum palaiko kelias kalbas – sistema prieinama anglų, lietuvių, rusų, lenkų ir latvių kalbomis, todėl ją gali lengvai naudoti ir tarptautinės komandos.
-            </p>
+            <p class="pt-4">Taip, siekiant matyti pilną pirkimo ar pardavimo kontekstą, sutartis galima susieti su kitais moduliais – pirkimų užsakymais ar gautomis sąskaitomis faktūromis (jei įmonė naudoja šiuos modulius).</p>
           </div>
         </details>
       </div>

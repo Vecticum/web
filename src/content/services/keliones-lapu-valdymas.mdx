@@ -11,31 +11,38 @@ meta:
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "Kas yra kelionės lapų valdymo sistema?",
+        "name": "Kaip sistema skaičiuoja kuro sąnaudas ir likučius?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tai Vecticum modulis, skirtas elektroniniam transporto apskaitai – kelionės lapų pildymui, kuro sąnaudų fiksavimui ir maršrutų registravimui be popierinių dokumentų."
+          "text": "Sistema automatiškai atlieka skaičiavimus pagal įvestus maršrutus, nuvažiuotą atstumą ir nustatytas kuro normas. Ji apskaičiuoja kuro likučius, odometro parodymus ir sunaudotą kurą, taip pat tikrina kuro balansą (ar jis nėra neigiamas), taip sumažindama klaidų riziką."
         }
       },{
         "@type": "Question",
-        "name": "Kaip pildomas elektroninis kelionės lapas?",
+        "name": "Ar galima importuoti kuro pildymo duomenis iš degalinių ataskaitų?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Vairuotojas ar atsakingas asmuo nurodo maršrutą, ridą, kuro kiekį ir kelionės tikslą. Duomenys įvedami per naršyklę ar mobilų įrenginį ir automatiškai suformuoja kelionės lapą."
+          "text": "Taip, sistema leidžia automatiškai importuoti kuro papildymo duomenis iš „Excel" failų (degalinių ataskaitų). Tai žymiai pagreitina procesą ir galima atsisakyti suvedinėti kiekvieną kuro pylimą rankiniu būdu."
         }
       },{
         "@type": "Question",
-        "name": "Ar sistema skaičiuoja kuro sąnaudas?",
+        "name": "Kaip generuojami kelionės lapai?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Taip. Pagal įvestą ridą ir degalų kiekį sistema automatiškai apskaičiuoja kuro sunaudojimą ir palygina su normatyvu, padedant identifikuoti nuokrypius."
+          "text": "Mėnesio pabaigoje sistema automatiškai sugeneruoja kelionės lapo formą kiekvienai transporto priemonei. Vartotojui belieka tik pasitikrinti ir, jei reikia, papildyti maršrutus bei nuvažiuotą atstumą."
         }
       },{
         "@type": "Question",
-        "name": "Ar galima generuoti transporto ataskaitas?",
+        "name": "Ar sistema primena vairuotojams pateikti ataskaitas?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Taip. Galima formuoti ataskaitas pagal automobilį, vairuotoją, laikotarpį ar maršrutą – su kuro sąnaudomis, nuvažiuotais kilometrais ir kitais rodikliais."
+          "text": "Taip, sistema automatiškai primena vairuotojams pateikti kuro sąnaudas. Tai padeda užtikrinti, kad ataskaitos buhalteriją pasiektų laiku."
+        }
+      },{
+        "@type": "Question",
+        "name": "Ar kelionės lapų duomenys perduodami į buhalterinę programą?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Taip, patvirtinti kelionės lapai kartu su visais kuro nurašymo duomenimis yra automatiškai eksportuojami į įmonės ERP (verslo valdymo) ar buhalterinės apskaitos sistemą, išvengiant dvigubo duomenų suvedimo."
         }
       }]
     }
@@ -425,19 +432,17 @@ Visi kelionės lapai saugomi sistemoje, leidžiant lengvai pasiekti istorinius d
   <div class="max-w-5xl mx-auto">
     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 text-center mb-12">Dažnai užduodami klausimai</h2>
 
-    <div class="space-y-4">      
+    <div class="space-y-4">
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kas yra Vecticum?</span>
+            <span>Kaip sistema skaičiuoja kuro sąnaudas ir likučius?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Vecticum – tai lanksti verslo valdymo sistema, skirta automatizuoti įvairius procesus: nuo atostogų ar sąskaitų tvirtinimo iki individualių, įmonei pritaikytų sprendimų. Ji leidžia centralizuotai valdyti dokumentus, užtikrina saugumą, sklandų darbuotojų darbą ir lengvą pritaikomumą tiek mažoms, tiek didelėms organizacijoms.
-            </p>
+            <p class="pt-4">Sistema automatiškai atlieka skaičiavimus pagal įvestus maršrutus, nuvažiuotą atstumą ir nustatytas kuro normas. Ji apskaičiuoja kuro likučius, odometro parodymus ir sunaudotą kurą, taip pat tikrina kuro balansą (ar jis nėra neigiamas), taip sumažindama klaidų riziką.</p>
           </div>
         </details>
       </div>
@@ -445,15 +450,13 @@ Visi kelionės lapai saugomi sistemoje, leidžiant lengvai pasiekti istorinius d
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kokia yra Vecticum kaina?</span>
+            <span>Ar galima importuoti kuro pildymo duomenis iš degalinių ataskaitų?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Vecticum siūlo lanksčius kainų planus, pritaikytus pagal įmonės darbuotojų skaičių ir pasirinktų sprendimų apimtį. Norėdami gauti individualų pasiūlymą, kviečiame užpildyti užklausos formą arba susisiekti su mūsų komanda.
-            </p>
+            <p class="pt-4">Taip, sistema leidžia automatiškai importuoti kuro papildymo duomenis iš „Excel" failų (degalinių ataskaitų). Tai žymiai pagreitina procesą ir galima atsisakyti suvedinėti kiekvieną kuro pylimą rankiniu būdu.</p>
           </div>
         </details>
       </div>
@@ -461,15 +464,13 @@ Visi kelionės lapai saugomi sistemoje, leidžiant lengvai pasiekti istorinius d
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kaip išbandyti Vecticum?</span>
+            <span>Kaip generuojami kelionės lapai?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Norėdami išbandyti Vecticum, užpildykite registracijos formą – mūsų komanda su Jumis susisieks ir pasirūpins demonstracija bei išbandymo galimybe, atsižvelgiant į Jūsų poreikius.
-            </p>
+            <p class="pt-4">Mėnesio pabaigoje sistema automatiškai sugeneruoja kelionės lapo formą kiekvienai transporto priemonei. Vartotojui belieka tik pasitikrinti ir, jei reikia, papildyti maršrutus bei nuvažiuotą atstumą.</p>
           </div>
         </details>
       </div>
@@ -477,15 +478,13 @@ Visi kelionės lapai saugomi sistemoje, leidžiant lengvai pasiekti istorinius d
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Kaip greitai paleidžiama Vecticum sistema?</span>
+            <span>Ar sistema primena vairuotojams pateikti ataskaitas?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Standartinių sprendimų paleidimas gali užtrukti iki vienos valandos. Kiekvienos įmonės paleidimo procesas derinamas individualiai, atsižvelgiant į pasirinktų modulių skaičių ir organizacijos vidinius procesus.
-            </p>
+            <p class="pt-4">Taip, sistema automatiškai primena vairuotojams pateikti kuro sąnaudas. Tai padeda užtikrinti, kad ataskaitos buhalteriją pasiektų laiku.</p>
           </div>
         </details>
       </div>
@@ -493,31 +492,13 @@ Visi kelionės lapai saugomi sistemoje, leidžiant lengvai pasiekti istorinius d
       <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
         <details class="group">
           <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Ar Vecticum tinkamas mažoms ir vidutinėms įmonėms?</span>
+            <span>Ar kelionės lapų duomenys perduodami į buhalterinę programą?</span>
             <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
             </svg>
           </summary>
           <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Taip, Vecticum yra lanksti platforma, tinkama tiek mažoms, tiek vidutinėms ar didelėms organizacijoms. Sprendimai lengvai pritaikomi pagal individualius verslo poreikius.
-            </p>
-          </div>
-        </details>
-      </div>
-
-      <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
-        <details class="group">
-          <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
-            <span>Ar Vecticum gali naudotis užsienio įmonės ar darbuotojai?</span>
-            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-            </svg>
-          </summary>
-          <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
-            <p class="pt-4">
-              Taip, Vecticum palaiko kelias kalbas – sistema prieinama anglų, lietuvių, rusų, lenkų ir latvių kalbomis, todėl ją gali lengvai naudoti ir tarptautinės komandos.
-            </p>
+            <p class="pt-4">Taip, patvirtinti kelionės lapai kartu su visais kuro nurašymo duomenimis yra automatiškai eksportuojami į įmonės ERP (verslo valdymo) ar buhalterinės apskaitos sistemą, išvengiant dvigubo duomenų suvedimo.</p>
           </div>
         </details>
       </div>
