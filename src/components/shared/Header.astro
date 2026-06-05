@@ -139,6 +139,12 @@ const headerImg = '~/assets/images/docs-img.png';
                           x-text="category"
                         ></button>
                       </template>
+                      <div class="border-t border-gray-200 my-2"></div>
+                      <button
+                        @mouseenter="activeCategory = 'Papildomos paslaugos'"
+                        class="w-full text-left px-2.5 py-2 rounded-lg text-xs font-medium transition-all duration-200"
+                        :class="activeCategory === 'Papildomos paslaugos' ? 'bg-white text-[#3C7099] shadow-sm' : 'text-gray-600 hover:bg-white/50 hover:text-gray-900'"
+                      >Papildomos paslaugos</button>
                     </div>
                   </div>
 
@@ -148,7 +154,7 @@ const headerImg = '~/assets/images/docs-img.png';
                   <div class="flex-1 p-5 bg-white">
                     <div 
                       class="grid gap-1.5" 
-                      :class="{ 'grid-cols-2': activeCategory === 'Personalo savitarna', 'grid-cols-1': activeCategory !== 'Personalo savitarna' }"
+                      :class="{ 'grid-cols-2': activeCategory === 'Personalo savitarna' || activeCategory === 'Papildomos paslaugos', 'grid-cols-1': activeCategory !== 'Personalo savitarna' && activeCategory !== 'Papildomos paslaugos' }"
                       x-data="{
                         icons: {
                           'Darbuotojo duomenų valdymas': 'fa-user',
@@ -179,6 +185,24 @@ const headerImg = '~/assets/images/docs-img.png';
                           'Gaunamų sąskaitų valdymas': 'fa-file-invoice',
                           'Avansinės apyskaitos valdymas': 'fa-money-check',
                           'Kelionės lapų valdymas': 'fa-ticket-alt',
+                          'Tikslusis OCR': 'fa-eye',
+                          'Greitasis OCR': 'fa-bolt',
+                          'Sąskaitų saugojimas': 'fa-archive',
+                          'Email Reply funkcija': 'fa-reply',
+                          'SMS autentifikavimas': 'fa-mobile-alt',
+                          'Dokobit integracija': 'fa-signature',
+                          'MarkSign integracija': 'fa-pen-nib',
+                          'API integracija': 'fa-plug',
+                          'API kainodara': 'fa-coins',
+                          'Pilna API integracija': 'fa-code',
+                          'Dokumentų talpykla': 'fa-database',
+                          'Papildomos kalbos': 'fa-language',
+                          'PDF konvertavimas': 'fa-file-pdf',
+                          'Roll-out dukterinėms įmonėms': 'fa-building',
+                          'Co-authoring': 'fa-users-cog',
+                          'Rebranding': 'fa-palette',
+                          'Funkcija pagal poreikį': 'fa-cogs',
+                          'SCORM mokymai': 'fa-play-circle',
                         },
                         routes: {
                           'Darbuotojo duomenų valdymas': '/darbuotoju-duomenu-bazes-valdymas',
@@ -209,6 +233,24 @@ const headerImg = '~/assets/images/docs-img.png';
                           'Gaunamų sąskaitų valdymas': '/gaunamu-saskaitu-valdymas',
                           'Avansinės apyskaitos valdymas': '/avansines-apyskaitos-valdymas',
                           'Kelionės lapų valdymas': '/keliones-lapu-valdymas',
+                          'Tikslusis OCR': '/papildomos-paslaugos',
+                          'Greitasis OCR': '/papildomos-paslaugos',
+                          'Sąskaitų saugojimas': '/papildomos-paslaugos',
+                          'Email Reply funkcija': '/papildomos-paslaugos',
+                          'SMS autentifikavimas': '/papildomos-paslaugos',
+                          'Dokobit integracija': '/papildomos-paslaugos',
+                          'MarkSign integracija': '/papildomos-paslaugos',
+                          'API integracija': '/papildomos-paslaugos',
+                          'API kainodara': '/papildomos-paslaugos',
+                          'Pilna API integracija': '/papildomos-paslaugos',
+                          'Dokumentų talpykla': '/papildomos-paslaugos',
+                          'Papildomos kalbos': '/papildomos-paslaugos',
+                          'PDF konvertavimas': '/papildomos-paslaugos',
+                          'Roll-out dukterinėms įmonėms': '/papildomos-paslaugos',
+                          'Co-authoring': '/papildomos-paslaugos',
+                          'Rebranding': '/papildomos-paslaugos',
+                          'Funkcija pagal poreikį': '/papildomos-paslaugos',
+                          'SCORM mokymai': '/papildomos-paslaugos',
                         }
                       }">
                       <template x-if="activeCategory">
@@ -254,6 +296,26 @@ const headerImg = '~/assets/images/docs-img.png';
                           ] :
                           activeCategory === 'Sprendimų valdymas' ? [
                             'Valdybos posėdžiai'
+                          ] :
+                          activeCategory === 'Papildomos paslaugos' ? [
+                            'Tikslusis OCR',
+                            'Greitasis OCR',
+                            'Sąskaitų saugojimas',
+                            'Email Reply funkcija',
+                            'SMS autentifikavimas',
+                            'Dokobit integracija',
+                            'MarkSign integracija',
+                            'API integracija',
+                            'API kainodara',
+                            'Pilna API integracija',
+                            'Dokumentų talpykla',
+                            'Papildomos kalbos',
+                            'PDF konvertavimas',
+                            'Roll-out dukterinėms įmonėms',
+                            'Co-authoring',
+                            'Rebranding',
+                            'Funkcija pagal poreikį',
+                            'SCORM mokymai'
                           ] : []
                         )" :key="item">
                           <a 
@@ -456,15 +518,7 @@ const headerImg = '~/assets/images/docs-img.png';
                       </svg>
                       <span>Personalo valdymo planai</span>
                     </a>
-                    <a
-                      href="/papildomos-paslaugos"
-                      class="flex items-start gap-3 px-3 py-3 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-[#3C7099] transition-all duration-200 group"
-                    >
-                      <svg class="w-5 h-5 text-[#3C7099] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
-                      </svg>
-                      <span>Papildomos paslaugos</span>
-                    </a>
+
                   </div>
                 </div>
               </div>
@@ -771,6 +825,8 @@ const headerImg = '~/assets/images/docs-img.png';
                 </div>
               </div>
             </template>
+            <div class="border-t border-gray-200 my-2"></div>
+            <a href="/papildomos-paslaugos" class="block text-sm text-gray-600 py-2 hover:text-[#3C7099] transition-colors duration-200">Papildomos paslaugos</a>
           </div>
         </div>
 
@@ -858,7 +914,7 @@ const headerImg = '~/assets/images/docs-img.png';
             <a href="/personalo-valdymo-sprendimu-planai" class="block text-sm text-gray-600"
               >Personalo valdymo planai</a
             >
-            <a href="/papildomos-paslaugos" class="block text-sm text-gray-600">Papildomos paslaugos</a>
+
           </div>
         </div>
 
