@@ -139,12 +139,19 @@ const headerImg = '~/assets/images/docs-img.png';
                           x-text="category"
                         ></button>
                       </template>
-                      <div class="border-t border-gray-200 my-2"></div>
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200 space-y-0.5">
+                      <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 px-2.5">Papildomai</div>
                       <button
                         @mouseenter="activeCategory = 'Papildomos paslaugos'"
                         class="w-full text-left px-2.5 py-2 rounded-lg text-xs font-medium transition-all duration-200"
                         :class="activeCategory === 'Papildomos paslaugos' ? 'bg-white text-[#3C7099] shadow-sm' : 'text-gray-600 hover:bg-white/50 hover:text-gray-900'"
                       >Papildomos paslaugos</button>
+                      <button
+                        @mouseenter="activeCategory = 'API integracijos'"
+                        class="w-full text-left px-2.5 py-2 rounded-lg text-xs font-medium transition-all duration-200"
+                        :class="activeCategory === 'API integracijos' ? 'bg-white text-[#3C7099] shadow-sm' : 'text-gray-600 hover:bg-white/50 hover:text-gray-900'"
+                      >API integracijos</button>
                     </div>
                   </div>
 
@@ -203,6 +210,24 @@ const headerImg = '~/assets/images/docs-img.png';
                           'Rebranding': 'fa-palette',
                           'Funkcija pagal poreikį': 'fa-cogs',
                           'SCORM mokymai': 'fa-play-circle',
+                          'BC (Softera)': 'fa-cube',
+                          'Rivilė': 'fa-cube',
+                          'BC (Alna)': 'fa-cube',
+                          'Finvalda': 'fa-cube',
+                          'Vikarina': 'fa-users',
+                          'TSM': 'fa-users',
+                          'Horizon (Visma)': 'fa-cube',
+                          'Navision': 'fa-cube',
+                          'Pragma': 'fa-cube',
+                          'Stekas': 'fa-cube',
+                          'DB Skaita': 'fa-cube',
+                          'Teamgate CRM': 'fa-handshake',
+                          'REST API': 'fa-code',
+                        },
+                        logoImgs: {
+                          'BC (Softera)': '/media/partners/softera.png',
+                          'Rivilė': '/media/partners/rivil.png',
+                          'Finvalda': '/media/partners/finvalda.png',
                         },
                         routes: {
                           'Darbuotojo duomenų valdymas': '/darbuotoju-duomenu-bazes-valdymas',
@@ -251,6 +276,19 @@ const headerImg = '~/assets/images/docs-img.png';
                           'Rebranding': '/papildomos-paslaugos',
                           'Funkcija pagal poreikį': '/papildomos-paslaugos',
                           'SCORM mokymai': '/papildomos-paslaugos',
+                          'BC (Softera)': '/integracijos',
+                          'Rivilė': '/integracijos',
+                          'BC (Alna)': '/integracijos',
+                          'Finvalda': '/integracijos',
+                          'Vikarina': '/integracijos',
+                          'TSM': '/integracijos',
+                          'Horizon (Visma)': '/integracijos',
+                          'Navision': '/integracijos',
+                          'Pragma': '/integracijos',
+                          'Stekas': '/integracijos',
+                          'DB Skaita': '/integracijos',
+                          'Teamgate CRM': '/integracijos',
+                          'REST API': '/integracijos',
                         }
                       }">
                       <template x-if="activeCategory">
@@ -316,19 +354,67 @@ const headerImg = '~/assets/images/docs-img.png';
                             'Rebranding',
                             'Funkcija pagal poreikį',
                             'SCORM mokymai'
-                          ] : []
+                          ] :
+                          activeCategory === 'API integracijos' ? [] : []
                         )" :key="item">
                           <a 
                             :href="routes[item]" 
                             class="flex items-center gap-2.5 px-2.5 py-2 rounded-lg transition-all duration-200 group hover:bg-blue-50 hover:shadow-sm"
                           >
-                            <div class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center group-hover:bg-[#3C7099] transition-colors duration-200">
-                              <i :class="`fa-solid ${icons[item]}`" class="text-[#3C7099] text-xs group-hover:text-white transition-colors duration-200"></i>
+                            <div class="flex-shrink-0 w-7 h-7 rounded-lg bg-blue-50 flex items-center justify-center group-hover:bg-[#3C7099] transition-colors duration-200 overflow-hidden">
+                              <img x-show="logoImgs[item]" :src="logoImgs[item]" :alt="item" class="w-full h-full object-contain p-1" />
+                              <i x-show="!logoImgs[item]" :class="`fa-solid ${icons[item]}`" class="text-[#3C7099] text-xs group-hover:text-white transition-colors duration-200"></i>
                             </div>
                             <span class="text-xs font-medium text-gray-700 group-hover:text-[#3C7099] transition-colors duration-200" x-text="item"></span>
                           </a>
                         </template>
                       </template>
+
+                      <!-- API Integracijos baneris -->
+                      <a href="/integracijos" class="block h-full" x-show="activeCategory === 'API integracijos'" x-cloak>
+                        <div class="flex flex-col items-center justify-center h-full p-6 bg-gradient-to-br from-[#f0f6fb] to-[#e8f4fd] rounded-xl">
+                          <!-- Mini diagrama -->
+                          <div class="bg-white rounded-2xl shadow-xl border border-[#3C7099]/10 p-5 mb-5 w-full max-w-sm">
+                            <div class="flex items-center justify-center gap-2.5">
+                              <div class="w-20 h-11 rounded-xl bg-white border border-gray-200 flex items-center justify-center shadow-sm p-2">
+                                <Image src={logoImg} alt="Vecticum" class="w-full object-contain" />
+                              </div>
+                              <div class="w-6 flex items-center">
+                                <div class="w-full h-0.5 bg-gradient-to-r from-[#3C7099]/40 to-[#3C7099]/60"></div>
+                                <svg class="w-2.5 h-2.5 text-[#3C7099] -ml-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                              </div>
+                              <div class="w-11 h-11 rounded-xl bg-gray-900 flex items-center justify-center shadow-md ring-2 ring-emerald-400/20">
+                                <span class="text-emerald-400 font-bold text-[10px]">API</span>
+                              </div>
+                              <div class="w-6 flex items-center">
+                                <div class="w-full h-0.5 bg-gradient-to-r from-[#3C7099]/60 to-[#3C7099]/40"></div>
+                                <svg class="w-2.5 h-2.5 text-[#3C7099] -ml-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                              </div>
+                              <div class="space-y-1.5">
+                                <div class="flex items-center gap-1.5 px-2.5 py-1.5 bg-white rounded-lg border border-gray-200 shadow-sm">
+                                  <img src="/media/partners/softera.png" alt="" class="w-4 h-4 object-contain" />
+                                  <span class="text-[10px] font-medium text-gray-700">Softera</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 px-2.5 py-1.5 bg-white rounded-lg border border-gray-200 shadow-sm">
+                                  <img src="/media/partners/rivil.png" alt="" class="w-4 h-4 object-contain" />
+                                  <span class="text-[10px] font-medium text-gray-700">Rivilė</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 px-2.5 py-1.5 bg-white rounded-lg border border-gray-200 shadow-sm">
+                                  <img src="/media/partners/finvalda.png" alt="" class="w-4 h-4 object-contain" />
+                                  <span class="text-[10px] font-medium text-gray-700">Finvalda</span>
+                                </div>
+                                <div class="px-2.5 py-1 text-[10px] font-medium text-[#3C7099]">+10 sistemų</div>
+                              </div>
+                            </div>
+                          </div>
+                          <h3 class="text-base font-bold text-gray-900 mb-1.5">Universali API integracija</h3>
+                          <p class="text-xs text-gray-600 mb-4 max-w-xs leading-relaxed text-center">Sujunkite Vecticum su bet kuria apskaitos ar verslo valdymo sistema. Duomenys perduodami automatiškai.</p>
+                          <span class="inline-flex items-center gap-2 text-xs font-bold text-white bg-[#3C7099] px-4 py-2 rounded-full shadow-md hover:bg-[#2d5a78] transition-colors">
+                            Plačiau apie integracijas
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                          </span>
+                        </div>
+                      </a>
                     </div>
                   </div>
 
@@ -825,8 +911,11 @@ const headerImg = '~/assets/images/docs-img.png';
                 </div>
               </div>
             </template>
-            <div class="border-t border-gray-200 my-2"></div>
-            <a href="/papildomos-paslaugos" class="block text-sm text-gray-600 py-2 hover:text-[#3C7099] transition-colors duration-200">Papildomos paslaugos</a>
+            <div class="border-t border-gray-200 mt-3 pt-3">
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-2 px-1">Papildomai</p>
+              <a href="/papildomos-paslaugos" class="block text-sm text-gray-600 py-2 hover:text-[#3C7099] transition-colors duration-200">Papildomos paslaugos</a>
+              <a href="/integracijos" class="block text-sm text-gray-600 py-2 hover:text-[#3C7099] transition-colors duration-200">API integracijos</a>
+            </div>
           </div>
         </div>
 

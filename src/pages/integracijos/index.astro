@@ -1,0 +1,386 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Testimonials from "../../components/home/Testimonials.astro";
+import { Image } from "astro:assets";
+import logoImg from "../../assets/images/logo.webp";
+
+const seoTitle = "Integracijos su apskaitos ir verslo sistemomis | Vecticum";
+const seoDescription = "Vecticum integruojasi su populiariausiomis Lietuvos ir tarptautinėmis apskaitos sistemomis: BC (Softera, Alna), Rivilė, Finvalda, Navision, Horizon ir kitomis. Individuali integracija pagal jūsų poreikius.";
+
+const existingIntegrations = [
+  {
+    name: "BC (Softera)",
+    category: "ERP / Apskaita",
+    logo: "fa-solid fa-cube",
+    logoImg: "/media/partners/softera.png",
+    features: ["Personalo duomenys", "Darbo sutartys", "Neatvykimai", "Tabeliai", "Atostogų likučiai", "Sąskaitos", "Dimensijos"],
+  },
+  {
+    name: "Rivilė",
+    category: "ERP / Apskaita",
+    logo: "fa-solid fa-cube",
+    logoImg: "/media/partners/rivil.png",
+    features: ["Personalo duomenys", "Neatvykimai", "Atostogų likučiai", "Sąskaitos", "Dimensijos"],
+  },
+  {
+    name: "BC (Digmatix)",
+    category: "ERP / Apskaita",
+    logo: "fa-solid fa-cube",
+    logoImg: "/media/partners/digimatix.png",
+    features: ["Sąskaitos", "Tiekėjai", "Prekės", "Dimensijos"],
+  },
+  {
+    name: "Finvalda",
+    category: "ERP / Apskaita",
+    logo: "fa-solid fa-cube",
+    logoImg: "/media/partners/finvalda.png",
+    features: ["Neatvykimai", "Komandiruotės", "Tabeliai", "Sąskaitos", "Dimensijos"],
+  },
+  {
+    name: "Vikarina",
+    category: "DU / Personalo apskaita",
+    logo: "fa-solid fa-users",
+    logoImg: "/media/partners/vikarina.png",
+    features: ["Darbuotojų duomenys", "Darbo sutartys", "Neatvykimai", "Tabeliai", "Atostogų likučiai"],
+  },
+  {
+    name: "TSM",
+    category: "DU / Personalo apskaita",
+    logo: "fa-solid fa-users",
+    logoImg: "/media/partners/tsm.png",
+    features: ["Darbuotojų duomenys", "Darbo sutartys", "Neatvykimai", "Atostogų likučiai", "NPD"],
+  },
+  {
+    name: "Horizon (Visma)",
+    category: "ERP / Apskaita",
+    logo: "fa-solid fa-cube",
+    logoImg: "/media/partners/visma.png",
+    features: ["Sąskaitos", "Tiekėjai", "Prekės", "Dimensijos"],
+  },
+  {
+    name: "Microsoft Dynamics 365 Business Central",
+    category: "ERP / Apskaita",
+    logo: "fa-solid fa-cube",
+    logoImg: "/media/partners/business_central.svg",
+    features: ["Sąskaitos", "Tiekėjai", "Prekės"],
+  },
+  {
+    name: "Pragma",
+    category: "ERP / Apskaita",
+    logo: "fa-solid fa-cube",
+    logoImg: "/media/partners/pragma.webp",
+    features: ["Sąskaitos", "Tiekėjai", "Prekės", "Dimensijos"],
+  },
+  {
+    name: "Stekas",
+    category: "ERP / Apskaita",
+    logo: "fa-solid fa-cube",
+    logoImg: "/media/partners/stekas.png",
+    features: ["Sąskaitos"],
+  },
+  {
+    name: "DB apskaita",
+    category: "ERP / Apskaita",
+    logo: "fa-solid fa-cube",
+    logoImg: "/media/partners/db_apskaita.svg",
+    features: ["Sąskaitos"],
+  },
+  {
+    name: "Prototechnika",
+    category: "ERP / Apskaita",
+    logo: "fa-solid fa-cube",
+    logoImg: "/media/partners/prototechnika.png",
+    features: ["Sąskaitos"],
+  },
+  {
+    name: "Teamgate CRM",
+    category: "CRM",
+    logo: "fa-solid fa-handshake",
+    logoImg: "/media/partners/teamgate.svg",
+    features: ["Kontaktai", "Duomenų sinchronizacija"],
+  },
+];
+
+const integrationTypes = [
+  {
+    title: "Turimos integracijos",
+    subtitle: "Greitas ir ekonomiškas pritaikymas",
+    description: "Jau sukurtos integracijos su populiariausiomis sistemomis – reikia tik konfigūracijos ir minimalių pritaikymų pagal jūsų verslo logiką.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
+    color: "from-emerald-500 to-emerald-600",
+    badge: "Greičiausias būdas",
+  },
+  {
+    title: "API integracija",
+    subtitle: "Kita sistema jungiasi į mus",
+    description: "Pateikiame dokumentuotą REST API, per kurią trečių šalių sistemos gali skaityti ir rašyti duomenis į Vecticum – be jokių apribojimų.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>`,
+    color: "from-[#3C7099] to-[#5a9bc4]",
+    badge: "Lankstumas",
+    link: "https://vecticum.readme.io/reference/getting-started-1",
+    linkText: "API dokumentacija",
+  },
+  {
+    title: "Individuali integracija",
+    subtitle: "Mes integruojamės į jūsų sistemą",
+    description: "Kuriame naują integraciją nuo nulio pagal jūsų sistemos specifiką – nepriklausomai nuo technologijos ar protokolo.",
+    icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H22.5m-7.08 5.1l5.1-5.1m0 0l-5.1-5.1m5.1 5.1H1.5"/></svg>`,
+    color: "from-[#C81F6A] to-[#e04d8a]",
+    badge: "Pilna laisvė",
+  },
+];
+
+const processSteps = [
+  { step: "01", title: "Poreikių analizė", desc: "Kartu su jumis nustatome, kokius duomenis reikia perduoti, kokiu periodiškumu ir kokia kryptimi." },
+  { step: "02", title: "Techninis projektas", desc: "Parengiame integracijos specifikaciją – duomenų formatai, transformacijos, validacijos ir klaidų apdorojimas." },
+  { step: "03", title: "Diegimas ir testavimas", desc: "Realizuojame integraciją, testuojame su realiais duomenimis ir detaliai verifikuojame kiekvieną procesą." },
+  { step: "04", title: "Paleidimas ir palaikymas", desc: "Paleidžiame į produkciją su monitoringu. Užtikriname nepertraukiamą veikimą ir greitą reagavimą." },
+];
+---
+
+<MainLayout title={seoTitle} description={seoDescription}>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-[#3C7099] pt-20 pb-16 sm:pt-28 sm:pb-24">
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Ccircle cx=&quot;30&quot; cy=&quot;30&quot; r=&quot;1.5&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <!-- Left: Text Content -->
+        <div class="flex-1 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 px-4 py-1.5 mb-6">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+            </span>
+            <span class="text-sm text-gray-200 font-medium">13+ sistemų jau integruota</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold text-white tracking-tight leading-tight">
+            Universali VECTICUM<br/>API integracija
+          </h1>
+          <p class="mt-6 text-lg text-white/80 max-w-lg leading-relaxed">
+            Sujunkite Vecticum su bet kuria apskaitos ar verslo valdymo sistema. Duomenys perduodami automatiškai – be rankinio darbo ir klaidų.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="/registracijademo" class="inline-flex items-center justify-center px-8 py-3 bg-[#C81F6A] text-white font-medium rounded-full hover:bg-[#a31755] transition-colors shadow-lg">
+              Gauti pasiūlymą
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Integration Diagram -->
+        <div class="flex-shrink-0 hidden lg:flex items-center">
+          <div class="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+            <div class="flex items-center">
+              <!-- Vecticum node -->
+              <div class="relative z-10 bg-white rounded-2xl flex items-center justify-center shadow-2xl border border-white/50 px-8 py-5" style="min-width:200px;">
+                <img src={logoImg.src} alt="Vecticum" style="width:140px;height:auto;" />
+              </div>
+
+              <!-- Connection line to API -->
+              <div class="w-6 flex items-center justify-center">
+                <div class="w-full h-0.5 bg-gradient-to-r from-white/60 to-white/40"></div>
+              </div>
+
+              <!-- API node (middle) -->
+              <div class="relative z-10 w-[4.5rem] h-[4.5rem] bg-gray-900 rounded-2xl flex flex-col items-center justify-center shadow-2xl ring-2 ring-white/20">
+                <svg class="w-5 h-5 text-emerald-400 mb-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <span class="text-white font-bold text-[11px]">API</span>
+              </div>
+
+              <!-- Connection line to systems -->
+              <div class="w-6 flex items-center justify-center relative">
+                <div class="w-full h-0.5 bg-gradient-to-r from-white/40 to-white/60"></div>
+              </div>
+
+              <!-- Right side branches -->
+              <div class="relative">
+                <!-- Vertical line -->
+                <div class="absolute left-0 top-5 bottom-5 w-0.5 bg-white/25 rounded-full"></div>
+
+                <!-- Connected systems -->
+                <div class="space-y-2.5 pl-5">
+                  <div class="flex items-center">
+                    <div class="absolute left-0 w-5 h-0.5 bg-white/25"></div>
+                    <div class="w-56 py-3 px-5 bg-white rounded-xl text-sm font-semibold text-gray-800 shadow-lg border border-gray-100">
+                      ERP / Apskaitos sistemos
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="absolute left-0 w-5 h-0.5 bg-white/25"></div>
+                    <div class="w-56 py-3 px-5 bg-white rounded-xl text-sm font-semibold text-gray-800 shadow-lg border border-gray-100">
+                      DU / Personalo apskaita
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="absolute left-0 w-5 h-0.5 bg-white/25"></div>
+                    <div class="w-56 py-3 px-5 bg-white rounded-xl text-sm font-semibold text-gray-800 shadow-lg border border-gray-100">
+                      CRM sistemos
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="absolute left-0 w-5 h-0.5 bg-white/25"></div>
+                    <div class="w-56 py-3 px-5 bg-white rounded-xl text-sm font-semibold text-gray-800 shadow-lg border border-gray-100">
+                      Sąskaitų išrašymo sistemos
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="absolute left-0 w-5 h-0.5 bg-white/25"></div>
+                    <div class="w-56 py-3 px-5 bg-white rounded-xl text-sm font-semibold text-gray-800 shadow-lg border border-gray-100">
+                      Dokumentų valdymo sistemos
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="absolute left-0 w-5 h-0.5 bg-white/25"></div>
+                    <div class="w-56 py-3 px-5 bg-white/20 backdrop-blur-sm rounded-xl text-sm font-medium text-white/60 border border-white/10">
+                      ...
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration Approaches -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white border-t border-gray-100">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Integracijos būdai</h2>
+        <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Pasirinkite tinkamiausią variantą pagal jūsų situaciją.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        {integrationTypes.map((type) => (
+          <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-8 relative overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
+            <div class="absolute top-4 right-4">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-gray-400 bg-gray-50 px-2 py-1 rounded-full">{type.badge}</span>
+            </div>
+            <div class={`w-14 h-14 rounded-xl bg-gradient-to-br ${type.color} flex items-center justify-center text-white shadow-lg mb-5`}>
+              <Fragment set:html={type.icon} />
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 mb-1">{type.title}</h3>
+            <p class="text-sm font-medium text-[#3C7099] mb-3">{type.subtitle}</p>
+            <p class="text-sm text-gray-600 leading-relaxed">{type.description}</p>
+            {type.link && (
+              <a href={type.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-white bg-[#3C7099] hover:bg-[#2a5573] px-4 py-2 rounded-lg transition-colors shadow-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                {type.linkText}
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Kaip veikia integracija?</h2>
+        <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Kiekviena integracija yra individuali – pritaikoma pagal jūsų sistemos specifiką ir verslo procesus.</p>
+      </div>
+
+      <!-- Key message -->
+      <div class="bg-[#f0f6fb] rounded-2xl p-8 sm:p-10 mb-12 border border-gray-100">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#3C7099]/10 mb-4">
+            <svg class="w-6 h-6 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Visos integracijos yra galimos</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Kadangi tiek Vecticum, tiek jūsų sistema yra individualios, integracija visada pritaikoma konkrečiam atvejui. Dalį integracijų jau turime paruošę ir galime jas ekonomiškai pritaikyti. Kitais atvejais – kuriame naują integraciją nuo nulio arba pateikiame API, per kurią jūsų sistema gali integruotis į mus.
+          </p>
+          <p class="text-gray-600 leading-relaxed mt-3">
+            <span class="font-semibold text-gray-800">Svarbu žinoti:</span> tam, kad integracija veiktų, kartais reikia abiejų sistemų pakeitimų – pavyzdžiui, jei apskaitos sistema turi dimensiją, kurios dar neturime, ją reikia įvesti, validuoti ir tinkamai panaudoti.
+          </p>
+        </div>
+      </div>
+
+      <!-- Process Steps -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {processSteps.map((step) => (
+          <div class="relative bg-white rounded-xl border border-gray-200 p-6">
+            <div class="text-4xl font-black text-[#3C7099] mb-2">{step.step}</div>
+            <h4 class="text-base font-bold text-gray-900 mb-2">{step.title}</h4>
+            <p class="text-sm text-gray-600 leading-relaxed">{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Esamos integracijos Grid -->
+  <section class="pt-14 sm:pt-20 pb-14 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-[#f0f6fb]">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">Esamos integracijos</h2>
+        <p class="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">Šias integracijas galime ekonomiškai pritaikyti jūsų verslui – reikia tik konfigūracijos ir minimalių pakeitimų.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {existingIntegrations.map((integration) => (
+          <div class="group bg-white rounded-xl border border-gray-200 p-5 hover:border-[#3C7099]/40 hover:shadow-md transition-all duration-200">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-[#3C7099]/10 transition-colors overflow-hidden">
+                {integration.logoImg ? (
+                  <img src={integration.logoImg} alt={integration.name} class="w-full h-full object-contain p-1.5" />
+                ) : (
+                  <i class={`${integration.logo} text-gray-500 group-hover:text-[#3C7099] transition-colors`}></i>
+                )}
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 text-sm">{integration.name}</h4>
+                <p class="text-xs text-gray-400">{integration.category}</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              {integration.features.map((feature) => (
+                <span class="text-[11px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-600 font-medium">{feature}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <div class="inline-flex items-center gap-3 bg-[#f0f6fb] rounded-full px-6 py-3">
+          <svg class="w-5 h-5 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+          <span class="text-sm font-medium text-gray-700">Neradote savo sistemos? <span class="text-[#3C7099]">Visos integracijos yra galimos</span> – susisiekite dėl individualaus sprendimo.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-white">
+    <Testimonials />
+  </div>
+
+  <!-- CTA Section -->
+  <section class="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#3C7099]">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Pasiruošę integruoti savo sistemas?</h2>
+      <p class="mt-4 text-lg text-white/80">Susisiekite ir aptarsime, kaip Vecticum gali sujungti jūsų verslo procesus į vieną nepertraukiamą srautą.</p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/registracijademo" class="inline-flex items-center justify-center px-8 py-3 bg-white text-[#3C7099] font-semibold rounded-full hover:bg-gray-100 transition-colors shadow-lg">
+          Gauti pasiūlymą
+        </a>
+        <a href="/kontaktai" class="inline-flex items-center justify-center px-8 py-3 rounded-full border-2 border-white/30 text-white font-medium hover:bg-white/10 transition-colors">
+          Konsultacija nemokamai
+        </a>
+      </div>
+    </div>
+  </section>
+
+</MainLayout>

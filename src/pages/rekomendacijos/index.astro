@@ -49,14 +49,93 @@ const recommendations = await getCollection("recomendations");
 export const prerender = true;
 
 const partner = [
-  { src: "/media/partners/Google_cloud.png", href: "https://cloud.google.com/", alt: "Google Cloud - debesų kompiuterijos paslaugos" },
-  { src: "/media/partners/dokobit.png", href: "https://www.dokobit.com/", alt: "Dokobit - elektroninio parašo sprendimai" },
-  { src: "/media/partners/finvalda.png", href: "https://finvalda.lt/", alt: "Finvalda - finansų valdymo sprendimai" },
-  { src: "/media/partners/fortevento.png", href: "https://fortevento.lt/", alt: "Fortevento - verslo konsultacijų paslaugos" },
-  { src: "/media/partners/infotek.png", href: "https://www.infotec.lt/", alt: "Infotek - informacinių technologijų sprendimai" },
-  { src: "/media/partners/marksign.png", href: "https://marksign.lt/", alt: "MarkSign - elektroninio parašo technologijos" },
-  { src: "/media/partners/rivil.png", href: "https://www.rivile.lt/", alt: "Rivil - IT infrastruktūros sprendimai" },
-  { src: "/media/partners/softera.png", href: "https://www.softera.lt/", alt: "Softera - programinės įrangos sprendimai" },
+  { 
+    src: "/media/partners/infotek.png", 
+    href: "https://www.infotec.lt/", 
+    alt: "INFO-TEC", 
+    subtitle: "Dokumentų atpažinimas ir duomenų surinkimas",
+    description: "INFO-TEC ir VECTICUM partnerystė leidžia automatiškai atpažinti sąskaitose faktūrose ir kituose dokumentuose esančią informaciją bei iš karto panaudoti šiuos duomenis tolimesniuose verslo procesuose – dokumentų registravime, derinime, tvirtinime ir užduočių paskirstyme.",
+    fullText: `<p>Dokumentai versle dažnai yra ne tik failai. Juose slypi informacija, nuo kurios priklauso tolimesni veiksmai: kas turi patvirtinti sąskaitą, kokiam tiekėjui ji priklauso, kokia suma turi būti suderinta, kokie terminai svarbūs ir kokį sprendimą reikia priimti toliau.</p>
+<p>Būtent todėl organizacijoms vis svarbiau ne tik skaitmenizuoti dokumentus, bet ir užtikrinti, kad juose esantys duomenys būtų greitai, tiksliai ir patogiai panaudojami kasdieniuose procesuose. Šiam tikslui VECTICUM bendradarbiauja su <strong>INFO-TEC</strong>, dokumentų atpažinimo ir duomenų surinkimo sprendimų ekspertais.</p>
+<p>INFO-TEC padeda automatiškai atpažinti sąskaitose faktūrose ir kituose dokumentuose esančią informaciją, sumažinti rankinio duomenų suvedimo poreikį bei užtikrinti didesnį duomenų tikslumą. Tuo tarpu VECTICUM leidžia šiuos duomenis panaudoti tolimesniuose verslo procesuose – dokumentų registravime, derinime, tvirtinime, užduočių paskirstyme, kontrolei ir atsekamumui.</p>
+<p>Tai reiškia, kad dokumentas nebėra tik prisegtas failas ar į sistemą įkeltas PDF. Atpažinti duomenys tampa proceso dalimi: jie gali inicijuoti veiksmus, užpildyti laukus, padėti atsakingiems darbuotojams greičiau priimti sprendimus ir sumažinti pasikartojantį rankinį darbą.</p>
+<p>Toks bendradarbiavimas ypač aktualus organizacijoms, kurios kasdien dirba su dideliais sąskaitų, tiekėjų dokumentų ar kitų administracinių dokumentų kiekiais. Kai informacija atpažįstama automatiškai ir iš karto patenka į valdomą procesą, darbuotojai gali mažiau laiko skirti duomenų suvedimui, paieškai ar tikrinimui, o daugiau – sprendimų priėmimui ir proceso kontrolei.</p>
+<p><strong>Rezultatas</strong> – mažiau rankinio darbo, aiškesnė dokumentų eiga, geresnis atsekamumas ir daugiau kontrolės ten, kur jos labiausiai reikia kasdienėje veikloje.</p>`,
+    benefits: ["Automatinis dokumentų duomenų atpažinimas", "Mažiau rankinio duomenų suvedimo", "Didesnis duomenų tikslumas", "Aiškesnė dokumentų eiga ir atsekamumas"]
+  },
+  { 
+    src: "/media/partners/Google_cloud.png", 
+    href: "https://cloud.google.com/", 
+    alt: "Google Cloud", 
+    subtitle: "Debesų kompiuterijos paslaugos",
+    description: "Google Cloud infrastruktūra užtikrina VECTICUM sistemos patikimumą, greitaveiką ir saugumą. Debesų technologijos leidžia lanksčiai plėsti sistemos pajėgumus pagal organizacijos poreikius.",
+    fullText: null,
+    benefits: null
+  },
+  { 
+    src: "/media/partners/dokobit.png", 
+    href: "https://www.dokobit.com/", 
+    alt: "Dokobit", 
+    subtitle: "Elektroninio parašo sprendimai",
+    description: "Dokobit integracija leidžia VECTICUM vartotojams pasirašyti dokumentus elektroniniu parašu tiesiogiai sistemoje, užtikrinant sklandų ir juridiškai galiojantį dokumentų tvirtinimo procesą.",
+    fullText: null,
+    benefits: null
+  },
+  { 
+    src: "/media/partners/finvalda.png", 
+    href: "https://finvalda.lt/", 
+    alt: "Finvalda", 
+    subtitle: "Finansų valdymo sprendimai",
+    description: "Finvalda partnerystė leidžia sujungti personalo valdymo ir finansų apskaitos procesus į vientisą sistemą, automatizuojant duomenų srautus tarp VECTICUM ir buhalterinės apskaitos.",
+    fullText: null,
+    benefits: null
+  },
+  { 
+    src: "/media/partners/fortevento.png", 
+    href: "https://fortevento.lt/", 
+    alt: "Fortevento", 
+    subtitle: "Verslo konsultacijos",
+    description: "Fortevento padeda organizacijoms optimizuoti verslo procesus ir sėkmingai įdiegti VECTICUM sprendimus, užtikrinant sklandų perėjimą prie skaitmeninių darbo metodų.",
+    fullText: null,
+    benefits: null
+  },
+  { 
+    src: "/media/partners/marksign.png", 
+    href: "https://marksign.lt/", 
+    alt: "MarkSign", 
+    subtitle: "Elektroninio parašo technologijos",
+    description: "MarkSign sprendimai suteikia VECTICUM vartotojams galimybę naudoti kvalifikuotą elektroninį parašą dokumentų tvirtinimui, užtikrinant atitiktį ES reglamentams.",
+    fullText: null,
+    benefits: null
+  },
+  { 
+    src: "/media/partners/rivil.png", 
+    href: "https://www.rivile.lt/", 
+    alt: "Rivilė", 
+    subtitle: "Verslo valdymo ir apskaitos sistemos",
+    description: "Rivilės verslo valdymo sistemos integracija su VECTICUM leidžia automatizuoti duomenų mainus tarp personalo valdymo ir įmonės apskaitos procesų.",
+    fullText: null,
+    benefits: null
+  },
+  { 
+    src: "/media/partners/softera.png", 
+    href: "https://www.softera.lt/", 
+    alt: "Softera", 
+    subtitle: "Programinės įrangos sprendimai",
+    description: "Softera – Microsoft Dynamics partneris, kurio integracija su VECTICUM leidžia sujungti ERP ir personalo valdymo procesus į vieną sklandžiai veikiančią ekosistemą.",
+    fullText: null,
+    benefits: null
+  },
+  { 
+    src: "/media/partners/talentator.png", 
+    href: "/talentator-scorm-mokymai/", 
+    alt: "TALENTATOR", 
+    subtitle: "Interaktyvūs e. mokymai ir SCORM kursai",
+    description: "TALENTATOR ir VECTICUM partnerystė leidžia organizacijoms naudoti profesionaliai paruoštus interaktyvius e. mokymus tiesiogiai VECTICUM sistemoje – su pilnu atsekamumu, automatiniais priminimais ir aiškia mokymų statistika.",
+    fullText: null,
+    benefits: null,
+    website: "https://talentator.lt/"
+  },
 ];
 
 const seoTitle = "Klientų atsiliepimai ir sėkmės Istorijos | Vecticum";
@@ -183,21 +262,87 @@ const seoImageUrl = seoImage; // Optional
   </div>
 </section>
 
-<!-- Partnerių logotipai su nuorodomis -->
-<section class="py-20 bg-gray-100">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-12">
-      Įmonės, kurios prisideda prie mūsų sistemos veikimo
-    </h2>    <div class="grid grid-cols-2 sm:grid-cols-4 gap-10 items-center justify-center">
+<!-- Partneriai -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">
+        Įmonės, kurios prisideda prie mūsų sistemos veikimo
+      </h2>
+      <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+        Strateginės partnerystės leidžia pasiūlyti kompleksinius sprendimus, apimančius visą verslo procesų grandinę
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {
-        partner.slice(0, 8).map(logo => (
-          <a href={logo.href} target="_blank" rel="noopener noreferrer">
-            <img
-              src={logo.src}
-              alt={logo.alt}
-              class="mx-auto h-20 sm:h-16 md:h-32 transition duration-300"
-            />
-          </a>
+        partner.map((p) => (
+          <article class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300">
+            <div class="p-6 sm:p-8">
+              {/* Header: logo + pavadinimas */}
+              <div class="flex items-center gap-5 mb-5">
+                <div class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 bg-gray-50 rounded-xl border border-gray-100 flex items-center justify-center p-3 group-hover:border-blue-100 transition-colors">
+                  <img src={p.src} alt={p.alt} class="max-w-full max-h-full object-contain" />
+                </div>
+                <div class="min-w-0">
+                  <h3 class="text-lg font-bold text-gray-900 truncate">{p.alt}</h3>
+                  <p class="text-sm text-blue-600 font-medium">{p.subtitle}</p>
+                </div>
+              </div>
+
+              {/* Trumpas aprašymas */}
+              <p class="text-gray-600 text-sm leading-relaxed mb-5">
+                {p.description}
+              </p>
+
+              {/* Išplėstas turinys – tik jei yra fullText */}
+              {p.fullText && (
+                <details class="partner-details group/details">
+                  <summary class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 cursor-pointer select-none transition-colors list-none [&::-webkit-details-marker]:hidden">
+                    <span class="group-open/details:hidden">Skaityti daugiau</span>
+                    <span class="hidden group-open/details:inline">Skaityti mažiau</span>
+                    <svg class="w-4 h-4 transition-transform group-open/details:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  <div class="mt-5 pt-5 border-t border-gray-100 space-y-4 text-sm text-gray-700 leading-relaxed prose prose-sm max-w-none" set:html={p.fullText} />
+                  {p.benefits && (
+                    <div class="mt-5 bg-blue-50 rounded-xl p-5">
+                      <h4 class="text-xs font-semibold uppercase tracking-wide text-gray-900 mb-3">Partnerystės nauda</h4>
+                      <ul class="space-y-2">
+                        {p.benefits.map((b: string) => (
+                          <li class="flex items-start gap-2 text-sm text-gray-700">
+                            <svg class="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                            {b}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </details>
+              )}
+
+              {/* Nuorodos */}
+              <div class={`flex items-center gap-4 flex-wrap ${p.fullText ? 'mt-5 pt-5 border-t border-gray-100' : 'mt-2'}`}>
+                {p.href.startsWith('/') && (
+                  <a href={p.href} class="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors">
+                    Sužinoti daugiau
+                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </a>
+                )}
+                <a href={p.website || p.href} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                  Apsilankyti svetainėje
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
         ))
       }
     </div>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 780 930" width="780" height="930" xml:space="preserve">
+  <path fill="#108040" d="M0,150 l60,-60 l180,-90 h420 l120,120 v540 l-50,50 h-680 l-50,-30 z"/>
+  <path fill="#C0E090" d="M580,40 s120,0 120,120 v200 s0,120 -120,120 h-220 s-120,0 -120,-120 v-200 s0,-120 120,-120 z"/>
+  <text fill="#108040" text-anchor="middle" x="627" y="436" font-family="tahoma" font-size="472" font-weight="bold" transform="scale(0.75,1)">db</text>
+  <path fill="#C0E090" d="M200,540 s22,-18 50,-18 h450 s10,0 11.96,9.8 l18,90 s0,50 -50,50 h-550 s-90,0 -20,-57 z"/>
+  <path fill="#108040" d="M208,558 s22,-18 50,-18 h402 s-440,40 -540,90 z"/>
+  <path fill="#C0E090" d="M50,200 s0,-20 16,-32 l98,-76 s16,-12 16,8 v300 s0,10 -5,18 l-103,148 s-22,34 -22,-6 z"/>
+  <path fill="#108040" d="M70,200 s0,-10, 8,-16 l83,-64 s-84,135 -91,330 z"/>
+  <text fill="#108040" text-anchor="middle" x="520" y="900" font-family="tahoma" font-size="240" font-weight="bold" transform="scale(0.75,1)">apskaita</text>
+</svg>
