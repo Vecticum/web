@@ -175,3 +175,94 @@ src="https://www.facebook.com/tr?id=1182845313669998&ev=PageView&noscript=1"
 {schema && (
   <script type="application/ld+json" set:html={schema}></script>
 )}
+
+<!-- Organization Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Vecticum",
+  "legalName": "UAB Vecticumas",
+  "url": "https://vecticum.lt/",
+  "logo": "https://vecticum.lt/_astro/logo.BmXpwNHg.webp",
+  "image": "https://vecticum.lt/media/og-default.webp",
+  "description": "VECTICUM – dokumentų, sąskaitų ir personalo valdymo sistema. Automatizuokite verslo procesus: atostogas, užduotis, sutartis ir daugiau.",
+  "foundingDate": "2018",
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "minValue": 11,
+    "maxValue": 50
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "T. Kosciuškos g. 24",
+    "addressLocality": "Vilnius",
+    "postalCode": "01100",
+    "addressCountry": "LT"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+370-696-05332",
+      "contactType": "sales",
+      "availableLanguage": ["Lithuanian", "English", "Russian", "Polish", "Latvian"]
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+370-618-15140",
+      "contactType": "customer support",
+      "availableLanguage": ["Lithuanian", "English", "Russian", "Polish", "Latvian"]
+    }
+  ],
+  "email": "info@vecticum.com",
+  "sameAs": [
+    "https://www.vecticum.com/",
+    "https://lt.linkedin.com/showcase/vecticum-lt/",
+    "https://twitter.com/vecticum"
+  ],
+  "knowsAbout": [
+    "Dokumentų valdymas",
+    "Personalo valdymas",
+    "Sąskaitų valdymas",
+    "Verslo procesų automatizavimas",
+    "ECM",
+    "HR platforma"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Vecticum sprendimai",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "SoftwareApplication",
+          "name": "Personalo savitarna",
+          "applicationCategory": "BusinessApplication"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "SoftwareApplication",
+          "name": "Dokumentų valdymo sistema (DVS)",
+          "applicationCategory": "BusinessApplication"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "SoftwareApplication",
+          "name": "Sąskaitų ir pirkimų valdymas",
+          "applicationCategory": "BusinessApplication"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "SoftwareApplication",
+          "name": "Turto valdymas",
+          "applicationCategory": "BusinessApplication"
+        }
+      }
+    ]
+  }
+})}></script>
