@@ -5,11 +5,10 @@ import Calculator from "../components/calculator/dienpinigiai.astro";
 const title = "Dienpinigių skaičiuoklė 2026 – komandiruočių dienpinigių apskaičiavimas";
 const description = "Atnaujinta komandiruočių dienpinigių skaičiuoklė. Greitai apskaičiuokite išmokas Lietuvoje ir užsienyje";
 const pubDate = new Date("2024-10-25");
-const updatedDate = new Date("2026-06-17");
 const heroImage = "/media/blog/komandiruotes-skaiciuokle.webp";
 ---
 
-<BlogPost title={title} description={description} pubDate={pubDate} updatedDate={updatedDate} heroImage={heroImage}>
+<BlogPost title={title} description={description} pubDate={pubDate} heroImage={heroImage}>
 
 <Calculator />
 
@@ -37,31 +36,158 @@ const heroImage = "/media/blog/komandiruotes-skaiciuokle.webp";
         <th class="px-4 py-3 text-left font-semibold text-gray-900 border-b">Dienpinigių norma (€/dieną)</th>
       </tr>
     </thead>
-    <tbody class="divide-y divide-gray-100">
-      <tr><td class="px-4 py-2.5">Lietuvos Respublika</td><td class="px-4 py-2.5 font-medium">28 €</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Latvijos Respublika</td><td class="px-4 py-2.5 font-medium">44 €</td></tr>
-      <tr><td class="px-4 py-2.5">Estijos Respublika</td><td class="px-4 py-2.5 font-medium">47 €</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Lenkijos Respublika</td><td class="px-4 py-2.5 font-medium">48 €</td></tr>
-      <tr><td class="px-4 py-2.5">Vokietijos Federacinė Respublika</td><td class="px-4 py-2.5 font-medium">62 €</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Prancūzijos Respublika</td><td class="px-4 py-2.5 font-medium">69 €</td></tr>
-      <tr><td class="px-4 py-2.5">Italijos Respublika</td><td class="px-4 py-2.5 font-medium">63 €</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Ispanijos Karalystė</td><td class="px-4 py-2.5 font-medium">58 €</td></tr>
-      <tr><td class="px-4 py-2.5">Jungtinė Didžiosios Britanijos ir Šiaurės Airijos Karalystė</td><td class="px-4 py-2.5 font-medium">67 €</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Nyderlandų Karalystė</td><td class="px-4 py-2.5 font-medium">64 €</td></tr>
-      <tr><td class="px-4 py-2.5">Belgijos Karalystė</td><td class="px-4 py-2.5 font-medium">61 €</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Austrijos Respublika</td><td class="px-4 py-2.5 font-medium">69 €</td></tr>
-      <tr><td class="px-4 py-2.5">Čekijos Respublika</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Švedijos Karalystė</td><td class="px-4 py-2.5 font-medium">70 €</td></tr>
-      <tr><td class="px-4 py-2.5">Norvegijos Karalystė</td><td class="px-4 py-2.5 font-medium">70 €</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Suomijos Respublika</td><td class="px-4 py-2.5 font-medium">69 €</td></tr>
-      <tr><td class="px-4 py-2.5">Danijos Karalystė</td><td class="px-4 py-2.5 font-medium">80 €</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Šveicarijos Konfederacija</td><td class="px-4 py-2.5 font-medium">80 €</td></tr>
-      <tr><td class="px-4 py-2.5">Jungtinės Amerikos Valstijos</td><td class="px-4 py-2.5 font-medium">61 € (Niujorkas – 82 €)</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Japonija</td><td class="px-4 py-2.5 font-medium">87 €</td></tr>
-      <tr><td class="px-4 py-2.5">Ukraina</td><td class="px-4 py-2.5 font-medium">53 €</td></tr>
-      <tr class="bg-gray-50"><td class="px-4 py-2.5">Rusijos Federacija</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
-      <tr><td class="px-4 py-2.5">Kitos valstybės</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
-    </tbody>
+<tbody class="divide-y divide-gray-100">
+  <tr><td class="px-4 py-2.5">Afganistano Islamo Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Airija</td><td class="px-4 py-2.5 font-medium">69 €</td></tr>
+  <tr><td class="px-4 py-2.5">Albanijos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Alžyro Liaudies Demokratinė Respublika</td><td class="px-4 py-2.5 font-medium">57 €</td></tr>
+  <tr><td class="px-4 py-2.5">Andoros Kunigaikštystė</td><td class="px-4 py-2.5 font-medium">46 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Angolos Respublika</td><td class="px-4 py-2.5 font-medium">70 €</td></tr>
+  <tr><td class="px-4 py-2.5">Argentinos Respublika</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Armėnijos Respublika</td><td class="px-4 py-2.5 font-medium">47 €</td></tr>
+  <tr><td class="px-4 py-2.5">Australija</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Austrijos Respublika</td><td class="px-4 py-2.5 font-medium">69 €</td></tr>
+  <tr><td class="px-4 py-2.5">Azerbaidžano Respublika</td><td class="px-4 py-2.5 font-medium">47 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Bahamų Sandrauga</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
+  <tr><td class="px-4 py-2.5">Bahreino Karalystė</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Baltarusijos Respublika</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr><td class="px-4 py-2.5">Bangladešo Liaudies Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Belgijos Karalystė</td><td class="px-4 py-2.5 font-medium">61 €</td></tr>
+  <tr><td class="px-4 py-2.5">Bosnija ir Hercegovina</td><td class="px-4 py-2.5 font-medium">43 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Botsvanos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Brazilijos Federacinė Respublika</td><td class="px-4 py-2.5 font-medium">43 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Brunėjaus Darusalamas</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr><td class="px-4 py-2.5">Bulgarijos Respublika</td><td class="px-4 py-2.5 font-medium">39 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Burkina Fasas</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr><td class="px-4 py-2.5">Butano Karalystė</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Čekijos Respublika</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
+  <tr><td class="px-4 py-2.5">Čilės Respublika</td><td class="px-4 py-2.5 font-medium">47 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Danijos Karalystė</td><td class="px-4 py-2.5 font-medium">80 €</td></tr>
+  <tr><td class="px-4 py-2.5">Dramblio Kaulo Kranto Respublika</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Egipto Arabų Respublika</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
+  <tr><td class="px-4 py-2.5">Ekvadoro Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Estijos Respublika</td><td class="px-4 py-2.5 font-medium">47 €</td></tr>
+  <tr><td class="px-4 py-2.5">Etiopijos Federacinė Demokratinė Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Filipinų Respublika</td><td class="px-4 py-2.5 font-medium">45 €</td></tr>
+  <tr><td class="px-4 py-2.5">Ganos Respublika</td><td class="px-4 py-2.5 font-medium">47 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Graikijos Respublika</td><td class="px-4 py-2.5 font-medium">55 €</td></tr>
+  <tr><td class="px-4 py-2.5">Gvatemalos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Indijos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Indonezijos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Irako Respublika</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr><td class="px-4 py-2.5">Irano Islamo Respublika</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Islandijos Respublika</td><td class="px-4 py-2.5 font-medium">70 €</td></tr>
+  <tr><td class="px-4 py-2.5">Ispanijos Karalystė</td><td class="px-4 py-2.5 font-medium">58 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Italijos Respublika</td><td class="px-4 py-2.5 font-medium">63 €</td></tr>
+  <tr><td class="px-4 py-2.5">Izraelio Valstybė</td><td class="px-4 py-2.5 font-medium">70 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Ypatingasis Administracinis Kinijos Regionas Honkongas</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr><td class="px-4 py-2.5">Ypatingasis Administracinis Kinijos Regionas Makao</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Japonija</td><td class="px-4 py-2.5 font-medium">87 €</td></tr>
+  <tr><td class="px-4 py-2.5">Jemeno Respublika</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Jordanijos Hašimitų Karalystė</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr><td class="px-4 py-2.5">Jungtinė Didžiosios Britanijos ir Šiaurės Airijos Karalystė</td><td class="px-4 py-2.5 font-medium">67 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Jungtinės Amerikos Valstijos (išskyrus Niujorką)</td><td class="px-4 py-2.5 font-medium">61 €</td></tr>
+  <tr><td class="px-4 py-2.5">Niujorkas</td><td class="px-4 py-2.5 font-medium">82 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Jungtiniai Arabų Emyratai</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr><td class="px-4 py-2.5">Juodkalnija</td><td class="px-4 py-2.5 font-medium">53 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Kambodžos Karalystė</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Kanada</td><td class="px-4 py-2.5 font-medium">55 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Kataro Valstybė</td><td class="px-4 py-2.5 font-medium">52 €</td></tr>
+  <tr><td class="px-4 py-2.5">Kazachstano Respublika</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Kenijos Respublika</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr><td class="px-4 py-2.5">Kinijos Liaudies Respublika</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Kipro Respublika</td><td class="px-4 py-2.5 font-medium">62 €</td></tr>
+  <tr><td class="px-4 py-2.5">Kirgizijos Respublika</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Kolumbijos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Kongo Demokratinė Respublika</td><td class="px-4 py-2.5 font-medium">70 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Korėjos Respublika</td><td class="px-4 py-2.5 font-medium">67 €</td></tr>
+  <tr><td class="px-4 py-2.5">Korėjos Liaudies Demokratinė Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Kosovo Respublika</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr><td class="px-4 py-2.5">Kosta Rikos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Kroatijos Respublika</td><td class="px-4 py-2.5 font-medium">45 €</td></tr>
+  <tr><td class="px-4 py-2.5">Kubos Respublika</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Kuveito Valstybė</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr><td class="px-4 py-2.5">Laoso Liaudies Demokratinė Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Latvijos Respublika</td><td class="px-4 py-2.5 font-medium">44 €</td></tr>
+  <tr><td class="px-4 py-2.5">Lenkijos Respublika</td><td class="px-4 py-2.5 font-medium">48 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Lesoto Karalystė</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Libano Respublika</td><td class="px-4 py-2.5 font-medium">47 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Liberijos Respublika</td><td class="px-4 py-2.5 font-medium">57 €</td></tr>
+  <tr><td class="px-4 py-2.5">Libijos Valstybė</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Lichtenšteino Kunigaikštystė</td><td class="px-4 py-2.5 font-medium">80 €</td></tr>
+  <tr><td class="px-4 py-2.5">Lietuvos Respublika</td><td class="px-4 py-2.5 font-medium">28 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Liuksemburgo Didžioji Hercogystė</td><td class="px-4 py-2.5 font-medium">61 €</td></tr>
+  <tr><td class="px-4 py-2.5">Madagaskaro Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Malaizija</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Malavio Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Maldyvų Respublika</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr><td class="px-4 py-2.5">Malio Respublika</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Maltos Respublika</td><td class="px-4 py-2.5 font-medium">63 €</td></tr>
+  <tr><td class="px-4 py-2.5">Maroko Karalystė</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Mauricijaus Respublika</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr><td class="px-4 py-2.5">Mauritanijos Islamo Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Meksikos Jungtinės Valstijos</td><td class="px-4 py-2.5 font-medium">47 €</td></tr>
+  <tr><td class="px-4 py-2.5">Mianmaro Sąjungos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Moldovos Respublika</td><td class="px-4 py-2.5 font-medium">53 €</td></tr>
+  <tr><td class="px-4 py-2.5">Monako Kunigaikštystė</td><td class="px-4 py-2.5 font-medium">49 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Mongolija</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
+  <tr><td class="px-4 py-2.5">Mozambiko Respublika</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Namibijos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Naujoji Zelandija</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Nepalo Federacinė Demokratinė Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Nigerijos Federacinė Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Nyderlandų Karalystė</td><td class="px-4 py-2.5 font-medium">64 €</td></tr>
+  <tr><td class="px-4 py-2.5">Norvegijos Karalystė</td><td class="px-4 py-2.5 font-medium">70 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Omano Sultonatas</td><td class="px-4 py-2.5 font-medium">47 €</td></tr>
+  <tr><td class="px-4 py-2.5">Pakistano Islamo Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Panamos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Papua Naujosios Gvinėjos Nepriklausomoji Valstybė</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Peru Respublika</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
+  <tr><td class="px-4 py-2.5">Pietų Afrikos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Pietų Sudano Respublika</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr><td class="px-4 py-2.5">Portugalijos Respublika</td><td class="px-4 py-2.5 font-medium">56 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Prancūzijos Respublika</td><td class="px-4 py-2.5 font-medium">69 €</td></tr>
+  <tr><td class="px-4 py-2.5">Puerto Rikas</td><td class="px-4 py-2.5 font-medium">43 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Ruandos Respublika</td><td class="px-4 py-2.5 font-medium">43 €</td></tr>
+  <tr><td class="px-4 py-2.5">Rumunija</td><td class="px-4 py-2.5 font-medium">35 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Rusijos Federacija</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr><td class="px-4 py-2.5">Sakartvelas</td><td class="px-4 py-2.5 font-medium">53 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">San Marino Respublika</td><td class="px-4 py-2.5 font-medium">63 €</td></tr>
+  <tr><td class="px-4 py-2.5">Saudo Arabijos Karalystė</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Seišelių Respublika</td><td class="px-4 py-2.5 font-medium">57 €</td></tr>
+  <tr><td class="px-4 py-2.5">Senegalo Respublika</td><td class="px-4 py-2.5 font-medium">43 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Sent Kitsas ir Nevis</td><td class="px-4 py-2.5 font-medium">57 €</td></tr>
+  <tr><td class="px-4 py-2.5">Serbijos Respublika</td><td class="px-4 py-2.5 font-medium">53 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Singapūro Respublika</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr><td class="px-4 py-2.5">Sirijos Arabų Respublika</td><td class="px-4 py-2.5 font-medium">53 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Slovakijos Respublika</td><td class="px-4 py-2.5 font-medium">53 €</td></tr>
+  <tr><td class="px-4 py-2.5">Slovėnijos Respublika</td><td class="px-4 py-2.5 font-medium">52 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Sudano Respublika</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr><td class="px-4 py-2.5">Suomijos Respublika</td><td class="px-4 py-2.5 font-medium">69 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Šiaurės Makedonijos Respublika</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr><td class="px-4 py-2.5">Šri Lankos Demokratinė Socialistinė Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Švedijos Karalystė</td><td class="px-4 py-2.5 font-medium">70 €</td></tr>
+  <tr><td class="px-4 py-2.5">Šveicarijos Konfederacija</td><td class="px-4 py-2.5 font-medium">80 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Tadžikistano Respublika</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr><td class="px-4 py-2.5">Tailando Karalystė</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Taivanas</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr><td class="px-4 py-2.5">Tanzanijos Jungtinė Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Tuniso Respublika</td><td class="px-4 py-2.5 font-medium">40 €</td></tr>
+  <tr><td class="px-4 py-2.5">Turkijos Respublika</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Turkmėnistanas</td><td class="px-4 py-2.5 font-medium">53 €</td></tr>
+  <tr><td class="px-4 py-2.5">Ugandos Respublika</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Ukraina</td><td class="px-4 py-2.5 font-medium">53 €</td></tr>
+  <tr><td class="px-4 py-2.5">Urugvajaus Rytų Respublika</td><td class="px-4 py-2.5 font-medium">37 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Uzbekistano Respublika</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+  <tr><td class="px-4 py-2.5">Vatikano Miesto Valstybė</td><td class="px-4 py-2.5 font-medium">63 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Venesuelos Bolivaro Respublika</td><td class="px-4 py-2.5 font-medium">57 €</td></tr>
+  <tr><td class="px-4 py-2.5">Vengrija</td><td class="px-4 py-2.5 font-medium">48 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Vietnamo Socialistinė Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Vokietijos Federacinė Respublika</td><td class="px-4 py-2.5 font-medium">62 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Zambijos Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr><td class="px-4 py-2.5">Zimbabvės Respublika</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+  <tr class="bg-gray-50"><td class="px-4 py-2.5">Kitos valstybės</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+</tbody>
   </table>
 </div>
 
@@ -117,5 +243,144 @@ const heroImage = "/media/blog/komandiruotes-skaiciuokle.webp";
     </a>
   </div>
 </div>
+
+<!-- DUK -->
+<h2>Dažnai užduodami klausimai (DUK)</h2>
+
+<div class="not-prose space-y-3">
+  <details class="group border border-gray-200 rounded-xl bg-white">
+    <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-semibold text-gray-900 text-[15px]">
+      Kas yra dienpinigiai?
+      <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </summary>
+    <div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">
+      Dienpinigiai – tai darbdavio mokama kompensacija darbuotojui, vykstančiam į komandiruotę, skirta padengti papildomas išlaidas (maitinimui, smulkiems poreikiams), susijusias su buvimu ne nuolatinėje darbo vietoje. Dienpinigių dydis priklauso nuo komandiruotės šalies ir yra nustatomas Lietuvos Respublikos Vyriausybės nutarimu.
+    </div>
+  </details>
+
+  <details class="group border border-gray-200 rounded-xl bg-white">
+    <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-semibold text-gray-900 text-[15px]">
+      Koks yra neapmokestinamas dienpinigių dydis Lietuvoje?
+      <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </summary>
+    <div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">
+      Lietuvoje komandiruočių dienpinigių norma yra 28 € per dieną. Ši suma neapmokestinama gyventojų pajamų mokesčiu ir socialinio draudimo įmokomis, jei neviršija nustatyto tarifo. Viršijanti dalis apmokestinama kaip darbuotojo pajamos.
+    </div>
+  </details>
+
+  <details class="group border border-gray-200 rounded-xl bg-white">
+    <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-semibold text-gray-900 text-[15px]">
+      Ar dienpinigiai priklauso už kelionės dienas?
+      <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </summary>
+    <div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">
+      Taip. Dienpinigiai mokami už visą komandiruotės laikotarpį, įskaitant kelionės į komandiruotės vietą ir grįžimo dienas. Skaičiuojama nuo išvykimo momento iki grįžimo, nepriklausomai nuo to, ar kelionės dienomis buvo dirbama.
+    </div>
+  </details>
+
+  <details class="group border border-gray-200 rounded-xl bg-white">
+    <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-semibold text-gray-900 text-[15px]">
+      Kaip skaičiuoti dienpinigius, jei per parą kirtau 3 šalis?
+      <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </summary>
+    <div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">
+      Jei per vieną parą kertamos kelios šalys, dienpinigiai skaičiuojami pagal tos šalies tarifą, kurioje darbuotojas praleido daugiausiai laiko tą dieną. Mūsų skaičiuoklėje galite pridėti kelias šalis ir nurodyti dienų skaičių kiekvienoje – sistema automatiškai apskaičiuos bendrą sumą.
+    </div>
+  </details>
+
+  <details class="group border border-gray-200 rounded-xl bg-white">
+    <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-semibold text-gray-900 text-[15px]">
+      Kaip skaičiuojami dienpinigiai už savaitgalius ir nedarbo dienas?
+      <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </summary>
+    <div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">
+      Dienpinigiai mokami už visas komandiruotės dienas, įskaitant savaitgalius ir švenčių dienas, jei darbuotojas tuo metu vis dar yra komandiruotėje. Tarifas nesikeičia – taikoma ta pati dienos norma kaip ir darbo dienomis.
+    </div>
+  </details>
+
+  <details class="group border border-gray-200 rounded-xl bg-white">
+    <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-semibold text-gray-900 text-[15px]">
+      Ar galima automatizuoti komandiruočių procesą?
+      <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </summary>
+    <div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">
+      Taip. Su <a href="https://vecticum.lt/komandiruociu-valdymas/" class="text-[#3C7099] underline hover:text-[#2a5570]">Vecticum komandiruočių valdymo moduliu</a> galite automatizuoti visą procesą: nuo komandiruotės prašymo pateikimo ir tvirtinimo iki dienpinigių apskaičiavimo ir išlaidų ataskaitos. Tai sumažina rankinį darbą ir klaidų tikimybę.
+    </div>
+  </details>
+
+  <details class="group border border-gray-200 rounded-xl bg-white">
+    <summary class="flex items-center justify-between cursor-pointer px-5 py-4 font-semibold text-gray-900 text-[15px]">
+      Kaip kontroliuoti komandiruočių biudžetą realiu laiku?
+      <svg class="w-5 h-5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </summary>
+    <div class="px-5 pb-4 text-sm text-gray-600 leading-relaxed">
+      Vecticum sistema leidžia stebėti komandiruočių išlaidas realiu laiku – matyti planuojamas ir faktines sumas, analizuoti departamentų ar darbuotojų komandiruočių biudžetus ir gauti automatines ataskaitas. Tai padeda priimti pagrįstus sprendimus ir kontroliuoti išlaidas.
+    </div>
+  </details>
+</div>
+
+<!-- FAQPage Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kas yra dienpinigiai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dienpinigiai – tai darbdavio mokama kompensacija darbuotojui, vykstančiam į komandiruotę, skirta padengti papildomas išlaidas (maitinimui, smulkiems poreikiams), susijusias su buvimu ne nuolatinėje darbo vietoje. Dienpinigių dydis priklauso nuo komandiruotės šalies ir yra nustatomas Lietuvos Respublikos Vyriausybės nutarimu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Koks yra neapmokestinamas dienpinigių dydis Lietuvoje?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lietuvoje komandiruočių dienpinigių norma yra 28 € per dieną. Ši suma neapmokestinama gyventojų pajamų mokesčiu ir socialinio draudimo įmokomis, jei neviršija nustatyto tarifo. Viršijanti dalis apmokestinama kaip darbuotojo pajamos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ar dienpinigiai priklauso už kelionės dienas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Taip. Dienpinigiai mokami už visą komandiruotės laikotarpį, įskaitant kelionės į komandiruotės vietą ir grįžimo dienas. Skaičiuojama nuo išvykimo momento iki grįžimo, nepriklausomai nuo to, ar kelionės dienomis buvo dirbama."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kaip skaičiuoti dienpinigius, jei per parą kirtau 3 šalis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jei per vieną parą kertamos kelios šalys, dienpinigiai skaičiuojami pagal tos šalies tarifą, kurioje darbuotojas praleido daugiausiai laiko tą dieną. Mūsų skaičiuoklėje galite pridėti kelias šalis ir nurodyti dienų skaičių kiekvienoje – sistema automatiškai apskaičiuos bendrą sumą."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kaip skaičiuojami dienpinigiai už savaitgalius ir nedarbo dienas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dienpinigiai mokami už visas komandiruotės dienas, įskaitant savaitgalius ir švenčių dienas, jei darbuotojas tuo metu vis dar yra komandiruotėje. Tarifas nesikeičia – taikoma ta pati dienos norma kaip ir darbo dienomis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ar galima automatizuoti komandiruočių procesą?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Taip. Su Vecticum komandiruočių valdymo moduliu galite automatizuoti visą procesą: nuo komandiruotės prašymo pateikimo ir tvirtinimo iki dienpinigių apskaičiavimo ir išlaidų ataskaitos. Tai sumažina rankinį darbą ir klaidų tikimybę."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kaip kontroliuoti komandiruočių biudžetą realiu laiku?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vecticum sistema leidžia stebėti komandiruočių išlaidas realiu laiku – matyti planuojamas ir faktines sumas, analizuoti departamentų ar darbuotojų komandiruočių biudžetus ir gauti automatines ataskaitas. Tai padeda priimti pagrįstus sprendimus ir kontroliuoti išlaidas."
+      }
+    }
+  ]
+})}></script>
 
 </BlogPost>
