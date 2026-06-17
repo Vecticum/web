@@ -1,0 +1,121 @@
+---
+import BlogPost from "../layouts/BlogPost.astro";
+import Calculator from "../components/calculator/dienpinigiai.astro";
+
+const title = "Dienpinigių skaičiuoklė 2026 – komandiruočių dienpinigių apskaičiavimas";
+const description = "Atnaujinta komandiruočių dienpinigių skaičiuoklė. Greitai apskaičiuokite išmokas Lietuvoje ir užsienyje";
+const pubDate = new Date("2024-10-25");
+const updatedDate = new Date("2026-06-17");
+const heroImage = "/media/blog/komandiruotes-skaiciuokle.webp";
+---
+
+<BlogPost title={title} description={description} pubDate={pubDate} updatedDate={updatedDate} heroImage={heroImage}>
+
+<Calculator />
+
+<p><strong>Dienpinigiai</strong> yra svarbi <a href="https://vecticum.lt/komandiruociu-valdymas/">komandiruočių valdymo</a> dalis, padedanti kompensuoti darbuotojų išlaidas, patiriamas verslo kelionių metu. Šios išmokos skirtos padengti būtinas išlaidas, tokias kaip maitinimas ir apgyvendinimas, kai darbuotojas vyksta į komandiruotę Lietuvoje arba užsienyje. Dienpinigių dydžiai skiriasi priklausomai nuo šalies, todėl būtina žinoti tikslius tarifus ir laikytis nustatytų taisyklių.</p>
+
+<h2>Kas pasikeitė 2026 metais?</h2>
+<p>2026 m. Lietuvos Respublikos Vyriausybė patvirtino atnaujintus komandiruočių dienpinigių tarifus. Skaičiuoklė atitinka naujausias <strong>dienpinigių normas</strong>, galiojančias nuo 2026 m. sausio 1 d. Rekomenduojame visada patikrinti oficialų <a href="https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.232345/asr" target="_blank" rel="noopener">Vyriausybės nutarimą dėl dienpinigių mokėjimo tvarkos</a>.</p>
+
+<h2>Dienpinigių tipai ir jų skaičiavimas</h2>
+<p><strong>Komandiruotės dienpinigiai</strong> skirstomi į dvi pagrindines kategorijas:</p>
+<ul>
+  <li><strong>Nacionaliniai dienpinigiai</strong> – kai kelionė vyksta Lietuvos viduje (28 € per dieną)</li>
+  <li><strong>Tarptautiniai dienpinigiai</strong> – kai darbuotojas vyksta į užsienio komandiruotę (tarifai skiriasi pagal šalį)</li>
+</ul>
+<p>Kiekvienai šaliai nustatyti skirtingi <strong>komandiruotpinigiai užsienyje</strong>, kurie apibrėžia, kiek darbdavys privalo sumokėti darbuotojui už patirtas išlaidas komandiruotės metu.</p>
+
+<h2>Populiariausių šalių dienpinigių tarifai 2026 m.</h2>
+<p>Žemiau pateikiama dažniausiai naudojamų <strong>komandiruočių dienpinigių</strong> tarifų lentelė pagal šalis:</p>
+
+<div class="overflow-x-auto not-prose">
+  <table class="min-w-full border border-gray-200 rounded-xl text-sm">
+    <thead class="bg-[#f0f6fb]">
+      <tr>
+        <th class="px-4 py-3 text-left font-semibold text-gray-900 border-b">Šalis</th>
+        <th class="px-4 py-3 text-left font-semibold text-gray-900 border-b">Dienpinigių norma (€/dieną)</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100">
+      <tr><td class="px-4 py-2.5">Lietuvos Respublika</td><td class="px-4 py-2.5 font-medium">28 €</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Latvijos Respublika</td><td class="px-4 py-2.5 font-medium">44 €</td></tr>
+      <tr><td class="px-4 py-2.5">Estijos Respublika</td><td class="px-4 py-2.5 font-medium">47 €</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Lenkijos Respublika</td><td class="px-4 py-2.5 font-medium">48 €</td></tr>
+      <tr><td class="px-4 py-2.5">Vokietijos Federacinė Respublika</td><td class="px-4 py-2.5 font-medium">62 €</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Prancūzijos Respublika</td><td class="px-4 py-2.5 font-medium">69 €</td></tr>
+      <tr><td class="px-4 py-2.5">Italijos Respublika</td><td class="px-4 py-2.5 font-medium">63 €</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Ispanijos Karalystė</td><td class="px-4 py-2.5 font-medium">58 €</td></tr>
+      <tr><td class="px-4 py-2.5">Jungtinė Didžiosios Britanijos ir Šiaurės Airijos Karalystė</td><td class="px-4 py-2.5 font-medium">67 €</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Nyderlandų Karalystė</td><td class="px-4 py-2.5 font-medium">64 €</td></tr>
+      <tr><td class="px-4 py-2.5">Belgijos Karalystė</td><td class="px-4 py-2.5 font-medium">61 €</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Austrijos Respublika</td><td class="px-4 py-2.5 font-medium">69 €</td></tr>
+      <tr><td class="px-4 py-2.5">Čekijos Respublika</td><td class="px-4 py-2.5 font-medium">50 €</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Švedijos Karalystė</td><td class="px-4 py-2.5 font-medium">70 €</td></tr>
+      <tr><td class="px-4 py-2.5">Norvegijos Karalystė</td><td class="px-4 py-2.5 font-medium">70 €</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Suomijos Respublika</td><td class="px-4 py-2.5 font-medium">69 €</td></tr>
+      <tr><td class="px-4 py-2.5">Danijos Karalystė</td><td class="px-4 py-2.5 font-medium">80 €</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Šveicarijos Konfederacija</td><td class="px-4 py-2.5 font-medium">80 €</td></tr>
+      <tr><td class="px-4 py-2.5">Jungtinės Amerikos Valstijos</td><td class="px-4 py-2.5 font-medium">61 € (Niujorkas – 82 €)</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Japonija</td><td class="px-4 py-2.5 font-medium">87 €</td></tr>
+      <tr><td class="px-4 py-2.5">Ukraina</td><td class="px-4 py-2.5 font-medium">53 €</td></tr>
+      <tr class="bg-gray-50"><td class="px-4 py-2.5">Rusijos Federacija</td><td class="px-4 py-2.5 font-medium">60 €</td></tr>
+      <tr><td class="px-4 py-2.5">Kitos valstybės</td><td class="px-4 py-2.5 font-medium">33 €</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="text-sm text-gray-500 italic">* Tarifai pateikiami remiantis Lietuvos Respublikos Vyriausybės nutarimu. Visą šalių sąrašą rasite skaičiuoklėje aukščiau.</p>
+
+<h2>Kaip apskaičiuoti dienpinigius?</h2>
+<p><strong>Dienpinigių apskaičiavimas</strong> gali būti sudėtingas procesas, nes reikia atsižvelgti į kelias kintamąsias:</p>
+<ul>
+  <li>Komandiruotės trukmę (dienų skaičių)</li>
+  <li>Kelionės kryptį (šalį ar šalis)</li>
+  <li>Ar tam tikros išlaidos (maitinimas, apgyvendinimas) jau apmokėtos darbdavio</li>
+  <li>Galimą dienpinigių sumažinimo procentą</li>
+</ul>
+<p><strong>Komandiruočių dienpinigiai</strong> paprastai mokami už kiekvieną komandiruotės dieną, pradedant nuo pirmosios kelionės dienos, įskaitant kelionės laiką.</p>
+
+<h3>Dienpinigių skaičiavimo formulė</h3>
+<p>Dienpinigių suma apskaičiuojama pagal formulę:</p>
+<p class="bg-[#f0f6fb] p-4 rounded-lg text-center font-mono text-sm"><strong>Dienpinigiai = Šalies tarifas × Dienų skaičius × (1 – Sumažinimo % / 100)</strong></p>
+<p>Pavyzdžiui, 5 dienų komandiruotė Vokietijoje be sumažinimo: 62 € × 5 = <strong>310 €</strong></p>
+
+<h2>Dienpinigių mokėjimo taisyklės</h2>
+<p>Pagal Lietuvos įstatymus, darbdaviai turi laikytis nustatytų <strong>dienpinigių mokėjimo</strong> tvarkos. Jei darbuotojas komandiruotės metu patiria papildomų išlaidų, kurios nėra padengiamos dienpinigių, darbdavys turi kompensuoti jas pagal faktines išlaidas. <strong>Dienpinigių normos</strong> yra apibrėžtos teisės aktuose, kurie nuolat atnaujinami.</p>
+
+<h3>Dienpinigių sumažinimas</h3>
+<p>Kartais taikomas <strong>dienpinigių sumažinimas</strong>, kai darbuotojui komandiruotėje dalinai arba pilnai apmokamas maitinimas ar apgyvendinimas. Sumažinimo procentas nustatomas pagal teisės aktų reikalavimus arba įmonės vidaus politiką.</p>
+
+<h2>Dienpinigių mokėjimo iššūkiai</h2>
+<p>Netinkamai apskaičiuoti <strong>komandiruotpinigiai</strong> gali sukelti įvairių problemų – nuo teisinių nesklandumų iki darbuotojų nepasitenkinimo. Tarptautinės komandiruotės susijusios su papildomais iššūkiais, nes kiekviena šalis turi savo <strong>dienpinigių tarifus</strong>, kurie gali skirtis ne tik pagal šalį, bet ir pagal miestą ar regioną.</p>
+<p>Automatizuotos dienpinigių skaičiuoklės tampa vis svarbesnės, ypač didesnėse įmonėse, kurios reguliariai siunčia darbuotojus į <strong>komandiruotes užsienyje</strong>.</p>
+
+<h2>Apibendrinimas</h2>
+<p><strong>Dienpinigiai</strong> yra svarbi verslo kelionių išlaidų valdymo dalis, kurią būtina tinkamai apskaičiuoti ir sumokėti pagal teisės aktus. Naudodamiesi VECTICUM <strong>dienpinigių skaičiuokle</strong>, galite užtikrinti tikslų ir efektyvų kelionių biudžeto planavimą bei išvengti teisinių ir finansinių klaidų.</p>
+
+<!-- CTA Banner -->
+<div class="not-prose relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#3C7099] to-[#2a5570] p-8 sm:p-10 mt-10">
+  <div class="absolute inset-0 opacity-10">
+    <svg class="w-full h-full" viewBox="0 0 400 200" fill="none">
+      <circle cx="350" cy="50" r="120" fill="white"/>
+      <circle cx="50" cy="180" r="80" fill="white"/>
+    </svg>
+  </div>
+  <div class="relative flex flex-col sm:flex-row items-center gap-6">
+    <div class="flex-1 text-center sm:text-left">
+      <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Automatizuokite komandiruočių valdymą</h3>
+      <p class="text-white/80 text-sm sm:text-base">Dienpinigių skaičiavimas, komandiruočių prašymai, tvirtinimai ir išlaidų ataskaitos – viskas vienoje sistemoje. Sumažinkite rankinį darbą ir klaidų tikimybę.</p>
+    </div>
+    <a 
+      href="https://vecticum.lt/komandiruociu-valdymas/" 
+      class="inline-flex items-center gap-2 bg-white text-[#3C7099] font-bold px-6 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 whitespace-nowrap text-sm sm:text-base"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      Išbandyti modulį
+    </a>
+  </div>
+</div>
+
+</BlogPost>
