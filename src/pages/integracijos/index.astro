@@ -5,12 +5,12 @@ import { Image } from "astro:assets";
 import logoImg from "../../assets/images/logo.webp";
 
 const seoTitle = "Integracijos su apskaitos ir verslo sistemomis | Vecticum";
-const seoDescription = "Vecticum integruojasi su populiariausiomis Lietuvos ir tarptautinėmis apskaitos sistemomis: BC (Softera, Alna), Rivilė, Finvalda, Navision, Horizon ir kitomis. Individuali integracija pagal jūsų poreikius.";
+const seoDescription = "Vecticum integruojasi su populiariausiomis Lietuvos ir tarptautinėmis apskaitos sistemomis: Business Central (Softera, Digmatix), Rivilė, Finvalda, Microsoft Dynamics Nav, Horizon ir kitomis. Individuali integracija pagal jūsų poreikius.";
 
 const existingIntegrations = [
   {
-    name: "BC (Softera)",
-    category: "ERP / Apskaita",
+    name: "Business Central (Softera)",
+    category: "Personalo apskaita / DU",
     logo: "fa-solid fa-cube",
     logoImg: "/media/partners/softera.png",
     features: ["Personalo duomenys", "Darbo sutartys", "Neatvykimai", "Tabeliai", "Atostogų likučiai", "Sąskaitos", "Dimensijos"],
@@ -23,8 +23,8 @@ const existingIntegrations = [
     features: ["Personalo duomenys", "Neatvykimai", "Atostogų likučiai", "Sąskaitos", "Dimensijos"],
   },
   {
-    name: "BC (Digmatix)",
-    category: "ERP / Apskaita",
+    name: "Business Central (Digmatix)",
+    category: "Personalo apskaita / DU",
     logo: "fa-solid fa-cube",
     logoImg: "/media/partners/digimatix.png",
     features: ["Sąskaitos", "Tiekėjai", "Prekės", "Dimensijos"],
@@ -58,10 +58,10 @@ const existingIntegrations = [
     features: ["Sąskaitos", "Tiekėjai", "Prekės", "Dimensijos"],
   },
   {
-    name: "Microsoft Dynamics 365 Business Central",
+    name: "Microsoft Dynamics Nav",
     category: "ERP / Apskaita",
     logo: "fa-solid fa-cube",
-    logoImg: "/media/partners/business_central.svg",
+    logoImg: "/media/partners/microsoft-dynamics-nav.png",
     features: ["Sąskaitos", "Tiekėjai", "Prekės"],
   },
   {
@@ -113,7 +113,7 @@ const integrationTypes = [
   {
     title: "API integracija",
     subtitle: "Kita sistema jungiasi į mus",
-    description: "Pateikiame dokumentuotą REST API, per kurią trečių šalių sistemos gali skaityti ir rašyti duomenis į Vecticum – be jokių apribojimų.",
+    description: "Pateikiame dokumentuotą REST API, per kurią trečių šalių sistemos gali skaityti ir rašyti duomenis į Vecticum – be jokių apribojimų. Vecticum API automatiškai generuojasi pagal sistemos konfigūraciją – sukūrus naujus objektus ar laukus, jie iš karto tampa pasiekiami per API.",
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>`,
     color: "from-[#3C7099] to-[#5a9bc4]",
     badge: "Lankstumas",
@@ -123,7 +123,7 @@ const integrationTypes = [
   {
     title: "Individuali integracija",
     subtitle: "Mes integruojamės į jūsų sistemą",
-    description: "Kuriame naują integraciją nuo nulio pagal jūsų sistemos specifiką – nepriklausomai nuo technologijos ar protokolo.",
+    description: "Kuriame individualią integraciją pagal jūsų sistemos specifiką – nepriklausomai nuo technologijos ar protokolo.",
     icon: `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H22.5m-7.08 5.1l5.1-5.1m0 0l-5.1-5.1m5.1 5.1H1.5"/></svg>`,
     color: "from-[#C81F6A] to-[#e04d8a]",
     badge: "Pilna laisvė",
@@ -298,7 +298,7 @@ const processSteps = [
           </div>
           <h3 class="text-xl font-bold text-gray-900 mb-3">Visos integracijos yra galimos</h3>
           <p class="text-gray-600 leading-relaxed">
-            Kadangi tiek Vecticum, tiek jūsų sistema yra individualios, integracija visada pritaikoma konkrečiam atvejui. Dalį integracijų jau turime paruošę ir galime jas ekonomiškai pritaikyti. Kitais atvejais – kuriame naują integraciją nuo nulio arba pateikiame API, per kurią jūsų sistema gali integruotis į mus.
+            Kadangi tiek Vecticum, tiek jūsų sistema yra individualios, integracija visada pritaikoma konkrečiam atvejui. Dalį integracijų jau turime paruošę ir galime jas ekonomiškai pritaikyti. Kitais atvejais – kuriame individualią integraciją pagal jūsų poreikius arba pateikiame API, per kurią jūsų sistema gali integruotis į mus.
           </p>
           <p class="text-gray-600 leading-relaxed mt-3">
             <span class="font-semibold text-gray-800">Svarbu žinoti:</span> tam, kad integracija veiktų, kartais reikia abiejų sistemų pakeitimų – pavyzdžiui, jei apskaitos sistema turi dimensiją, kurios dar neturime, ją reikia įvesti, validuoti ir tinkamai panaudoti.
