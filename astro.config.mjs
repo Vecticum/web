@@ -10,7 +10,14 @@ import alpinejs from "@astrojs/alpinejs";
 // https://astro.build/config
 export default defineConfig({
   site: "https://vecticum.lt",
-  integrations: [mdx(), sitemap(), tailwind(), alpinejs()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => !new URL(page).pathname.startsWith("/admin/"),
+    }),
+    tailwind(),
+    alpinejs(),
+  ],
   adapter: vercel(),
   trailingSlash: "never",
 });
