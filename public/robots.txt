@@ -10,15 +10,18 @@ Disallow: /api/
 Disallow: /_astro/
 Disallow: /.well-known/
 Disallow: /sistemos-atnaujinimai/
+Disallow: /vidaus-norminiu-dokumentu-webinaras/
 
 # Allow common crawlers
 User-agent: Googlebot
 Allow: /
 Disallow: /admin/
+Disallow: /vidaus-norminiu-dokumentu-webinaras/
 
 User-agent: Bingbot
 Allow: /
 Disallow: /admin/
+Disallow: /vidaus-norminiu-dokumentu-webinaras/
 
 User-agent: Slurp
 Allow: /

@@ -13,7 +13,9 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap({
-      filter: (page) => !new URL(page).pathname.startsWith("/admin/"),
+      filter: (page) =>
+        !new URL(page).pathname.startsWith("/admin/") &&
+        !new URL(page).pathname.startsWith("/vidaus-norminiu-dokumentu-webinaras"),
     }),
     tailwind(),
     alpinejs(),
