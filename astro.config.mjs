@@ -15,7 +15,7 @@ export default defineConfig({
     sitemap({
       filter: (page) =>
         !new URL(page).pathname.startsWith("/admin/") &&
-        !new URL(page).pathname.startsWith("/vidaus-norminiu-dokumentu-webinaras"),
+        !new URL(page).pathname.startsWith("/vidaus-norminiu-dokumentu-vebinaras"),
     }),
     tailwind(),
     alpinejs(),
