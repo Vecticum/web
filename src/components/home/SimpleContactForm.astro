@@ -1,10 +1,15 @@
 ---
+interface Props {
+  formSource?: string;
+}
+
+const { formSource = "Leads iš kontaktų puslapio" } = Astro.props;
 ---
 
 <div>
   <form id="simple-contact-form-lead" action="#" method="POST" class="space-y-6 bg-white p-6 rounded-xl shadow-md">
     <!-- Hidden field for form source -->
-    <input type="hidden" name="form_source" value="Leads iš kontaktų puslapio">
+    <input type="hidden" name="form_source" value={formSource}>
     <input type="hidden" name="newsletterConsent" value="false" data-newsletter-consent>
     <div id="responseMessage" class="mt-4 text-center"></div>
     <div>
