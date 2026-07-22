@@ -2,9 +2,16 @@
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import { getPublicImageSize } from "~/utils/imageSize";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const heroSizes = new Map(
+  await Promise.all(
+    posts.map(async (post) => [post.id, await getPublicImageSize(post.data.heroImage)] as const)
+  )
 );
 
 const seoTitle = "Verslo procesų valdymo naujienos | Vecticum";
@@ -37,6 +44,8 @@ const seoImage = '~/assets/images/logo.webp'; // Optional
                   <img
                     src={post.data.heroImage}
                     alt={post.data.title}
+                    width={heroSizes.get(post.id)?.width}
+                    height={heroSizes.get(post.id)?.height}
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 )}

@@ -1,7 +1,9 @@
 ---
 import FormattedDate from "../FormattedDate.astro";
+import { getPublicImageSize } from "~/utils/imageSize";
 
 const { post } = Astro.props;
+const heroSize = await getPublicImageSize(post.data.heroImage);
 ---
 
 <article class="group bg-white rounded-xl shadow-md overflow-hidden transition-all hover:shadow-xl">
@@ -9,6 +11,8 @@ const { post } = Astro.props;
     <img
       alt={post.data.title}
       src={post.data.heroImage}
+      width={heroSize?.width}
+      height={heroSize?.height}
       class="w-full h-full object-cover transition group-hover:scale-105"
     />
   </div>

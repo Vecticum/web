@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import { render } from "astro:content";
 import MainLayout from "~/layouts/MainLayout.astro";
+import { getPublicImageSize } from "~/utils/imageSize";
 
 export async function getStaticPaths() {
   const services = await getCollection("services");
@@ -14,6 +15,7 @@ type Props = CollectionEntry<"services">;
 
 const service = Astro.props;
 const { Content } = await render(service);
+const heroSize = await getPublicImageSize(service.data.hero_image);
 ---
 
 <MainLayout
@@ -30,7 +32,7 @@ const { Content } = await render(service);
       <!-- Image Section -->
       <div class="w-full">
         <div class="rounded-xl overflow-hidden">
-          <img src={service.data.hero_image} alt={service.data.title} class="w-full h-auto object-cover" />
+          <img src={service.data.hero_image} alt={service.data.title} width={heroSize?.width} height={heroSize?.height} class="w-full h-auto object-cover" />
         </div>
       </div>
 

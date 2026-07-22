@@ -2,6 +2,7 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import ClientsLogoSimple from "../../components/shared/ClientsLogoSimple.astro";
 import BlogPreview from "../../components/blog/BlogPreview.astro";
+import { getPublicImageSize } from "~/utils/imageSize";
 
 const seoTitle = "Apie mus | VECTICUM";
 const seoDescription = "Sužinokite VECTICUM istoriją, vertybes, komandą ir pasiekimus. Kuriame patikimus, modernius sprendimus ilgalaikėms partnerystėms.";
@@ -218,6 +219,10 @@ const certificates = [
   },
 ];
 
+const certSizes = new Map(
+  await Promise.all(certificates.map(async (c) => [c.logo, await getPublicImageSize(c.logo)] as const))
+);
+
 
 
  
@@ -274,7 +279,7 @@ const certificates = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-12">
         <div class="relative group h-full">
           <div class="absolute -inset-1 bg-gradient-to-r from-[#3C7099] to-[#5a8ab8] rounded-3xl blur opacity-25 group-hover:opacity-40 transition"></div>
-          <img
+          <img width="4032" height="3024"
             src="/ofisas.jpg"
             alt="VECTICUM biuras"
             class="relative w-full h-full object-cover rounded-2xl shadow-lg ring-1 ring-gray-200"
@@ -368,6 +373,8 @@ const certificates = [
                 <img
                   src={member.image}
                   alt={`${member.name} nuotrauka`}
+                  width={128}
+                  height={128}
                   class="relative mx-auto h-32 w-32 rounded-full object-cover object-[center_20%] ring-4 ring-white"
                   loading="lazy"
                 />
@@ -389,6 +396,8 @@ const certificates = [
                   <img
                     src={member.image}
                     alt={`${member.name} nuotrauka`}
+                    width={80}
+                    height={80}
                     class="relative mx-auto h-20 w-20 rounded-full object-cover object-[center_20%] ring-4 ring-white"
                     loading="lazy"
                   />
@@ -450,7 +459,7 @@ const certificates = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         <div class="bg-gradient-to-br from-white to-[#f8fafc] rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#3C7099]/30 transition-all group">
           <div class="flex items-start gap-4 mb-6">
-            <img src="/media/recomendations/rec-kavita.webp" alt="KAVITA" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
+            <img width="1200" height="900" src="/media/recomendations/rec-kavita.webp" alt="KAVITA" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
             <div>
               <h3 class="font-bold text-gray-900 text-lg">Vytautas Vasiliauskas</h3>
               <p class="text-sm text-[#3C7099] font-medium">Technologijų direktorius, KAVITA</p>
@@ -468,7 +477,7 @@ const certificates = [
 
         <div class="bg-gradient-to-br from-white to-[#f8fafc] rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#3C7099]/30 transition-all group">
           <div class="flex items-start gap-4 mb-6">
-            <img src="/media/recomendations/yukon-rec.png" alt="YUKON" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
+            <img width="1200" height="900" src="/media/recomendations/yukon-rec.png" alt="YUKON" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
             <div>
               <h3 class="font-bold text-gray-900 text-lg">Georgij Nikonorov</h3>
               <p class="text-sm text-[#3C7099] font-medium">HR vadovas, YUKON Advanced Optics</p>
@@ -486,7 +495,7 @@ const certificates = [
 
         <div class="bg-gradient-to-br from-white to-[#f8fafc] rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#3C7099]/30 transition-all group">
           <div class="flex items-start gap-4 mb-6">
-            <img src="/media/recomendations/FREDA-REC.png" alt="FREDA" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
+            <img width="1200" height="900" src="/media/recomendations/FREDA-REC.png" alt="FREDA" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
             <div>
               <h3 class="font-bold text-gray-900 text-lg">Skaistė Grėbliauskė</h3>
               <p class="text-sm text-[#3C7099] font-medium">Finansų direktorė, FREDA</p>
@@ -504,7 +513,7 @@ const certificates = [
 
         <div class="bg-gradient-to-br from-white to-[#f8fafc] rounded-2xl p-8 shadow-lg border-2 border-gray-100 hover:border-[#3C7099]/30 transition-all group">
           <div class="flex items-start gap-4 mb-6">
-            <img src="/media/recomendations/GATAS-rec.png" alt="GATAS" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
+            <img width="1200" height="900" src="/media/recomendations/GATAS-rec.png" alt="GATAS" class="w-16 h-16 rounded-full object-cover ring-4 ring-white shadow-md" loading="lazy" />
             <div>
               <h3 class="font-bold text-gray-900 text-lg">Erika Grigaliūnaitė</h3>
               <p class="text-sm text-[#3C7099] font-medium">Pirkimų vadybininkė, GATAS</p>
@@ -553,7 +562,7 @@ const certificates = [
         {certificates.map((item) => (
           <div class="bg-gradient-to-br from-white to-[#f8fafc] border-2 border-gray-200 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl hover:border-[#3C7099]/30 transition-all group hover:-translate-y-1">
             <div class="h-24 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <img src={item.logo} alt={item.alt} class="h-20 w-auto object-contain" loading="lazy" />
+              <img src={item.logo} alt={item.alt} width={certSizes.get(item.logo)?.width} height={certSizes.get(item.logo)?.height} class="h-20 w-auto object-contain" loading="lazy" />
             </div>
             <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#3C7099] transition-colors">{item.title}</h3>
             <p class="text-sm text-gray-600 leading-relaxed">{item.text}</p>
