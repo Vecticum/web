@@ -18,6 +18,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const { title, description, image = "/media/og-default.webp", canonical, schema, noIndex = false } = Astro.props;
 ---
 
+<!-- Start cookieyes banner -->
+<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/1510e5735b664a9f9056cad3/script.js" is:inline></script>
+<!-- End cookieyes banner -->
+
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
