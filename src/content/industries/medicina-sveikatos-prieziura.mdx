@@ -10,7 +10,7 @@ description: VECTICUM padeda medicinos ir sveikatos priežiūros įstaigoms efek
 hero_image: "/media/services/medicinos-industrija.png"
 hero_image_alt: "Medicinos ir sveikatos priežiūros įstaigų valdymo sprendimai | VECTICUM"
 industry: "Medicina ir sveikatos priežiūra"
-draft: true
+draft: false
 ---
 
 import ContactForm from "../../components/home/ContactForm.astro";
@@ -273,26 +273,26 @@ import ExpertsCarousel from "../../components/shared/ExpertsCarousel.astro";
         </div>
       </div>
 
-      {/* Finansų valdymas */}
+      {/* Įdarbinimo procesai */}
       <div class="bg-white p-10 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group">
         <div class="flex items-center gap-4 mb-6">
           <div class="w-14 h-14 bg-gradient-to-br from-[#3C7099] to-[#2d5573] rounded-2xl flex items-center justify-center">
-            <i class="fa-solid fa-file-invoice-dollar text-white text-2xl"></i>
+            <i class="fa-solid fa-user-plus text-white text-2xl"></i>
           </div>
           <div>
-            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Finansų valdymas</h3>
+            <h3 class="text-2xl font-bold text-gray-900 leading-tight">Įdarbinimo procesai</h3>
           </div>
         </div>
         <div class="space-y-2">
-          <a href="/gaunamu-saskaitu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+          <a href="/darbuotojo-idarbinimo-i-imone-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
-              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Sąskaitų valdymas</span>
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Naujų darbuotojų priėmimas</span>
               <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
-          <a href="/pirkimu-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
+          <a href="/darbuotojo-isdarbinimo-is-imones-valdymas/" class="group/link block p-4 rounded-full hover:bg-gradient-to-r hover:from-blue-50 hover:to-transparent transition-all duration-200 border-2 border-[#3C7099]/30 hover:border-[#3C7099]">
             <div class="flex items-center justify-between">
-              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Pirkimų valdymas</span>
+              <span class="text-gray-800 font-semibold group-hover/link:text-[#3C7099]">Darbuotojų atleidimas</span>
               <i class="fa-solid fa-arrow-right text-[#3C7099] group-hover/link:translate-x-1 transition-all text-sm"></i>
             </div>
           </a>
@@ -353,38 +353,17 @@ import ExpertsCarousel from "../../components/shared/ExpertsCarousel.astro";
     {/* Two Column Layout */}
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       
-      {/* Left - Client Logos - Placeholder for healthcare clients */}
+      {/* Left - Client Logos */}
       <div>
         <div class="grid grid-cols-2 gap-8">
           <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
-            <div class="text-center">
-              <i class="fa-solid fa-hospital text-4xl text-[#3C7099] mb-2"></i>
-              <p class="text-sm text-gray-600">Privačios klinikos</p>
-            </div>
+            <img src="/media/clients/medus.png" alt="MedUS" width="160" height="80" class="max-h-16 w-auto object-contain" />
           </div>
           <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
-            <div class="text-center">
-              <i class="fa-solid fa-heart-pulse text-4xl text-[#C81F6A] mb-2"></i>
-              <p class="text-sm text-gray-600">Sveikatos centrai</p>
-            </div>
+            <img src="/media/clients/biomapas.png" alt="Biomapas" width="160" height="80" class="max-h-16 w-auto object-contain" />
           </div>
           <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
-            <div class="text-center">
-              <i class="fa-solid fa-user-doctor text-4xl text-[#3C7099] mb-2"></i>
-              <p class="text-sm text-gray-600">Medicinos laboratorijos</p>
-            </div>
-          </div>
-          <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
-            <div class="text-center">
-              <i class="fa-solid fa-notes-medical text-4xl text-[#C81F6A] mb-2"></i>
-              <p class="text-sm text-gray-600">Diagnostikos centrai</p>
-            </div>
-          </div>
-          <div class="flex items-center justify-center p-6 bg-white rounded-2xl h-32 border-2 border-gray-300">
-            <div class="text-center">
-              <i class="fa-solid fa-suitcase-medical text-4xl text-[#3C7099] mb-2"></i>
-              <p class="text-sm text-gray-600">Slaugos namai</p>
-            </div>
+            <img src="/media/clients/altamedica.png" alt="AltaMedica" width="160" height="80" class="max-h-16 w-auto object-contain" />
           </div>
           <a
             href="/rekomendacijos/"
@@ -414,16 +393,16 @@ import ExpertsCarousel from "../../components/shared/ExpertsCarousel.astro";
             </div>
             
             <blockquote class="text-lg lg:text-xl text-gray-800 leading-relaxed mb-8 flex-grow">
-              VECTICUM sistema labai supaprastino mūsų medicinos personalo darbo laiko apskaitą ir atostogų valdymą. Ypač vertinu medicininių kvalifikacijų ir sertifikatų valdymo funkcionalumą - viskas vienoje vietoje, visada prieinamas.
+              Įdiegus VECTICUM sprendimus, mūsų kasdieniai procesai tapo žymiai efektyvesni. Automatizavus daugybę darbų, galime daugiau dėmesio skirti savo pagrindiniams tikslams - klientų poreikiams ir jų įgyvendinimui. Pastebėjome aiškų laiko ir resursų taupymą, VECTICUM tapo mūsų komandos kasdienių darbų partneriu, padedančiu užtikrinti aukščiausią paslaugų kokybę.
             </blockquote>
             
             <div class="flex items-center gap-4 pt-6 border-t border-gray-200">
-              <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#3C7099] to-[#C81F6A] flex items-center justify-center flex-shrink-0">
-                <i class="fa-solid fa-user-doctor text-white text-2xl"></i>
+              <div class="w-16 h-16 rounded-full bg-white border-2 border-gray-200 flex items-center justify-center flex-shrink-0 p-2 overflow-hidden">
+                <img src="/media/clients/kavita.png" alt="Kavita" width="64" height="64" class="max-h-full w-auto object-contain" />
               </div>
               <div>
-                <div class="font-bold text-gray-900 text-lg">Medicinos įstaigos atstovas</div>
-                <div class="text-sm text-gray-600">Klinikos administratorius</div>
+                <div class="font-bold text-gray-900 text-lg">Vytautas Vasiliauskas</div>
+                <div class="text-sm text-gray-600">„Kavita" technologijų direktorius</div>
               </div>
             </div>
           </div>
