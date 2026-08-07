@@ -11,6 +11,16 @@
       "permanent": true
     },
     {
+      "source": "/naujienos/:slug",
+      "destination": "/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/naujienos/:slug/",
+      "destination": "/:slug",
+      "permanent": true
+    },
+    {
       "source": "/prezentacijos",
       "destination": "/rekomendacijos",
       "permanent": true

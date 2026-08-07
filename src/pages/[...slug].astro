@@ -2,63 +2,96 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import { render } from "astro:content";
 import MainLayout from "~/layouts/MainLayout.astro";
+import BlogPost from "~/layouts/BlogPost.astro";
 import { getPublicImageSize } from "~/utils/imageSize";
 
 export async function getStaticPaths() {
   const services = await getCollection("services");
-  return services.map((service) => ({
-    params: { slug: service.id },
-    props: service,
-  }));
-}
-type Props = CollectionEntry<"services">;
+  const posts = await getCollection("blog");
 
-const service = Astro.props;
-const { Content } = await render(service);
-const heroSize = await getPublicImageSize(service.data.hero_image);
+  const servicePaths = services.map((service) => ({
+    params: { slug: service.id },
+    props: { kind: "service" as const, service },
+  }));
+
+  const blogPaths = posts
+    .filter((post) => !post.data.customUrl)
+    .map((post) => ({
+      params: { slug: post.id },
+      props: { kind: "blog" as const, post },
+    }));
+
+  return [...servicePaths, ...blogPaths];
+}
+
+type Props =
+  | { kind: "service"; service: CollectionEntry<"services"> }
+  | { kind: "blog"; post: CollectionEntry<"blog"> };
+
+const props = Astro.props as Props;
+
+const entry = props.kind === "service" ? props.service : props.post;
+const { Content } = await render(entry);
+
+const heroSize =
+  props.kind === "service"
+    ? await getPublicImageSize(props.service.data.hero_image)
+    : null;
 ---
 
-<MainLayout
-  title={service.data.meta.title}
-  description={service.data.meta.description}
-  image={service.data.meta.ogImage ?? ""}
-  ogType={service.data.meta.ogType ?? "website"}
-  canonical={service.data.meta.canonical ?? ""}
-  schema={service.data.meta.schema ?? ""}
->
-  <main class="py-8 md:py-12">
-    <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center">
+{
+  props.kind === "service" ? (
+    <MainLayout
+      title={props.service.data.meta.title}
+      description={props.service.data.meta.description}
+      image={props.service.data.meta.ogImage ?? ""}
+      ogType={props.service.data.meta.ogType ?? "website"}
+      canonical={props.service.data.meta.canonical ?? ""}
+      schema={props.service.data.meta.schema ?? ""}
+    >
+      <main class="py-8 md:py-12">
+        <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center">
+          {/* Image Section */}
+          <div class="w-full">
+            <div class="rounded-xl overflow-hidden">
+              <img
+                src={props.service.data.hero_image}
+                alt={props.service.data.title}
+                width={heroSize?.width}
+                height={heroSize?.height}
+                class="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
 
-      <!-- Image Section -->
-      <div class="w-full">
-        <div class="rounded-xl overflow-hidden">
-          <img src={service.data.hero_image} alt={service.data.title} width={heroSize?.width} height={heroSize?.height} class="w-full h-auto object-cover" />
-        </div>
-      </div>
+          {/* Text Content Section */}
+          <div class="space-y-6">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+              {props.service.data.title}
+            </h1>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              {props.service.data.description}
+            </p>
+            <a
+              href="#contact"
+              class="inline-block rounded-full bg-accent px-6 py-3 text-white font-medium text-base hover:bg-accent/90 transition"
+            >
+              Išbandyti
+            </a>
+          </div>
+        </section>
 
-      <!-- Text Content Section -->
-      <div class="space-y-6">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-          {service.data.title}
-        </h1>
-        <p class="text-lg text-gray-700 leading-relaxed">
-          {service.data.description}
-        </p>
-        <a
-          href="#contact"
-          class="inline-block rounded-full bg-accent px-6 py-3 text-white font-medium text-base hover:bg-accent/90 transition"
-        >
-          Išbandyti
-        </a>
-      </div>
-
-    </section>
-
-    <!-- Markdown Content Section -->
-    <section class="mt-12">
-      <div class="mx-auto text-gray-800">
-        <Content />
-      </div>
-    </section>
-  </main>
-</MainLayout>
+        {/* Markdown Content Section */}
+        <section class="mt-12">
+          <div class="mx-auto text-gray-800">
+            <Content />
+          </div>
+        </section>
+      </main>
+    </MainLayout>
+  ) : (
+    <BlogPost {...props.post.data}>
+      <Content />
+    </BlogPost>
+  )
+}
