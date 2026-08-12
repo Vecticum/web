@@ -2,7 +2,7 @@
 title: 'Nematomi įmonės nuostoliai: kodėl dokumentų valdymo sistema (DVS) yra būtina verslo išlikimo sąlyga?'
 description: 'Kasdien jūsų komanda priima dešimtis sprendimų, kuria vertę ir augina verslą. Tačiau net ir pačios inovatyviausios organizacijos dažnai nepastebi tylaus pelno žudiko – chaotiško dokumentų valdymo.'
 pubDate: '2026-03-04'
-heroImage: '/media/blog/straipsnis-dvs2026.png'
+heroImage: '/media/blog/straipsnis-dvs2026.webp'
 ---
 
 Kasdien jūsų komanda priima dešimtis sprendimų, kuria vertę ir augina verslą. Tačiau net ir pačios inovatyviausios organizacijos dažnai nepastebi tylaus pelno žudiko – chaotiško dokumentų valdymo. Jei vidiniai procesai vis dar stringa el. pašto dėžutėse ar fiziniuose segtuvuose, įmonė tiesiog švaistote laiką ir resursus.

@@ -2,7 +2,7 @@
 title: 'Dokumentų valdymo sistema (DVS): kas tai, kam reikalinga ir kaip išsirinkti'
 description: 'Dokumentų valdymo sistema (DVS) – kas tai, kokioms įmonėms reikalinga ir į ką atkreipti dėmesį renkantis. Praktiškas gidas su atrankos kriterijais.'
 pubDate: '2026-05-27'
-heroImage: '/media/blog/kas yra dvs.png'
+heroImage: '/media/blog/kas yra dvs.webp'
 ---
 
 Dokumentai išsibarstę el. pašte, „Google Drive" aplankuose ir darbuotojų kompiuteriuose, niekas tiksliai nežino, ar pasirašyta sutartis yra naujausios versijos, o naujo darbuotojo supažindinimas su vidaus tvarkomis virsta kelių dienų susirašinėjimu. Tai ne tik neefektyvu – tai rizika, kuri audito ar ginčo atveju gali kainuoti brangiai.

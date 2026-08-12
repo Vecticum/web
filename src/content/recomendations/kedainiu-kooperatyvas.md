@@ -6,7 +6,7 @@ meta:
   canonical: https://vecticum.lt/rekomendacijos/kedainiu-kooperatyvas
 title: "Kaip Kėdainių rajono vartotojų kooperatyvas centralizavo personalo ir dokumentų valdymą su VECTICUM"
 description: "VECTICUM diegėme etapais – nuo darbo grafikų ir personalo procesų iki sutarčių, raštų ir sąskaitų. Didžiausia nauda – galimybė visą informaciją valdyti vienoje vietoje ir aiškiai matyti dokumentų derinimo eigą."
-image: "/media/recomendations/coop rekomendacija.png"
+image: "/media/recomendations/coop rekomendacija.webp"
 link: "/rekomendacijos/kedainiu-kooperatyvas"
 ---
 

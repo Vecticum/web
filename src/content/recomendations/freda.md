@@ -6,7 +6,7 @@ meta:
   canonical: https://vecticum.lt/rekomendacijos/freda
 title: "Kaip FREDA automatizavo dokumentų valdymą ir paspartino procesus 5 kartus"
 description: "Šis sprendimas ženkliai pagerino mūsų įmonės dokumentų valdymo procesus. Sistema veikia patikimai ir yra lengvai pritaikoma augantiems poreikiams."
-image: "/media/recomendations/FREDA-REC.png"
+image: "/media/recomendations/FREDA-REC.webp"
 link: "/rekomendacijos/freda"
 ---
 

@@ -2,7 +2,7 @@
 title: '„Vecticum" 7 metai: ar dokumentų valdymo platformos vis dar aktualios?'
 description: '„Nors tuo metu dauguma didelių įmonių į debesų kompiuterijos sprendimus dar žiūrėjo atsargiai, mes žinojome, kad „cloud-only" sprendimas yra ateitis", – sako vienas iš „Vecticum" įkūrėjų ir vadovas Jaroslav Gil.'
 pubDate: '2026-05-27'
-heroImage: '/media/blog/dvs_dar_aktualios.png'
+heroImage: '/media/blog/dvs_dar_aktualios.webp'
 ---
 
 „Nors tuo metu dauguma didelių įmonių į debesų kompiuterijos sprendimus dar žiūrėjo atsargiai, mes žinojome, kad „cloud-only" sprendimas yra ateitis", – sako vienas iš „Vecticum" įkūrėjų ir vadovas Jaroslav Gil. Šiandien lietuvių sukurta platforma jau aptarnauja apie 800 įmonių ir sparčiai žengia į dirbtinio intelekto erą.

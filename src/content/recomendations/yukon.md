@@ -6,7 +6,7 @@ meta:
   canonical: https://vecticum.lt/rekomendacijos/yukon
 title: "Kaip YUKON Advanced Optics optimizavo procesus ir padidino darbo efektyvumą"
 description: "Mes nuoširdžiai vertiname Vecticum darbą — platforma padėjo mums sisteminti ir automatizuoti procesus, taip pat ženkliai padidinti mūsų darbo efektyvumą."
-image: "/media/recomendations/yukon-rec.png"
+image: "/media/recomendations/yukon-rec.webp"
 link: "/rekomendacijos/yukon"
 ---
 

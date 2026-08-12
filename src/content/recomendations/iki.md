@@ -6,7 +6,7 @@ meta:
   canonical: https://vecticum.lt/rekomendacijos/iki
 title: "Kaip IKI supaprastino sąskaitų tvirtinimą ir pagreitino procesus su VECTICUM"
 description: "VECTICUM padėjo mums sutvarkyti sąskaitų tvirtinimo procesą: sumažėjo rankinio darbo, atsirado aiški kontrolė ir atsekamumas, o pati eiga tapo gerokai paprastesnė bei sklandesnė."
-image: "/media/recomendations/Iki rekomendacija.png"
+image: "/media/recomendations/Iki rekomendacija.webp"
 link: "/rekomendacijos/iki"
 ---
 

@@ -6,7 +6,7 @@ meta:
   canonical: https://vecticum.lt/rekomendacijos/gatas
 title: "Kaip GATAS supaprastino procesus ir sumažino administracinę naštą"
 description: "Nesudėtingas programos naudojimas. Palengvėja sąskaitų apskaita, yra galimybė pasitikrinti, ar visos sąskaitos užregistruotos, todėl darbas tampa lengvesnis ir efektyvesnis."
-image: "/media/recomendations/GATAS-rec.png"
+image: "/media/recomendations/GATAS-rec.webp"
 link: "/rekomendacijos/gatas"
 ---
 
