@@ -76,19 +76,7 @@ const { title, description, image = "/media/og-default.webp", canonical, schema,
 </script>
 -->
 
-<!-- Meta Pixel Code -->
-<script is:inline>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1182845313669998');
-fbq('track', 'PageView');
-</script>
+<!-- Meta Pixel Code (loaded via deferred marketing loader below) -->
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1182845313669998&ev=PageView&noscript=1"
 /></noscript>
@@ -139,37 +127,71 @@ src="https://www.facebook.com/tr?id=1182845313669998&ev=PageView&noscript=1"
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<!-- Omnisend Integration -->
+<!-- Deferred Marketing / Tracking Scripts -->
+<!-- Loads Omnisend, Meta Pixel, Microsoft Clarity, Dealfront & Fastbase only after
+     the page is idle or on the first user interaction, so they don't block first paint.
+     Tracking still fires on every visit (idle fallback), just a few seconds later. -->
 <script is:inline define:vars={{ brandId: OMNISEND_BRAND_ID }}>
-  window.omnisend = window.omnisend || [];
-  omnisend.push(["brandID", brandId]);
-  omnisend.push(["track", "$pageViewed"]);
-  !function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://omnisnippet1.com/inshop/launcher-v2.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
-</script>
+  (function () {
+    var loaded = false;
+    var events = ["scroll", "mousemove", "touchstart", "click", "keydown"];
 
-<!-- Microsoft Clarity -->
-<script is:inline type="text/javascript">
-    (function(c,l,a,r,i,t,y){
+    function loadMarketing() {
+      if (loaded) return;
+      loaded = true;
+      events.forEach(function (ev) {
+        window.removeEventListener(ev, loadMarketing);
+      });
+
+      // Omnisend
+      window.omnisend = window.omnisend || [];
+      omnisend.push(["brandID", brandId]);
+      omnisend.push(["track", "$pageViewed"]);
+      !function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://omnisnippet1.com/inshop/launcher-v2.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
+
+      // Meta Pixel
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1182845313669998');
+      fbq('track', 'PageView');
+
+      // Microsoft Clarity
+      (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "p222q6dix4");
-</script>
+      })(window, document, "clarity", "script", "p222q6dix4");
 
-<!-- Dealfront Visitor Tracking -->
-<script is:inline>
-(function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('Xbp1oaElJ1v4EdVj');
-</script>
-<!-- End Dealfront Visitor Tracking -->
+      // Dealfront / Lfeeder
+      window.ldfdr = window.ldfdr || function () { (ldfdr._q = ldfdr._q || []).push([].slice.call(arguments)); };
+      (function(d,s){ var fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); } ce('https://sc.lfeeder.com/lftracker_v1_Xbp1oaElJ1v4EdVj.js'); })(document,'script');
 
-<!-- Fastbase Lead Tracking -->
-<script is:inline>
-(function () {
-  var e,i=["https://www.fastbase.com/fscript.js","0y9Cv7DBFM","script"],a=document,s=a.createElement(i[2]);
-  s.async=!0,s.id=i[1],s.src=i[0],(e=a.getElementsByTagName(i[2])[0]).parentNode.insertBefore(s,e)
-})();
+      // Fastbase
+      (function () {
+        var e,i=["https://www.fastbase.com/fscript.js","0y9Cv7DBFM","script"],a=document,s=a.createElement(i[2]);
+        s.async=!0,s.id=i[1],s.src=i[0],(e=a.getElementsByTagName(i[2])[0]).parentNode.insertBefore(s,e)
+      })();
+    }
+
+    events.forEach(function (ev) {
+      window.addEventListener(ev, loadMarketing, { once: true, passive: true });
+    });
+
+    // Fallback so visits without interaction are still tracked
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(loadMarketing, { timeout: 5000 });
+    } else {
+      setTimeout(loadMarketing, 4000);
+    }
+  })();
 </script>
-<!-- End Fastbase Lead Tracking -->
+<!-- End Deferred Marketing / Tracking Scripts -->
 
 <!-- Schema.org Structured Data -->
 {schema && (
