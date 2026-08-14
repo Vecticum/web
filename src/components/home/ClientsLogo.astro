@@ -1,4 +1,5 @@
 ---
+import { getImage } from 'astro:assets';
 import dussmann from '/src/assets/media/dussmann.jpg';
 import iki from '/src/assets/media/iki.png';
 import civinity from '/src/assets/media/civinity.png';
@@ -34,7 +35,18 @@ const logos = [
   neogroup, vilniausApsvietimas, trinitiJurex, yukon
 ];
 
-const doubledLogos = logos.concat(logos); // begalinis slinkimas
+// Logos render at h-10/h-12 (40-48px). Generate small optimized webp
+// versions (96px tall = 2x for retina) instead of serving full-res sources.
+const LOGO_HEIGHT = 96;
+const optimizedLogos = await Promise.all(
+  logos.map(async (logo) => {
+    const width = Math.round((logo.width / logo.height) * LOGO_HEIGHT);
+    const img = await getImage({ src: logo, height: LOGO_HEIGHT, width, format: 'webp' });
+    return { src: img.src, width, height: LOGO_HEIGHT };
+  })
+);
+
+const doubledLogos = optimizedLogos.concat(optimizedLogos); // begalinis slinkimas
 ---
 
 <style>
