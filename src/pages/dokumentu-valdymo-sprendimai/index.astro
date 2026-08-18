@@ -1,0 +1,262 @@
+---
+import ContactForm from "../../components/home/ContactForm.astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+const heroImage = "/media/services/dokumentu-valdymas-hero.webp";
+
+const seoTitle = "Dokumentų valdymo sprendimai verslui | Vecticum";
+const seoDescription =
+  "Visapusiški dokumentų valdymo sprendimai verslui: elektroniniai dokumentų srautai, e. parašas, versijų kontrolė ir saugus archyvas. Užpildykite formą ir gaukite individualų kainos pasiūlymą.";
+const seoImage = "~/assets/images/logo.webp";
+
+const solutions = [
+  {
+    title: "Dokumentų valdymas (DVS)",
+    description: "Visa dokumentacija aiškiai struktūruota ir pasiekiama vienoje vietoje – lengvam valdymui bei priežiūrai.",
+    href: "/dokumentu-valdymas",
+    icon: "folder",
+  },
+  {
+    title: "Dokumentacijos plano valdymas",
+    description: "Bylų nomenklatūra ir dokumentacijos planas, atitinkantis teisės aktų reikalavimus.",
+    href: "/dokumentacijos-plano-valdymas",
+    icon: "list",
+  },
+  {
+    title: "Korespondencijos valdymas",
+    description: "Gaunamos ir siunčiamos korespondencijos registravimas, nukreipimas bei kontrolė.",
+    href: "/gaunamu-uzklausu-valdymas",
+    icon: "mail",
+  },
+  {
+    title: "Supažindinimas su dokumentais",
+    description: "Privalomo supažindinimo su tvarkomis ir dokumentais valdymas su patvirtinimais.",
+    href: "/privalomo-supazindinimo-su-dokumentais-valdymas",
+    icon: "check",
+  },
+  {
+    title: "Sutarčių valdymas",
+    description: "Sutarčių kūrimas, derinimas, e. parašas ir terminų kontrolė vienoje vietoje.",
+    href: "/sutarciu-valdymas",
+    icon: "contract",
+  },
+  {
+    title: "Užduočių valdymas",
+    description: "Užduočių skyrimas, terminai ir atsakomybių sekimas su aiškiu statusų matomumu.",
+    href: "/uzduociu-valdymas",
+    icon: "tasks",
+  },
+];
+
+const faqs = [
+  {
+    q: "Kas yra dokumentų valdymo sistema (DVS)?",
+    a: "DVS – tai skaitmeninis įrankis, skirtas kurti, derinti, tvirtinti, saugoti ir surasti įmonės dokumentus vienoje vietoje. Rankinės užduotys pakeičiamos elektroniniais darbo srautais, o dokumentai saugomi vieningoje, kontroliuojamoje sistemoje.",
+  },
+  {
+    q: "Kokias dokumentų rūšis galima valdyti?",
+    a: "Sutartis ir jų priedus, vidaus tvarkas, reglamentus ir įsakymus, gaunamą bei siunčiamą korespondenciją, taip pat laisvos formos dokumentus ir prašymus.",
+  },
+  {
+    q: "Kaip veikia elektroninis parašas?",
+    a: "Per „Dokobit“ pasirašomos sutartys, įsakymai ar reglamentai. Visas procesas vyksta elektroniniu būdu – greitai, saugiai ir juridiškai pagrįstai.",
+  },
+  {
+    q: "Kaip užtikrinamas dokumentų saugumas?",
+    a: "Vecticum veikia „Google Cloud“ infrastruktūroje. Duomenys perduodami šifruotu TLS ryšiu, laikantis visų BDAR (GDPR) standartų. Prieiga kontroliuojama pagal teises, o veiksmai fiksuojami audito žurnale.",
+  },
+  {
+    q: "Ar galima integruoti su kitomis sistemomis?",
+    a: "Taip. ENTERPRISE klientams prieinama REST API integracija su apskaitos, sąskaitų valdymo ar personalo sprendimais.",
+  },
+  {
+    q: "Kodėl kaina individuali?",
+    a: "Dokumentų valdymo sprendimas komplektuojamas iš modulių ir pritaikomas pagal jūsų procesus, naudotojų skaičių bei integracijų poreikį. Todėl tiksli kaina paruošiama tik įvertinus jūsų poreikius – užpildykite formą ir mes pateiksime pasiūlymą.",
+  },
+];
+
+const seoText = "Dokumentų valdymas – tai procesų ir priemonių visuma, padedanti organizacijoms kurti, derinti, tvirtinti, saugoti ir surasti dokumentus. Šiuolaikinis dokumentų valdymas neapsiriboja failų saugykla – tai vientisa skaitmeninių srautų sistema, užtikrinanti skaidrumą, teisinę atitiktį ir efektyvų komandų darbą. Tinkamai įdiegtas dokumentų valdymas leidžia įmonei taupyti laiką, mažinti popierizmą, užtikrinti duomenų saugumą ir sklandų procesų vykdymą.";
+
+const benefits = [
+  { title: "Efektyvumas", text: "Automatizuoja dokumentų kūrimą, derinimą ir tvirtinimą, sumažina rankinį darbą bei klaidų tikimybę." },
+  { title: "Skaidrumas", text: "Suteikia aiškų dokumentų statusų, versijų ir atsakomybių matomumą realiu laiku." },
+  { title: "Saugumas", text: "Užtikrina kontroliuojamą prieigą, versijų kontrolę ir saugų archyvą su audito žurnalu." },
+  { title: "Teisinė atitiktis", text: "Padeda laikytis dokumentų saugojimo, e. parašo ir duomenų apsaugos (BDAR) reikalavimų." },
+];
+
+const heroPill = "Dokumentų valdymas";
+const heroTitleLead = "Visi dokumentų valdymo";
+const heroTitleAccent = "sprendimai vienoje sistemoje";
+const heroLead = "Vecticum apjungia visus dokumentų valdymo sprendimus – nuo elektroninių dokumentų srautų ir e. parašo iki versijų kontrolės, tvarkų valdymo ir saugaus archyvo.";
+const solutionsTitle = "Kas įeina į dokumentų valdymą";
+const solutionsSubtitle = "Susikomplektuokite sprendimą iš atskirų modulių pagal savo įmonės procesus.";
+const heroImageAlt = "Dokumentų valdymo sistema | VECTICUM";
+const planTitle = "Vienas sprendimas – pritaikytas jums";
+const planBullets = [
+  "Elektroniniai dokumentų srautai ir tvirtinimai",
+  "E. parašas (Dokobit) ir versijų kontrolė",
+  "Tvarkų, reglamentų ir sutarčių valdymas",
+  "Saugus archyvas ir audito žurnalas",
+  "Integracijos su apskaitos bei kitomis sistemomis",
+];
+const planNote = "Visapusiškas dokumentų valdymo sprendimas, pritaikomas pagal jūsų įmonės tvarkas ir procesus.";
+
+const iconPaths: Record<string, string> = {
+  folder: "M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z",
+  list: "M4 6h16M4 12h16M4 18h16",
+  mail: "M3 8l9 6 9-6M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z",
+  check: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+  contract: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+  tasks: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4",
+};
+---
+
+<MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
+  <!-- ================= HERO ================= -->
+  <!-- ================= HERO ================= -->
+  <section class="bg-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center py-12 md:py-16">
+      <!-- Text -->
+      <div class="space-y-6 order-2 lg:order-1">
+        <span class="inline-flex items-center gap-2 rounded-full bg-[#3C7099]/10 px-4 py-1.5 text-sm font-semibold text-[#3C7099]">
+          <span class="h-1.5 w-1.5 rounded-full bg-[#C81E6A]"></span>
+          {heroPill}
+        </span>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+          {heroTitleLead} {heroTitleAccent}
+        </h1>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          {heroLead}
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#contact" class="inline-block rounded-full bg-[#C81E6A] px-6 py-3 text-white font-medium hover:bg-[#A51856] transition">
+            Sužinoti kainą
+          </a>
+          <a href="#sprendimai" class="inline-block rounded-full border border-[#3C7099] px-6 py-3 text-[#3C7099] font-medium hover:bg-[#3C7099]/5 transition">
+            Peržiūrėti sprendimus
+          </a>
+        </div>
+      </div>
+      <!-- Image -->
+      <div class="w-full order-1 lg:order-2">
+        <div class="rounded-xl overflow-hidden">
+          <img src={heroImage} alt={heroImageAlt} width="560" height="420" loading="eager" class="w-full h-auto object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SPRENDIMAI ================= -->
+  <section id="sprendimai" class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-screen-xl mx-auto">
+      <div class="text-center mb-12 max-w-2xl mx-auto">
+        <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl text-gray-900">{solutionsTitle}</h2>
+        <p class="mt-4 text-lg text-gray-600">{solutionsSubtitle}</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {solutions.map((s) => (
+          <a href={s.href} class="group flex flex-col bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
+            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3C7099]/10 text-[#3C7099]">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={iconPaths[s.icon]} /></svg>
+            </span>
+            <h3 class="mt-5 text-lg font-semibold text-gray-900">{s.title}</h3>
+            <p class="mt-2 flex-1 text-sm leading-relaxed text-gray-600">{s.description}</p>
+            <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#C81E6A]">
+              Plačiau
+              <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NAUDA ================= -->
+  <section class="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-screen-xl mx-auto">
+      <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl text-center text-gray-900 mb-12">Kodėl verta rinktis Vecticum</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {benefits.map((b) => (
+          <div class="flex items-start gap-4 bg-[#EBEFF3] p-6 rounded-2xl">
+            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#C81E6A] text-white">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </span>
+            <div>
+              <h3 class="text-lg font-semibold text-gray-900">{b.title}</h3>
+              <p class="mt-1 text-sm leading-relaxed text-gray-600">{b.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PLANAS / KAINA ================= -->
+  <section class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto rounded-2xl bg-white border-t-4 border-[#C81E6A] shadow-sm p-8 sm:p-12">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="inline-block rounded-full bg-[#3C7099]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#3C7099]">
+            Individualus sprendimas
+          </span>
+          <h2 class="mt-5 text-2xl sm:text-3xl font-bold text-gray-900">{planTitle}</h2>
+          <p class="mt-4 text-gray-600 leading-relaxed">{planNote}</p>
+          <div class="mt-6">
+            <div class="text-sm uppercase tracking-wide text-gray-500">Kaina</div>
+            <div class="mt-1 text-3xl sm:text-4xl font-bold text-[#C81E6A]">Individualus pasiūlymas</div>
+            <p class="mt-2 text-sm text-gray-500">Priklauso nuo modulių apimties, naudotojų skaičiaus ir integracijų.</p>
+          </div>
+          <a href="#contact" class="mt-8 inline-block rounded-full bg-[#C81E6A] px-7 py-3 text-white font-medium hover:bg-[#A51856] transition">
+            Užpildyti formą ir sužinoti kainą
+          </a>
+        </div>
+        <ul class="space-y-4 rounded-2xl bg-[#EBEFF3] p-7">
+          {planBullets.map((item) => (
+            <li class="flex items-start gap-3 text-sm text-gray-700">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-[#C81E6A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm
+    formSource="Dokumentų valdymo sprendimų puslapis – kainos užklausa"
+    heading="Sužinokite dokumentų valdymo kainą"
+    subheading="Užpildykite formą ir pateiksime individualų dokumentų valdymo sprendimo kainos pasiūlymą pagal jūsų poreikius."
+  />
+
+  <!-- ================= SEO TEKSTAS ================= -->
+  <section class="bg-white py-16 sm:py-20 px-6 sm:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">Kas yra dokumentų valdymas?</h2>
+      <p class="mt-5 text-lg leading-relaxed text-gray-600">{seoText}</p>
+    </div>
+  </section>
+
+  <!-- ================= DUK ================= -->
+  <section class="bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-900 text-center mb-12">Dažniausiai užduodami klausimai</h2>
+      <div class="space-y-4">
+        {faqs.map((item) => (
+          <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
+            <details class="group">
+              <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
+                <span>{item.q}</span>
+                <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </summary>
+              <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
+                <p class="pt-4">{item.a}</p>
+              </div>
+            </details>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</MainLayout>

@@ -800,6 +800,18 @@
     "url": "https://vecticum.lt/dienpinigiu-skaiciuokle"
   },
   {
+    "id": "pages/dokumentu-valdymo-sprendimai/index",
+    "title": "Dokumentų valdymas (DVS)\",",
+    "tags": [
+      "pages",
+      "dokumentu-valdymo-sprendimai",
+      "index"
+    ],
+    "content": "Sužinoti kainą\r\n \r\n \r\n Peržiūrėti sprendimus\r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n class=\"group flex flex-col bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300\">\r\n \r\n \r\n \r\n \r\n \r\n \r\n Plačiau\r\n \r\n \r\n \r\n ))}\r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n Kodėl verta rinktis Vecticum \r\n \r\n \r\n \r\n \r\n \r\n ))}\r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n Individualus sprendimas\r\n \r\n \r\n \r\n \r\n Kaina \r\n Individualus pasiūlymas \r\n Priklauso nuo modulių apimties, naudotojų skaičiaus ir integracijų. \r\n \r\n \r\n Užpildyti formą ir sužinoti kainą\r\n \r\n \r\n \r\n \r\n \r\n ))}\r\n \r\n \r\n \r\n \r\n\r\n \r\n\r\n \r\n \r\n \r\n Kas yra dokumentų valdymas? \r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n Dažniausiai užduodami klausimai \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n ))}",
+    "source": "pages/dokumentu-valdymo-sprendimai/index",
+    "url": "https://vecticum.lt/dokumentu-valdymo-sprendimai"
+  },
+  {
     "id": "pages/enterprise-hr-core-forma",
     "title": "enterprise hr core forma",
     "tags": [
@@ -961,6 +973,18 @@
     "content": "Grįžti į visas rekomendacijas",
     "source": "pages/rekomendacijos/[slug]",
     "url": "https://vecticum.lt/rekomendacijos/[slug]"
+  },
+  {
+    "id": "pages/saskaitu-valdymo-sprendimai/index",
+    "title": "Gaunamų sąskaitų valdymas\",",
+    "tags": [
+      "pages",
+      "saskaitu-valdymo-sprendimai",
+      "index"
+    ],
+    "content": "Sužinoti kainą\r\n \r\n \r\n Peržiūrėti sprendimus\r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n class=\"group flex flex-col bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300\">\r\n \r\n \r\n \r\n \r\n \r\n \r\n Plačiau\r\n \r\n \r\n \r\n ))}\r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n Kodėl verta rinktis Vecticum \r\n \r\n \r\n \r\n \r\n \r\n ))}\r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n \r\n \r\n \r\n Individualus sprendimas\r\n \r\n \r\n \r\n \r\n Kaina \r\n Individualus pasiūlymas \r\n Priklauso nuo modulių apimties, naudotojų skaičiaus ir integracijų. \r\n \r\n \r\n Užpildyti formą ir sužinoti kainą\r\n \r\n \r\n \r\n \r\n \r\n ))}\r\n \r\n \r\n \r\n \r\n\r\n \r\n\r\n \r\n \r\n \r\n Kas yra sąskaitų valdymas? \r\n \r\n \r\n \r\n\r\n \r\n \r\n \r\n Dažniausiai užduodami klausimai \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n \r\n ))}",
+    "source": "pages/saskaitu-valdymo-sprendimai/index",
+    "url": "https://vecticum.lt/saskaitu-valdymo-sprendimai"
   },
   {
     "id": "pages/sistemos-atnaujinimai/index",
