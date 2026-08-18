@@ -410,6 +410,60 @@
     }
   }
 
+  /* Lightweight, non-interactive AI note (not a button/chip) */
+  .hero-ai-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 0.9rem 0 0;
+    padding: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+    max-width: 30rem;
+  }
+
+  .hero-ai-tag__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: rgba(200, 30, 106, 0.1);
+    color: #c81f6a;
+    animation: heroAiSparkle 2.8s ease-in-out infinite;
+  }
+
+  .hero-ai-tag__icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .hero-ai-tag__label {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #475569;
+  }
+
+  .hero-ai-tag__label strong {
+    color: #c81f6a;
+    font-weight: 700;
+  }
+
+  @media (max-width: 640px) {
+    .hero-ai-tag {
+      justify-content: center;
+    }
+
+    .hero-ai-tag__label {
+      font-size: 0.82rem;
+    }
+  }
+
   .hero-title {
     position: relative;
     margin: 0;
@@ -1946,25 +2000,19 @@
 
   <div class="relative mx-auto flex max-w-6xl flex-col gap-6 px-3 py-8 sm:gap-12 sm:px-6 sm:py-16 lg:flex-row lg:items-center lg:gap-16 lg:px-8 lg:py-28">
     <div class="hero-content flex flex-1 flex-col items-center sm:items-start order-1 lg:order-none">
-      <span class="hero-ai-badge hero-ai-badge--floating">
-        <span class="hero-ai-badge__inner">
-          <span class="hero-ai-badge__chip">
-            <span class="hero-ai-badge__icon" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l1.9 4.9L18 8.8l-4.1 1.9L12 15.6l-1.9-4.9L6 8.8l4.1-1.9L12 2zm6.5 9l.95 2.45L22 14.4l-2.55.95L18.5 18l-.95-2.65L15 14.4l2.55-.95L18.5 11zM5.5 13l.8 2.1L8.4 16l-2.1.9L5.5 19l-.8-2.1L2.6 16l2.1-.9L5.5 13z"/>
-              </svg>
-            </span>
-            DI
-          </span>
-          <span class="hero-ai-badge__text">
-            <h2 class="hero-ai-badge__label"><strong>Dirbtiniu intelektu</strong> pastiprintas įmonės procesų valdymas</h2>
-          </span>
-        </span>
-      </span>
-      <h1 class="hero-title mt-2 text-center sm:mt-6 sm:text-left md:mt-8">
+      <h1 class="hero-title text-center sm:text-left">
         <span class="hero-title-kicker">VECTICUM</span>
         <span class="hero-title-main"><span class="hero-title-strong">Dokumentų</span>, <span class="hero-title-strong">sąskaitų</span> ir <span class="hero-title-strong">personalo</span> valdymas vienoje sistemoje</span>
       </h1>
+
+      <div class="hero-ai-tag">
+        <span class="hero-ai-tag__icon" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l1.9 4.9L18 8.8l-4.1 1.9L12 15.6l-1.9-4.9L6 8.8l4.1-1.9L12 2zm6.5 9l.95 2.45L22 14.4l-2.55.95L18.5 18l-.95-2.65L15 14.4l2.55-.95L18.5 11zM5.5 13l.8 2.1L8.4 16l-2.1.9L5.5 19l-.8-2.1L2.6 16l2.1-.9L5.5 13z"/>
+          </svg>
+        </span>
+        <h2 class="hero-ai-tag__label"><strong>Dirbtiniu intelektu</strong> pastiprintas įmonės procesų valdymas</h2>
+      </div>
 
       <p class="mt-3 max-w-xl text-sm leading-relaxed text-primary-600 text-center sm:mt-6 sm:text-left sm:text-base md:text-lg">
        Sprendimai verslui greičiau ir paprasčiau atlikti visus procesus nuo sąskaitų ir atostogų tvirtinimo iki specializuotų sprendimų individualiems poreikiams. Mes automatizuojame kasdieninius verslo procesus.
