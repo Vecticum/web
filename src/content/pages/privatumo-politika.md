@@ -99,4 +99,4 @@ Duomenų tvarkymą ir apsaugą Lietuvos Respublikoje prižiūri ir kontroliuoja 
 
 ## Baigiamosios nuostatos
 
-Jeigu norite pasinaudoti savo teisėmis, mūsų darbuotojas pateiks dokumento formą, kurioje nurodysite savo pageidavimus dėl duomenų tvarkymo įmonėje. Atsakymą apie sprendimą, pateiksime per 30 kalendorinių dienų. Daugiau informacijos apie duomenų subjekto teises galite gauti:Įmonės ats. asmens už duomenų tvarkymą Tel. Nr. +37069605332 ir el.paštas info@vecticum.com
+Jeigu norite pasinaudoti savo teisėmis, mūsų darbuotojas pateiks dokumento formą, kurioje nurodysite savo pageidavimus dėl duomenų tvarkymo įmonėje. Atsakymą apie sprendimą, pateiksime per 30 kalendorinių dienų. Daugiau informacijos apie duomenų subjekto teises galite gauti:Įmonės ats. asmens už duomenų tvarkymą Tel. Nr. +37068686361 ir el.paštas info@vecticum.com
