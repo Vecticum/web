@@ -1,6 +1,7 @@
 ---
 import ContactForm from "../../components/home/ContactForm.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import Testimonials from "../../components/home/Testimonials.astro";
 
 const heroImage = "/media/services/dokumentu-valdymas-hero.webp";
 
@@ -14,44 +15,44 @@ const solutions = [
     title: "Dokumentų valdymas (DVS)",
     description: "Visa dokumentacija aiškiai struktūruota ir pasiekiama vienoje vietoje – lengvam valdymui bei priežiūrai.",
     href: "/dokumentu-valdymas",
-    icon: "folder",
+    icon: "fa-folder",
   },
   {
     title: "Dokumentacijos plano valdymas",
     description: "Bylų nomenklatūra ir dokumentacijos planas, atitinkantis teisės aktų reikalavimus.",
     href: "/dokumentacijos-plano-valdymas",
-    icon: "list",
+    icon: "fa-file-alt",
   },
   {
     title: "Korespondencijos valdymas",
     description: "Gaunamos ir siunčiamos korespondencijos registravimas, nukreipimas bei kontrolė.",
     href: "/gaunamu-uzklausu-valdymas",
-    icon: "mail",
+    icon: "fa-envelope",
   },
   {
     title: "Supažindinimas su dokumentais",
     description: "Privalomo supažindinimo su tvarkomis ir dokumentais valdymas su patvirtinimais.",
     href: "/privalomo-supazindinimo-su-dokumentais-valdymas",
-    icon: "check",
+    icon: "fa-file-signature",
   },
   {
     title: "Sutarčių valdymas",
     description: "Sutarčių kūrimas, derinimas, e. parašas ir terminų kontrolė vienoje vietoje.",
     href: "/sutarciu-valdymas",
-    icon: "contract",
+    icon: "fa-file-contract",
   },
   {
     title: "Užduočių valdymas",
     description: "Užduočių skyrimas, terminai ir atsakomybių sekimas su aiškiu statusų matomumu.",
     href: "/uzduociu-valdymas",
-    icon: "tasks",
+    icon: "fa-tasks",
   },
 ];
 
 const faqs = [
   {
     q: "Kas yra dokumentų valdymo sistema (DVS)?",
-    a: "DVS – tai skaitmeninis įrankis, skirtas kurti, derinti, tvirtinti, saugoti ir surasti įmonės dokumentus vienoje vietoje. Rankinės užduotys pakeičiamos elektroniniais darbo srautais, o dokumentai saugomi vieningoje, kontroliuojamoje sistemoje.",
+    a: "Dokumentų valdymas – tai procesų ir priemonių visuma, padedanti organizacijoms kurti, derinti, tvirtinti, saugoti ir surasti dokumentus. Šiuolaikinis dokumentų valdymas neapsiriboja failų saugykla – tai vientisa skaitmeninių srautų sistema, užtikrinanti skaidrumą, teisinę atitiktį ir efektyvų komandų darbą. Tinkamai įdiegtas dokumentų valdymas leiždžia įmonei taupyti laiką, mažinti popierizmą, užtikrinti duomenų saugumą ir sklandų procesų vykdymą.",
   },
   {
     q: "Kokias dokumentų rūšis galima valdyti?",
@@ -59,7 +60,7 @@ const faqs = [
   },
   {
     q: "Kaip veikia elektroninis parašas?",
-    a: "Per „Dokobit“ pasirašomos sutartys, įsakymai ar reglamentai. Visas procesas vyksta elektroniniu būdu – greitai, saugiai ir juridiškai pagrįstai.",
+    a: "Per „Dokobit“ arba „MarkSign“ pasirašomos sutartys, įsakymai ar reglamentai. Visas procesas vyksta elektroniniu būdu – greitai, saugiai ir juridiškai pagrįstai.",
   },
   {
     q: "Kaip užtikrinamas dokumentų saugumas?",
@@ -67,7 +68,7 @@ const faqs = [
   },
   {
     q: "Ar galima integruoti su kitomis sistemomis?",
-    a: "Taip. ENTERPRISE klientams prieinama REST API integracija su apskaitos, sąskaitų valdymo ar personalo sprendimais.",
+    a: "Taip. Prieinama REST API integracija su apskaitos, sąskaitų valdymo ar personalo sprendimais.",
   },
   {
     q: "Kodėl kaina individuali?",
@@ -75,13 +76,12 @@ const faqs = [
   },
 ];
 
-const seoText = "Dokumentų valdymas – tai procesų ir priemonių visuma, padedanti organizacijoms kurti, derinti, tvirtinti, saugoti ir surasti dokumentus. Šiuolaikinis dokumentų valdymas neapsiriboja failų saugykla – tai vientisa skaitmeninių srautų sistema, užtikrinanti skaidrumą, teisinę atitiktį ir efektyvų komandų darbą. Tinkamai įdiegtas dokumentų valdymas leidžia įmonei taupyti laiką, mažinti popierizmą, užtikrinti duomenų saugumą ir sklandų procesų vykdymą.";
 
 const benefits = [
-  { title: "Efektyvumas", text: "Automatizuoja dokumentų kūrimą, derinimą ir tvirtinimą, sumažina rankinį darbą bei klaidų tikimybę." },
-  { title: "Skaidrumas", text: "Suteikia aiškų dokumentų statusų, versijų ir atsakomybių matomumą realiu laiku." },
-  { title: "Saugumas", text: "Užtikrina kontroliuojamą prieigą, versijų kontrolę ir saugų archyvą su audito žurnalu." },
-  { title: "Teisinė atitiktis", text: "Padeda laikytis dokumentų saugojimo, e. parašo ir duomenų apsaugos (BDAR) reikalavimų." },
+  { title: "Efektyvumas", text: "Automatizuoja dokumentų kūrimą, derinimą ir tvirtinimą, sumažina rankinį darbą bei klaidų tikimybę.", icon: "fa-bolt" },
+  { title: "Skaidrumas", text: "Suteikia aiškų dokumentų statusų, versijų ir atsakomybių matomumą realiu laiku.", icon: "fa-eye" },
+  { title: "Saugumas", text: "Užtikrina kontroliuojamą prieigą, versijų kontrolę ir saugų archyvą su audito žurnalu.", icon: "fa-shield-halved" },
+  { title: "Teisinė atitiktis", text: "Padeda laikytis dokumentų saugojimo, e. parašo ir duomenų apsaugos (BDAR) reikalavimų.", icon: "fa-scale-balanced" },
 ];
 
 const heroPill = "Dokumentų valdymas";
@@ -94,74 +94,147 @@ const heroImageAlt = "Dokumentų valdymo sistema | VECTICUM";
 const planTitle = "Vienas sprendimas – pritaikytas jums";
 const planBullets = [
   "Elektroniniai dokumentų srautai ir tvirtinimai",
-  "E. parašas (Dokobit) ir versijų kontrolė",
+  "E. parašas (Dokobit, MarkSign) ir versijų kontrolė",
   "Tvarkų, reglamentų ir sutarčių valdymas",
   "Saugus archyvas ir audito žurnalas",
   "Integracijos su apskaitos bei kitomis sistemomis",
 ];
 const planNote = "Visapusiškas dokumentų valdymo sprendimas, pritaikomas pagal jūsų įmonės tvarkas ir procesus.";
-
-const iconPaths: Record<string, string> = {
-  folder: "M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z",
-  list: "M4 6h16M4 12h16M4 18h16",
-  mail: "M3 8l9 6 9-6M5 6h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2z",
-  check: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-  contract: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
-  tasks: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4",
-};
 ---
 
 <MainLayout title={seoTitle} description={seoDescription} image={seoImage}>
   <!-- ================= HERO ================= -->
-  <!-- ================= HERO ================= -->
-  <section class="bg-white">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 px-4 sm:px-6 lg:px-8 items-center py-12 md:py-16">
+  <section class="bg-[#3C7099]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 px-4 sm:px-6 lg:px-8 items-center py-16 md:py-24">
       <!-- Text -->
       <div class="space-y-6 order-2 lg:order-1">
-        <span class="inline-flex items-center gap-2 rounded-full bg-[#3C7099]/10 px-4 py-1.5 text-sm font-semibold text-[#3C7099]">
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm font-semibold text-white">
           <span class="h-1.5 w-1.5 rounded-full bg-[#C81E6A]"></span>
           {heroPill}
         </span>
-        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
           {heroTitleLead} {heroTitleAccent}
         </h1>
-        <p class="text-lg text-gray-700 leading-relaxed">
+        <p class="text-lg text-white/85 leading-relaxed">
           {heroLead}
         </p>
         <div class="flex flex-wrap gap-4 pt-2">
-          <a href="#contact" class="inline-block rounded-full bg-[#C81E6A] px-6 py-3 text-white font-medium hover:bg-[#A51856] transition">
+          <a href="#kaina" class="inline-flex items-center gap-2 rounded-full bg-[#C81E6A] px-7 py-3.5 text-white font-semibold hover:bg-[#A51856] transition">
             Sužinoti kainą
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
           </a>
-          <a href="#sprendimai" class="inline-block rounded-full border border-[#3C7099] px-6 py-3 text-[#3C7099] font-medium hover:bg-[#3C7099]/5 transition">
+          <a href="#sprendimai" class="inline-block rounded-full bg-white px-7 py-3.5 text-[#3C7099] font-semibold hover:bg-white/90 transition">
             Peržiūrėti sprendimus
           </a>
         </div>
       </div>
-      <!-- Image -->
+      <!-- Sistemos vaizdas -->
       <div class="w-full order-1 lg:order-2">
-        <div class="rounded-xl overflow-hidden">
-          <img src={heroImage} alt={heroImageAlt} width="560" height="420" loading="eager" class="w-full h-auto object-cover" />
+        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+          <!-- Sistemos „langas“ -->
+          <div class="rounded-3xl bg-white shadow-2xl p-6 sm:p-7">
+            <div class="flex items-center gap-2 mb-6">
+              <span class="h-2.5 w-2.5 rounded-full bg-[#C81E6A]/70"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-[#3C7099]/50"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-gray-200"></span>
+              <div class="ml-3 flex items-center gap-2 text-sm font-semibold text-gray-700">
+                <i class="fa-solid fa-folder-open text-[#3C7099]"></i>
+                Dokumentų valdymas
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 rounded-2xl bg-gray-50 p-3.5">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#3C7099]/10 text-[#3C7099]"><i class="fa-solid fa-file-contract"></i></span>
+                <div class="flex-1 min-w-0">
+                  <div class="text-sm font-semibold text-gray-800">Paslaugų teikimo sutartis</div>
+                  <div class="text-xs text-gray-500">Atnaujinta prieš 2 val.</div>
+                </div>
+                <span class="rounded-full bg-[#3C7099]/10 px-2.5 py-1 text-xs font-semibold text-[#3C7099]">Derinama</span>
+              </div>
+              <div class="flex items-center gap-3 rounded-2xl bg-[#3C7099]/[0.06] p-3.5">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#3C7099] text-white"><i class="fa-solid fa-signature"></i></span>
+                <div class="flex-1 min-w-0">
+                  <div class="text-sm font-semibold text-gray-800">Direktoriaus įsakymas</div>
+                  <div class="text-xs text-gray-500">Pasirašyta el. parašu</div>
+                </div>
+                <span class="rounded-full bg-[#3C7099] px-2.5 py-1 text-xs font-semibold text-white">Pasirašyta</span>
+              </div>
+              <div class="flex items-center gap-3 rounded-2xl bg-gray-50 p-3.5">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#C81E6A]/10 text-[#C81E6A]"><i class="fa-solid fa-box-archive"></i></span>
+                <div class="flex-1 min-w-0">
+                  <div class="text-sm font-semibold text-gray-800">Metinė veiklos ataskaita</div>
+                  <div class="text-xs text-gray-500">Perkelta į archyvą</div>
+                </div>
+                <span class="rounded-full bg-[#C81E6A]/10 px-2.5 py-1 text-xs font-semibold text-[#C81E6A]">Archyvuota</span>
+              </div>
+            </div>
+          </div>
+          <!-- Plaukiojantis ženkliukas -->
+          <div class="absolute -bottom-6 -left-4 sm:-left-6 flex items-center gap-3 rounded-2xl bg-white shadow-lg px-5 py-4">
+            <span class="flex h-11 w-11 items-center justify-center rounded-full bg-[#C81E6A] text-white"><i class="fa-solid fa-bolt"></i></span>
+            <div>
+              <div class="text-base font-bold text-gray-900">Automatiniai srautai</div>
+              <div class="text-xs text-gray-500">Derinimas ir tvirtinimas</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ================= INDIVIDUALIOS KAINOS PASIŪLYMAS ================= -->
+  <section id="kaina" class="w-full bg-[#EAF1F7] py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 max-w-2xl mx-auto">
+      <span class="inline-flex items-center gap-2 rounded-full bg-[#C81E6A]/10 px-4 py-1.5 text-sm font-semibold text-[#C81E6A]">
+        <span class="h-1.5 w-1.5 rounded-full bg-[#C81E6A]"></span>
+        Kainodara
+      </span>
+      <h2 class="mt-5 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">Norite sužinoti kainą?</h2>
+      <p class="mt-4 text-lg text-gray-600">Kaina paruošiama pagal jūsų pasirinktus modulius ir procesus – be jokių paslėptų mokesčių.</p>
+    </div>
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-5 overflow-hidden rounded-3xl shadow-xl">
+      <!-- Kairė: brandinis blokas -->
+      <div class="lg:col-span-3 bg-[#3C7099] text-white p-8 sm:p-12">
+        <h2 class="text-2xl sm:text-3xl font-bold leading-tight">{planTitle}</h2>
+        <p class="mt-4 text-white/80 leading-relaxed">{planNote}</p>
+        <ul class="mt-7 space-y-3">
+          {planBullets.map((item) => (
+            <li class="flex items-start gap-3 text-white/90">
+              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <!-- Dešinė: kaina + CTA -->
+      <div class="lg:col-span-2 bg-white p-8 sm:p-12 flex flex-col justify-center">
+        <div class="text-xs font-semibold uppercase tracking-widest text-[#C81E6A]">Kaina</div>
+        <div class="mt-3 text-4xl sm:text-5xl font-bold text-gray-900 leading-none">Individualus<br />pasiūlymas</div>
+        <p class="mt-4 text-sm leading-relaxed text-gray-500">Priklauso nuo modulių apimties, naudotojų skaičiaus ir integracijų.</p>
+        <a href="#contact" class="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#C81E6A] px-7 py-4 text-white font-semibold hover:bg-[#A51856] transition">
+          Užpildyti formą ir sužinoti kainą
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= SPRENDIMAI ================= -->
-  <section id="sprendimai" class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-8">
+  <section id="sprendimai" class="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
     <div class="max-w-screen-xl mx-auto">
-      <div class="text-center mb-12 max-w-2xl mx-auto">
-        <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl text-gray-900">{solutionsTitle}</h2>
+      <div class="text-center mb-14 max-w-2xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">{solutionsTitle}</h2>
         <p class="mt-4 text-lg text-gray-600">{solutionsSubtitle}</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {solutions.map((s) => (
-          <a href={s.href} class="group flex flex-col bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300">
-            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3C7099]/10 text-[#3C7099]">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={iconPaths[s.icon]} /></svg>
-            </span>
-            <h3 class="mt-5 text-lg font-semibold text-gray-900">{s.title}</h3>
-            <p class="mt-2 flex-1 text-sm leading-relaxed text-gray-600">{s.description}</p>
-            <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#C81E6A]">
+          <a href={s.href} class="group flex flex-col bg-white p-8 rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100">
+            <div class="w-14 h-14 flex items-center justify-center rounded-2xl bg-[#3C7099] text-white mb-6">
+              <i class={`fa-solid ${s.icon} text-2xl`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 leading-tight">{s.title}</h3>
+            <p class="mt-3 flex-1 leading-relaxed text-gray-600">{s.description}</p>
+            <span class="mt-5 inline-flex items-center gap-2 font-semibold text-[#3C7099] group-hover:text-[#C81E6A] transition-colors">
               Plačiau
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
             </span>
@@ -172,52 +245,67 @@ const iconPaths: Record<string, string> = {
   </section>
 
   <!-- ================= NAUDA ================= -->
-  <section class="w-full bg-white py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-screen-xl mx-auto">
-      <h2 class="font-semibold text-xl md:text-2xl lg:text-4xl text-center text-gray-900 mb-12">Kodėl verta rinktis Vecticum</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {benefits.map((b) => (
-          <div class="flex items-start gap-4 bg-[#EBEFF3] p-6 rounded-2xl">
-            <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#C81E6A] text-white">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-            </span>
-            <div>
-              <h3 class="text-lg font-semibold text-gray-900">{b.title}</h3>
-              <p class="mt-1 text-sm leading-relaxed text-gray-600">{b.text}</p>
+  <section class="w-full bg-[#EAF1F7] py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div class="max-w-screen-xl mx-auto grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+      <!-- Tekstas + priežastys -->
+      <div>
+        <span class="inline-flex items-center gap-2 rounded-full bg-[#C81E6A]/10 px-4 py-1.5 text-sm font-semibold text-[#C81E6A]">
+          <span class="h-1.5 w-1.5 rounded-full bg-[#C81E6A]"></span>
+          Kodėl Vecticum
+        </span>
+        <h2 class="mt-5 text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">Kodėl verta rinktis Vecticum</h2>
+        <p class="mt-4 text-lg text-gray-600 leading-relaxed">Patikimas partneris, padedantis valdyti dokumentus efektyviai, skaidriai ir saugiai – nuo pirmo žingsnio iki kasdienių procesų.</p>
+        <div class="mt-10 space-y-6">
+          {benefits.map((b) => (
+            <div class="flex items-start gap-4">
+              <span class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-[#3C7099] text-white shadow-sm">
+                <i class={`fa-solid ${b.icon} text-lg`}></i>
+              </span>
+              <div>
+                <h3 class="text-lg font-bold text-gray-900">{b.title}</h3>
+                <p class="mt-1 text-gray-600 leading-relaxed">{b.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <!-- Vizualas: plaukiojančios kortelės -->
+      <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+        <div class="rounded-3xl bg-white shadow-xl border border-gray-100 p-6 sm:p-7">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="h-2.5 w-2.5 rounded-full bg-[#C81E6A]/70"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-[#3C7099]/50"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-gray-200"></span>
+            <div class="ml-2 h-2.5 w-28 rounded-full bg-gray-100"></div>
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 rounded-2xl border border-gray-100 p-3.5">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#3C7099]/10 text-[#3C7099]"><i class="fa-solid fa-file-contract"></i></span>
+              <div class="flex-1 space-y-1.5"><div class="h-2.5 w-32 rounded-full bg-gray-200"></div><div class="h-2 w-20 rounded-full bg-gray-100"></div></div>
+              <span class="rounded-full bg-[#3C7099]/10 px-2.5 py-1 text-xs font-semibold text-[#3C7099]">Derinama</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-2xl border border-[#3C7099]/20 bg-[#3C7099]/[0.06] p-3.5">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#3C7099] text-white"><i class="fa-solid fa-signature"></i></span>
+              <div class="flex-1 space-y-1.5"><div class="h-2.5 w-28 rounded-full bg-[#3C7099]/30"></div><div class="h-2 w-16 rounded-full bg-[#3C7099]/20"></div></div>
+              <span class="rounded-full bg-[#3C7099] px-2.5 py-1 text-xs font-semibold text-white">Pasirašyta</span>
+            </div>
+            <div class="flex items-center gap-3 rounded-2xl border border-gray-100 p-3.5">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-[#C81E6A]/10 text-[#C81E6A]"><i class="fa-solid fa-box-archive"></i></span>
+              <div class="flex-1 space-y-1.5"><div class="h-2.5 w-24 rounded-full bg-gray-200"></div><div class="h-2 w-14 rounded-full bg-gray-100"></div></div>
+              <span class="rounded-full bg-[#C81E6A]/10 px-2.5 py-1 text-xs font-semibold text-[#C81E6A]">Archyvuota</span>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= PLANAS / KAINA ================= -->
-  <section class="w-full bg-[#EBEFF3] py-16 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mx-auto rounded-2xl bg-white border-t-4 border-[#C81E6A] shadow-sm p-8 sm:p-12">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <span class="inline-block rounded-full bg-[#3C7099]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#3C7099]">
-            Individualus sprendimas
-          </span>
-          <h2 class="mt-5 text-2xl sm:text-3xl font-bold text-gray-900">{planTitle}</h2>
-          <p class="mt-4 text-gray-600 leading-relaxed">{planNote}</p>
-          <div class="mt-6">
-            <div class="text-sm uppercase tracking-wide text-gray-500">Kaina</div>
-            <div class="mt-1 text-3xl sm:text-4xl font-bold text-[#C81E6A]">Individualus pasiūlymas</div>
-            <p class="mt-2 text-sm text-gray-500">Priklauso nuo modulių apimties, naudotojų skaičiaus ir integracijų.</p>
-          </div>
-          <a href="#contact" class="mt-8 inline-block rounded-full bg-[#C81E6A] px-7 py-3 text-white font-medium hover:bg-[#A51856] transition">
-            Užpildyti formą ir sužinoti kainą
-          </a>
         </div>
-        <ul class="space-y-4 rounded-2xl bg-[#EBEFF3] p-7">
-          {planBullets.map((item) => (
-            <li class="flex items-start gap-3 text-sm text-gray-700">
-              <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-[#C81E6A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+        <!-- Plaukiojantis ženkliukas -->
+        <div class="absolute -bottom-6 -left-4 sm:-left-6 flex items-center gap-3 rounded-2xl bg-white shadow-lg border border-gray-100 px-5 py-4">
+          <span class="flex h-11 w-11 items-center justify-center rounded-full bg-[#3C7099] text-white"><i class="fa-solid fa-shield-halved"></i></span>
+          <div>
+            <div class="text-base font-bold text-gray-900">BDAR</div>
+            <div class="text-xs text-gray-500">Saugus archyvas</div>
+          </div>
+        </div>
+        <!-- Dekoratyvinis akcentas -->
+        <div class="absolute -top-8 -right-8 -z-10 h-40 w-40 rounded-full bg-[#C81E6A]/10 blur-2xl"></div>
       </div>
     </div>
   </section>
@@ -228,13 +316,7 @@ const iconPaths: Record<string, string> = {
     subheading="Užpildykite formą ir pateiksime individualų dokumentų valdymo sprendimo kainos pasiūlymą pagal jūsų poreikius."
   />
 
-  <!-- ================= SEO TEKSTAS ================= -->
-  <section class="bg-white py-16 sm:py-20 px-6 sm:px-8">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl sm:text-3xl font-semibold text-gray-900">Kas yra dokumentų valdymas?</h2>
-      <p class="mt-5 text-lg leading-relaxed text-gray-600">{seoText}</p>
-    </div>
-  </section>
+  <Testimonials bgClass="bg-[#EAF1F7]" />
 
   <!-- ================= DUK ================= -->
   <section class="bg-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
