@@ -47,7 +47,6 @@ hero_image_alt: "SCORM mokymai | VECTICUM × TALENTATOR"
 
 import SimpleContactForm from "../../components/home/SimpleContactForm.astro";
 import { Image } from "astro:assets";
-import TalentatorHero from '../../assets/media/Talentator-hero.webp';
 import VecticumLogo from '../../assets/images/logo.webp';
 import TalentatorLogo from '../../assets/media/talentator-logo.png';
 import CatalogAccordion from '../../components/CatalogAccordion.astro';
@@ -110,7 +109,7 @@ import CatalogAccordion from '../../components/CatalogAccordion.astro';
     <div class="w-full flex justify-center lg:justify-end">
       <div class="relative w-full max-w-md lg:max-w-sm xl:max-w-md">
         <div class="relative z-10 rounded-3xl overflow-hidden">
-          <Image src={TalentatorHero} alt="Interaktyvūs mokymai su TALENTATOR" class="w-full h-auto object-contain" />
+          <img src="/media/services/talentator-hero.svg" width="1000" height="1000" alt="Interaktyvūs mokymai su TALENTATOR" class="w-full h-auto object-contain" loading="eager" />
         </div>
       </div>
     </div>
