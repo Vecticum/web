@@ -1,5 +1,5 @@
 ---
-title: '5 darbo grafiko valdymo klaidos, kurių galima išvengti'
+title: 'Kaip padaryti darbo grafiką lengvai valdomą visiems darbuotojams?'
 description: 'Darbo grafiko sudarymas dažnai kelia konfliktų ir nesklandumų. Aptariame pagrindinius iššūkius ir automatizuotus sprendimus, kaip padaryti darbo grafiką paprastai ir be klaidų.'
 metaTitle: 'Kaip padaryti darbo grafiką lengvai valdomą? | Vecticum'
 pubDate: '2026-10-06'
