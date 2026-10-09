@@ -4,7 +4,7 @@ meta:
   description: Sužinokite, kaip statybų rangovai CONRES suvienijo personalo procesus nuo įdarbinimo iki išdarbinimo naudodami VECTICUM. Tikra klientų patirtis.
   ogType: website
   canonical: https://vecticum.lt/rekomendacijos/conres
-title: "Sklandžių statybų pagrindas – ir vidiniai procesai: CONRES patirtis su VECTICUM"
+title: "Tvarkingi vidiniai procesai – sklandžių statybų pagrindas: CONRES patirtis naudojant VECTICUM"
 description: "Vecticum padėjo efektyvinti Personalo skyriaus veiklą ir komunikaciją su kitais padaliniais visuose procesuose – nuo kandidato atrankos iki išdarbinimo."
 image: "/media/recomendations/conres rec.png"
 link: "/rekomendacijos/conres"
