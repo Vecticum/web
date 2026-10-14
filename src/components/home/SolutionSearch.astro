@@ -101,7 +101,7 @@ const solutions = services
 
       if (matches.length === 0) {
         results!.innerHTML =
-          '<li class="px-5 py-3 text-sm text-gray-400">Sprendimų nerasta</li>';
+          '<li><a href="/registracijademo" class="block px-5 py-3 text-sm text-gray-600 transition-colors hover:bg-gray-50"><span class="font-medium text-[#C81E6A]">Neradote tinkamo sprendimo?</span> Palikite užklausą – pasiūlysime sprendimą jūsų verslui.</a></li>';
         results!.classList.remove("hidden");
         input!.setAttribute("aria-expanded", "true");
         return;
