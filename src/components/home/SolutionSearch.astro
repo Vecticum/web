@@ -1,0 +1,143 @@
+---
+import { getCollection } from "astro:content";
+
+const services = await getCollection("services");
+
+const solutions = services
+  .map((service) => ({
+    title: service.data.title,
+    description: service.data.description,
+    url: `/${service.id}/`,
+  }))
+  .sort((a, b) => a.title.localeCompare(b.title, "lt"));
+---
+
+<section class="relative z-20 w-full px-4 pt-4 sm:px-6 sm:pt-6 lg:px-8 lg:pt-10">
+  <div class="mx-auto max-w-xl">
+    <div
+      class="solution-search relative"
+      data-solutions={JSON.stringify(solutions)}
+    >
+      <div class="relative">
+        <svg
+          class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#C81E6A]/70"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M21 21l-4.35-4.35m1.35-5.65a7 7 0 11-14 0 7 7 0 0114 0z"
+          ></path>
+        </svg>
+        <input
+          type="text"
+          class="solution-search-input w-full rounded-full border border-[#C81E6A]/40 bg-white py-2.5 pl-10 pr-4 text-sm text-gray-900 shadow-[0_4px_14px_-8px_rgba(200,30,106,0.3)] outline-none transition-all duration-200 placeholder:text-gray-400 focus:border-[#C81E6A]/70 focus:ring-2 focus:ring-[#C81E6A]/15"
+          placeholder="Raskite jus dominantį sprendimą"
+          autocomplete="off"
+          role="combobox"
+          aria-expanded="false"
+          aria-autocomplete="list"
+          aria-label="Raskite jus dominantį sprendimą"
+        />
+      </div>
+      <ul
+        class="solution-search-results absolute left-0 right-0 top-full z-30 mt-2 hidden max-h-80 overflow-y-auto rounded-2xl border border-gray-100 bg-white py-2 shadow-xl"
+        role="listbox"
+      >
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initSolutionSearch(container: HTMLElement) {
+    const input = container.querySelector<HTMLInputElement>(
+      ".solution-search-input"
+    );
+    const results = container.querySelector<HTMLUListElement>(
+      ".solution-search-results"
+    );
+    if (!input || !results) return;
+
+    let solutions: { title: string; description: string; url: string }[] = [];
+    try {
+      solutions = JSON.parse(container.dataset.solutions || "[]");
+    } catch {
+      solutions = [];
+    }
+
+    const normalize = (value: string) =>
+      value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+
+    function closeResults() {
+      results!.classList.add("hidden");
+      results!.innerHTML = "";
+      input!.setAttribute("aria-expanded", "false");
+    }
+
+    function renderResults(query: string) {
+      const q = normalize(query.trim());
+      if (!q) {
+        closeResults();
+        return;
+      }
+
+      const matches = solutions
+        .map((item) => {
+          const titleMatch = normalize(item.title).includes(q);
+          const descMatch = normalize(item.description || "").includes(q);
+          return { item, titleMatch, descMatch };
+        })
+        .filter((entry) => entry.titleMatch || entry.descMatch)
+        .sort((a, b) => Number(b.titleMatch) - Number(a.titleMatch))
+        .slice(0, 8);
+
+      if (matches.length === 0) {
+        results!.innerHTML =
+          '<li class="px-5 py-3 text-sm text-gray-400">Sprendimų nerasta</li>';
+        results!.classList.remove("hidden");
+        input!.setAttribute("aria-expanded", "true");
+        return;
+      }
+
+      results!.innerHTML = matches
+        .map(({ item, titleMatch }) => {
+          const snippet =
+            !titleMatch && item.description
+              ? `<span class="mt-0.5 block text-xs text-gray-400 line-clamp-1">${item.description}</span>`
+              : "";
+          return `<li role="option"><a href="${item.url}" class="block px-5 py-3 transition-colors hover:bg-gray-50"><span class="block text-sm text-gray-700">${item.title}</span>${snippet}</a></li>`;
+        })
+        .join("");
+      results!.classList.remove("hidden");
+      input!.setAttribute("aria-expanded", "true");
+    }
+
+    input.addEventListener("input", () => renderResults(input.value));
+    input.addEventListener("focus", () => {
+      if (input.value.trim()) renderResults(input.value);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!container.contains(event.target as Node)) closeResults();
+    });
+
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeResults();
+        input.blur();
+      }
+    });
+  }
+
+  document
+    .querySelectorAll<HTMLElement>(".solution-search")
+    .forEach((container) => initSolutionSearch(container));
+</script>
