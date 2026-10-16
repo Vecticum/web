@@ -3,11 +3,173 @@ import { getCollection } from "astro:content";
 
 const services = await getCollection("services");
 
+// Papildomi raktažodžiai / sinonimai paieškai pagal paslaugos id.
+// Leidžia rasti sprendimą pagal alternatyvius pavadinimus (pvz. „scorm", „tabeliai").
+const keywordsById: Record<string, string[]> = {
+  "talentator-scorm-mokymai": [
+    "scorm",
+    "scrom",
+    "e. mokymai",
+    "elektroniniai mokymai",
+    "interaktyvus mokymai",
+    "nuotoliniai mokymai",
+    "kursai",
+    "talentator",
+    "e-mokymai",
+  ],
+  "darbo-grafiku-ir-darbo-laiko-apskaitos-ziniarasciu-valdymas": [
+    "tabelis",
+    "tabeliai",
+    "ziniarastis",
+    "ziniarasciai",
+    "darbo laiko apskaita",
+    "darbo grafikai",
+    "grafikai",
+    "pamainos",
+  ],
+  "atostogu-valdymas": [
+    "atostogos",
+    "atostogu prasymai",
+    "nebuvimai",
+    "ligos",
+    "komandiruotes",
+    "laisvadieniai",
+  ],
+  "gaunamu-saskaitu-valdymas": [
+    "saskaitos",
+    "saskaitos faktura",
+    "saskaitu tvirtinimas",
+    "saskaitu apmokejimas",
+    "invoice",
+  ],
+  "komandiruociu-valdymas": [
+    "komandiruotes",
+    "dienpinigiai",
+    "kelione",
+    "verslo keliones",
+  ],
+  "keliones-lapu-valdymas": ["keliones lapai", "kuras", "automobilis", "ridos"],
+  "avansines-apyskaitos-valdymas": [
+    "avansas",
+    "avansine apyskaita",
+    "islaidos",
+    "atskaitomybe",
+  ],
+  "pirkimu-valdymas": ["pirkimai", "uzsakymai", "tiekejai", "procurement"],
+  "sutarciu-valdymas": [
+    "sutartys",
+    "komercines sutartys",
+    "sutarciu valdymas",
+    "contract",
+  ],
+  "darbo-sutarciu-valdymas": [
+    "darbo sutartys",
+    "darbo sutarciu valdymas",
+    "isakymai",
+  ],
+  "dokumentu-valdymas": [
+    "dvs",
+    "dokumentai",
+    "dokumentu valdymo sistema",
+    "archyvas",
+  ],
+  "dokumentacijos-plano-valdymas": [
+    "dokumentu medis",
+    "dokumentacijos planas",
+    "bylos",
+    "registrai",
+  ],
+  "testavimo-is-norminiu-dokumentu-valdymas": [
+    "testai",
+    "testavimas",
+    "egzaminai",
+    "apklausos",
+    "znanija",
+  ],
+  "mokymu-valdymas": ["mokymai", "apmokymai", "mokymu valdymas", "kvalifikacija"],
+  "veiklos-vertinimas": [
+    "vertinimas",
+    "360",
+    "veiklos pokalbiai",
+    "tikslai",
+    "kompetencijos",
+  ],
+  "atrankos-valdymas": [
+    "atranka",
+    "kandidatai",
+    "cv",
+    "rekrutacija",
+    "ieskome darbuotoju",
+  ],
+  "darbuotoju-prasymu-valdymas": ["prasymai", "darbuotoju prasymai", "pazymos"],
+  "intraneto-valdymas": [
+    "intranetas",
+    "naujienos",
+    "vidine komunikacija",
+    "skelbimai",
+  ],
+  "darbuotoju-duomenu-bazes-valdymas": [
+    "darbuotoju kortele",
+    "hr",
+    "personalo duomenys",
+    "darbuotoju baze",
+  ],
+  "darbuotoju-idarbinimo-savitarna": [
+    "savitarna",
+    "idarbinimas",
+    "onboarding",
+    "naujas darbuotojas",
+  ],
+  "darbuotojo-idarbinimo-i-imone-valdymas": [
+    "idarbinimas",
+    "onboarding",
+    "darbo vietos paruosimas",
+    "naujas darbuotojas",
+  ],
+  "darbuotojo-isdarbinimo-is-imones-valdymas": [
+    "atleidimas",
+    "isdarbinimas",
+    "offboarding",
+    "sutarties nutraukimas",
+  ],
+  "isduodamo-inventoriaus-darbuotojui-valdymas": [
+    "inventorius",
+    "turtas",
+    "priemones",
+    "iranga",
+  ],
+  "uzduociu-valdymas": ["uzduotys", "taskai", "tasks", "pavedimai"],
+  "valdybos-posedziu-valdymas": [
+    "posedziai",
+    "valdyba",
+    "susirinkimai",
+    "protokolai",
+  ],
+  "privalomo-supazindinimo-su-dokumentais-valdymas": [
+    "supazindinimas",
+    "instruktazai",
+    "darbo sauga",
+    "tvarkos",
+  ],
+  "gaunamu-uzklausu-valdymas": [
+    "uzklausos",
+    "paraiskos",
+    "aptarnavimas",
+    "helpdesk",
+  ],
+  "bandomojo-laikotarpio-vertinimas-valdymas": [
+    "bandomasis laikotarpis",
+    "bandomojo vertinimas",
+    "isbandymas",
+  ],
+};
+
 const solutions = services
   .map((service) => ({
     title: service.data.title,
     description: service.data.description,
     url: `/${service.id}/`,
+    keywords: (keywordsById[service.id] ?? []).join(" "),
   }))
   .sort((a, b) => a.title.localeCompare(b.title, "lt"));
 ---
@@ -63,7 +225,7 @@ const solutions = services
     );
     if (!input || !results) return;
 
-    let solutions: { title: string; description: string; url: string }[] = [];
+    let solutions: { title: string; description: string; url: string; keywords?: string }[] = [];
     try {
       solutions = JSON.parse(container.dataset.solutions || "[]");
     } catch {
@@ -89,14 +251,29 @@ const solutions = services
         return;
       }
 
+      const tokens = q.split(/\s+/).filter(Boolean);
+
       const matches = solutions
         .map((item) => {
-          const titleMatch = normalize(item.title).includes(q);
-          const descMatch = normalize(item.description || "").includes(q);
-          return { item, titleMatch, descMatch };
+          const title = normalize(item.title);
+          const desc = normalize(item.description || "");
+          const keywords = normalize(item.keywords || "");
+
+          const titleMatch =
+            title.includes(q) || tokens.every((t) => title.includes(t));
+          const keywordMatch =
+            keywords.includes(q) || tokens.every((t) => keywords.includes(t));
+          const descMatch =
+            desc.includes(q) || tokens.every((t) => desc.includes(t));
+
+          return { item, titleMatch, keywordMatch, descMatch };
         })
-        .filter((entry) => entry.titleMatch || entry.descMatch)
-        .sort((a, b) => Number(b.titleMatch) - Number(a.titleMatch))
+        .filter((entry) => entry.titleMatch || entry.keywordMatch || entry.descMatch)
+        .sort(
+          (a, b) =>
+            Number(b.titleMatch) - Number(a.titleMatch) ||
+            Number(b.keywordMatch) - Number(a.keywordMatch)
+        )
         .slice(0, 8);
 
       if (matches.length === 0) {
@@ -108,9 +285,9 @@ const solutions = services
       }
 
       results!.innerHTML = matches
-        .map(({ item, titleMatch }) => {
+        .map(({ item, titleMatch, keywordMatch }) => {
           const snippet =
-            !titleMatch && item.description
+            !titleMatch && !keywordMatch && item.description
               ? `<span class="mt-0.5 block text-xs text-gray-400 line-clamp-1">${item.description}</span>`
               : "";
           return `<li role="option"><a href="${item.url}" class="block px-5 py-3 transition-colors hover:bg-gray-50"><span class="block text-sm text-gray-700">${item.title}</span>${snippet}</a></li>`;
