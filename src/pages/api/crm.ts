@@ -12,6 +12,117 @@ const MAX_SUBMISSIONS_PER_IP = 5; // Max 5 submissions per IP per 5 minutes
 // src/pages/api/crm.ts
 import type { APIRoute } from 'astro';
 
+interface LeadData {
+    name?: string;
+    email?: string;
+    company?: string;
+    phone?: string;
+    position?: string;
+    message?: string;
+    form_source?: string;
+}
+
+// Siunčia užklausą į Kommo CRM: sukuria lead'ą + kliento kortelę (kontaktą).
+// Visada apgaubta try/catch – klaida niekada nenutraukia pagrindinės užklausos.
+async function sendToKommo(data: LeadData, timestamp: string): Promise<void> {
+    const subdomain = import.meta.env.KOMMO_SUBDOMAIN;
+    const token = import.meta.env.KOMMO_ACCESS_TOKEN;
+
+    if (!subdomain || !token) {
+        console.log(`[${timestamp}] Kommo not configured (missing subdomain/token) - skipping`);
+        return;
+    }
+
+    const pipelineId = import.meta.env.KOMMO_PIPELINE_ID;
+    const statusId = import.meta.env.KOMMO_STATUS_ID;
+    const base = `https://${subdomain}.kommo.com/api/v4`;
+
+    const contactName =
+        typeof data.name === 'string' && data.name.trim() ? data.name.trim() : data.email || 'Nenurodyta';
+    const leadName =
+        typeof data.company === 'string' && data.company.trim()
+            ? `${data.company.trim()} – užklausa iš svetainės`
+            : `Užklausa iš svetainės – ${contactName}`;
+
+    const contactFields: Array<{ field_code: string; values: Array<{ value: string; enum_code: string }> }> = [];
+    if (data.email) contactFields.push({ field_code: 'EMAIL', values: [{ value: data.email, enum_code: 'WORK' }] });
+    if (data.phone) contactFields.push({ field_code: 'PHONE', values: [{ value: data.phone, enum_code: 'WORK' }] });
+
+    const lead: Record<string, unknown> = {
+        name: leadName,
+        _embedded: {
+            contacts: [
+                {
+                    name: contactName,
+                    ...(contactFields.length ? { custom_fields_values: contactFields } : {}),
+                },
+            ],
+            tags: data.form_source ? [{ name: String(data.form_source).slice(0, 50) }] : [],
+        },
+    };
+    if (pipelineId) lead.pipeline_id = Number(pipelineId);
+    if (statusId) lead.status_id = Number(statusId);
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 7000);
+    try {
+        const res = await fetch(`${base}/leads/complex`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify([lead]),
+            signal: controller.signal,
+        });
+        clearTimeout(timeoutId);
+
+        if (!res.ok) {
+            const errText = await res.text().catch(() => '');
+            console.error(`[${timestamp}] Kommo API error ${res.status}: ${errText}`);
+            return;
+        }
+
+        const created = await res.json().catch(() => null);
+        const leadId = Array.isArray(created) && created[0] && created[0].id ? created[0].id : null;
+        console.log(`[${timestamp}] Kommo lead created for ${data.email} (lead id: ${leadId ?? 'n/a'})`);
+
+        // Best-effort: pridedame pastabą su visa papildoma informacija prie lead'o.
+        const noteLines: string[] = [];
+        if (data.company) noteLines.push(`Įmonė: ${data.company}`);
+        if (data.position) noteLines.push(`Pareigos: ${data.position}`);
+        if (data.phone) noteLines.push(`Telefonas: ${data.phone}`);
+        if (data.form_source) noteLines.push(`Šaltinis: ${data.form_source}`);
+        if (data.message) noteLines.push(`Žinutė: ${data.message}`);
+
+        if (leadId && noteLines.length) {
+            const noteController = new AbortController();
+            const noteTimeout = setTimeout(() => noteController.abort(), 4000);
+            try {
+                await fetch(`${base}/leads/${leadId}/notes`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                    body: JSON.stringify([{ note_type: 'common', params: { text: noteLines.join('\n') } }]),
+                    signal: noteController.signal,
+                });
+                clearTimeout(noteTimeout);
+            } catch {
+                clearTimeout(noteTimeout);
+            }
+        }
+    } catch (error) {
+        clearTimeout(timeoutId);
+        if (error instanceof Error && error.name === 'AbortError') {
+            console.log(`[${timestamp}] Kommo request timeout for ${data.email}`);
+        } else {
+            console.error(`[${timestamp}] Failed to send to Kommo for ${data.email}:`, error);
+        }
+    }
+}
+
 export const POST: APIRoute = async ({ request }) => {
     // Check if the request method is POST
     if (request.method !== 'POST') {
@@ -395,7 +506,10 @@ export const POST: APIRoute = async ({ request }) => {
 
         // Send data to external CRM API with timeout protection
         const url = 'https://crm-jz6p53srgq-ew.a.run.app/api/crm/v1/new-lead';
-        
+
+        // 1 etapas: siunčiame ir į vidinį CRM, ir į Kommo lygiagrečiai.
+        const kommoPromise = sendToKommo(data, timestamp);
+
         try {
             // Set 12 second timeout (before Vercel's 15s limit)
             const controller = new AbortController();
@@ -442,7 +556,10 @@ export const POST: APIRoute = async ({ request }) => {
             }
             // Continue to return success anyway
         }
-        
+
+        // Palaukiame, kol baigsis Kommo siuntimas (vyko lygiagrečiai su vidiniu CRM).
+        await kommoPromise;
+
         // Always return success to user
         console.log(`[${timestamp}] Returning success response for ${data.email}`);
         return new Response(JSON.stringify({ message: 'Užklausa sėkmingai pateikta!' }), {
