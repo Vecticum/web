@@ -20,11 +20,12 @@ interface LeadData {
     position?: string;
     message?: string;
     form_source?: string;
+    newsletterConsent?: boolean;
 }
 
 // Siunčia užklausą į Kommo CRM: sukuria lead'ą + kliento kortelę (kontaktą).
 // Visada apgaubta try/catch – klaida niekada nenutraukia pagrindinės užklausos.
-async function sendToKommo(data: LeadData, timestamp: string): Promise<void> {
+async function sendToKommo(data: LeadData, timestamp: string, pageUrl?: string): Promise<void> {
     const subdomain = import.meta.env.KOMMO_SUBDOMAIN;
     const token = import.meta.env.KOMMO_ACCESS_TOKEN;
 
@@ -39,26 +40,39 @@ async function sendToKommo(data: LeadData, timestamp: string): Promise<void> {
 
     const contactName =
         typeof data.name === 'string' && data.name.trim() ? data.name.trim() : data.email || 'Nenurodyta';
-    const leadName =
-        typeof data.company === 'string' && data.company.trim()
-            ? `${data.company.trim()} – užklausa iš svetainės`
-            : `Užklausa iš svetainės – ${contactName}`;
+    const companyName =
+        typeof data.company === 'string' && data.company.trim() ? data.company.trim() : '';
+    const leadName = companyName || contactName;
 
-    const contactFields: Array<{ field_code: string; values: Array<{ value: string; enum_code: string }> }> = [];
+    const contactFields: Array<{
+        field_code?: string;
+        field_id?: number;
+        values: Array<{ value?: string; enum_code?: string; enum_id?: number }>;
+    }> = [];
     if (data.email) contactFields.push({ field_code: 'EMAIL', values: [{ value: data.email, enum_code: 'WORK' }] });
     if (data.phone) contactFields.push({ field_code: 'PHONE', values: [{ value: data.phone, enum_code: 'WORK' }] });
+    if (data.position && typeof data.position === 'string' && data.position.trim())
+        contactFields.push({ field_code: 'POSITION', values: [{ value: data.position.trim() }] });
+    // Consent laukas (Select, True/False) – kontakto custom laukas Kommo pusėje.
+    contactFields.push({
+        field_id: 1122070,
+        values: [{ enum_id: data.newsletterConsent ? 1391258 : 1391260 }],
+    });
+
+    const embedded: Record<string, unknown> = {
+        contacts: [
+            {
+                name: contactName,
+                ...(contactFields.length ? { custom_fields_values: contactFields } : {}),
+            },
+        ],
+        tags: [{ name: 'web' }],
+    };
+    if (companyName) embedded.companies = [{ name: companyName }];
 
     const lead: Record<string, unknown> = {
         name: leadName,
-        _embedded: {
-            contacts: [
-                {
-                    name: contactName,
-                    ...(contactFields.length ? { custom_fields_values: contactFields } : {}),
-                },
-            ],
-            tags: data.form_source ? [{ name: String(data.form_source).slice(0, 50) }] : [],
-        },
+        _embedded: embedded,
     };
     if (pipelineId) lead.pipeline_id = Number(pipelineId);
     if (statusId) lead.status_id = Number(statusId);
@@ -92,7 +106,11 @@ async function sendToKommo(data: LeadData, timestamp: string): Promise<void> {
         if (data.company) noteLines.push(`Įmonė: ${data.company}`);
         if (data.position) noteLines.push(`Pareigos: ${data.position}`);
         if (data.phone) noteLines.push(`Telefonas: ${data.phone}`);
-        if (data.form_source) noteLines.push(`Šaltinis: ${data.form_source}`);
+        if (data.form_source) {
+            noteLines.push(`Šaltinis: ${data.form_source}${pageUrl ? ` (${pageUrl})` : ''}`);
+        } else if (pageUrl) {
+            noteLines.push(`Šaltinis: ${pageUrl}`);
+        }
         if (data.message) noteLines.push(`Žinutė: ${data.message}`);
 
         if (leadId && noteLines.length) {
@@ -508,7 +526,8 @@ export const POST: APIRoute = async ({ request }) => {
         const url = 'https://crm-jz6p53srgq-ew.a.run.app/api/crm/v1/new-lead';
 
         // 1 etapas: siunčiame ir į vidinį CRM, ir į Kommo lygiagrečiai.
-        const kommoPromise = sendToKommo(data, timestamp);
+        const pageUrl = request.headers.get('referer') || undefined;
+        const kommoPromise = sendToKommo(data, timestamp, pageUrl);
 
         try {
             // Set 12 second timeout (before Vercel's 15s limit)
