@@ -12,17 +12,22 @@ function reply(status, data) {
   });
 }
 
+function fail(status, error) {
+  console.error("omnisend:", status, error);
+  return reply(status, { error });
+}
+
 export function GET() {
-  return reply(200, { status: "Omnisend endpoint veikia" });
+  return reply(200, {
+    status: "Omnisend endpoint veikia",
+    version: "all-matching-contacts-v2",
+  });
 }
 
 export async function POST({ request }) {
   const subdomain = process.env.KOMMO_SUBDOMAIN?.trim();
   const token = process.env.KOMMO_ACCESS_TOKEN?.trim();
   const secret = process.env.OMNISEND_WEBHOOK_SECRET;
-  const testEmail = process.env.OMNISEND_TEST_EMAIL
-    ?.trim()
-    .toLowerCase();
 
   if (
     !subdomain ||
@@ -31,22 +36,25 @@ export async function POST({ request }) {
     !secret ||
     secret.length < 32
   ) {
-    return reply(500, { error: "Patikrink Vercel kintamuosius" });
+    return fail(500, "Patikrink Vercel kintamuosius");
   }
 
-  const receivedSecret = request.headers.get("x-webhook-secret") || "";
+  const receivedSecret =
+    request.headers.get("x-webhook-secret") || "";
+
   const hash = (value) =>
     createHash("sha256").update(value).digest();
 
   if (!timingSafeEqual(hash(secret), hash(receivedSecret))) {
-    return reply(401, { error: "Neteisingas webhook slaptas raktas" });
+    return fail(401, "Neteisingas webhook slaptas raktas");
   }
 
   let body;
+
   try {
     body = await request.json();
   } catch {
-    return reply(400, { error: "Netaisyklingas JSON" });
+    return fail(400, "Netaisyklingas JSON");
   }
 
   const email =
@@ -66,11 +74,10 @@ export async function POST({ request }) {
     title.length > 4000 ||
     title.includes("[[")
   ) {
-    return reply(400, { error: "Netinkamas el. pastas arba pavadinimas" });
-  }
-
-  if (testEmail && email !== testEmail) {
-    return reply(200, { status: "Praleista: ne bandomasis kontaktas" });
+    return fail(
+      400,
+      "Netinkamas el. pastas arba laisko pavadinimas"
+    );
   }
 
   const base = `https://${subdomain}.kommo.com/api/v4`;
@@ -91,7 +98,9 @@ export async function POST({ request }) {
       throw new Error(`Kommo HTTP ${response.status}`);
     }
 
-    return response.status === 204 ? {} : response.json();
+    return response.status === 204
+      ? {}
+      : response.json();
   }
 
   try {
@@ -99,11 +108,14 @@ export async function POST({ request }) {
 
     for (let page = 1; page <= 10; page++) {
       const data = await kommo(
-        `/contacts?query=${encodeURIComponent(email)}&limit=250&page=${page}`
+        `/contacts?query=${encodeURIComponent(email)}` +
+          `&limit=250&page=${page}`
       );
 
       for (const contact of data._embedded?.contacts || []) {
-        const exactMatch = (contact.custom_fields_values || []).some(
+        const exactMatch = (
+          contact.custom_fields_values || []
+        ).some(
           (field) =>
             field.field_code === "EMAIL" &&
             (field.values || []).some(
@@ -113,31 +125,36 @@ export async function POST({ request }) {
             )
         );
 
-        if (exactMatch) matches.set(contact.id, contact);
+        if (exactMatch) {
+          matches.set(contact.id, contact);
+        }
       }
 
-      if (!data._links?.next) break;
+      if (!data._links?.next) {
+        break;
+      }
 
       if (page === 10) {
-        return reply(422, { error: "Per daug paieskos rezultatu" });
+        return fail(422, "Per daug paieskos rezultatu");
       }
     }
 
     if (matches.size === 0) {
       console.info("omnisend: contact_not_found");
-      return reply(200, { status: "Kontaktas nerastas; pastaba nekurta" });
-    }
 
-    if (matches.size > 1) {
-      return reply(409, {
-        error: "Keli kontaktai su tuo paciu el. pastu; pastaba nekurta",
+      return reply(200, {
+        status: "Kontaktas nerastas; pastaba nekurta",
       });
     }
 
-    const contactId = Number([...matches.keys()][0]);
+    const contactIds = [...matches.keys()].map(Number);
 
-    if (!Number.isSafeInteger(contactId) || contactId <= 0) {
-      return reply(502, { error: "Netinkamas Kommo kontakto ID" });
+    if (
+      contactIds.some(
+        (id) => !Number.isSafeInteger(id) || id <= 0
+      )
+    ) {
+      return fail(502, "Netinkamas Kommo kontakto ID");
     }
 
     const receivedAt = new Intl.DateTimeFormat("lt-LT", {
@@ -146,33 +163,53 @@ export async function POST({ request }) {
       timeStyle: "medium",
     }).format(new Date());
 
-    stage = "add_note";
+    const noteText =
+      `Omnisend – išsiųstas laiškas\n` +
+      `Pavadinimas: ${title}\n` +
+      `Gavėjas: ${email}\n` +
+      `Įvykis gautas: ${receivedAt} (Europe/Vilnius)`;
 
-    await kommo("/contacts/notes", {
-      method: "POST",
-      body: JSON.stringify([
-        {
-          entity_id: contactId,
-          note_type: "common",
-          params: {
-            text:
-              `Omnisend – išsiųstas laiškas\n` +
-              `Pavadinimas: ${title}\n` +
-              `Gavėjas: ${email}\n` +
-              `Įvykis gautas: ${receivedAt} (Europe/Vilnius)`,
-          },
-        },
-      ]),
+    stage = "add_notes";
+
+    // Pastabas siunčiame grupėmis po daugiausia 50 kontaktų.
+    for (let start = 0; start < contactIds.length; start += 50) {
+      const batch = contactIds.slice(start, start + 50);
+
+      await kommo("/contacts/notes", {
+        method: "POST",
+        body: JSON.stringify(
+          batch.map((contactId) => ({
+            entity_id: contactId,
+            note_type: "common",
+            params: {
+              text: noteText,
+            },
+          }))
+        ),
+      });
+
+      console.info(
+        "omnisend: notes_created",
+        JSON.stringify({ contact_ids: batch })
+      );
+    }
+
+    return reply(200, {
+      status: "Pastabos sukurtos",
+      contacts_count: contactIds.length,
     });
-
-    console.info("omnisend: note_created");
-    return reply(200, { status: "Pastaba sukurta" });
   } catch (error) {
-    const detail = /^Kommo HTTP \d{3}$/.test(error.message || "")
+    const detail = /^Kommo HTTP \d{3}$/.test(
+      error?.message || ""
+    )
       ? error.message
       : "Rysio arba atsakymo klaida";
 
     console.error("omnisend:", stage, detail);
-    return reply(502, { error: detail, stage });
+
+    return reply(502, {
+      error: detail,
+      stage,
+    });
   }
 }
