@@ -1,0 +1,305 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "~/layouts/MainLayout.astro";
+
+export const prerender = true;
+
+// Pageidaujama industrijų tvarka – atitinka meniu juostos „Industrijos" išskleidimą
+const order = [
+  "gamyba",
+  "statyba-nt-pastatu-prieziura",
+  "transportas-logistika",
+  "apskaitos-personalo-paslaugos",
+  "it-paslaugos",
+  "finansai-draudimas",
+  "medicina-sveikatos-prieziura",
+  "prekyba-didmena-mazmena",
+];
+
+// SVG „path" piešiniai pagal industriją (suderinti su meniu juostos ikonomis)
+const icons: Record<string, string> = {
+  gamyba:
+    "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z",
+  "statyba-nt-pastatu-prieziura":
+    "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+  "transportas-logistika":
+    "M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0",
+  "apskaitos-personalo-paslaugos":
+    "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+  "it-paslaugos":
+    "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+  "finansai-draudimas":
+    "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+  "medicina-sveikatos-prieziura":
+    "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z",
+  "prekyba-didmena-mazmena":
+    "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z",
+};
+
+// Industrijų nuotraukos iš /public/industries/
+const images: Record<string, string> = {
+  gamyba: "/industries/02_gamyba.webp",
+  "statyba-nt-pastatu-prieziura": "/industries/03_statyba.webp",
+  "transportas-logistika": "/industries/04_transportas_logistika.webp",
+  "medicina-sveikatos-prieziura": "/industries/06_medicina.webp",
+  "prekyba-didmena-mazmena": "/industries/07_prekyba.webp",
+  "apskaitos-personalo-paslaugos": "/industries/apskaita%20ir%20personalas.png",
+  "finansai-draudimas": "/industries/finansai.png",
+  "it-paslaugos": "/industries/IT.png",
+};
+
+const allIndustries = await getCollection("industries", ({ data }) => !data.draft);
+
+// Surikiuojame pagal nustatytą tvarką; nepaminėtos industrijos eina gale pagal pavadinimą
+const industries = allIndustries.sort((a, b) => {
+  const ia = order.indexOf(a.id);
+  const ib = order.indexOf(b.id);
+  if (ia === -1 && ib === -1) return a.data.industry.localeCompare(b.data.industry, "lt");
+  if (ia === -1) return 1;
+  if (ib === -1) return -1;
+  return ia - ib;
+});
+
+const seoTitle = "Industrijos | VECTICUM personalo ir dokumentų valdymo sprendimai";
+const seoDescription =
+  "VECTICUM sprendimai pritaikyti įvairioms industrijoms – gamybai, statybai, transportui, finansams, IT, medicinai, prekybai ir paslaugų sektoriui. Raskite savo sritį ir sužinokite, kaip automatizuoti procesus.";
+const canonical = "https://vecticum.lt/industrijos/";
+
+const itemListSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: seoTitle,
+  description: seoDescription,
+  url: canonical,
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: industries.map((industry, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: industry.data.industry,
+      url: `https://vecticum.lt/industrijos/${industry.id}/`,
+    })),
+  },
+});
+---
+
+<MainLayout
+  title={seoTitle}
+  description={seoDescription}
+  canonical={canonical}
+  schema={itemListSchema}
+>
+  <!-- Hero -->
+  <section class="text-center py-20 px-6 bg-gradient-to-b from-white to-[#f4f7fa]">
+    <div class="max-w-3xl mx-auto">
+      <nav aria-label="Naršymo kelias" class="mb-6">
+        <ol class="flex items-center justify-center gap-2 text-sm text-gray-500">
+          <li><a href="/" class="hover:text-[#3C7099] transition-colors">Pradžia</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-gray-700 font-medium" aria-current="page">Industrijos</li>
+        </ol>
+      </nav>
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Industrijos</h1>
+      <p class="text-lg text-gray-600">
+        VECTICUM sprendimai pritaikyti skirtingų sektorių poreikiams. Pasirinkite savo
+        industriją ir sužinokite, kaip automatizuoti personalo, dokumentų ir verslo procesus.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro: tekstas + vertės panelė -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div class="space-y-6">
+        <span class="inline-block text-sm font-semibold tracking-wide uppercase text-[#3C7099]">
+          Vienas sprendimas – daug sektorių
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight">
+          Procesų automatizavimas, pritaikytas jūsų veiklos specifikai
+        </h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Kiekviena industrija turi savų iššūkių – skirtingus dokumentų srautus, darbo laiko
+          apskaitos taisykles, saugos ar atitikties reikalavimus. VECTICUM lanksčiai prisitaiko
+          prie šių poreikių ir sujungia personalo, dokumentų bei užduočių valdymą į vieną
+          sklandžiai veikiančią sistemą.
+        </p>
+        <ul class="space-y-3">
+          {
+            [
+              "Pritaikoma kiekvieno sektoriaus procesams",
+              "Mažiau rankinio darbo ir administracinės naštos",
+              "Aiškus atsekamumas ir kontrolė vienoje vietoje",
+            ].map((item) => (
+              <li class="flex items-start gap-3 text-gray-700">
+                <svg class="w-6 h-6 text-[#3C7099] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="text-base">{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Dizaino panelė su rodikliais (be nuotraukų) -->
+      <div class="relative">
+        <div class="absolute -inset-4 bg-gradient-to-br from-blue-100/60 to-transparent rounded-3xl blur-2xl" aria-hidden="true"></div>
+        <div class="relative rounded-3xl bg-gradient-to-br from-[#3C7099] to-[#2a5570] p-8 sm:p-10 text-white shadow-xl overflow-hidden">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full -translate-y-1/3 translate-x-1/3" aria-hidden="true"></div>
+          <div class="relative grid grid-cols-2 gap-6">
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold">8+</div>
+              <div class="mt-1 text-sm text-white/80">pramonės sektorių</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold">100%</div>
+              <div class="mt-1 text-sm text-white/80">pritaikoma procesams</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold">1</div>
+              <div class="mt-1 text-sm text-white/80">vieninga sistema</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl font-bold">24/7</div>
+              <div class="mt-1 text-sm text-white/80">prieiga debesyje</div>
+            </div>
+          </div>
+          <div class="relative mt-8 pt-8 border-t border-white/15 space-y-3">
+            {
+              [
+                "Personalo ir dokumentų valdymas",
+                "Užduočių ir procesų automatizavimas",
+                "Integracijos su jūsų sistemomis",
+              ].map((item) => (
+                <div class="flex items-center gap-3 text-sm text-white/90">
+                  <svg class="w-5 h-5 flex-shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{item}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Industrijų kortelės -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-20">
+    <div class="text-center mb-12">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+        Pasirinkite savo industriją
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Sužinokite, kaip VECTICUM sprendžia būtent jūsų sektoriaus iššūkius
+      </p>
+    </div>
+    <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 list-none p-0">
+      {
+        industries.map((industry) => (
+          <li class="h-full">
+            <a
+              href={`/industrijos/${industry.id}`}
+              class="group flex flex-col h-full bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-xl hover:border-[#3C7099]/40 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              aria-label={`Sužinoti daugiau apie industriją: ${industry.data.industry}`}
+            >
+              <div class="relative aspect-[16/10] bg-gray-100 overflow-hidden">
+                <img
+                  src={images[industry.id] ?? industry.data.hero_image}
+                  alt={industry.data.hero_image_alt ?? industry.data.industry}
+                  loading="lazy"
+                  decoding="async"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <span class="absolute top-4 left-4 flex items-center justify-center w-11 h-11 rounded-xl bg-white/95 backdrop-blur shadow-sm text-[#3C7099]">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={icons[industry.id] ?? icons["gamyba"]} />
+                  </svg>
+                </span>
+              </div>
+              <div class="flex flex-col flex-grow p-6">
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                  {industry.data.industry}
+                </h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-4">
+                  {industry.data.description}
+                </p>
+                <span class="inline-flex items-center gap-2 text-[#3C7099] group-hover:text-[#2a5570] font-medium mt-auto">
+                  Sužinoti daugiau
+                  <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+
+      <!-- Neradote savo industrijos? – kortelė tinklelyje -->
+      <li class="h-full">
+        <div class="flex flex-col h-full rounded-2xl overflow-hidden bg-gradient-to-br from-[#3C7099] to-[#2a5570] text-white p-6 sm:p-8 shadow-sm">
+          <div class="flex items-center justify-center w-12 h-12 rounded-xl bg-white/15 mb-5">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Neradote savo industrijos?</h3>
+          <p class="text-sm text-white/90 leading-relaxed mb-6">
+            Nieko tokio – VECTICUM pritaikomas bet kurios organizacijos procesams.
+          </p>
+          <ul class="space-y-2 mb-6 text-sm text-white/90">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 flex-shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Lankstus pritaikymas jūsų procesams</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 flex-shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Tinka bet kuriam sektoriui</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 flex-shrink-0 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Individualus sprendimas pagal poreikį</span>
+            </li>
+          </ul>
+          <a
+            href="/registracijademo"
+            class="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-[#2a5570] font-semibold text-sm hover:bg-gray-100 transition mt-auto"
+          >
+            Aptarkime jūsų poreikius
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gray-50 py-20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+        Pasiruošę pamatyti VECTICUM veikiant?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Užsisakykite nemokamą demonstraciją ir sužinokite, kaip sprendimas pritaikomas jūsų
+        organizacijos procesams.
+      </p>
+      <a
+        href="/registracijademo"
+        class="inline-block rounded-full bg-gradient-to-r from-[#C81F6A] to-[#D41E6B] px-8 py-4 text-white font-medium text-base hover:opacity-90 transition"
+      >
+        Užsisakyti demonstraciją
+      </a>
+    </div>
+  </section>
+</MainLayout>

@@ -450,6 +450,7 @@ const headerImg = '~/assets/images/docs-img.png';
               @mouseleave="industrijosFlyoutOpen = false"
             >
               <a
+                href="/industrijos"
                 class="flex items-center gap-1.5 px-4 py-2 text-gray-700 rounded-lg transition-all duration-200 hover:bg-gray-50 hover:text-[#3C7099]"
               >
                 <span class="font-semibold">Industrijos</span>
@@ -485,6 +486,15 @@ const headerImg = '~/assets/images/docs-img.png';
               >
                 <div class="overflow-hidden rounded-xl bg-white border border-gray-100">
                   <div class="p-4 space-y-1">
+                    <a
+                      href="/industrijos"
+                      class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-semibold text-[#3C7099] hover:bg-blue-50 transition-all duration-200 group"
+                    >
+                      <svg class="w-5 h-5 text-[#3C7099]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                      </svg>
+                      <span>Visos industrijos</span>
+                    </a>
                     <a
                       href="/industrijos/gamyba"
                       class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-[#3C7099] transition-all duration-200 group"
@@ -979,6 +989,7 @@ const headerImg = '~/assets/images/docs-img.png';
             x-transition:leave-end="opacity-0 transform -translate-y-2"
             class="pl-4 space-y-2"
           >
+            <a href="/industrijos" class="block text-sm font-semibold text-[#3C7099]">Visos industrijos</a>
             <a href="/industrijos/gamyba" class="block text-sm text-gray-600">Gamyba</a>
             <a href="/industrijos/statyba-nt-pastatu-prieziura" class="block text-sm text-gray-600">Statyba, NT ir pastatų priežiūra</a>
             <a href="/industrijos/transportas-logistika" class="block text-sm text-gray-600">Transportas, logistika ir sandėliavimas</a>
