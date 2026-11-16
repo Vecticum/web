@@ -63,6 +63,14 @@ const organizationSchema = JSON.stringify({
             "@type": "Answer",
             "text": "Taip, Vecticum palaiko kelias kalbas – sistema prieinama anglų, lietuvių, rusų, lenkų ir latvių kalbomis, todėl ją gali lengvai naudoti ir tarptautinės komandos."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Ar Vecticum (SaaS) sprendimas yra saugus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vecticum debesų kompiuterijos (SaaS) sprendimas užtikrina tokį patį, o kai kuriais atvejais ir geresnį saugumą nei vidinis (in-house) diegimas: visi duomenys šifruojami „end-to-end“ principu 256 bitų raktais; įmonė turi ISO 27001 sertifikatą (kurio didžioji dalis dokumentų valdymo sprendimų tiekėjų Lietuvoje neturi), atlieka nuolatinius sistemos auditus, įsilaužimo testus (penetration tests) ir turi patikrintus sistemos atstatymo scenarijus (disaster recovery) su apibrėžtais RTO ir RPO terminais; sistema atitinka OWASP Top 10 saugumo standartą; sprendimu pasitiki klientai, kuriems taikomi papildomi saugumo reikalavimai (DORA, NIS2) ir kuriuos prižiūri valstybės institucijos (pvz. Perlas Group, GF Bankas, sveikatos įstaigos, investiciniai fondai); didesnio saugumo pageidaujantys klientai gali apriboti prisijungimą prie įmonės portalo iš interneto (whitelist) arba rinktis visiškai atskirą, dedikuotą Single Tenant aplinką."
+          }
         }
       ]
     }
@@ -186,6 +194,28 @@ const organizationSchema = JSON.stringify({
             </summary>
             <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
               <p class="pt-4">Taip, Vecticum palaiko kelias kalbas – sistema prieinama anglų, lietuvių, rusų, lenkų ir latvių kalbomis, todėl ją gali lengvai naudoti ir tarptautinės komandos.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden">
+          <details class="group">
+            <summary class="flex justify-between items-center cursor-pointer p-6 text-lg font-semibold text-gray-900 hover:bg-gray-50 transition-colors duration-200">
+              <span>Ar Vecticum (SaaS) sprendimas yra saugus?</span>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform duration-200 flex-shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100">
+              <p class="pt-4">Vecticum debesų kompiuterijos (SaaS) sprendimas užtikrina tokį patį, o kai kuriais atvejais ir geresnį saugumą nei vidinis (in-house) diegimas:</p>
+              <ul class="mt-4 space-y-3 list-disc pl-5">
+                <li>Taikomas <strong>„end-to-end“ duomenų šifravimas</strong> – visi duomenys šifruojami 256 bitų raktais.</li>
+                <li>Įmonė turi <strong>ISO 27001 sertifikatą</strong> (kurio didžioji dalis dokumentų valdymo sprendimų tiekėjų Lietuvoje neturi), todėl vidinės saugumo procedūros ir darbo organizavimas atitinka aukščiausius saugumo standartus. Taip pat atliekami nuolatiniai sistemos auditai, įsilaužimo testai (penetration tests) bei parengti ir patikrinti sistemos atstatymo scenarijai (disaster recovery) su apibrėžtais RTO ir RPO terminais. Diegiant sistemą in-house, visais šiais dalykais tenka pasirūpinti savarankiškai.</li>
+                <li>Sistema atitinka <strong>OWASP Top 10</strong> saugumo standartą.</li>
+                <li>Vecticum SaaS sprendimu pasitiki klientai, kuriems taikomi <strong>papildomi saugumo reikalavimai (DORA, NIS2)</strong> ir kuriuos prižiūri valstybės institucijos (pvz. Perlas Group, GF Bankas, sveikatos įstaigos, investiciniai fondai).</li>
+                <li>Didesnio saugumo pageidaujantys klientai gali <strong>apriboti prisijungimą prie įmonės portalo iš interneto (whitelist)</strong>.</li>
+                <li>Išskirtinio saugumo pageidaujantiems klientams siūloma <strong>Vecticum Single Tenant</strong> paslauga – sukuriama visiškai atskira, dedikuota aplinka nuo nulio, kurioje saugomi tik to kliento duomenys ir gali būti taikomos papildomos saugumo procedūros.</li>
+              </ul>
             </div>
           </details>
         </div>
